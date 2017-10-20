@@ -4,12 +4,13 @@
 %\documentclass[Main.tex]{subfiles}
 %\begin{document}
 %\setcounter{chapter}{-1}
-\chapter[Álgebra vetorial]{Álgebra vetorial}
+\chapter{Álgebra vetorial}
 O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.    
 
 \section{Vetores e escalares}
 Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como os elementos de um espaço vetorial\index{espaço vetorial}. Os vetores são, então, os elementos de um conjunto em que estão definidas duas operações: a soma de vetores e o produto de vetores por escalares obedecendo as propriedades (\ref{defel}). Um escalar\index{escalar} é um número real ou complexo. Quando o corpo de escalares é o conjunto dos números reais, então dizemos que o espaço vetorial é real. Quando o corpo de escalares é o conjunto dos números complexos, dizemos que o espaço vetorial é complexo. Usaremos uma letra latina com uma seta para denotar vetores ($\vct{u}$, $\vct{v}$ e $\vct{w}$).  Para que um espaço vetorial esteja bem definido, as seguinte propriedades devem ser satisfeitas:
 
+\marginnote[2.5\baselineskip]{\caixa{ O vetor nulo $\vct{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.}}
 \begin{subequations}\label{defel}
 \begin{align}
 \vct{u}+\vct{v}&=\vct{v}+\vct{u},&\mytext{(Comutatividade da soma)}\label{defelcom}\\
@@ -25,7 +26,6 @@ Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como o
 
 Observamos que a propriedade associativa dada por (\ref{defelass}) permite que se escreve a soma de três vetores $\vct{u}+\vct{v}+\vct{w}$ sem risco de ambiguidade. A propriedade (\ref{defeldist3}) é algumas vez chamada de associatividade, no entanto, é cauteloso observar que ela não estabelece a associatividade de uma operação, já que o produto de escalares é uma operação distinta do produto de um escalar por um vetor. A propriedade (\ref{defelnulo}) garante a existência de um vetor nulo que funciona com um elemento neutro da soma vetorial. 
 
-\marginnote{\caixa{ O vetor nulo $\vct{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.}}
 A subtração de dois vetores é definida por
 \begin{equation}\label{delsub}
 \vct{u}-\vct{v}=\vct{u}+ (-1) \vct{v}.
@@ -58,8 +58,7 @@ O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$.
 
 \section{O espaço euclidiano tridimensional e sua norma}
 Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.  
-
-  
+ 
     
     O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante 
 \begin{equation}\label{defdextro}
@@ -67,7 +66,7 @@ Nossa principal preocupação neste curso é com o espaço euclidiano de três d
 \end{equation}   
 é positivo. Reciprocamente, o trio  $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito levogiro se o determinando for negativo. Veja mais detalhes no exemplo (\ref{probdextro}).
 
-\begin{marginfigure}%[42\baselineskip]
+\begin{marginfigure}[.5\baselineskip]
  \includegraphics{./cap_algvet/pics/eixos_levo_destro}
       \caption{Acima um sistema dextrogiro (regra da mão direita). Abaixo um sistema levogiro (regra da mão esquerda). }
       \label{fig:marginfig}
@@ -350,411 +349,418 @@ $$
 $$
 
 \end{prob}
-% ~~ \\
-% 
-% A \underline{desigualdade de Cauchy-Schwarz}\index{desigualdade de Cauchy-Schwarz} (\ref{propprodesccauchy}) pode ser demonstrada a partir de (\ref{defintriprodesc}) uma vez que $$-1\leq \cos\theta \leq 1.$$
-% No entanto, uma demonstração puramente algébrica pode ser dada a partir das propriedades (\ref{propprodesccom}), (\ref{propprodesclin}) e (\ref{propprodescnorma}). Dada a beleza desta demonstração e da possibilidade de generalização, apresentamo-na a seguir:
-% 
-% Consideramos primeiramente os versores $\hat{u}$ e $\hat{v}$ definidos em (\ref{defversor}) e calculamos
-% \begin{eqnarray*}
-% \|\hat{u}+\hat{v}\|^2 &=& \left(\hat{u}+\hat{v}\right)\cdot \left(\hat{u}+\hat{v}\right) = 2+2\hat{u}\cdot\hat{v} \\
-% \|\hat{u}-\hat{v}\|^2 &=& \left(\hat{u}-\hat{v}\right)\cdot \left(\hat{u}-\hat{v}\right) = 2-2\hat{u}\cdot\hat{v} 
-% \end{eqnarray*}
-% onde usamos que $\hat{u}\cdot\hat{u}=\hat{v}\cdot\hat{v}=1$ posto que a norma de um versor é sempre 1. Agora observamos que $\|\hat{u}+\hat{v}\|^2\geq 0 $ e $\|\hat{u}-\hat{v}\|^2\geq 0 $, pelo que temos:
-% $$-1\leq \hat{u}\cdot\hat{v} \leq 1$$
-% O que implica $|\hat{u}\cdot\hat{v}|\leq 1$. Como $\vct{u}=u\hat{u} $ e $\vct{v}=v\hat{v}$, temos
-% $$|\vct{u}\cdot\vct{v}|\leq uv$$ 
-% 
-% Observamos que com uma demontração puramente algébrica para a desigualdade de Cauchy-Schwarz, podemos derivar uma demonstração puramente algébrica da \underline{desigualdade triangular} (\ref{propnormatri}). Ver também a discussão do excício \ref{exnorma}. Para tal considere a seguinte identidade:
-% $$\|\vct{u}+\vct{v}\|^2=\left(\vct{u}+\vct{v}\right)\cdot \left(\vct{u}+\vct{v}\right) = u^2+2\vct{u}\cdot\vct{v}+v^2$$
-% Como $\vct{u}\cdot\vct{v}\leq |\vct{u}\cdot\vct{v}|\leq uv$, temos:
-% $$\|\vct{u}+\vct{v}\|^2\leq u^2+2uv+v^2=(u+v)^2$$
-% Extraindo a raiz quadrada de ambos os lados, temos:
-% $$\|\vct{u}+\vct{v}\|\leq (u+v)=\|\vct{u}\|+\|\vct{v}\|$$
-% \\~\\
-% Dois vetores não nulos $\vct{u}$ e $\vct{v}$ são dito ortogonais\index{vetores ortogonais} se o ângulo entre eles é $90^\circ$, ou seja, se $\cos\left(\vct{u},\vct{v}\right)=0$. De (\ref{defintriprodesc}), isto acontece quando $\vct{u}\cdot\vct{v}=0$. Usamos o símbolo $\bot$ para denotar a ortogonalidade:
-% \begin{eqnarray}\vct{u}\bot \vct{v}\Longleftrightarrow \vct{u}\cdot\vct{v}=0\label{deforto}
-% \end{eqnarray}
-% 
-% Em especial os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ são ortogonais, ou seja: $$\vct{i}\cdot \vct{j}=\vct{i}\cdot \vct{k}=\vct{j}\cdot \vct{k}=0.$$
-% 
-% \begin{prob} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
-% \end{prob}
-% Resp: $18,43^\circ$, $11,3^\circ$ e  $7,13^\circ$
-% \begin{prob} Mostre que se $\alpha$ e $\beta$ são escalares diferentes de zero e $\vct{u}$ e $\vct{v}$ são vetores não nulos, então $$\cos\left(\alpha\vct{u},\beta\vct{v}\right)=\cos\left(\vct{u},\vct{v}\right).$$
-% Interprete geometricamente esta identidade.
-% \end{prob}
-% 
-% 
-% \begin{prob}Mostre que se $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ então $u_1=\vct{u}\cdot\vct{i}$, $u_2=\vct{u}\cdot\vct{j}$ e $u_3=\vct{u}\cdot\vct{k}$. Conclua que
-% $$\vct{u}=\left(\vct{u}\cdot\vct{i}\right) \vct{i}+\left(\vct{u}\cdot\vct{j}\right) \vct{j}+\left(\vct{u}\cdot\vct{k}\right) \vct{k}.$$
-% 
-% \end{prob}
-% 
-% \begin{prob}\label{exort1}Sejam $\vct{u}=\frac{\sqrt{2}}{2}\left(\vct{i}+\vct{j}\right)$ e $\vct{v}=\frac{\sqrt{2}}{2}\left(\vct{i}-\vct{j}\right)$. Mostre que estes vetores são unitários e ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a $\vct{u}$ quanto a $\vct{v}$.
-% \end{prob}
-% Resp: $-\vct{k}$ e $\vct{k}$.
-% 
-% \begin{prob}\label{exort2} Sejam $\vct{u}=2\vct{i}+\vct{j}+\vct{k}$ e $\vct{v}=2\vct{i}-\vct{j}-\vct{k}$. Mostre que estes vetores são ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a  $\vct{u}$ como a $\vct{v}$.
-% \end{prob}
-% Resp: $\frac{\sqrt{2}}{2}\left(\vct{j}-\vct{k}\right)$ e $\frac{\sqrt{2}}{2}\left(-\vct{j}+\vct{k}\right)$.
-% 
-% \begin{prob} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que:
-% \begin{itemize}
-% \item [a)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}=\vct{0}$ mas $\vct{u}\left(\vct{v}\cdot\vct{w}\right)\neq \vct{0}$ 
-% \item [b)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}\neq \vct{u}\left(\vct{v}\cdot\vct{w}\right)$ e ambos não nulos. 
-% \end{itemize}
-% \end{prob}
-% 
-% Exemplos de respostas: a) $\vct{u}=\vct{i}$, $\vct{v}=\vct{j}$ e $\vct{w}=\vct{j}$. b) $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}+\vct{j}$ e $\vct{w}=\vct{j}$.
-% 
-% \begin{prob} Sejam os vetores $\vct{u}=\cos(\theta_1)\vct{i}+\sin(\theta_1)\vct{j}$ e $\vct{v}=\cos(\theta_2)\vct{i}+\sin(\theta_2)\vct{j}$ então
-% $$\cos\left(\vct{u},\vct{v}\right)=\cos(\theta_1-\theta_2).$$
-% Conclua que o ângulo $\theta$ entre $\vct{u}$ e $\vct{v}$ é dado por
-% $$\theta=\left\{
-% \begin{array}{ll}
-% |\theta_1-\theta_2|,& |\theta_1-\theta_2|\leq 180^\circ\\
-% 360^\circ-|\theta_1-\theta_2|,& |\theta_1-\theta_2|> 180^\circ\\
-% \end{array}
-% \right.$$ 
-% contanto que $\theta_1$ e $\theta_2$ estejam entre $0$ e $360^\circ$.
-% Interprete geometricamente este resultado.
-% \end{prob}
-% 
-% \begin{prob}Seja $\vct{u}$ um vetor não nulo fixo e $\vct{v}$ um vetor de norma não nula fixa. Mostre que $\|\vct{u}+\vct{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}). 
-% \end{prob}
-%  Dica: $\|\vct{u}+\vct{v}\|^2=u^2+v^2+2\vct{u}\cdot\vct{v}$ e (\ref{defintriprodesc}).
-% 
-% \section{O produto vetorial}
-% Além do produto escalar entre vetores, definimos também o produto vetorial\index{produto vetorial}. Enquanto o produto escalar de dois vetores é um escalar, o produto vetorial é um terceiro vetor. O produto vetorial entre $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ e $\vct{v}=v_1\vct{i}+v_2\vct{j}+v_3\vct{k}$ é denotado $\vct{u}\times\vct{v}$ e é definido em coordenadas cartesianas como:
-% \begin{equation}\label{defprodvec} \vct{u}\times\vct{v}=\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}
-% \end{equation}
-% A definição de produto vetorial pode parecer à primeira vista arbitrária e fortemente dependente do sistema de coordenadas escolhido. No entanto, mostraremos que  o produto vetorial admite uma formulação intrínseca, ou seja, que não depende do sistema de coordenadas escolhido. Ademais, veremos que tanto o produto escalar como o produto vetorial surgem naturalmente no estudo da física clássica.
-% 
-% O produto vetorial possui as seguintes propriedades:
-% \begin{subequations}\label{propprodvec}
-% \begin{align}
-% \vct{u}\times\vct{v}&=-\vct{v}\times\vct{u},&\mytext{(Anticomutatividade)}\label{propprodvecanticom}\\
-% \left(\alpha \vct{u}+ \beta\vct{v}\right)\times\vct{w}&=\alpha\left(\vct{u}\times\vct{w}\right)+\beta\left(\vct{v}\times\vct{w}\right),&\mytext{(Linearidade à esquerda)}\label{propprodveclin1}\\
-% \vct{u}\times\left(\alpha \vct{v}+ \beta\vct{w}\right)&=\alpha\left(\vct{u}\times\vct{v}\right)+\beta\left(\vct{u}\times\vct{w}\right),&\mytext{(Linearidade à direita)}\label{propprodveclin2}\\
-% \left(\vct{u}\times \vct{v}\right)\cdot \vct{u}&=\left(\vct{u}\times \vct{v}\right)\cdot \vct{v}=0,&\mytext{(Ortogonalidade)}\label{propprodvecorto}\\
-% \left\|\vct{u}\times \vct{v}\right\|&=uv\sin(\vct{u},\vct{v})
-% .&\mytext{(Norma)}\label{propprodvecnorma}\\
-% \det\left(\vct{u}; \vct{v};\vct{u}\times \vct{v}\right)&=u^2v^2\sin^2(\vct{u},\vct{v})>0
-% .&\mytext{(Orientação dextrogira)}\label{propprodvecorient}
-% \end{align}
-% \end{subequations}
-% Nas duas últimas propriedades, $\sin(\vct{u},\vct{v})$ denota o seno do ângulo entre os vetores $\vct{u}$ e $\vct{v}$. Observa-se que quando $\vct{u}$ ou $\vct{v}$ é nulo, este ângulo não está bem definido, estas identidades devem ser então interpretadas como $\left\|\vct{u}\times \vct{v}\right\|=0$ e $\det\left(\vct{u}; \vct{v};\vct{u}\times \vct{v}\right)=0$.
-% 
-% A última propriedade significa que o trio $\vct{u}$, $\vct{v}$ e $\vct{u}\times\vct{v}$ forma um sistema dextrogiro.
-% 
-% \begin{prob} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).  
-% \end{prob}
-% A propriedade da ortogonalidade pode ser demonstrada diretamente da definição de produto vetorial e produto escalar:
-% \begin{eqnarray*}\left(\vct{u}\times \vct{v}\right)\cdot \vct{u}&=&\left[\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right]\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\\
-% &=&\left(u_2v_3-u_3v_2\right)u_1+\left(u_3v_1-u_1v_3\right)u_2+\left(u_1v_2-u_2v_1\right)u_3=0
-% \end{eqnarray*}
-% igualmente temos:
-% \begin{eqnarray*}\left(\vct{u}\times \vct{v}\right)\cdot \vct{v}&=&\left[\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right]\left(v_1\vct{i}+v_2\vct{j}+v_3\vct{k}\right)\\
-% &=&\left(u_2v_3-u_3v_2\right)v_1+\left(u_3v_1-u_1v_3\right)v_2+\left(u_1v_2-u_2v_1\right)v_3=0
-% \end{eqnarray*}
-% Para provar a propriedade (\ref{propprodvecnorma}), mostraremos primeiramente a seguinte (interessante) identidade:
-% \begin{equation}\label{identnorma}\left\|\vct{u}\times \vct{v}\right\|^2+\left|\vct{u}\cdot \vct{v}\right|^2=u^2v^2
-% \end{equation}
-% Da definição de norma e de produto vetorial temos:
-% \begin{eqnarray}\label{calcnormaprodvec}
-% \left\|\vct{u}\times \vct{v}\right\|^2&=&\left\|\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right\|^2\nonumber\\
-% &=&\left(u_2v_3-u_3v_2\right)^2+\left(u_3v_1-u_1v_3\right)^2+\left(u_1v_2-u_2v_1\right)^2\nonumber\\
-% &=&\left(u_2^2v_3^2-2u_2u_3v_2v_3+u_3^2v_2^2\right)+\left(u_3^2v_1^2-2u_1u_3v_1v_3+u_1^2v_3^2\right) \nonumber\\
-% &+&\left(u_1^2v_2^2-2u_1u_2v_1v_2+u_2^2v_1^2\right).
-% \end{eqnarray}
-% Da definição de norma e de produto escalar temos:
-% \begin{eqnarray*}
-% \left|\vct{u}\cdot \vct{v}\right|^2&=&\left(u_1v_1+u_2v_2+u_3v_3\right)^2=u_1^2v_1^2+u_2^2v_2^2+u_3^2v_3^2+2u_1u_2v_1v_2+2u_1u_3v_1v_3+2u_2u_3v_2v_3.
-% \end{eqnarray*}
-% Somando estas últimas duas expressões, simplificando e reagrupando termos, chegamos ao resultado desejado:
-% \begin{eqnarray*}
-% \left\|\vct{u}\times \vct{v}\right\|^2+\left|\vct{u}\cdot \vct{v}\right|^2&=&\left(u_1v_1+u_2v_2+u_3v_3\right)^2\\
-% &=&u_1^2v_1^2+u_1^2v_2^2+u_1^2v_3^2+u_2^2v_1^2+u_2^2v_2^2+u_2^2v_3^2+u_3^2v_1^2+u_3^2v_2^2+u_3^2v_3^2\\
-% &=&\left(u_1^2+u_2^2+u_3^2\right)\left(v_1^2+v_2^2+v_3^2\right)=u^2v^2.
-% \end{eqnarray*}
-% Agora que dispomos da identidade (\ref{identnorma}), usamos (\ref{defintriprodesc}) para escrever 
-% \begin{equation*}\left\|\vct{u}\times \vct{v}\right\|^2=u^2v^2-\left|\vct{u}\cdot \vct{v}\right|^2=u^2v^2-\left[uv\cos\left(\vct{u},\vct{v}\right)\right]^2=u^2v^2\left[1-\cos^2\left(\vct{u},\vct{v}\right)\right]=u^2v^2\sin^2\left(\vct{u},\vct{v}\right)
-% \end{equation*}
-% Extraímos a raiz quadrada, observando que $\sin\left(\vct{u},\vct{v}\right)\geq 0$ e obtemos o resultado desejado (\ref{propprodvecnorma}).
-% Um caso particular importante é quando os vetores $\vct{u}$ e $\vct{v}$ estão na mesma direção. Como $\sin 0= \sin 180^\circ=0$, o produto vetorial de dois vetores paralelos é $\vct{0}$.  
-% 
-% Para demonstrar a propriedade (\ref{propprodvecorient}), calculamos o determinante envolvido
-% \begin{eqnarray*}
-% \det\left(\vct{u};\vct{v};\vct{u}\times\vct{v}\right)&=&\left|
-% \begin{array}{ccc}
-% u_1 & v_1 & \left(u_2v_3-u_3v_2\right)\\  
-% u_2 & v_2 & \left(u_3v_1-u_1v_3\right)\\ 
-% u_3 & v_3 &  \left(u_1v_2-u_2v_1\right)
-% \end{array}
-% \right|\\
-% &=&\left(u_1^2v_2^2-u_1u_2v_1v_2\right)+\left(u_3^2v_1^2-u_1u_3v_1v_3\right)+\left(u_2^2v_3^2-u_2u_3v_2v_3\right)\\
-% &-&\left(u_1u_2v_1v_2-u_2^2v_1^2\right)-\left(u_1u_3v_1v_3-u_1^2v_3^2\right)-\left(u_2u_3v_2v_3-u_3^2v_2^2\right)
-% \end{eqnarray*}
-% \begin{wrapfigure}{r}{0.5\textwidth}
-%   \begin{center}
-%   \vspace{-20pt}
-%     \includegraphics[width=0.46\textwidth]{./cap_algvet/pics/R_mao_dir}
-%   \end{center}
-%   %\vspace{-20pt}
-%   \caption{Regra da mão direita.}\label{Regra_da_mao_direita}
-% \end{wrapfigure}
-% 
-% Agora basta observar que esta expressão é idêntica a (\ref{calcnormaprodvec}), ou seja, $\|\vct{u}\times\vct{v}\|^2$ e portanto o determinante $\det\left(\vct{u};\vct{v};\vct{u}\times\vct{v}\right)$ é positivo. 
-% 
-% A importância desta propriedade está no fato que se $\vct{w}=\vct{u}\times \vct{v}$ então o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro. Além disso, por causa da propriedade (\ref{propprodvecorto}), $\vct{w}$ deve ser ortogonal tanto aos vetores $\vct{u}$, $\vct{v}$. Finalmente, observando a propriedade da norma (\ref{propprodvecnorma}), podemos estabelecer a seguinte identidade para o produto vetorial de dois vetores não colineares $\vct{u}$ e $\vct{v}$:
-% \begin{equation}
-% \vct{u}\times\vct{v}=uv\sin\left(\vct{u},\vct{v}\right)\hat{e}
-% \end{equation}
-% onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vct{u}$ e $\vct{v}$ e forma um sistema dextrogiro com eles.  
-% 
-% A norma do produto vetorial entre os vetores $\vct{u}$ e $\vct{v}$ pode ser interpretada como a área do paralelogramo cujos lados são $\vct{u}$ e $\vct{v}$ (ver figura \ref{prod_paralelo}. A direção do produto vetorial é então ortogonal ao plano gerado por  $\vct{u}$ e $\vct{v}$  e o sentido é dado pela regra da mão direita.
-% 
-% \begin{figure}[h!]
-%   \begin{center}
-%  % \vspace{-20pt}
-%     \includegraphics[width=0.5\textwidth]{./cap_algvet/pics/prod_vec_mao_dir}
-%   \end{center}
-%   %\vspace{-20pt}
-%   \caption{Interpretação geométrica do produto vetorial.}\label{prod_paralelo}
-% \end{figure}
-% 
-% A definição de produto vetorial dada em (\ref{defprodvec}) pode ser mais facilmente lembrada através do seguinte determinante formal:
-% \begin{equation}\label{detprodvec}
-% \vct{u}\times\vct{v}=\left|\begin{array}{ccc}
-% \vct{i}&\vct{j}&\vct{k}\\
-% u_1 & u_2 & u_3\\
-% v_1 & v_2 & v_3\\
-% \end{array}
-% \right|
-% \end{equation}
-% que pode ser calculado pela regra de Sarrus.
-% 
-% O produto vetorial entre os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ pode ser obtido da definição (\ref{defprodvec}) ou da caracterização geométrica do produto vetorial:
-% 
-% \begin{align}\label{prodvecunit}
-% \vct{i}\times \vct{i}&=\vct{0},\qquad & \vct{i}\times \vct{j}&=\vct{k},\qquad &\vct{i}\times \vct{k}&=-\vct{j}\nonumber\\
-% \vct{j}\times \vct{i}&=-\vct{k},\qquad & \vct{j}\times \vct{j}&=\vct{0},\qquad& \vct{j}\times \vct{k}&=\vct{i}\nonumber\\
-% \vct{k}\times \vct{i}&=\vct{j},\qquad &\vct{k}\times \vct{j}&=-\vct{i},\qquad &\vct{k}\times \vct{k}&=\vct{0}
-% \end{align}
-% 
-% \begin{prob} Seja $\vct{u}=\vct{i}+2\vct{j}$ e $\vct{v}=3\vct{i}-2\vct{j}$, calcule o vetor $\vct{w}=\vct{u}\times\vct{v}$.
-% \end{prob}
-% {\bf Solução 1} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
-% \begin{eqnarray*}\vct{w}=\left|\begin{array}{ccc}
-% \vct{i}&\vct{j}&\vct{k}\\
-% u_1 & u_2 & u_3\\
-% v_1 & v_2 & v_3\\
-% \end{array}
-% \right|=\left|\begin{array}{ccc}
-% \vct{i}&\vct{j}&\vct{k}\\
-% 1 & 2 & 0\\
-% 3 & -2& 0\\
-% \end{array}
-% \right|=\vct{i}(0-0)+\vct{j}(0-0)+\vct{k}(-2-6)=-8\vct{k}
-% \end{eqnarray*}
-% 
-% {\bf Solução 2} Calcularemos usando as propriedades (\ref{propprodvec}) e as relações (\ref{prodvecunit}):
-% \begin{eqnarray*}\vct{w}&=&\vct{u}\times\vct{v}= \left(\vct{i}+2\vct{j}\right)\times\left(3\vct{i}-2\vct{j}\right)=3(\vct{i}\times\vct{i})-2(\vct{i}\times\vct{j})+6(\vct{j}\times\vct{i})-4(\vct{j}\times\vct{j})\\
-% &=&3~\!\vct{0}-2~\!\vct{k}-6~\!\vct{k}-4~\!\vct{0}=-8\vct{k}
-% \end{eqnarray*}
-% 
-% 
-% \begin{prob} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
-% \end{prob}
-% 
-% \begin{prob}\label{prodvecnaoassoc} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que $\vct{u}\times\left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times\vct{v}\right)\times \vct{w}$. 
-% \end{prob}
-% Exemplo de resposta: $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}$ e $\vct{w}=\vct{k}$.
-% 
-% \begin{prob} Simplifique as seguintes expressões:
-% \begin{itemize}
-% \item[a)] $\vct{u}\times\vct{u}$
-% \item[b)] $\vct{u}\times\hat{u}$
-% \item[c)] $\vct{u}\cdot\vct{u}$
-% \item[d)] $\vct{u}\cdot\hat{u}$
-% \item[e)] $\left(\vct{u}+\vct{v}\right)\cdot\left(\vct{u}+\vct{v}\right)$
-% \item[f)] $\left(\vct{u}+\vct{v}\right)\times\left(\vct{u}+\vct{v}\right)$
-% \item[g)] $\left(\vct{u}-\vct{v}\right)\cdot\left(\vct{u}-\vct{v}\right)$
-% \item[h)] $\left(\vct{u}-\vct{v}\right)\times\left(\vct{u}-\vct{v}\right)$
-% \item[i)] $\left(\vct{u}+\vct{v}\right)\cdot\left(\vct{u}-\vct{v}\right)$
-% \item[j)] $\left(\vct{u}+\vct{v}\right)\times\left(\vct{u}-\vct{v}\right)$
-% \end{itemize}
-% \end{prob}
-% Resp: $\vct{0}$,$\vct{0}$,$u^2$,$u$,$u^2+2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-v^2$, $2\vct{v}\times\vct{u}$ 
-% 
-% 
-% \begin{prob} Mostre que $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)=\det\left(\vct{u};\vct{v};\vct{w}\right)$. Conclua que o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)>0$ e levogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)<0$. Interprete geometricamente.
-% \end{prob}
-% 
-% 
-% \section{Os triplos produtos e outras identidades vetoriais}
-% O triplo produto escalar\index{triplo produto escalar} é definido por um produto vetorial e um produto escalar, isto é:
-% \begin{equation}
-%  \vct{u}\cdot (\vct{v}\times \vct{w}).
-% \end{equation}
-% Em coordenadas cartesianas, podemos escrever o triplo produto vetorial como:
-% \begin{eqnarray*}
-%  \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_1\vct{i}+v_2\vct{j}+v_3\vct{k}\right)\times \left(w_1\vct{i}+w_2\vct{j}+w_3\vct{k}\right)\right].
-% \end{eqnarray*}
-% Agora, usando a definição em cartesianas do produto vetorial dada na equação (\ref{defprodvec}), substituindo $\vct{u}$ e $\vct{v}$ por $\vct{v}$ e $\vct{w}$, respectivamente, isto é:
-% \begin{equation*} \vec{v}\times\vec{w}=\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}.
-% \end{equation*}
-% Obtemos:
-% \begin{eqnarray}\label{dettriploprod}
-%   \vct{u}\cdot (\vct{v}\times \vct{w})
-% &=&\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\right]\nonumber\\
-%  &=&u_1\left(v_2w_3-v_3w_2\right)+u_2\left(v_3w_1-v_1w_3\right)+u_3\left(v_1w_2-v_2w_1\right)\nonumber\\
-%  &=&\left(u_1v_2w_3-u_1v_3w_2\right)+\left(u_2v_3w_1-u_2v_1w_3\right)+\left(u_3v_1w_2-u_3v_2w_1\right)\nonumber\\
-%  &=&
-%  \left|\begin{array}{ccc}
-% 	  u_1&u_2&u_3\\
-% 	  v_1&v_2&v_3\\
-% 	  w_1&w_2&w_3
-%        \end{array}
-%  \right|=\det\left(\vct{u},\vct{v},\vct{w}\right)
-% \end{eqnarray}
-% O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
-% \begin{equation}
-% \vct{u}\cdot (\vct{v}\times \vct{w})
-% =\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot\left|\begin{array}{ccc}
-% \vct{i}&\vct{j}&\vct{k}\\
-% v_1 & v_2 & v_3\\
-% w_1 & w_2 & w_3\\
-% \end{array}
-% \right|=\left|\begin{array}{ccc}
-% 	  u_1&u_2&u_3\\
-% 	  v_1&v_2&v_3\\
-% 	  w_1&w_2&w_3
-%        \end{array}
-%  \right|
-% \end{equation}
-% 
-% Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{figura_colocar}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. 
-% 
-% Sabemos que quando permutamos duas linhas de uma matriz, seu determinante muda de sinal, pelo que podemos obter as seguintes relações:
-% \begin{equation*}
-% \vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=-\vct{v}\cdot\left(\vct{u}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=-\vct{w}\cdot\left(\vct{v}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)=-\vct{u}\cdot\left(\vct{w}\times\vct{v}\right)  
-% \end{equation*}
-% Extraindo apenas os termos de ordem ímpar temos:
-% \begin{equation}\label{triploprodutoescalar} \vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)
-% \end{equation}
-% \begin{obs} Um caso particular interessante é quando escolhemos $\vct{w}=\vct{u}\times\vct{v}$ e obtemos:
-% \begin{equation*} 
-% \det\left(\vct{u},\vct{v},\vct{u}\times\vct{v}\right)=\left(\vct{u}\times\vct{v}\right)\cdot\left(\vct{u}\times\vct{v}\right)=\|\vct{u}\times\vct{v}\|^2.
-% \end{equation*}
-% Assim, retornamos à expressão (\ref{propprodvecorient}).
-% \end{obs}
-% 
-% Podemos igualmente definir o triplo produto vetorial como o produto vetorial de um vetor pelo produto vetorial de outros dois vetores, isto é:
-% $$\vct{u}\times \left(\vct{v}\times\vct{w}\right). $$
-% Observe cuidadosamente que o produto vetorial não é associativo, isto é, pode acontecer $\vct{u}\times \left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times \vct{v}\right)\times\vct{w} $ (ver problema \ref{prodvecnaoassoc}), portanto, a ordem dos vetores é relevante.2
-% Podemos mostrar que o triplo produto vetorial pode ser expresso como:
-% \begin{equation*} 
-% \vct{u}\times\left(\vct{v}\times\vct{w}\right)=\left(\vct{u}\cdot\vct{w}\right)\vct{v}-\left(\vct{u}\cdot\vct{v}\right)\vct{w}
-% \end{equation*}
-% Para verificar esta identidade, retornamos ao produto vetorial entre $\vct{v}$ e $\vct{w}$ em coordenadas cartesianas e o escrevemos como a diferença entre dois vetores:
-% \begin{eqnarray*} \vec{v}\times\vec{w}&=&\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\\
-% &=& \underbrace{\left(v_2w_3\vct{i}+v_3w_1\vct{j}+v_1w_2\vct{k}\right)}_{\vct{p_1}} -\underbrace{\left(v_3w_2\vct{i}+v_1w_3\vct{j}+v_2w_1\vct{k}\right)}_{\vct{p_2}}=\vct{p_1}-\vct{p_2}.
-% \end{eqnarray*}
-% 
-% 
-% \begin{eqnarray*}
-% \vct{u}\times\vct{p_1}&=& \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\times \left(v_2w_3\vct{i}+v_3w_1\vct{j}+v_1w_2\vct{k}\right)\\
-% &=&\left(u_2v_1w_2-u_3v_3w_1\right)\vct{i}+\left(u_3v_2w_3-u_1v_1w_2\right)\vct{j}+\left(u_1v_3w_1-u_2v_2w_3\right)\vct{k}\\
-% &=&\left(u_2v_1w_2\vct{i}+u_3v_2w_3\vct{j}+u_1v_3w_1\vct{k}\right)-\left(u_3v_3w_1\vct{i}+u_1v_1w_2\vct{j}+u_2v_2w_3\right)\vct{k}
-% \end{eqnarray*}
-% 
-% \begin{eqnarray*}
-% \vct{u}\times\vct{p_2}&=& \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\times \left(v_3w_2\vct{i}+v_1w_3\vct{j}+v_2w_1\vct{k}\right)\\
-% &=&\left(u_2v_2w_1-u_3v_1w_3\right)\vct{i}+\left(u_3v_3w_2-u_1v_2w_1\right)\vct{j}+\left(u_1v_3w_1-u_2v_3w_2\right)\vct{k}\\
-% &=&\left(u_2v_2w_1\vct{i}+u_3v_3w_2\vct{j}+u_1v_3w_1\vct{k}\right)
-% -\left(u_3v_1w_3\vct{i}+u_1v_2w_1\vct{j}u_2v_3w_2\vct{k}\right)
-% \end{eqnarray*}
-% 
-% Subtraíndo temos:
-% \begin{eqnarray*}
-% \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2\right)v_3\vct{k}\right]\\
-% &-&
-% \left[\left(u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2\right)w_3\vct{k}\right]
-% \end{eqnarray*}
-% Agora, somamos $u_1v_1w_1$ à primeira coordenada de cada um dos dois termos da subtração; somamos $u_2v_2w_2$  à segunda coordenada de cada um dos dois termos da subtração e somamos $u_3v_3w_3$ à terceira coordenada de cada um dos dois termos da subtração para obter:
-% \begin{eqnarray*}
-% \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_1w_1+u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_3\vct{k}\right]\\
-% &-&
-% \left[\left(u_1v_1+u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_3\vct{k}\right]\\
-% &=&(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
-% \end{eqnarray*}
-% Lembrando que $\vct{p_1}-\vct{p_2}=\vct{v}\times\vct{w}$, obtemos:
-% \begin{eqnarray*}
-% \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=& 
-% \vct{u}\times\left(\vct{v}\times\vct{w}\right)=(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
-% \end{eqnarray*}
-% O formulário abaixo resume as indentidades que acabamos de demonstrar e lista mais algumas sem demonstração:
-% \begin{subequations}\label{vectoridendities}
-% \begin{align}
-%  \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\mytext{Triplo produto escalar}\\ 
-%  \vec{u}\times\left(\vec{v}\times\vec{w}\right)&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{u}\cdot\vec{v}\right)\vec{w},&\mytext{Triplo produto vetorial} \\ 
-%  \left(\vec{u}\times\vec{v}\right)\times\vec{w}&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{v}\cdot\vec{w}\right)\vec{u},&\mytext{Triplo produto vetorial} \\ 
-%  \left(\vec{u}\times\vec{v}\right)\cdot\left(\vec{w}\times\vec{x}\right)&=\left(\vec{u}\cdot\vec{w}\right)\left(\vec{v}\cdot\vec{x}\right)-\left(\vec{v}\cdot\vec{w}\right)\left(\vec{u}\cdot\vec{x}\right),& \\	 
-% \left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x}&=\left(\vec{u}\cdot\vec{x}\right)\left(\vec{v}\times\vec{w}\right)+\left(\vec{v}\cdot\vec{x}\right)\left(\vec{w}\times\vec{u}\right)+\left(\vec{w}\cdot\vec{x}\right)\left(\vec{u}\times\vec{v}\right),& \\
-% \left(\vec{u}\times\vec{v}\right)\times\left(\vec{w}\times\vec{x}\right)
-% &=\left(\vec{u}\cdot\left(\vec{v}\times\vec{x}\right)\right)\vec{w}-\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x},&\\
-% \end{align}
-% \end{subequations}
-% 
-% \newpage
-% 
-% 
-% \section{Sistema de coordenadas cilíndricas}
-% \begin{wrapfigure}{r}{0.5\textwidth}
-%   \begin{center}
-%   \vspace{-20pt}
-%     \includegraphics[width=0.46\textwidth]{./cap_algvet/pics/coo_cil}
-%   \end{center}
-%   %\vspace{-20pt}
-%   \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}
-% \end{wrapfigure}
-% 
-% No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas cilíndricas} $\rho$, $\phi$ e $z$. A coordenada $z$ é a mesma do sistema de coordenadas retangulares. A coordenada $\rho$ indica a distância entre a origem e a projeção $Q$ de $P$ sob o eixo $xy$. Finalmente $\phi$ é o ângulo entre o semi-eixo $x>0$ e o ponto Q. Ver figura \ref{Coo_cil}. É fácil ver que
-% \begin{subequations}\label{xphi}
-% \begin{eqnarray}
-% x&=&\rho\cos\phi\\
-% y&=&\rho\sin\phi
-% \end{eqnarray}  
-% \end{subequations}
-% onde
-% \begin{equation}
-% \rho=\sqrt{x^2+y^2}
-% \end{equation}
-% A coordenadas $\rho$, $\phi$ e $z$ são comumente denotaminadas de ``distância radial'', ``azimute'' e ``altura''. 
-% 
-% As equações (\ref{xphi}) podem ser reescritas como
-% \begin{subequations}\label{phix}
-% \begin{eqnarray}
-% \cos\phi&=&\frac{x}{\rho}=\frac{x}{\sqrt{x^2+y^2}}\\
-% \sin\phi&=&\frac{y}{\rho}=\frac{y}{\sqrt{x^2+y^2}}
-% \end{eqnarray}  
-% \end{subequations}
-% 
-% \begin{prob}\label{rect_cin} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas cilíndricas:
-% \begin{itemize}
-% \item [a)] $\left<1,1,1\right>$
-% \item [b)] $\left<1,-1,1\right>$
-% \item [c)] $\left<-1,1,1\right>$
-% \item [d)] $\left<-1,-1,1\right>$
-% \end{itemize}
-% \end{prob}
-% Resp: $\left(\sqrt{2},\frac{\pi}{4},1\right)$,  $\left(\sqrt{2},\frac{5\pi}{4},1\right)$, $\left(\sqrt{2},\frac{3\pi}{4},1\right)$ e  $\left(\sqrt{2},\frac{7\pi}{4},1\right)$.
-% 
-% \begin{prob} Encontre uma expressão para distância de um ponto à origem em coordenadas cilíndricas
-% \end{prob}
-% Resp: $\sqrt{\rho^2+z^2}$
+~~ \\
+
+A \underline{desigualdade de Cauchy-Schwarz}\index{desigualdade de Cauchy-Schwarz} (\ref{propprodesccauchy}) pode ser demonstrada a partir de (\ref{defintriprodesc}) uma vez que $$-1\leq \cos\theta \leq 1.$$
+No entanto, uma demonstração puramente algébrica pode ser dada a partir das propriedades (\ref{propprodesccom}), (\ref{propprodesclin}) e (\ref{propprodescnorma}). Dada a beleza desta demonstração e da possibilidade de generalização, apresentamo-na a seguir:
+
+Consideramos primeiramente os versores $\hat{u}$ e $\hat{v}$ definidos em (\ref{defversor}) e calculamos
+\begin{eqnarray*}
+\|\hat{u}+\hat{v}\|^2 &=& \left(\hat{u}+\hat{v}\right)\cdot \left(\hat{u}+\hat{v}\right) = 2+2\hat{u}\cdot\hat{v} \\
+\|\hat{u}-\hat{v}\|^2 &=& \left(\hat{u}-\hat{v}\right)\cdot \left(\hat{u}-\hat{v}\right) = 2-2\hat{u}\cdot\hat{v} 
+\end{eqnarray*}
+onde usamos que $\hat{u}\cdot\hat{u}=\hat{v}\cdot\hat{v}=1$ posto que a norma de um versor é sempre 1. Agora observamos que $\|\hat{u}+\hat{v}\|^2\geq 0 $ e $\|\hat{u}-\hat{v}\|^2\geq 0 $, pelo que temos:
+$$-1\leq \hat{u}\cdot\hat{v} \leq 1$$
+O que implica $|\hat{u}\cdot\hat{v}|\leq 1$. Como $\vct{u}=u\hat{u} $ e $\vct{v}=v\hat{v}$, temos
+$$|\vct{u}\cdot\vct{v}|\leq uv$$ 
+
+Observamos que com uma demontração puramente algébrica para a desigualdade de Cauchy-Schwarz, podemos derivar uma demonstração puramente algébrica da \underline{desigualdade triangular} (\ref{propnormatri}). Ver também a discussão do excício \ref{exnorma}. Para tal considere a seguinte identidade:
+$$\|\vct{u}+\vct{v}\|^2=\left(\vct{u}+\vct{v}\right)\cdot \left(\vct{u}+\vct{v}\right) = u^2+2\vct{u}\cdot\vct{v}+v^2$$
+Como $\vct{u}\cdot\vct{v}\leq |\vct{u}\cdot\vct{v}|\leq uv$, temos:
+$$\|\vct{u}+\vct{v}\|^2\leq u^2+2uv+v^2=(u+v)^2$$
+Extraindo a raiz quadrada de ambos os lados, temos:
+$$\|\vct{u}+\vct{v}\|\leq (u+v)=\|\vct{u}\|+\|\vct{v}\|$$
+\\~\\
+Dois vetores não nulos $\vct{u}$ e $\vct{v}$ são dito ortogonais\index{vetores ortogonais} se o ângulo entre eles é $90^\circ$, ou seja, se $\cos\left(\vct{u},\vct{v}\right)=0$. De (\ref{defintriprodesc}), isto acontece quando $\vct{u}\cdot\vct{v}=0$. Usamos o símbolo $\bot$ para denotar a ortogonalidade:
+\begin{eqnarray}\vct{u}\bot \vct{v}\Longleftrightarrow \vct{u}\cdot\vct{v}=0\label{deforto}
+\end{eqnarray}
+
+Em especial os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ são ortogonais, ou seja: $$\vct{i}\cdot \vct{j}=\vct{i}\cdot \vct{k}=\vct{j}\cdot \vct{k}=0.$$
+
+\begin{prob} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
+\end{prob}
+Resp: $18,43^\circ$, $11,3^\circ$ e  $7,13^\circ$
+\begin{prob} Mostre que se $\alpha$ e $\beta$ são escalares diferentes de zero e $\vct{u}$ e $\vct{v}$ são vetores não nulos, então $$\cos\left(\alpha\vct{u},\beta\vct{v}\right)=\cos\left(\vct{u},\vct{v}\right).$$
+Interprete geometricamente esta identidade.
+\end{prob}
+
+
+\begin{prob}Mostre que se $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ então $u_1=\vct{u}\cdot\vct{i}$, $u_2=\vct{u}\cdot\vct{j}$ e $u_3=\vct{u}\cdot\vct{k}$. Conclua que
+$$\vct{u}=\left(\vct{u}\cdot\vct{i}\right) \vct{i}+\left(\vct{u}\cdot\vct{j}\right) \vct{j}+\left(\vct{u}\cdot\vct{k}\right) \vct{k}.$$
+
+\end{prob}
+
+\begin{prob}\label{exort1}Sejam $\vct{u}=\frac{\sqrt{2}}{2}\left(\vct{i}+\vct{j}\right)$ e $\vct{v}=\frac{\sqrt{2}}{2}\left(\vct{i}-\vct{j}\right)$. Mostre que estes vetores são unitários e ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a $\vct{u}$ quanto a $\vct{v}$.
+\end{prob}
+Resp: $-\vct{k}$ e $\vct{k}$.
+
+\begin{prob}\label{exort2} Sejam $\vct{u}=2\vct{i}+\vct{j}+\vct{k}$ e $\vct{v}=2\vct{i}-\vct{j}-\vct{k}$. Mostre que estes vetores são ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a  $\vct{u}$ como a $\vct{v}$.
+\end{prob}
+Resp: $\frac{\sqrt{2}}{2}\left(\vct{j}-\vct{k}\right)$ e $\frac{\sqrt{2}}{2}\left(-\vct{j}+\vct{k}\right)$.
+
+\begin{prob} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que:
+\begin{itemize}
+\item [a)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}=\vct{0}$ mas $\vct{u}\left(\vct{v}\cdot\vct{w}\right)\neq \vct{0}$ 
+\item [b)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}\neq \vct{u}\left(\vct{v}\cdot\vct{w}\right)$ e ambos não nulos. 
+\end{itemize}
+\end{prob}
+
+Exemplos de respostas: a) $\vct{u}=\vct{i}$, $\vct{v}=\vct{j}$ e $\vct{w}=\vct{j}$. b) $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}+\vct{j}$ e $\vct{w}=\vct{j}$.
+
+\begin{prob} Sejam os vetores $\vct{u}=\cos(\theta_1)\vct{i}+\sin(\theta_1)\vct{j}$ e $\vct{v}=\cos(\theta_2)\vct{i}+\sin(\theta_2)\vct{j}$ então
+$$\cos\left(\vct{u},\vct{v}\right)=\cos(\theta_1-\theta_2).$$
+Conclua que o ângulo $\theta$ entre $\vct{u}$ e $\vct{v}$ é dado por
+$$\theta=\left\{
+\begin{array}{ll}
+|\theta_1-\theta_2|,& |\theta_1-\theta_2|\leq 180^\circ\\
+360^\circ-|\theta_1-\theta_2|,& |\theta_1-\theta_2|> 180^\circ\\
+\end{array}
+\right.$$ 
+contanto que $\theta_1$ e $\theta_2$ estejam entre $0$ e $360^\circ$.
+Interprete geometricamente este resultado.
+\end{prob}
+
+\begin{prob}Seja $\vct{u}$ um vetor não nulo fixo e $\vct{v}$ um vetor de norma não nula fixa. Mostre que $\|\vct{u}+\vct{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}). 
+\end{prob}
+ Dica: $\|\vct{u}+\vct{v}\|^2=u^2+v^2+2\vct{u}\cdot\vct{v}$ e (\ref{defintriprodesc}).
+
+\section{O produto vetorial}
+Além do produto escalar entre vetores, definimos também o produto vetorial\index{produto vetorial}. Enquanto o produto escalar de dois vetores é um escalar, o produto vetorial é um terceiro vetor. O produto vetorial entre $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ e $\vct{v}=v_1\vct{i}+v_2\vct{j}+v_3\vct{k}$ é denotado $\vct{u}\times\vct{v}$ e é definido em coordenadas cartesianas como:
+\begin{equation}\label{defprodvec} \vct{u}\times\vct{v}=\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}
+\end{equation}
+A definição de produto vetorial pode parecer à primeira vista arbitrária e fortemente dependente do sistema de coordenadas escolhido. No entanto, mostraremos que  o produto vetorial admite uma formulação intrínseca, ou seja, que não depende do sistema de coordenadas escolhido. Ademais, veremos que tanto o produto escalar como o produto vetorial surgem naturalmente no estudo da física clássica.
+
+O produto vetorial possui as seguintes propriedades:
+\begin{subequations}\label{propprodvec}
+\begin{align}
+\vct{u}\times\vct{v}&=-\vct{v}\times\vct{u},&\mytext{(Anticomutatividade)}\label{propprodvecanticom}\\
+\left(\alpha \vct{u}+ \beta\vct{v}\right)\times\vct{w}&=\alpha\left(\vct{u}\times\vct{w}\right)+\beta\left(\vct{v}\times\vct{w}\right),&\mytext{(Linearidade à esquerda)}\label{propprodveclin1}\\
+\vct{u}\times\left(\alpha \vct{v}+ \beta\vct{w}\right)&=\alpha\left(\vct{u}\times\vct{v}\right)+\beta\left(\vct{u}\times\vct{w}\right),&\mytext{(Linearidade à direita)}\label{propprodveclin2}\\
+\left(\vct{u}\times \vct{v}\right)\cdot \vct{u}&=\left(\vct{u}\times \vct{v}\right)\cdot \vct{v}=0,&\mytext{(Ortogonalidade)}\label{propprodvecorto}\\
+\left\|\vct{u}\times \vct{v}\right\|&=uv\sin(\vct{u},\vct{v})
+.&\mytext{(Norma)}\label{propprodvecnorma}\\
+\det\left(\vct{u}; \vct{v};\vct{u}\times \vct{v}\right)&=u^2v^2\sin^2(\vct{u},\vct{v})>0
+.&\mytext{(Orientação dextrogira)}\label{propprodvecorient}
+\end{align}
+\end{subequations}
+Nas duas últimas propriedades, $\sin(\vct{u},\vct{v})$ denota o seno do ângulo entre os vetores $\vct{u}$ e $\vct{v}$. Observa-se que quando $\vct{u}$ ou $\vct{v}$ é nulo, este ângulo não está bem definido, estas identidades devem ser então interpretadas como $\left\|\vct{u}\times \vct{v}\right\|=0$ e $\det\left(\vct{u}; \vct{v};\vct{u}\times \vct{v}\right)=0$.
+
+A última propriedade significa que o trio $\vct{u}$, $\vct{v}$ e $\vct{u}\times\vct{v}$ forma um sistema dextrogiro.
+
+\begin{prob} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).  
+\end{prob}
+A propriedade da ortogonalidade pode ser demonstrada diretamente da definição de produto vetorial e produto escalar:
+\begin{eqnarray*}\left(\vct{u}\times \vct{v}\right)\cdot \vct{u}&=&\left[\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right]\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\\
+&=&\left(u_2v_3-u_3v_2\right)u_1+\left(u_3v_1-u_1v_3\right)u_2+\left(u_1v_2-u_2v_1\right)u_3=0
+\end{eqnarray*}
+igualmente temos:
+\begin{eqnarray*}\left(\vct{u}\times \vct{v}\right)\cdot \vct{v}&=&\left[\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right]\left(v_1\vct{i}+v_2\vct{j}+v_3\vct{k}\right)\\
+&=&\left(u_2v_3-u_3v_2\right)v_1+\left(u_3v_1-u_1v_3\right)v_2+\left(u_1v_2-u_2v_1\right)v_3=0
+\end{eqnarray*}
+Para provar a propriedade (\ref{propprodvecnorma}), mostraremos primeiramente a seguinte (interessante) identidade:
+\begin{equation}\label{identnorma}\left\|\vct{u}\times \vct{v}\right\|^2+\left|\vct{u}\cdot \vct{v}\right|^2=u^2v^2
+\end{equation}
+Da definição de norma e de produto vetorial temos:
+\begin{eqnarray}\label{calcnormaprodvec}
+\left\|\vct{u}\times \vct{v}\right\|^2&=&\left\|\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right\|^2\nonumber\\
+&=&\left(u_2v_3-u_3v_2\right)^2+\left(u_3v_1-u_1v_3\right)^2+\left(u_1v_2-u_2v_1\right)^2\nonumber\\
+&=&\left(u_2^2v_3^2-2u_2u_3v_2v_3+u_3^2v_2^2\right)+\left(u_3^2v_1^2-2u_1u_3v_1v_3+u_1^2v_3^2\right) \nonumber\\
+&+&\left(u_1^2v_2^2-2u_1u_2v_1v_2+u_2^2v_1^2\right).
+\end{eqnarray}
+Da definição de norma e de produto escalar temos:
+\begin{eqnarray*}
+\left|\vct{u}\cdot \vct{v}\right|^2&=&\left(u_1v_1+u_2v_2+u_3v_3\right)^2=u_1^2v_1^2+u_2^2v_2^2+u_3^2v_3^2+2u_1u_2v_1v_2+2u_1u_3v_1v_3+2u_2u_3v_2v_3.
+\end{eqnarray*}
+Somando estas últimas duas expressões, simplificando e reagrupando termos, chegamos ao resultado desejado:
+\begin{eqnarray*}
+\left\|\vct{u}\times \vct{v}\right\|^2+\left|\vct{u}\cdot \vct{v}\right|^2&=&\left(u_1v_1+u_2v_2+u_3v_3\right)^2\\
+&=&u_1^2v_1^2+u_1^2v_2^2+u_1^2v_3^2+u_2^2v_1^2+u_2^2v_2^2+u_2^2v_3^2+u_3^2v_1^2+u_3^2v_2^2+u_3^2v_3^2\\
+&=&\left(u_1^2+u_2^2+u_3^2\right)\left(v_1^2+v_2^2+v_3^2\right)=u^2v^2.
+\end{eqnarray*}
+Agora que dispomos da identidade (\ref{identnorma}), usamos (\ref{defintriprodesc}) para escrever 
+\begin{equation*}\left\|\vct{u}\times \vct{v}\right\|^2=u^2v^2-\left|\vct{u}\cdot \vct{v}\right|^2=u^2v^2-\left[uv\cos\left(\vct{u},\vct{v}\right)\right]^2=u^2v^2\left[1-\cos^2\left(\vct{u},\vct{v}\right)\right]=u^2v^2\sin^2\left(\vct{u},\vct{v}\right)
+\end{equation*}
+Extraímos a raiz quadrada, observando que $\sin\left(\vct{u},\vct{v}\right)\geq 0$ e obtemos o resultado desejado (\ref{propprodvecnorma}).
+Um caso particular importante é quando os vetores $\vct{u}$ e $\vct{v}$ estão na mesma direção. Como $\sin 0= \sin 180^\circ=0$, o produto vetorial de dois vetores paralelos é $\vct{0}$.  
+Para demonstrar a propriedade (\ref{propprodvecorient}), calculamos o determinante envolvido
+\begin{eqnarray*}
+\det\left(\vct{u};\vct{v};\vct{u}\times\vct{v}\right)&=&\left|
+\begin{array}{ccc}
+u_1 & v_1 & \left(u_2v_3-u_3v_2\right)\\  
+u_2 & v_2 & \left(u_3v_1-u_1v_3\right)\\ 
+u_3 & v_3 &  \left(u_1v_2-u_2v_1\right)
+\end{array}
+\right|\\
+&=&\left(u_1^2v_2^2-u_1u_2v_1v_2\right)+\left(u_3^2v_1^2-u_1u_3v_1v_3\right)+\left(u_2^2v_3^2-u_2u_3v_2v_3\right)\\
+&-&\left(u_1u_2v_1v_2-u_2^2v_1^2\right)-\left(u_1u_3v_1v_3-u_1^2v_3^2\right)-\left(u_2u_3v_2v_3-u_3^2v_2^2\right)
+\end{eqnarray*}
+\begin{marginfigure}[-30\baselineskip]
+     \includegraphics[width=\textwidth]{./cap_algvet/pics/R_mao_dir.eps}
+      \caption{Regra da mão direita. }
+      %\label{fig:marginfig}
+      %\setfloatalignment{b}% forces caption to be bottom-aligned
+  \end{marginfigure}
+
+
+Agora basta observar que esta expressão é idêntica a (\ref{calcnormaprodvec}), ou seja, $\|\vct{u}\times\vct{v}\|^2$ e portanto o determinante $\det\left(\vct{u};\vct{v};\vct{u}\times\vct{v}\right)$ é positivo. 
+
+A importância desta propriedade está no fato que se $\vct{w}=\vct{u}\times \vct{v}$ então o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro. Além disso, por causa da propriedade (\ref{propprodvecorto}), $\vct{w}$ deve ser ortogonal tanto aos vetores $\vct{u}$, $\vct{v}$. Finalmente, observando a propriedade da norma (\ref{propprodvecnorma}), podemos estabelecer a seguinte identidade para o produto vetorial de dois vetores não colineares $\vct{u}$ e $\vct{v}$:
+\begin{equation}
+\vct{u}\times\vct{v}=uv\sin\left(\vct{u},\vct{v}\right)\hat{e}
+\end{equation}
+onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vct{u}$ e $\vct{v}$ e forma um sistema dextrogiro com eles.  
+
+\begin{marginfigure}%[-30\baselineskip]
+     \includegraphics[width=\textwidth]{./cap_algvet/pics/prod_vec_paralelogramo}
+      \caption{Interpretação geométrica do produto vetorial.}\label{fig:prod_paralelo}
+      %\label{fig:marginfig}
+      %\setfloatalignment{b}% forces caption to be bottom-aligned
+  \end{marginfigure}
+
+  A norma do produto vetorial entre os vetores $\vct{u}$ e $\vct{v}$ pode ser interpretada como a área do paralelogramo cujos lados são $\vct{u}$ e $\vct{v}$ (ver figura \ref{fig:prod_paralelo}. A direção do produto vetorial é então ortogonal ao plano gerado por  $\vct{u}$ e $\vct{v}$  e o sentido é dado pela regra da mão direita.
+
+
+%\begin{figure}[h!]
+%  \begin{center}
+ % \vspace{-20pt}
+    %\includegraphics[width=0.5\textwidth]{./cap_algvet/pics/prod_vec_mao_dir}
+ % \end{center}
+  %\vspace{-20pt}
+  %\caption{Interpretação geométrica do produto vetorial.}\label{prod_paralelo}
+
+%\end{figure}
+
+A definição de produto vetorial dada em (\ref{defprodvec}) pode ser mais facilmente lembrada através do seguinte determinante formal:
+\begin{equation}\label{detprodvec}
+\vct{u}\times\vct{v}=\left|\begin{array}{ccc}
+\vct{i}&\vct{j}&\vct{k}\\
+u_1 & u_2 & u_3\\
+v_1 & v_2 & v_3\\
+\end{array}
+\right|
+\end{equation}
+que pode ser calculado pela regra de Sarrus.
+
+O produto vetorial entre os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ pode ser obtido da definição (\ref{defprodvec}) ou da caracterização geométrica do produto vetorial:
+
+\begin{align}\label{prodvecunit}
+\vct{i}\times \vct{i}&=\vct{0},\qquad & \vct{i}\times \vct{j}&=\vct{k},\qquad &\vct{i}\times \vct{k}&=-\vct{j}\nonumber\\
+\vct{j}\times \vct{i}&=-\vct{k},\qquad & \vct{j}\times \vct{j}&=\vct{0},\qquad& \vct{j}\times \vct{k}&=\vct{i}\nonumber\\
+\vct{k}\times \vct{i}&=\vct{j},\qquad &\vct{k}\times \vct{j}&=-\vct{i},\qquad &\vct{k}\times \vct{k}&=\vct{0}
+\end{align}
+
+\begin{prob} Seja $\vct{u}=\vct{i}+2\vct{j}$ e $\vct{v}=3\vct{i}-2\vct{j}$, calcule o vetor $\vct{w}=\vct{u}\times\vct{v}$.
+\end{prob}
+{\bf Solução 1} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
+\begin{eqnarray*}\vct{w}=\left|\begin{array}{ccc}
+\vct{i}&\vct{j}&\vct{k}\\
+u_1 & u_2 & u_3\\
+v_1 & v_2 & v_3\\
+\end{array}
+\right|=\left|\begin{array}{ccc}
+\vct{i}&\vct{j}&\vct{k}\\
+1 & 2 & 0\\
+3 & -2& 0\\
+\end{array}
+\right|=\vct{i}(0-0)+\vct{j}(0-0)+\vct{k}(-2-6)=-8\vct{k}
+\end{eqnarray*}
+
+{\bf Solução 2} Calcularemos usando as propriedades (\ref{propprodvec}) e as relações (\ref{prodvecunit}):
+\begin{eqnarray*}\vct{w}&=&\vct{u}\times\vct{v}= \left(\vct{i}+2\vct{j}\right)\times\left(3\vct{i}-2\vct{j}\right)=3(\vct{i}\times\vct{i})-2(\vct{i}\times\vct{j})+6(\vct{j}\times\vct{i})-4(\vct{j}\times\vct{j})\\
+&=&3~\!\vct{0}-2~\!\vct{k}-6~\!\vct{k}-4~\!\vct{0}=-8\vct{k}
+\end{eqnarray*}
+
+
+\begin{prob} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
+\end{prob}
+
+\begin{prob}\label{prodvecnaoassoc} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que $\vct{u}\times\left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times\vct{v}\right)\times \vct{w}$. 
+\end{prob}
+Exemplo de resposta: $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}$ e $\vct{w}=\vct{k}$.
+
+\begin{prob} Simplifique as seguintes expressões:
+\begin{itemize}
+\item[a)] $\vct{u}\times\vct{u}$
+\item[b)] $\vct{u}\times\hat{u}$
+\item[c)] $\vct{u}\cdot\vct{u}$
+\item[d)] $\vct{u}\cdot\hat{u}$
+\item[e)] $\left(\vct{u}+\vct{v}\right)\cdot\left(\vct{u}+\vct{v}\right)$
+\item[f)] $\left(\vct{u}+\vct{v}\right)\times\left(\vct{u}+\vct{v}\right)$
+\item[g)] $\left(\vct{u}-\vct{v}\right)\cdot\left(\vct{u}-\vct{v}\right)$
+\item[h)] $\left(\vct{u}-\vct{v}\right)\times\left(\vct{u}-\vct{v}\right)$
+\item[i)] $\left(\vct{u}+\vct{v}\right)\cdot\left(\vct{u}-\vct{v}\right)$
+\item[j)] $\left(\vct{u}+\vct{v}\right)\times\left(\vct{u}-\vct{v}\right)$
+\end{itemize}
+\end{prob}
+Resp: $\vct{0}$,$\vct{0}$,$u^2$,$u$,$u^2+2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-v^2$, $2\vct{v}\times\vct{u}$ 
+
+
+\begin{prob} Mostre que $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)=\det\left(\vct{u};\vct{v};\vct{w}\right)$. Conclua que o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)>0$ e levogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)<0$. Interprete geometricamente.
+\end{prob}
+
+
+\section{Os triplos produtos e outras identidades vetoriais}
+O triplo produto escalar\index{triplo produto escalar} é definido por um produto vetorial e um produto escalar, isto é:
+\begin{equation}
+ \vct{u}\cdot (\vct{v}\times \vct{w}).
+\end{equation}
+Em coordenadas cartesianas, podemos escrever o triplo produto vetorial como:
+\begin{eqnarray*}
+ \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_1\vct{i}+v_2\vct{j}+v_3\vct{k}\right)\times \left(w_1\vct{i}+w_2\vct{j}+w_3\vct{k}\right)\right].
+\end{eqnarray*}
+Agora, usando a definição em cartesianas do produto vetorial dada na equação (\ref{defprodvec}), substituindo $\vct{u}$ e $\vct{v}$ por $\vct{v}$ e $\vct{w}$, respectivamente, isto é:
+\begin{equation*} \vec{v}\times\vec{w}=\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}.
+\end{equation*}
+Obtemos:
+\begin{eqnarray}\label{dettriploprod}
+  \vct{u}\cdot (\vct{v}\times \vct{w})
+&=&\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\right]\nonumber\\
+ &=&u_1\left(v_2w_3-v_3w_2\right)+u_2\left(v_3w_1-v_1w_3\right)+u_3\left(v_1w_2-v_2w_1\right)\nonumber\\
+ &=&\left(u_1v_2w_3-u_1v_3w_2\right)+\left(u_2v_3w_1-u_2v_1w_3\right)+\left(u_3v_1w_2-u_3v_2w_1\right)\nonumber\\
+ &=&
+ \left|\begin{array}{ccc}
+	  u_1&u_2&u_3\\
+	  v_1&v_2&v_3\\
+	  w_1&w_2&w_3
+       \end{array}
+ \right|=\det\left(\vct{u},\vct{v},\vct{w}\right)
+\end{eqnarray}
+O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
+\begin{equation}
+\vct{u}\cdot (\vct{v}\times \vct{w})
+=\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot\left|\begin{array}{ccc}
+\vct{i}&\vct{j}&\vct{k}\\
+v_1 & v_2 & v_3\\
+w_1 & w_2 & w_3\\
+\end{array}
+\right|=\left|\begin{array}{ccc}
+	  u_1&u_2&u_3\\
+	  v_1&v_2&v_3\\
+	  w_1&w_2&w_3
+       \end{array}
+ \right|
+\end{equation}
+
+Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{figura_colocar}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. 
+
+Sabemos que quando permutamos duas linhas de uma matriz, seu determinante muda de sinal, pelo que podemos obter as seguintes relações:
+\begin{equation*}
+\vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=-\vct{v}\cdot\left(\vct{u}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=-\vct{w}\cdot\left(\vct{v}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)=-\vct{u}\cdot\left(\vct{w}\times\vct{v}\right)  
+\end{equation*}
+Extraindo apenas os termos de ordem ímpar temos:
+\begin{equation}\label{triploprodutoescalar} \vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)
+\end{equation}
+\begin{obs} Um caso particular interessante é quando escolhemos $\vct{w}=\vct{u}\times\vct{v}$ e obtemos:
+\begin{equation*} 
+\det\left(\vct{u},\vct{v},\vct{u}\times\vct{v}\right)=\left(\vct{u}\times\vct{v}\right)\cdot\left(\vct{u}\times\vct{v}\right)=\|\vct{u}\times\vct{v}\|^2.
+\end{equation*}
+Assim, retornamos à expressão (\ref{propprodvecorient}).
+\end{obs}
+
+Podemos igualmente definir o triplo produto vetorial como o produto vetorial de um vetor pelo produto vetorial de outros dois vetores, isto é:
+$$\vct{u}\times \left(\vct{v}\times\vct{w}\right). $$
+Observe cuidadosamente que o produto vetorial não é associativo, isto é, pode acontecer $\vct{u}\times \left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times \vct{v}\right)\times\vct{w} $ (ver problema \ref{prodvecnaoassoc}), portanto, a ordem dos vetores é relevante.2
+Podemos mostrar que o triplo produto vetorial pode ser expresso como:
+\begin{equation*} 
+\vct{u}\times\left(\vct{v}\times\vct{w}\right)=\left(\vct{u}\cdot\vct{w}\right)\vct{v}-\left(\vct{u}\cdot\vct{v}\right)\vct{w}
+\end{equation*}
+Para verificar esta identidade, retornamos ao produto vetorial entre $\vct{v}$ e $\vct{w}$ em coordenadas cartesianas e o escrevemos como a diferença entre dois vetores:
+\begin{eqnarray*} \vec{v}\times\vec{w}&=&\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\\
+&=& \underbrace{\left(v_2w_3\vct{i}+v_3w_1\vct{j}+v_1w_2\vct{k}\right)}_{\vct{p_1}} -\underbrace{\left(v_3w_2\vct{i}+v_1w_3\vct{j}+v_2w_1\vct{k}\right)}_{\vct{p_2}}=\vct{p_1}-\vct{p_2}.
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+\vct{u}\times\vct{p_1}&=& \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\times \left(v_2w_3\vct{i}+v_3w_1\vct{j}+v_1w_2\vct{k}\right)\\
+&=&\left(u_2v_1w_2-u_3v_3w_1\right)\vct{i}+\left(u_3v_2w_3-u_1v_1w_2\right)\vct{j}+\left(u_1v_3w_1-u_2v_2w_3\right)\vct{k}\\
+&=&\left(u_2v_1w_2\vct{i}+u_3v_2w_3\vct{j}+u_1v_3w_1\vct{k}\right)-\left(u_3v_3w_1\vct{i}+u_1v_1w_2\vct{j}+u_2v_2w_3\right)\vct{k}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\vct{u}\times\vct{p_2}&=& \left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\times \left(v_3w_2\vct{i}+v_1w_3\vct{j}+v_2w_1\vct{k}\right)\\
+&=&\left(u_2v_2w_1-u_3v_1w_3\right)\vct{i}+\left(u_3v_3w_2-u_1v_2w_1\right)\vct{j}+\left(u_1v_3w_1-u_2v_3w_2\right)\vct{k}\\
+&=&\left(u_2v_2w_1\vct{i}+u_3v_3w_2\vct{j}+u_1v_3w_1\vct{k}\right)
+-\left(u_3v_1w_3\vct{i}+u_1v_2w_1\vct{j}u_2v_3w_2\vct{k}\right)
+\end{eqnarray*}
+
+Subtraíndo temos:
+\begin{eqnarray*}
+\vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2\right)v_3\vct{k}\right]\\
+&-&
+\left[\left(u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2\right)w_3\vct{k}\right]
+\end{eqnarray*}
+Agora, somamos $u_1v_1w_1$ à primeira coordenada de cada um dos dois termos da subtração; somamos $u_2v_2w_2$  à segunda coordenada de cada um dos dois termos da subtração e somamos $u_3v_3w_3$ à terceira coordenada de cada um dos dois termos da subtração para obter:
+\begin{eqnarray*}
+\vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_1w_1+u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_3\vct{k}\right]\\
+&-&
+\left[\left(u_1v_1+u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_3\vct{k}\right]\\
+&=&(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
+\end{eqnarray*}
+Lembrando que $\vct{p_1}-\vct{p_2}=\vct{v}\times\vct{w}$, obtemos:
+\begin{eqnarray*}
+\vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=& 
+\vct{u}\times\left(\vct{v}\times\vct{w}\right)=(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
+\end{eqnarray*}
+O formulário abaixo resume as indentidades que acabamos de demonstrar e lista mais algumas sem demonstração:
+\begin{subequations}\label{vectoridendities}
+\begin{align}
+ \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\mytext{Triplo produto escalar}\\ 
+ \vec{u}\times\left(\vec{v}\times\vec{w}\right)&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{u}\cdot\vec{v}\right)\vec{w},&\mytext{Triplo produto vetorial} \\ 
+ \left(\vec{u}\times\vec{v}\right)\times\vec{w}&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{v}\cdot\vec{w}\right)\vec{u},&\mytext{Triplo produto vetorial} \\ 
+ \left(\vec{u}\times\vec{v}\right)\cdot\left(\vec{w}\times\vec{x}\right)&=\left(\vec{u}\cdot\vec{w}\right)\left(\vec{v}\cdot\vec{x}\right)-\left(\vec{v}\cdot\vec{w}\right)\left(\vec{u}\cdot\vec{x}\right),& \\	 
+\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x}&=\left(\vec{u}\cdot\vec{x}\right)\left(\vec{v}\times\vec{w}\right)+\left(\vec{v}\cdot\vec{x}\right)\left(\vec{w}\times\vec{u}\right)+\left(\vec{w}\cdot\vec{x}\right)\left(\vec{u}\times\vec{v}\right),& \\
+\left(\vec{u}\times\vec{v}\right)\times\left(\vec{w}\times\vec{x}\right)
+&=\left(\vec{u}\cdot\left(\vec{v}\times\vec{x}\right)\right)\vec{w}-\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x},&\\
+\end{align}
+\end{subequations}
+
+\newpage
+
+
+\section{Sistema de coordenadas cilíndricas}
+
+\begin{marginfigure}%[.5\baselineskip]
+   \includegraphics{./cap_algvet/pics/coordenadas_cilindricas}
+   \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}   
+      \label{fig:coordenadas_cilindricas}
+      %\setfloatalignment{b}% forces caption to be bottom-aligned
+  \end{marginfigure}
+
+
+No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas cilíndricas} $\rho$, $\theta$ e $z$. A coordenada $z$ é a mesma do sistema de coordenadas retangulares. A coordenada $\rho$ indica a distância entre a origem e a projeção $P'$ de $P$ sob o eixo $xy$. Finalmente $\theta$ é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$. Ver figura \ref{fig:coordenadas_cilindricas}. É fácil ver que
+\begin{subequations}\label{xphi}
+\begin{eqnarray}
+x&=&\rho\cos\theta\\
+y&=&\rho\sin\theta
+\end{eqnarray}  
+\end{subequations}
+onde
+\begin{equation}
+\rho=\sqrt{x^2+y^2}
+\end{equation}
+A coordenadas $\rho$, $\theta$ e $z$ são comumente denominadas, respectivamente, de ``distância radial'', ``azimute'' e ``altura''. 
+
+As equações (\ref{xphi}) podem ser reescritas como
+\begin{subequations}\label{phix}
+\begin{eqnarray}
+\cos\phi&=&\frac{x}{\rho}=\frac{x}{\sqrt{x^2+y^2}}\\
+\sin\phi&=&\frac{y}{\rho}=\frac{y}{\sqrt{x^2+y^2}}
+\end{eqnarray}  
+\end{subequations}
+
+\begin{prob}\label{rect_cin} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas cilíndricas:
+\begin{itemize}
+\item [a)] $\left<1,1,1\right>$
+\item [b)] $\left<1,-1,1\right>$
+\item [c)] $\left<-1,1,1\right>$
+\item [d)] $\left<-1,-1,1\right>$
+\end{itemize}
+\end{prob}
+Resp: $\left(\sqrt{2},\frac{\pi}{4},1\right)$,  $\left(\sqrt{2},\frac{5\pi}{4},1\right)$, $\left(\sqrt{2},\frac{3\pi}{4},1\right)$ e  $\left(\sqrt{2},\frac{7\pi}{4},1\right)$.
+
+\begin{prob} Encontre uma expressão para distância de um ponto à origem em coordenadas cilíndricas
+\end{prob}
+Resp: $\sqrt{\rho^2+z^2}$
 % 
 % \pagebreak
 % \section{Sistema de coordenadas esféricas}
