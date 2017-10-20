@@ -1,7 +1,7 @@
 include "../../config/asy_config.asy";
 
 
-fill((0,0) -- (2,0) -- (1.2,1) -- cycle,cor_prenchimento);
+fill((0,0) -- (2,0) -- (1.2,1) -- cycle,cor_preenchimento);
 
 draw((0,0)--(2,0),arrow=Arrow(),L=Label("$"+uvec+" + "+vvec+"$", position=MidPoint)); 
 draw((0,0)--(1.2,1),arrow=Arrow(),L=Label("$"+uvec+"$", position=MidPoint));

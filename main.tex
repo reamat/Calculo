@@ -11,8 +11,12 @@
 
 %%%%%%%%%% 
 \usepackage{amsmath}
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{3}
+
+\setcounter{secnumdepth}{4}  %%estilo do índice
+\setcounter{tocdepth}{3} %%mostras seções no índice
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
 
 \newtheorem{teo}{Teorema}
 \newtheorem{lem}{Lema}
@@ -23,6 +27,7 @@
 \newtheorem{prob}{Problema}
 \newtheorem{obs}{Observa\c{c}{\~a}o}
 \newtheorem{defn}{Defini\c{c}{\~a}o}
+
 
 
 \usepackage{mparhack}

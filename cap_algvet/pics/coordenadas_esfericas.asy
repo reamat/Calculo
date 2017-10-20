@@ -20,15 +20,17 @@ real y=.6;
 real z=.9;
 
 
-draw((0,0,0)..(x,y,z),caneta,L=Label("$r$", position=MidPoint, align=N));
+draw((0,0,0)..(x,y,z),caneta,L=Label("$r$", position=MidPoint, align=E));
 draw((0,0,0)..(x,y,0),caneta2);
 draw((x,y,z)..(x,y,0),caneta2);
 
 real r=.6;
 
-draw (arc(O,r*X,r*(x,y,0)),caneta2,L=Label("$\lambda$", position=MidPoint),arrow=Arrow3());
+draw (arc(O,r*X,r*(x,y,0)),caneta2,L=Label("$\theta$", position=MidPoint),arrow=Arrow3());
 //draw (arc(O,r*Z, (0,y,z)),caneta2,L=Label("$\varphi$", position=MidPoint),arrow=Arrow3());
-draw (arc((0,0,0),r*(x,y,0), (x,y,z)),caneta2,L=Label("$\phi$", position=MidPoint),arrow=Arrow3());
+
+r=.8;
+draw (arc((0,0,0),r*(0,0,z), r*(x,y,z)),caneta2,L=Label("$\varphi$", position=MidPoint, align=N),arrow=Arrow3());
 
 label("$P$",1.2*(x,y,z) );
 label("$P'$",1.2*(x,y,0) );
