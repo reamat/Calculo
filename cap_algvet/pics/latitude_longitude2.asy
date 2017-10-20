@@ -36,7 +36,7 @@ draw((0,0,0)..(0,0,1),arrow=Arrow3());// , L=Label("$z$", position=EndPoint));
 
 
 real Plat=pi/2;
-real Plong=pi/4;
+real Plong=pi/3;
 
 
 real x=sin(Plong)*cos(Plat);
