@@ -139,7 +139,7 @@ A identidade (\ref{decompversor}) tem uma importante interpretação geométrica
 \end{prob}
 Resp: $u=\sqrt{2}$, ~~ $v=\sqrt{5}$ ~e~ $w=\frac{\sqrt{13}}{{6}}$.~ $\hat{u}=\frac{\sqrt{2}}{2}\vct{i}+\frac{\sqrt{2}}{2}\vct{j}$,~~  $\hat{v}=\frac{\sqrt{5}}{5}\vct{i}+\frac{2\sqrt{5}}{5}\vct{j}$,~~ $\hat{w}=\frac{2\sqrt{13}}{13}\vct{i}+\frac{3\sqrt{13}}{13}\vct{j}$
 
-\begin{prob} Considere o vetor $\vct{u}=\cos\varphi \vct{i}+ \sin\varphi \vct{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$ 
+\begin{prob} Considere o vetor $\vct{u}=\cos\theta \vct{i}+ \sin\varphi \vct{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$ 
 \end{prob}
 
 \begin{prob} Considere o vetor $\vct{u}=\sin\theta \cos\varphi \vct{i}+ \sin\theta \sin\varphi \vct{j} + \cos\theta \vct{k}$. Verifique que este vetor é unitário e represente-o graficamente quando
@@ -327,8 +327,9 @@ Esta última expressão nos permite escrever
 \vct{u}\cdot\vct{v}=uv\cos\left(\vct{u},\vct{v}\right)=uv\cos\theta
 \end{equation}
 onde $\cos\left(\vct{u},\vct{v}\right)$ indica o cosseno do ângulo entre os vetores $\vct{u}$ e $\vct{v}$.
+\marginnote[-4\baselineskip]{\caixa{Neste momento, o leitor deve observar que a definição que demos originalmente para o produto escalar em (\ref{defprodesc}) dependia fortemente do sistema de coordenadas escolhido. No entanto, a identidade (\ref{defintriprodesc}) mostra que o valor do produto escalar depende apenas da norma dos vetores envolvidos e do ângulo entre esses vetores, ou seja,  (\ref{defintriprodesc}) pode ser usado como uma definição intrínseca (que não depende da escolha do sistema de coordenadas) de produto escalar. }}[-5]
+\marginnote{\caixa{O produto escalar do vetor nulo $\vct{0}$ por qualquer vetor é zero.}}
 
-\marginnote{\caixa{Neste momento, o leitor deve observar que a definição que demos originalmente para o produto escalar em (\ref{defprodesc}) dependia fortemente do sistema de coordenadas escolhido. No entanto, a identidade (\ref{defintriprodesc}) mostra que o valor do produto escalar depende apenas da norma dos vetores envolvidos e do ângulo entre esses vetores, ou seja,  (\ref{defintriprodesc}) pode ser usado como uma definição intrínseca (que não depende da escolha do sistema de coordenadas) de produto escalar. O produto escalar do vetor nulo $\vct{0}$ por qualquer vetor é zero.}}
 
 O produto escalar satisfaz as seguintes propriedades:
 \begin{subequations}\label{proprodesc}
@@ -510,7 +511,7 @@ A importância desta propriedade está no fato que se $\vct{w}=\vct{u}\times \vc
 \end{equation}
 onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vct{u}$ e $\vct{v}$ e forma um sistema dextrogiro com eles.  
 
-\begin{marginfigure}%[-30\baselineskip]
+\begin{marginfigure}[10\baselineskip]
      \includegraphics[width=\textwidth]{./cap_algvet/pics/prod_vec_paralelogramo}
       \caption{Interpretação geométrica do produto vetorial.}\label{fig:prod_paralelo}
       %\label{fig:marginfig}
@@ -625,6 +626,11 @@ Obtemos:
        \end{array}
  \right|=\det\left(\vct{u},\vct{v},\vct{w}\right)
 \end{eqnarray}
+\marginnote{\caixa{Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{fig:volume_determinante}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. }}
+\begin{marginfigure}%[.5\baselineskip]
+   \includegraphics{./cap_algvet/pics/volume_determinante}
+   \caption{Representação do paralelepípedo formado por três vetores.}\label{fig:volume_determinante}   
+  \end{marginfigure}
 O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
 \begin{equation}
 \vct{u}\cdot (\vct{v}\times \vct{w})
@@ -641,7 +647,7 @@ w_1 & w_2 & w_3\\
  \right|
 \end{equation}
 
-Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{figura_colocar}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. 
+
 
 Sabemos que quando permutamos duas linhas de uma matriz, seu determinante muda de sinal, pelo que podemos obter as seguintes relações:
 \begin{equation*}
@@ -743,8 +749,8 @@ A coordenadas $\rho$, $\theta$ e $z$ são comumente denominadas, respectivamente
 As equações (\ref{xphi}) podem ser reescritas como
 \begin{subequations}\label{phix}
 \begin{eqnarray}
-\cos\phi&=&\frac{x}{\rho}=\frac{x}{\sqrt{x^2+y^2}}\\
-\sin\phi&=&\frac{y}{\rho}=\frac{y}{\sqrt{x^2+y^2}}
+\cos\theta&=&\frac{x}{\rho}=\frac{x}{\sqrt{x^2+y^2}}\\
+\sin\theta&=&\frac{y}{\rho}=\frac{y}{\sqrt{x^2+y^2}}
 \end{eqnarray}  
 \end{subequations}
 
@@ -762,102 +768,104 @@ Resp: $\left(\sqrt{2},\frac{\pi}{4},1\right)$,  $\left(\sqrt{2},\frac{5\pi}{4},1
 \end{prob}
 Resp: $\sqrt{\rho^2+z^2}$
 % 
-% \pagebreak
-% \section{Sistema de coordenadas esféricas}
-% \begin{wrapfigure}{r}{0.5\textwidth}
-%   \begin{center}
-%   \vspace{-20pt}
-%     \includegraphics[width=0.46\textwidth]{./cap_algvet/pics/3D_Spherical}
-%   \end{center}
-%   \caption{Representação de um ponto de coordenadas esféricas.}\label{./cap_algvet/pics/coo_esf}
-%   \vspace{-20pt}
-% \end{wrapfigure}
-% No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas esféricas} $r$, $\phi$ e $\theta$. A coordenada $r$ indica a distância do ponto $P$ até a origem, sendo consistente com a definição de módulo de um vetor. A coordenada $\phi$ é o mesmo ângulo do sistema de coordenadas cilíndricas, ou seja,  é o ângulo entre o semi-eixo $x>0$ e o ponto Q (projeção de P no plano xy). O ângulo $\theta$ é o ângulo entre a reta que liga a origem até o ponto $P$ e o semi-eixo $z>0$.  Ver figura \ref{coo_esf}. A relação entre a coordenadas no sistema de coordenadas esféricas e no sistema de coordenadas cilíndricas é dada pelas projeções:
-% \begin{subequations}
-% \begin{eqnarray}
-% z&=&r\cos\theta\\
-% \rho&=&r\sin\theta
-% \end{eqnarray} 
-% \end{subequations}
-% Usando (\ref{xphi}), encontramos a relação entre o sistema de coordenadas esféricas e cartesianas:
-% \begin{subequations}
-% \begin{eqnarray}
-% x&=&r\sin\theta\cos\phi\\
-% y&=&r\sin\theta\sin\phi\\
-% z&=&r\cos\theta
-% \end{eqnarray} 
-% \end{subequations}
-% Analogamente, pode-se escrever:
-% \begin{subequations}
-% \begin{eqnarray}
-% r&=&\displaystyle \sqrt{x^2+y^2+z^2}\\
-% \cos\theta&=&\displaystyle\frac{z}{r}=\frac{z}{x^2+y^2+z^2}\\
-% \cos\phi&=&\displaystyle\frac{x}{\rho}=\frac{x}{x^2+y^2}\\
-% \sin\phi&=&\displaystyle\frac{y}{\rho}=\frac{y}{x^2+y^2}
-% \end{eqnarray} 
-% \end{subequations}
-% 
-% 
-% \begin{prob}\label{rect_esf} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas esféricas (ver também excício \ref{rect_cin}):
-% \begin{itemize}
-% \item [a)] $\left<1,1,1\right>$
-% \item [b)] $\left<1,-1,1\right>$
-% \item [c)] $\left<-1,1,1\right>$
-% \item [d)] $\left<-1,-1,1\right>$
-% \end{itemize}
-% \end{prob}
-% Resp: $\left(\sqrt{3},\frac{\pi}{4},\theta\right)$,  $\left(\sqrt{3},\frac{5\pi}{4},\theta\right)$, $\left(\sqrt{3},\frac{3\pi}{4},\theta\right)$ e  $\left(\sqrt{3},\frac{7\pi}{4},\theta\right)$, onde $\theta=\cos^{-1}\left(\frac{\sqrt{3}}{3}\right)\approx 0,955.$
-% 
-% 
-% 
-% \section{Exemplos na física}
-% Na mecânica, o trabalho de uma força\index{trabalho de uma força} constante atuando sobre um corpo que se move com velocidade constante é dado pelo produto escalar da força pelo deslocamento:
-% $$W=\vct{F}\cdot \triangle\vct{ r}$$
-% O torque de uma força em relação a um eixo dado é dado por
-% $$\vct{\tau}=\vct{r}\times \vct{F}$$
-% onde $\vct{r}$ é o vetor que liga o ponto onde a força é aplicada e o pondo onde o torque é medido. 
-% 
-% A força $\vct{F}$ que uma campo magnético $\vct{B}$ produz em uma partícula de carga elétrica $q$ em movimento com velocidade $\vct{v}$ é dado pela lei de Lorentz:
-% $\vct{F}=q\vct{v}\times\vct{B}.$
-% 
-% \section{Notas}
-% \subsection{O que é um espaço linear?}
-% A definição de espaço vetorial dada em (\ref{defel}) é ampla e engloba conceitos bem mais gerais que os espaços euclidianos de dimensão 2 e 3 com os quais o leitor tem maior familiaridade. As funções reais $f:\mathbb{R}\to\mathbb{R}$, por exemplo, formam espaço vetorial onde os escalares são dados pelos números reais. O vetor nulo, neste caso, é a função $f(x)=0$. Este espaço não tem dimensão finita pois os polinômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ formam uma família infinita de vetores linearmente independentes (isso é uma consequência do teorema fundamental da álgebra).      
-% 
-% \subsection{Todo espaço linear tem uma base? Axioma da escolha.}
-% Um problema importante é descobrir se todo espaço linear admite uma base. Este problema é mais complicado do que pode parecer e conduz a uma profunda discussão sobre os próprios fundamentos da matemática. De fato, pode-se mostrar que, o axioma da escolha implica que todo espaço linear tenha uma base. 
-% 
-% O axioma da escolha é um dos axiomas da teoria de conjuntos padrão que tem diversas consequências contraintuitivas e fisicamente inesperadas. Um exemplo das bizarrias produzidas pelo axioma da escolha é o chamado paradoxo de Banach-Tarski: Dada uma esfera no espaço euclidiano de três dimensões, é possível cortá-la em um número finito de pedaços e rearranjar esses pedaços de forma a construir duas esferas idênticas à original. Em outras palavras, o axioma da escolha aplicado ao espaço euclidiano tridimensional traz como consequências a não preservação de ``volume'' frente a translações e rotações. Para definir de forma razoável os conceitos de comprimento, área e volumes, foi necessário o desenvolvimento da teoria da medida no final do Século XIX e início do Século XX. A solução encontrada foi construir uma medida apenas em uma família de subconjuntos chamamos conjuntos mensuráveis.      
-% 
-% Vejamos um exemplo de espaço linear de dimensão: é fácil verificar que o conjunto de todos os polinômios $P(x)=a_0+a_1x+a_2x^2+\ldots a_nx^n$ formam um espaço linear frente às operações usuais de soma e multiplicação por um escalar. A base deste espaço é dada pelos monômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ pois cada polinômio pode ser escrito como uma combinação linear \emph{finita} de elementos desse base. No entanto, não é possível mostrar desta forma contrutiva uma base para o espaço das funções reais ou mesmo para as funções reais contínuas. A existência de uma base para estes espaços é um conceito abstrato  não contrutivo.
-% 
-% \subsection{Qual amplo é o conceito de norma?}
-% Vimos que o conceito de espaço linear é muito mais amplo e útil que parecia. E quanto à norma? Estamos familiariados com a norma euclidiana, mas será que é possível definir outras normas no espaço $\mathbb{R}^n$ de forma a satisfazer as propriedades (\ref{propnorma})? A norma euclidiana em um espaço de dimensão $n$ é dada por
-% $$\|\vct{x}\|=\left(x_1^2+x_2^2+\ldots x_n^2\right)^{1/2}$$
-% De fato é possível mostrar que podemos alterar esta expressão para
-% $$\|\vct{x}\|_p=\left(|x_1|^p+|x_2|^p+\ldots +|x_n|^p\right)^{1/p}$$
-% com $p\geq 1$ de forma a preservar todas as propriedades da norma.
-% 
-% Mas será que é possível definir uma norma no espaço das funções reais? Esta é uma pergunta complicada, mas podemos simplificar exigindo um pouco mais desse espaço. Por exemplo, vamos considerar o espaço das funções reais contínuas definidas no intervalo $[0,1]$. Neste espaço é possível definir a seguinte norma:
-% \begin{equation}\label{norma_infinito}\|f(x)\|=\max_{x\in [0,1]}|f(x)|\end{equation}
-% 
-% ou seja, a norma de uma função contínua é dada pelo máximo de seu módulo no intervalo.
-% 
-% No entanto, esta não é a única maneira de definir uma norma neste espaço, outra possibilidade é:
-% \begin{equation}\label{norma_lp}\|f(x)\|_{p}=\left(\int_0^1|f(x)|^pdx\right)^p\end{equation}
-% onde $p\geq 1$.
-% 
-% A norma (\ref{norma_lp}) é chamada de norma $L^p$ de uma função e a norma (\ref{norma_infinito}) é chamada de norma do máximo ou norma infinito ou norma $L^{\infty}$. Isso porque
-% $$\lim_{p\to\infty}\|f(x)\|_{p}=\max_{x\in [0,1]}|f(x)|.$$
-% 
-% Esta normas excem enorme importância na teoria de funções com importantes aplicações no estudo das equações diferenciais. 
-% 
-% \subsection{E o produto escalar?}
-% Uma operação com as propriedades (\ref{proprodesc}) é um produto escalar. Produtos escalares não aparecem apenas em espaços de duas ou três dimensões: mesmo espaços de dimensão infinita podem possuir um produto escalar. Tomemos como exemplo novamente o espaço das funções contínuas definidas no intervalo $[0,1]$. A seguinte operação possui todas as propriedades de um produto escalar:
-% $$\left<f,g\right>=\int_0^1f(x)g(x)dx.$$
-% Observe o leitor que foi usada a notação $\left<,\right>$ para indicar o produto interno. Este produto interno induz a seguinte norma:
-% $$\|f\|_2=\left(\left<f,f\right>\right)^{1/2}=\left(\int_0^1f(x)^2dx\right)^{1/2}$$
-% que é o caso particular de (\ref{norma_lp}) quando $p=2$. 
-%  A desigualdade de Cauchy-Schwarz admite a seguinte forma:
-% $$\int_0^1f(x)g(x)dx \leq \left(\int_0^1f(x)^2dx\right)^{1/2} \left(\int_0^1g(x)^2dx\right)^{1/2}$$
-% %\end{document}
+
+
+
+  
+ \section{Sistema de coordenadas esféricas}
+\begin{marginfigure}%[.5\baselineskip]
+      \includegraphics{./cap_algvet/pics/coordenadas_esfericas}
+   \caption{Representação de um ponto de coordenadas esféricas.}\label{./cap_algvet/pics/coo_esf}
+      \label{fig:coordenadas_esfericas}
+       \end{marginfigure}
+
+ 
+ No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas esféricas} $r$, $\theta$ e $\varphi$. A coordenada $r$ indica a distância do ponto $P$ até a origem, sendo consistente com a definição de módulo de um vetor. A coordenada $\theta$ é o mesmo ângulo do sistema de coordenadas cilíndricas, ou seja,  é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$ (projeção de P no plano xy). O ângulo $\varphi$ é o ângulo entre a reta que liga a origem até o ponto $P$ e o semi-eixo $z>0$.  Ver figura \ref{fig:coordenadas_esfericas}. A relação entre a coordenadas no sistema de coordenadas esféricas e no sistema de coordenadas cilíndricas é dada pelas projeções:
+\begin{subequations}
+\begin{eqnarray}
+z&=&r\cos\varphi\\
+\rho&=&r\sin\varphi
+\end{eqnarray} 
+\end{subequations}
+Usando (\ref{xphi}), encontramos a relação entre o sistema de coordenadas esféricas e cartesianas:
+\begin{subequations}
+\begin{eqnarray}
+x&=&r\sin\varphi\cos\theta\\
+y&=&r\sin\varphi\sin\theta\\
+z&=&r\cos\varphi
+\end{eqnarray} 
+\end{subequations}
+Analogamente, pode-se escrever:
+\begin{subequations}
+\begin{eqnarray}
+r&=&\displaystyle \sqrt{x^2+y^2+z^2}\\
+\cos\varphi&=&\displaystyle\frac{z}{r}=\frac{z}{x^2+y^2+z^2}\\
+\cos\theta&=&\displaystyle\frac{x}{\rho}=\frac{x}{x^2+y^2}\\
+\sin\theta&=&\displaystyle\frac{y}{\rho}=\frac{y}{x^2+y^2}
+\end{eqnarray} 
+\end{subequations}
+
+
+\begin{prob}\label{rect_esf} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas esféricas (ver também excício \ref{rect_cin}):
+\begin{itemize}
+\item [a)] $\left<1,1,1\right>$
+\item [b)] $\left<1,-1,1\right>$
+\item [c)] $\left<-1,1,1\right>$
+\item [d)] $\left<-1,-1,1\right>$
+\end{itemize}
+\end{prob}
+Resp: $\left(\sqrt{3},\frac{\pi}{4},\theta\right)$,  $\left(\sqrt{3},\frac{5\pi}{4},\theta\right)$, $\left(\sqrt{3},\frac{3\pi}{4},\theta\right)$ e  $\left(\sqrt{3},\frac{7\pi}{4},\theta\right)$, onde $\theta=\cos^{-1}\left(\frac{\sqrt{3}}{3}\right)\approx 0,955.$
+
+
+
+\section{Exemplos na física}
+Na mecânica, o trabalho de uma força\index{trabalho de uma força} constante atuando sobre um corpo que se move com velocidade constante é dado pelo produto escalar da força pelo deslocamento:
+$$W=\vct{F}\cdot \triangle\vct{ r}$$
+O torque de uma força em relação a um eixo dado é dado por
+$$\vct{\tau}=\vct{r}\times \vct{F}$$
+onde $\vct{r}$ é o vetor que liga o ponto onde a força é aplicada e o pondo onde o torque é medido. 
+
+A força $\vct{F}$ que uma campo magnético $\vct{B}$ produz em uma partícula de carga elétrica $q$ em movimento com velocidade $\vct{v}$ é dado pela lei de Lorentz:
+$\vct{F}=q\vct{v}\times\vct{B}.$
+
+\section{Notas avançadas}
+\subsection{O que é um espaço linear?}
+A definição de espaço vetorial dada em (\ref{defel}) é ampla e engloba conceitos bem mais gerais que os espaços euclidianos de dimensão 2 e 3 com os quais o leitor tem maior familiaridade. As funções reais $f:\mathbb{R}\to\mathbb{R}$, por exemplo, formam espaço vetorial onde os escalares são dados pelos números reais. O vetor nulo, neste caso, é a função $f(x)=0$. Este espaço não tem dimensão finita pois os polinômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ formam uma família infinita de vetores linearmente independentes (isso é uma consequência do teorema fundamental da álgebra).      
+
+\subsection{Todo espaço linear tem uma base? Axioma da escolha.}
+Um problema importante é descobrir se todo espaço linear admite uma base. Este problema é mais complicado do que pode parecer e conduz a uma profunda discussão sobre os próprios fundamentos da matemática. De fato, pode-se mostrar que, o axioma da escolha implica que todo espaço linear tenha uma base. 
+
+O axioma da escolha é um dos axiomas da teoria de conjuntos padrão que tem diversas consequências contraintuitivas e fisicamente inesperadas. Um exemplo das bizarrias produzidas pelo axioma da escolha é o chamado paradoxo de Banach-Tarski: Dada uma esfera no espaço euclidiano de três dimensões, é possível cortá-la em um número finito de pedaços e rearranjar esses pedaços de forma a construir duas esferas idênticas à original. Em outras palavras, o axioma da escolha aplicado ao espaço euclidiano tridimensional traz como consequências a não preservação de ``volume'' frente a translações e rotações. Para definir de forma razoável os conceitos de comprimento, área e volumes, foi necessário o desenvolvimento da teoria da medida no final do Século XIX e início do Século XX. A solução encontrada foi construir uma medida apenas em uma família de subconjuntos chamamos conjuntos mensuráveis.      
+
+Vejamos um exemplo de espaço linear de dimensão: é fácil verificar que o conjunto de todos os polinômios $P(x)=a_0+a_1x+a_2x^2+\ldots a_nx^n$ formam um espaço linear frente às operações usuais de soma e multiplicação por um escalar. A base deste espaço é dada pelos monômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ pois cada polinômio pode ser escrito como uma combinação linear \emph{finita} de elementos desse base. No entanto, não é possível mostrar desta forma contrutiva uma base para o espaço das funções reais ou mesmo para as funções reais contínuas. A existência de uma base para estes espaços é um conceito abstrato  não contrutivo.
+
+\subsection{Qual amplo é o conceito de norma?}
+Vimos que o conceito de espaço linear é muito mais amplo e útil que parecia. E quanto à norma? Estamos familiariados com a norma euclidiana, mas será que é possível definir outras normas no espaço $\mathbb{R}^n$ de forma a satisfazer as propriedades (\ref{propnorma})? A norma euclidiana em um espaço de dimensão $n$ é dada por
+$$\|\vct{x}\|=\left(x_1^2+x_2^2+\ldots x_n^2\right)^{1/2}$$
+De fato é possível mostrar que podemos alterar esta expressão para
+$$\|\vct{x}\|_p=\left(|x_1|^p+|x_2|^p+\ldots +|x_n|^p\right)^{1/p}$$
+com $p\geq 1$ de forma a preservar todas as propriedades da norma.
+
+Mas será que é possível definir uma norma no espaço das funções reais? Esta é uma pergunta complicada, mas podemos simplificar exigindo um pouco mais desse espaço. Por exemplo, vamos considerar o espaço das funções reais contínuas definidas no intervalo $[0,1]$. Neste espaço é possível definir a seguinte norma:
+\begin{equation}\label{norma_infinito}\|f(x)\|=\max_{x\in [0,1]}|f(x)|\end{equation}
+
+ou seja, a norma de uma função contínua é dada pelo máximo de seu módulo no intervalo.
+
+No entanto, esta não é a única maneira de definir uma norma neste espaço, outra possibilidade é:
+\begin{equation}\label{norma_lp}\|f(x)\|_{p}=\left(\int_0^1|f(x)|^pdx\right)^p\end{equation}
+onde $p\geq 1$.
+
+A norma (\ref{norma_lp}) é chamada de norma $L^p$ de uma função e a norma (\ref{norma_infinito}) é chamada de norma do máximo ou norma infinito ou norma $L^{\infty}$. Isso porque
+$$\lim_{p\to\infty}\|f(x)\|_{p}=\max_{x\in [0,1]}|f(x)|.$$
+
+Esta normas excem enorme importância na teoria de funções com importantes aplicações no estudo das equações diferenciais. 
+
+\subsection{E o produto escalar?}
+Uma operação com as propriedades (\ref{proprodesc}) é um produto escalar. Produtos escalares não aparecem apenas em espaços de duas ou três dimensões: mesmo espaços de dimensão infinita podem possuir um produto escalar. Tomemos como exemplo novamente o espaço das funções contínuas definidas no intervalo $[0,1]$. A seguinte operação possui todas as propriedades de um produto escalar:
+$$\left<f,g\right>=\int_0^1f(x)g(x)dx.$$
+Observe o leitor que foi usada a notação $\left<,\right>$ para indicar o produto interno. Este produto interno induz a seguinte norma:
+$$\|f\|_2=\left(\left<f,f\right>\right)^{1/2}=\left(\int_0^1f(x)^2dx\right)^{1/2}$$
+que é o caso particular de (\ref{norma_lp}) quando $p=2$. 
+ A desigualdade de Cauchy-Schwarz admite a seguinte forma:
+$$\int_0^1f(x)g(x)dx \leq \left(\int_0^1f(x)^2dx\right)^{1/2} \left(\int_0^1g(x)^2dx\right)^{1/2}$$
+%\end{document}
