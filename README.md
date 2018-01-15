@@ -1,6 +1,6 @@
 # Cálculo 
 
-Este é um livro colaborativo veranso sobre os conteúdos normalmente estudados em cursos de graduação das áreas exatas e da terra nas disciplinas de cálculo, abrangendo cálculo de uma variável, várias variáveis e cálculo vetorial.
+Este é um livro colaborativo versando sobre os conteúdos normalmente estudados em cursos de graduação das áreas exatas e da terra nas disciplinas de cálculo, abrangendo cálculo de uma variável, várias variáveis e cálculo vetorial.
 
 Caso queira colaborar, escreva para:
 
