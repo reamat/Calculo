@@ -1,161 +1,31 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\documentclass[a4paper]{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, NÃO EDITE ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+\documentclass[12pt]{book}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Opcões de Linguagem
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[brazil]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-%%%%%%%%%% 
-%%%% ams-latex %%%%
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-
-
-\setcounter{secnumdepth}{4}  %%estilo do índice
-\setcounter{tocdepth}{3} %%mostras seções no índice
-
-\usepackage{titlesec}
-\newcommand{\sectionbreak}{\clearpage}
-
-\newtheorem{teo}{Teorema}
-\newtheorem{lem}{Lema}
-\newtheorem{prop}{Proposi\c{c}{\~a}o}
-\newtheorem{propr}{Propriedade}
-\newtheorem{corol}{Corolario}	
-\newtheorem{ex}{Exemplo}	
-\newtheorem{prob}{Problema}
-\newtheorem{obs}{Observa\c{c}{\~a}o}
-\newtheorem{defn}{Defini\c{c}{\~a}o}
-
-
-
-
-\usepackage{mparhack}
-%%
-% Book metadata
-\title{Cálculo}
-\author{Diversos autores}
-%\publisher{Recursos Educationais Abertos em Matemática - REAM}
-
-%%
-% If they're installed, use Bergamo and Chantilly from www.fontsite.com.
-% They're clones of Bembo and Gill Sans, respectively.
-%\IfFileExists{bergamo.sty}{\usepackage[osf]{bergamo}}{}% Bembo
-%\IfFileExists{chantill.sty}{\usepackage{chantill}}{}% Gill Sans
-
-%\usepackage{microtype}
-
-%%
-% Just some sample text
-\usepackage{lipsum}
-
-%%
-% For nicely typeset tabular material
-\usepackage{booktabs}
-
-%%
-% For graphics / images
-\usepackage{graphicx}
-%\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-%\graphicspath{{graphics/}}
-
-% The fancyvrb package lets us customize the formatting of verbatim
-% environments.  We use a slightly smaller font.
-\usepackage{fancyvrb}
-\fvset{fontsize=\normalsize}
-
-%%
-% Prints argument within hanging parentheses (i.e., parentheses that take
-% up no horizontal space).  Useful in tabular environments.
-\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
-
-%%
-% Prints an asterisk that takes up no horizontal space.
-% Useful in tabular environments.
-\newcommand{\hangstar}{\makebox[0pt][l]{*}}
-
-%%
-% Prints a trailing space in a smart way.
-\usepackage{xspace}
-
-\newcommand{\PVI}{problema de valor inicial\xspace}
-
-\newcommand{\vct}[1]{\vec{#1}}
-\newcommand{\mytext}[1]{\hbox{\footnotesize #1}}
-\renewcommand{\sin}{\operatorname{sen}}
-\renewcommand{\sinh}{\operatorname{senh}}
-
-\newcommand{\nablavec}{\vec{\nabla}}
-
-
-
-% Prints the month name (e.g., January) and the year (e.g., 2008)
-%\newcommand{\monthyear}{%
-%  \ifcase\month\or January\or February\or March\or April\or May\or June\or
-%  July\or August\or September\or October\or November\or
-%  December\fi\space\number\year
-%}
-
-
-% Prints an epigraph and speaker in sans serif, all-caps type.
-\newcommand{\openepigraph}[2]{%
-  %\sffamily\fontsize{14}{16}\selectfont
-  \begin{fullwidth}
-  \sffamily\normalsize  %\large
-  %\begin{doublespace}
-  \noindent\allcaps{#1}\\% epigraph
-  \noindent\begin{flushright}\small {#2}\end{flushright}% author
-  %\end{doublespace}
-  \end{fullwidth}
-}
-
-% Inserts a blank page
-\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
-
-
-
-% Generates the index
-\usepackage{makeidx}
-\makeindex
-
+\input preambulo.tex
 
 
 \begin{document}
 
-% Front matter
 \frontmatter
 
-
-% r.1 blank page
-%\blankpage
-
-
-
-% v.2 epigraphs
-% \newpage\thispagestyle{empty}
-% \openepigraph{%
-% Imagine um mundo no qual cada pessoa no planeta tenha acesso gratuito à soma de todo o conhecimento humano. Isso é o que estamos fazendo.
-% }{Jimmy Wales, co-fundador da Wikipédia.  %, {\itshape Design, Form, and Chaos}
-% }
-% \vfill
-% \openepigraph{%
-% Um fato ainda mais interessante é que os Recursos Educacionais Abertos criam estudantes mais motivados e cientistas cidadãos. Eles podem se tornar coprodutores, geradores e criadores de informação e conhecimento. E esse conhecimento, uma vez que possui licença Creative Commons, pode ser compartilhado gratuita e globalmente em qualquer lugar e a qualquer hora.
-% }{Cable Green, diretor de educação aberta na Creative Commons.} %https://nacoesunidas.org/artigo-recursos-educacionais-precisam-ter-licenca-aberta/
-% \vfill
-% \openepigraph{%
-% Jamais houve em nossa história um período em que tanto da nossa “cultura” teve um “dono” como atualmente. E nunca antes houve um período quando a concentração de poder para controlar os usos da cultura foi tão inquestionavelmente aceita como o é atualmente.
-% }{Lawrence Lessig, professor na faculdade de direito de Harvard e um dos fundadores do Creative Commons.}
-
+%titlepage
+\title{Cálculo}
+\date{\today\vspace{1cm}\\\small{Veja página do projeto em:\\
+\url{https://www.ufrgs.br/reamat}}}
 
 \maketitle
+%\makeindex
+
+
+
 
 
 % v.4 copyright page
@@ -166,13 +36,12 @@
 
 
 
-%\tableofcontents
+\tableofcontents
+\listoffigures
 
-%\listoffigures
+\listoftables
 
-%\listoftables
-
-%\cleardoublepage
+\cleardoublepage
 \chapter*{Introdução}
 
 Este livro é de Cálculo. Para um livro de análise, veja \cite{Rudin}.

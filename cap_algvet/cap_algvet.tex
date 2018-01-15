@@ -52,7 +52,7 @@ Outro conceito importante em espaços reais de dimensão finita é o de orienta�
 
 O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$. 
 
-\section{O espaço euclidiano tridimensional e sua norma}
+\section{O espaço euclidiano tridimensional}
 Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.  
  
 O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante 
@@ -61,11 +61,12 @@ O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Si
 \end{equation}   
 é positivo. Reciprocamente, o trio  $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito levogiro se o determinando for negativo. Veja mais detalhes no exemplo (\ref{probdextro}).
 
-\begin{figure}
+\begin{figure}\begin{center}
  \includegraphics{./cap_algvet/pics/eixos_levo_destro}
-      \caption{Acima um sistema dextrogiro (regra da mão direita). Abaixo um sistema levogiro (regra da mão esquerda). }
+      \caption{À esquerda, um sistema levogiro (regra da mão esquerda). À direita, sistema dextrogiro (regra da mão direita).}
       \label{fig:marginfig}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
+  \end{center}
   \end{figure}
  
  Um vetor é representado neste sistema como um trio de números reais, denominados componentes do vetor $\vct{v}$ e denotados por: 
@@ -88,14 +89,14 @@ A soma de dois vetores é dada pela soma componente a componente, ou seja, se $\
 O produto de um vetor por um escalar é definido como a multiplicação componente a componente pelo escalar, ou seja, se $\vct{u}=u_1~\!  \vct{i}+u_2~\!  \vct{j}+u_3 ~\! \vct{k}$, então
 \begin{equation}\label{defprod}\alpha\vct{u}=(\alpha u_1)\vct{i}+(\alpha u_2)\vct{j}+(\alpha u_3) \vct{k} .\end{equation}
 
-\begin{prob} Mostre que o espaço vetorial assim definido satisfaz as propriedades (\ref{defel}).
-\end{prob}
+\begin{exer} Mostre que o espaço vetorial assim definido satisfaz as propriedades (\ref{defel}).
+\end{exer}
 
 Definimos também a norma euclidiana\index{norma} de um vetor $\vct{v}$ como a distância da origem até o ponto que o vetor representa e a denotamos por $\|\vct{v}\|$. Pelo Teorema de Pitágoras, da geometria euclidiana, temos:
 
 
 \begin{equation}\label{defnorma}\|\vct{v}\|=\sqrt{v_1^2+v_2^2+v_3^2}.\end{equation}
-\begin{prob}\label{exnorma}Verifique que a norma euclidiana satisfaz as seguintes propriedades:
+\begin{exer}\label{exnorma}Verifique que a norma euclidiana satisfaz as seguintes propriedades:
   
 \begin{subequations}\label{propnorma}
 \begin{align}
@@ -104,7 +105,7 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vct{v}$ como a d
 \|\vct{u}\|&=0 \Longrightarrow \vct{u}=\vct{0},&\mytext{(Separação)}\label{propnormasep}
 \end{align}
 \end{subequations}
-\end{prob}
+\end{exer}
 
 \begin{figure}%[42\baselineskip]
  \includegraphics{./cap_algvet/pics/desigualdade_triangulo}
@@ -127,17 +128,17 @@ O vetor $\hat{v}$ é chamado de versor\index{versor} de $\vct{v}$. $\hat{v}$ é 
 A identidade (\ref{decompversor}) tem uma importante interpretação geométrica: todo vetor não nulo pode ser representado pelo seu módulo e por seu versor, que traz a informação de direção e sentido.  Os vetores $\vct{i}$, $\vct{j}$ e $\vct{k}$ são exemplos de versores. O vetor nulo é o único vetor ao qual não se pode associar direção e sentido únicos.
 
 
-\begin{prob}Mostre que a norma de um versor conforme definido em (\ref{defversor}) é sempre unitária. 
-\end{prob}
+\begin{exer}Mostre que a norma de um versor conforme definido em (\ref{defversor}) é sempre unitária. 
+\end{exer}
 
-\begin{prob}\label{ex1uvw} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$. Represente estes vetores em um referencial euclidiano, calcule suas normas, calcule os versores associados $\hat{u}$, $\hat{v}$ e $\hat{w}$ e represente-os no mesmo gráfico.  
-\end{prob}
+\begin{exer}\label{ex1uvw} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$. Represente estes vetores em um referencial euclidiano, calcule suas normas, calcule os versores associados $\hat{u}$, $\hat{v}$ e $\hat{w}$ e represente-os no mesmo gráfico.  
+\end{exer}
 Resp: $u=\sqrt{2}$, ~~ $v=\sqrt{5}$ ~e~ $w=\frac{\sqrt{13}}{{6}}$.~ $\hat{u}=\frac{\sqrt{2}}{2}\vct{i}+\frac{\sqrt{2}}{2}\vct{j}$,~~  $\hat{v}=\frac{\sqrt{5}}{5}\vct{i}+\frac{2\sqrt{5}}{5}\vct{j}$,~~ $\hat{w}=\frac{2\sqrt{13}}{13}\vct{i}+\frac{3\sqrt{13}}{13}\vct{j}$
 
-\begin{prob} Considere o vetor $\vct{u}=\cos\theta \vct{i}+ \sin\varphi \vct{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$ 
-\end{prob}
+\begin{exer} Considere o vetor $\vct{u}=\cos\theta \vct{i}+ \sin\varphi \vct{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$ 
+\end{exer}
 
-\begin{prob} Considere o vetor $\vct{u}=\sin\theta \cos\varphi \vct{i}+ \sin\theta \sin\varphi \vct{j} + \cos\theta \vct{k}$. Verifique que este vetor é unitário e represente-o graficamente quando
+\begin{exer} Considere o vetor $\vct{u}=\sin\theta \cos\varphi \vct{i}+ \sin\theta \sin\varphi \vct{j} + \cos\theta \vct{k}$. Verifique que este vetor é unitário e represente-o graficamente quando
 \begin{itemize}
 \item[a)] $\theta=0$
 \item[b)] $\theta=\frac{\pi}{4}$ e $\varphi=\frac{\pi}{4}$
@@ -145,12 +146,12 @@ Resp: $u=\sqrt{2}$, ~~ $v=\sqrt{5}$ ~e~ $w=\frac{\sqrt{13}}{{6}}$.~ $\hat{u}=\fr
 \item[d)] $\theta=\pi$
 
 \end{itemize}
-\end{prob}
+\end{exer}
 
-\begin{prob}\label{probmaxmin} Seja $\vct{u}=u_1\vct{i} + u_2\vct{j}$ um vetor não nulo fixo no plano $xy$ e $\vct{v}=v\left(\cos\varphi \vct{i}+\sin\varphi \vct{j}\right)$ um vetor de norma fixa no plano $xy$. Considere a função $m(\varphi)=\|\vct{u}+\vct{v}\|$ e encontre o valor máximo e mínimo de $m(\varphi)$. Interprete o resultado.
-\end{prob}
+\begin{exer}\label{probmaxmin} Seja $\vct{u}=u_1\vct{i} + u_2\vct{j}$ um vetor não nulo fixo no plano $xy$ e $\vct{v}=v\left(\cos\varphi \vct{i}+\sin\varphi \vct{j}\right)$ um vetor de norma fixa no plano $xy$. Considere a função $m(\varphi)=\|\vct{u}+\vct{v}\|$ e encontre o valor máximo e mínimo de $m(\varphi)$. Interprete o resultado.
+\end{exer}
 
-\begin{prob}\label{probdextro} Conforme observado no texto, um trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ é dextrogiro se
+\begin{exer}\label{probdextro} Conforme observado no texto, um trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ é dextrogiro se
 \begin{equation*}
 \det\left(\vct{u};\vct{v};\vct{w}\right)= \left|\begin{array}{ccc}
 u_1&v_1&w_1\\
@@ -166,10 +167,10 @@ onde $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$, $\vct{v}=v_1\vct{i}+v_2\vct{j}+
 \item [c)]Verifique que o trio $\vct{u}$, $\vct{v}$ e $\vct{w}$ é dextrogiro quando $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=-2\vct{i}+\vct{j}$ e $\vct{w}=\vct{i}+\vct{j}+\vct{k}$. 
 \item [d)]Verifique que o trio $\vct{u}$, $\vct{v}$ e $\vct{w}$ é dextrogiro quando $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=-2\vct{i}+\vct{j}$ e $\vct{w}=\vct{i}$. Interprete graficamente.
 \end{itemize}
-\end{prob}
+\end{exer}
 
-%\begin{prob} Seja $\vct{u}=u_1\vct{i} + u_2\vct{j} + u_3\vct{k}$ um vetor não nulo fixo e $\vct{v}=v\left(\sin\theta \cos\varphi \vct{i}+ \sin\theta \sin\varphi \vct{j} + \cos\theta \vct{k}\right)$ um vetor de norma fixa. Considere a função $m(\varphi,\theta)=\|\vct{u}+\vct{v}\|$ e encontre o valor máximo e mínimo de $m(\varphi,\theta)$. Interprete o resultado.
-%\end{prob}
+%\begin{exer} Seja $\vct{u}=u_1\vct{i} + u_2\vct{j} + u_3\vct{k}$ um vetor não nulo fixo e $\vct{v}=v\left(\sin\theta \cos\varphi \vct{i}+ \sin\theta \sin\varphi \vct{j} + \cos\theta \vct{k}\right)$ um vetor de norma fixa. Considere a função $m(\varphi,\theta)=\|\vct{u}+\vct{v}\|$ e encontre o valor máximo e mínimo de $m(\varphi,\theta)$. Interprete o resultado.
+%\end{exer}
 
 
 
@@ -179,7 +180,7 @@ onde $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$, $\vct{v}=v_1\vct{i}+v_2\vct{j}+
       \label{fig:latlong}
   \end{figure}
 
-\begin{prob} 
+\begin{exer} 
 Considere um sistema de coordenadas cartesianas dextrogiro construído da seguinte forma:
 
 \begin{itemize}
@@ -230,7 +231,7 @@ Localidade &	  x & y & z\\
 	\label{tabmonumentos}
 \end{table}
 \end{itemize}   
-\end{prob}
+\end{exer}
 
 
 % 
@@ -338,15 +339,15 @@ O produto escalar satisfaz as seguintes propriedades:
 \end{subequations}
 %\end{formulario}
 As propriedades (\ref{propprodesccom}), (\ref{propprodesclin}) e (\ref{propprodescnorma}) podem ser trivialmente demonstradas diretamente a partir da definição de produto escalar dada em (\ref{defprodesc}).
-\begin{prob} Demonstre essas três propriedades.
-\end{prob}
+\begin{exer} Demonstre essas três propriedades.
+\end{exer}
 Observe que $\alpha(\vct{u}\cdot\vct{v})=(\alpha~\!\vct{u})\cdot\vct{v}$ pelo que podemos escrever $\alpha~\!\vct{u}\cdot\vct{v}$ sem risco de ambiguidade.  
-\begin{prob} Use (\ref{propprodesccom}) e  (\ref{propprodesclin}) para mostrar a seguinte propriedade:
+\begin{exer} Use (\ref{propprodesccom}) e  (\ref{propprodesclin}) para mostrar a seguinte propriedade:
 $$
 \left(\alpha\vct{u}+\beta \vct{v}\right)\cdot \vct{w}=\alpha (\vct{u}\cdot\vct{w})+ \beta (\vct{v}\cdot\vct{w})
 $$
 
-\end{prob}
+\end{exer}
 ~~ \\
 
 A \underline{desigualdade de Cauchy-Schwarz}\index{desigualdade de Cauchy-Schwarz} (\ref{propprodesccauchy}) pode ser demonstrada a partir de (\ref{defintriprodesc}) uma vez que $$-1\leq \cos\theta \leq 1.$$
@@ -375,37 +376,37 @@ Dois vetores não nulos $\vct{u}$ e $\vct{v}$ são dito ortogonais\index{vetores
 
 Em especial os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ são ortogonais, ou seja: $$\vct{i}\cdot \vct{j}=\vct{i}\cdot \vct{k}=\vct{j}\cdot \vct{k}=0.$$
 
-\begin{prob} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
-\end{prob}
+\begin{exer} Considere os vetores dados por $\vct{u}=\vct{i}+\vct{j}$, $\vct{v}=\vct{i}+2\vct{j}$ e $\vct{w}=\frac{1}{3}\vct{i}+\frac{1}{2}\vct{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
+\end{exer}
 Resp: $18,43^\circ$, $11,3^\circ$ e  $7,13^\circ$
-\begin{prob} Mostre que se $\alpha$ e $\beta$ são escalares diferentes de zero e $\vct{u}$ e $\vct{v}$ são vetores não nulos, então $$\cos\left(\alpha\vct{u},\beta\vct{v}\right)=\cos\left(\vct{u},\vct{v}\right).$$
+\begin{exer} Mostre que se $\alpha$ e $\beta$ são escalares diferentes de zero e $\vct{u}$ e $\vct{v}$ são vetores não nulos, então $$\cos\left(\alpha\vct{u},\beta\vct{v}\right)=\cos\left(\vct{u},\vct{v}\right).$$
 Interprete geometricamente esta identidade.
-\end{prob}
+\end{exer}
 
 
-\begin{prob}Mostre que se $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ então $u_1=\vct{u}\cdot\vct{i}$, $u_2=\vct{u}\cdot\vct{j}$ e $u_3=\vct{u}\cdot\vct{k}$. Conclua que
+\begin{exer}Mostre que se $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$ então $u_1=\vct{u}\cdot\vct{i}$, $u_2=\vct{u}\cdot\vct{j}$ e $u_3=\vct{u}\cdot\vct{k}$. Conclua que
 $$\vct{u}=\left(\vct{u}\cdot\vct{i}\right) \vct{i}+\left(\vct{u}\cdot\vct{j}\right) \vct{j}+\left(\vct{u}\cdot\vct{k}\right) \vct{k}.$$
 
-\end{prob}
+\end{exer}
 
-\begin{prob}\label{exort1}Sejam $\vct{u}=\frac{\sqrt{2}}{2}\left(\vct{i}+\vct{j}\right)$ e $\vct{v}=\frac{\sqrt{2}}{2}\left(\vct{i}-\vct{j}\right)$. Mostre que estes vetores são unitários e ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a $\vct{u}$ quanto a $\vct{v}$.
-\end{prob}
+\begin{exer}\label{exort1}Sejam $\vct{u}=\frac{\sqrt{2}}{2}\left(\vct{i}+\vct{j}\right)$ e $\vct{v}=\frac{\sqrt{2}}{2}\left(\vct{i}-\vct{j}\right)$. Mostre que estes vetores são unitários e ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a $\vct{u}$ quanto a $\vct{v}$.
+\end{exer}
 Resp: $-\vct{k}$ e $\vct{k}$.
 
-\begin{prob}\label{exort2} Sejam $\vct{u}=2\vct{i}+\vct{j}+\vct{k}$ e $\vct{v}=2\vct{i}-\vct{j}-\vct{k}$. Mostre que estes vetores são ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a  $\vct{u}$ como a $\vct{v}$.
-\end{prob}
+\begin{exer}\label{exort2} Sejam $\vct{u}=2\vct{i}+\vct{j}+\vct{k}$ e $\vct{v}=2\vct{i}-\vct{j}-\vct{k}$. Mostre que estes vetores são ortogonais entre si. Encontre dois vetores unitários distintos ortogonais tanto a  $\vct{u}$ como a $\vct{v}$.
+\end{exer}
 Resp: $\frac{\sqrt{2}}{2}\left(\vct{j}-\vct{k}\right)$ e $\frac{\sqrt{2}}{2}\left(-\vct{j}+\vct{k}\right)$.
 
-\begin{prob} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que:
+\begin{exer} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que:
 \begin{itemize}
 \item [a)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}=\vct{0}$ mas $\vct{u}\left(\vct{v}\cdot\vct{w}\right)\neq \vct{0}$ 
 \item [b)] $\left(\vct{u}\cdot\vct{v}\right)\vct{w}\neq \vct{u}\left(\vct{v}\cdot\vct{w}\right)$ e ambos não nulos. 
 \end{itemize}
-\end{prob}
+\end{exer}
 
 Exemplos de respostas: a) $\vct{u}=\vct{i}$, $\vct{v}=\vct{j}$ e $\vct{w}=\vct{j}$. b) $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}+\vct{j}$ e $\vct{w}=\vct{j}$.
 
-\begin{prob} Sejam os vetores $\vct{u}=\cos(\theta_1)\vct{i}+\sin(\theta_1)\vct{j}$ e $\vct{v}=\cos(\theta_2)\vct{i}+\sin(\theta_2)\vct{j}$ então
+\begin{exer} Sejam os vetores $\vct{u}=\cos(\theta_1)\vct{i}+\sin(\theta_1)\vct{j}$ e $\vct{v}=\cos(\theta_2)\vct{i}+\sin(\theta_2)\vct{j}$ então
 $$\cos\left(\vct{u},\vct{v}\right)=\cos(\theta_1-\theta_2).$$
 Conclua que o ângulo $\theta$ entre $\vct{u}$ e $\vct{v}$ é dado por
 $$\theta=\left\{
@@ -416,10 +417,10 @@ $$\theta=\left\{
 \right.$$ 
 contanto que $\theta_1$ e $\theta_2$ estejam entre $0$ e $360^\circ$.
 Interprete geometricamente este resultado.
-\end{prob}
+\end{exer}
 
-\begin{prob}Seja $\vct{u}$ um vetor não nulo fixo e $\vct{v}$ um vetor de norma não nula fixa. Mostre que $\|\vct{u}+\vct{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}). 
-\end{prob}
+\begin{exer}Seja $\vct{u}$ um vetor não nulo fixo e $\vct{v}$ um vetor de norma não nula fixa. Mostre que $\|\vct{u}+\vct{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}). 
+\end{exer}
  Dica: $\|\vct{u}+\vct{v}\|^2=u^2+v^2+2\vct{u}\cdot\vct{v}$ e (\ref{defintriprodesc}).
 
 \section{O produto vetorial}
@@ -445,8 +446,8 @@ Nas duas últimas propriedades, $\sin(\vct{u},\vct{v})$ denota o seno do ângulo
 
 A última propriedade significa que o trio $\vct{u}$, $\vct{v}$ e $\vct{u}\times\vct{v}$ forma um sistema dextrogiro.
 
-\begin{prob} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).  
-\end{prob}
+\begin{exer} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).  
+\end{exer}
 A propriedade da ortogonalidade pode ser demonstrada diretamente da definição de produto vetorial e produto escalar:
 \begin{eqnarray*}\left(\vct{u}\times \vct{v}\right)\cdot \vct{u}&=&\left[\left(u_2v_3-u_3v_2\right)\vct{i}+\left(u_3v_1-u_1v_3\right)\vct{j}+\left(u_1v_2-u_2v_1\right)\vct{k}\right]\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\\
 &=&\left(u_2v_3-u_3v_2\right)u_1+\left(u_3v_1-u_1v_3\right)u_2+\left(u_1v_2-u_2v_1\right)u_3=0
@@ -547,8 +548,8 @@ O produto vetorial entre os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ 
 \vct{k}\times \vct{i}&=\vct{j},\qquad &\vct{k}\times \vct{j}&=-\vct{i},\qquad &\vct{k}\times \vct{k}&=\vct{0}
 \end{align}
 
-\begin{prob} Seja $\vct{u}=\vct{i}+2\vct{j}$ e $\vct{v}=3\vct{i}-2\vct{j}$, calcule o vetor $\vct{w}=\vct{u}\times\vct{v}$.
-\end{prob}
+\begin{exer} Seja $\vct{u}=\vct{i}+2\vct{j}$ e $\vct{v}=3\vct{i}-2\vct{j}$, calcule o vetor $\vct{w}=\vct{u}\times\vct{v}$.
+\end{exer}
 {\bf Solução 1} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
 \begin{eqnarray*}\vct{w}&=&\left|\begin{array}{ccc}
 \vct{i}&\vct{j}&\vct{k}\\
@@ -572,14 +573,14 @@ v_1 & v_2 & v_3\\
 \end{eqnarray*}
 
 
-\begin{prob} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
-\end{prob}
+\begin{exer} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
+\end{exer}
 
-\begin{prob}\label{prodvecnaoassoc} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que $\vct{u}\times\left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times\vct{v}\right)\times \vct{w}$. 
-\end{prob}
+\begin{exer}\label{prodvecnaoassoc} Encontre três vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ tais que $\vct{u}\times\left(\vct{v}\times\vct{w}\right)\neq \left(\vct{u}\times\vct{v}\right)\times \vct{w}$. 
+\end{exer}
 Exemplo de resposta: $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}$ e $\vct{w}=\vct{k}$.
 
-\begin{prob} Simplifique as seguintes expressões:
+\begin{exer} Simplifique as seguintes expressões:
 \begin{itemize}
 \item[a)] $\vct{u}\times\vct{u}$
 \item[b)] $\vct{u}\times\hat{u}$
@@ -592,12 +593,12 @@ Exemplo de resposta: $\vct{u}=\vct{i}$, $\vct{v}=\vct{i}$ e $\vct{w}=\vct{k}$.
 \item[i)] $\left(\vct{u}+\vct{v}\right)\cdot\left(\vct{u}-\vct{v}\right)$
 \item[j)] $\left(\vct{u}+\vct{v}\right)\times\left(\vct{u}-\vct{v}\right)$
 \end{itemize}
-\end{prob}
+\end{exer}
 Resp: $\vct{0}$,$\vct{0}$,$u^2$,$u$,$u^2+2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-2\vct{u}\cdot\vct{v}+v^2$, $\vct{0}$, $u^2-v^2$, $2\vct{v}\times\vct{u}$ 
 
 
-\begin{prob} Mostre que $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)=\det\left(\vct{u};\vct{v};\vct{w}\right)$. Conclua que o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)>0$ e levogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)<0$. Interprete geometricamente.
-\end{prob}
+\begin{exer} Mostre que $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)=\det\left(\vct{u};\vct{v};\vct{w}\right)$. Conclua que o trio de vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ forma um sistema dextrogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)>0$ e levogiro se $\vct{u}\cdot \left(\vct{v}\times\vct{w}\right)<0$. Interprete geometricamente.
+\end{exer}
 
 
 \section{Os triplos produtos e outras identidades vetoriais}
@@ -762,18 +763,18 @@ As equações (\ref{xphi}) podem ser reescritas como
 \end{eqnarray}  
 \end{subequations}
 
-\begin{prob}\label{rect_cin} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas cilíndricas:
+\begin{exer}\label{rect_cin} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas cilíndricas:
 \begin{itemize}
 \item [a)] $\left<1,1,1\right>$
 \item [b)] $\left<1,-1,1\right>$
 \item [c)] $\left<-1,1,1\right>$
 \item [d)] $\left<-1,-1,1\right>$
 \end{itemize}
-\end{prob}
+\end{exer}
 Resp: $\left(\sqrt{2},\frac{\pi}{4},1\right)$,  $\left(\sqrt{2},\frac{5\pi}{4},1\right)$, $\left(\sqrt{2},\frac{3\pi}{4},1\right)$ e  $\left(\sqrt{2},\frac{7\pi}{4},1\right)$.
 
-\begin{prob} Encontre uma expressão para distância de um ponto à origem em coordenadas cilíndricas
-\end{prob}
+\begin{exer} Encontre uma expressão para distância de um ponto à origem em coordenadas cilíndricas
+\end{exer}
 Resp: $\sqrt{\rho^2+z^2}$
 % 
 
@@ -814,14 +815,14 @@ r&=&\displaystyle \sqrt{x^2+y^2+z^2}\\
 \end{subequations}
 
 
-\begin{prob}\label{rect_esf} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas esféricas (ver também excício \ref{rect_cin}):
+\begin{exer}\label{rect_esf} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas esféricas (ver também excício \ref{rect_cin}):
 \begin{itemize}
 \item [a)] $\left<1,1,1\right>$
 \item [b)] $\left<1,-1,1\right>$
 \item [c)] $\left<-1,1,1\right>$
 \item [d)] $\left<-1,-1,1\right>$
 \end{itemize}
-\end{prob}
+\end{exer}
 Resp: $\left(\sqrt{3},\frac{\pi}{4},\theta\right)$,  $\left(\sqrt{3},\frac{5\pi}{4},\theta\right)$, $\left(\sqrt{3},\frac{3\pi}{4},\theta\right)$ e  $\left(\sqrt{3},\frac{7\pi}{4},\theta\right)$, onde $\theta=\cos^{-1}\left(\frac{\sqrt{3}}{3}\right)\approx 0,955.$
 
 
