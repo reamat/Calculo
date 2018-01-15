@@ -1,16 +1,12 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-%%%Uniformizar hbox!
-
-%\documentclass[Main.tex]{subfiles}
-%\begin{document}
-%\setcounter{chapter}{-1}
 \chapter{Álgebra vetorial}
 O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.    
 
 \section{Vetores e escalares}
 Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como os elementos de um espaço vetorial\index{espaço vetorial}. Os vetores são, então, os elementos de um conjunto em que estão definidas duas operações: a soma de vetores e o produto de vetores por escalares obedecendo as propriedades (\ref{defel}). Um escalar\index{escalar} é um número real ou complexo. Quando o corpo de escalares é o conjunto dos números reais, então dizemos que o espaço vetorial é real. Quando o corpo de escalares é o conjunto dos números complexos, dizemos que o espaço vetorial é complexo. Usaremos uma letra latina com uma seta para denotar vetores ($\vct{u}$, $\vct{v}$ e $\vct{w}$).  Para que um espaço vetorial esteja bem definido, as seguinte propriedades devem ser satisfeitas:
 
-\marginnote[2.5\baselineskip]{\caixa{ O vetor nulo $\vct{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.}}
+\begin{obs} O vetor nulo $\vct{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.\end{obs}
 \begin{subequations}\label{defel}
 \begin{align}
 \vct{u}+\vct{v}&=\vct{v}+\vct{u},&\mytext{(Comutatividade da soma)}\label{defelcom}\\
@@ -59,19 +55,18 @@ O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$.
 \section{O espaço euclidiano tridimensional e sua norma}
 Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.  
  
-    
-    O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante 
+O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante 
 \begin{equation}\label{defdextro}
 \det\left(\vct{u};\vct{v};\vct{w}\right)
 \end{equation}   
 é positivo. Reciprocamente, o trio  $\vct{u}$, $\vct{v}$ e  $\vct{w}$ é dito levogiro se o determinando for negativo. Veja mais detalhes no exemplo (\ref{probdextro}).
 
-\begin{marginfigure}[.5\baselineskip]
+\begin{figure}
  \includegraphics{./cap_algvet/pics/eixos_levo_destro}
       \caption{Acima um sistema dextrogiro (regra da mão direita). Abaixo um sistema levogiro (regra da mão esquerda). }
       \label{fig:marginfig}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
-  \end{marginfigure}
+  \end{figure}
  
  Um vetor é representado neste sistema como um trio de números reais, denominados componentes do vetor $\vct{v}$ e denotados por: 
 \begin{equation}\label{defeucv}\vct{v}=\left<v_1,v_2,v_3\right>.\end{equation}
@@ -111,12 +106,12 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vct{v}$ como a d
 \end{subequations}
 \end{prob}
 
-\begin{marginfigure}%[42\baselineskip]
+\begin{figure}%[42\baselineskip]
  \includegraphics{./cap_algvet/pics/desigualdade_triangulo}
-      \caption{Representação gráfica da desigualdade triangular: $$\|\vec{u}+\vec{v}\|\leq \|\vct{u}\|+\|\vct{v}\|$$}
+      \caption{Representação gráfica da desigualdade triangular: $\|\vec{u}+\vec{v}\|\leq \|\vct{u}\|+\|\vct{v}\|$}
       \label{fig:des_triang}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
-  \end{marginfigure}
+   \end{figure}
 
 Dica: Para mostrar a desigualdade triangular\index{desigualdade triangular}, entenda seu significado geométrico. Uma demonstração puramente algébrica pode ser feita, embora seja mais laboriosa. Veremos mais adiante que o conceito de produto escalar\index{produto escalar} permite simplificar os cálculos. 
 
@@ -178,11 +173,11 @@ onde $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$, $\vct{v}=v_1\vct{i}+v_2\vct{j}+
 
 
 
-\begin{marginfigure}[20\baselineskip]
+\begin{figure}%[20\baselineskip]
 \includegraphics{./cap_algvet/pics/latitude_longitude2}
       \caption{Representação gráfica do sistema de coordenadas geográficas.}
       \label{fig:latlong}
-  \end{marginfigure}
+  \end{figure}
 
 \begin{prob} 
 Considere um sistema de coordenadas cartesianas dextrogiro construído da seguinte forma:
@@ -306,10 +301,10 @@ Na seção anterior, começamos a trabalhar com vetores no espaço euclidiano. N
 
 
 Considere os vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ relacionados por $$\vct{w}=\vct{u}-\vct{v}.$$
-\begin{marginfigure}
+\begin{figure}
         \includegraphics[width=\textwidth]{./cap_algvet/pics/cossenos} %
-    \caption{Lei dos cossenos: $$\|\vct{w}\|^2=\|\vct{u}\|^2+\|\vec{v}\|^2-2~\!\|\vec{u}\|~\!\|\vec{v}\|\cos\theta$$}\label{leicossenos}
-\end{marginfigure}
+    \caption{Lei dos cossenos: $\|\vct{w}\|^2=\|\vct{u}\|^2+\|\vec{v}\|^2-2~\!\|\vec{u}\|~\!\|\vec{v}\|\cos\theta$}\label{leicossenos}
+\end{figure}
 Este trio de vetores pode ser intepretado como os três lados de um triângulo como na figura \ref{leicossenos}. Da lei dos cossenos, sabemos que a seguinte relação é satisfeita:
  $$w^2=u^2+v^2-2uv\cos\theta$$
 supondo $u\neq 0$ e $v\neq 0$, temos
@@ -327,19 +322,21 @@ Esta última expressão nos permite escrever
 \vct{u}\cdot\vct{v}=uv\cos\left(\vct{u},\vct{v}\right)=uv\cos\theta
 \end{equation}
 onde $\cos\left(\vct{u},\vct{v}\right)$ indica o cosseno do ângulo entre os vetores $\vct{u}$ e $\vct{v}$.
-\marginnote[-4\baselineskip]{\caixa{Neste momento, o leitor deve observar que a definição que demos originalmente para o produto escalar em (\ref{defprodesc}) dependia fortemente do sistema de coordenadas escolhido. No entanto, a identidade (\ref{defintriprodesc}) mostra que o valor do produto escalar depende apenas da norma dos vetores envolvidos e do ângulo entre esses vetores, ou seja,  (\ref{defintriprodesc}) pode ser usado como uma definição intrínseca (que não depende da escolha do sistema de coordenadas) de produto escalar. }}[-5]
-\marginnote{\caixa{O produto escalar do vetor nulo $\vct{0}$ por qualquer vetor é zero.}}
+\begin{obs}Neste momento, o leitor deve observar que a definição que demos originalmente para o produto escalar em (\ref{defprodesc}) dependia fortemente do sistema de coordenadas escolhido. No entanto, a identidade (\ref{defintriprodesc}) mostra que o valor do produto escalar depende apenas da norma dos vetores envolvidos e do ângulo entre esses vetores, ou seja,  (\ref{defintriprodesc}) pode ser usado como uma definição intrínseca (que não depende da escolha do sistema de coordenadas) de produto escalar. \end{obs}
+\begin{obs}O produto escalar do vetor nulo $\vct{0}$ por qualquer vetor é zero.\end{obs}
 
 
 O produto escalar satisfaz as seguintes propriedades:
+%\begin{formulario}
 \begin{subequations}\label{proprodesc}
 \begin{align}
 \vct{u}\cdot\vct{v}&=\vct{v}\cdot\vct{u},&\mytext{(Comutatividade)}\label{propprodesccom}\\
-\vct{u}\cdot\left(\alpha\vct{v}+\beta \vct{w}\right)&=\alpha(\vct{u}\cdot\vct{v})+\beta(\vct{u}\cdot\vct{w}) ,&\mytext{(Linearidade)}\label{propprodesclin}\\
+\vct{u}\cdot\left(\alpha\vct{v}+\beta \vct{w}\right)&=\alpha(\vct{u}\cdot\vct{v})+\beta(\vct{u}\cdot\vct{w}),\hspace{-5cm}&\mytext{(Linearidade)}\label{propprodesclin}\\
 \vct{u}\cdot\vct{u}&=u^2,&\mytext{(Respeito à norma)}\label{propprodescnorma}\\
 \left|\vct{u}\cdot\vct{v}\right|&\leq uv,&\mytext{(Desigualdade de Cauchy-Schwarz)}\label{propprodesccauchy}
 \end{align}
 \end{subequations}
+%\end{formulario}
 As propriedades (\ref{propprodesccom}), (\ref{propprodesclin}) e (\ref{propprodescnorma}) podem ser trivialmente demonstradas diretamente a partir da definição de produto escalar dada em (\ref{defprodesc}).
 \begin{prob} Demonstre essas três propriedades.
 \end{prob}
@@ -495,12 +492,12 @@ u_3 & v_3 &  \left(u_1v_2-u_2v_1\right)
 &=&\left(u_1^2v_2^2-u_1u_2v_1v_2\right)+\left(u_3^2v_1^2-u_1u_3v_1v_3\right)+\left(u_2^2v_3^2-u_2u_3v_2v_3\right)\\
 &-&\left(u_1u_2v_1v_2-u_2^2v_1^2\right)-\left(u_1u_3v_1v_3-u_1^2v_3^2\right)-\left(u_2u_3v_2v_3-u_3^2v_2^2\right)
 \end{eqnarray*}
-\begin{marginfigure}[-30\baselineskip]
+\begin{figure}%[-30\baselineskip]
      \includegraphics[width=\textwidth]{./cap_algvet/pics/R_mao_dir.eps}
       \caption{Regra da mão direita. }
       %\label{fig:marginfig}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
-  \end{marginfigure}
+  \end{figure}
 
 
 Agora basta observar que esta expressão é idêntica a (\ref{calcnormaprodvec}), ou seja, $\|\vct{u}\times\vct{v}\|^2$ e portanto o determinante $\det\left(\vct{u};\vct{v};\vct{u}\times\vct{v}\right)$ é positivo. 
@@ -511,12 +508,12 @@ A importância desta propriedade está no fato que se $\vct{w}=\vct{u}\times \vc
 \end{equation}
 onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vct{u}$ e $\vct{v}$ e forma um sistema dextrogiro com eles.  
 
-\begin{marginfigure}[10\baselineskip]
+\begin{figure}%[10\baselineskip]
      \includegraphics[width=\textwidth]{./cap_algvet/pics/prod_vec_paralelogramo}
       \caption{Interpretação geométrica do produto vetorial.}\label{fig:prod_paralelo}
       %\label{fig:marginfig}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
-  \end{marginfigure}
+  \end{figure}
 
   A norma do produto vetorial entre os vetores $\vct{u}$ e $\vct{v}$ pode ser interpretada como a área do paralelogramo cujos lados são $\vct{u}$ e $\vct{v}$ (ver figura \ref{fig:prod_paralelo}. A direção do produto vetorial é então ortogonal ao plano gerado por  $\vct{u}$ e $\vct{v}$  e o sentido é dado pela regra da mão direita.
 
@@ -553,7 +550,7 @@ O produto vetorial entre os vetores unitários $\vct{i}$, $\vct{j}$ e $\vct{k}$ 
 \begin{prob} Seja $\vct{u}=\vct{i}+2\vct{j}$ e $\vct{v}=3\vct{i}-2\vct{j}$, calcule o vetor $\vct{w}=\vct{u}\times\vct{v}$.
 \end{prob}
 {\bf Solução 1} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
-\begin{eqnarray*}\vct{w}=\left|\begin{array}{ccc}
+\begin{eqnarray*}\vct{w}&=&\left|\begin{array}{ccc}
 \vct{i}&\vct{j}&\vct{k}\\
 u_1 & u_2 & u_3\\
 v_1 & v_2 & v_3\\
@@ -562,13 +559,16 @@ v_1 & v_2 & v_3\\
 \vct{i}&\vct{j}&\vct{k}\\
 1 & 2 & 0\\
 3 & -2& 0\\
-\end{array}
-\right|=\vct{i}(0-0)+\vct{j}(0-0)+\vct{k}(-2-6)=-8\vct{k}
+\end{array} \right|\\
+&=&\vct{i}(0-0)+\vct{j}(0-0)+\vct{k}(-2-6)\\
+&=&-8\vct{k}
 \end{eqnarray*}
 
 {\bf Solução 2} Calcularemos usando as propriedades (\ref{propprodvec}) e as relações (\ref{prodvecunit}):
-\begin{eqnarray*}\vct{w}&=&\vct{u}\times\vct{v}= \left(\vct{i}+2\vct{j}\right)\times\left(3\vct{i}-2\vct{j}\right)=3(\vct{i}\times\vct{i})-2(\vct{i}\times\vct{j})+6(\vct{j}\times\vct{i})-4(\vct{j}\times\vct{j})\\
-&=&3~\!\vct{0}-2~\!\vct{k}-6~\!\vct{k}-4~\!\vct{0}=-8\vct{k}
+\begin{eqnarray*}\vct{w}&=&\vct{u}\times\vct{v}= \left(\vct{i}+2\vct{j}\right)\times\left(3\vct{i}-2\vct{j}\right)\\
+&=&3(\vct{i}\times\vct{i})-2(\vct{i}\times\vct{j})+6(\vct{j}\times\vct{i})-4(\vct{j}\times\vct{j})\\
+&=&3~\!\vct{0}-2~\!\vct{k}-6~\!\vct{k}-4~\!\vct{0}\\
+&=&-8\vct{k}
 \end{eqnarray*}
 
 
@@ -615,7 +615,7 @@ Agora, usando a definição em cartesianas do produto vetorial dada na equação
 Obtemos:
 \begin{eqnarray}\label{dettriploprod}
   \vct{u}\cdot (\vct{v}\times \vct{w})
-&=&\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\right]\nonumber\\
+%&=&\left(u_1\vct{i}+u_2\vct{j}+u_3\vct{k}\right)\cdot \left[\left(v_2w_3-v_3w_2\right)\vct{i}+\left(v_3w_1-v_1w_3\right)\vct{j}+\left(v_1w_2-v_2w_1\right)\vct{k}\right]\nonumber\\
  &=&u_1\left(v_2w_3-v_3w_2\right)+u_2\left(v_3w_1-v_1w_3\right)+u_3\left(v_1w_2-v_2w_1\right)\nonumber\\
  &=&\left(u_1v_2w_3-u_1v_3w_2\right)+\left(u_2v_3w_1-u_2v_1w_3\right)+\left(u_3v_1w_2-u_3v_2w_1\right)\nonumber\\
  &=&
@@ -626,11 +626,11 @@ Obtemos:
        \end{array}
  \right|=\det\left(\vct{u},\vct{v},\vct{w}\right)
 \end{eqnarray}
-\marginnote{\caixa{Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{fig:volume_determinante}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. }}
-\begin{marginfigure}%[.5\baselineskip]
+\begin{obs}Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{fig:volume_determinante}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. \end{obs}
+\begin{figure}%[.5\baselineskip]
    \includegraphics{./cap_algvet/pics/volume_determinante}
    \caption{Representação do paralelepípedo formado por três vetores.}\label{fig:volume_determinante}   
-  \end{marginfigure}
+  \end{figure}
 O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
 \begin{equation}
 \vct{u}\cdot (\vct{v}\times \vct{w})
@@ -650,9 +650,10 @@ w_1 & w_2 & w_3\\
 
 
 Sabemos que quando permutamos duas linhas de uma matriz, seu determinante muda de sinal, pelo que podemos obter as seguintes relações:
-\begin{equation*}
-\vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=-\vct{v}\cdot\left(\vct{u}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=-\vct{w}\cdot\left(\vct{v}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)=-\vct{u}\cdot\left(\vct{w}\times\vct{v}\right)  
-\end{equation*}
+\begin{eqnarray*}
+\vct{u}\cdot\left(\vct{v}\times\vct{w}\right)&=&-\vct{v}\cdot\left(\vct{u}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)\\
+&=&-\vct{w}\cdot\left(\vct{v}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)=-\vct{u}\cdot\left(\vct{w}\times\vct{v}\right)  
+\end{eqnarray*}
 Extraindo apenas os termos de ordem ímpar temos:
 \begin{equation}\label{triploprodutoescalar} \vct{u}\cdot\left(\vct{v}\times\vct{w}\right)=\vct{v}\cdot\left(\vct{w}\times\vct{u}\right)=\vct{w}\cdot\left(\vct{u}\times\vct{v}\right)
 \end{equation}
@@ -696,18 +697,26 @@ Subtraíndo temos:
 \left[\left(u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2\right)w_3\vct{k}\right]
 \end{eqnarray*}
 Agora, somamos $u_1v_1w_1$ à primeira coordenada de cada um dos dois termos da subtração; somamos $u_2v_2w_2$  à segunda coordenada de cada um dos dois termos da subtração e somamos $u_3v_3w_3$ à terceira coordenada de cada um dos dois termos da subtração para obter:
-\begin{eqnarray*}
-\vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_1w_1+u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_3\vct{k}\right]\\
-&-&
-\left[\left(u_1v_1+u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_3\vct{k}\right]\\
-&=&(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
-\end{eqnarray*}
+% \begin{eqnarray*}
+% \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(u_1w_1+u_2w_2+u_3w_3\right)v_1\vct{i}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_2\vct{j}+\left(u_1w_1+u_2w_2+u_3w_3\right)v_3\vct{k}\right]\\
+% &-&
+% \left[\left(u_1v_1+u_2v_2+u_3v_3\right)w_1\vct{i}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_2\vct{j}+\left(u_1v_1+u_2v_2+u_3v_3\right)w_3\vct{k}\right]\\
+% &=&(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
+% \end{eqnarray*}
+ \begin{eqnarray*}
+ \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=&    \left[\left(\vct{u}\cdot\vct{w}\right)v_1\vct{i}+\left(\vct{u}\cdot\vct{w}\right)v_2\vct{j}+\left(\vct{u}\cdot\vct{w}\right)v_3\vct{k}\right]\\
+ &-&
+ \left[\left(\vct{u}\cdot\vct{v}\right)w_1\vct{i}+\left(\vct{u}\cdot\vct{v}\right)w_2\vct{j}+\left(\vct{u}\cdot\vct{v}\right)w_3\vct{k}\right]\\
+ &=&(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
+ \end{eqnarray*}
 Lembrando que $\vct{p_1}-\vct{p_2}=\vct{v}\times\vct{w}$, obtemos:
 \begin{eqnarray*}
 \vct{u}\times\left(\vct{p_1}-\vct{p_2}\right)&=& 
 \vct{u}\times\left(\vct{v}\times\vct{w}\right)=(\vct{u}\cdot\vct{w})\vct{v}-(\vct{u}\cdot\vct{v})\vct{w}.
 \end{eqnarray*}
 O formulário abaixo resume as indentidades que acabamos de demonstrar e lista mais algumas sem demonstração:
+
+\clearpage
 \begin{subequations}\label{vectoridendities}
 \begin{align}
  \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\mytext{Triplo produto escalar}\\ 
@@ -719,18 +728,17 @@ O formulário abaixo resume as indentidades que acabamos de demonstrar e lista m
 &=\left(\vec{u}\cdot\left(\vec{v}\times\vec{x}\right)\right)\vec{w}-\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x},&\\
 \end{align}
 \end{subequations}
-
 \newpage
 
 
 \section{Sistema de coordenadas cilíndricas}
 
-\begin{marginfigure}%[.5\baselineskip]
+\begin{figure}%[.5\baselineskip]
    \includegraphics{./cap_algvet/pics/coordenadas_cilindricas}
    \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}   
       \label{fig:coordenadas_cilindricas}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
-  \end{marginfigure}
+  \end{figure}
 
 
 No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas cilíndricas} $\rho$, $\theta$ e $z$. A coordenada $z$ é a mesma do sistema de coordenadas retangulares. A coordenada $\rho$ indica a distância entre a origem e a projeção $P'$ de $P$ sob o eixo $xy$. Finalmente $\theta$ é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$. Ver figura \ref{fig:coordenadas_cilindricas}. É fácil ver que
@@ -773,11 +781,11 @@ Resp: $\sqrt{\rho^2+z^2}$
 
   
  \section{Sistema de coordenadas esféricas}
-\begin{marginfigure}%[.5\baselineskip]
+\begin{figure}%[.5\baselineskip]
       \includegraphics{./cap_algvet/pics/coordenadas_esfericas}
    \caption{Representação de um ponto de coordenadas esféricas.}\label{./cap_algvet/pics/coo_esf}
       \label{fig:coordenadas_esfericas}
-       \end{marginfigure}
+       \end{figure}
 
  
  No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas esféricas} $r$, $\theta$ e $\varphi$. A coordenada $r$ indica a distância do ponto $P$ até a origem, sendo consistente com a definição de módulo de um vetor. A coordenada $\theta$ é o mesmo ângulo do sistema de coordenadas cilíndricas, ou seja,  é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$ (projeção de P no plano xy). O ângulo $\varphi$ é o ângulo entre a reta que liga a origem até o ponto $P$ e o semi-eixo $z>0$.  Ver figura \ref{fig:coordenadas_esfericas}. A relação entre a coordenadas no sistema de coordenadas esféricas e no sistema de coordenadas cilíndricas é dada pelas projeções:
@@ -868,4 +876,4 @@ $$\|f\|_2=\left(\left<f,f\right>\right)^{1/2}=\left(\int_0^1f(x)^2dx\right)^{1/2
 que é o caso particular de (\ref{norma_lp}) quando $p=2$. 
  A desigualdade de Cauchy-Schwarz admite a seguinte forma:
 $$\int_0^1f(x)g(x)dx \leq \left(\int_0^1f(x)^2dx\right)^{1/2} \left(\int_0^1g(x)^2dx\right)^{1/2}$$
-%\end{document}
+ 

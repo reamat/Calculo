@@ -1,6 +1,8 @@
-\documentclass[symmetric,a4paper,justified]{tufte-book}
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+\documentclass[a4paper]{book}
+
+%\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Opcões de Linguagem
@@ -10,7 +12,12 @@
 \usepackage[T1]{fontenc}
 
 %%%%%%%%%% 
+%%%% ams-latex %%%%
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
 
 \setcounter{secnumdepth}{4}  %%estilo do índice
 \setcounter{tocdepth}{3} %%mostras seções no índice
@@ -30,12 +37,13 @@
 
 
 
+
 \usepackage{mparhack}
 %%
 % Book metadata
 \title{Cálculo}
 \author{Diversos autores}
-\publisher{Recursos Educationais Abertos em Matemática - REAM}
+%\publisher{Recursos Educationais Abertos em Matemática - REAM}
 
 %%
 % If they're installed, use Bergamo and Chantilly from www.fontsite.com.
@@ -112,39 +120,19 @@
 % Inserts a blank page
 \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
-\usepackage{units}
 
-\usepackage[most]{tcolorbox}
-\tcbuselibrary{skins}
-\tcbset{
-    frame code={}
-    center title,
-    left=0pt,
-    right=0pt,
-    top=0pt,
-    bottom=0pt,
-    colback=green!20,
-    colframe=white,
-%    width=\dimexpr\textwidth\relax,
-    enlarge left by=0mm,
-    boxsep=5pt,
-    arc=10pt,outer arc=10pt,
-    }
-\newcommand{\caixa}[1]{
-\begin{tcolorbox}[enhanced,title={Nota:},
-frame style={color=green!85!black}]
-{#1}
-\end{tcolorbox}
-}
 
 % Generates the index
 \usepackage{makeidx}
 \makeindex
 
+
+
 \begin{document}
 
 % Front matter
 \frontmatter
+
 
 % r.1 blank page
 %\blankpage
@@ -152,19 +140,19 @@ frame style={color=green!85!black}]
 
 
 % v.2 epigraphs
-\newpage\thispagestyle{empty}
-\openepigraph{%
-Imagine um mundo no qual cada pessoa no planeta tenha acesso gratuito à soma de todo o conhecimento humano. Isso é o que estamos fazendo.
-}{Jimmy Wales, co-fundador da Wikipédia.  %, {\itshape Design, Form, and Chaos}
-}
-\vfill
-\openepigraph{%
-Um fato ainda mais interessante é que os Recursos Educacionais Abertos criam estudantes mais motivados e cientistas cidadãos. Eles podem se tornar coprodutores, geradores e criadores de informação e conhecimento. E esse conhecimento, uma vez que possui licença Creative Commons, pode ser compartilhado gratuita e globalmente em qualquer lugar e a qualquer hora.
-}{Cable Green, diretor de educação aberta na Creative Commons.} %https://nacoesunidas.org/artigo-recursos-educacionais-precisam-ter-licenca-aberta/
-\vfill
-\openepigraph{%
-Jamais houve em nossa história um período em que tanto da nossa “cultura” teve um “dono” como atualmente. E nunca antes houve um período quando a concentração de poder para controlar os usos da cultura foi tão inquestionavelmente aceita como o é atualmente.
-}{Lawrence Lessig, professor na faculdade de direito de Harvard e um dos fundadores do Creative Commons.}
+% \newpage\thispagestyle{empty}
+% \openepigraph{%
+% Imagine um mundo no qual cada pessoa no planeta tenha acesso gratuito à soma de todo o conhecimento humano. Isso é o que estamos fazendo.
+% }{Jimmy Wales, co-fundador da Wikipédia.  %, {\itshape Design, Form, and Chaos}
+% }
+% \vfill
+% \openepigraph{%
+% Um fato ainda mais interessante é que os Recursos Educacionais Abertos criam estudantes mais motivados e cientistas cidadãos. Eles podem se tornar coprodutores, geradores e criadores de informação e conhecimento. E esse conhecimento, uma vez que possui licença Creative Commons, pode ser compartilhado gratuita e globalmente em qualquer lugar e a qualquer hora.
+% }{Cable Green, diretor de educação aberta na Creative Commons.} %https://nacoesunidas.org/artigo-recursos-educacionais-precisam-ter-licenca-aberta/
+% \vfill
+% \openepigraph{%
+% Jamais houve em nossa história um período em que tanto da nossa “cultura” teve um “dono” como atualmente. E nunca antes houve um período quando a concentração de poder para controlar os usos da cultura foi tão inquestionavelmente aceita como o é atualmente.
+% }{Lawrence Lessig, professor na faculdade de direito de Harvard e um dos fundadores do Creative Commons.}
 
 
 \maketitle
@@ -172,26 +160,26 @@ Jamais houve em nossa história um período em que tanto da nossa “cultura” 
 
 % v.4 copyright page
 \newpage
-\begin{fullwidth}
 
 \par Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 .\index{licença}
 
-\end{fullwidth}
 
-\tableofcontents
 
-\listoffigures
+%\tableofcontents
 
-\listoftables
+%\listoffigures
 
-\cleardoublepage
+%\listoftables
+
+%\cleardoublepage
 \chapter*{Introdução}
 
 Este livro é de Cálculo. Para um livro de análise, veja \cite{Rudin}.
 %%
 % Start the main matter (normal chapters)
-\mainmatter
+%\mainmatter
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%      Parte 1       %%%%%%%%%%
@@ -199,7 +187,7 @@ Este livro é de Cálculo. Para um livro de análise, veja \cite{Rudin}.
 \part{Cálculo de uma variável}
 
 \chapter{Limites}
-O limite é ... Eis uma nota de lado\sidenote{Nota de lado.}
+O limite é ... 
 \chapter{Derivadas}
 
 \chapter{Estudo das funções contínuas e diferenciáveis}
@@ -221,7 +209,7 @@ O limite é ... Eis uma nota de lado\sidenote{Nota de lado.}
 \part{Cálculo de várias variáveis}
 
 \chapter{Curvas no plano}
-
+aa
 \include{./cap_algvet/cap_algvet} %\chapter{Álbegra vetorial}
 
 \chapter{Funções de várias variáveis}
