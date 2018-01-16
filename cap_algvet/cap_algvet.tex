@@ -108,10 +108,12 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vct{v}$ como a d
 \end{exer}
 
 \begin{figure}%[42\baselineskip]
+\begin{center}
  \includegraphics{./cap_algvet/pics/desigualdade_triangulo}
       \caption{Representação gráfica da desigualdade triangular: $\|\vec{u}+\vec{v}\|\leq \|\vct{u}\|+\|\vct{v}\|$}
       \label{fig:des_triang}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
+      \end{center}
    \end{figure}
 
 Dica: Para mostrar a desigualdade triangular\index{desigualdade triangular}, entenda seu significado geométrico. Uma demonstração puramente algébrica pode ser feita, embora seja mais laboriosa. Veremos mais adiante que o conceito de produto escalar\index{produto escalar} permite simplificar os cálculos. 
@@ -175,9 +177,11 @@ onde $\vct{u}=u_1\vct{i}+u_2\vct{j}+u_3\vct{k}$, $\vct{v}=v_1\vct{i}+v_2\vct{j}+
 
 
 \begin{figure}%[20\baselineskip]
+\begin{center}
 \includegraphics{./cap_algvet/pics/latitude_longitude2}
       \caption{Representação gráfica do sistema de coordenadas geográficas.}
       \label{fig:latlong}
+      \end{center}
   \end{figure}
 
 \begin{exer} 
@@ -302,9 +306,10 @@ Na seção anterior, começamos a trabalhar com vetores no espaço euclidiano. N
 
 
 Considere os vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$ relacionados por $$\vct{w}=\vct{u}-\vct{v}.$$
-\begin{figure}
+\begin{figure}\begin{center}
         \includegraphics[width=\textwidth]{./cap_algvet/pics/cossenos} %
     \caption{Lei dos cossenos: $\|\vct{w}\|^2=\|\vct{u}\|^2+\|\vec{v}\|^2-2~\!\|\vec{u}\|~\!\|\vec{v}\|\cos\theta$}\label{leicossenos}
+    \end{center}
 \end{figure}
 Este trio de vetores pode ser intepretado como os três lados de um triângulo como na figura \ref{leicossenos}. Da lei dos cossenos, sabemos que a seguinte relação é satisfeita:
  $$w^2=u^2+v^2-2uv\cos\theta$$
@@ -510,10 +515,12 @@ A importância desta propriedade está no fato que se $\vct{w}=\vct{u}\times \vc
 onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vct{u}$ e $\vct{v}$ e forma um sistema dextrogiro com eles.  
 
 \begin{figure}%[10\baselineskip]
+\begin{center}
      \includegraphics[width=\textwidth]{./cap_algvet/pics/prod_vec_paralelogramo}
       \caption{Interpretação geométrica do produto vetorial.}\label{fig:prod_paralelo}
       %\label{fig:marginfig}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
+      \end{center}
   \end{figure}
 
   A norma do produto vetorial entre os vetores $\vct{u}$ e $\vct{v}$ pode ser interpretada como a área do paralelogramo cujos lados são $\vct{u}$ e $\vct{v}$ (ver figura \ref{fig:prod_paralelo}. A direção do produto vetorial é então ortogonal ao plano gerado por  $\vct{u}$ e $\vct{v}$  e o sentido é dado pela regra da mão direita.
@@ -629,9 +636,10 @@ Obtemos:
 \end{eqnarray}
 \begin{obs}Assim como o produto vetorial possui uma interpretação geométrica importante, a intepretação geométrica do triplo produto escalar está relacionado com o paralelepípedo formado pelos vetores $\vct{u}$, $\vct{v}$ e $\vct{w}$, ver figura (\ref{fig:volume_determinante}). O módulo é o volume do paralepípedo e o sinal é dado pela orientação do trio $\vct{u}$, $\vct{v}$ e $\vct{w}$: positivo ou negativo para as orientações dextrogira ou levogira, respectivamente. \end{obs}
 \begin{figure}%[.5\baselineskip]
+\begin{center}
    \includegraphics{./cap_algvet/pics/volume_determinante}
    \caption{Representação do paralelepípedo formado por três vetores.}\label{fig:volume_determinante}   
-  \end{figure}
+  \end{center}\end{figure}
 O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
 \begin{equation}
 \vct{u}\cdot (\vct{v}\times \vct{w})
@@ -735,10 +743,12 @@ O formulário abaixo resume as indentidades que acabamos de demonstrar e lista m
 \section{Sistema de coordenadas cilíndricas}
 
 \begin{figure}%[.5\baselineskip]
+\begin{center}
    \includegraphics{./cap_algvet/pics/coordenadas_cilindricas}
    \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}   
       \label{fig:coordenadas_cilindricas}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
+      \end{center}
   \end{figure}
 
 
@@ -783,10 +793,11 @@ Resp: $\sqrt{\rho^2+z^2}$
   
  \section{Sistema de coordenadas esféricas}
 \begin{figure}%[.5\baselineskip]
+\begin{center}
       \includegraphics{./cap_algvet/pics/coordenadas_esfericas}
    \caption{Representação de um ponto de coordenadas esféricas.}\label{./cap_algvet/pics/coo_esf}
       \label{fig:coordenadas_esfericas}
-       \end{figure}
+        \end{center}\end{figure}
 
  
  No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas esféricas} $r$, $\theta$ e $\varphi$. A coordenada $r$ indica a distância do ponto $P$ até a origem, sendo consistente com a definição de módulo de um vetor. A coordenada $\theta$ é o mesmo ângulo do sistema de coordenadas cilíndricas, ou seja,  é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$ (projeção de P no plano xy). O ângulo $\varphi$ é o ângulo entre a reta que liga a origem até o ponto $P$ e o semi-eixo $z>0$.  Ver figura \ref{fig:coordenadas_esfericas}. A relação entre a coordenadas no sistema de coordenadas esféricas e no sistema de coordenadas cilíndricas é dada pelas projeções:
