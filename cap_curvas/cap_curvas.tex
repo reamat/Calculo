@@ -154,15 +154,11 @@ Calcule o vetor velocidade $\vct{v}$ e o vetor aceleração $\vct{v}$ dados por 
  
  \section{Comprimento de arco}
 % Dada uma curva parametrizada pela função vetorial $\vct{r}(t)=x(t)\vct{i}+y(t)\vct{j}+z(t)\vct{k}$, $t\in[a,b]$, estamos interessados no problema de calcular o comprimento $L$ do arco de descrito por uma curva $\vct{r}(t)$, $a\leq t\leq b$.
- \begin{figure}\caption{Aproximação poligonal do comprimento do arco}\label{fig_compr_arc}
- \end{figure}
-
- 
- \begin{figure}%{0.35\textwidth}
-\begin{center}
+  
+\begin{figure}
+\centering
     \includegraphics{./cap_curvas/pics/helice_retificacao}
 \caption{Aproximação poligonal do comprimento do arco}\label{fig_compr_arc}
-  \end{center}
 \end{figure}
 
  
@@ -188,80 +184,45 @@ s(t)=\int_{a}^{t}\|\vct{r}\!~'(\tau)\|d\tau,\qquad a\leq t\leq b.
 Seja a curva descrita pela função vetorial $\vct{r}(t)$. Queremos encontrar um vetor que seja tangente à curva em um dado ponto\index{vetor tangente}. Para tal tomamos o limite
 $$\lim_{h\to 0} \frac{\vct{r}(t+h)-\vct{r}(t)}{h}$$  
 Este limite converge para $\vct{r}'(t)$ e, geometricamente, para o vetor tangente à curva no ponto $P$ relativo a $\vct{r}(t)$\footnote{O leitor atento ao formalismo pode tomar esta coma uma definição de vetor tangente. Adiante, veremos que esta definição é consistente com o vetor tangente do cálculo de funções de uma variável.} sempre que $\vct{r}'(t)\neq \vct{0}$. O sentido do vetor $\vct{r}~\!'(t)$ é dado pela parametrização da curva, em outras palavras, o vetor $\vct{r}~\!'(t)$ aponta no sentido em que o parâmetro $t$ cresce.
-% 
-% \begin{wrapfigure}{r}{.4\textwidth}
-% %\vspace{-40pt}
-%  \begin{pspicture}(-.2\textwidth,-.2\textwidth)(.2\textwidth,.2\textwidth)
-%  \psset{unit=.15\textwidth}
-% % \psset{xunit=.1\textwidth}
-%  \newrgbcolor{verde}{0 0.5 0}
-%   \psaxes{->,labels=none}(0,0)(-1.2,-1.2)(1.2,1.2)        % sets up axis
-%   
-%  \pscircle[linecolor=blue,linewidth=1pt](0,0){1}
-% 
-% \psline[linecolor=verde,linewidth=1pt,arrowscale=2,arrows=->](0.70,0.707)(.30,1.107)
-% %\psline[linecolor=verde,linewidth=1pt](.29,1.107)(.40,1.107)
-% %\psline[linecolor=verde,linewidth=1pt](.30,1.117)(.30,1.007)
-% \psline[linecolor=red,linewidth=1pt,arrowscale=2,arrows=->](0,0)(0.707,0.707)
-% %\psline[linecolor=red,linewidth=1pt](0.707,0.707)(0.607,0.707)
-% %\psline[linecolor=red,linewidth=1pt](0.707,0.707)(0.707,0.607)
-% 
-%  \rput[0](0.7,0.5){$\vct{r}(t)$}
-% \rput[0](0.55,1.1){$\vct{r}~\!'(t)$}
-% 
-% \rput[0](1.2,-.1){$x$}
-% \rput[0](.07,1.2){$y$} 
-% \rput[0](1.05,.1){$1$}
-% 
-% 
-%   % \psplot[linecolor=blue, linewidth=1pt]{0}{2}{x}
-%   % \psline[ linecolor=blue, linewidth=1pt](7,0)(7,1)
-%  
-%  \end{pspicture}\caption{O vetor tangente $\vct{r}\!~'(t)$}\label{circtang}
-% \end{wrapfigure}
-% 
-% 
-% \begin{ex}
-% Consideramos a circunferência parametrizada conforme a seguinte função vetorial:
-% $$\vct{r}(t)=\cos(wt)\vct{i}+\sin(wt)\vct{j},~~ w>0.$$
-% A derivada de $\vct{r}(t)$ é dada por
-% $$\vct{r}\!~'(t)=-w\sin(wt)\vct{i}+w\cos(wt)\vct{j}.$$
-% Veja na figura \ref{circtang}, uma representação gráfica da circunferência, do vetor $\vct{r}(t)$ e de sua derivada $\vct{r}\!~'(t)$. Os vetores $\vct{r}(t)$ e $\vct{r}'(t)$ são ortogonais em função do teorema \ref{teodernormacst}.  A norma de $\vct{r}~\!'(t)$ vale
-% \begin{eqnarray*}
-% \|\vct{r}~\!'(t)\|\!&=&\!\sqrt{\left[-w\sin(wt)\right]^2+\left[w\cos(wt)\right]^2}\\
-% \!&=&\!\sqrt{w^2\left[\sin^2(wt)+\cos^2(wt)\right]}=w
-% \end{eqnarray*}
-% \end{ex}
-% 
-% Observe que a norma do vetor tangente depende de como a curva é parametrizada e não apenas da curva em si. A fim de trabalhar com um objeto que independe da parametrização, é natural definirmos o vetor tangente unitário\index{vetor tangente unitário}, denotado por $\vct{T}$ (veja figura \ref{Frenet_Serret}):
-% \begin{equation}\label{defvecunit}
-% \|\vct{T}(t)\|=\frac{\vct{r}\!~'(t)}{\left\|\vct{r}\!~'(t)\right\|},\qquad \vct{r}\!~'(t)\neq \vct{0}.
-% \end{equation} 
-% A condição de existência para o vetor $\vct{T}$ é a função vetorial que parametriza a curva seja diferenciável que sua derivada seja diferente de zero, ou seja, que a parametrização seja regular.
-% 
-% \begin{obs} Quando $\vct{r}(t)$ representa a trajetória de uma partícula ao longo do tempo, a derivada $\vct{r}\!~(t)$ é a velocidade $\vct{v}(t)$ da partícula. Neste caso, o vetor tangente unitário é o versor associado a $\vct{v}(t)$:
-% $$\vct{v}(t)=v(t) \hat{v}(t)=v(t) \vct{T}(t).$$
-% A norma de $\vct{v}(t)$, denotada por $v(t)$, é chamada de velocidade escalar\index{velocidade escalar}. O vetor $\vct{T}(t)$ indica o sentido e a direção da velocidade.
-% \end{obs}
-% 
-% O vetor $\vct{T}$ pode ser definido de forma alternativa como segue: olhamos $s$ como função de $t$ na expressão (\ref{defcomparco_1}) e observamos que $s'(t)=\|\vct{r}\!~'(t)\|>0$. Assim, $s(t)$ é uma função contínua e monótona de $t$. Também, usando a rega da cadeia, temos:
-% $$
-% \frac{d\vct{r}}{dt}=\frac{d\vct{r}}{ds}\frac{ds}{dt}=\frac{d\vct{r}}{ds}\|\vct{r}\!~'(t)\|.
-% $$
-% Como $\vct{r}'(t)$ representa o vetor tangente, então
-% $$
-% \frac{d\vct{r}}{ds}=\frac{1}{\|\vct{r}\!~'(t)\|}\frac{d\vct{r}}{dt}=\vct{T}
-% $$
-% representa um vetor tangente unitário.
-% 
-% \begin{exer}
-% Considere as funções vetoriais dadas por
-% \begin{eqnarray*}
-% \vct{f}(t)&=&\cos(\pi t)\vct{i}+\sin(\pi t)\vct{j}\\
-% \vct{g}(t)&=&\cos(\pi t^3)\vct{i}+\sin(\pi t^3)\vct{j}
-% \end{eqnarray*}
-% Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
-% \end{exer}
+
+
+\begin{figure}%{0.35\textwidth}
+\begin{center}
+    \includegraphics{./cap_curvas/pics/vetor_tangente_circunferencia}
+\caption{O vetor tangente $\vct{r}\!~'(t)$}\label{circtang}
+  \end{center}
+\end{figure}
+
+
+Observe que a norma do vetor tangente depende de como a curva é parametrizada e não apenas da curva em si. A fim de trabalhar com um objeto que independe da parametrização, é natural definirmos o vetor tangente unitário\index{vetor tangente unitário}, denotado por $\vct{T}$ (veja figura \ref{Frenet_Serret}):
+\begin{equation}\label{defvecunit}
+\|\vct{T}(t)\|=\frac{\vct{r}\!~'(t)}{\left\|\vct{r}\!~'(t)\right\|},\qquad \vct{r}\!~'(t)\neq \vct{0}.
+\end{equation} 
+A condição de existência para o vetor $\vct{T}$ é a função vetorial que parametriza a curva seja diferenciável que sua derivada seja diferente de zero, ou seja, que a parametrização seja regular.
+
+\begin{obs} Quando $\vct{r}(t)$ representa a trajetória de uma partícula ao longo do tempo, a derivada $\vct{r}\!~(t)$ é a velocidade $\vct{v}(t)$ da partícula. Neste caso, o vetor tangente unitário é o versor associado a $\vct{v}(t)$:
+$$\vct{v}(t)=v(t) \hat{v}(t)=v(t) \vct{T}(t).$$
+A norma de $\vct{v}(t)$, denotada por $v(t)$, é chamada de velocidade escalar\index{velocidade escalar}. O vetor $\vct{T}(t)$ indica o sentido e a direção da velocidade.
+\end{obs}
+
+O vetor $\vct{T}$ pode ser definido de forma alternativa como segue: olhamos $s$ como função de $t$ na expressão (\ref{defcomparco_1}) e observamos que $s'(t)=\|\vct{r}\!~'(t)\|>0$. Assim, $s(t)$ é uma função contínua e monótona de $t$. Também, usando a rega da cadeia, temos:
+$$
+\frac{d\vct{r}}{dt}=\frac{d\vct{r}}{ds}\frac{ds}{dt}=\frac{d\vct{r}}{ds}\|\vct{r}\!~'(t)\|.
+$$
+Como $\vct{r}'(t)$ representa o vetor tangente, então
+$$
+\frac{d\vct{r}}{ds}=\frac{1}{\|\vct{r}\!~'(t)\|}\frac{d\vct{r}}{dt}=\vct{T}
+$$
+representa um vetor tangente unitário.
+
+\begin{exer}
+Considere as funções vetoriais dadas por
+\begin{eqnarray*}
+\vct{f}(t)&=&\cos(\pi t)\vct{i}+\sin(\pi t)\vct{j}\\
+\vct{g}(t)&=&\cos(\pi t^3)\vct{i}+\sin(\pi t^3)\vct{j}
+\end{eqnarray*}
+Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
+\end{exer}
 % 
 % \begin{wrapfigure}{r}{7cm}
 % 
