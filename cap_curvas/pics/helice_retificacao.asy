@@ -1,6 +1,8 @@
 include "../../config/asy_config.asy";
 
 
+FiguraMedia();
+
 import three;
 import graph3;
 import grid3;
@@ -15,13 +17,15 @@ triple F(real t) {
 
 real t0=3;
 real tf=8;
+triple P[];
+int N=10;
+path3 g;
 
-path3 g = graph(F, t0, tf);
+g = graph(F, t0, tf);
 draw(g,blue);
 
-triple P[];
 
-int N=10;
+
 
 for(int i=0; i < N; ++i) {
  	P[i]=F(t0 + (tf-t0)*i/(N-1));
@@ -29,7 +33,7 @@ for(int i=0; i < N; ++i) {
 }
 
 for(int i=0; i < N-1; ++i) {
-	draw(P[i]..P[i+1]);
+	draw(P[i]..P[i+1],red);
 
 }
 
@@ -38,5 +42,7 @@ for(int i=0; i < N; ++i) {
 	label("$P_"+string(i)+"$",P[i],S);
 
 }
+
+
 
 
