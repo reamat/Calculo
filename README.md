@@ -8,7 +8,7 @@ Caso queira colaborar, escreva para:
 
 Fork us on GitHub! O código fonte do livro está disponível no repositório GitHub:
 
-<https://github.com/reamat/????>
+<https://github.com/reamat/calculo>
 
 Também disponibilizamos o e-mail de contato:
 
@@ -26,6 +26,10 @@ O código fonte está escrito em [Latex](https://latex-project.org/) e as refer�
 O código LaTeX está testado em computador [Linux](https://pt.wikipedia.org/wiki/Linux) com o pacote [TexLive](https://www.tug.org/texlive/) instalado. O livro pode ser compilado com:
 
     $ make
+
+Isto gera o livro em formato PDF (main.pdf). Também, o código pode ser compilado em formato DVI:
+
+    $ make dvi
 
 Alguma vezes a compilação pode gerar erros devido a incompatibilidade com antigos arquivos temporários. Para limpar os arquivos temporários gerados durante a compilação, digite:
 

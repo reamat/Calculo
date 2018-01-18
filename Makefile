@@ -9,12 +9,43 @@
 ########################################
 
 
+########################################
+# FORMATO LIVRO PDF
+########################################
+
 pdf: main.tex
-	pdflatex 	main
-	bibtex 		main
-#	makeindex 	main
-	pdflatex 	main
-	pdflatex 	main
+	pdflatex main
+	bibtex main
+	makeindex main
+	pdflatex main
+	pdflatex main
+
+
+########################################
+# FORMATO LIVRO DVI
+########################################
+
+dvi: main.tex
+	latex main
+	bibtex main
+	makeindex main
+	latex main
+	latex main
+
+
+########################################
+# FORMATO HTML
+########################################
+
+html: main.tex
+	mkdir -p ./html
+	rm -f ./html/*
+	latex main
+	bibtex main
+	latex main
+	latex main
+	mk4ht htlatex main "myconfig,3,notoc*" "" "-d./html/"
+
 
 
 
