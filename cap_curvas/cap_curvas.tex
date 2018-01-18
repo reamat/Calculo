@@ -223,128 +223,72 @@ Considere as funções vetoriais dadas por
 \end{eqnarray*}
 Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
 \end{exer}
-% 
-% \begin{wrapfigure}{r}{7cm}
-% 
-% 
-% \begin{pspicture}(-3.5,-1.5)(2.5,4.0)
-% 
-% \psset{arrowscale=2,arrows=->,viewpoint=20 20 20,Decran=15,lightsrc=20 10 5}
-% \defFunction[algebraic]%
-% {helice}(t)
-% {2*cos(2*t)}{5*sin(2*t)}{t}
-% \psSolid[arrows=->,object=courbe,r=0,
-% range=3 8,
-% linecolor=blue,
-% linewidth=0.05,
-% resolution=360,
-% function=helice]%
-% 
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](1.9203406,-1.3970775,3.)(2.2653647,1.5669842,3.3087017)
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](1.9203406,-1.3970775,3.)(-1.0524784,-1.0330466,2.8272902)
-%    \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](1.9203406,-1.3970775,3.)(1.7122408,-1.6831192,5.9790728)
-%       
-%       
-%  
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-0.29,4.95,4)(-2.94,3.64,4.53)
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-0.29,4.95,4)(0.6965073,2.1212711,3.7968617)
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-0.29,4.95,4)(0.4292406,4.9891601,6.9119509)
-%   
-%   
-%       
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-1.6781431,-2.7201056,5. )(-0.9299871,-5.6049034,5.3438083)
-%     \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-1.6781431,-2.7201056,5. )(1.1989964,-1.9351497,5.3254427)
-%     \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](-1.6781431,-2.7201056,5. )(-2.0810467,-2.471538,7.9624117)
-%   
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](0.2734744,4.9530368,7.)(-2.4850089,5.9049461,7.6961596)
-%     \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](0.2734744,4.9530368,7.)(-0.6596792,2.1083429,7.1921997)
-%   \pstThreeDLine[linecolor=red,linewidth=1pt,arrows=->](0.2734744,4.9530368,7.)(0.9945803,4.913222,9.9117728)
-%   
-%   \psPoint(-2.9,6.1,8){Nome1}
-%       \rput*(Nome1){$\vct{T}$}
-%   
-%   \psPoint(-1,1.5,7.4){Nome2}
-%       \rput*(Nome2){$\vct{N}$}
-% 
-%         \psPoint(1,5,10.4){Nome3}
-%       \rput*(Nome3){$\vct{B}$}
-% 
-%   
-%   
-%   \axesIIID[linecolor=black](0,0,0)(4.5,4.5,11)
-%  \end{pspicture}\caption{Triedro de Frenet-Serret}\label{Frenet_Serret}
-%  
-% \end{wrapfigure}
-% 
-% Agora, queremos definir um vetor ortogonal a $\vct{T}$ que esteja no mesmo plano formado por $\vct{r}'(t)$ e $\vct{r}''(t)$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vct{T}(t)$ possui módulo constante e, portanto, $\vct{T}(t)\cdot \vct{T}'(t)=0$. Observe que $\vct{T}(t)$ e $\vct{T}'(t)$ estão ambos no plano formado por $\vct{r}'(t)$ e $\vct{r}''(t)$ e são ortogonais entre si. No entanto, $\vct{T}'(t)$ não é necessariamente unitário. Logo, faz sentido definir o vetor normal unitário\index{vetor normal unitário} como
-% $$
-% \vct{N}=\frac{\vct{T}'(t)}{\|\vct{T}'(t)\|}.
-% $$
-% A figura \ref{Frenet_Serret} apresenta a representação de alguns vetores normais unitários.
-% 
-% Finalmente, vamos definir um vetor unitário que é simultanemente ortogonal a $\vct{T}$ e $\vct{N}$. A forma natural de obter um vetor ortogonal a outros dois vem do produto vetorial. Assim, o vetor binormal unitário\index{vetor binormal unitário} é definido como
-% $$
-% \vct{B}=\vct{T}\times\vct{N}.
-% $$
-% Das propriedades de produto vetorial, temos que $\vct{B}$, além de ortogonal a $\vct{T}$ e $\vct{N}$, é unitário e forma um sistema dextrogiro. O trio $\vct{T}$, $\vct{N}$ e $\vct{B}$ é chamado de triedro de Frenet-Serret. A figura \ref{Frenet_Serret} apresenta a representação de alguns triedros de Frenet-Serret.
-% 
-% 
-% \section{Curvatura e Torção}
-% 
-% Nessa seção, estamos interessados em definir, a cada ponto da curva, funções que medem o quanto ela está torcida ou curvada, isto é, se a curva é muito diferente de uma reta ou se está fora de qualquer plano do espaço. Primeiro, definiremos uma função chamada de curvatura\index{curvatura}, que mede a cada ponto do domínio, a variação do vetor tangente com respeito ao comprimento de arco $s$. Naturalmente, queremos que a reta tenha curvatura nula, pois ela não difere da sua tangente em ponto algum. Para facilitar a visualização, podemos começar pensando apenas nas curvas que estão contidas em algum plano. A figura \ref{curvatura} nos dá uma ideia de curvatura.
-% 
-% \begin{figure}[!ht]
-% \begin{center}
-% \psset{xunit =1cm,yunit=1cm, linewidth=1\pslinewidth}
-%  \begin{pspicture}(0,-1)(4,3)
-%  
-% \psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{0}{3}{x}
-% 
-% \rput(1.5,-.5){Curvatura nula}
-% 
-% \end{pspicture}
-%  \begin{pspicture}(0,-1)(4,3)
-%  
-% \psplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{0}{3}{x x mul 3 div}
-% 
-% \rput(1.5,-.5){Curvatura pequena}
-% 
-% \end{pspicture}
-%  \begin{pspicture}(-2,-2)(2,2)
-%  
-% \parametricplot[plotstyle=curve,linewidth=2\pslinewidth,linecolor=blue]{0}{360}{3 t mul cos 2.718 -0.01 t mul exp mul 3 t mul sin 2.718 -0.01 t mul exp mul 2 mul}
-% 
-% \rput(0,-1.5){Curvatura grande}
-% 
-% \end{pspicture}
-% 
-% 
-% \end{center}
-% \caption{Ideia de curvatura.\label{curvatura}}
-% \end{figure}
-% 
-% Pelo teorema \ref{teodernormacst}, temos que $\frac{d \vct{T} }{ds}$ é paralelo ao vetor normal $\vct{N}$, ou seja,
-% \begin{equation}{\label{Frenet_1}}
-% \frac{d \vct{T} }{ds}=\kappa   \vct{N},
-% \end{equation}
-% onde $\kappa(t)>0$ é uma função escalar chamada de curvatura. Por outro lado, calculamos a variação do vetor tangente com respeito ao comprimento de arco $s$ usando a regra da cadeia
-% $$
-% \frac{d \vct{T} }{ds}=\frac{d \vct{T} }{dt}\frac{dt}{ds}=\frac{d \vct{T} }{dt}\frac{1}{|s'(t)|},
-% $$
-% onde $s(t)$ é a função que mede o comprimento do arco dado pela expressão (\ref{defcomparco_1}). Usando o fato que $s'(t)=\|\vct{r}'(t)\|$, temos:
-% $$
-% \frac{d \vct{T} }{ds}=\frac{1}{\|\vct{r}'(t)\|}\frac{d \vct{T} }{dt}.
-% $$
-% Portanto, podemos escrever
-% $$
-% \kappa(t)=\frac{\|\vct{T}'(t)\|}{\|\vct{r}'(t)\|}.
-% $$
-% 
-% Definimos também, para cada ponto $t$ do domínio, o raio de curvatura\index{raio de curvatura} $\rho(t)$ da forma:
-% $$
-% \rho(t)=\frac{1}{\kappa(t)}.
-% $$
-% O raio de curvatura tem a seguinte interpretação geométrica: considere um ponto $\vct{r}(t_0)$ onde da curvatura não é nula e defina o ponto $\vct{r}(t_0)+\kappa(t_0)\vct{N}$, chamado de centro de curvatura\index{centro de curvatura}. O círculo centrado no centro de curvatura e raio $\rho(t_0)$ é tangente a curva em $t_0$ e possui a mesma curvatura (veja a figura \ref{raio_de_curvatura}).
+
+
+\begin{figure}%{0.35\textwidth}
+\begin{center}
+    \includegraphics{./cap_curvas/pics/helice_TNB}
+\caption{Triedro de Frenet-Serret}\label{Frenet_Serret}
+  \end{center}
+\end{figure}
+
+
+Agora, queremos definir um vetor ortogonal a $\vct{T}$ que esteja no mesmo plano formado por $\vct{r}'(t)$ e $\vct{r}''(t)$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vct{T}(t)$ possui módulo constante e, portanto, $\vct{T}(t)\cdot \vct{T}'(t)=0$. Observe que $\vct{T}(t)$ e $\vct{T}'(t)$ estão ambos no plano formado por $\vct{r}'(t)$ e $\vct{r}''(t)$ e são ortogonais entre si. No entanto, $\vct{T}'(t)$ não é necessariamente unitário. Logo, faz sentido definir o vetor normal unitário\index{vetor normal unitário} como
+$$
+\vct{N}=\frac{\vct{T}'(t)}{\|\vct{T}'(t)\|}.
+$$
+A figura \ref{Frenet_Serret} contém a representação do triedro de Frenet-Serret em alguns pontos de uma hélice dextrogira.
+
+Finalmente, vamos definir um vetor unitário que é simultanemente ortogonal a $\vct{T}$ e $\vct{N}$. A forma natural de obter um vetor ortogonal a outros dois vem do produto vetorial. Assim, o vetor binormal unitário\index{vetor binormal unitário} é definido como
+$$
+\vct{B}=\vct{T}\times\vct{N}.
+$$
+Das propriedades de produto vetorial, temos que $\vct{B}$, além de ortogonal a $\vct{T}$ e $\vct{N}$, é unitário e forma um sistema dextrogiro. O trio $\vct{T}$, $\vct{N}$ e $\vct{B}$ é chamado de triedro de Frenet-Serret. A figura \ref{Frenet_Serret} apresenta a representação de alguns triedros de Frenet-Serret.
+
+
+\section{Curvatura e Torção}
+
+Nessa seção, estamos interessados em definir, a cada ponto da curva, funções que medem o quanto ela está torcida ou curvada, isto é, se a curva é muito diferente de uma reta ou se está fora de qualquer plano do espaço. Primeiro, definiremos uma função chamada de curvatura\index{curvatura}, que mede a cada ponto do domínio, a variação do vetor tangente com respeito ao comprimento de arco $s$. Naturalmente, queremos que a reta tenha curvatura nula, pois ela não difere da sua tangente em ponto algum. Para facilitar a visualização, podemos começar pensando apenas nas curvas que estão contidas em algum plano. A figura \ref{curvatura} nos dá uma ideia de curvatura.
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics{./cap_curvas/pics/exemplos_de_curvatura}
+ \caption{Ideia de curvatura.\label{curvatura}}
+  \end{center}
+\end{figure}
+ 
+Pelo teorema \ref{teodernormacst}, temos que $\frac{d \vct{T} }{ds}$ é paralelo ao vetor normal $\vct{N}$, ou seja,
+\begin{equation}{\label{Frenet_1}}
+\frac{d \vct{T} }{ds}=\kappa   \vct{N},
+\end{equation}
+onde $\kappa(t)>0$ é uma função escalar chamada de curvatura. Por outro lado, calculamos a variação do vetor tangente com respeito ao comprimento de arco $s$ usando a regra da cadeia
+$$
+\frac{d \vct{T} }{ds}=\frac{d \vct{T} }{dt}\frac{dt}{ds}=\frac{d \vct{T} }{dt}\frac{1}{|s'(t)|},
+$$
+onde $s(t)$ é a função que mede o comprimento do arco dado pela expressão (\ref{defcomparco_1}). Usando o fato que $s'(t)=\|\vct{r}'(t)\|$, temos:
+$$
+\frac{d \vct{T} }{ds}=\frac{1}{\|\vct{r}'(t)\|}\frac{d \vct{T} }{dt}.
+$$
+Portanto, podemos escrever
+$$
+\kappa(t)=\frac{\|\vct{T}'(t)\|}{\|\vct{r}'(t)\|}.
+$$
+
+Definimos também, para cada ponto $t$ do domínio, o raio de curvatura\index{raio de curvatura} $\rho(t)$ da forma:
+$$
+\rho(t)=\frac{1}{\kappa(t)}.
+$$
+O raio de curvatura tem a seguinte interpretação geométrica: considere um ponto $\vct{r}(t_0)$ onde da curvatura não é nula e defina o ponto $\vct{r}(t_0)+\kappa(t_0)\vct{N}$, chamado de centro de curvatura\index{centro de curvatura}. O círculo centrado no centro de curvatura e raio $\rho(t_0)$ é tangente a curva em $t_0$ e possui a mesma curvatura (veja a figura \ref{raio_de_curvatura}).
+
+
+\begin{figure}
+\begin{center}
+    \includegraphics{./cap_curvas/pics/circulo_curvatura_parabola}
+ \caption{Círculo de curvatura}\label{raio_de_curvatura}
+  \end{center}
+\end{figure}
+
 % 
 % \begin{wrapfigure}{r}{9cm}
 % 

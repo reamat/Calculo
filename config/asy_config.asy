@@ -13,6 +13,11 @@ void FiguraMedia() {
 }
 
 
+void TamanhoTexto() {
+	size(418pt,0);
+}
+
+
 
 string uvec="\vec{u}";
 string vvec="\vec{v}";
