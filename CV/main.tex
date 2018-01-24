@@ -1,0 +1,67 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, NÃO EDITE ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{book}
+
+\input preambulo.tex
+
+\begin{document}
+
+\frontmatter
+
+\title{Cálculo Vetorial\\\small{Um Livro Colaborativo}}
+\author{}
+\date{\today}
+\ifishtml
+\else
+\addcontentsline{toc}{chapter}{Capa}
+\fi
+
+\maketitle
+
+\include{organizadores}
+\include{colaboradores}
+\include{licenca}
+\include{nota_organizadores}
+\include{prefacio}
+
+\ifisbook
+\tableofcontents
+\addcontentsline{toc}{chapter}{Sumário}
+\fi
+
+\mainmatter
+
+\include{./cap_intro/cap_intro}
+\include{./cap_limites/cap_limites}
+
+%resposta dos exercícios
+\ifisbook
+\include{respostas}
+\fi
+
+%references
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{main}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\fancyhead[RE]{Cálculo Numérico}
+\fancyhead[LO]{REFERÊNCIAS BIBLIOGRÁFICAS}
+\fancyhead[LE,RO]{\thepage}
+
+\ifisbook
+\clearpage
+\addcontentsline{toc}{chapter}{Índice Remissivo}
+\fancyhead[RE]{Cálculo Numérico}
+\fancyhead[LO]{ÍNDICE REMISSIVO}
+\fancyhead[LE,RO]{\thepage}
+\printindex
+\fi
+
+\end{document}
