@@ -1,26 +1,11 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\chapter{Limites}\label{cap:limites}\index{limite}
+\chapter{Funções contínuas}\label{cap:fun_continuas}\index{função! contínua}
 
 \emconstrucao
 
-\section{A ideia de limite}\label{sec:limites_ideia}
-\subsection {Limites no infinito}
-\construirSec
+\section{Limites no ponto}
 
-\section{Operações com limites}\label{sec:limites_opera}\index{limites!operações}
-\construirSec
-
-\section{Funções contínuas}\label{sec:limites_fun_cont}\index{funções!contínuas}\index{continuidade}
-\construirSec
-
-\section{Funções exponenciais e logaritmicas}\label{sec:limites_exp_log}\index{exponenciais}\index{logaritmos}\index{funções!exponenciais}\index{funções!logartimicas}
-\construirSec
-
-\section{Funções trigonométricas}\label{sec:limites_fun_trigo}\index{funções!trigonométricas} %Limites fundamentais envolvendo funções trigonométricas
-\construirSec
-
-\section{Definição rigorosa de limite*}\label{sec:limites_def_rigor}
 \construirSec
 
 \subsection*{Exercícios resolvidos}
