@@ -73,3 +73,6 @@ clean:
 		*.4tc *.lg *.tmp *.xref *.png *.html \
 		*.4ct *.css *.idv *.maf *.mtc *.mtc0 \
 		*.xml
+	rm -rf */*/*.aux */*/*.log */*/*.out */*/*.toc */*/*.bbl */*/*.idx */*/*.ilg */*/*.ind */*/*.blg */*/*.backup 
+	rm -rf */*.aux */*.log */*.out */*.toc */*.bbl */*.idx */*.ilg */*.ind */*.blg */*.backup 
+
