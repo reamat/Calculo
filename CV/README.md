@@ -1,13 +1,26 @@
-# Cálculo de Funções de Várias Variáveis - Um Livro Colaborativo
+# Cálculo Vetorial - Um Livro Colaborativo
 
-Este é um livro colaborativo sobre cálculo diferencial e integral de funções de várias variáveis.
+Este é um livro colaborativo sobre cálculo vetorial.
 
 Fork us on GitHub! O código fonte do livro está disponível no repositório GitHub https://github.com/reamat/Calculo.
 
 Para entrar em contato com os organizadores, envie um e-mail para reamat@ufrgs.br. Ainda, você pode postar no [fórum](https://www.ufrgs.br/reamat/forum.html) do projeto REAMAT.
 
 ## Licença
+
 Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite <https://creativecommons.org/licenses/by-sa/3.0/> ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+### Aviso de violação de copyright
+
+Caso encontre qualquer violação de _copyright_ em qualquer parte do material, por favor, nos informe pelo e-mail:
+
+reamat@ufrgs.br,
+
+abra um _issue_ no repositório GitHub do material ou, ainda, poste no nosso fórum:
+
+https://www.ufrgs.br/reamat/forum.
+
+Iremos cuidar para analisar seu aviso o mais prontamente possível e removeremos o material que não esteja de acordo com a licença [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 ## Sobre o código fonte
 O código fonte está escrito em [Latex](https://latex-project.org/) e as referências bibliográficas em [BibTex](http://www.bibtex.org/), testado em computador Linux com o pacote [TexLive](http://www.tug.org/texlive/). O texto está em formatação **utf-8**.
@@ -46,11 +59,12 @@ Por fim, o livro pode ser compilado com a seguinte sequência de comandos:
     pdflatex main
 
 ## Colaborações
+
 Há várias maneiras de colaborar com a escrita do livro. Toda a colaboração é bem vinda, seja ela um aviso de erro de digitação, uma reformulação de uma parte do livro, uma nova figura, uma nova seção ou um novo capítulo.
 
 Veja como colaborar em https://www.ufrgs.br/reamat/participe.html
 
-Antes de nos enviar uma colaboração, por favor, verifique se ela está de acordo com a folha de estilo do livro (`FOLHA_DE_ESTILO.md`).
+Antes de nos enviar uma colaboração, por favor, verifique se ela está de acordo com a folha de estilo do livro (https://github.com/reamat/Docs/blob/master/livro/FOLHA_DE_ESTILO.md).
 
 ### Aviso de violação de copyright
 Caso encontre qualquer violação de copyright em qualquer parte do material do livro, por favor, nos informe pelo e-mail:

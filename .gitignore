@@ -1,2 +1,6 @@
 *~
 *#
+*.lof
+*.lot
+*.pdf
+*.html
