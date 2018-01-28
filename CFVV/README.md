@@ -12,6 +12,18 @@ Este trabalho está licenciado sob a Licença Creative Commons Atribuição-Comp
 ## Sobre o código fonte
 O código fonte está escrito em [Latex](https://latex-project.org/) e as referências bibliográficas em [BibTex](http://www.bibtex.org/), testado em computador Linux com o pacote [TexLive](http://www.tug.org/texlive/). O texto está em formatação **utf-8**.
 
+### Aviso de violação de copyright
+
+Caso encontre qualquer violação de _copyright_ em qualquer parte do material, por favor, nos informe pelo e-mail:
+
+reamat@ufrgs.br,
+
+abra um _issue_ no repositório GitHub do material ou, ainda, poste no nosso fórum:
+
+https://www.ufrgs.br/reamat/forum.
+
+Iremos cuidar para analisar seu aviso o mais prontamente possível e removeremos o material que não esteja de acordo com a licença [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
 ## Compilando
 
 ### Em computador Linux
@@ -46,11 +58,12 @@ Por fim, o livro pode ser compilado com a seguinte sequência de comandos:
     pdflatex main
 
 ## Colaborações
+
 Há várias maneiras de colaborar com a escrita do livro. Toda a colaboração é bem vinda, seja ela um aviso de erro de digitação, uma reformulação de uma parte do livro, uma nova figura, uma nova seção ou um novo capítulo.
 
 Veja como colaborar em https://www.ufrgs.br/reamat/participe.html
 
-Antes de nos enviar uma colaboração, por favor, verifique se ela está de acordo com a folha de estilo do livro (`FOLHA_DE_ESTILO.md`).
+Antes de nos enviar uma colaboração, por favor, verifique se ela está de acordo com a folha de estilo do livro (https://github.com/reamat/Docs/blob/master/livro/FOLHA_DE_ESTILO.md).
 
 ### Aviso de violação de copyright
 Caso encontre qualquer violação de copyright em qualquer parte do material do livro, por favor, nos informe pelo e-mail:
