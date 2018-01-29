@@ -1,9 +1,9 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\chapter{Álgebra vetorial}
+\chapter{Álgebra vetorial}\index{álgebra vetorial}
 O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.    
 
-\section{Vetores e escalares}
+\section{Vetores e escalares}\index{vetores}\index{escalares}
 Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como os elementos de um espaço vetorial\index{espaço vetorial}. Os vetores são, então, os elementos de um conjunto em que estão definidas duas operações: a soma de vetores e o produto de vetores por escalares obedecendo as propriedades (\ref{defel}). Um escalar\index{escalar} é um número real ou complexo. Quando o corpo de escalares é o conjunto dos números reais, então dizemos que o espaço vetorial é real. Quando o corpo de escalares é o conjunto dos números complexos, dizemos que o espaço vetorial é complexo. Usaremos uma letra latina com uma seta para denotar vetores ($\vec{u}$, $\vec{v}$ e $\vec{w}$).  Para que um espaço vetorial esteja bem definido, as seguinte propriedades devem ser satisfeitas:
 
 \begin{obs} O vetor nulo $\vec{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.\end{obs}
@@ -298,7 +298,7 @@ Localidade &	  $\lambda$ & $\phi$& Identificação\\
 
 
 
-\section{Ângulo entre vetores e o produto escalar}
+\section{Ângulo entre vetores e o produto escalar}\index{produto escalar}
 Na seção anterior, começamos a trabalhar com vetores no espaço euclidiano. No entanto, até o momento não lidamos explicitamente com ângulos entre vetores. Introduziremos primeiramente o conceito de produto escalar ou produto interno entre vetores. O produto escalar\index{produto escalar} é uma operação que liga um par de vetores a um escalar. O produto escalar entre os vetores $\vec{u}$ e $\vec{v}$  é denotado por $\vec{u}\cdot \vec{v}$ e é definida no espaço euclidiano tridimensional como:
 \begin{equation}\label{defprodesc}\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3\end{equation}
 
@@ -428,7 +428,7 @@ Interprete geometricamente este resultado.
 \end{exer}
  Dica: $\|\vec{u}+\vec{v}\|^2=u^2+v^2+2\vec{u}\cdot\vec{v}$ e (\ref{defintriprodesc}).
 
-\section{O produto vetorial}
+\section{O produto vetorial}\index{produto vetorial}
 Além do produto escalar entre vetores, definimos também o produto vetorial\index{produto vetorial}. Enquanto o produto escalar de dois vetores é um escalar, o produto vetorial é um terceiro vetor. O produto vetorial entre $\vec{u}=u_1\vec{i}+u_2\vec{j}+u_3\vec{k}$ e $\vec{v}=v_1\vec{i}+v_2\vec{j}+v_3\vec{k}$ é denotado $\vec{u}\times\vec{v}$ e é definido em coordenadas cartesianas como:
 \begin{equation}\label{defprodvec} \vec{u}\times\vec{v}=\left(u_2v_3-u_3v_2\right)\vec{i}+\left(u_3v_1-u_1v_3\right)\vec{j}+\left(u_1v_2-u_2v_1\right)\vec{k}
 \end{equation}
@@ -608,7 +608,7 @@ Resp: $\vec{0}$,$\vec{0}$,$u^2$,$u$,$u^2+2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $
 \end{exer}
 
 
-\section{Os triplos produtos e outras identidades vetoriais}
+\section{Os triplos produtos e outras identidades vetoriais}\index{triplo produto}\index{identidades vetoriais}
 O triplo produto escalar\index{triplo produto escalar} é definido por um produto vetorial e um produto escalar, isto é:
 \begin{equation}
  \vec{u}\cdot (\vec{v}\times \vec{w}).
@@ -740,7 +740,7 @@ O formulário abaixo resume as indentidades que acabamos de demonstrar e lista m
 \newpage
 
 
-\section{Sistema de coordenadas cilíndricas}
+\section{Sistema de coordenadas cilíndricas}\index{coordenadas!cilíndricas}
 
 \begin{figure}%[.5\baselineskip]
 \begin{center}
@@ -791,7 +791,7 @@ Resp: $\sqrt{\rho^2+z^2}$
 
 
   
- \section{Sistema de coordenadas esféricas}
+ \section{Sistema de coordenadas esféricas}\index{coordenadas!esféricas}
 \begin{figure}%[.5\baselineskip]
 \begin{center}
       \includegraphics{./cap_algvet/figs/coordenadas_esfericas}
@@ -838,7 +838,7 @@ Resp: $\left(\sqrt{3},\frac{\pi}{4},\theta\right)$,  $\left(\sqrt{3},\frac{5\pi}
 
 
 
-\section{Exemplos na física}
+\section{Exemplos na física}\index{trabalho}
 Na mecânica, o trabalho de uma força\index{trabalho de uma força} constante atuando sobre um corpo que se move com velocidade constante é dado pelo produto escalar da força pelo deslocamento:
 $$W=\vec{F}\cdot \triangle\vec{ r}$$
 O torque de uma força em relação a um eixo dado é dado por
@@ -880,7 +880,7 @@ $$\lim_{p\to\infty}\|f(x)\|_{p}=\max_{x\in [0,1]}|f(x)|.$$
 
 Esta normas exercem enorme importância na teoria de funções com importantes aplicações no estudo das equações diferenciais. 
 
-\subsection{E o produto escalar?}
+\subsection{E o produto escalar?}\index{produto escalar}
 Uma operação com as propriedades (\ref{proprodesc}) é um produto escalar. Produtos escalares não aparecem apenas em espaços de duas ou três dimensões: mesmo espaços de dimensão infinita podem possuir um produto escalar. Tomemos como exemplo novamente o espaço das funções contínuas definidas no intervalo $[0,1]$. A seguinte operação possui todas as propriedades de um produto escalar:
 $$\left<f,g\right>=\int_0^1f(x)g(x)dx.$$
 Observe o leitor que foi usada a notação $\left<,\right>$ para indicar o produto interno. Este produto interno induz a seguinte norma:
