@@ -3,6 +3,8 @@
 \chapter{Álgebra vetorial}\index{álgebra vetorial}
 O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.    
 
+
+%***********************************************************************************
 \section{Vetores e escalares}\index{vetores}\index{escalares}
 Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como os elementos de um espaço vetorial\index{espaço vetorial}. Os vetores são, então, os elementos de um conjunto em que estão definidas duas operações: a soma de vetores e o produto de vetores por escalares obedecendo as propriedades (\ref{defel}). Um escalar\index{escalar} é um número real ou complexo. Quando o corpo de escalares é o conjunto dos números reais, então dizemos que o espaço vetorial é real. Quando o corpo de escalares é o conjunto dos números complexos, dizemos que o espaço vetorial é complexo. Usaremos uma letra latina com uma seta para denotar vetores ($\vec{u}$, $\vec{v}$ e $\vec{w}$).  Para que um espaço vetorial esteja bem definido, as seguinte propriedades devem ser satisfeitas:
 
@@ -52,6 +54,16 @@ Outro conceito importante em espaços reais de dimensão finita é o de orienta�
 
 O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$. 
 
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
+
+\construirExer
+
+
+%***********************************************************************************
 \section{O espaço euclidiano tridimensional}
 Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.  
  
@@ -88,6 +100,12 @@ A soma de dois vetores é dada pela soma componente a componente, ou seja, se $\
 \begin{equation}\label{defsoma}\vec{u}+\vec{v}= \left(u_1+v_1\right) \vec{i}+\left(u_2+v_2\right) \vec{j}+\left(u_3+v_3\right) \vec{k}.\end{equation}
 O produto de um vetor por um escalar é definido como a multiplicação componente a componente pelo escalar, ou seja, se $\vec{u}=u_1~\!  \vec{i}+u_2~\!  \vec{j}+u_3 ~\! \vec{k}$, então
 \begin{equation}\label{defprod}\alpha\vec{u}=(\alpha u_1)\vec{i}+(\alpha u_2)\vec{j}+(\alpha u_3) \vec{k} .\end{equation}
+
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
 
 \begin{exer} Mostre que o espaço vetorial assim definido satisfaz as propriedades (\ref{defel}).
 \end{exer}
@@ -297,12 +315,10 @@ Localidade &	  $\lambda$ & $\phi$& Identificação\\
 \end{table}
 
 
-
+%***********************************************************************************
 \section{Ângulo entre vetores e o produto escalar}\index{produto escalar}
 Na seção anterior, começamos a trabalhar com vetores no espaço euclidiano. No entanto, até o momento não lidamos explicitamente com ângulos entre vetores. Introduziremos primeiramente o conceito de produto escalar ou produto interno entre vetores. O produto escalar\index{produto escalar} é uma operação que liga um par de vetores a um escalar. O produto escalar entre os vetores $\vec{u}$ e $\vec{v}$  é denotado por $\vec{u}\cdot \vec{v}$ e é definida no espaço euclidiano tridimensional como:
 \begin{equation}\label{defprodesc}\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2+u_3v_3\end{equation}
-
-
 
 
 Considere os vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ relacionados por $$\vec{w}=\vec{u}-\vec{v}.$$
@@ -381,6 +397,11 @@ Dois vetores não nulos $\vec{u}$ e $\vec{v}$ são dito ortogonais\index{vetores
 
 Em especial os vetores unitários $\vec{i}$, $\vec{j}$ e $\vec{k}$ são ortogonais, ou seja: $$\vec{i}\cdot \vec{j}=\vec{i}\cdot \vec{k}=\vec{j}\cdot \vec{k}=0.$$
 
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
 \begin{exer} Considere os vetores dados por $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=\vec{i}+2\vec{j}$ e $\vec{w}=\frac{1}{3}\vec{i}+\frac{1}{2}\vec{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
 \end{exer}
 Resp: $18,43^\circ$, $11,3^\circ$ e  $7,13^\circ$
@@ -428,6 +449,8 @@ Interprete geometricamente este resultado.
 \end{exer}
  Dica: $\|\vec{u}+\vec{v}\|^2=u^2+v^2+2\vec{u}\cdot\vec{v}$ e (\ref{defintriprodesc}).
 
+ 
+%***********************************************************************************
 \section{O produto vetorial}\index{produto vetorial}
 Além do produto escalar entre vetores, definimos também o produto vetorial\index{produto vetorial}. Enquanto o produto escalar de dois vetores é um escalar, o produto vetorial é um terceiro vetor. O produto vetorial entre $\vec{u}=u_1\vec{i}+u_2\vec{j}+u_3\vec{k}$ e $\vec{v}=v_1\vec{i}+v_2\vec{j}+v_3\vec{k}$ é denotado $\vec{u}\times\vec{v}$ e é definido em coordenadas cartesianas como:
 \begin{equation}\label{defprodvec} \vec{u}\times\vec{v}=\left(u_2v_3-u_3v_2\right)\vec{i}+\left(u_3v_1-u_1v_3\right)\vec{j}+\left(u_1v_2-u_2v_1\right)\vec{k}
@@ -555,9 +578,12 @@ O produto vetorial entre os vetores unitários $\vec{i}$, $\vec{j}$ e $\vec{k}$ 
 \vec{k}\times \vec{i}&=\vec{j},\qquad &\vec{k}\times \vec{j}&=-\vec{i},\qquad &\vec{k}\times \vec{k}&=\vec{0}
 \end{align}
 
+\subsection*{Exercícios resolvidos}
+
 \begin{exer} Seja $\vec{u}=\vec{i}+2\vec{j}$ e $\vec{v}=3\vec{i}-2\vec{j}$, calcule o vetor $\vec{w}=\vec{u}\times\vec{v}$.
 \end{exer}
-{\bf Solução 1} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
+\begin{resol}
+\noindent{\bf Primeira forma:} Calcularemos primeiramente usando o determinante (\ref{detprodvec}):
 \begin{eqnarray*}\vec{w}&=&\left|\begin{array}{ccc}
 \vec{i}&\vec{j}&\vec{k}\\
 u_1 & u_2 & u_3\\
@@ -572,12 +598,19 @@ v_1 & v_2 & v_3\\
 &=&-8\vec{k}
 \end{eqnarray*}
 
-{\bf Solução 2} Calcularemos usando as propriedades (\ref{propprodvec}) e as relações (\ref{prodvecunit}):
+\noindent{\bf Segunda forma:} Calcularemos usando as propriedades (\ref{propprodvec}) e as relações (\ref{prodvecunit}):
 \begin{eqnarray*}\vec{w}&=&\vec{u}\times\vec{v}= \left(\vec{i}+2\vec{j}\right)\times\left(3\vec{i}-2\vec{j}\right)\\
 &=&3(\vec{i}\times\vec{i})-2(\vec{i}\times\vec{j})+6(\vec{j}\times\vec{i})-4(\vec{j}\times\vec{j})\\
 &=&3~\!\vec{0}-2~\!\vec{k}-6~\!\vec{k}-4~\!\vec{0}\\
 &=&-8\vec{k}
 \end{eqnarray*}
+\end{resol}
+
+\construirExeresol
+\subsection*{Exercícios}
+
+\construirExer
+
 
 
 \begin{exer} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
@@ -607,7 +640,7 @@ Resp: $\vec{0}$,$\vec{0}$,$u^2$,$u$,$u^2+2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $
 \begin{exer} Mostre que $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)=\det\left(\vec{u};\vec{v};\vec{w}\right)$. Conclua que o trio de vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro se $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)>0$ e levogiro se $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)<0$. Interprete geometricamente.
 \end{exer}
 
-
+%***********************************************************************************
 \section{Os triplos produtos e outras identidades vetoriais}\index{triplo produto}\index{identidades vetoriais}
 O triplo produto escalar\index{triplo produto escalar} é definido por um produto vetorial e um produto escalar, isto é:
 \begin{equation}
@@ -725,7 +758,6 @@ Lembrando que $\vec{p_1}-\vec{p_2}=\vec{v}\times\vec{w}$, obtemos:
 \end{eqnarray*}
 O formulário abaixo resume as indentidades que acabamos de demonstrar e lista mais algumas sem demonstração:
 
-\clearpage
 \begin{subequations}\label{vectoridendities}
 \begin{align}
  \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\text{Triplo produto escalar}\\ 
@@ -737,9 +769,18 @@ O formulário abaixo resume as indentidades que acabamos de demonstrar e lista m
 &=\left(\vec{u}\cdot\left(\vec{v}\times\vec{x}\right)\right)\vec{w}-\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x},&\\
 \end{align}
 \end{subequations}
-\newpage
+
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
+
+\construirExer
 
 
+
+%***********************************************************************************
 \section{Sistema de coordenadas cilíndricas}\index{coordenadas!cilíndricas}
 
 \begin{figure}%[.5\baselineskip]
@@ -849,7 +890,7 @@ A força $\vec{F}$ que uma campo magnético $\vec{B}$ produz em uma partícula d
 $\vec{F}=q\vec{v}\times\vec{B}.$
 
 \section{Notas avançadas}
-\subsection{O que é um espaço linear?}
+\subsection{O que é um espaço linear?}\index{espaço linear}
 A definição de espaço vetorial dada em (\ref{defel}) é ampla e engloba conceitos bem mais gerais que os espaços euclidianos de dimensão 2 e 3 com os quais o leitor tem maior familiaridade. As funções reais $f:\mathbb{R}\to\mathbb{R}$, por exemplo, formam espaço vetorial onde os escalares são dados pelos números reais. O vetor nulo, neste caso, é a função $f(x)=0$. Este espaço não tem dimensão finita pois os polinômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ formam uma família infinita de vetores linearmente independentes (isso é uma consequência do teorema fundamental da álgebra).      
 
 \subsection{Todo espaço linear tem uma base? Axioma da escolha.}
@@ -859,7 +900,7 @@ O axioma da escolha é um dos axiomas da teoria de conjuntos padrão que tem div
 
 Vejamos um exemplo de espaço linear de dimensão: é fácil verificar que o conjunto de todos os polinômios $P(x)=a_0+a_1x+a_2x^2+\ldots a_nx^n$ formam um espaço linear frente às operações usuais de soma e multiplicação por um escalar. A base deste espaço é dada pelos monômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ pois cada polinômio pode ser escrito como uma combinação linear \emph{finita} de elementos desse base. No entanto, não é possível mostrar desta forma contrutiva uma base para o espaço das funções reais ou mesmo para as funções reais contínuas. A existência de uma base para estes espaços é um conceito abstrato  não contrutivo.
 
-\subsection{Qual amplo é o conceito de norma?}
+\subsection{Qual amplo é o conceito de norma?}\index{norma!abstrata}
 Vimos que o conceito de espaço linear é muito mais amplo e útil que parecia. E quanto à norma? Estamos familiariados com a norma euclidiana, mas será que é possível definir outras normas no espaço $\mathbb{R}^n$ de forma a satisfazer as propriedades (\ref{propnorma})? A norma euclidiana em um espaço de dimensão $n$ é dada por
 $$\|\vec{x}\|=\left(x_1^2+x_2^2+\ldots x_n^2\right)^{1/2}$$
 De fato é possível mostrar que podemos alterar esta expressão para
