@@ -1,4 +1,4 @@
-include "../../config/asy_config.asy";
+include "../../../config/asy_config.asy";
 
 
 import three;
@@ -15,4 +15,4 @@ triple F(real t) {
 return (cos(6.28*t),sin(6.28*t),.5*t);
 }
 path3 g = graph(F, 0, 3.2);
-draw(g,blue);
+draw(g,blue,arrow=Arrow3());
