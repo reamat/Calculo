@@ -8,7 +8,6 @@ O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgeb
 \section{Vetores e escalares}\index{vetores}\index{escalares}
 Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como os elementos de um espaço vetorial\index{espaço vetorial}. Os vetores são, então, os elementos de um conjunto em que estão definidas duas operações: a soma de vetores e o produto de vetores por escalares obedecendo as propriedades (\ref{defel}). Um escalar\index{escalar} é um número real ou complexo. Quando o corpo de escalares é o conjunto dos números reais, então dizemos que o espaço vetorial é real. Quando o corpo de escalares é o conjunto dos números complexos, dizemos que o espaço vetorial é complexo. Usaremos uma letra latina com uma seta para denotar vetores ($\vec{u}$, $\vec{v}$ e $\vec{w}$).  Para que um espaço vetorial esteja bem definido, as seguinte propriedades devem ser satisfeitas:
 
-\begin{obs} O vetor nulo $\vec{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.\end{obs}
 \begin{subequations}\label{defel}
 \begin{align}
 \vec{u}+\vec{v}&=\vec{v}+\vec{u},&\text{(Comutatividade da soma)}\label{defelcom}\\
@@ -21,8 +20,9 @@ Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como o
 1\vec{v}&=\vec{v}.&\text{(Elemento neutro)}\label{defelneutro}
 \end{align}
 \end{subequations}
+\begin{obs} O vetor nulo $\vec{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.\end{obs}
 
-Observamos que a propriedade associativa dada por (\ref{defelass}) permite que se escreve a soma de três vetores $\vec{u}+\vec{v}+\vec{w}$ sem risco de ambiguidade. A propriedade (\ref{defeldist3}) é algumas vez chamada de associatividade, no entanto, é cauteloso observar que ela não estabelece a associatividade de uma operação, já que o produto de escalares é uma operação distinta do produto de um escalar por um vetor. A propriedade (\ref{defelnulo}) garante a existência de um vetor nulo que funciona com um elemento neutro da soma vetorial. 
+\begin{obs}Observamos que a propriedade associativa dada por (\ref{defelass}) permite que se escreve a soma de três vetores $\vec{u}+\vec{v}+\vec{w}$ sem risco de ambiguidade. A propriedade (\ref{defeldist3}) é algumas vez chamada de associatividade, no entanto, é cauteloso observar que ela não estabelece a associatividade de uma operação, já que o produto de escalares é uma operação distinta do produto de um escalar por um vetor. A propriedade (\ref{defelnulo}) garante a existência de um vetor nulo que funciona com um elemento neutro da soma vetorial. \end{obs}
 
 A subtração de dois vetores é definida por
 \begin{equation}\label{delsub}
@@ -101,6 +101,12 @@ A soma de dois vetores é dada pela soma componente a componente, ou seja, se $\
 O produto de um vetor por um escalar é definido como a multiplicação componente a componente pelo escalar, ou seja, se $\vec{u}=u_1~\!  \vec{i}+u_2~\!  \vec{j}+u_3 ~\! \vec{k}$, então
 \begin{equation}\label{defprod}\alpha\vec{u}=(\alpha u_1)\vec{i}+(\alpha u_2)\vec{j}+(\alpha u_3) \vec{k} .\end{equation}
 
+
+Definimos também a norma euclidiana\index{norma} de um vetor $\vec{v}$ como a distância da origem até o ponto que o vetor representa e a denotamos por $\|\vec{v}\|$. Pelo Teorema de Pitágoras, da geometria euclidiana, temos:
+
+
+\begin{equation}\label{defnorma}\|\vec{v}\|=\sqrt{v_1^2+v_2^2+v_3^2}.\end{equation}
+
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
@@ -110,10 +116,6 @@ O produto de um vetor por um escalar é definido como a multiplicação componen
 \begin{exer} Mostre que o espaço vetorial assim definido satisfaz as propriedades (\ref{defel}).
 \end{exer}
 
-Definimos também a norma euclidiana\index{norma} de um vetor $\vec{v}$ como a distância da origem até o ponto que o vetor representa e a denotamos por $\|\vec{v}\|$. Pelo Teorema de Pitágoras, da geometria euclidiana, temos:
-
-
-\begin{equation}\label{defnorma}\|\vec{v}\|=\sqrt{v_1^2+v_2^2+v_3^2}.\end{equation}
 \begin{exer}\label{exnorma}Verifique que a norma euclidiana satisfaz as seguintes propriedades:
   
 \begin{subequations}\label{propnorma}
