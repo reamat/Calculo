@@ -139,10 +139,9 @@ representa uma curva contida em uma circunferência no plano $xy$  centrada na o
 
 
 \begin{exer}Encontre a derivada de cada uma das funções vetoriais do exemplo \ref{exfv1}
-
-Resp: $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$
-
 \end{exer}
+
+\begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$\end{resp}
 
 \begin{exer} Mostre as seguintes identidades:
 \begin{itemize}
@@ -265,6 +264,30 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 
 \subsection*{Exercícios}
 
+\begin{exer} Represente graficamente o terno de vetores $\vec{T}$,$\vec{N}$ e $\vec{B}$ e verifique através da regra da mão direita as seguintes identidades:
+\begin{itemize}
+\item[a)]$\vec{B}=\vec{T}\times\vec{N}$
+\item[b)]$\vec{T}=\vec{N}\times\vec{B}$
+\item[c)]$\vec{N}=\vec{B}\times\vec{T}$
+\end{itemize}
+Use a identidade vetorial dada por
+$$\vec{u}\times\left(\vec{v}\times\vec{w}\right)=\vec{v}\left(\vec{u}\cdot\vec{w}\right)-\vec{w}\left(\vec{u}\cdot\vec{v}\right)$$ para obter as identidades $b$ e $c$ a partir de $a$.
+\end{exer}
+
+
+\begin{exer} Considere a trajetória dada pela equações paramétricas
+\begin{eqnarray*}
+x&=&t\sin (t)\\
+y&=&t\cos (t)\\
+z&=&0
+\end{eqnarray*}
+Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos inicial e final. Esboce o triedro $\vec{T}$, $\vec{N}$ e $\vec{B}$ no instante $t=\pi/2$.(Obs.: Não é necessário calcular analiticamente o triedro.) Considere a identidade vetorial $\frac{d r^2}{dt}=2\vec{r}\cdot\frac{d\vec{r}}{dt}$ no instante $t=\pi/2$, ela é compatível com seu desenho?
+\end{exer}
+
+\begin{exer} Um erro comum entre estudantes é substituir a definição de vetor binormal unitário $\vec{B}=\vec{T}\times\vec{N}$ pela expressão espúria dada por $$\frac{\frac{d\vec{N}}{dt}}{\left\|\frac{d\vec{N}}{dt}\right\|}.$$ Calcule esta expressão para o movimento circular uniforme e verifique que ela é igual a $-\vec{T}$ e, portanto, perpendicular a $\vec{B}$.
+\end{exer}
+
+
 \construirExer
 
 
@@ -311,32 +334,38 @@ O raio de curvatura tem a seguinte interpretação geométrica: considere um pon
   \end{center}
 \end{figure}
 
-\begin{exer}Calcule a curvatura da curva $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j},\qquad a>0,\ 0\leq t\leq 2\pi$.
-\end{exer}
+\begin{ex}A curva descrita por $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j},\qquad a>0,\ 0\leq t\leq 2\pi$ é uma cincunferência. Sua curvatura pode ser obtida da seguinte forma:
+\begin{eqnarray}
+ \vec{r}'(t)&=&-a\sin(t)\vec{i}+a\cos(t)\vec{j},\\
+ \|\vec{r}'(t)\|&=&\sqrt{a^2\sin^2(t)+a^2\cos^2(t)}=\sqrt{a^2}=|a|=a,\\
+ \vec{T}(t)&=&\frac{-a\sin(t)\vec{i}+a\cos(t)\vec{j}}{a}=-\sin(t)\vec{i}+\cos(t)\vec{j},\\
+\end{eqnarray}
+
+\end{ex}
 \begin{ex}Dada a curva $y=x^2$, vamos encontrar a curvatura e o raio de curvatura no ponto $x=1$. Primeiro, encontramos uma parametrização para essa curva, por exemplo, $\vec{r}=t\vec{i}+t^2\vec{j}$. Calculamos:
 $$
-\vec{r}'=\vec{i}+2t\vec{j},
+\vec{r}'(t)=\vec{i}+2t\vec{j},
 $$
 $$
-\|\vec{r}'\|=\sqrt{1+4t^2},
+\|\vec{r}'(t)\|=\sqrt{1+4t^2},
 $$
 $$
-\vec{T}=\frac{1}{\sqrt{1+4t^2}}\left(\vec{i}+2t\vec{j}\right)
+\vec{T}(t)=\frac{1}{\sqrt{1+4t^2}}\left(\vec{i}+2t\vec{j}\right)
 $$
 e
 $$
-\vec{T}'=-\frac{4t}{\sqrt{(1+4t^2})^3}\vec{i}+\left(-\frac{8t^2}{\sqrt{(1+4t^2})^3}+\frac{2}{\sqrt{1+4t^2}}\right)\vec{j},
+\vec{T}'(t)=-\frac{4t}{\sqrt{(1+4t^2})^3}\vec{i}+\left(-\frac{8t^2}{\sqrt{(1+4t^2})^3}+\frac{2}{\sqrt{1+4t^2}}\right)\vec{j},
 $$
 Em $t=1$, temos:
 $$
-\|\vec{r}'\|=\sqrt{5},
+\|\vec{r}'(t)\|=\sqrt{5},
 $$
 $$
-\vec{T}'=-\frac{4}{\sqrt{5^3}}\vec{i}+\left(-\frac{8}{\sqrt{5^3}}+\frac{2}{\sqrt{5}}\right)\vec{j}=-\frac{4}{\sqrt{5^3}}\vec{i}+\frac{2}{\sqrt{5^3}}\vec{j},
+\vec{T}'(t)=-\frac{4}{\sqrt{5^3}}\vec{i}+\left(-\frac{8}{\sqrt{5^3}}+\frac{2}{\sqrt{5}}\right)\vec{j}=-\frac{4}{\sqrt{5^3}}\vec{i}+\frac{2}{\sqrt{5^3}}\vec{j},
 $$
 e
 $$
-\|\vec{T}'\|=\sqrt{\frac{16}{5^3}+\frac{4}{5^3}}=\frac{2}{5}.
+\|\vec{T}'(t)\|=\sqrt{\frac{16}{5^3}+\frac{4}{5^3}}=\frac{2}{5}.
 $$
 Portanto,
 $$
@@ -460,7 +489,6 @@ $$
   \end{center}
 \end{figure}
 
- 
 
 A curvatura e a torção podem ser calculadas de maneira mais simples. Para concluir isso, começamos calculando as derivadas de $\vec{r}$. Usamos aqui que $s'(t)=\|\vec{r}'(t)\|$, obtida da equação (\ref{defcomparco_1}):
 $$
@@ -496,7 +524,7 @@ e
 \tau=\frac{\vec{r}'\times \vec{r}''\cdot \vec{r}'''}{\|\vec{r}'\times \vec{r}''\|^2}.
 \end{equation}
 
-\begin{obs}Uma aplicação natural é a decomposição da aceleração em suas componentes tangencial e normal. Observe que
+\begin{obs}\index{aceleração!normal}\index{aceleração!tangencial}Uma aplicação natural é a decomposição da aceleração em suas componentes tangencial e normal. Observe que
 $$
 \vec{r}'=\vec{v}=v\vec{T}=s' \vec{T}
 $$
@@ -512,29 +540,8 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
 
 \end{obs}
 
-\subsection*{Exercícios resolvidos}
 
-\construirExeresol
-
-
-\subsection*{Exercícios}
-\begin{exer}
-Considere as funções vetoriais dadas por
-\begin{eqnarray*}
-\vec{f}(t)&=&\cos(\pi t)\vec{i}+\sin(\pi t)\vec{j}\\
-\vec{g}(t)&=&\cos(\pi t^3)\vec{i}+\sin(\pi t^3)\vec{j}
-\end{eqnarray*}
-Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
-\end{exer}
-
-
-\begin{exer}Calcule curvatura e torção para a curva $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, $a>0$, $c>0$, $t>0$ usando as expressões (\ref{curvatura_2}) e (\ref{torcao_2}).
-\end{exer}
-
-\begin{exer}Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
-\end{exer}
-
-\begin{exer} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
+\begin{ex} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
 $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
  Onde $f(t)$ é uma função dada. Observe que a projeção desta curva no plano $xy$ é uma circuferência de raio 1. A curva é, portanto, gerada pela trajetória de ponto cuja projeção do movimento no plano $xy$ é cirvular e a altura é dada pela função $f(t)$. Podemos calcular a curvatura e a torção conforme a seguir:
  \begin{eqnarray*}
@@ -564,7 +571,31 @@ Podemos, agora, explorar diversos casos particular:
  \item [d)] Caso $f(t)=\sin(t)$. Recaímos na elipse de semieixos $1$ e $\sqrt{2}$ no plano $y=z$. Neste caso, a curvatura é $\kappa=\frac{\sqrt{2}}{\left(1+\cos(t)^2\right)^{3/2}}$ e a torção é nula.
  \item [e)] Caso $\tau=0$, isto é, $f'(t)+f'''(t)=0$, o que é equivalente a $f(t)=a+b\cos(t)+c\sin(t)$ onde $a$, $b$ e $c$ são constantes. Recaímos na elipse de semieixos $1$ e $\sqrt{1+b^2+c^2}$ no plano $z=bx+cy$. Neste caso, a curvatura é $\kappa={\frac {\sqrt {b^2+c^2+1}}{\left(1-bc\sin(2t)+c^2\cos^2(t)+b^2\sin^2(t) \right) ^{3/2}}}$ e a torção é nula.
   \end{itemize}
+\end{ex}
+
+
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+
+\subsection*{Exercícios}
+\begin{exer}
+Considere as funções vetoriais dadas por
+\begin{eqnarray*}
+\vec{f}(t)&=&\cos(\pi t)\vec{i}+\sin(\pi t)\vec{j}\\
+\vec{g}(t)&=&\cos(\pi t^3)\vec{i}+\sin(\pi t^3)\vec{j}
+\end{eqnarray*}
+Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
 \end{exer}
+
+
+\begin{exer}Calcule curvatura e torção para a curva $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, $a>0$, $c>0$, $t>0$ usando as expressões (\ref{curvatura_2}) e (\ref{torcao_2}).
+\end{exer}
+
+\begin{exer}Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
+\end{exer}
+
   
 \construirExer
 
