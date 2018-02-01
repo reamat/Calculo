@@ -10,9 +10,9 @@ Para entrar em contato com os organizadores, envie um e-mail para reamat@ufrgs.b
 
 Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite <https://creativecommons.org/licenses/by-sa/3.0/> ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-### Aviso de violação de copyright
+### Aviso de violação de _copyright_
 
-Caso encontre qualquer violação de _copyright_ em qualquer parte do material, por favor, nos informe pelo e-mail:
+Caso encontre alguma violação de _copyright_ em qualquer parte do material, por favor, nos informe pelo e-mail:
 
 reamat@ufrgs.br,
 
@@ -23,6 +23,7 @@ https://www.ufrgs.br/reamat/forum.
 Iremos cuidar para analisar seu aviso o mais prontamente possível e removeremos o material que não esteja de acordo com a licença [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 ## Sobre o código fonte
+
 O código fonte está escrito em [Latex](https://latex-project.org/) e as referências bibliográficas em [BibTex](http://www.bibtex.org/), testado em computador Linux com o pacote [TexLive](http://www.tug.org/texlive/). O texto está em formatação **utf-8**.
 
 ## Compilando
