@@ -1,7 +1,7 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite http://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 \chapter{Álgebra vetorial}\index{álgebra vetorial}
-O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.    
+O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.
 
 
 %***********************************************************************************
@@ -34,14 +34,14 @@ O vetor $(-1) \vec{v}$ é também denotado por $-\vec{v}$ e tem a seguinte propr
 \end{equation}
 
 Um conjunto de vetores $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n\}$ é dito linearmente dependente (LD), se existem escalares $\{\alpha_1,\alpha_2,\ldots, \alpha_n\}$ com pelo menos um $\alpha_i\neq 0$ tal que
-$$\sum_{i=1}^n\alpha_i \vec{v}_i=\vec{0}$$ 
-Analogamente, um conjunto de vetores $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n\}$ é dito linearmente independente (LI) se a identidade 
-$$\sum_{i=1}^n\alpha_i \vec{v}_i=\vec{0}$$ 
+$$\sum_{i=1}^n\alpha_i \vec{v}_i=\vec{0}$$
+Analogamente, um conjunto de vetores $\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_n\}$ é dito linearmente independente (LI) se a identidade
+$$\sum_{i=1}^n\alpha_i \vec{v}_i=\vec{0}$$
 implica necessariamente que
 $$\alpha_1=\alpha_2=\ldots=\alpha_n=0.$$
 
 Um conjunto de vetores LI $B=\{\vec{e}_1, \vec{e}_2,\ldots, \vec{e}_n\}$ é dito uma base para um espaço vetorial $V$ se todo vetor $\vec{v}\in V$ pode ser escrito como uma combinação linear dos vetores de $B$:
-$$\vec{v}=\sum_{i=1}^n \alpha_i \vec{e}_i.$$ 
+$$\vec{v}=\sum_{i=1}^n \alpha_i \vec{e}_i.$$
 
 Um espaço vetorial é dito de dimensão finita se admite uma base composta por um número finito de elementos.
 
@@ -50,9 +50,9 @@ Um espaço vetorial é dito de dimensão finita se admite uma base composta por 
 
 A importância deste teorema reside no fato de permitir a definição de dimensão de um espaço vetorial como sendo o número de elementos de uma base. Esta definição está bem posta, uma vez que este número independe da escolha de base.
 
-Outro conceito importante em espaços reais de dimensão finita é o de orientação de uma base\index{orientação}. O leitor já deve estar familiarizado com o conceito de orientação dextrogira e levogira\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} (regra da mão direita e esquerda) no espaço tridimensional. No entanto este conceito pode ser estendido de forma natural para espaços reais de n-dimensões. Formalmente falando duas bases $B_1$ e $B_2$ têm a mesma orientação se o determinante da transformação linear que liga $B_1$ a $B_2$ é positivo.    
+Outro conceito importante em espaços reais de dimensão finita é o de orientação de uma base\index{orientação}. O leitor já deve estar familiarizado com o conceito de orientação dextrogira e levogira\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} (regra da mão direita e esquerda) no espaço tridimensional. No entanto este conceito pode ser estendido de forma natural para espaços reais de n-dimensões. Formalmente falando duas bases $B_1$ e $B_2$ têm a mesma orientação se o determinante da transformação linear que liga $B_1$ a $B_2$ é positivo.
 
-O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$. 
+O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$.
 
 \subsection*{Exercícios resolvidos}
 
@@ -65,12 +65,12 @@ O espaço vetorial real de $n$ dimensões é denotado $\mathbb{R}^n$.
 
 %***********************************************************************************
 \section{O espaço euclidiano tridimensional}
-Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.  
- 
-O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vec{u}$, $\vec{v}$ e  $\vec{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante 
+Nossa principal preocupação neste curso é com o espaço euclidiano de três dimensões, dada sua importância para descrição do espaço na física clássica.
+
+O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Sistema de coordenadas cartesianas} ($xyz$) para representar um ponto no espaço euclidiano tridimensional. Neste sistema, também chamado referencial cartesiano, cada ponto é representado por um conjunto de três coordenadas $x$, $y$ e $z$. Observamos que existem duas maneiras distintas de orientar tal sistema: usando a regra da mão direita e a regra da mão esquerda, que recebem o nome de dextrogira e levogira, respectivamente. Neste texto, daremos preferência pela orientação dextrogira, que convencionaremos como padrão. Uma vez escolhido um sistema dextrogiro como base,  um trio de vetores linearmente independentes $\vec{u}$, $\vec{v}$ e  $\vec{w}$ é dito dextrogiro\index{dextrogira}\index{levogira}\index{regra da mão direita}\index{regra da mão esquerda} se o determinante
 \begin{equation}\label{defdextro}
 \det\left(\vec{u};\vec{v};\vec{w}\right)
-\end{equation}   
+\end{equation}
 é positivo. Reciprocamente, o trio  $\vec{u}$, $\vec{v}$ e  $\vec{w}$ é dito levogiro se o determinando for negativo. Veja mais detalhes no exemplo (\ref{probdextro}).
 
 \begin{figure}\begin{center}
@@ -80,10 +80,10 @@ O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Si
       %\setfloatalignment{b}% forces caption to be bottom-aligned
   \end{center}
   \end{figure}
- 
- Um vetor é representado neste sistema como um trio de números reais, denominados componentes do vetor $\vec{v}$ e denotados por: 
+
+ Um vetor é representado neste sistema como um trio de números reais, denominados componentes do vetor $\vec{v}$ e denotados por:
 \begin{equation}\label{defeucv}\vec{v}=\left<v_1,v_2,v_3\right>.\end{equation}
-  
+
 É natural neste momento definir os vetores $\vec{i}$, $\vec{j}$ e $\vec{k}$ como
 \begin{equation}\label{defijk}
 \begin{array}{rcl}
@@ -117,7 +117,7 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vec{v}$ como a d
 \end{exer}
 
 \begin{exer}\label{exnorma}Verifique que a norma euclidiana satisfaz as seguintes propriedades:
-  
+
 \begin{subequations}\label{propnorma}
 \begin{align}
 \|\alpha \vec{u}\|&=|\alpha|~\!\|\vec{u}\|,&\text{(Homogeneidade)}\label{propnormahom}\\
@@ -136,10 +136,10 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vec{v}$ como a d
       \end{center}
    \end{figure}
 
-Dica: Para mostrar a desigualdade triangular\index{desigualdade triangular}, entenda seu significado geométrico. Uma demonstração puramente algébrica pode ser feita, embora seja mais laboriosa. Veremos mais adiante que o conceito de produto escalar\index{produto escalar} permite simplificar os cálculos. 
+Dica: Para mostrar a desigualdade triangular\index{desigualdade triangular}, entenda seu significado geométrico. Uma demonstração puramente algébrica pode ser feita, embora seja mais laboriosa. Veremos mais adiante que o conceito de produto escalar\index{produto escalar} permite simplificar os cálculos.
 
 A fim de simplificar a notação, a norma de um vetor $\vec{v}$ pode ser escrita simplesmente como $v$, ou seja
-$$v=\|\vec{v}\|$$ 
+$$v=\|\vec{v}\|$$
 
 Um vetor de norma 1 é chamado de vetor unitário\index{vetor unitário}. Todo vetor não nulo pode ser escrito na forma
 \begin{equation}\label{decompversor}\vec{v}=v \hat{v}\end{equation}
@@ -150,14 +150,14 @@ O vetor $\hat{v}$ é chamado de versor\index{versor} de $\vec{v}$. $\hat{v}$ é 
 A identidade (\ref{decompversor}) tem uma importante interpretação geométrica: todo vetor não nulo pode ser representado pelo seu módulo e por seu versor, que traz a informação de direção e sentido.  Os vetores $\vec{i}$, $\vec{j}$ e $\vec{k}$ são exemplos de versores. O vetor nulo é o único vetor ao qual não se pode associar direção e sentido únicos.
 
 
-\begin{exer}Mostre que a norma de um versor conforme definido em (\ref{defversor}) é sempre unitária. 
+\begin{exer}Mostre que a norma de um versor conforme definido em (\ref{defversor}) é sempre unitária.
 \end{exer}
 
-\begin{exer}\label{ex1uvw} Considere os vetores dados por $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=\vec{i}+2\vec{j}$ e $\vec{w}=\frac{1}{3}\vec{i}+\frac{1}{2}\vec{j}$. Represente estes vetores em um referencial euclidiano, calcule suas normas, calcule os versores associados $\hat{u}$, $\hat{v}$ e $\hat{w}$ e represente-os no mesmo gráfico.  
+\begin{exer}\label{ex1uvw} Considere os vetores dados por $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=\vec{i}+2\vec{j}$ e $\vec{w}=\frac{1}{3}\vec{i}+\frac{1}{2}\vec{j}$. Represente estes vetores em um referencial euclidiano, calcule suas normas, calcule os versores associados $\hat{u}$, $\hat{v}$ e $\hat{w}$ e represente-os no mesmo gráfico.
 \end{exer}
 Resp: $u=\sqrt{2}$, ~~ $v=\sqrt{5}$ ~e~ $w=\frac{\sqrt{13}}{{6}}$.~ $\hat{u}=\frac{\sqrt{2}}{2}\vec{i}+\frac{\sqrt{2}}{2}\vec{j}$,~~  $\hat{v}=\frac{\sqrt{5}}{5}\vec{i}+\frac{2\sqrt{5}}{5}\vec{j}$,~~ $\hat{w}=\frac{2\sqrt{13}}{13}\vec{i}+\frac{3\sqrt{13}}{13}\vec{j}$
 
-\begin{exer} Considere o vetor $\vec{u}=\cos\theta \vec{i}+ \sin\varphi \vec{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$ 
+\begin{exer} Considere o vetor $\vec{u}=\cos\theta \vec{i}+ \sin\varphi \vec{j}$. Mostre que este vetor é unitário e represente-o graficamente quando $\varphi=0$, $\varphi=\frac{\pi}{6}$, $\varphi=\frac{\pi}{2}$ e $\varphi={\pi}$
 \end{exer}
 
 \begin{exer} Considere o vetor $\vec{u}=\sin\theta \cos\varphi \vec{i}+ \sin\theta \sin\varphi \vec{j} + \cos\theta \vec{k}$. Verifique que este vetor é unitário e represente-o graficamente quando
@@ -181,12 +181,12 @@ u_2&v_2&w_2\\
 u_3&v_3&w_3
 \end{array}
 \right|>0.
-\end{equation*}   
+\end{equation*}
 onde $\vec{u}=u_1\vec{i}+u_2\vec{j}+u_3\vec{k}$, $\vec{v}=v_1\vec{i}+v_2\vec{j}+v_3\vec{k}$ e $\vec{w}=w_1\vec{i}+w_2\vec{j}+w_3\vec{k}$. Faça o que se pede:
 \begin{itemize}
 \item [a)]Verifique que se $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro então $\vec{v}$, $\vec{u}$ e $\vec{w}$ é levogiro.
-\item [b)]Verifique que se $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro então $\vec{v}$, $\vec{w}$ e $\vec{u}$ e $\vec{w}$, $\vec{u}$ e $\vec{v}$ são dextrogiros. 
-\item [c)]Verifique que o trio $\vec{u}$, $\vec{v}$ e $\vec{w}$ é dextrogiro quando $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=-2\vec{i}+\vec{j}$ e $\vec{w}=\vec{i}+\vec{j}+\vec{k}$. 
+\item [b)]Verifique que se $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro então $\vec{v}$, $\vec{w}$ e $\vec{u}$ e $\vec{w}$, $\vec{u}$ e $\vec{v}$ são dextrogiros.
+\item [c)]Verifique que o trio $\vec{u}$, $\vec{v}$ e $\vec{w}$ é dextrogiro quando $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=-2\vec{i}+\vec{j}$ e $\vec{w}=\vec{i}+\vec{j}+\vec{k}$.
 \item [d)]Verifique que o trio $\vec{u}$, $\vec{v}$ e $\vec{w}$ é dextrogiro quando $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=-2\vec{i}+\vec{j}$ e $\vec{w}=\vec{i}$. Interprete graficamente.
 \end{itemize}
 \end{exer}
@@ -204,7 +204,7 @@ onde $\vec{u}=u_1\vec{i}+u_2\vec{j}+u_3\vec{k}$, $\vec{v}=v_1\vec{i}+v_2\vec{j}+
       \end{center}
   \end{figure}
 
-\begin{exer} 
+\begin{exer}
 Considere um sistema de coordenadas cartesianas dextrogiro construído da seguinte forma:
 
 \begin{itemize}
@@ -215,23 +215,23 @@ Considere um sistema de coordenadas cartesianas dextrogiro construído da seguin
 Considere a superfície terrestre com uma esfera de raio $R_{\oplus}$. Denote a longitude\index{longitude} por $\lambda$ e a latitude\index{latitude} por $\phi$. Convecione como positivas a longitude leste  e a latitude norte. Veja figura \ref{fig:latlong}. Seja $\vec{r}=x\vec{i}+y\vec{j}+z\vec{k}$ o vetor que representa um ponto sobre a superfície da Terra. Responda:
 \begin{itemize}
 \item[a)] Qual a norma do vetor $\vec{r}$?
-\item[b)] Qual é o valor da componentes $x$, $y$ e $z$ de $\vec{r}$ em termos de $\lambda$ e $\phi$? 
+\item[b)] Qual é o valor da componentes $x$, $y$ e $z$ de $\vec{r}$ em termos de $\lambda$ e $\phi$?
 \item[c)] Seja $d$ a distância entre dois pontos sobre a superfície terrestre. Use a lei dos cossenos\footnote{Seja um triângulo de lados $a$, $b$ e $c$ e seja $\theta$ o ângulo entre os lados de comprimento $a$ e $b$, então $c^2=a^2+b^2-2ab\cos\theta.$ Ver também figura \ref{leicossenos} na página \pageref{leicossenos}.} para mostrar que distância $\delta$ sobre a superfície esférica entre esses mesmos dois pontos é dada por
 $$\delta=R_\oplus \cos^{-1}\left(1-\frac{d^2}{2R_\oplus^2}\right)$$
-Interprete os casos particulares $d=0$ e $d=2R_\oplus$. 
+Interprete os casos particulares $d=0$ e $d=2R_\oplus$.
 \item[d)] Considerando $R_\oplus=6378Km$ e os seguintes valores para as coordenadas geográficas de Porto Alegre, Londres e Tóquio, construa uma tabela com os valores de $\lambda$ e $\phi$ e as coordenadas $xyz$ em quilômetros de cada uma dessas cidades.
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|l|l|l|}
 		\hline
-	  Localidade & Latitude & Longitude\\ 
+	  Localidade & Latitude & Longitude\\
 		\hline
-		Porto Alegre & $30^\circ~ 01{'}~58{''}$S & $51^\circ  13{'}~48{''}$O\\ 		
+		Porto Alegre & $30^\circ~ 01{'}~58{''}$S & $51^\circ  13{'}~48{''}$O\\
   	\hline
-		Londres & $51^\circ~ 30{'}~28{''}$N & $0^\circ~ 7{'}~41{''}$O\\ 		
+		Londres & $51^\circ~ 30{'}~28{''}$N & $0^\circ~ 7{'}~41{''}$O\\
   	\hline
-  	Tóquio & $35^\circ~ 41{'}~22{''}$N & $139^\circ ~41{'}~30{''}$L\\ 		
-  	\hline	
+  	Tóquio & $35^\circ~ 41{'}~22{''}$N & $139^\circ ~41{'}~30{''}$L\\
+  	\hline
 		\end{tabular}
 	\caption{Coordenadas geográficas de algumas cidades.}
 	\label{tabcidades}
@@ -242,23 +242,23 @@ Interprete os casos particulares $d=0$ e $d=2R_\oplus$.
 	\centering
 		\begin{tabular}{|l|l|l|l|}
 		\hline
-Localidade &	  x & y & z\\ 
+Localidade &	  x & y & z\\
 		\hline
 1&		4192,872Km & 168Km & 4803,175Km\\
 		\hline
 2&		1175,603Km&	5550,889Km&	2912,813Km\\
 		\hline
 3&   3996,282Km&	-127,418Km&	4969,143Km\\
-  	\hline	
+  	\hline
 		\end{tabular}
 	\caption{Coordenadas geográficas de três localidades incógnitas.}
 	\label{tabmonumentos}
 \end{table}
-\end{itemize}   
+\end{itemize}
 \end{exer}
 
 
-% 
+%
 % \begin{figure}[h]
 % \begin{center}
 % \includegraphics[width=.6\linewidth]{./cap_algvet/figs/latitude_longitude2}
@@ -269,7 +269,7 @@ Localidade &	  x & y & z\\
 
 
 
-     
+
 
 \begin{table}[h]
 Resp: a) $r=R_\oplus$ b)
@@ -277,41 +277,41 @@ Resp: a) $r=R_\oplus$ b)
 	\centering
 		\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
-	  Localidade & $\phi$ & $\lambda$ & $x$ & $y$ & $z$\\ 
+	  Localidade & $\phi$ & $\lambda$ & $x$ & $y$ & $z$\\
 		\hline
-		Porto Alegre & $-30,0328^\circ$ & $-51,23^\circ$& $3457,65$&$-4305,07$& $-3192,16$\\ 		
+		Porto Alegre & $-30,0328^\circ$ & $-51,23^\circ$& $3457,65$&$-4305,07$& $-3192,16$\\
   	\hline
-		Londres & $51,5078^\circ$ & $-0,0781^\circ$&3969,71&-5,41&4992,02\\ 		
+		Londres & $51,5078^\circ$ & $-0,0781^\circ$&3969,71&-5,41&4992,02\\
   	\hline
-  	Tóquio & $35,6894^\circ$ & $139,6917^\circ$&3950,26&3351,05&3720,87\\ 		
-  	\hline	
+  	Tóquio & $35,6894^\circ$ & $139,6917^\circ$&3950,26&3351,05&3720,87\\
+  	\hline
 		\end{tabular}
 	\caption{Coordenadas geográficas  e cartesianas de algumas cidades - solução do item d.}
 \vspace{10pt}
 		\begin{tabular}{|l|l|l|}
 		\hline
-	  Localidades & Distância em linha reta & Distância sobre a superfície esférica \\ 
+	  Localidades & Distância em linha reta & Distância sobre a superfície esférica \\
 		\hline
-		Porto Alegre-Londres & 9260Km & 10360Km\\ 		
+		Porto Alegre-Londres & 9260Km & 10360Km\\
   	\hline
-  	Porto Alegre-Tóquio & 12700Km&18840Km\\ 		
+  	Porto Alegre-Tóquio & 12700Km&18840Km\\
   	\hline
-		Tóquio-Londres &8695Km &9570Km\\ 		
-  	\hline		
+		Tóquio-Londres &8695Km &9570Km\\
+  	\hline
 		\end{tabular}
 	\caption{Distância entre as cidades - solução do item e.}
 
-\vspace{10pt}	
+\vspace{10pt}
 		\begin{tabular}{|l|l|l|l|}
 		\hline
-Localidade &	  $\lambda$ & $\phi$& Identificação\\ 
+Localidade &	  $\lambda$ & $\phi$& Identificação\\
 		\hline
 1&		$48^\circ 51{'}30{''}$N &	$0^\circ 02{'}24{''}$L & \\
 	\hline
 2&	  $27^\circ 10{'}27{''}$N & 	$0^\circ 58{'}42{''}$L & \\
 	\hline
 3&	  $51^\circ 10{'}44{''}$N & $0^\circ 01{'}55{''}$W&  \\
-		\hline		
+		\hline
 		\end{tabular}
 	\caption{Solução do item f}
 \end{table}
@@ -364,7 +364,7 @@ O produto escalar satisfaz as seguintes propriedades:
 As propriedades (\ref{propprodesccom}), (\ref{propprodesclin}) e (\ref{propprodescnorma}) podem ser trivialmente demonstradas diretamente a partir da definição de produto escalar dada em (\ref{defprodesc}).
 \begin{exer} Demonstre essas três propriedades.
 \end{exer}
-Observe que $\alpha(\vec{u}\cdot\vec{v})=(\alpha~\!\vec{u})\cdot\vec{v}$ pelo que podemos escrever $\alpha~\!\vec{u}\cdot\vec{v}$ sem risco de ambiguidade.  
+Observe que $\alpha(\vec{u}\cdot\vec{v})=(\alpha~\!\vec{u})\cdot\vec{v}$ pelo que podemos escrever $\alpha~\!\vec{u}\cdot\vec{v}$ sem risco de ambiguidade.
 \begin{exer} Use (\ref{propprodesccom}) e  (\ref{propprodesclin}) para mostrar a seguinte propriedade:
 $$
 \left(\alpha\vec{u}+\beta \vec{v}\right)\cdot \vec{w}=\alpha (\vec{u}\cdot\vec{w})+ \beta (\vec{v}\cdot\vec{w})
@@ -379,12 +379,12 @@ No entanto, uma demonstração puramente algébrica pode ser dada a partir das p
 Consideramos primeiramente os versores $\hat{u}$ e $\hat{v}$ definidos em (\ref{defversor}) e calculamos
 \begin{eqnarray*}
 \|\hat{u}+\hat{v}\|^2 &=& \left(\hat{u}+\hat{v}\right)\cdot \left(\hat{u}+\hat{v}\right) = 2+2\hat{u}\cdot\hat{v} \\
-\|\hat{u}-\hat{v}\|^2 &=& \left(\hat{u}-\hat{v}\right)\cdot \left(\hat{u}-\hat{v}\right) = 2-2\hat{u}\cdot\hat{v} 
+\|\hat{u}-\hat{v}\|^2 &=& \left(\hat{u}-\hat{v}\right)\cdot \left(\hat{u}-\hat{v}\right) = 2-2\hat{u}\cdot\hat{v}
 \end{eqnarray*}
 onde usamos que $\hat{u}\cdot\hat{u}=\hat{v}\cdot\hat{v}=1$ posto que a norma de um versor é sempre 1. Agora observamos que $\|\hat{u}+\hat{v}\|^2\geq 0 $ e $\|\hat{u}-\hat{v}\|^2\geq 0 $, pelo que temos:
 $$-1\leq \hat{u}\cdot\hat{v} \leq 1$$
 O que implica $|\hat{u}\cdot\hat{v}|\leq 1$. Como $\vec{u}=u\hat{u} $ e $\vec{v}=v\hat{v}$, temos
-$$|\vec{u}\cdot\vec{v}|\leq uv$$ 
+$$|\vec{u}\cdot\vec{v}|\leq uv$$
 
 Observamos que com uma demontração puramente algébrica para a desigualdade de Cauchy-Schwarz, podemos derivar uma demonstração puramente algébrica da \underline{desigualdade triangular} (\ref{propnormatri}). Ver também a discussão do excício \ref{exnorma}. Para tal considere a seguinte identidade:
 $$\|\vec{u}+\vec{v}\|^2=\left(\vec{u}+\vec{v}\right)\cdot \left(\vec{u}+\vec{v}\right) = u^2+2\vec{u}\cdot\vec{v}+v^2$$
@@ -404,7 +404,7 @@ Em especial os vetores unitários $\vec{i}$, $\vec{j}$ e $\vec{k}$ são ortogona
 \construirExeresol
 
 \subsection*{Exercícios}
-\begin{exer} Considere os vetores dados por $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=\vec{i}+2\vec{j}$ e $\vec{w}=\frac{1}{3}\vec{i}+\frac{1}{2}\vec{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.  
+\begin{exer} Considere os vetores dados por $\vec{u}=\vec{i}+\vec{j}$, $\vec{v}=\vec{i}+2\vec{j}$ e $\vec{w}=\frac{1}{3}\vec{i}+\frac{1}{2}\vec{j}$ conforme exercício \ref{ex1uvw}. Calcule o ângulo entre esses vetores.
 \end{exer}
 Resp: $18,43^\circ$, $11,3^\circ$ e  $7,13^\circ$
 \begin{exer} Mostre que se $\alpha$ e $\beta$ são escalares diferentes de zero e $\vec{u}$ e $\vec{v}$ são vetores não nulos, então $$\cos\left(\alpha\vec{u},\beta\vec{v}\right)=\cos\left(\vec{u},\vec{v}\right).$$
@@ -427,8 +427,8 @@ Resp: $\frac{\sqrt{2}}{2}\left(\vec{j}-\vec{k}\right)$ e $\frac{\sqrt{2}}{2}\lef
 
 \begin{exer} Encontre três vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ tais que:
 \begin{itemize}
-\item [a)] $\left(\vec{u}\cdot\vec{v}\right)\vec{w}=\vec{0}$ mas $\vec{u}\left(\vec{v}\cdot\vec{w}\right)\neq \vec{0}$ 
-\item [b)] $\left(\vec{u}\cdot\vec{v}\right)\vec{w}\neq \vec{u}\left(\vec{v}\cdot\vec{w}\right)$ e ambos não nulos. 
+\item [a)] $\left(\vec{u}\cdot\vec{v}\right)\vec{w}=\vec{0}$ mas $\vec{u}\left(\vec{v}\cdot\vec{w}\right)\neq \vec{0}$
+\item [b)] $\left(\vec{u}\cdot\vec{v}\right)\vec{w}\neq \vec{u}\left(\vec{v}\cdot\vec{w}\right)$ e ambos não nulos.
 \end{itemize}
 \end{exer}
 
@@ -442,16 +442,16 @@ $$\theta=\left\{
 |\theta_1-\theta_2|,& |\theta_1-\theta_2|\leq 180^\circ\\
 360^\circ-|\theta_1-\theta_2|,& |\theta_1-\theta_2|> 180^\circ\\
 \end{array}
-\right.$$ 
+\right.$$
 contanto que $\theta_1$ e $\theta_2$ estejam entre $0$ e $360^\circ$.
 Interprete geometricamente este resultado.
 \end{exer}
 
-\begin{exer}Seja $\vec{u}$ um vetor não nulo fixo e $\vec{v}$ um vetor de norma não nula fixa. Mostre que $\|\vec{u}+\vec{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}). 
+\begin{exer}Seja $\vec{u}$ um vetor não nulo fixo e $\vec{v}$ um vetor de norma não nula fixa. Mostre que $\|\vec{u}+\vec{v}\|$ tem um ponto de máximo quando $\hat{u}=\hat{v}$ e um ponto de mínimo quando $\hat{u}=-\hat{v}$. Interprete o resultado geometricamente e compare com o problema (\ref{probmaxmin}).
 \end{exer}
  Dica: $\|\vec{u}+\vec{v}\|^2=u^2+v^2+2\vec{u}\cdot\vec{v}$ e (\ref{defintriprodesc}).
 
- 
+
 %***********************************************************************************
 \section{O produto vetorial}\index{produto vetorial}
 Além do produto escalar entre vetores, definimos também o produto vetorial\index{produto vetorial}. Enquanto o produto escalar de dois vetores é um escalar, o produto vetorial é um terceiro vetor. O produto vetorial entre $\vec{u}=u_1\vec{i}+u_2\vec{j}+u_3\vec{k}$ e $\vec{v}=v_1\vec{i}+v_2\vec{j}+v_3\vec{k}$ é denotado $\vec{u}\times\vec{v}$ e é definido em coordenadas cartesianas como:
@@ -476,7 +476,7 @@ Nas duas últimas propriedades, $\sin(\vec{u},\vec{v})$ denota o seno do ângulo
 
 A última propriedade significa que o trio $\vec{u}$, $\vec{v}$ e $\vec{u}\times\vec{v}$ forma um sistema dextrogiro.
 
-\begin{exer} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).  
+\begin{exer} Mostre as propriedades (\ref{propprodvecanticom}), (\ref{propprodveclin1}) e (\ref{propprodveclin2}).
 \end{exer}
 A propriedade da ortogonalidade pode ser demonstrada diretamente da definição de produto vetorial e produto escalar:
 \begin{eqnarray*}\left(\vec{u}\times \vec{v}\right)\cdot \vec{u}&=&\left[\left(u_2v_3-u_3v_2\right)\vec{i}+\left(u_3v_1-u_1v_3\right)\vec{j}+\left(u_1v_2-u_2v_1\right)\vec{k}\right]\left(u_1\vec{i}+u_2\vec{j}+u_3\vec{k}\right)\\
@@ -506,17 +506,17 @@ Somando estas últimas duas expressões, simplificando e reagrupando termos, che
 &=&u_1^2v_1^2+u_1^2v_2^2+u_1^2v_3^2+u_2^2v_1^2+u_2^2v_2^2+u_2^2v_3^2+u_3^2v_1^2+u_3^2v_2^2+u_3^2v_3^2\\
 &=&\left(u_1^2+u_2^2+u_3^2\right)\left(v_1^2+v_2^2+v_3^2\right)=u^2v^2.
 \end{eqnarray*}
-Agora que dispomos da identidade (\ref{identnorma}), usamos (\ref{defintriprodesc}) para escrever 
+Agora que dispomos da identidade (\ref{identnorma}), usamos (\ref{defintriprodesc}) para escrever
 \begin{equation*}\left\|\vec{u}\times \vec{v}\right\|^2=u^2v^2-\left|\vec{u}\cdot \vec{v}\right|^2=u^2v^2-\left[uv\cos\left(\vec{u},\vec{v}\right)\right]^2=u^2v^2\left[1-\cos^2\left(\vec{u},\vec{v}\right)\right]=u^2v^2\sin^2\left(\vec{u},\vec{v}\right)
 \end{equation*}
 Extraímos a raiz quadrada, observando que $\sin\left(\vec{u},\vec{v}\right)\geq 0$ e obtemos o resultado desejado (\ref{propprodvecnorma}).
-Um caso particular importante é quando os vetores $\vec{u}$ e $\vec{v}$ estão na mesma direção. Como $\sin 0= \sin 180^\circ=0$, o produto vetorial de dois vetores paralelos é $\vec{0}$.  
+Um caso particular importante é quando os vetores $\vec{u}$ e $\vec{v}$ estão na mesma direção. Como $\sin 0= \sin 180^\circ=0$, o produto vetorial de dois vetores paralelos é $\vec{0}$.
 Para demonstrar a propriedade (\ref{propprodvecorient}), calculamos o determinante envolvido
 \begin{eqnarray*}
 \det\left(\vec{u};\vec{v};\vec{u}\times\vec{v}\right)&=&\left|
 \begin{array}{ccc}
-u_1 & v_1 & \left(u_2v_3-u_3v_2\right)\\  
-u_2 & v_2 & \left(u_3v_1-u_1v_3\right)\\ 
+u_1 & v_1 & \left(u_2v_3-u_3v_2\right)\\
+u_2 & v_2 & \left(u_3v_1-u_1v_3\right)\\
 u_3 & v_3 &  \left(u_1v_2-u_2v_1\right)
 \end{array}
 \right|\\
@@ -531,13 +531,13 @@ u_3 & v_3 &  \left(u_1v_2-u_2v_1\right)
   \end{figure}
 
 
-Agora basta observar que esta expressão é idêntica a (\ref{calcnormaprodvec}), ou seja, $\|\vec{u}\times\vec{v}\|^2$ e portanto o determinante $\det\left(\vec{u};\vec{v};\vec{u}\times\vec{v}\right)$ é positivo. 
+Agora basta observar que esta expressão é idêntica a (\ref{calcnormaprodvec}), ou seja, $\|\vec{u}\times\vec{v}\|^2$ e portanto o determinante $\det\left(\vec{u};\vec{v};\vec{u}\times\vec{v}\right)$ é positivo.
 
 A importância desta propriedade está no fato que se $\vec{w}=\vec{u}\times \vec{v}$ então o trio de vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro. Além disso, por causa da propriedade (\ref{propprodvecorto}), $\vec{w}$ deve ser ortogonal tanto aos vetores $\vec{u}$, $\vec{v}$. Finalmente, observando a propriedade da norma (\ref{propprodvecnorma}), podemos estabelecer a seguinte identidade para o produto vetorial de dois vetores não colineares $\vec{u}$ e $\vec{v}$:
 \begin{equation}
 \vec{u}\times\vec{v}=uv\sin\left(\vec{u},\vec{v}\right)\hat{e}
 \end{equation}
-onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vec{u}$ e $\vec{v}$ e forma um sistema dextrogiro com eles.  
+onde o versor $\hat{e}$ é ortogonal ao plano gerado por $\vec{u}$ e $\vec{v}$ e forma um sistema dextrogiro com eles.
 
 \begin{figure}%[10\baselineskip]
 \begin{center}
@@ -618,7 +618,7 @@ v_1 & v_2 & v_3\\
 \begin{exer} Refaça os exercícios \ref{exort1} e \ref{exort2} usando o conceito de produto vetorial.
 \end{exer}
 
-\begin{exer}\label{prodvecnaoassoc} Encontre três vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ tais que $\vec{u}\times\left(\vec{v}\times\vec{w}\right)\neq \left(\vec{u}\times\vec{v}\right)\times \vec{w}$. 
+\begin{exer}\label{prodvecnaoassoc} Encontre três vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ tais que $\vec{u}\times\left(\vec{v}\times\vec{w}\right)\neq \left(\vec{u}\times\vec{v}\right)\times \vec{w}$.
 \end{exer}
 Exemplo de resposta: $\vec{u}=\vec{i}$, $\vec{v}=\vec{i}$ e $\vec{w}=\vec{k}$.
 
@@ -636,7 +636,7 @@ Exemplo de resposta: $\vec{u}=\vec{i}$, $\vec{v}=\vec{i}$ e $\vec{w}=\vec{k}$.
 \item[j)] $\left(\vec{u}+\vec{v}\right)\times\left(\vec{u}-\vec{v}\right)$
 \end{itemize}
 \end{exer}
-Resp: $\vec{0}$,$\vec{0}$,$u^2$,$u$,$u^2+2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $u^2-2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $u^2-v^2$, $2\vec{v}\times\vec{u}$ 
+Resp: $\vec{0}$,$\vec{0}$,$u^2$,$u$,$u^2+2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $u^2-2\vec{u}\cdot\vec{v}+v^2$, $\vec{0}$, $u^2-v^2$, $2\vec{v}\times\vec{u}$
 
 
 \begin{exer} Mostre que $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)=\det\left(\vec{u};\vec{v};\vec{w}\right)$. Conclua que o trio de vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ forma um sistema dextrogiro se $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)>0$ e levogiro se $\vec{u}\cdot \left(\vec{v}\times\vec{w}\right)<0$. Interprete geometricamente.
@@ -673,7 +673,7 @@ Obtemos:
 \begin{figure}%[.5\baselineskip]
 \begin{center}
    \includegraphics{./cap_algvet/figs/volume_determinante}
-   \caption{Representação do paralelepípedo formado por três vetores.}\label{fig:volume_determinante}   
+   \caption{Representação do paralelepípedo formado por três vetores.}\label{fig:volume_determinante}
   \end{center}\end{figure}
 O triplo produto escalar pode, portanto, ser calculado pelo determinante da matriz formada pelas componentes dos três vetores envolvidos. A expressão do triplo produto escalar como o determinante dos três vetores poderia ter sido mais rapidamente obtido usando (\ref{detprodvec}) o determinante formal que, alternativamente, define o produto vetorial:
 \begin{equation}
@@ -696,13 +696,13 @@ w_1 & w_2 & w_3\\
 Sabemos que quando permutamos duas linhas de uma matriz, seu determinante muda de sinal, pelo que podemos obter as seguintes relações:
 \begin{eqnarray*}
 \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=&-\vec{v}\cdot\left(\vec{u}\times\vec{w}\right)=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)\\
-&=&-\vec{w}\cdot\left(\vec{v}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right)=-\vec{u}\cdot\left(\vec{w}\times\vec{v}\right)  
+&=&-\vec{w}\cdot\left(\vec{v}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right)=-\vec{u}\cdot\left(\vec{w}\times\vec{v}\right)
 \end{eqnarray*}
 Extraindo apenas os termos de ordem ímpar temos:
 \begin{equation}\label{triploprodutoescalar} \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right)
 \end{equation}
 \begin{obs} Um caso particular interessante é quando escolhemos $\vec{w}=\vec{u}\times\vec{v}$ e obtemos:
-\begin{equation*} 
+\begin{equation*}
 \det\left(\vec{u},\vec{v},\vec{u}\times\vec{v}\right)=\left(\vec{u}\times\vec{v}\right)\cdot\left(\vec{u}\times\vec{v}\right)=\|\vec{u}\times\vec{v}\|^2.
 \end{equation*}
 Assim, retornamos à expressão (\ref{propprodvecorient}).
@@ -712,7 +712,7 @@ Podemos igualmente definir o triplo produto vetorial como o produto vetorial de 
 $$\vec{u}\times \left(\vec{v}\times\vec{w}\right). $$
 Observe cuidadosamente que o produto vetorial não é associativo, isto é, pode acontecer $\vec{u}\times \left(\vec{v}\times\vec{w}\right)\neq \left(\vec{u}\times \vec{v}\right)\times\vec{w} $ (ver problema \ref{prodvecnaoassoc}), portanto, a ordem dos vetores é relevante.2
 Podemos mostrar que o triplo produto vetorial pode ser expresso como:
-\begin{equation*} 
+\begin{equation*}
 \vec{u}\times\left(\vec{v}\times\vec{w}\right)=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{u}\cdot\vec{v}\right)\vec{w}
 \end{equation*}
 Para verificar esta identidade, retornamos ao produto vetorial entre $\vec{v}$ e $\vec{w}$ em coordenadas cartesianas e o escrevemos como a diferença entre dois vetores:
@@ -755,17 +755,17 @@ Agora, somamos $u_1v_1w_1$ à primeira coordenada de cada um dos dois termos da 
  \end{eqnarray*}
 Lembrando que $\vec{p_1}-\vec{p_2}=\vec{v}\times\vec{w}$, obtemos:
 \begin{eqnarray*}
-\vec{u}\times\left(\vec{p_1}-\vec{p_2}\right)&=& 
+\vec{u}\times\left(\vec{p_1}-\vec{p_2}\right)&=&
 \vec{u}\times\left(\vec{v}\times\vec{w}\right)=(\vec{u}\cdot\vec{w})\vec{v}-(\vec{u}\cdot\vec{v})\vec{w}.
 \end{eqnarray*}
 O formulário abaixo resume as indentidades que acabamos de demonstrar e lista mais algumas sem demonstração:
 
 \begin{subequations}\label{vectoridendities}
 \begin{align}
- \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\text{Triplo produto escalar}\\ 
- \vec{u}\times\left(\vec{v}\times\vec{w}\right)&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{u}\cdot\vec{v}\right)\vec{w},&\text{Triplo produto vetorial} \\ 
- \left(\vec{u}\times\vec{v}\right)\times\vec{w}&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{v}\cdot\vec{w}\right)\vec{u},&\text{Triplo produto vetorial} \\ 
- \left(\vec{u}\times\vec{v}\right)\cdot\left(\vec{w}\times\vec{x}\right)&=\left(\vec{u}\cdot\vec{w}\right)\left(\vec{v}\cdot\vec{x}\right)-\left(\vec{v}\cdot\vec{w}\right)\left(\vec{u}\cdot\vec{x}\right),& \\	 
+ \vec{u}\cdot\left(\vec{v}\times\vec{w}\right)&=\vec{v}\cdot\left(\vec{w}\times\vec{u}\right)=\vec{w}\cdot\left(\vec{u}\times\vec{v}\right),&\text{Triplo produto escalar}\\
+ \vec{u}\times\left(\vec{v}\times\vec{w}\right)&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{u}\cdot\vec{v}\right)\vec{w},&\text{Triplo produto vetorial} \\
+ \left(\vec{u}\times\vec{v}\right)\times\vec{w}&=\left(\vec{u}\cdot\vec{w}\right)\vec{v}-\left(\vec{v}\cdot\vec{w}\right)\vec{u},&\text{Triplo produto vetorial} \\
+ \left(\vec{u}\times\vec{v}\right)\cdot\left(\vec{w}\times\vec{x}\right)&=\left(\vec{u}\cdot\vec{w}\right)\left(\vec{v}\cdot\vec{x}\right)-\left(\vec{v}\cdot\vec{w}\right)\left(\vec{u}\cdot\vec{x}\right),& \\
 \left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x}&=\left(\vec{u}\cdot\vec{x}\right)\left(\vec{v}\times\vec{w}\right)+\left(\vec{v}\cdot\vec{x}\right)\left(\vec{w}\times\vec{u}\right)+\left(\vec{w}\cdot\vec{x}\right)\left(\vec{u}\times\vec{v}\right),& \\
 \left(\vec{u}\times\vec{v}\right)\times\left(\vec{w}\times\vec{x}\right)
 &=\left(\vec{u}\cdot\left(\vec{v}\times\vec{x}\right)\right)\vec{w}-\left(\vec{u}\cdot\left(\vec{v}\times\vec{w}\right)\right)\vec{x},&\\
@@ -788,7 +788,7 @@ O formulário abaixo resume as indentidades que acabamos de demonstrar e lista m
 \begin{figure}%[.5\baselineskip]
 \begin{center}
    \includegraphics{./cap_algvet/figs/coordenadas_cilindricas}
-   \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}   
+   \caption{Representação de um ponto de coordenadas cilíndricas.}\label{Coo_cil}
       \label{fig:coordenadas_cilindricas}
       %\setfloatalignment{b}% forces caption to be bottom-aligned
       \end{center}
@@ -800,20 +800,20 @@ No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coord
 \begin{eqnarray}
 x&=&\rho\cos\theta\\
 y&=&\rho\sin\theta
-\end{eqnarray}  
+\end{eqnarray}
 \end{subequations}
 onde
 \begin{equation}
 \rho=\sqrt{x^2+y^2}
 \end{equation}
-A coordenadas $\rho$, $\theta$ e $z$ são comumente denominadas, respectivamente, de ``distância radial'', ``azimute'' e ``altura''. 
+A coordenadas $\rho$, $\theta$ e $z$ são comumente denominadas, respectivamente, de ``distância radial'', ``azimute'' e ``altura''.
 
 As equações (\ref{xphi}) podem ser reescritas como
 \begin{subequations}\label{phix}
 \begin{eqnarray}
 \cos\theta&=&\frac{x}{\rho}=\frac{x}{\sqrt{x^2+y^2}}\\
 \sin\theta&=&\frac{y}{\rho}=\frac{y}{\sqrt{x^2+y^2}}
-\end{eqnarray}  
+\end{eqnarray}
 \end{subequations}
 
 \begin{exer}\label{rect_cin} Os seguintes pontos são dados em coordenadas cartesianas, encontre suas representações em coordenas cilíndricas:
@@ -829,11 +829,11 @@ Resp: $\left(\sqrt{2},\frac{\pi}{4},1\right)$,  $\left(\sqrt{2},\frac{5\pi}{4},1
 \begin{exer} Encontre uma expressão para distância de um ponto à origem em coordenadas cilíndricas
 \end{exer}
 Resp: $\sqrt{\rho^2+z^2}$
-% 
+%
 
 
 
-  
+
  \section{Sistema de coordenadas esféricas}\index{coordenadas!esféricas}
 \begin{figure}%[.5\baselineskip]
 \begin{center}
@@ -842,13 +842,13 @@ Resp: $\sqrt{\rho^2+z^2}$
       \label{fig:coordenadas_esfericas}
         \end{center}\end{figure}
 
- 
+
  No sistema de coordenadas cilíndricas, um ponto $P$ é representado pelas coordenadas\index{Sistema de coordenadas esféricas} $r$, $\theta$ e $\varphi$. A coordenada $r$ indica a distância do ponto $P$ até a origem, sendo consistente com a definição de módulo de um vetor. A coordenada $\theta$ é o mesmo ângulo do sistema de coordenadas cilíndricas, ou seja,  é o ângulo entre o semi-eixo $x>0$ e o ponto $P'$ (projeção de P no plano xy). O ângulo $\varphi$ é o ângulo entre a reta que liga a origem até o ponto $P$ e o semi-eixo $z>0$.  Ver figura \ref{fig:coordenadas_esfericas}. A relação entre a coordenadas no sistema de coordenadas esféricas e no sistema de coordenadas cilíndricas é dada pelas projeções:
 \begin{subequations}
 \begin{eqnarray}
 z&=&r\cos\varphi\\
 \rho&=&r\sin\varphi
-\end{eqnarray} 
+\end{eqnarray}
 \end{subequations}
 Usando (\ref{xphi}), encontramos a relação entre o sistema de coordenadas esféricas e cartesianas:
 \begin{subequations}
@@ -856,7 +856,7 @@ Usando (\ref{xphi}), encontramos a relação entre o sistema de coordenadas esf�
 x&=&r\sin\varphi\cos\theta\\
 y&=&r\sin\varphi\sin\theta\\
 z&=&r\cos\varphi
-\end{eqnarray} 
+\end{eqnarray}
 \end{subequations}
 Analogamente, pode-se escrever:
 \begin{subequations}
@@ -865,7 +865,7 @@ r&=&\displaystyle \sqrt{x^2+y^2+z^2}\\
 \cos\varphi&=&\displaystyle\frac{z}{r}=\frac{z}{x^2+y^2+z^2}\\
 \cos\theta&=&\displaystyle\frac{x}{\rho}=\frac{x}{x^2+y^2}\\
 \sin\theta&=&\displaystyle\frac{y}{\rho}=\frac{y}{x^2+y^2}
-\end{eqnarray} 
+\end{eqnarray}
 \end{subequations}
 
 
@@ -886,19 +886,19 @@ Na mecânica, o trabalho de uma força\index{trabalho de uma força} constante a
 $$W=\vec{F}\cdot \triangle\vec{ r}$$
 O torque de uma força em relação a um eixo dado é dado por
 $$\vec{\tau}=\vec{r}\times \vec{F}$$
-onde $\vec{r}$ é o vetor que liga o ponto onde a força é aplicada e o pondo onde o torque é medido. 
+onde $\vec{r}$ é o vetor que liga o ponto onde a força é aplicada e o pondo onde o torque é medido.
 
 A força $\vec{F}$ que uma campo magnético $\vec{B}$ produz em uma partícula de carga elétrica $q$ em movimento com velocidade $\vec{v}$ é dado pela lei de Lorentz:
 $\vec{F}=q\vec{v}\times\vec{B}.$
 
 \section{Notas avançadas}
 \subsection{O que é um espaço linear?}\index{espaço linear}
-A definição de espaço vetorial dada em (\ref{defel}) é ampla e engloba conceitos bem mais gerais que os espaços euclidianos de dimensão 2 e 3 com os quais o leitor tem maior familiaridade. As funções reais $f:\mathbb{R}\to\mathbb{R}$, por exemplo, formam espaço vetorial onde os escalares são dados pelos números reais. O vetor nulo, neste caso, é a função $f(x)=0$. Este espaço não tem dimensão finita pois os polinômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ formam uma família infinita de vetores linearmente independentes (isso é uma consequência do teorema fundamental da álgebra).      
+A definição de espaço vetorial dada em (\ref{defel}) é ampla e engloba conceitos bem mais gerais que os espaços euclidianos de dimensão 2 e 3 com os quais o leitor tem maior familiaridade. As funções reais $f:\mathbb{R}\to\mathbb{R}$, por exemplo, formam espaço vetorial onde os escalares são dados pelos números reais. O vetor nulo, neste caso, é a função $f(x)=0$. Este espaço não tem dimensão finita pois os polinômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ formam uma família infinita de vetores linearmente independentes (isso é uma consequência do teorema fundamental da álgebra).
 
 \subsection{Todo espaço linear tem uma base? Axioma da escolha.}
-Um problema importante é descobrir se todo espaço linear admite uma base. Este problema é mais complicado do que pode parecer e conduz a uma profunda discussão sobre os próprios fundamentos da matemática. De fato, pode-se mostrar que, o axioma da escolha implica que todo espaço linear tenha uma base. 
+Um problema importante é descobrir se todo espaço linear admite uma base. Este problema é mais complicado do que pode parecer e conduz a uma profunda discussão sobre os próprios fundamentos da matemática. De fato, pode-se mostrar que, o axioma da escolha implica que todo espaço linear tenha uma base.
 
-O axioma da escolha é um dos axiomas da teoria de conjuntos padrão que tem diversas consequências contraintuitivas e fisicamente inesperadas. Um exemplo das bizarrias produzidas pelo axioma da escolha é o chamado paradoxo de Banach-Tarski: Dada uma esfera no espaço euclidiano de três dimensões, é possível cortá-la em um número finito de pedaços e rearranjar esses pedaços de forma a construir duas esferas idênticas à original. Em outras palavras, o axioma da escolha aplicado ao espaço euclidiano tridimensional traz como consequências a não preservação de ``volume'' frente a translações e rotações. Para definir de forma razoável os conceitos de comprimento, área e volumes, foi necessário o desenvolvimento da teoria da medida no final do Século XIX e início do Século XX. A solução encontrada foi construir uma medida apenas em uma família de subconjuntos chamamos conjuntos mensuráveis.      
+O axioma da escolha é um dos axiomas da teoria de conjuntos padrão que tem diversas consequências contraintuitivas e fisicamente inesperadas. Um exemplo das bizarrias produzidas pelo axioma da escolha é o chamado paradoxo de Banach-Tarski: Dada uma esfera no espaço euclidiano de três dimensões, é possível cortá-la em um número finito de pedaços e rearranjar esses pedaços de forma a construir duas esferas idênticas à original. Em outras palavras, o axioma da escolha aplicado ao espaço euclidiano tridimensional traz como consequências a não preservação de ``volume'' frente a translações e rotações. Para definir de forma razoável os conceitos de comprimento, área e volumes, foi necessário o desenvolvimento da teoria da medida no final do Século XIX e início do Século XX. A solução encontrada foi construir uma medida apenas em uma família de subconjuntos chamamos conjuntos mensuráveis.
 
 Vejamos um exemplo de espaço linear de dimensão: é fácil verificar que o conjunto de todos os polinômios $P(x)=a_0+a_1x+a_2x^2+\ldots a_nx^n$ formam um espaço linear frente às operações usuais de soma e multiplicação por um escalar. A base deste espaço é dada pelos monômios $P_{n}(x)=x^n$ para $n=0,1,2,3,\ldots$ pois cada polinômio pode ser escrito como uma combinação linear \emph{finita} de elementos desse base. No entanto, não é possível mostrar desta forma contrutiva uma base para o espaço das funções reais ou mesmo para as funções reais contínuas. A existência de uma base para estes espaços é um conceito abstrato  não contrutivo.
 
@@ -921,18 +921,18 @@ onde $p\geq 1$.
 A norma (\ref{norma_lp}) é chamada de norma $L^p$ de uma função e a norma (\ref{norma_infinito}) é chamada de norma do máximo ou norma infinito ou norma $L^{\infty}$. Isso porque
 $$\lim_{p\to\infty}\|f(x)\|_{p}=\max_{x\in [0,1]}|f(x)|.$$
 
-Esta normas exercem enorme importância na teoria de funções com importantes aplicações no estudo das equações diferenciais. 
+Esta normas exercem enorme importância na teoria de funções com importantes aplicações no estudo das equações diferenciais.
 
 \subsection{E o produto escalar?}\index{produto escalar}
 Uma operação com as propriedades (\ref{proprodesc}) é um produto escalar. Produtos escalares não aparecem apenas em espaços de duas ou três dimensões: mesmo espaços de dimensão infinita podem possuir um produto escalar. Tomemos como exemplo novamente o espaço das funções contínuas definidas no intervalo $[0,1]$. A seguinte operação possui todas as propriedades de um produto escalar:
 $$\left<f,g\right>=\int_0^1f(x)g(x)dx.$$
 Observe o leitor que foi usada a notação $\left<,\right>$ para indicar o produto interno. Este produto interno induz a seguinte norma:
 $$\|f\|_2=\left(\left<f,f\right>\right)^{1/2}=\left(\int_0^1f(x)^2dx\right)^{1/2}$$
-que é o caso particular de (\ref{norma_lp}) quando $p=2$. 
+que é o caso particular de (\ref{norma_lp}) quando $p=2$.
  A desigualdade de Cauchy-Schwarz admite a seguinte forma:
 $$\int_0^1f(x)g(x)dx \leq \left(\int_0^1f(x)^2dx\right)^{1/2} \left(\int_0^1g(x)^2dx\right)^{1/2}$$
- 
- 
+
+
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
