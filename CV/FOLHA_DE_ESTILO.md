@@ -84,7 +84,7 @@ Sempre que possível, forneça o código fonte da figura armazenando-o na pasta 
 
 ### Equações e símbolos matemáticos
 
-As equações e símbolos matemáticos estão escritos usando a coleção de pacotes [AMS-LaTeX](http://www.ams.org/publications/authors/tex/amslatex).
+As equações e símbolos matemáticos estão escritos usando a coleção de pacotes [AMS-LaTeX](https://www.ams.org/publications/authors/tex/amslatex).
 
 A fim de facilitar a discussão sobre o material do livro, todas as equações devem ser numeradas.
 
