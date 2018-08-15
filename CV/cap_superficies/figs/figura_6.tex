@@ -1,0 +1,8 @@
+\documentclass{standalone}\usepackage{pstricks-add}\usepackage{pstricks,pst-plot}\usepackage[dvips]{graphicx}\usepackage{pst-math}\usepackage{pst-plot}\usepackage{pst-circ}\usepackage[brazil]{babel}\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{amsmath}\usepackage{amssymb}\usepackage{amsthm}\usepackage{mathtools}\usepackage{pst-3dplot}\usepackage{pst-solides3d}\newcommand{\sen}{\operatorname{sen}\,}\newcommand{\senh}{\operatorname{senh}\,}\renewcommand{\sin}{\operatorname{sen}\,}\renewcommand{\sinh}{\operatorname{senh}\,}\begin{document} \begin{pspicture}(-2.5,-2)(2.5,1.8)
+\psset{viewpoint=20 20 10,Decran=15,lightsrc=20 10 5}
+ \defFunction{hip_one}(u,v){u cosh v Cos mul}{u cosh v Sin mul}{u sinh}   \psSolid[object=surfaceparametree,base=-1 1 0 6.28,fillcolor=yellow!50,incolor=green!50,function=hip_one,linewidth=0.5\pslinewidth,ngrid=20 20]%
+\psset{linecolor=black}\black
+\rput(0,-1.8){Hiperbolóide de uma folha}
+\axesIIID[linecolor=blue](0,0,0)(3,3,3)
+ \end{pspicture}  \hspace{2cm}
+\end{document}
