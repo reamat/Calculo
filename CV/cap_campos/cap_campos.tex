@@ -2,7 +2,64 @@
 
 \chapter{Campos vetoriais}\label{cap:campos}\index{campos vetoriais}
 
-\emconstrucao
+
+\chapter{Campos escalares e campos vetoriais}
+ Campo é termo usado para designar funções definidas em uma porção do espaço tridimensional (ou bidimensional), isto é, funções cujo domínio $D$ é um subconjunto de $\mathbb{R}^3$ (ou $\mathbb{R}^2$). Trabalharemos com dois tipos de campos: os campos escalares e os campos vetoriais. Os campos vetoriais são funções cuja imagem é composta de vetores no $\mathbb{R}^3$, já a imagem dos campos escalares são números reais, isto é, escalares.
+ 
+\begin{ex}\label{excampos} São exemplos de campos escalares.
+\begin{itemize}
+\item [a)] A função que liga a posição de um ponto dentro de uma sala à temperatura neste ponto.
+\item [b)] A pressão do ar como função da posição na atmosfera.  
+\item [c)] $f(x,y,z)= 100 + 20e^{-\sqrt{x^2+y^2+z^2}}$.
+\item [d)] $f(x,y,z)= \vec{r} \cdot \vec{r} = x^2+y^2+z^2$, onde $\vec{r}=x\vec{i}+y\vec{j}+z\vec{k}$ .
+\end{itemize}
+\end{ex}   
+
+
+\begin{ex}\label{excampos} São exemplos de campos vetoriais.
+\begin{itemize}
+\item [a)] A função que liga a posição de um ponto dentro de uma fluido à velocidade (vetor) neste ponto.
+\item [b)] O campo magnéticos, elétrico, gravitacional etc.  
+\item [c)] $\vec{F}(x,y,z)= x\vec{i} + z\vec{j} - y\vec{k}$.
+\item [d)] $\vec{F}(x,y,z)= \vec{r}\times \vec{k}$
+\end{itemize}
+\end{ex}  
+
+\section{Representação gráfica dos campos vetoriais}
+Um campo vetorial é representado graficamente por um conjunto de setas partindo de pontos (x,y,z) de comprimento proporcionla ao módulo de $\vec{F}(x,y,z)$ e mesma direção e sentido de $\vec{F}(x,y,z)$
+
+\begin{ex} Represente graficamente o campo vetorial $\vec{F}(x,y)=\sqrt{y}\ \!\vec{i},~~y\geq 0$.
+%\begin{figure}[htp]
+\includegraphics{cap_campos/figs/campo_exemplo_1}
+%\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}(x,y)=\sqrt{y}\ \!\vec{i},~~y\geq 0$.}
+%\end{figure}
+\end{ex}
+
+
+\begin{ex} Represente graficamente o campo vetorial $\vec{F}(x,y)=x\vec{i},~~y\geq 0$.
+%\begin{figure}[htp]
+\includegraphics{cap_campos/figs/campo_exemplo_2}
+%\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}(x,y)=x\vec{i}$.}
+%\end{figure}
+\end{ex}
+
+\begin{ex} Represente graficamente o campo vetorial $\vec{F}(x,y)=-y\vec{i}+x\vec{j}$.
+%\begin{figure}[htp]
+\includegraphics{cap_campos/figs/campo_exemplo_3}
+%\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}(x,y)=-y\vec{i}+x\vec{j}$.}
+%\end{figure}
+\end{ex}
+
+
+\section{Campos radiais}
+Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
+\begin{figure}[htp]
+\includegraphics{cap_campos/figs/campo_radial}
+\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}=\vec{r}$}
+\end{figure}
+
+
+
 
 \section{Tipos de campos vetoriais}
 
