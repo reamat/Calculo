@@ -3,8 +3,9 @@ include "../../config/asy_config.asy";
 
 
 draw((0,-1)..(0,1),arrow=Arrow(), L=Label("$y$", position=EndPoint));
-
 draw((-1,0)..(1,0),arrow=Arrow(), L=Label("$x$", position=EndPoint));
+xaxis("$x$",BottomTop,LeftTicks);
+yaxis("$y$",LeftRight,RightTicks(trailingzero));
 
 
 
