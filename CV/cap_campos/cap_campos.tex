@@ -64,15 +64,76 @@ Rigorosamente falando, o operador del não é um operador diferencial, mas um mn
  \vec{\nabla}\cdot \vec{F} &=& \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} ~~ \text{(Divergente)},\\
  \vec{\nabla}\times \vec{F} &=&  \vec{i}\left(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\right) + \vec{j}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right) + \vec{k}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)~~ \text{(Rotacional)}.\\
 \end{eqnarray*}
+O rotacional pode ser representado pelo seguinte determinante simbólico, que funciona como um mnemônico para lembrar facilmente de sua definição:
 $$
-\left|
+ \vec{\nabla}\times \vec{F}=\left|
  \begin{array}{ccc}
  \vec{i} & \vec{j} & \vec{k} \\
  \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
 F_1 & F_2 & F_3
  \end{array}
-\right| 
+\right|. 
 $$
+
+\begin{ex} Calule o gradiente do campo escalar dado por $f(x,y,z)=xy+z$.
+\begin{eqnarray}
+ \vec{\nabla}f &=& \vec{i}~\!\frac{\partial f}{\partial x}+\vec{j}~\!\frac{\partial f}{\partial y}+\vec{k}~\!\frac{\partial f}{\partial z}
+ =\vec{i}+x\vec{j}+\vec{k}
+\end{eqnarray}
+\end{ex}
+
+\begin{ex} Calule o divergente e o rotacional do campo vetorial dado por $\vec{F}=(yz+x)\vec{i}+z^2\vec{j}+z^3\vec{k}$.
+\begin{eqnarray}
+ \vec{\nabla}\cdot \vec{F} &=& \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} =
+ 1+0+3z^2=3z^2+1
+\end{eqnarray}
+
+\begin{eqnarray}
+  \vec{\nabla}\times \vec{F}&=&\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+yz+x & z^2 & z^3
+ \end{array}
+\right|\\&=&\left(0-2z\right)\vec{i}+\left(y-0\right)\vec{j}+\left(0-z\right)\vec{k}\\
+&=&-2z\vec{i}+y\vec{j}-z\vec{k}.
+\end{eqnarray}
+\end{ex}
+
+\begin{ex} Dado o campo vetorial dado por $\vec{F}=x^5\vec{i}+y^2\vec{j}$, calcule o gradiente do divergente,$ \vec{\nabla} \vec{\nabla}\cdot \vec{F}$, de $\vec{F}$
+\begin{eqnarray}
+ \vec{\nabla}\cdot \vec{F} &=& \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} =
+ 5x^4+2y\\
+ \vec{\nabla} \vec{\nabla}\cdot \vec{F}&=&20x^3\vec{j}+2\vec{j}
+\end{eqnarray}
+ \end{ex}
+
+\subsection{Operadores diferenciais de segunda ordem}
+Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de segunda ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
+\begin{eqnarray}
+  \vec{\nabla} \cdot \vec{\nabla} f&~& \text{(Divergente do gradiente ou laplaciano)}\\
+  \vec{\nabla} \times \vec{\nabla} f&~& \text{(Rotacional do gradiente)}\\
+  \vec{\nabla} \vec{\nabla}\cdot \vec{F}&~& \text{(Gradiente do divergente)}\\
+  \vec{\nabla} \cdot{\nabla}\times \vec{F}&~& \text{(Divergente do rotacional)}\\
+  \vec{\nabla} \times{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}\\
+  \end{eqnarray}
+Os operadores $\vec{\nabla} \times \vec{\nabla}$ e $\vec{\nabla} \cdot{\nabla}\times \vec{F}$ são identicamente nulos, o que pode ser provado por simples inspeção
+\begin{eqnarray}
+ \vec{\nabla} \times \vec{\nabla} f &=&\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
+ \end{array}
+\right|\\
+&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right) + \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right) + \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+\end{eqnarray}
+Sob sufiente regularidade, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
+\begin{eqnarray}
+ \vec{\nabla} \times \vec{\nabla} f &\equiv &0
+\end{eqnarray}
+ para todo $f$ continuamente diferenciável.
+ 
 \subsection{Derivada direcional e gradiente}
 \subsection{Divergente}
 \subsection{Rotacional}
