@@ -51,7 +51,86 @@ Um campo vetorial é representado graficamente por um conjunto de setas partindo
 \end{ex}
 
 
-\section{Campos radiais}
+
+\section{Cálculo com o operador $\vec{\nabla}$}
+\subsection{Operador $\vec{\nabla}$}
+No cálculo vetorial, o operador $\vec{\nabla}$, pronunciado nabla ou del, é um símbolo usado para denotar uma série de operadores diferenciais definidos em campos escalares e vetorias, como gradiente, divergente e rotacional. Ele é definido simbolicamente como:
+\begin{equation}\label{def_del}
+\vec{\nabla} \equiv \vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}
+\end{equation}
+Rigorosamente falando, o operador del não é um operador diferencial, mas um mnemônico que ajuda a lembrar de uma série de operadores diferenciais:
+\begin{eqnarray*}
+ \vec{\nabla}f &=& \vec{i}~\!\frac{\partial f}{\partial x}+\vec{j}~\!\frac{\partial f}{\partial y}+\vec{k}~\!\frac{\partial f}{\partial z} ~~ \text{(Gradiente)},\\
+ \vec{\nabla}\cdot \vec{F} &=& \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} ~~ \text{(Divergente)},\\
+ \vec{\nabla}\times \vec{F} &=&  \vec{i}\left(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\right) + \vec{j}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right) + \vec{k}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)~~ \text{(Rotacional)}.\\
+\end{eqnarray*}
+$$
+\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+F_1 & F_2 & F_3
+ \end{array}
+\right| 
+$$
+\subsection{Derivada direcional e gradiente}
+\subsection{Divergente}
+\subsection{Rotacional}
+\section{Identidades envolvendo o operador $\vec{\nabla}$}
+\begin{equation}\label{rot_grad}
+\vec{\nabla}\times\vec{\nabla}f=\vec{0}
+\end{equation}
+
+
+\section{Campos conservativos}
+\begin{defn} \label{def_campo_conservativo}\index{campo!conservativo}\index{campo!rotacional}\index{campo!gradiente}  Um campo $\vec{F}(x,y,z)$ é dito conservativo se existe um campo escalar $\varphi(x,y,z)$ tal que
+$$\vec{F}(x,y,z) = \vec{\nabla}\varphi$$
+Neste caso $\varphi$ é chamado de campo potencial de $$\vec{F}(x,y,z)$$
+\end{defn}
+\begin{obs} Campos conservativos também são conhecidos como campos grandiente ou campos irrotacionais, este último nome advém do fato que $$\vec{\nabla}\times\vec{F}(x,y,z) = \vec{\nabla}\times\vec{\nabla}\varphi=\vec{0}.$$
+Esta identidade é oriunda da Equação~\ref{rot_grad}. 
+ \end{obs}
+\begin{ex} O campo $\vec{F}=2xy\vec{i}+x^2\vec{j}$ é conservativo por $\vec{F}=\vec{\nabla}\left(x^2y\right)$.
+ \end{ex}
+
+\begin{teo} Seja $\vec{F}:\mathbb{R}^3\to\mathbb{R}^3$ um campo vetorial contínuo e $\vec{\nabla}\times \vec{F}=\vec{0}$, então $\vec{F}$ é conservativo.
+ \end{teo}
+\begin{proof} Como $\vec{\nabla}\times \vec{F}=\vec{0}$, temos:
+\begin{eqnarray}
+ \frac{\partial F_3}{\partial y} &=&\frac{\partial F_2}{\partial z}\label{rot_zero_x},\\
+ \frac{\partial F_1}{\partial z} &=&\frac{\partial F_3}{\partial x}\label{rot_zero_y},\\
+ \frac{\partial F_3}{\partial x} &=&\frac{\partial F_1}{\partial y}\label{rot_zero_z}.
+\end{eqnarray}
+Defina, agora, a função $\varphi:\mathbb{R}^3\to\mathbb{R}$ dada por
+$$\varphi(x,y,z)=\int_0^xF_1(s,y,z) + \int_0^yF_2(0,s,z)+\int_0^zF_3(0,0,s).$$
+Basta provar que $\vec{\nabla}\varphi(x,y,z)=\vec{F}$, isto é
+\begin{eqnarray}
+ \frac{\partial \varphi}{\partial z} &=&F_1,\label{rot_zero_der_x}\\
+ \frac{\partial \varphi}{\partial y} &=&F_2,\label{rot_zero_der_y}\\
+ \frac{\partial \varphi}{\partial z} &=&F_3\label{rot_zero_der_z}.
+\end{eqnarray}
+A primeira desigualdade advém diretamente do teorema fundamental do cálculo. Para obter a segunda desigualdade, derivamos o potencial em relação a $y$:
+\begin{eqnarray*}
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int\int 0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z)\\
+&=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
+&=&\left(F_2(x,y,z)-F_2(0,y,z)\right)+ F_2(0,y,z) = F_2(x,y,z)
+\end{eqnarray*}
+Onde usamos a Identidade~\ref{rot_zero_y}.
+
+Finalmente, para obter a terceira desigualdade, derivamos o potencial em relação a $z$:
+\begin{eqnarray*}
+\frac{\partial }{\partial z}\varphi(x,y,z)&=&\int_0^x \frac{\partial }{\partial z}F_1(s,y,z)ds + \int_0^y \frac{\partial }{\partial z}F_2(0,s,z)ds+F_3(0,0,z)\\
+&=&\int_0^x \frac{\partial }{\partial s}F_3(s,y,z)ds + \int_0^ \frac{\partial }{\partial s}F_3(0,s,z)ds+F_3(0,0,z)\\
+&=&\int_0^x \left(F_3(x,y,z)-F_3(0,y,z)\right) + \left(F_3(0,y,z)-F_3(0,0,z)\right)+F_3(0,0,z)\\
+&=&F_3(x,y,z)\\
+\end{eqnarray*}
+  Onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
+\end{proof}
+
+ 
+ 
+
+\section{Campos radiais e potenciais centrais}
 Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
 \begin{ex} Represente graficamente o campo vetorial $\vec{F}=\vec{r}$ no plano $xy$.
 %\begin{figure}[htp]
@@ -62,7 +141,7 @@ Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(
 
 
 
-\section{Tipos de campos vetoriais}
+
 
 \construirSec
 
