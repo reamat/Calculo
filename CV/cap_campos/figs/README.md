@@ -1,1 +1,1 @@
-pasta de figuras
+diretório de figuras
