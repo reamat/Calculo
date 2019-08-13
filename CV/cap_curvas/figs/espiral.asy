@@ -7,7 +7,7 @@ unitsize(1cm);
 
 
 pair espiral(real t) {
-	return (t*cos(t),t*sin(t));	}
+	return (t*sin(t),t*cos(t));	}
 
 pair tangente(real t) {
 	pair der= (cos(t)-t*sin(t),sin(t)+t*cos(t));	
