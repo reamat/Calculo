@@ -332,7 +332,7 @@ Considere os vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ relacionados por $$\vec{w}
 Este trio de vetores pode ser intepretado como os três lados de um triângulo como na figura \ref{leicossenos}. Da lei dos cossenos, sabemos que a seguinte relação é satisfeita:
  $$w^2=u^2+v^2-2uv\cos\theta$$
 supondo $u\neq 0$ e $v\neq 0$, temos
-$$\cos\theta = \frac{w^2-u^2-v^2}{2uv}.$$
+$$\cos\theta = \frac{u^2+v^2-w^2}{2uv}.$$
 Usamos agora a definição de norma de um vetor dada em (\ref{defnorma}):
 \begin{eqnarray*}
 u^2&=&u_1^2+u_2^2+u_3^2\\
@@ -340,7 +340,7 @@ v^2&=&v_1^2+v_2^2+v_3^2\\
 w^2&=&w_1^2+w_2^2+w_3^2=\left(u_1-v_1\right)^2+\left(u_2-v_2\right)^2+\left(u_3-v_3\right)^2\\
 \end{eqnarray*}
 Simplificando, temos:
-$$\cos\theta = \frac{w^2-u^2-v^2}{2uv}=\frac{u_1v_1+u_2v_2+u_3v_3}{uv}=\frac{\vec{u}\cdot\vec{v}}{uv}$$
+$$\cos\theta = \frac{u^2+v^2-w^2}{2uv}=\frac{u_1v_1+u_2v_2+u_3v_3}{uv}=\frac{\vec{u}\cdot\vec{v}}{uv}$$
 Esta última expressão nos permite escrever
 \begin{equation}\label{defintriprodesc}
 \vec{u}\cdot\vec{v}=uv\cos\left(\vec{u},\vec{v}\right)=uv\cos\theta
