@@ -5,28 +5,28 @@
 
 \section{Campos escalares e campos vetoriais}
  Campo é termo usado para designar funções definidas em uma porção do espaço tridimensional (ou bidimensional), isto é, funções cujo domínio $D$ é um subconjunto de $\mathbb{R}^3$ (ou $\mathbb{R}^2$). Trabalharemos com dois tipos de campos: os campos escalares e os campos vetoriais. Os campos vetoriais são funções cuja imagem é composta de vetores no $\mathbb{R}^3$, já a imagem dos campos escalares são números reais, isto é, escalares.
- 
+
 \begin{ex}\label{excampos} São exemplos de campos escalares.
 \begin{itemize}
 \item [a)] A função que liga a posição de um ponto dentro de uma sala à temperatura neste ponto.
-\item [b)] A pressão do ar como função da posição na atmosfera.  
+\item [b)] A pressão do ar como função da posição na atmosfera.
 \item [c)] $f(x,y,z)= 100 + 20e^{-\sqrt{x^2+y^2+z^2}}$.
 \item [d)] $f(x,y,z)= \vec{r} \cdot \vec{r} = x^2+y^2+z^2$, onde $\vec{r}=x\vec{i}+y\vec{j}+z\vec{k}$ .
 \end{itemize}
-\end{ex}   
+\end{ex}
 
 
 \begin{ex}\label{excampos} São exemplos de campos vetoriais.
 \begin{itemize}
 \item [a)] A função que liga a posição de um ponto dentro de uma fluido à velocidade (vetor) neste ponto.
-\item [b)] O campo magnéticos, elétrico, gravitacional etc.  
+\item [b)] O campo magnéticos, elétrico, gravitacional etc.
 \item [c)] $\vec{F}(x,y,z)= x\vec{i} + z\vec{j} - y\vec{k}$.
 \item [d)] $\vec{F}(x,y,z)= \vec{r}\times \vec{k}$
 \end{itemize}
-\end{ex}  
+\end{ex}
 
 \section{Representação gráfica dos campos vetoriais}
-Um campo vetorial é representado graficamente por um conjunto de setas partindo de pontos $(x,y,z)$ e de comprimento proporcional ao módulo de $\vec{F}(x,y,z)$ e mesma direção e sentido de $\vec{F}(x,y,z)$. O conjunto de pontos é escolhido de forma arbitrária de forma a permitir interpretar o campo.  
+Um campo vetorial é representado graficamente por um conjunto de setas partindo de pontos $(x,y,z)$ e de comprimento proporcional ao módulo de $\vec{F}(x,y,z)$ e mesma direção e sentido de $\vec{F}(x,y,z)$. O conjunto de pontos é escolhido de forma arbitrária de forma a permitir interpretar o campo.
 
 \begin{ex} Represente graficamente o campo vetorial $\vec{F}(x,y)=\sqrt{y}\ \!\vec{i},~~y\geq 0$.
 %\begin{figure}[htp]
@@ -72,13 +72,13 @@ $$
  \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
 F_1 & F_2 & F_3
  \end{array}
-\right|. 
+\right|.
 $$
 
 \begin{ex} Calule o gradiente do campo escalar dado por $f(x,y,z)=xy+z$.
 \begin{eqnarray}
  \vec{\nabla}f &=& \vec{i}~\!\frac{\partial f}{\partial x}+\vec{j}~\!\frac{\partial f}{\partial y}+\vec{k}~\!\frac{\partial f}{\partial z}
- =\vec{i}+x\vec{j}+\vec{k}
+ =y\vec{i}+x\vec{j}+\vec{k}
 \end{eqnarray}
 \end{ex}
 
@@ -104,7 +104,7 @@ yz+x & z^2 & z^3
 \begin{eqnarray}
  \vec{\nabla}\cdot \vec{F} &=& \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} =
  5x^4+2y\\
- \vec{\nabla} \vec{\nabla}\cdot \vec{F}&=&20x^3\vec{j}+2\vec{j}
+ \vec{\nabla} \vec{\nabla}\cdot \vec{F}&=&20x^3\vec{i}+2\vec{j}
 \end{eqnarray}
  \end{ex}
 
@@ -133,7 +133,7 @@ Sob sufiente regularidade, as derivadas parciais podem ser comutadas e cada term
  \vec{\nabla} \times \vec{\nabla} f &\equiv &0
 \end{eqnarray}
  para todo $f$ continuamente diferenciável.
- 
+
 \subsection{Derivada direcional e gradiente}
 \subsection{Divergente}
 \subsection{Rotacional}
@@ -149,7 +149,7 @@ $$\vec{F}(x,y,z) = \vec{\nabla}\varphi$$
 Neste caso $\varphi$ é chamado de campo potencial de $$\vec{F}(x,y,z)$$
 \end{defn}
 \begin{obs} Campos conservativos também são conhecidos como campos grandiente ou campos irrotacionais, este último nome advém do fato que $$\vec{\nabla}\times\vec{F}(x,y,z) = \vec{\nabla}\times\vec{\nabla}\varphi=\vec{0}.$$
-Esta identidade é oriunda da Equação~\ref{rot_grad}. 
+Esta identidade é oriunda da Equação~\ref{rot_grad}.
  \end{obs}
 \begin{ex} O campo $\vec{F}=2xy\vec{i}+x^2\vec{j}$ é conservativo por $\vec{F}=\vec{\nabla}\left(x^2y\right)$.
  \end{ex}
@@ -188,8 +188,8 @@ Finalmente, para obter a terceira desigualdade, derivamos o potencial em relaç�
   Onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
 \end{proof}
 
- 
- 
+
+
 
 \section{Campos radiais e potenciais centrais}
 Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
@@ -238,4 +238,3 @@ Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(
 \begin{resp}
   Resposta curta do exercício.
 \end{resp}
-
