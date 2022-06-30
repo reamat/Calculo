@@ -1,4 +1,5 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 
 \chapter{Campos vetoriais}\label{cap:campos}\index{campos vetoriais}
 
@@ -117,7 +118,7 @@ Operadores diferenciais de segunda ordem podem ser definidos através da composi
   \vec{\nabla} \cdot{\nabla}\times \vec{F}&~& \text{(Divergente do rotacional)}\\
   \vec{\nabla} \times{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}\\
   \end{eqnarray}
-Os operadores $\vec{\nabla} \times \vec{\nabla}$ e $\vec{\nabla} \cdot{\nabla}\times \vec{F}$ são identicamente nulos, o que pode ser provado por simples inspeção
+As expressões $\vec{\nabla} \times \vec{\nabla} f$ e $\vec{\nabla} \cdot{\nabla}\times \vec{F}$ são identicamente nulas para campos duas vezes continuamente diferenciáveis, o que pode ser provado por simples inspeção:
 \begin{eqnarray}
  \vec{\nabla} \times \vec{\nabla} f &=&\left|
  \begin{array}{ccc}
@@ -126,21 +127,126 @@ Os operadores $\vec{\nabla} \times \vec{\nabla}$ e $\vec{\nabla} \cdot{\nabla}\t
 \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
  \end{array}
 \right|\\
-&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right) + \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right) + \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right)\\
+&+& \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right)\\
+ &+& \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
 \end{eqnarray}
-Sob sufiente regularidade, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
+Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
 \begin{eqnarray}
- \vec{\nabla} \times \vec{\nabla} f &\equiv &0
+ \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
 \end{eqnarray}
- para todo $f$ continuamente diferenciável.
+A demonstração é análoga para o divergente do gradiente.
+
+\subsection*{Exercícios resolvidos}
+\begin{exeresol}
+  Mostre que $\vec{\nabla}\cdot\left(\vec{\nabla}f \times \vec{\nabla}g\right)=\vec{0}$
+\end{exeresol}
+\begin{resol}
+\begin{eqnarray*}
+ E&=&\vec{\nabla}\cdot\left(\vec{\nabla}f \times \vec{\nabla}g\right) \\
+  &=&\vec{\nabla}g\cdot\left(\vec{\nabla}\times \vec{\nabla}f\right)+\vec{\nabla}f\cdot\left(\vec{\nabla}\times \vec{\nabla}g\right) ~~~{\color{red} tab(11)~\text{com}~\vec{F}=\nabla f~\text{e}~\vec{G}=\nabla g.}\\
+  &=&0~~~{\color{red} tab(8)}\\
+\end{eqnarray*}
+\end{resol}
+
+\begin{exeresol}
+Simplifique $\vec{\nabla}\times\left(\vec{F}\vec{\nabla}\cdot\vec{F}\right)+\vec{F}\times\left[\vec{\nabla}\times\vec{\nabla}\times \vec{F}\right]+\vec{F}\times \vec{\nabla}^2\vec{F}$ e mostre que esta expressão equivale a $(\vec{\nabla}\cdot\vec{F})(\vec{\nabla}\times\vec{F})$
+\end{exeresol}
+\begin{resol}
+\begin{eqnarray*}
+ \vec{E}&=&\vec{\nabla}\times\left(\vec{F}\vec{\nabla}\cdot\vec{F}\right)+\vec{F}\times\left[\vec{\nabla}\times\vec{\nabla}\times \vec{F}\right]+\vec{F}\times \vec{\nabla}^2\vec{F}\\
+ &=&\vec{\nabla}\times\left(\vec{F}\vec{\nabla}\cdot\vec{F}\right)+\vec{F}\times\left[\vec{\nabla}\times\vec{\nabla}\times \vec{F}+\vec{\nabla}^2\vec{F}\right]\\
+ &=&\vec{\nabla}\times\left(\vec{F}\vec{\nabla}\cdot\vec{F}\right)+\vec{F}\times\vec{\nabla}(\vec{\nabla}\cdot\vec{F}) ~~~{\color{red} tab(10)}\\
+ &=&\left[\vec{\nabla}(\vec{\nabla}\cdot \vec{F})\times \vec{F}+(\vec{\nabla}\cdot\vec{F})(\vec{\nabla}\times\vec{F})\right]+\vec{F}\times\vec{\nabla}(\vec{\nabla}\cdot\vec{F}),~~~~{\color{red} tab(6)~\text{com}~f=\vec{\nabla}\cdot\vec{F}.}\\
+ &=&(\vec{\nabla}\cdot\vec{F})(\vec{\nabla}\times\vec{F})
+ \end{eqnarray*}
+ Onde se usou que $\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$.\\
+\end{resol}
+\begin{exeresol}
+
+Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec{\nabla}\vec{\nabla}\cdot \vec{F}-\vec{\nabla}^2\vec{F}$ para $$\vec{F}= x^2y\vec{i}+xyz\vec{j}+z^2y\vec{k}.$$
+\end{exeresol}
+\begin{resol}
+
+
+ \begin{eqnarray*}
+   \vec{\nabla}\times \vec{F}&=&\left|
+   \begin{array}{ccc}
+    \vec{i}&\vec{j}&\vec{k}\\[.5cm]
+    \frac{\partial }{\partial x}&\frac{\partial }{\partial y}&\frac{\partial }{\partial z}\\[.5cm]
+    x^2y&xyz&z^2y
+   \end{array}\right|\\
+   &=&\left(z^2-xy\right)\vec{i}+\left(0-0\right)\vec{j}+\left(yz-x^2\right)\vec{k}
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+   \vec{\nabla}\times\vec{\nabla}\times \vec{F}&=&\left|
+   \begin{array}{ccc}
+    \vec{i}&\vec{j}&\vec{k}\\[.5cm]
+    \frac{\partial }{\partial x}&\frac{\partial }{\partial y}&\frac{\partial }{\partial z}\\[.5cm]
+    (z^2-xy)&0&(yz-x^2)
+   \end{array}\right|\\
+   &=&\left(z-0\right)\vec{i}+\left(2z+2x\right)\vec{j}+\left(0+x\right)\vec{k}
+ \end{eqnarray*}
+ \begin{eqnarray*}
+  \vec{\nabla}(\vec{\nabla}\cdot\vec{F})&=&\vec{\nabla}(2xy+xz+2yz)\\
+  &=&(2y+z)\vec{i}+(2x+2z)\vec{j}+(x+2y)\vec{k}
+ \end{eqnarray*}
+
+\begin{eqnarray*}
+  \vec{\nabla}^2\vec{F}&=&2y\vec{i}+0\vec{j}+2y\vec{k}
+ \end{eqnarray*}
+
+ Vemos que a identidade se verifica.
+
+\end{resol}
+
+
 
 \subsection{Derivada direcional e gradiente}
 \subsection{Divergente}
 \subsection{Rotacional}
 \section{Identidades envolvendo o operador nabla}
-\begin{equation}\label{rot_grad}
-\vec{\nabla}\times\vec{\nabla}f=\vec{0}
-\end{equation}
+Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$.
+
+\begin{minipage}[l]{10cm}
+\noindent {\footnotesize Tabela do operador $\vec{\nabla}$:\\
+$f=f(x,y,z)$ e $g=g(x,y,z)$ são funções escalares;\\ $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ são funções vetoriais.\\
+{%\tabulinesep=1mm
+\begin{tabular}{|l|c|}
+\hline
+1.& $\displaystyle\vec{\nabla}\left(f+g\right)=\vec{\nabla}f+\vec{\nabla}g$\\
+\hline
+2.& $\displaystyle\vec{\nabla}\cdot\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\cdot \vec{F}+\vec{\nabla}\cdot \vec{G}$\\
+\hline
+3.&  $\displaystyle\vec{\nabla}\times\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\times \vec{F}+\vec{\nabla}\times \vec{G}$\\
+\hline
+4.&  $\displaystyle\vec{\nabla}\left(fg\right)=f\vec{\nabla} g+g\vec{\nabla} f$\\
+\hline
+5.&  $\displaystyle\vec{\nabla}\cdot\left(f\vec{F}\right)=\left(\vec{\nabla}f\right) \cdot\vec{F}+f\left(\vec{\nabla}\cdot \vec{F}\right)$\\
+\hline
+6.&   $\displaystyle\vec{\nabla}\times\left(f\vec{F}\right)=\vec{\nabla}f \times\vec{F}+f\vec{\nabla}\times \vec{F}$\\
+\hline
+7.&  \begin{tabular}{c} $\displaystyle\vec{\nabla}\cdot \vec{\nabla} f=\vec{\nabla}^2f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}$,\\onde $\vec{\nabla}^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ é o operador laplaciano	\end{tabular}\\
+\hline
+8.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla} f\right)=0$\\
+\hline
+9.&$\displaystyle\vec{\nabla}\cdot\left( \vec{\nabla}\times \vec{F}\right)=0$\\
+\hline
+10.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla}\times \vec{F}\right)=\vec{\nabla}\left(\vec{\nabla}\cdot \vec{F}\right)-\vec{\nabla}^2\vec{F}$\\
+\hline
+11.&$\displaystyle\vec{\nabla}\cdot\left( \vec{F}\times \vec{G}\right)=G\cdot \left(\vec{\nabla}\times\vec{F}\right)-F\cdot \left(\vec{\nabla}\times\vec{G}\right)$\\
+\hline
+12.&$\displaystyle\begin{array}{l}\vec{\nabla}\times\left( \vec{F}\times \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}-\vec{G}\left(\vec{\nabla}\cdot \vec{F}\right)-\\ ~\qquad\qquad\qquad-\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\vec{F}\left(\vec{\nabla}\cdot \vec{G}\right)\end{array}$\\
+\hline
+13.&$\displaystyle\begin{array}{l}\vec{\nabla}\left( \vec{F}\cdot \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}+\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\\\qquad\qquad\quad+\vec{F}\times\left(\vec{\nabla} \times \vec{G}\right)+\vec{G}\times\left(\vec{\nabla} \times \vec{F}\right)\end{array}$\\
+\hline
+14.&$\vec{\nabla}\varphi(r) = \varphi'(r)\hat{r}$\\
+\hline
+\end{tabular}}
+}
+\end{minipage}
+%\layout{cm}
 
 
 \section{Campos conservativos}
@@ -172,7 +278,7 @@ Basta provar que $\vec{\nabla}\varphi(x,y,z)=\vec{F}$, isto é
 \end{eqnarray}
 A primeira desigualdade advém diretamente do teorema fundamental do cálculo. Para obter a segunda desigualdade, derivamos o potencial em relação a $y$:
 \begin{eqnarray*}
-\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int\int 0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z)\\
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int\int_0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z)\\
 &=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
 &=&\left(F_2(x,y,z)-F_2(0,y,z)\right)+ F_2(0,y,z) = F_2(x,y,z)
 \end{eqnarray*}
