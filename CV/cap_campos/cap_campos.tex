@@ -17,7 +17,7 @@
 \end{ex}
 
 
-\begin{ex}\label{excampos} São exemplos de campos vetoriais.
+\begin{ex}\label{excamposvet} São exemplos de campos vetoriais.
 \begin{itemize}
 \item [a)] A função que liga a posição de um ponto dentro de uma fluido à velocidade (vetor) neste ponto.
 \item [b)] O campo magnéticos, elétrico, gravitacional etc.
@@ -204,6 +204,26 @@ Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec
 
 
 \subsection{Derivada direcional e gradiente}
+
+\begin{exeresol}
+A temperatura da um ponto $P(x, y)$ de uma placa metálica é:
+$$T(x, y) = \frac{xy}{1+x^2+y^2}$$
+Encontre a taxa de variação da temperatura em $(1, 1)$ na direção do vetor $\vec{a}=2\vec{i}-\vec{j}$.
+\end{exeresol}
+\begin{resol}
+Primeiro normalizamos o vetor $\vec{a}$ para obter o versor com sua direção e sentido:
+\begin{eqnarray*}
+\vec{u}&=&\frac{\vec{a}}{\|\vec{a}\|}=\frac{2\vec{i}-\vec{j}}{\sqrt{2^2+1^2}}\\
+&=&\frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right).
+\end{eqnarray*}
+Agora calculamos o gradiente da função dada:
+$$\vec{\nabla}T(x, y) = \frac{y(1-x^2+y^2)\vec{i} + x(1+x^2-y^2)\vec{j}}{\left(1+x^2+y^2\right)^2}.$$
+Substituimos no ponto $x=y=1$:
+$$\vec{\nabla}T(1, 1) = \frac{\vec{i} + \vec{j}}{9}.$$
+A derivada direcional é dada por:
+$$\vec{u}\cdot\vec{\nabla}T(1,1) = \frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right)\cdot \frac{\vec{i} + \vec{j}}{9}=\frac{\sqrt{5}}{45}$$
+\end{resol}
+
 \subsection{Divergente}
 \subsection{Rotacional}
 \section{Identidades envolvendo o operador nabla}
