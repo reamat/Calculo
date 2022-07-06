@@ -16,14 +16,20 @@ onde $\vec{r}$ é uma parametrização para $C$ tal que $\vec{r}(a)$ e $\vec{r}(
 
 
 \section{O Teorema Fundamental para Integral de Linha \index{teorema fundamental para integral de linha}}
-\begin{teo}Seja $\vec{F}$ um campo vetorial definido numa região $R$ do espaço e $P_0(x_0,y_0,z_0)$ e $P_1(x,y,z)$ dois pontos em $R$. Então $\vec{F}$ é conservativo \index{campo!conservativo}, isto é, $\vec{F}=\vec{\nabla}\varphi$ para algum potencial $\varphi$, se e somente se
+\begin{teo}Seja $\vec{F}$ um campo vetorial definido numa região $R$ do espaço e $P_0(x_0,y_0,z_0)$ e $P_1(x,y,z)$ dois pontos em $R$. Se $\vec{F}$ é conservativo \index{campo!conservativo}, isto é, $\vec{F}=\vec{\nabla}\varphi$ para algum potencial $\varphi$, então
 \begin{equation}\label{TeoFundCalculo}
 \int_C\vec{F}\cdot d \vec{r} =\varphi(x,y,z)-\varphi(x_0,y_0,z_0),
 \end{equation}
 para qualquer curva $C$ suave por partes em $R$ com início em $P_0$ e extremidade em $P$.
+
+Reciprocamente, se
+$$
+\int_C\vec{F}\cdot d \vec{r}
+$$
+é independente da curva que começa em $P_0$ e termina em $P_1$, então o campo é conservativo.
 \end{teo}
 \begin{proof}
-Sem perda de generalidade, suponha $C$ uma curva suave parametrizada por $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t_0\leq t\leq t_1$, com início em $\vec{r}(t_0)=P_0$ e fim em $\vec{r}(t_1)=P$. Então, supondo que $\vec{F}$ é convervativo, isto é, $\vec{F}=\vec{\nabla}\varphi$, temos
+Sem perda de generalidade, suponha $C$ uma curva suave parametrizada por $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t_0\leq t\leq t_1$, com início em $\vec{r}(t_0)=P_0$ e fim em $\vec{r}(t_1)=P$. Então, supondo que $\vec{F}$ é conservativo, isto é, $\vec{F}=\vec{\nabla}\varphi$, temos
 \begin{eqnarray*}
 \int_C\vec{F}\cdot d \vec{r} &=& \int_C\vec{\nabla}\varphi\cdot d \vec{r}\\
 &=& \int_{t_0}^{t_1}\vec{\nabla}\varphi\cdot \vec{r}'(t)dt\\
@@ -40,14 +46,19 @@ $$
 &=& \varphi(x(t_1),y(t_1),z(t_1))- \varphi(x(t_0),y(t_0),z(t_0))\\
 &=& \varphi(x,y,z)- \varphi(x_0,y_0,z_0).
 \end{eqnarray*}
-Reciprocamente, dado que a expressão \eqref{TeoFundCalculo} é válida para qualquer curva $C$ que liga dois pontos na região, definimos a curva $C$ que liga $(x,y,z)$ a $(x+\Delta x,y,z)$ pelo segmento de reta parametrizado por $\vec{r}=t\vec{i}+y\vec{j}+z\vec{k}$, $x\leq t\leq x+\Delta x$ e a função
+Reciprocamente, dado que a expressão \eqref{TeoFundCalculo} é válida para qualquer curva $C$ que liga dois pontos na região, definimos a função
 $$
-\varphi(x,y,z)=\int_C \vec{F}\cdot d\vec{r}.
+\varphi(x,y,z)=\int_C \vec{F}\cdot d\vec{r}=\int_{P_0}^{P_1} \vec{F}\cdot d\vec{r}=\int_{(x_0,y_0,z_0)}^{(x,y,z)} \vec{F}\cdot d\vec{r},
 $$
-Mostraremos que $\phi$ é o potencial do campo $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, ou seja, $\vec{F}=\vec{\nabla}\varphi$. De fato,
+onde $C$ é uma curva qualquer que começa em $P_0$ e termina em $P$. Mostraremos que $\phi$ é o potencial do campo $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, ou seja, $\vec{F}=\vec{\nabla}\varphi$. De fato, observe que
 \begin{eqnarray*}
-\varphi(x+\Delta x,y,z)-\varphi(x,y,z)&=&\int_C \vec{F}\cdot d\vec{r}\\
-&=&\int_x^{x+\Delta x} \vec{F}\cdot \vec{r}' dt \\
+\varphi(x+\Delta x,y,z)-\varphi(x,y,z)&=&\int_{(x_0,y_0,z_0)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}-\int_{(x_0,y_0,z_0)}^{(x,y,z)} \vec{F}\cdot d\vec{r}\\
+&=&\int_{(x_0,y_0,z_0)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}+\int^{(x_0,y_0,z_0)}_{(x,y,z)} \vec{F}\cdot d\vec{r}\\
+&=&\int_{(x,y,z)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}.
+\end{eqnarray*}
+Parametrizando um caminho reto entre $(x,y,z)$ e $(x+\Delta x,y,z)$ por $\vec{r}=t\vec{i}+y\vec{j}+z\vec{k}$, $x\leq t\leq \Delta x$, temos:
+\begin{eqnarray*}
+\varphi(x+\Delta x,y,z)-\varphi(x,y,z)&=&\int_x^{x+\Delta x} \vec{F}\cdot \vec{r}' dt \\
 &=&\int_x^{x+\Delta x} \left(F_1\vec{i}+F_2\vec{j}+F_3\vec{k}\right)\cdot \vec{i} dt\\
 &=&\int_x^{x+\Delta x} F_1 (t,y,z) dt .
 \end{eqnarray*}
@@ -97,7 +108,7 @@ Agora, defina
 \begin{equation}\label{def_pot_campo_conser}
 \varphi(x,y,z)=\int_C \vec{F}\cdot d\vec{r},
 \end{equation}
-onde $C$ é a curva que liga os pontos $(x_0,y_0,z_0)$ ao ponto $(x,y,z)$ através das aresta do paralelepípedo de vértices $(x_0,y_0,z_0)$, $(x,y_0,z_0)$, $(x_0,y,z_0)$, $(x,y,z_0)$, $(x_0,y_0,z)$, $(x,y_0,z)$, $(x_0,y,z)$ e $(x,y,z)$. Isto é, $C$ pode ser escrito com a união de três segmentos de retas, $C=C_1 \cup C_2\cup C_3$, com as seguintes parametrizações: 
+onde $C$ é a curva que liga os pontos $(x_0,y_0,z_0)$ ao ponto $(x,y,z)$ através das arestas do paralelepípedo de vértices $(x_0,y_0,z_0)$, $(x,y_0,z_0)$, $(x_0,y,z_0)$, $(x,y,z_0)$, $(x_0,y_0,z)$, $(x,y_0,z)$, $(x_0,y,z)$ e $(x,y,z)$. Isto é, $C$ pode ser escrito com a união de três segmentos de retas, $C=C_1 \cup C_2\cup C_3$, com as seguintes parametrizações: 
 $$
 C_1: \vec{r}_1(t)=t\vec{i}+y_0\vec{j}+z_0\vec{k},\qquad x_0\leq t\leq x,
 $$ 
