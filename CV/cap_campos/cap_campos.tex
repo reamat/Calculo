@@ -17,7 +17,7 @@
 \end{ex}
 
 
-\begin{ex}\label{excampos} São exemplos de campos vetoriais.
+\begin{ex}\label{excampos_1} São exemplos de campos vetoriais.
 \begin{itemize}
 \item [a)] A função que liga a posição de um ponto dentro de uma fluido à velocidade (vetor) neste ponto.
 \item [b)] O campo magnéticos, elétrico, gravitacional etc.
@@ -207,12 +207,9 @@ Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec
 \subsection{Divergente}
 \subsection{Rotacional}
 \section{Identidades envolvendo o operador nabla}
-Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$.
-
-\begin{minipage}[l]{10cm}
-\noindent {\footnotesize Tabela do operador $\vec{\nabla}$:\\
-$f=f(x,y,z)$ e $g=g(x,y,z)$ são funções escalares;\\ $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ são funções vetoriais.\\
-{%\tabulinesep=1mm
+Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$. Sejam $f=f(x,y,z)$ e $g=g(x,y,z)$ campos escalares e $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ campos vetoriais. Então, valem as identidades da tabela~\ref{tab_identidades_del}. 
+\begin{table}
+ \caption{ Tabela do operador $\vec{\nabla}$} \label{tab_identidades_del}
 \begin{tabular}{|l|c|}
 \hline
 1.& $\displaystyle\vec{\nabla}\left(f+g\right)=\vec{\nabla}f+\vec{\nabla}g$\\
@@ -243,19 +240,20 @@ $f=f(x,y,z)$ e $g=g(x,y,z)$ são funções escalares;\\ $\vec{F}=\vec{F}(x,y,z)$
 \hline
 14.&$\vec{\nabla}\varphi(r) = \varphi'(r)\hat{r}$\\
 \hline
-\end{tabular}}
-}
-\end{minipage}
+\end{tabular}
+\end{table}
+
+
 %\layout{cm}
 
 
 \section{Campos conservativos}
-\begin{defn} \label{def_campo_conservativo}\index{campo!conservativo}\index{campo!rotacional}\index{campo!gradiente}  Um campo $\vec{F}(x,y,z)$ é dito conservativo se existe um campo escalar $\varphi(x,y,z)$ tal que
+\begin{defn} \label{def_campo_conservativo}\index{campo!conservativo}\index{campo!irrotacional}\index{campo!gradiente}  Um campo $\vec{F}(x,y,z)$ é dito conservativo se existe um campo escalar $\varphi(x,y,z)$ tal que
 $$\vec{F}(x,y,z) = \vec{\nabla}\varphi$$
 Neste caso $\varphi$ é chamado de campo potencial de $$\vec{F}(x,y,z)$$
 \end{defn}
-\begin{obs} Campos conservativos também são conhecidos como campos grandiente ou campos irrotacionais, este último nome advém do fato que $$\vec{\nabla}\times\vec{F}(x,y,z) = \vec{\nabla}\times\vec{\nabla}\varphi=\vec{0}.$$
-Esta identidade é oriunda da Equação~\ref{rot_grad}.
+\begin{obs} Campos conservativos também são conhecidos como campos gradientes ou campos irrotacionais, este último nome advém do fato que $$\vec{\nabla}\times\vec{F}(x,y,z) = \vec{\nabla}\times\vec{\nabla}\varphi=\vec{0}.$$
+Esta identidade é oriunda da Tabela~\ref{tab_identidades_del}, item 8.
  \end{obs}
 \begin{ex} O campo $\vec{F}=2xy\vec{i}+x^2\vec{j}$ é conservativo por $\vec{F}=\vec{\nabla}\left(x^2y\right)$.
  \end{ex}
