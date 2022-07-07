@@ -1,7 +1,57 @@
 \chapter{Integral de Superfície}
   Neste capítulo, estudamos a integral de superfície\index{integral de superfície} e teoremas relacionados.
-\section{Definição de integral de superfície}
+\section{Definição de integral de superfície para um campo escalar}
+
+Seja $f: \mathbb{R}^3\to \mathbb{R}$, $f= f(x,y,z)$, um campo escalar definido em todos os pontos de uma superfície regular $S$. Assumimos que $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$, $(u,v)\in R \subset \mathbb{R}^2$ seja uma parametrização para $S$. A integral de superfície de $f$ sobre $S$ é definida por:
+$$
+\int\int_S f d S = \int\int_R f(x(u,v),y(u,v),z(u,v)) \|\vec{r}_u\times \vec{r}_v\|d udv
+$$
+onde $dS$ é o elemento infinitesimal de área sobre a superfície.
+
+\section{Definição de integral de superfície para um campo vetorial}
+Considere $S$ uma superfície orientável e $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$, $(u,v)\in R \subset \mathbb{R}^2$ uma parametrização regular, sendo $\vec{n}=\frac{\vec{r}_u\times \vec{r}_v}{\|\vec{r}_u\times \vec{r}_v\|}$ o vetor normal à $S$. Seja $\vec{F}:\mathbb{R}^3\to \mathbb{R}^3$, $\vec{F}=\vec{F}(x,y,z)$ um campo vetorial definido em todos em pontos de $S$. Então definimos a integral de superfície do campo vetorial $\vec{F}$ sobre $S$ como:
+\begin{equation}\label{definicao_int_sup_vet}
+\int\int_S \vec{F}\cdot \vec{n} d S= \int\int_R \vec{F}(x(u,v),y(u,v),z(u,v))\cdot (\vec{r}_u\times \vec{r}_v) dudv.
+\end{equation}
+\subsection{Superfície definida como função de duas variáveis}
+Nessa seção, vamos calcular a versão particular da definição \eqref{definicao_int_sup_vet} quando a superfície é definida como função de duas variáveis, isto é, $z=f(x,y)$ ou $y=f(x,z)$ ou ainda $x=f(y,z)$. Considere o caso onde a superfície $S$ é dado pela função $f:D\subset\mathbb{R}$, $D\subset \mathbb{R}^2$, $z=f(x,y)$ (os outros dois casos são análogos). Uma parametrização para a superfície $S$ é
+$$
+\vec{r}(u,v)=\pm u\vec{i}\pm v\vec{j}+ f(u,v)\vec{k},
+$$
+onde o sinal $\pm$ é escolhido conforme a orientação da superfície: positivo se $S$ está orientada no sentido de $\vec{k}$ e negativo se $S$ está orientada no sentido de $-\vec{k}$. Calculamos as derivadas $\vec{r}_u=\pm\vec{i}+ f_u\vec{k},$ e $\vec{r}_v=\pm\vec{j}+ f_v\vec{k}$ e fazemos
+$$
+  \vec{r}_u\times\vec{r}_v=\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \pm 1 &0 & f_u \\
+0 & \pm 1 & f_v
+ \end{array}
+\right|\\=\mp f_u\vec{i}\mp f_v\vec{j}+\vec{k}.
+$$
+
 \section{O Teorema da Divergência de Gauss}
+\begin{teo}
+Seja $V$ o volume de um sólido cuja superfície $S$ é orientada para fora. Seja o campo vetorial $\vec{F}$ dado por
+$$
+\vec{F}=f(x,y,z)\vec{j}+g(x,y,z)\vec{i}+h(x,y,z)\vec{k},
+$$
+onde as funções $f$, $g$ e $h$ possuem todas as derivadas parciais de primeira ordem contínuas em algum conjunto aberto contendo $V$. Então:
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V \vec{\nabla}\cdot \vec{F} dV.
+$$
+\end{teo}
+
+
+
 \section{O Teorema de Stokes}
 
-
+\begin{teo}
+Seja $S$ uma superfície orientável, suave por partes, limitada por uma curva $C$, fechada, suave por partes e positivamente orientada com respeito a $S$. Seja o campo vetorial $\vec{F}$ dado por
+$$
+\vec{F}=f(x,y,z)\vec{j}+g(x,y,z)\vec{i}+h(x,y,z)\vec{k},
+$$
+onde as funções $f$, $g$ e $h$ possuem todas as derivadas parciais de primeira ordem contínuas em algum conjunto aberto contendo $S$. Então:
+$$
+\oint_C \vec{F}\cdot d \vec{r}=\iint_S \vec{\nabla}\times \vec{F}\cdot \vec{n} dS.
+$$
+\end{teo}
