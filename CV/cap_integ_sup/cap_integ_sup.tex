@@ -16,18 +16,88 @@ Considere $S$ uma superfície orientável e $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\v
 \subsection{Superfície definida como função de duas variáveis}
 Nessa seção, vamos calcular a versão particular da definição \eqref{definicao_int_sup_vet} quando a superfície é definida como função de duas variáveis, isto é, $z=f(x,y)$ ou $y=f(x,z)$ ou ainda $x=f(y,z)$. Considere o caso onde a superfície $S$ é dado pela função $f:D\subset\mathbb{R}$, $D\subset \mathbb{R}^2$, $z=f(x,y)$ (os outros dois casos são análogos). Uma parametrização para a superfície $S$ é
 $$
-\vec{r}(u,v)=\pm u\vec{i}\pm v\vec{j}+ f(u,v)\vec{k},
+\vec{r}(x,y)= x\vec{i}+ y\vec{j}+ f(x,y)\vec{k},
 $$
-onde o sinal $\pm$ é escolhido conforme a orientação da superfície: positivo se $S$ está orientada no sentido de $\vec{k}$ e negativo se $S$ está orientada no sentido de $-\vec{k}$. Calculamos as derivadas $\vec{r}_u=\pm\vec{i}+ f_u\vec{k},$ e $\vec{r}_v=\pm\vec{j}+ f_v\vec{k}$ e fazemos
+onde o vetor normal a superfície é
 $$
-  \vec{r}_u\times\vec{r}_v=\left|
+\vec{n}=\pm\frac{\vec{r}_x\times \vec{r}_y}{\|\vec{r}_x\times \vec{r}_y\|}.
+$$
+Aqui, o sinal $\pm$ é escolhido para ajustar a orientação da parametrização à orientação da superfície definida por $f$. Calculamos as derivadas $\vec{r}_x=\vec{i}+ f_x\vec{k},$ e $\vec{r}_y=\vec{j}+ f_y\vec{k}$ e fazemos
+$$
+  \vec{r}_x\times\vec{r}_y=\left|
  \begin{array}{ccc}
  \vec{i} & \vec{j} & \vec{k} \\
- \pm 1 &0 & f_u \\
-0 & \pm 1 & f_v
+  1 &0 & f_x \\
+0 &  1 & f_y
  \end{array}
-\right|\\=\mp f_u\vec{i}\mp f_v\vec{j}+\vec{k}.
+\right|\\= f_x\vec{i}+ f_y\vec{j}+\vec{k}.
 $$
+Agora, definimos $G$ tal que a superfície seja reescrita como $G(x,y,z)=0$, isto é, $G(x,y,z)=z-f(x,y)$ e observamos que
+\begin{equation}\label{normal_grad_G}
+   \vec{r}_x\times\vec{r}_y=\vec{ \nabla} G.
+\end{equation}
+Analogamente, em qualquer dos outros dois casos $y=f(x,z)$ ou $x=f(y,z)$, definimos $G$ tal que a superfície seja reescrita como $G(x,y,z)=0$ e a expressão \eqref{normal_grad_G} continua válida, isto é,
+\begin{equation*}\label{normal_grad_G_2}
+   \vec{r}_x\times\vec{r}_z=\vec{ \nabla} G\qquad \text{ou} \qquad    \vec{r}_y\times\vec{r}_z=\vec{ \nabla} G.
+\end{equation*}
+Portanto, a versão da definição \eqref{definicao_int_sup_vet} para o caso onde a superfície é definida por uma função de duas variáveis $f$ é dada por
+\begin{equation}\label{definicao_int_sup_vet_par}
+\int\int_S \vec{F}\cdot \vec{n} d S= \pm \int\int_R \vec{F}\cdot \vec{\nabla}G dA,
+\end{equation}
+onde $R$ é o domínio de $f$, $\vec{F}$ deve estar sobre os pontos da superfície e o sinal $\pm$ deve ser escolhido para que $\pm \vec{\nabla}G$ esteja no sentido da orientação da superfície.
+
+\begin{ex}\label{int_sup_ex_1} Considere a superfície $S$
+$$z=0,~ {x^2+y^2}\leq 1,$$
+orientada no sentido decrescente do eixo $z$, isto é, $\vec{n}=-\vec{k}$. Considere também o campo vetorial dado por $\vec{F}=(2+z^2+x)\vec{k}$. Vamos calcular o valor do fluxo $\Phi=\iint_S\vec{F}\cdot \vec{n} dS$.
+
+Como $z=f(x,y)=0,~ {x^2+y^2}\leq 1$, definimos a função $G(x,y,z) = z$ e calculamos
+$$
+\vec{\nabla} G=\vec{k}.
+$$
+Observe que $\vec{\nabla} G$ e $\vec{n}$ estão em sentidos oposto e, portanto, na aplicação da expressão \eqref{definicao_int_sup_vet_par}, vamos escolher o sinal negativo. Aplicamos o campo $\vec{F}=(2+z^2+x)\vec{k}$ sobre a superfície $z=0$ e obtemos $\vec{F}=(2+x)\vec{k}$. Assim,
+\begin{eqnarray*}
+\Phi&:=&\iint_{S} \vec{F}\cdot \vec{n}dS\\
+&=&-\iint_A \vec{F}\cdot \vec{\nabla} G dA\\
+&=&-\iint_A \left(2+x\right) dA
+\end{eqnarray*}
+Resolvemos em coordenadas polares da seguinte forma:
+\begin{eqnarray*}
+\Phi&=&-\int_0^1\int_0^{2\pi} \left(2+r\cos(\theta)\right) rd\theta dr\\
+&=&-\int_0^1\int_0^{2\pi} \left(2r+r^2\cos(\theta)\right) d\theta dr\\
+&=&-2\pi\int_0^{1} 2r dr-\int_0^1\left(\left[r^2\sin(\theta)\right]_{\theta=0}^{\theta=2\pi} \right)dr \\
+&=&-2\pi.
+\end{eqnarray*}
+\end{ex}
+
+\begin{ex}\label{int_sup_ex_2} Considere a superfície $S$
+ $$z=f(x,y)=1- \sqrt{x^2+y^2},$$
+orientada na direção crescente do eixo $z$, isto é, o vetor $\vec{n}$ tem componente na direção $\vec{k}$ sempre positiva. Considere também o campo vetorial dado por
+$\vec{F}=(2+z^2+x)\vec{k}$. Vamos calcular o valor do fluxo $\Phi=\iint_S\vec{F}\cdot \vec{n} dS$.
+
+Como $z=f(x,y)=1- \sqrt{x^2+y^2}$, definimos $G(x,y,z) = z-1+ \sqrt{x^2+y^2}$ e calculamos
+$$
+\vec{\nabla} G=\frac{x}{\sqrt{x^2+y^2}}\vec{i}+\frac{y}{\sqrt{x^2+y^2}}\vec{j}+\vec{k}.
+$$
+Observe que $\vec{\nabla} G$ e $\vec{n}$ estão no mesmo sentido e, portanto, na aplicação da expressão \eqref{definicao_int_sup_vet_par}, vamos escolher o sinal positivo. Aplicamos o campo $\vec{F}=(2+z^2+x)\vec{k}$ sobre a superfície $z=0$ e obtemos $\vec{F}=(2+(1-\sqrt{x^2+^2})^2+x)\vec{k}$. Assim,
+
+
+\begin{eqnarray*}
+\Phi&:=&\iint_{S} \vec{F}\cdot \vec{n}dS\\
+&=&\iint_A \vec{F}\cdot \vec{\nabla} G dA\\
+&=&\iint_A \left(2+\left(1- \sqrt{x^2+y^2}\right)^2+x\right) dA
+\end{eqnarray*}
+Resolvemos em coordenadas polares e obtemos
+\begin{eqnarray*}
+\Phi&=&\int_0^1\int_0^{2\pi} \left(2+(1- r)^2+r\cos(\theta)\right) rd\theta dr\\
+&=&\int_0^1\int_0^{2\pi} \left(3r- 2r^2 + r^3+r^2\cos(\theta)\right) d\theta dr\\
+&=&2\pi\int_0^{1}\left(3r- 2r^2 + r^3\right) dr+\int_0^1\left(\left[r^2\sin(\theta)\right]_{\theta=0}^{\theta=2\pi} \right)dr \\
+&=&2\pi\left[3\frac{r^2}{2}- 2\frac{r^3}{3} + \frac{r^4}{4}\right]_0^1\\
+&=&2\pi\left[\frac{3}{2}- \frac{2}{3} + \frac{1}{4}\right]_0^1=\frac{13\pi}{6}.
+\end{eqnarray*}
+
+\end{ex}
+
+
 
 \section{O Teorema da Divergência de Gauss}
 \begin{teo}
@@ -40,6 +110,27 @@ $$
 \oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V \vec{\nabla}\cdot \vec{F} dV.
 $$
 \end{teo}
+
+\begin{ex}\label{int_sup_ex_div_1} Considere a superfície fechada orientada para fora composta superiormente pela superfície de rotação descrita como
+$$z=f(x,y)=1- \sqrt{x^2+y^2}$$ e inferiormente por
+$$z=0,~ {x^2+y^2}\leq 1.$$
+Seja o campo vetorial dado por
+$\vec{F}=(2+z^2+x)\vec{k}$. Vamos calcular o valor do fluxo $\iint_S\vec{F}\cdot \vec{n} dS$ via teorema da divergência.
+
+Temos $\vec{\nabla}\cdot \vec{F}=2z$. Assim,
+\begin{eqnarray*}
+\Phi&=&\iint_S \vec{F}\cdot \vec{n}dS\\
+&=&\iiint_V \vec{\nabla}\cdot \vec{F} dV\\
+&=&\int_0^1 \int_0^{2\pi}  \int_0^{1-r} 2z rdzd\theta dr\\
+&=&\int_0^1 \int_0^{2\pi}   (1-r)^2 rd\theta dr\\
+&=&2\pi \int_0^1    (1-r)^2 r dr\\
+&=&2\pi \int_0^1    \left(r-2r^2+r^3\right) dr\\
+&=&2\pi  \left[\frac{r^2}{2}-2\frac{r^3}{3}+\frac{r^4}{4}\right]_{0}^1\\
+&=&2\pi  \left(\frac{1}{2}-\frac{2}{3}+\frac{1}{4}\right)=\frac{\pi}{6}.
+\end{eqnarray*}
+
+Observe que as superfícies dos exemplos \ref{int_sup_ex_1} e \ref{int_sup_ex_1} foram a superfície fechada do exemplo \ref{int_sup_ex_div_1}. De fato, o fluxo calculado naqueles dois exemplos via parametrização direta foram $-2\pi$ e $\frac{13\pi}{6}$, cuja soma é $\frac{\pi}{6}$, o mesmo valor calculado pelo Teorema da Divergência.
+\end{ex}
 
 
 
