@@ -175,6 +175,27 @@ Portanto, a versão da definição \eqref{definicao_int_sup_vet} para o caso ond
 \end{equation}
 onde $R$ é o domínio de $f$, $\vec{F}$ deve estar sobre os pontos da superfície e o sinal $\pm$ deve ser escolhido para que $\pm \vec{\nabla}G$ esteja no sentido da orientação da superfície.
 
+\begin{ex}Vamos calcular o fluxo do campo $\vec{F}=x^2\vec{i}+3y^2\vec{j}$ através da superfície plana $S$ dada pela equação $x+y+z=1$, limitada ao primeiro octante e orientada no sentido da origem em direção ao primeiro octante. Primeiro, definimos $z=f(x,y)=1-x-y$ e $G=z-1+x+y$ e calculamos $\vec{\nabla}G=\vec{i}+\vec{j}+\vec{k}$. Observamos que a orientação de $\vec{\nabla}G$ está no mesmo sentido que o vetor normal, então escolhemos o sinal positivo na expressão \eqref{definicao_int_sup_vet_par}. Também, observe que o campo é constante na variável $z$, ou seja, $\vec{F}(x,y,z)=\vec{F}(x,y,1-x-y)=x^2\vec{i}+3y^2\vec{j}$. Portanto,
+\begin{eqnarray*}
+\iint_S \vec{F}\cdot \vec{n} d S&=& + \iint_R \vec{F}\cdot \vec{\nabla}G dA\\
+&=&  \int_0^1\int_0^{1-x} x^2+3y^2 dydx\\
+&=&  \int_0^1  \left[x^2y+y^3\right]_{y=0}^{y=1-x} dx\\
+&=&  \int_0^1  x^2(1-x)+(1-x)^3 dx\\
+&=&  \left[  \frac{x^3}{3}-\frac{x^4}{4}-\frac{(1-x)^4}{4} \right]_0^1\\
+&=&  \left(  \frac{1}{3}-\frac{1}{4}-0\right)-\left(0-0-\frac{1}{4}\right)=\frac{1}{3}.
+\end{eqnarray*}
+\end{ex}
+
+\begin{ex}Nesse exemplo vamos calcular o fluxo do campo $\vec{F}=3z^2\vec{i}+6\vec{j}+6xz\vec{k}$ através da superfície $S$ dada pela equação $y=x^2$, $0\leq x\leq 2$, $0\leq z\leq 3$, orientada no sentido em que a componente $\vec{i}$ do vetor normal é sempre positiva. Primeiro, definimos $y=f(x,z)=x^2$ e $G=y-x^2$ e calculamos $\vec{\nabla}G=-2x\vec{i}+\vec{j}$. Observamos que a orientação de $\vec{\nabla}G$ está com componente $\vec{i}$ negativa, então escolhemos o sinal negativo na expressão \eqref{definicao_int_sup_vet_par}. Também, observe que o campo é constante na variável $y$, ou seja, $\vec{F}(x,y,z)=\vec{F}(x,x^2,z)=3z^2\vec{i}+6\vec{j}+6xz\vec{k}$. Portanto,
+\begin{eqnarray*}
+\iint_S \vec{F}\cdot \vec{n} d S&=& - \iint_R \vec{F}\cdot \vec{\nabla}G dA\\
+&=&  -\int_0^2\int_0^{3} -6xz^2+6 dzdx\\
+&=&  -\int_0^2\left[ -2xz^3+6z\right]_{z=0}^{z=3} dx\\
+&=&  -\int_0^2 -54x+18 dx\\
+&=&  -\left[ -27x^2+18x\right]_0^2\\
+&=&  -\left( -108+36\right)=72.
+\end{eqnarray*}
+\end{ex}
 
 \begin{ex}\label{ex_esfera_int_sup_vet_2}Nesse exemplo, vamos recalcular o fluxo do exemplo \ref{ex_esfera_int_sup_vet}. Seja $S$ a esfera de raio $a$ dada por 
 $$
@@ -263,6 +284,136 @@ Resolvemos em coordenadas polares e obtemos
 \end{ex}
 
 
+\subsection*{Exercícios resolvidos}
+\begin{exeresol} Seja $S$ a porção da superfície $z=1-x^2-y^2$, acima do plano $xy$, orientada com componente $\vec{k}$ do vetor normal positiva. Encontre o fluxo $\Phi$ através de $S$ para o campo $\vec{F}=x\vec{i}+y\vec{j}+z\vec{k}$.
+\end{exeresol}
+\begin{resol}
+Definimos $z=f(x,y)=1-x^2-y^2$, $G=z-1+x^2+y^2$ e calculamos $\vec{\nabla}G=2x\vec{i}+2y\vec{j}+\vec{k}$. Também, como a componente $\vec{k}$ desse gradiente é positiva, escolheremos a sinal positivo na expressão \eqref{definicao_int_sup_vet_par}. Colocamos o campo sobre a superfície, isto é, $\vec{F}=x\vec{i}+y\vec{j}+z\vec{k}=x\vec{i}+y\vec{j}+(1-x^2-y^2)\vec{k}$ e obtemos
+\begin{eqnarray*}
+\Phi&:=&\iint_{S} \vec{F}\cdot \vec{n}dS\\
+&=&+\iint_D \vec{F}\cdot \vec{\nabla} G dA,
+\end{eqnarray*}
+onde $D$ é o disco de raio unitário no plano $z=0$. Portanto,
+\begin{eqnarray*}
+\Phi&=&\iint_D (x\vec{i}+y\vec{j}+(1-x^2-y^2)\vec{k})\cdot (2x\vec{i}+2y\vec{j}+\vec{k}) dA\\
+&=&\iint_D (2x^2+2y^2+(1-x^2-y^2))dA\\
+&=&\iint_D (x^2+y^2+1)dA\\
+&=&\int_0^{2\pi}\int_0^1 (r^2+1)rdrd\theta\\
+&=&2\pi \left[ \frac{r^4}{4}+\frac{r^2}{2}\right]_0^1=\frac{6\pi}{4}.
+\end{eqnarray*}
+
+
+\end{resol}
+
+\begin{exeresol} Dados o campo vetorial $\vec{F}=\vec{i}+\vec{j}+\vec{k}$ e a porção da superfície $S$ de equação $z=\sqrt{x^2+y^2}$, situada abaixo do plano $z=1$, orientada com componente $\vec{k}$ do vetor normal positiva, calcule o fluxo $\Phi=\iint_{S} \vec{F}\cdot \vec{n}dS$.
+\end{exeresol}
+\begin{resol}
+Definimos $z=f(x,y)=\sqrt{x^2+y^2}$, $G=z-\sqrt{x^2+y^2}$ e calculamos $\vec{\nabla}G=-\frac{x}{\sqrt{x^2+y^2}}\vec{i}-\frac{y}{\sqrt{x^2+y^2}}\vec{j}+\vec{k}$. Também, como a componente $\vec{k}$ desse gradiente é positiva, escolheremos a sinal positivo na expressão \eqref{definicao_int_sup_vet_par}. O campo é constante na variável $z$, isto é, $\vec{F}(x,y,z)=\vec{F}(x,y,f(x,y))=\vec{i}+\vec{j}+\vec{k}$. Então, temos:
+\begin{eqnarray*}
+\Phi&:=&\iint_{S} \vec{F}\cdot \vec{n}dS\\
+&=&+\iint_D \vec{F}\cdot \vec{\nabla} G dA,
+\end{eqnarray*}
+onde $D$ é o disco de raio unitário no plano $z=0$. Portanto,
+\end{resol}
+\begin{eqnarray*}
+\Phi&=&\iint_D (\vec{i}+\vec{j}+\vec{k})\cdot \left(-\frac{x}{\sqrt{x^2+y^2}}\vec{i}-\frac{y}{\sqrt{x^2+y^2}}\vec{j}+\vec{k}\right) dA\\
+&=&\iint_D \left(-\frac{x}{\sqrt{x^2+y^2}}-\frac{y}{\sqrt{x^2+y^2}}+1\right) dA\\
+&=&\int_0^{2\pi}\int_0^1 \left(-\frac{r\cos(\theta)+r\sin(\theta)}{r}+1\right) rdrd\theta\\
+&=&\int_0^{2\pi}\int_0^1 r\left(-\cos(\theta)-\sin(\theta)+1\right) drd\theta\\
+&=&\int_0^{2\pi}\left[\left(-\cos(\theta)-\sin(\theta)+1\right)\frac{r^2}{2}\right]_{r=0}^{r=1} d\theta\\
+&=&\frac{1}{2}\left[-\sin(\theta)+\cos(\theta)+\theta\right]_0^{2\pi}=\pi.
+\end{eqnarray*}
+
+
+
+
+\begin{exeresol} Seja $S$ a superfície do cubo dado pelos planos $x=\pm 1$, $y=\pm 1$ e $z=\pm 1$, orientada para fora. Calcule o fluxo através de $S$ para os seguintes campos vetoriais:
+\begin{itemize}
+ \item[a)]$\vec{F}=x\vec{i}$
+ \item[b)]$\vec{F}=x\vec{i}+y\vec{j}+z\vec{k}$
+ \item[c)]$\vec{F}=x^2\vec{i}+y^2\vec{j}+z^2\vec{k}$
+ \end{itemize}
+\end{exeresol}
+\begin{resol}
+Em cada um dos itens, temos que calcular seis integrais de superfície em cada face  do cubo, a saber, $S_1:x=1$, $S_2:x=-1$, $S_3:y=1$, $S_4:y=-1$, $S_5:z=1$ e $S_6:z=-1$. 
+\begin{itemize}
+ \item[a)] Começamos com a face $S_1$, definimos $x=f_1(y,z)=1$, $G_1=x-1$ e calculamos $\vec{\nabla}G_1=\vec{i}$. Observe que $\vec{\nabla}G_1$ está orientado no sentido de $\vec{n}=\vec{i}$ e $\vec{F}=x\vec{i}=\vec{i}$. Calculamos
+ $$
+ \iint_{S_1}\vec{F}\cdot \vec{n}dS= \iint_{S_1}dA=4,
+ $$
+ onde $4$ é a área do quadrado de lado $2$. Analogamente,
+$$
+ \iint_{S_2}\vec{F}\cdot \vec{n}dS= \iint_{S_2}(-\vec{i})\cdot (-\vec{i})dS=\iint_{S_2}dA=4.
+ $$
+ As demais integrais são nulas, visto que o fluxo só tem componente na direção $\vec{i}$. Logo,
+ $$
+ \iint_{S}\vec{F}\cdot \vec{n}dS= 8.
+ $$
+  \item[b)] Começamos com a face $S_1$, definimos $x=f_1(y,z)=1$, $G_1=x-1$ e calculamos $\vec{\nabla}G_1=\vec{i}$. Observe que $\vec{\nabla}G_1$ está orientado no sentido de $\vec{n}=\vec{i}$ e $\vec{F}=x\vec{i}+y\vec{i}+z\vec{k}=\vec{i}+y\vec{i}+z\vec{k}$. Calculamos
+ $$
+ \iint_{S_1}\vec{F}\cdot \vec{n}dS= \iint_{S_1}dA=4,
+ $$
+ onde $4$ é a área do quadrado de lado $2$. Analogamente,
+$$
+ \iint_{S_2}\vec{F}\cdot \vec{n}dS= \iint_{S_2}(-\vec{i}+y\vec{i}+z\vec{k})\cdot (-\vec{i})dS=\iint_{S_2}dA=4.
+ $$
+Pela simetria do problema, vemos que as demais integrais são todas iguais a $4$. Logo,
+ $$
+ \iint_{S}\vec{F}\cdot \vec{n}dS= 24.
+ $$
+  \item[c)] Começamos com a face $S_1$, definimos $x=f_1(y,z)=1$, $G_1=x-1$ e calculamos $\vec{\nabla}G_1=\vec{i}$. Observe que $\vec{\nabla}G_1$ está orientado no sentido de $\vec{n}=\vec{i}$ e $\vec{F}=x^2\vec{i}+y^2\vec{i}+z^2\vec{k}=\vec{i}+y^2\vec{i}+z^2\vec{k}$. Calculamos
+ $$
+ \iint_{S_1}\vec{F}\cdot \vec{n}dS= \iint_{S_1}dA=4,
+ $$
+ onde $4$ é a área do quadrado de lado $2$. Analogamente, como em $S_2:\ \!x=-1$ o campo assume a forma $\vec{F}=x^2\vec{i}+y^2\vec{i}+z^2\vec{k}=\vec{i}+y^2\vec{i}+z^2\vec{k}$, temos
+$$
+ \iint_{S_2}\vec{F}\cdot \vec{n}dS= \iint_{S_2}(\vec{i}+y^2\vec{i}+z^2\vec{k})\cdot (-\vec{i})dS=\iint_{S_2}dA=4.
+ $$
+ Observe que
+ $$
+  \iint_{S_1}\vec{F}\cdot \vec{n}dS+ \iint_{S_2}\vec{F}\cdot \vec{n}dS=0
+ $$
+Pela simetria do problemas, teremos de forma análoga
+ $$
+  \iint_{S_3}\vec{F}\cdot \vec{n}dS+ \iint_{S_4}\vec{F}\cdot \vec{n}dS=0
+ $$
+e
+ $$
+  \iint_{S_5}\vec{F}\cdot \vec{n}dS+ \iint_{S_6}\vec{F}\cdot \vec{n}dS=0.
+ $$
+ Logo,
+ $$
+ \iint_{S}\vec{F}\cdot \vec{n}dS= 0.
+ $$
+ 
+ 
+ \end{itemize}
+
+\end{resol}
+
+\begin{exeresol} Calcule o fluxo de $\vec{F}=z\vec{k}$ através da esfera $x^2+y^2+z^2= a^2$, orientada para fora. \end{exeresol}
+\begin{resol}
+Começamos separando a esfera nos seguintes dois hemisférios: $S_1:\ \!z=f_1(x,y)=\sqrt{ a^2-x^2-y^2}$ e $S_2:\ \!z=f_2(x,y)=-\sqrt{ a^2-x^2-y^2}$. Definimos $G_1=z-\sqrt{ a^2-x^2-y^2}$ e $G_2=z-\sqrt{ a^2-x^2-y^2}$ e calculamos 
+$$
+\vec{\nabla}G_1=\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}+\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}
+$$
+e 
+$$
+\vec{\nabla}G_2=-\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}-\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}.
+$$
+Observe que $\vec{\nabla}G_1$ está orientada para fora e $\vec{\nabla}G_2$ está orientada para dentro. Logo, escolheremos para as integrais sobre $S_1$ e $S_2$ os sinais positivo e negativo, respectivamente, na expressão \eqref{definicao_int_sup_vet_par}. O campo sobre cada umas das superfícies tem às formas: $\vec{F}_1=\sqrt{ a^2-x^2-y^2}\vec{k}$ e $\vec{F}_2=-\sqrt{ a^2-x^2-y^2}\vec{k}$. Assim,
+\begin{eqnarray*}
+ \Phi&=&\iint_S\vec{F}\cdot \vec{n}dS\\
+ &=&\iint_{S_1}\vec{F}_1\cdot \vec{n}dS+\iint_{S_2}\vec{F}_2\cdot \vec{n}dS\\
+&=&\iint_{D}\vec{F}_1\cdot \vec{\nabla}G_1 dA-\iint_{D}\vec{F}_2\cdot \vec{\nabla}G_2 dA,
+ \end{eqnarray*}
+onde $D$ é o disco de raio $a$ no plano $z=0$. Portanto,
+\begin{eqnarray*}
+ \Phi&=&\iint_{D}\sqrt{ a^2-x^2-y^2} dA-\iint_{D}(-\sqrt{ a^2-x^2-y^2}) dA\\
+ &=&2\iint_{D}\sqrt{ a^2-x^2-y^2} dA\\
+ &=&2\pi \left[- \frac{(a^2-r^2)^{3/2}}{3/2}\right]_{0}^a=\frac{4\pi a^3}{3}.\\
+ \end{eqnarray*}
+\end{resol}
 
 \section{O Teorema da Divergência de Gauss}
 \begin{teo}
@@ -296,6 +447,82 @@ Temos $\vec{\nabla}\cdot \vec{F}=2z$. Assim,
 
 Observe que as superfícies dos exemplos \ref{int_sup_ex_1} e \ref{int_sup_ex_1} foram a superfície fechada do exemplo \ref{int_sup_ex_div_1}. De fato, o fluxo calculado naqueles dois exemplos via parametrização direta foram $-2\pi$ e $\frac{13\pi}{6}$, cuja soma é $\frac{\pi}{6}$, o mesmo valor calculado pelo Teorema da Divergência.
 \end{ex}
+
+
+\subsection*{Exercícios resolvidos}
+
+\begin{exeresol} Seja $S$ a superfície do cubo dado pelos planos $x=\pm 1$, $y=\pm 1$ e $z=\pm 1$, orientada para fora. Calcule o fluxo através de $S$ para os seguintes campos vetoriais:
+\begin{itemize}
+ \item[a)]$\vec{F}=x\vec{i}$
+ \item[b)]$\vec{F}=x\vec{i}+y\vec{j}+z\vec{k}$
+ \item[c)]$\vec{F}=x^2\vec{i}+y^2\vec{j}+z^2\vec{k}$
+ \end{itemize}
+\end{exeresol}
+\begin{resol}
+Vamos utilizar o teorema da divergência de Gauss
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V \vec{\nabla}\cdot \vec{F} dV.
+$$
+\begin{itemize}
+ \item[a)] Como $\nabla\cdot \vec{F}=1$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V 1 dV=8,
+$$
+ onde $8$ é o volume do cubo de lado $2$.
+ \item[b)] Como $\nabla\cdot \vec{F}=3$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V 3 dV=24.
+$$
+ \item[c)] Como $\nabla\cdot \vec{F}=2x+2y+2z$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V (2x+2y+2z) dV=======,
+$$
+
+ \end{itemize}
+
+
+\end{resol}
+
+\begin{exeresol} Calcule o fluxo de $\vec{F}=z\vec{k}$ através da esfera $x^2+y^2+z^2= a^2$, orientada para fora. \end{exeresol}
+\begin{resol}
+Como $\nabla\cdot \vec{F}=1$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V 1 dV=\frac{4\pi a^3}{3},
+$$
+onde o valor $\frac{4\pi a^3}{3}$ é o voluma de uma esfera de raio $a$.
+\end{resol}
+
+\begin{exeresol} Use o teorema da divergência para calcular o fluxo do campo $\vec{F}=x^3\vec{i}+y^3\vec{j}+z^2\vec{k}$ através da superfície fechada e orientada para fora composta pelos planos $z=0$ e $z=2$ e a superfície $x^2+y^2= 9$.
+\end{exeresol}
+\begin{resol}
+Como $\nabla\cdot \vec{F}=3x^2+3y^2+2z$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V 3x^2+3y^2+2z dV.
+$$
+onde $V$ é a região cilíndrica do enunciado. Vamos integrar em coordenadas cilíndricas:
+\begin{eqnarray*}
+\oiint_S \vec{F}\cdot \vec{n} dS&=&\int_0^{2\pi} \int_0^3 \int_0^2 3 (r^2+2z )r dzdrd\theta\\
+&=&2\pi \int_0^3 \left[ 3 r^3z+z^2r \right]_{z=0}^{z=2}dr\\
+&=&2\pi  \left[ \frac{6r^4}{4} +2r^2 \right]_{0}^{3}=279\pi. 
+\end{eqnarray*}
+\end{resol}
+
+\begin{exeresol} Use o teorema da divergência para calcular o fluxo do campo $\vec{F}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$ através da superfície fechada e orientada para fora composta pelo plano $z=0$ e o hemisfério  $z=\sqrt{a^2-x^2-y^2}$.
+\end{exeresol}
+\begin{resol}
+Como $\nabla\cdot \vec{F}=3x^2+3y^2+3z^2$, temos: 
+$$
+\oiint_S \vec{F}\cdot \vec{n} dS=\iiint_V 3x^2+3y^2+3z^2 dV.
+$$
+onde $V$ é o hemisfério do enunciado. Vamos integrar em coordenadas esféricas:
+\begin{eqnarray*}
+\oiint_S \vec{F}\cdot \vec{n} dS&=&\int_0^{2\pi} \int_0^{\pi/2} \int_0^a 3\rho^2 \rho^2\sin(\phi)d\rho d\phi d\theta\\
+&=&2\pi \int_0^{\pi/2} \int_0^a 3\rho^4\sin(\phi)d\rho d\phi \\
+&=&2\pi \int_0^{\pi/2} \left[ \frac{3\rho^5}{5}\sin(\phi)\right]_{\rho=0}^{\rho=a} d\phi \\
+&=&\frac{6\pi a^5}{5} \left[ -\cos(\phi)\right]_0^{\pi/2}=\frac{6\pi a^5}{5}. 
+\end{eqnarray*}
+\end{resol}
+
 
 
 
