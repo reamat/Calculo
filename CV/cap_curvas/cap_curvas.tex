@@ -2,12 +2,21 @@
 
 
 \chapter{Curvas e trajetórias}\index{curvas e trajetórias}\index{trajetórias}
-  Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Tais função vetoriais, que dependem de apenas uma variável, são os exemplos mais simples que estudaremos. %Na seção \ref{tr}Definimos o triedro de Frenet-Serret e introduzimos os conceitos de curvatura e torção, bem como aplicações na física-matemática.
+  Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. %Na seção \ref{tr}Definimos o triedro de Frenet-Serret e introduzimos os conceitos de curvatura e torção, bem como aplicações na física-matemática.
 
 \section{Funções vetoriais de uma variável - curvas e trajetórias}
 Uma função vetorial de uma variável é uma função da forma $$\vec{r}:D\to \mathbb{R}^3,$$ onde $D\subseteq \mathbb{R}$ é o domínio de definição de $\vec{r}$ e $t$ é um parâmetro - podendo ser interpretado como o tempo ou não. Em coordenadas cartesianas, uma função vetorial assume a seguinte forma:
 $$\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$
-\begin{ex}\label{exfv1} São exemplos de funções vetoriais
+onde $\vec{i}=(1;0;0)$,$\vec{j}=(0;1;0)$ e $\vec{k}=(0;0;1)$ são mostrados na figura \ref{fig_vetijk}.
+
+\begin{figure} \label{fig_vetijk}
+\begin{center}
+    \includegraphics{./cap_curvas/figs/vetores_ijk}
+ \caption{Os vetores canônicos $\vec{i},\vec{j},\vec{k}$.}
+  \end{center}
+\end{figure}
+
+\begin{ex}\label{exfv01} São exemplos de funções vetoriais
 \begin{itemize}
 \item [a)] $\vec{f}(t)=\sin(t)\vec{i}+\cos(t)\vec{j}$
 \item [b)] $\vec{g}(t)=t \vec{i}+\cosh(t)\vec{k}$
@@ -15,7 +24,7 @@ $$\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$
 \end{itemize}
 \end{ex}  
 
-Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\vec{r}\!~'(t)\neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\vec{r}~\!'(t)\neq 0$ em todos os pontos. É possível definir orientação para uma curva regularmente parametrizada\index{orientação de uma curva}, a orientação é dada pelo sentido de crescimento do parâmetro $t$. 
+Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\frac{d\vec{r}(t)}{dt} \neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\frac{d\vec{r}(t)}{dt} \neq 0$ em todos os pontos. É possível definir orientação para uma curva regularmente parametrizada\index{orientação de uma curva}, a orientação é dada pelo sentido de crescimento do parâmetro $t$. 
 
 \begin{ex}
 A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}$ para $0\leq t \leq 2\pi$ descreve  uma circunferência de raio 1 centrada na origem sobre o plano $xy$ orientada no sentido anti-horário.
@@ -40,9 +49,9 @@ O limite\index{limite de uma função vetorial de uma variável}, a derivação\
 \int\vec{r}(t){dt}&=&\int x(t)dt~\!\vec{i}+\int y(t)dt~\!\vec{j}+\int z(t)dt~\!\vec{k}\label{defint2}
 \end{eqnarray}
 
-\begin{teo}[Regras de derivação] A derivada de funções vetoriais satisfaz as seguintes identidades:
+\begin{teo}[Regras de derivação] A derivada de funções vetoriais satisfaz as seguintes propriedades:
 \begin{enumerate}
-\item Se $\vec{r}(t)$ é um vetor constante, então $\vec{r}'(t)=\vec{0}$. 
+\item Se $\vec{r}(t)$ é um vetor constante, então $\frac{d\vec{r}(t)}{dt}=\vec{0}$. 
 \item $\frac{d}{dt}\left[\alpha \vec{r}_1(t)+\beta \vec{r}_2(t)\right]=\alpha\frac{d\vec{r}_1(t)}{dt}+\beta\frac{d\vec{r}_2(t)}{dt}$
 \item Se $f(t)$ é uma função real, então $\frac{d}{dt}\left[f(t) \vec{r}(t)\right]=f'(t)\vec{r}(t)+f(t)\frac{d\vec{r}(t)}{dt}$
 \item $\frac{d}{dt}\left[\vec{r}_1(t)\cdot \vec{r}_2(t)\right]=\vec{r}_1(t)\cdot\frac{d\vec{r}_2(t)}{dt}+\frac{d\vec{r}_1(t)}{dt}\cdot\vec{r}_2(t)$
@@ -53,7 +62,7 @@ O limite\index{limite de uma função vetorial de uma variável}, a derivação\
 \begin{eqnarray*}\frac{d}{dt}\left[f(t) \vec{r}(t)\right]&=& \frac{d}{dt}\left[f(t) {x}(t)\vec{i}+f(t) {y}(t)\vec{j}+f(t) {z}(t)\vec{k}\right]\\
 &=&\left[f'(t) x(t)+f(t)x'(t)\right]\vec{i}+\left[f'(t) y(t)+f(t)y'(t)\right]\vec{j}+\left[f'(t) z(t)+f(t)z'(t)\right]\vec{k}\\
 &=&f'(t)\left[x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}\right]+f(t)\left[x'(t)\vec{i}+y'(t)\vec{j}+z'(t)\vec{k}\right]\\
-&=&f'(t)\vec{r}(t)+f(t)\vec{r}\!~'(t)
+&=&f'(t)\vec{r}(t)+f(t)\frac{d\vec{r}(t)}{dt}
 \end{eqnarray*}
 
 A derivada do produto escalar de duas funções vetoriais é dado por:\index{derivada do produto escalar}
@@ -83,19 +92,18 @@ Finalmente a derivada do produto vetorial pode ser obtida de\index{derivada do p
 \end{proof}
 
 Demonstraremos agora um importante teorema do cálculo vetorial:
-\begin{teo}\label{teodernormacst} Uma função vetorial $\vec{u}(t)$ possui norma constante se e somente se $\vec{u}(t)\cdot\vec{u}\!~'(t)=0$. 
+\begin{teo}\label{teodernormacst} Uma função vetorial $\vec{u}(t)$ possui norma constante se e somente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$. 
 \end{teo}
 \begin{proof} Como $\|u\|^2=\vec{u}(t)\cdot\vec{u}(t)$, temos
 $$\frac{d \|u\|^2}{dt}=\frac{d}{dt}\left[\vec{u}(t)\cdot\vec{u}(t)\right]=\vec{u}\cdot\frac{d\vec{u}}{dt}+\frac{d\vec{u}}{dt}\cdot\vec{u}=2\vec{u}\cdot\frac{d\vec{u}}{dt}$$
-Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}(t)\cdot\vec{u}\!~'(t)=0$. Reciprocamente se $\vec{u}(t)\cdot\vec{u}\!~'(t)=0$, então $\|u\|$ deve ser constante.
+Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$. Reciprocamente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$, então $\|u\|$ deve ser constante.
 \end{proof}
-\begin{obs} Uma importante interpretação deste teorema é que se $\vec{v}(t)$ representa a velocidade de uma partícula no instante de tempo $t$, então se o módulo da velocidade $v(t)$ for constante e não nulo então a aceleração $\vec{a}=\vec{v}\!~'(t)$ é perpendicular à velocidade sempre que for não nula.  
+\begin{obs} Uma importante interpretação deste teorema é que se $\vec{v}(t)$ representa a velocidade de uma partícula no instante de tempo $t$, então se o módulo da velocidade, $v(t)$, for constante e não nulo então a aceleração $\vec{a}=\frac{d\vec{v}(t)}{dt}$ é perpendicular a $\vec{v}(t)$ sempre que for não nula.  
 \end{obs}
 
 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
 
 
 \subsection*{Exercícios}
@@ -115,19 +123,19 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 
 \begin{exer}Seja $\vec{r}(t)$ o vetor posição de uma partícula dado por
 $$\vec{r}(t)=a\cos(wt)\vec{i}+a\sin(wt)\vec{j}$$
-Calcule o vetor velocidade $\vec{v}$ e o vetor aceleração $\vec{v}$ dados por $\vec{v}=\vec{r}~\!'(t)$ e $\vec{a}=\vec{v}~\!'(t)$.
+Calcule o vetor velocidade $\vec{v}$ e o vetor aceleração $\vec{a}$ dados por $\vec{v}=\frac{d\vec{r}(t)}{dt}$ e $\vec{a}=\frac{d\vec{v}(t)}{dt}$.
 \end{exer}
 
 \begin{exer} Dada a função vetorial $\vec{r}(t)=t^2\vec{i}+e^t\vec{j}-2\cos\pi t ~\! \vec{k}$, calcule:
 \begin{itemize}
 \item [a)] $\displaystyle \lim_{t\to 0} \vec{r}(t)$
 \item [b)] $\displaystyle \frac{d \vec{r}(t)}{dt}$
-\item [c)] $\displaystyle \vec{r}~\!'(1)$
+\item [c)] $\displaystyle \frac{d\vec{r}(1)}{dt}$
 \item [d)] $\displaystyle \int_0^1 \vec{r}(t)dt$
 \item [e)] $\displaystyle \int \vec{r}(t)dt$
 \end{itemize}
 \end{exer}
-\begin{resp} $\vec{j}-2\vec{k}$, $\vec{r}'\!~(t)=2t\vec{i}+e^t\vec{j}+2\pi\sin\pi t ~\! \vec{k}$, $\vec{r}'\!~(1)=2\vec{i}+e\vec{j}$, $\frac{1}{3}\vec{i}+(e-1)\vec{j}$, $\left(\frac{1}{3}t^3+C_1\right)\vec{i}+\left(e^t+C_2\right)\vec{j}+\left(-\frac{2}{\pi}\sin\pi t+C_3\right)\vec{k}$
+\begin{resp} $\vec{j}-2\vec{k}$, $\frac{\vec{r(t)}}{dt}=2t\vec{i}+e^t\vec{j}+2\pi\sin\pi t ~\! \vec{k}$, $\frac{\vec{r}(1)}{dt}=2\vec{i}+e\vec{j}$, $\frac{1}{3}\vec{i}+(e-1)\vec{j}$, $\left(\frac{1}{3}t^3+C_1\right)\vec{i}+\left(e^t+C_2\right)\vec{j}+\left(-\frac{2}{\pi}\sin\pi t+C_3\right)\vec{k}$
 \end{resp}
 
 \begin{exer} Verifique que a função vetorial dada por $\vec{f}(t)=\frac{1-t^2}{1+t^2}\vec{i}+\frac{2t}{1+t^2}\vec{j}$, $-\infty<t<\infty$
@@ -138,24 +146,27 @@ representa uma curva contida em uma circunferência no plano $xy$  centrada na o
 \end{resp}
 
 
-\begin{exer}Encontre a derivada de cada uma das funções vetoriais do exemplo \ref{exfv1}
+\begin{exer}Encontre a derivada de cada uma das funções vetoriais do exemplo \ref{exfv01}
 \end{exer}
 
 \begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$\end{resp}
 
-\begin{exer} Mostre as seguintes identidades:
+\begin{exer}
+Sendo $\hat{r}(t)=\frac{1}{r(t)} \vec{r}(t)$, onde $r(t)=\|\vec{r}(t)\|$,  mostre as seguintes identidades:
 \begin{itemize}
-\item[a)] $\displaystyle \frac{d\vec{r}(t)}{dt}\cdot \hat{r}(t)=r'(t)$
-\item[b)] $\displaystyle \frac{d}{dt}\left[\vec{r}(t)\times\vec{r}~\!'(t)\right]=\vec{r}(t)\times\vec{r}~\!''(t)$
-\item[c)] $\displaystyle \frac{d r(t)}{dt}=\frac{1}{r(t)} \vec{r}(t)\cdot\vec{r}~\!'(t)$
-\item[d)] $\displaystyle \frac{d\hat{r}(t)}{dt}=\frac{\vec{r}~\!'(t)}{r(t)}-\frac{\vec{r}(t)\cdot\vec{r}~\!'(t)}{r(t)^3}\vec{r}(t)$
+\item[a)] $\displaystyle r'(t) = \frac{d\vec{r}(t)}{dt}\cdot \hat{r}(t)$
+\item[b)] $\displaystyle \frac{d}{dt}\left[\vec{r}(t)\times\frac{d\vec{r}(t)}{dt}\right]=\vec{r}(t)\times\frac{d^2\vec{r}(t)}{dt^2}$ 
+\item[c)] $\displaystyle r'(t)=\frac{\vec{r}(t)\cdot\frac{d\vec{r}(t)}{dt}}{r(t)}$ 
+\item[d)] $\displaystyle \frac{d\hat{r}(t)}{dt}=\frac{1}{r(t)} \frac{d\vec{r}(t)}{dt}-\frac{\vec{r}(t)\cdot\frac{d\vec{r}(t)}{dt}}{r(t)^3} \vec{r}(t)$
 \end{itemize}
-Observação: Lembre-se que $\hat{r}(t)=\frac{\vec{r}(t)}{r(t)}$ e $r(t)=\|\vec{r}(t)\|$.
-
 \end{exer}
-
-
-
+\begin{resp}
+a) $\|\hat{r}\|$ constante implica $\hat{r} \cdot \frac{d\hat{r}}{dt}=0$. Ademais, $ \frac{d\vec{r}}{dt} = \frac{d(r \hat{r})}{dt} = r' \hat{r} + r \frac{d\hat{r}}{dt} \Rightarrow \frac{d\vec{r}}{dt} \cdot \hat{r} = 
+r' \|\hat{r}\|^2 + r \frac{d\hat{r}}{dt} \cdot \hat{r} = r' $ 
+. b) $\frac{d}{dt} \left[ \vec{r} \times \frac{d\vec{r}}{dt} \right] =
+\frac{d \vec{r}}{dt} \times \frac{d \vec{r}}{dt} + \vec{r} \times \frac{d^2 \vec{r}}{dt^2} = \vec{r} \times \frac{d^2 \vec{r}}{dt^2} $. c) a partir de a), multiplica numerador e denominador por $r(t)$. d) $\frac{d\hat{r}}{dt} = 
+\frac{d}{dt} \left( r^{-1} \vec{r} \right) = \frac{d}{dt} \left( r^{-1} \right) \vec{r} + r^{-1} \frac{d \vec{r}}{dt} = \frac{1}{r} \frac{d\vec{r}}{dt} - \frac{r'}{r^2} \vec{r} = \frac{1}{r} \frac{d \vec{r}}{dt} - \frac{ \vec{r} \cdot \frac{d \vec{r}}{dt} }{r^3} \vec{r} $ pela parte c). 
+\end{resp}
 
  
 \section{Comprimento de arco}
@@ -169,7 +180,7 @@ Observação: Lembre-se que $\hat{r}(t)=\frac{\vec{r}(t)}{r(t)}$ e $r(t)=\|\vec{
 
  
  
-Seja $a=t_0<t_1<t_2<\cdots<t_n=b $ uma partição equidistante do domínio com $\Delta t=t_i-t_{i-1}$ e $P_i=\vec{r}(t_i)$, $i=0,1,\cdots,n$, pontos sobre a curva, como mostra a figura \ref{fig_compr_arc}. Uma possível aproximação para o comprimento da curva é dado pelo comprimento da poligonal. Observe que o comprimento do segmento $P_{i-1}P_i$ é dado por $\|P_i-P_{i-1}\|$, logo, a aproximação para o comprimento da curva é
+Seja $a=t_0<t_1<t_2<\cdots<t_n=b $ uma partição equidistante do domínio com $\Delta t=t_i-t_{i-1}$ e $P_i=\vec{r}(t_i)$, $i=0,1,\cdots,n$, pontos sobre a curva, como mostra a figura \ref{fig_compr_arc}. Uma possível aproximação para o comprimento da curva é dado pelo comprimento da poligonal determinada por essa partição. Observe que o comprimento do segmento $P_{i-1}P_i$ é dado por $\|P_i-P_{i-1}\|$, logo, a aproximação para o comprimento da curva é
 \begin{eqnarray*}
 L_n&=&\sum_{i=1}^n\|P_i-P_{i-1}\|\\
 &=&\sum_{i=1}^n \sqrt{(x_i-x_{i-1})^2+(y_i-y_{i-1})^2+(z_i-z_{i-1})^2}\\
@@ -178,21 +189,51 @@ L_n&=&\sum_{i=1}^n\|P_i-P_{i-1}\|\\
 \end{eqnarray*}
 Naturalmente, $L=\lim_{n\to\infty }L_n$. Como o lado direito da última igualdade é uma soma de Riemann, temos:
 \begin{equation}\label{defcomparco}
-L=\int_{a}^{b} \sqrt{\left(\frac{dx(t)}{dt}\right)^2+\left(\frac{dy(t)}{dt}\right)^2+\left(\frac{dz(t)}{dt}\right)^2}dt=\int_{a}^{b}\|\vec{r}\!~'(t)\|dt.
+L=\int_{a}^{b} \sqrt{\left(\frac{dx(t)}{dt}\right)^2+\left(\frac{dy(t)}{dt}\right)^2+\left(\frac{dz(t)}{dt}\right)^2}dt=\int_{a}^{b}\left\|\frac{d\vec{r}(t)}{dt}\right\|dt.
 \end{equation}
-Logo, o comprimero do arco $s$ quando a parâmetro corre de $a$ até $t$ é
+Logo, o comprimento do arco $s$ quando a parâmetro corre de $a$ até $t$ é
 \begin{equation}\label{defcomparco_1}
-s(t)=\int_{a}^{t}\|\vec{r}\!~'(\tau)\|d\tau,\qquad a\leq t\leq b.
+s(t)=\int_{a}^{t}\left\|\frac{d\vec{r}(\tau)}{dt}\right\|d\tau,\qquad a\leq t\leq b.
 \end{equation}
 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
+\begin{exer} \label{exe_co_arc1}
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$ é $L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}$. Tal curva pertence a parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
+\end{exer}
+
+\begin{figure}
+\centering
+    \includegraphics{./cap_curvas/figs/comprimento_arco_parabola}
+    \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
+\caption{(esq) Curva do exercício E \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
+\end{figure}
+
+$\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto $L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt$. Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então $L =  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du = \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)} $.
+
+\begin{exer} \label{exe_co_arc2}
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{32}{3} \sqrt{2} - 4\sqrt{3}$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
+\end{exer}
+
+
+$\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto $L = \int_0^1 \sqrt{ 100 t^3 + 100 t^2 + 100t^2 } dt = 10 \int_0^1 t \sqrt{t+2} dt = 10 \int_2^3 (s-2) s^{1/2} ds = 10 \int_2^3 (s^{3/2}-2s^{1/2})ds$
+
 
 
 \subsection*{Exercícios}
 
-\construirExer
+\begin{exer} \label{exe_co_arc3}
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1+t) \vec{i} + (1-t^2)\vec{j}$, definida para $-1 \leq t \leq 1$ é $ L = \sqrt{5} + \frac{\ln(\sqrt{5}+2)}{2}$.
+\end{exer}
+
+
+\begin{exer} \label{exe_co_arc4}
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{i} + (t^2+t^3) \vec{j} + (1+t^2-t^3)\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{5 \sqrt{30}-4\sqrt{3}}{9} $.
+\end{exer}
+
+\begin{exer} \label{exe_co_arc5}
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{14\sqrt{6}}{9} $.
+\end{exer}
 
 
 
@@ -200,35 +241,35 @@ s(t)=\int_{a}^{t}\|\vec{r}\!~'(\tau)\|d\tau,\qquad a\leq t\leq b.
 
 Seja a curva descrita pela função vetorial $\vec{r}(t)$. Queremos encontrar um vetor que seja tangente à curva em um dado ponto\index{vetor tangente}. Para tal tomamos o limite
 $$\lim_{h\to 0} \frac{\vec{r}(t+h)-\vec{r}(t)}{h}$$  
-Este limite converge para $\vec{r}'(t)$ e, geometricamente, para o vetor tangente à curva no ponto $P$ relativo a $\vec{r}(t)$\footnote{O leitor atento ao formalismo pode tomar esta coma uma definição de vetor tangente. Adiante, veremos que esta definição é consistente com o vetor tangente do cálculo de funções de uma variável.} sempre que $\vec{r}'(t)\neq \vec{0}$. O sentido do vetor $\vec{r}~\!'(t)$ é dado pela parametrização da curva, em outras palavras, o vetor $\vec{r}~\!'(t)$ aponta no sentido em que o parâmetro $t$ cresce.
+Este limite converge para $\frac{d\vec{r}(t)}{dt}$ e, geometricamente, para o vetor tangente à curva no ponto $P$ relativo a $\vec{r}(t)$\footnote{O leitor atento ao formalismo pode tomar esta como uma definição de vetor tangente. Adiante, veremos que esta definição é consistente com o vetor tangente do cálculo de funções de uma variável.} sempre que $\frac{d\vec{r}(t)}{dt} \neq \vec{0}$. O sentido do vetor $\frac{d\vec{r}(t)}{dt}$ é dado pela parametrização da curva, em outras palavras, o vetor $\frac{d\vec{r}(t)}{dt}$ aponta no sentido em que o parâmetro $t$ cresce.
 
 
 \begin{figure}%{0.35\textwidth}
 \begin{center}
     \includegraphics{./cap_curvas/figs/vetor_tangente_circunferencia}
-\caption{O vetor tangente $\vec{r}\!~'(t)$}\label{circtang}
+\caption{O vetor tangente $\frac{d\vec{r}(t)}{dt}$}\label{circtang}
   \end{center}
 \end{figure}
 
 
 Observe que a norma do vetor tangente depende de como a curva é parametrizada e não apenas da curva em si. A fim de trabalhar com um objeto que independe da parametrização, é natural definirmos o vetor tangente unitário\index{vetor tangente unitário}, denotado por $\vec{T}$ (veja figura \ref{Frenet_Serret}):
 \begin{equation}\label{defvecunit}
-\|\vec{T}(t)\|=\frac{\vec{r}\!~'(t)}{\left\|\vec{r}\!~'(t)\right\|},\qquad \vec{r}\!~'(t)\neq \vec{0}.
+\vec{T}(t)=\frac{1}{\left\|\frac{d\vec{r}(t)}{dt}\right\|}\frac{d\vec{r}(t)}{dt},\qquad \frac{d\vec{r}(t)}{dt} \neq \vec{0}.
 \end{equation} 
-A condição de existência para o vetor $\vec{T}$ é a função vetorial que parametriza a curva seja diferenciável que sua derivada seja diferente de zero, ou seja, que a parametrização seja regular.
+A condição de existência para o vetor $\vec{T}$ é que a função vetorial que parametriza a curva seja diferenciável e que sua derivada seja diferente de zero, ou seja, que a parametrização seja regular.
 
-\begin{obs} Quando $\vec{r}(t)$ representa a trajetória de uma partícula ao longo do tempo, a derivada $\vec{r}\!~(t)$ é a velocidade $\vec{v}(t)$ da partícula. Neste caso, o vetor tangente unitário é o versor associado a $\vec{v}(t)$:
+\begin{obs} Quando $\vec{r}(t)$ representa a trajetória de uma partícula ao longo do tempo, a derivada $\frac{d\vec{r}(t)}{dt} $ é a velocidade $\vec{v}(t)$ da partícula. Neste caso, o vetor tangente unitário é o versor associado a $\vec{v}(t)$:
 $$\vec{v}(t)=v(t) \hat{v}(t)=v(t) \vec{T}(t).$$
 A norma de $\vec{v}(t)$, denotada por $v(t)$, é chamada de velocidade escalar\index{velocidade escalar}. O vetor $\vec{T}(t)$ indica o sentido e a direção da velocidade.
 \end{obs}
 
-O vetor $\vec{T}$ pode ser definido de forma alternativa como segue: olhamos $s$ como função de $t$ na expressão (\ref{defcomparco_1}) e observamos que $s'(t)=\|\vec{r}\!~'(t)\|>0$. Assim, $s(t)$ é uma função contínua e monótona de $t$. Também, usando a rega da cadeia, temos:
+O vetor $\vec{T}$ pode ser definido de forma alternativa como segue: consideramos $s$ como função de $t$ na expressão (\ref{defcomparco_1}) e observamos que $s'(t)=\left\|\frac{d\vec{r}(t)}{dt}\right\|>0$. Assim, $s(t)$ é uma função contínua e monótona de $t$. Por outro lado, usando a Regra da Cadeia, temos:
 $$
-\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{d\vec{r}}{ds}\|\vec{r}\!~'(t)\|.
+\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{d\vec{r}}{ds}\left\|\frac{d\vec{r}(t)}{dt}\right\|.
 $$
-Como $\vec{r}'(t)$ representa o vetor tangente, então
+Como $\frac{d\vec{r}(t)}{dt}$ representa o vetor tangente, então
 $$
-\frac{d\vec{r}}{ds}=\frac{1}{\|\vec{r}\!~'(t)\|}\frac{d\vec{r}}{dt}=\vec{T}
+\frac{d\vec{r}}{ds}=\frac{1}{\|\frac{d\vec{r}(t)}{dt}\|}\frac{d\vec{r}}{dt}=\vec{T}
 $$
 representa um vetor tangente unitário.
 
@@ -241,9 +282,17 @@ representa um vetor tangente unitário.
 \end{figure}
 
 
-Agora, queremos definir um vetor ortogonal a $\vec{T}$ que esteja no mesmo plano formado por $\vec{r}'(t)$ e $\vec{r}''(t)$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vec{T}(t)$ possui módulo constante e, portanto, $\vec{T}(t)\cdot \vec{T}'(t)=0$. Observe que $\vec{T}(t)$ e $\vec{T}'(t)$ estão ambos no plano formado por $\vec{r}'(t)$ e $\vec{r}''(t)$ e são ortogonais entre si. No entanto, $\vec{T}'(t)$ não é necessariamente unitário. Logo, faz sentido definir o vetor normal unitário\index{vetor normal unitário} como
+Agora, queremos definir um vetor ortogonal a $\vec{T}$ que esteja no plano determinado por $\frac{d\vec{r}(t)}{dt}$ e $\frac{d^2\vec{r}(t)}{dt^2}$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vec{T}(t)$ possui módulo constante e, portanto, $\vec{T}(t)\cdot \frac{d\vec{T}(t)}{dt}=0$. Observe ainda que 
 $$
-\vec{N}=\frac{\vec{T}'(t)}{\|\vec{T}'(t)\|}.
+\frac{d^2\vec{r}(t)}{dt^2}=\frac{d (v \vec{T} )}{dt} = v'(t) \vec{T}(t) + v(t) \frac{d \vec{T}(t)}{dt} = \frac{v'(t)}{v(t)} \frac{d\vec{r}(t)}{dt}+ v(t) \frac{d\vec{T}(t)}{dt}
+$$
+implica
+$$ \frac{d\vec{T}(t)}{dt} = \frac{1}{v(t)} \frac{d^2 \vec{r}(t)}{dt^2} - \frac{v'(t)}{v(t)^2} \frac{d \vec{r}(t)}{dt}
+$$
+e assim 
+$\vec{T}(t)$ e $\frac{d\vec{T}(t)}{dt}$ pertencem ao plano gerado por $\frac{d\vec{r}(t)}{dt} $ e $\frac{d^2\vec{r}(t)}{dt^2}$ e são ortogonais entre si. Entretanto, $\frac{d\vec{T}(t)}{dt}$ não é necessariamente unitário. Logo, faz sentido definir o vetor normal unitário\index{vetor normal unitário} como
+$$
+\vec{N}=\frac{1}{\left\|\frac{d\vec{T}(t)}{dt}\right\|} \frac{d \vec{T}(t)}{dt}.
 $$
 A figura \ref{Frenet_Serret} contém a representação do triedro de Frenet-Serret em alguns pontos de uma hélice dextrogira.
 
@@ -257,6 +306,16 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
+
+\begin{exer}
+  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc4}. Encontre o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
+\end{exer}
+
+ $\vec{v}(t) = \frac{d \vec{r}}{dt} = -2t \vec{i} + t(2+3t) \vec{j} + t(2-3t)\vec{k}$. Então $\left\|\vec{v} \right\|^2 = 4t^2 + t^2(2+3t)^2 + t^2(2-3t)^2 = t^2(12+18t^2)$ e assim $\vec{T} = \frac{\vec{v}}{\|\vec{v}\|} = \frac{-2 }{\sqrt{12+18t^2}}\vec{i} + \frac{2+3t}{\sqrt{12+18t^2}}\vec{j} + \frac{2-3t}{\sqrt{12+18t^2}}\vec{k}$. Derivando em relação a $t$: $\frac{d\vec{T}}{dt} = \frac{36t}{(12+18t^2)^{3/2}} \vec{i} + \frac{36(1-t)}{(12+18t^2)^{3/2}} \vec{j} - \frac{36(1+t)}{(12+18t^2)^{3/2}} \vec{k} $ e para normalizar sem trocar seu sentido definimos $\vec{u} = t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k}$, que implica $\|\vec{u}\|^2=t^2 + (1-t)^2 + (1+t)^2 = 3t^2 + 2$, e então $\vec{N} = \frac{\frac{d\vec{v}}{dt}}{\|\frac{d\vec{v}}{dt}\|} = \frac{\vec{u}}{\|\vec{u}\|}=\frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}$. Finalmente $ \vec{B} = \vec{T} \times \vec{N}$ calculado via $\left| \begin{array}{ccc}
+\vec{i} & \vec{j} & \vec{k} \\
+\frac{-2}{\sqrt{12+18t^2}} & \frac{2+3t}{\sqrt{12+18t^2}} & \frac{2-3t}{\sqrt{12+18t^2}} \\
+\frac{t}{\sqrt{3t^2+2}} & \frac{1-t}{\sqrt{3t^2+2}} &  \frac{-1-t}{\sqrt{3t^2+2}} \end{array} \right| = \frac{(-4-6t^2)\vec{i} - (2+3t^2)\vec{j} - (2+3t^2)\vec{k}}{ \sqrt{12+18t^2} \sqrt{3t^2+2}} = \frac{-2}{\sqrt{6}} \vec{i} - \frac{1}{\sqrt{6}} \vec{j} - \frac{1}{\sqrt{6}} \vec{k}$.
+
 
 
 \subsection*{Exercícios}
@@ -287,23 +346,26 @@ Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos 
 \begin{exer} Um erro comum entre estudantes é substituir a definição de vetor binormal unitário $\vec{B}=\vec{T}\times\vec{N}$ pela expressão espúria dada por $$\frac{\frac{d\vec{N}}{dt}}{\left\|\frac{d\vec{N}}{dt}\right\|}.$$ Calcule esta expressão para o movimento circular uniforme e verifique que ela é igual a $-\vec{T}$ e, portanto, perpendicular a $\vec{B}$.
 \end{exer}
 
+\begin{exer}
+  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
+\end{exer}
 
 \construirExer
 
 
 \section{Curvatura e Torção}
 
-Nessa seção, estamos interessados em definir, a cada ponto da curva, funções que medem o quanto ela está torcida ou curvada, isto é, se a curva é muito diferente de uma reta ou se está fora de qualquer plano do espaço. Primeiro, definiremos uma função chamada de curvatura\index{curvatura}, que mede a cada ponto do domínio, a variação do vetor tangente com respeito ao comprimento de arco $s$. Naturalmente, queremos que a reta tenha curvatura nula, pois ela não difere da sua tangente em ponto algum. Para facilitar a visualização, podemos começar pensando apenas nas curvas que estão contidas em algum plano. A figura \ref{curvatura} nos dá uma ideia de curvatura.
+Nessa seção, estamos interessados em definir, a cada ponto da curva, funções que medem o quanto ela está torcida ou curvada, isto é, se a curva é muito diferente de uma reta ou se está fora de qualquer plano do espaço. Primeiro, definiremos uma função chamada de curvatura\index{curvatura}, que mede a cada ponto do domínio, a norma da variação do vetor tangente com respeito ao comprimento de arco $s$. Naturalmente, queremos que a reta tenha curvatura nula, pois ela não difere da sua tangente em ponto algum. Para facilitar a visualização, podemos começar pensando apenas nas curvas que estão contidas em algum plano. A figura \ref{curvatura} apresenta uma noção de curvatura em um ponto.
 
 
 \begin{figure}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/exemplos_de_curvatura}
- \caption{Ideia de curvatura.\label{curvatura}}
+    \includegraphics{./cap_curvas/figs/exemplos_de_curvatura2}
+ \caption{Noção de curvatura em um ponto.\label{curvatura}}
   \end{center}
 \end{figure}
- 
-Pelo teorema \ref{teodernormacst}, temos que $\frac{d \vec{T} }{ds}$ é paralelo ao vetor normal $\vec{N}$, ou seja,
+
+O vetor normal $\vec{N}$,  sendo paralelo a $\frac{d\vec{T}}{dt}$ por definição, também é paralelo a $\frac{d\vec{T}}{ds}$, onde $s$ é comprimento do arco definido pela curva da trajetória de $\vec{r}(t)$. Assim, 
 \begin{equation}{\label{Frenet_1}}
 \frac{d \vec{T} }{ds}=\kappa   \vec{N},
 \end{equation}
@@ -311,13 +373,13 @@ onde $\kappa(t)>0$ é uma função escalar chamada de curvatura. Por outro lado,
 $$
 \frac{d \vec{T} }{ds}=\frac{d \vec{T} }{dt}\frac{dt}{ds}=\frac{d \vec{T} }{dt}\frac{1}{|s'(t)|},
 $$
-onde $s(t)$ é a função que mede o comprimento do arco dado pela expressão (\ref{defcomparco_1}). Usando o fato que $s'(t)=\|\vec{r}'(t)\|$, temos:
+onde $s(t)$ é a função que mede o comprimento do arco dado pela expressão (\ref{defcomparco_1}). Usando o fato que\footnote{Teorema Fundamental do Cálculo, parte 2} $s'(t)=\left\|\frac{d\vec{r}(t)}{dt}\right\|$, temos:
 $$
-\frac{d \vec{T} }{ds}=\frac{1}{\|\vec{r}'(t)\|}\frac{d \vec{T} }{dt}.
+\frac{d \vec{T} }{ds}=\frac{1}{\|\frac{d\vec{r}(t)}{dt} \|}\frac{d \vec{T} }{dt}.
 $$
 Portanto, podemos escrever
 $$
-\kappa(t)=\frac{\|\vec{T}'(t)\|}{\|\vec{r}'(t)\|}.
+\kappa(t)=\frac{\|\frac{d\vec{T}(t)}{dt}\|}{\|\frac{d\vec{r}(t)}{dt}\|}.
 $$
 
 Definimos também, para cada ponto $t$ do domínio, o raio de curvatura\index{raio de curvatura} $\rho(t)$ da forma:
@@ -336,40 +398,40 @@ O raio de curvatura tem a seguinte interpretação geométrica: considere um pon
 
 \begin{ex}A curva descrita por $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j},\qquad a>0,\ 0\leq t\leq 2\pi$ é uma cincunferência. Sua curvatura pode ser obtida da seguinte forma:
 \begin{eqnarray}
- \vec{r}'(t)&=&-a\sin(t)\vec{i}+a\cos(t)\vec{j},\\
- \|\vec{r}'(t)\|&=&\sqrt{a^2\sin^2(t)+a^2\cos^2(t)}=\sqrt{a^2}=|a|=a,\\
+\frac{d \vec{r}(t)}{dt}&=&-a\sin(t)\vec{i}+a\cos(t)\vec{j},\\
+\left\|\frac{d\vec{r}(t)}{dt}\right\|&=&\sqrt{a^2\sin^2(t)+a^2\cos^2(t)}=\sqrt{a^2}=|a|=a,\\
  \vec{T}(t)&=&\frac{-a\sin(t)\vec{i}+a\cos(t)\vec{j}}{a}=-\sin(t)\vec{i}+\cos(t)\vec{j},\\
 \end{eqnarray}
 
 \end{ex}
 \begin{ex}Dada a curva $y=x^2$, vamos encontrar a curvatura e o raio de curvatura no ponto $x=1$. Primeiro, encontramos uma parametrização para essa curva, por exemplo, $\vec{r}=t\vec{i}+t^2\vec{j}$. Calculamos:
 $$
-\vec{r}'(t)=\vec{i}+2t\vec{j},
+\frac{d\vec{r}(t)}{dt}=\vec{i}+2t\vec{j},
 $$
 $$
-\|\vec{r}'(t)\|=\sqrt{1+4t^2},
+\left\|\frac{d\vec{r}(t)}{dt}\right\|=\sqrt{1+4t^2},
 $$
 $$
 \vec{T}(t)=\frac{1}{\sqrt{1+4t^2}}\left(\vec{i}+2t\vec{j}\right)
 $$
 e
 $$
-\vec{T}'(t)=-\frac{4t}{\sqrt{(1+4t^2})^3}\vec{i}+\left(-\frac{8t^2}{\sqrt{(1+4t^2})^3}+\frac{2}{\sqrt{1+4t^2}}\right)\vec{j},
+\frac{d\vec{T}(t)}{dt}=-\frac{4t}{\sqrt{(1+4t^2})^3}\vec{i}+\left(-\frac{8t^2}{\sqrt{(1+4t^2})^3}+\frac{2}{\sqrt{1+4t^2}}\right)\vec{j},
 $$
 Em $t=1$, temos:
 $$
-\|\vec{r}'(t)\|=\sqrt{5},
+\left\|\frac{d\vec{r}(t)}{dt}\right\|=\sqrt{5},
 $$
 $$
-\vec{T}'(t)=-\frac{4}{\sqrt{5^3}}\vec{i}+\left(-\frac{8}{\sqrt{5^3}}+\frac{2}{\sqrt{5}}\right)\vec{j}=-\frac{4}{\sqrt{5^3}}\vec{i}+\frac{2}{\sqrt{5^3}}\vec{j},
+\frac{d\vec{T}(t)}{dt}=-\frac{4}{\sqrt{5^3}}\vec{i}+\left(-\frac{8}{\sqrt{5^3}}+\frac{2}{\sqrt{5}}\right)\vec{j}=-\frac{4}{\sqrt{5^3}}\vec{i}+\frac{2}{\sqrt{5^3}}\vec{j},
 $$
 e
 $$
-\|\vec{T}'(t)\|=\sqrt{\frac{16}{5^3}+\frac{4}{5^3}}=\frac{2}{5}.
+\left\|\frac{d\vec{T}(t)}{dt}\right\|=\sqrt{\frac{16}{5^3}+\frac{4}{5^3}}=\frac{2}{5}.
 $$
 Portanto,
 $$
-\kappa(1)=\frac{\|\vec{T}'\|}{\|\vec{r}'\|}=\frac{2}{5\sqrt{5}}
+\kappa(1)=\frac{\|\frac{d\vec{T}}{dt}\|}{\|\frac{d\vec{r}}{dt}\|}=\frac{2}{5\sqrt{5}}
 $$
 e
 $$
@@ -386,13 +448,13 @@ Usando a expressão (\ref{Frenet_1}), temos que $\frac{d\vec{T}}{ds}=\kappa\vec{
 $$
 \frac{d\vec{B}}{ds}=\vec{T}\times\frac{d\vec{N}}{ds}.
 $$
-Isso implica que $\frac{d\vec{B}}{ds}$ é ortogonal a $\vec{T}$. Mas, pelo teorema \ref{teodernormacst}, temos que $\frac{d\vec{B}}{ds}$ é ortogonal a $\vec{B}$. Logo, $\frac{d\vec{B}}{ds}$ é paralelo a $\vec{N}$, ou seja,
+Isso implica que $\frac{d\vec{B}}{ds}$ é ortogonal a $\vec{T}$. Mas, pelo teorema \ref{teodernormacst}, temos que $\frac{d\vec{B}}{ds}$ é ortogonal a $\vec{B}$. Logo, $\frac{d\vec{B}}{ds}$ é paralelo a $\vec{N}$, ou seja, podemos definir
 \begin{equation}{\label{Frenet_2}}
 \frac{d\vec{B}}{ds}=-\tau\vec{N},
 \end{equation}
 onde $\tau$ é chamado de torção\index{torção}. O sinal negativo tem um propósito: quando $\tau>0$, $\frac{d\vec{B}}{ds}$ está no sentido de $-\vec{N}$; então se $P$ é um ponto sobre a curva movendo-se no sentido positivo, $\vec{B}$ gira em torno de $\vec{T}$ como um parafuso de rosca direita sendo apertado (veja a figura \ref{Curvatura_torcao_1}). Em alguns contextos, calculamos a módulo da torção, dada por
 $$
-|\tau|=\left\|\frac{d\vec{B}}{ds}\right\|=\frac{\|\vec{B}'(t)\|}{\|\vec{r}'(t)\|}.
+|\tau|=\left\|\frac{d\vec{B}}{ds}\right\|=\frac{\|\frac{d\vec{B}(t)}{dt}\|}{\|\frac{d\vec{r}(t)}{dt}\|}.
 $$
 
 
@@ -430,19 +492,19 @@ Como esperávamos, se $\kappa=0$, então $\frac{d\vec{T}}{ds}=\vec{0}$, o que im
 
 \begin{ex} Vamos calcular curvatura, raio de curvatura e o módulo da torção para a hélice circular $\vec{r}(t)=\cos(t)\vec{i}+\sin(t)+t\vec{k}$:
 $$
-\vec{r}'(t)=-\sin(t)\vec{i}+\cos(t)+\vec{k},
+\frac{d\vec{r}(t)}{dt}=-\sin(t)\vec{i}+\cos(t)+\vec{k},
 $$
 $$
-\|\vec{r}'(t)\|=\sqrt{2},
+\left\|\frac{d\vec{r}(t)}{dt}\right\|=\sqrt{2},
 $$
 $$
 \vec{T}(t)=-\frac{\sin(t)}{\sqrt{2}}\vec{i}+\frac{\cos(t)}{\sqrt{2}}+\frac{1}{\sqrt{2}}\vec{k},
 $$
 $$
-\vec{T}'(t)=-\frac{\cos(t)}{\sqrt{2}}\vec{i}-\frac{\sin(t)}{\sqrt{2}},
+\frac{d\vec{T}(t)}{dt}=-\frac{\cos(t)}{\sqrt{2}}\vec{i}-\frac{\sin(t)}{\sqrt{2}},
 $$
 $$
-\|\vec{T}'(t)\|=\frac{1}{\sqrt{2}},
+\left\|\frac{d\vec{T}(t)}{dt}\right\|=\frac{1}{\sqrt{2}},
 $$
 $$
 \kappa(t)=\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}=\frac{1}{2},
@@ -458,10 +520,10 @@ $$
 &=&\frac{\sin(t)}{\sqrt{2}}\vec{i}-\frac{\cos(t)}{\sqrt{2}}\vec{j}+\frac{1}{\sqrt{2}}\vec{k}.
 \end{eqnarray*}
 $$
-\vec{B}'(t)=\frac{\cos(t)}{\sqrt{2}}\vec{i}+\frac{\sin(t)}{\sqrt{2}}\vec{j},
+\frac{d\vec{B}(t)}{dt}=\frac{\cos(t)}{\sqrt{2}}\vec{i}+\frac{\sin(t)}{\sqrt{2}}\vec{j},
 $$
 $$
-\|\vec{B}'(t)\|=\frac{1}{\sqrt{2}},
+\left\|\frac{d\vec{B}(t)}{dt}\right\|=\frac{1}{\sqrt{2}},
 $$
 $$
 |\tau(t)|=\frac{1}{2}.
@@ -490,43 +552,43 @@ $$
 \end{figure}
 
 
-A curvatura e a torção podem ser calculadas de maneira mais simples. Para concluir isso, começamos calculando as derivadas de $\vec{r}$. Usamos aqui que $s'(t)=\|\vec{r}'(t)\|$, obtida da equação (\ref{defcomparco_1}):
+A curvatura e a torção podem ser calculadas de maneira mais simples. Para concluir isso, começamos calculando as derivadas de $\vec{r}$. Usamos aqui que $s'(t)=\left\|\frac{d\vec{r}(t)}{dt}\right\|$, obtida da equação (\ref{defcomparco_1}):
 $$
-\vec{r}'=\frac{d\vec{r}}{ds}\frac{ds}{dt}=s' \vec{T},
+\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=s' \vec{T},
 $$
 \begin{eqnarray*}
-\vec{r}''&=&s'' \vec{T}+s' \vec{T}'\\&=&s'' \vec{T}+s' \|\vec{T}'\|\vec{N}\\
-&=&s'' \vec{T}+s'^2 \kappa \vec{N}
+\frac{d^2\vec{r}}{dt^2}&=&s'' \vec{T}+s' \frac{d\vec{T}}{dt}\\&=&s'' \vec{T}+s' \|\frac{d\vec{T}}{dt}\|\vec{N}\\
+&=&s'' \vec{T}+(s')^2 \kappa \vec{N}
 \end{eqnarray*}
 e
 \begin{eqnarray*}
-\vec{r}'''&=&s''' \vec{T}+s''\vec{T}'+2s's''\kappa \vec{N}+s'^2 \left(\kappa \vec{N}'+\kappa' \vec{N}\right)\\
+\frac{d^3\vec{r}}{dt^3}&=&s''' \vec{T}+s''\frac{d\vec{T}}{dt}+2s's''\kappa \vec{N}+s'^2 \left(\kappa \frac{d\vec{N}}{dt}+\kappa' \vec{N}\right)\\
 &=&s''' \vec{T}+s''s'\kappa \vec{N}+\left(2s's''\kappa+s'^2\kappa'\right) \vec{N}\\
 &+&s'^3 \kappa (-\kappa \vec{T}+\tau\vec{B})\\
 &=&\left(s'''-\kappa^2s'^3\right) \vec{T}+\left(3s''s'\kappa +s'^2\kappa'\right)\vec{N}+s'^3 \kappa \tau\vec{B},
 \end{eqnarray*}
 onde usamos as expressões (\ref{Frenet_1}) e (\ref{Frenet_3}). Agora, tomamos os seguintes produtos:
 $$
-\vec{r}'\times \vec{r}''=s'^3\kappa \vec{B}\qquad\text{e}\qquad
-\vec{r}'\times \vec{r}''\cdot \vec{r}'''=s'^6\kappa^2\tau.
+\frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2}=s'^3\kappa \vec{B}\qquad\text{e}\qquad
+\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3\vec{r}}{dt^3}=s'^6\kappa^2\tau.
 $$
 Isso implica em 
 $$
-\|\vec{r}'\times \vec{r}''\|=|s'|^3\kappa\qquad\text{e}\qquad
-\vec{r}'\times \vec{r}''\cdot \vec{r}'''=\|\vec{r}'\times \vec{r}''\|^2\tau.
+\left\|\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2}\right\|=|s'|^3\kappa\qquad\text{e}\qquad
+\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3 \vec{r}}{dt^3}=\left\|\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2}\right\|^2\tau.
 $$
 ou seja,
 \begin{equation}{\label{curvatura_2}}
-\kappa =\frac{\|\vec{r}'\times \vec{r}''\|}{\|r'\|^3}
+\kappa =\frac{\|\frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2}\|}{\|\frac{d\vec{r}}{dt}\|^3}
 \end{equation}
 e
 \begin{equation}{\label{torcao_2}}
-\tau=\frac{\vec{r}'\times \vec{r}''\cdot \vec{r}'''}{\|\vec{r}'\times \vec{r}''\|^2}.
+\tau=\frac{\frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2} \cdot \frac{d^3 \vec{r}}{dt^3} }{\|\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2}\|^2}.
 \end{equation}
 
 \begin{obs}\index{aceleração!normal}\index{aceleração!tangencial}Uma aplicação natural é a decomposição da aceleração em suas componentes tangencial e normal. Observe que
 $$
-\vec{r}'=\vec{v}=v\vec{T}=s' \vec{T}
+\frac{d\vec{r}}{dt}=\vec{v}=v\vec{T}=s' \vec{T}
 $$
 e
 $$
@@ -546,16 +608,16 @@ $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
  Onde $f(t)$ é uma função dada. Observe que a projeção desta curva no plano $xy$ é uma circuferência de raio 1. A curva é, portanto, gerada pela trajetória de ponto cuja projeção do movimento no plano $xy$ é cirvular e a altura é dada pela função $f(t)$. Podemos calcular a curvatura e a torção conforme a seguir:
  \begin{eqnarray*}
   \vec{r}(t)&=&\cos(t)\vec{i}+\sin(t)\vec{j}+f(t)\vec{k}\\
-  \vec{r'}(t)&=&-\sin(t)\vec{i}+\cos(t)\vec{j}+f'(t)\vec{k}\\
-  \vec{r''}(t)&=&-\cos(t)\vec{i}-\sin(t)\vec{j}+f''(t)\vec{k}\\
-  \vec{r'''}(t)&=&\sin(t)\vec{i}-\cos(t)\vec{j}+f'''(t)\vec{k}
+  \frac{d\vec{r}}{dt}&=&-\sin(t)\vec{i}+\cos(t)\vec{j}+f'(t)\vec{k}\\
+  \frac{d^2\vec{r}}{dt^2}&=&-\cos(t)\vec{i}-\sin(t)\vec{j}+f''(t)\vec{k}\\
+  \frac{d^3\vec{r}}{dt^3}&=&\sin(t)\vec{i}-\cos(t)\vec{j}+f'''(t)\vec{k}
  \end{eqnarray*}
 Assim, calculamos:
  \begin{eqnarray*}
-  \vec{r'}(t)\times\vec{r''}(t) &=&\left[f''(t)\cos(t)+f'(t)\sin(t)\right]\vec{i}+\left[-f'(t)\cos(t)+f''(t)\sin(t)\right]\vec{j}+\vec{k}\\
- \vec{r'}(t)\times\vec{r''}(t)\cdot r'''(t)&=&f'(t)+f'''(t)\\
- \|\vec{r'}(t)\times\vec{r''}(t)\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
- \|\vec{r'}(t)\|&=&\sqrt{1+\left(f'(t)\right)^2}
+  \frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2} &=&\left[f''(t)\cos(t)+f'(t)\sin(t)\right]\vec{i}+\left[-f'(t)\cos(t)+f''(t)\sin(t)\right]\vec{j}+\vec{k}\\
+\frac{d \vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot r'''(t)&=&f'(t)+f'''(t)\\
+ \|\frac{d\vec{r}}{dt} \times\frac{d^2\vec{r}}{dt^2}\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
+ \|\frac{d\vec{r}}{dt}\|&=&\sqrt{1+\left(f'(t)\right)^2}
  \end{eqnarray*}
 E finalmente, obtemos:
  \begin{eqnarray*}
@@ -642,7 +704,7 @@ Use esta expressão para obter a curvatura das seguintes curvas planas:
 \item[f)] $y=\sinh(x)$
 \item[g)] $y=\cos(x)$
 \end{itemize}
-Como você interpreta os casos a e b? As curvas dos ítens c e g possuem pontos onde a curvatura é zero. Que implicação isso tem sobre a existência do vetor normal unitário $\vec{N}$? Interprete geometricamente.
+Como você interpreta os casos a) e b) ? As curvas dos ítens c) e g) possuem pontos onde a curvatura é zero. Que implicação isso tem sobre a existência do vetor normal unitário $\vec{N}$? Interprete geometricamente.
 \end{exer}
 \begin{resp}
 \begin{itemize}
