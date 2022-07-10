@@ -2,17 +2,146 @@
   Neste capítulo, estudamos a integral de superfície\index{integral de superfície} e teoremas relacionados.
 \section{Definição de integral de superfície para um campo escalar}
 
-Seja $f: \mathbb{R}^3\to \mathbb{R}$, $f= f(x,y,z)$, um campo escalar definido em todos os pontos de uma superfície regular $S$. Assumimos que $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$, $(u,v)\in R \subset \mathbb{R}^2$ seja uma parametrização para $S$. A integral de superfície de $f$ sobre $S$ é definida por:
-$$
-\int\int_S f d S = \int\int_R f(x(u,v),y(u,v),z(u,v)) \|\vec{r}_u\times \vec{r}_v\|d udv
-$$
+Seja $h: \mathbb{R}^3\to \mathbb{R}$, $h= h(x,y,z)$, um campo escalar definido em todos os pontos de uma superfície regular $S$. Assumimos que $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$, $(u,v)\in R \subset \mathbb{R}^2$ seja uma parametrização para $S$. A integral de superfície de $h$ sobre $S$ é definida por:
+\begin{equation}\label{definicao_int_sup_esc}
+\iint_S h d S = \iint_R h(x(u,v),y(u,v),z(u,v)) \|\vec{r}_u\times \vec{r}_v\|d udv, 
+\end{equation}
 onde $dS$ é o elemento infinitesimal de área sobre a superfície.
+
+
+\begin{ex}\label{ex_esfera_int_sup}Considere a esfera de raio $a$ 
+$$
+\vec{r}=a\sin(u)\cos(v)\vec{i}+a\sin(u)\sin(v)\vec{j}+a\cos(u)\vec{k},~~ a>0, ~ 0\leq u< \pi, ~ 0\leq v< 2\pi
+$$
+e o campo $h(x,y,z)=1$. Vamos calcular a área da esfera dada por $\iint_S h d S $. Começamos com as derivadas parciais de $\vec{r}$, dadas por
+$$
+\vec{r}_u=a\cos(u)\cos(v)\vec{i}+a\cos(u)\sin(v)\vec{j}-a\sin(u)\vec{k}
+$$
+e
+$$
+\vec{r}_v=-a\sin(u)\sin(v)\vec{i}+a\sin(u)\cos(v)\vec{j}.
+$$
+Então, temos
+\begin{eqnarray}
+\label{prod_vet_ru_rv}  \vec{r}_u\times\vec{r}_v&=&\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+  a\cos(u)\cos(v)&a\cos(u)\sin(v)&-a\sin(u) \\
+-a\sin(u)\sin(v)&a\sin(u)\cos(v)&0
+ \end{array}
+\right|\\
+\nonumber &=& a^2\sin^2(u)\cos(v)\vec{i}+ a^2\sin^2(u)\sin(v)\vec{j}\\\nonumber&+&(a^2\cos(u)\sin(u)\cos^2(v)+ a^2\cos(u)\sin(u)\sin^2(v))\vec{k}\\
+\nonumber &=& a^2\sin^2(u)\cos(v)\vec{i}+ a^2\sin^2(u)\sin(v)\vec{j}+a^2\cos(u)\sin(u)\vec{k}.
+\end{eqnarray}
+e
+\begin{eqnarray*}
+\|  \vec{r}_u\times\vec{r}_v\|&=&a^2\sqrt{ \sin^4(u)(\cos^2(v)+ \sin^2(v))+\cos^2(u)\sin^2(u)}\\
+&=&a^2\sqrt{ \sin^4(u)+\cos^2(u)\sin^2(u)}\\
+&=&a^2\sin(u)\sqrt{ \sin^2(u)+\cos^2(u)}\\
+&=&a^2\sin(u).
+\end{eqnarray*}
+onde usamos que $0\leq \sin(u)\leq 1$, visto que $0\leq u\leq \pi$. Portanto,
+\begin{eqnarray*}
+\iint_S h d S &=& \iint_R h(x(u,v),y(u,v),z(u,v)) \|\vec{r}_u\times \vec{r}_v\|d udv \\
+&=& \int_0^{2\pi}\int_0^{\pi} a^2\sin(u) d udv \\
+&=&2\pi a^2 \left[ -\cos(u) \right]_0^{\pi}\\
+&=&4\pi a^2.
+\end{eqnarray*}
+
+\end{ex}
+\subsection{Superfície definida como função de duas variáveis}
+Nessa seção, vamos calcular a versão particular da definição \eqref{definicao_int_sup_esc} quando a superfície é definida como função de duas variáveis, isto é, $z=f(x,y)$ ou $y=f(x,z)$ ou ainda $x=f(y,z)$. Considere o caso onde a superfície $S$ é dado pela função $f:D\subset\mathbb{R}$, $D\subset \mathbb{R}^2$, $z=f(x,y)$ (os outros dois casos são análogos). Uma parametrização para a superfície $S$ é
+$$
+\vec{r}(x,y)= x\vec{i}+ y\vec{j}+ f(x,y)\vec{k},
+$$
+Calculamos as derivadas $\vec{r}_x=\vec{i}+ f_x\vec{k},$ e $\vec{r}_y=\vec{j}+ f_y\vec{k}$ e fazemos
+$$
+  \vec{r}_x\times\vec{r}_y=\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+  1 &0 & f_x \\
+0 &  1 & f_y
+ \end{array}
+\right|\\= f_x\vec{i}+ f_y\vec{j}+\vec{k}.
+$$
+Agora, definimos $G$ tal que a superfície seja reescrita como $G(x,y,z)=0$, isto é, $G(x,y,z)=z-f(x,y)$ e observamos que
+\begin{equation}\label{normal_grad_G_0}
+   \vec{r}_x\times\vec{r}_y=\vec{ \nabla} G.
+\end{equation}
+Analogamente, em qualquer dos outros dois casos $y=f(x,z)$ ou $x=f(y,z)$, definimos $G$ tal que a superfície seja reescrita como $G(x,y,z)=0$ e a expressão \eqref{normal_grad_G_0} continua válida, isto é,
+\begin{equation*}\label{normal_grad_G_0_2}
+   \vec{r}_x\times\vec{r}_z=\vec{ \nabla} G\qquad \text{ou} \qquad    \vec{r}_y\times\vec{r}_z=\vec{ \nabla} G.
+\end{equation*}
+Portanto, a versão da definição \eqref{definicao_int_sup_esc} para o caso onde a superfície é definida por uma função de duas variáveis $f$ é dada por
+\begin{equation}\label{definicao_int_sup_esc_par}
+\iint_S h d S=  \iint_R h\| \vec{\nabla}G\| dA,
+\end{equation}
+onde $R$ é o domínio de $h$ e $h$ deve estar sobre os pontos da superfície.
+
+\begin{ex}Vamos calcular novamente a integral de supefície do exemplo \ref{ex_esfera_int_sup}. Considere a equação da esfera de raio $a$, $x^2+y^2+z^2=a^2$ e o campo $h(x,y,z)=1$. Vamos calcular a área da superfície da esfera dada por $\iint_S h d S $. Para aplicar a expressão \eqref{definicao_int_sup_esc_par}, separamos a esfera em duas superfícies: $S_1$ de equação $z=h_1(x,y)=\sqrt{a^2-x^2-y^2}$ e $S_2$ de equação $z=h_2(x,y)=-\sqrt{a^2-x^2-y^2}$. Assim,
+\begin{equation*}
+\iint_S h d S=  \iint_{S_1} h d S+\iint_{S_2} h d S.
+\end{equation*}
+Definimos $G_1=z-\sqrt{a^2-x^2-y^2}$ e $G_2=z+\sqrt{a^2-x^2-y^2}$ e calculamos
+$$
+\vec{\nabla}G_1=\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}+\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}
+$$
+e 
+$$
+\vec{\nabla}G_2=-\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}-\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}
+$$
+Logo,
+$$
+\|\vec{\nabla}G_1\|=\|\vec{\nabla}G_2\|=\sqrt{\frac{x^2+y^2}{a^2-x^2-y^2}+1}=\sqrt{\frac{x^2+y^2+a^2-x^2-y^2}{a^2-x^2-y^2}}=\frac{a}{\sqrt{a^2-x^2-y^2}}.
+$$
+Como $h(x,y,z)=1$, temos:
+\begin{equation*}
+\iint_S h d S=  \iint_{D} \frac{a}{\sqrt{a^2-x^2-y^2}}d A+\iint_{D}\frac{a}{\sqrt{a^2-x^2-y^2}}dA=2\iint_{D} \frac{a}{\sqrt{a^2-x^2-y^2}}dA,
+\end{equation*}
+onde $D$ é o disco de raio $a$ no plano $xy$. Portanto, integrando em coordenadas polares, temos:
+\begin{eqnarray*}
+\iint_S h d S&=& 2 \iint_{D} \frac{a}{\sqrt{a^2-x^2-y^2}} dydx\\
+&=& 2 \int_0^{2\pi}\int_{0}^a \frac{a}{\sqrt{a^2-r^2}} rdrd\theta\\
+&=& 2\pi a \int_{0}^a \frac{2r}{\sqrt{a^2-r^2}} dr\\
+&=& 2\pi a \left[\frac{-\sqrt{a^2-r^2}}{1/2}\right]_{0}^a\\
+&=& 4\pi a^2.
+\end{eqnarray*}
+
+\end{ex}
 
 \section{Definição de integral de superfície para um campo vetorial}
 Considere $S$ uma superfície orientável e $\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$, $(u,v)\in R \subset \mathbb{R}^2$ uma parametrização regular, sendo $\vec{n}=\frac{\vec{r}_u\times \vec{r}_v}{\|\vec{r}_u\times \vec{r}_v\|}$ o vetor normal à $S$. Seja $\vec{F}:\mathbb{R}^3\to \mathbb{R}^3$, $\vec{F}=\vec{F}(x,y,z)$ um campo vetorial definido em todos em pontos de $S$. Então definimos a integral de superfície do campo vetorial $\vec{F}$ sobre $S$ como:
 \begin{equation}\label{definicao_int_sup_vet}
-\int\int_S \vec{F}\cdot \vec{n} d S= \int\int_R \vec{F}(x(u,v),y(u,v),z(u,v))\cdot (\vec{r}_u\times \vec{r}_v) dudv.
+\iint_S \vec{F}\cdot \vec{n} d S= \iint_R \vec{F}(x(u,v),y(u,v),z(u,v))\cdot (\vec{r}_u\times \vec{r}_v) dudv.
 \end{equation}
+\begin{ex}\label{ex_esfera_int_sup_vet}Seja $S$ a esfera de raio $a$ parametrizada por 
+$$
+\vec{r}=a\sin(u)\cos(v)\vec{i}+a\sin(u)\sin(v)\vec{j}+a\cos(u)\vec{k},~~ a>0, ~ 0\leq u< \pi, ~ 0\leq v< 2\pi
+$$
+e o campo $\vec{F}(x,y,z)=x\vec{i}+y\vec{j}+z\vec{k}$. Vamos calcular o fluxo do campo $\vec{F}$ através da superfície $S$ dado por $\Phi=\iint_S \vec{F}\cdot\vec{n} d S $. O produto vetorial
+$$
+\vec{r}_u\times\vec{r}_v= a^2\sin^2(u)\cos(v)\vec{i}+ a^2\sin^2(u)\sin(v)\vec{j}+a^2\cos(u)\sin(u)\vec{k}
+$$
+foi calculado na equação \eqref{prod_vet_ru_rv}. Observe que a parametrização define uma orientação para fora da superfície. De fato, basta pegar um ponto, por exemplo, $u=v=\pi/2$ e calcular $\vec{r}=a\vec{j}$ e $\vec{r}_u\times\vec{r}_v=a^2\vec{j}$, ou seja, no ponto $(0,a,0)$, a normal aponta para fora. Como
+\begin{eqnarray*}
+\vec{F}(x(u,v),y(u,v),z(u,v))&=&x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}\\
+&=&a\sin(u)\cos(v)\vec{i}+a\sin(u)\sin(v)\vec{j}+a\cos(u)\vec{k},
+\end{eqnarray*}
+temos
+\begin{eqnarray*}
+ \vec{F}\cdot (\vec{r}_u\times\vec{r}_v)&=& a^3\sin^3(u)\cos^2(v)+a^3\sin^3(u)\sin^2(v)+a^3\cos^2(u)\sin(u)\\
+ &=& a^3\sin^3(u)+a^3\cos^2(u)\sin(u)\\
+ &=& a^3\sin(u).
+\end{eqnarray*}
+Portanto,
+\begin{eqnarray*}
+ \Phi&=&\iint_S \vec{F}\cdot\vec{n} d S \\
+&=& \iint_R \vec{F}\cdot (\vec{r}_u\times\vec{r}_v) d udv \\
+&=& \int_0^{2\pi}\int_0^\pi a^3\sin(u) d udv \\
+&=& 2\pi a^3\int_0^\pi \sin(u) d u \\
+&=&4\pi a^3.
+\end{eqnarray*}
+\end{ex}
 \subsection{Superfície definida como função de duas variáveis}
 Nessa seção, vamos calcular a versão particular da definição \eqref{definicao_int_sup_vet} quando a superfície é definida como função de duas variáveis, isto é, $z=f(x,y)$ ou $y=f(x,z)$ ou ainda $x=f(y,z)$. Considere o caso onde a superfície $S$ é dado pela função $f:D\subset\mathbb{R}$, $D\subset \mathbb{R}^2$, $z=f(x,y)$ (os outros dois casos são análogos). Uma parametrização para a superfície $S$ é
 $$
@@ -42,9 +171,45 @@ Analogamente, em qualquer dos outros dois casos $y=f(x,z)$ ou $x=f(y,z)$, defini
 \end{equation*}
 Portanto, a versão da definição \eqref{definicao_int_sup_vet} para o caso onde a superfície é definida por uma função de duas variáveis $f$ é dada por
 \begin{equation}\label{definicao_int_sup_vet_par}
-\int\int_S \vec{F}\cdot \vec{n} d S= \pm \int\int_R \vec{F}\cdot \vec{\nabla}G dA,
+\iint_S \vec{F}\cdot \vec{n} d S= \pm \iint_R \vec{F}\cdot \vec{\nabla}G dA,
 \end{equation}
 onde $R$ é o domínio de $f$, $\vec{F}$ deve estar sobre os pontos da superfície e o sinal $\pm$ deve ser escolhido para que $\pm \vec{\nabla}G$ esteja no sentido da orientação da superfície.
+
+
+\begin{ex}\label{ex_esfera_int_sup_vet_2}Nesse exemplo, vamos recalcular o fluxo do exemplo \ref{ex_esfera_int_sup_vet}. Seja $S$ a esfera de raio $a$ dada por 
+$$
+x^2+y^2+z^2=a^2,
+$$
+orientada para fora, e o campo $\vec{F}(x,y,z)=x\vec{i}+y\vec{j}+z\vec{k}$. Vamos calcular o fluxo do campo $\vec{F}$ através da superfície $S$ dado por $\Phi=\iint_S \vec{F}\cdot\vec{n} d S $. Para aplicar a expressão \eqref{definicao_int_sup_vet_par}, separamos a esfera em duas superfícies: $S_1$ de equação $z=h_1(x,y)=\sqrt{a^2-x^2-y^2}$ e $S_2$ de equação $z=h_2(x,y)=-\sqrt{a^2-x^2-y^2}$. Assim,
+\begin{equation*}
+\iint_S \vec{F}\cdot\vec{n} d S=  \iint_{S_1} \vec{F}_1\cdot\vec{n} d S+\iint_{S_2} \vec{F}_2\cdot\vec{n} d S.
+\end{equation*}
+Definimos $G_1=z-\sqrt{a^2-x^2-y^2}$ e $G_2=z+\sqrt{a^2-x^2-y^2}$ e calculamos
+$$
+\vec{\nabla}G_1=\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}+\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}
+$$
+e 
+$$
+\vec{\nabla}G_2=-\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}-\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}.
+$$
+Observe que $\vec{\nabla}G_1$ está no sentido para fora da superfície e $\vec{\nabla}G_2$ no sentido para dentro. Logo, vamos escolher um sinal positivo e outro negativo na definição \eqref{definicao_int_sup_vet_par}.
+Assim, sabendo que o campo na superfície $S_1$ é dado por $\vec{F}_1=x\vec{i}+y\vec{j}+\sqrt{a^2-x^2-y^2}\vec{k}$ e, o campos na supefície $S_2$ é dado por $\vec{F}_2=x\vec{i}+y\vec{j}-\sqrt{a^2-x^2-y^2}\vec{k}$, temos:
+\begin{eqnarray*}
+\iint_S \vec{F}\cdot\vec{n} d S&=&  \iint_{D} \vec{F}_1\cdot \vec{\nabla}G_1 d A-\iint_{D} \vec{F}_2\cdot\vec{\nabla}G_2 d A\\
+&=&  \iint_{D} \frac{x^2}{\sqrt{a^2-x^2-y^2}}+\frac{y^2}{\sqrt{a^2-x^2-y^2}}+\sqrt{a^2-x^2-y^2} d A\\&-&\iint_{D} -\frac{x^2}{\sqrt{a^2-x^2-y^2}}-\frac{y^2}{\sqrt{a^2-x^2-y^2}}-\sqrt{a^2-x^2-y^2} d A\\
+&=&  2\iint_{D} \frac{x^2+y^2}{\sqrt{a^2-x^2-y^2}}+\sqrt{a^2-x^2-y^2} d A\\
+&=&  2\iint_{D} \frac{a^2}{\sqrt{a^2-x^2-y^2}} d A,
+\end{eqnarray*}
+onde $D$ é o disco de raio $a$ no plano $z=0$. Portanto,
+\begin{eqnarray*}
+\Phi&=& \iint_S \vec{F}\cdot\vec{n} d S\\
+&=&  2\int_0^{2\pi }\int_{0}^a\frac{a^2}{\sqrt{a^2-r^2}} rdrd\theta\\
+&=&  2\pi a^2\left[ -\frac{\sqrt{a^2-r^2}}{1/2} \right]_{0}^a\\
+&=&  4\pi a^3. 
+\end{eqnarray*}
+
+
+\end{ex}
 
 \begin{ex}\label{int_sup_ex_1} Considere a superfície $S$
 $$z=0,~ {x^2+y^2}\leq 1,$$
