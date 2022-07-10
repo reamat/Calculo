@@ -1,0 +1,172 @@
+\chapter{Integral de Linha}
+  Neste capítulo, estudamos a integral de linha\index{integral de linha} e teoremas relacionados.
+\section{A integral de linha para um campo escalar}
+Para um campo escalar $f:D\to\mathbb{R}$, $D\subset \mathbb{R}^3$, a integral de linha ao longo de uma curva suave por partes é definida por
+$$
+\int_{\mathcal{C}} f(\vec{r})\, ds = \int_a^b f\left(\vec{r}(t)\right) \left|\vec{r}'(t)\right| \, dt,
+$$
+onde $\vec{r}$ é uma parametrização para $C$ tal que $\vec{r}(a)$ e $\vec{r}(b)$ são os pontos iniciais e finais da curva.
+\section{A integral de linha para um campo vetorial}
+Para um campo vetorial $\vec{F}:D\to\mathbb{R}^3$, $D\subset \mathbb{R}^3$, a integral de linha ao longo de uma curva suave por partes $C$ é definida por
+$$
+\int_C \vec{F}(\vec{r})\cdot\,d\vec{r} = \int_a^b \vec{F}(\vec{r}(t))\cdot\vec{r}'(t)\,dt
+$$
+onde $\vec{r}$ é uma parametrização para $C$ tal que $\vec{r}(a)$ e $\vec{r}(b)$ são os pontos iniciais e finais da curva, que está no sentido $\vec{r}(a)\to \vec{r}(b)$.
+
+
+
+\section{O Teorema Fundamental para Integral de Linha}
+\begin{teo}\index{teorema fundamental para integral de linha}Seja $\vec{F}$ um campo vetorial definido numa região $R$ do espaço e $P_0(x_0,y_0,z_0)$ e $P_1(x,y,z)$ dois pontos em $R$. Se $\vec{F}$ é conservativo \index{campo!conservativo}, isto é, $\vec{F}=\vec{\nabla}\varphi$ para algum potencial $\varphi$, então
+\begin{equation}\label{TeoFundCalculo}
+\int_C\vec{F}\cdot d \vec{r} =\varphi(x,y,z)-\varphi(x_0,y_0,z_0),
+\end{equation}
+para qualquer curva $C$ suave por partes em $R$ com início em $P_0$ e extremidade em $P$.
+
+Reciprocamente, se
+$$
+\int_C\vec{F}\cdot d \vec{r}
+$$
+é independente da curva que começa em $P_0$ e termina em $P_1$, então o campo é conservativo.
+\end{teo}
+\begin{proof}
+Sem perda de generalidade, suponha $C$ uma curva suave parametrizada por $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t_0\leq t\leq t_1$, com início em $\vec{r}(t_0)=P_0$ e fim em $\vec{r}(t_1)=P$. Então, supondo que $\vec{F}$ é conservativo, isto é, $\vec{F}=\vec{\nabla}\varphi$, temos
+\begin{eqnarray*}
+\int_C\vec{F}\cdot d \vec{r} &=& \int_C\vec{\nabla}\varphi\cdot d \vec{r}\\
+&=& \int_{t_0}^{t_1}\vec{\nabla}\varphi\cdot \vec{r}'(t)dt\\
+&=& \int_{t_0}^{t_1}\left(\frac{\partial\varphi}{\partial x}\vec{i}+\frac{\partial\varphi}{\partial y}\vec{j}+\frac{\partial\varphi}{\partial z}\vec{k}\right)\cdot \left(\frac{\partial x}{\partial t}\vec{i}+\frac{\partial y}{\partial t}\vec{j}+\frac{\partial z}{\partial t}\vec{k}\right) dt\\
+&=& \int_{t_0}^{t_1}\left(\frac{\partial\varphi}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial\varphi}{\partial y}\frac{\partial y}{\partial t}+\frac{\partial\varphi}{\partial z}\frac{\partial z}{\partial t}\right) dt.
+\end{eqnarray*}
+Usando a regra da cadeia, temos que o termo
+$$
+\frac{D\varphi}{Dt}=\frac{\partial\varphi}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial\varphi}{\partial y}\frac{\partial y}{\partial t}+\frac{\partial\varphi}{\partial z}\frac{\partial z}{\partial t}
+$$
+é a derivada total de $\varphi$ com respeito a $t$. Logo, pelo Teorema Fundamental do Cálculo, temos:
+\begin{eqnarray*}
+\int_C\vec{F}\cdot d \vec{r} &=&  \int_{t_0}^{t_1}\frac{D\varphi}{Dt} dt\\
+&=& \varphi(x(t_1),y(t_1),z(t_1))- \varphi(x(t_0),y(t_0),z(t_0))\\
+&=& \varphi(x,y,z)- \varphi(x_0,y_0,z_0).
+\end{eqnarray*}
+Reciprocamente, dado que a expressão \eqref{TeoFundCalculo} é válida para qualquer curva $C$ que liga dois pontos na região, definimos a função
+$$
+\varphi(x,y,z)=\int_C \vec{F}\cdot d\vec{r}=\int_{P_0}^{P_1} \vec{F}\cdot d\vec{r}=\int_{(x_0,y_0,z_0)}^{(x,y,z)} \vec{F}\cdot d\vec{r},
+$$
+onde $C$ é uma curva qualquer que começa em $P_0$ e termina em $P$. Mostraremos que $\phi$ é o potencial do campo $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, ou seja, $\vec{F}=\vec{\nabla}\varphi$. De fato, observe que
+\begin{eqnarray*}
+\varphi(x+\Delta x,y,z)-\varphi(x,y,z)&=&\int_{(x_0,y_0,z_0)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}-\int_{(x_0,y_0,z_0)}^{(x,y,z)} \vec{F}\cdot d\vec{r}\\
+&=&\int_{(x_0,y_0,z_0)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}+\int^{(x_0,y_0,z_0)}_{(x,y,z)} \vec{F}\cdot d\vec{r}\\
+&=&\int_{(x,y,z)}^{(x+\Delta x,y,z)} \vec{F}\cdot d\vec{r}.
+\end{eqnarray*}
+Parametrizando um caminho reto entre $(x,y,z)$ e $(x+\Delta x,y,z)$ por $\vec{r}=t\vec{i}+y\vec{j}+z\vec{k}$, $x\leq t\leq \Delta x$, temos:
+\begin{eqnarray*}
+\varphi(x+\Delta x,y,z)-\varphi(x,y,z)&=&\int_x^{x+\Delta x} \vec{F}\cdot \vec{r}' dt \\
+&=&\int_x^{x+\Delta x} \left(F_1\vec{i}+F_2\vec{j}+F_3\vec{k}\right)\cdot \vec{i} dt\\
+&=&\int_x^{x+\Delta x} F_1 (t,y,z) dt .
+\end{eqnarray*}
+Logo, pelo teorema do valor médio,
+\begin{eqnarray*}
+\frac{\varphi(x+\Delta x,y,z)-\varphi(x,y,z)}{\Delta x}&=& \frac{1}{\Delta x}\int_x^{x+\Delta x} F_1 (t,y,z) dt\\
+&=& \frac{1}{\Delta x}  F_1 (\xi,y,z) , \qquad x\leq \xi\leq x+\Delta x.
+\end{eqnarray*}
+Portanto,
+\begin{eqnarray*}
+\frac{\partial \varphi}{\partial x}&=&\lim_{\Delta x\to 0}\frac{\varphi(x+\Delta x,y,z)-\varphi(x,y,z)}{\Delta x}\\
+&=&\lim_{\Delta x\to 0} \frac{1}{\Delta x}  F_1 (\xi,y,z)\\
+&=&F_1 (x,y,z).
+\end{eqnarray*}
+Analogamente, podemos demonstrar que
+$$
+\frac{\partial \varphi}{\partial y}=F_2(x,y,z) \qquad \text{e}\qquad \frac{\partial \varphi}{\partial z}=F_3(x,y,z),
+$$
+ou seja, $\vec{F}=\vec{\nabla}\varphi.$
+\end{proof}
+
+
+\section{Relação entre campos irrotacionais e conservativos}
+\begin{teo}Seja $\vec{F}$ um campo vetorial definido numa região $R$ do espaço. Então $\vec{F}$ é conservativo \index{campo!conservativo}, isto é, $\vec{F}=\vec{\nabla}\varphi$ para algum potencial $\varphi$, se e somente se $\vec{F}$ é irrotacional, \index{campo!irrotacional}, isto é, $\vec{\nabla}\times \vec{F}=\vec{0}$.
+\end{teo}
+\begin{proof}Se $\vec{F}$ é conservativo, isto é, $\vec{F}=\vec{\nabla}\varphi$, então pelo item 8 da tabela de indentidades~\ref{tab_identidades_del}, $$\vec{\nabla}\times \vec{F}=\vec{\nabla}\times \vec{\nabla}\varphi=\vec{0}.$$
+Reciprocamente, dado $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$ com 
+$$
+\vec{\nabla }\times \vec{F}=\left| \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+F_1 & F_2 & F_3
+ \end{array}\right|=\vec{0},
+ $$ 
+temos
+\begin{equation}\label{rot_zero_eq1}
+ \frac{\partial F_3}{\partial y}=\frac{\partial F_2}{\partial z},
+\end{equation}
+\begin{equation}\label{rot_zero_eq2}
+ \frac{\partial F_1}{\partial z}=\frac{\partial F_3}{\partial x}
+\end{equation}
+e
+\begin{equation}\label{rot_zero_eq3}
+ \frac{\partial F_2}{\partial x}=\frac{\partial F_1}{\partial y}.
+\end{equation}
+Agora, defina
+\begin{equation}\label{def_pot_campo_conser}
+\varphi(x,y,z)=\int_C \vec{F}\cdot d\vec{r},
+\end{equation}
+onde $C$ é a curva que liga os pontos $(x_0,y_0,z_0)$ ao ponto $(x,y,z)$ através das arestas do paralelepípedo de vértices $(x_0,y_0,z_0)$, $(x,y_0,z_0)$, $(x_0,y,z_0)$, $(x,y,z_0)$, $(x_0,y_0,z)$, $(x,y_0,z)$, $(x_0,y,z)$ e $(x,y,z)$. Isto é, $C$ pode ser escrito com a união de três segmentos de retas, $C=C_1 \cup C_2\cup C_3$, com as seguintes parametrizações: 
+$$
+C_1: \vec{r}_1(t)=t\vec{i}+y_0\vec{j}+z_0\vec{k},\qquad x_0\leq t\leq x,
+$$ 
+$$
+C_2: \vec{r}_2(t)=x\vec{i}+t\vec{j}+z_0\vec{k},\qquad y_0\leq t\leq y
+$$ 
+e
+$$
+C_3: \vec{r}_3(t)=x\vec{i}+y\vec{j}+t\vec{k},\qquad z_0\leq t\leq z.
+$$ 
+Mostraremos que $\varphi$ é um potencial para o campo $\vec{F}$, isto é, $\vec{F}=\vec{\nabla}\varphi$. De fato, da equação \eqref{def_pot_campo_conser}, usamos as parametrizações das curvas $C_1$, $C_2$ e $C_3$ para obter
+\begin{eqnarray}
+\nonumber \varphi(x,y,z)&=&\int_{C_1} \vec{F}\cdot d\vec{r}+\int_{C_2} \vec{F}\cdot d\vec{r}+\int_{C_3} \vec{F}\cdot d\vec{r}\\
+\nonumber&=&\int_{x_0}^x \vec{F}\cdot \vec{r}'_1(t)dt+ \int_{y_0}^y \vec{F}\cdot \vec{r}'_2(t)dt+\int_{z_0}^z \vec{F}\cdot \vec{r}'_3(t)dt\\
+&=&\int_{x_0}^x F_1(t,y_0,z_0) d t+ \int_{y_0}^y F_2(x,t,z_0)dt+\int_{z_0}^z F_3(x,y,t)dt.\label{def_pot_campo_conser_calculado}
+\end{eqnarray}
+Pelo Teorema Fundamental do Cálculo, derivamos a expressão \eqref{def_pot_campo_conser_calculado} em $z$ e obtemos a última componente do campo:
+\begin{equation}\label{gradiente_3_comp}
+\frac{\partial \varphi}{\partial z}=F_3(x,y,z). 
+\end{equation}
+Agora, derivamos a expressão \eqref{def_pot_campo_conser_calculado} em $y$
+\begin{eqnarray*}
+\frac{\partial \varphi}{\partial y}&=&F_2(x,y,z_0)+\frac{\partial}{\partial y}\int_{z_0}^z F_3(x,y,t)dt\\
+&=&F_2(x,y,z_0)+\int_{z_0}^z \frac{\partial F_3(x,y,t)}{\partial y}dt\\ 
+&=&F_2(x,y,z_0)+\int_{z_0}^z \frac{\partial F_2(x,y,t)}{\partial z}dt. 
+\end{eqnarray*}
+onde usamos a expressão \eqref{rot_zero_eq1} na última passagem. Assim, usamos o Teorema Fundamental do Cálculo para obter
+\begin{equation}\label{gradiente_2_comp}
+\frac{\partial \varphi}{\partial y}=F_2(x,y,z_0)+F_2(x,y,z)-F_2(x,y,z_0)=F_2(x,y,z). 
+\end{equation}
+Finalmente, derivamos a expressão \eqref{def_pot_campo_conser_calculado} com respeito a $x$:
+\begin{eqnarray*}
+\frac{\partial \varphi}{\partial x}&=&F_1(x,y_0,z_0) d t+ \frac{\partial}{\partial x}\int_{y_0}^y F_2(x,t,z_0)dt+ \frac{\partial}{\partial x}\int_{z_0}^z F_3(x,y,t)dt\\
+&=&F_1(x,y_0,z_0) d t+ \int_{y_0}^y \frac{\partial F_2(x,t,z_0)}{\partial x}dt+ \int_{z_0}^z \frac{\partial F_3(x,y,t)}{\partial x}dt\\
+&=&F_1(x,y_0,z_0) d t+ \int_{y_0}^y \frac{\partial F_1(x,t,z_0)}{\partial y}dt+ \int_{z_0}^z \frac{\partial F_1(x,y,t)}{\partial z}dt,
+\end{eqnarray*}
+onde usamos as expressões \eqref{rot_zero_eq2} e \eqref{rot_zero_eq3} na última passagem. Assim, usamos o Teorema Fundamental do Cálculo para concluir que
+\begin{eqnarray}
+\nonumber \frac{\partial \varphi}{\partial x}&=&F_1(x,y_0,z_0)+F_1(x,y,z_0)-F_1(x,y_0,z_0)+F_1(x,y,z)-F_1(x,y,z_0)\\
+&=&F_1(x,y,z)\label{gradiente_1_comp}
+\end{eqnarray}
+
+Portanto, das expressões \eqref{gradiente_1_comp}, \eqref{gradiente_2_comp} e \eqref{gradiente_3_comp}, concluímos que $\vec{F}=\vec{\nabla}\varphi$, ou seja, $\vec{F}$ é um campo conservativo.
+\end{proof}
+
+
+\section{O Teorema de Green}
+\begin{teo}
+ Seja $C$ uma curva simples, fechada e derivável, $D$ a região do plano delimitada por $C$, e $P$ e $Q$ duas funções reais de variável real com derivadas parciais contínua numa região contendo $D$, então:
+
+$$\int_{C} (P dx + Q dy) = \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
+y}\right) dA.
+$$
+Em termo de notação, também se costuma usar $\oint_C$ para enfatiza que o caminho $C$ é fechado. Nesse caso, supondo $\vec{F}=P\vec{i}+Q\vec{j}$, podemos escrever o teorema da forma
+$$
+\oint_C  \vec{F} \cdot d\vec{r}=\iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
+y}\right) dA.
+$$
+\end{teo}
+
+
