@@ -331,7 +331,46 @@ Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(
 \construirSec
 
 \subsection*{Exercícios resolvidos}
-
+\begin{exeresol}
+  Dado o campo vetorial $\vec{F}(x,y,z) = 2xy^3+(1+3x^2y^2)\vec{j}$.
+  \begin{itemize}
+  \item[a)] Mostre que o campo é irrotacional.
+  \item[b)] Encontre uma função potencial $\varphi(x,y,z)$.
+  \item[c)] Calcule o trabalho $W:=\int_C \vec{F}\cdot d\vec{r}$ ao longo de uma curva que liga o ponto $(1,4,0)$ até o ponto $(3,1,0)$.
+  \item[d)] Trace algumas curvas equipotenciais de $\varphi(x,y,z)$.
+  \end{itemize}
+\end{exeresol}
+\begin{resol}
+  Para o item a), basta calcular o rotacional:
+  \begin{eqnarray*}
+  \vec{\nabla}\times \vec{F} &=& \left|
+  \begin{array}{ccc}
+  \vec{i} & \vec{j} & \vec{k} \\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+  2xy^3 & 1+3x^2y^2 & 0
+  \end{array}
+  \right| \\
+  &=& \left(0-0\right)\vec{i} + \left(0-0\right)\vec{j} + \left(6xy^2-6xy^2\right)\vec{k}\\
+  &=& \vec{0}
+  \end{eqnarray*}
+\end{resol}
+A função potencial $\varphi$ deve satisfazer $\vec{\nabla}\varphi=\vec{F}$, isto é:
+\begin{eqnarray*}
+\frac{\partial \varphi}{\partial x} &=& 2xy^3 \\
+\frac{\partial \varphi}{\partial y} &=& 1+x^2y^2 \\
+\frac{\partial \varphi}{\partial z} &=& 0
+\end{eqnarray*}
+Da primeira equação, temos $\varphi(x,y,z)= x^2y^3+C(y,z)$. Diferenciando esta expressão substituindo na segunda condição, temos:
+\begin{eqnarray*}
+\frac{\partial }{\partial y}(x^2y^3+C(y,z)) &=& 1+x^2y^2.
+\end{eqnarray*}
+Isso implica $C_y(y,z)=1$, isto é, $C(y,z) = y+D(z)$. Da última expressão vemos que $D'(z)=0$ e portanto:
+$$\varphi(x,y,z)=x^2y^3+y+E.$$
+Para o item c), basta aplicar o teorema das integrais de linha:
+\begin{eqnarray*}
+W &=& \int_C \vec{F}\cdot d\vec{r} = \varphi(3,1,0)- \varphi(1,4,0)\\
+  &=& (9+1+E) - (64+4+E) = -58.
+\end{eqnarray*}
 \construirExeresol
 
 \begin{exeresol}
