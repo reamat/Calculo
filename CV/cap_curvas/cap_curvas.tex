@@ -2,7 +2,7 @@
 
 
 \chapter{Curvas e trajetórias}\index{curvas e trajetórias}\index{trajetórias}
-  Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. %Na seção \ref{tr}Definimos o triedro de Frenet-Serret e introduzimos os conceitos de curvatura e torção, bem como aplicações na física-matemática.
+  Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. 
 
 \section{Funções vetoriais de uma variável - curvas e trajetórias}
 Uma função vetorial de uma variável é uma função da forma $$\vec{r}:D\to \mathbb{R}^3,$$ onde $D\subseteq \mathbb{R}$ é o domínio de definição de $\vec{r}$ e $t$ é um parâmetro - podendo ser interpretado como o tempo ou não. Em coordenadas cartesianas, uma função vetorial assume a seguinte forma:
@@ -102,12 +102,51 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \end{obs}
 
 
-\subsection*{Exercícios resolvidos}
+%\subsection*{Exercícios resolvidos}
+
+
 
 
 
 \subsection*{Exercícios}
 
+\begin{exer}Calcule as derivadas das funções vetoriais do exemplo \ref{exfv01}:
+\begin{itemize}
+\item [a)] $\vec{f}(t)=\sin(t)\vec{i}+\cos(t)\vec{j}$
+\item [b)] $\vec{g}(t)=t \vec{i}+\cosh(t)\vec{k}$
+\item [c)] $\vec{h}(t)=2\cos(t)\vec{i}+4\sin(t)\vec{j}+t\vec{k},~~ 0\leq t \leq 8\pi$
+\end{itemize}
+\end{exer}
+
+\begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$\end{resp}
+\begin{exer} Dada a função vetorial $\vec{r}(t)=t^2\vec{i}+e^t\vec{j}-2\cos\pi t ~\! \vec{k}$, calcule:
+\begin{itemize}
+\item [a)] $\displaystyle \lim_{t\to 0} \vec{r}(t)$
+\item [b)] $\displaystyle \frac{d \vec{r}(t)}{dt}$
+\item [c)] $\displaystyle \frac{d\vec{r}(1)}{dt}$
+\item [d)] $\displaystyle \int_0^1 \vec{r}(t)dt$
+\item [e)] $\displaystyle \int \vec{r}(t)dt$
+\end{itemize}
+\end{exer}
+\begin{resp} $\vec{j}-2\vec{k}$, $\frac{\vec{r(t)}}{dt}=2t\vec{i}+e^t\vec{j}+2\pi\sin\pi t ~\! \vec{k}$, $\frac{\vec{r}(1)}{dt}=2\vec{i}+e\vec{j}$, $\frac{1}{3}\vec{i}+(e-1)\vec{j}$, $\left(\frac{1}{3}t^3+C_1\right)\vec{i}+\left(e^t+C_2\right)\vec{j}+\left(-\frac{2}{\pi}\sin\pi t+C_3\right)\vec{k}$
+\end{resp}
+\begin{exer}Encontre o domínio da função vetorial $\vec{r}(t)$ e o valor da função no ponto $t_0$ para:
+\begin{itemize}
+ \item[a)] $\vec{r}=\cos(t)\vec{i}-3t\vec{j}$; $t_0=\pi$.
+ \item[b)] $\vec{r}=\cos(\pi t)\vec{i}-\ln(t)\vec{j}+\sqrt{t-2}$; $t_0=3$.
+\end{itemize}
+\end{exer}
+\begin{exer}Expresse as equações paramétricas abaixo como uma única equação vetorial:
+\begin{itemize}
+ \item[a)] $x(t)=2\cos(t)$; $y(t)=t+\sin(t)$.
+ \item[b)] $x(t)=2t$; $y(t)=2\sin(3t)$; $z(t)=5\cos(3t)$.
+\end{itemize}
+\end{exer}
+\begin{exer}Encontre a declividade (coeficiente angular) da reta contida no plano $z=0$ representada por $\vec{r}=(1-2t)\vec{i}+(2-3t)\vec{j}$
+\end{exer}
+\begin{resp}
+ -$\frac{3}{2}$
+\end{resp}
 \begin{exer} Reconheça e represente graficamente as curvas descritas pelas seguintes funções vetoriais:
 \begin{itemize}
 \item [a)] $\vec{f}(t)=\sin(t)\vec{i}+\cos(t)\vec{j}+\vec{k}$, $0\leq t \leq \pi$
@@ -120,23 +159,14 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \end{exer}
 \begin{resp} Semicircunferência de raio 1 centrada em $(0,0,1)$ sobre o plano $z=1$. Elipse de semi-eixos $1$ e $2$ centrada na origem sobre o plano $xz$. Hélice circular levogira de raio $1$ e passo $2\pi$.  Semicircunferência de raio 2 centrada na origem sobre o plano $xy$ e $y\geq 0$. Uma catenária sobre o plano $xy$. Uma hipérbole. 
 \end{resp}
-
+\begin{exer}Dada a hélice circular $\vec{r}(t)=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, sendo $c>0$, encontre $c$ tal que a cada volta completa $z$ avance $3$ unidades.
+ \end{exer}
 \begin{exer}Seja $\vec{r}(t)$ o vetor posição de uma partícula dado por
 $$\vec{r}(t)=a\cos(wt)\vec{i}+a\sin(wt)\vec{j}$$
 Calcule o vetor velocidade $\vec{v}$ e o vetor aceleração $\vec{a}$ dados por $\vec{v}=\frac{d\vec{r}(t)}{dt}$ e $\vec{a}=\frac{d\vec{v}(t)}{dt}$.
 \end{exer}
 
-\begin{exer} Dada a função vetorial $\vec{r}(t)=t^2\vec{i}+e^t\vec{j}-2\cos\pi t ~\! \vec{k}$, calcule:
-\begin{itemize}
-\item [a)] $\displaystyle \lim_{t\to 0} \vec{r}(t)$
-\item [b)] $\displaystyle \frac{d \vec{r}(t)}{dt}$
-\item [c)] $\displaystyle \frac{d\vec{r}(1)}{dt}$
-\item [d)] $\displaystyle \int_0^1 \vec{r}(t)dt$
-\item [e)] $\displaystyle \int \vec{r}(t)dt$
-\end{itemize}
-\end{exer}
-\begin{resp} $\vec{j}-2\vec{k}$, $\frac{\vec{r(t)}}{dt}=2t\vec{i}+e^t\vec{j}+2\pi\sin\pi t ~\! \vec{k}$, $\frac{\vec{r}(1)}{dt}=2\vec{i}+e\vec{j}$, $\frac{1}{3}\vec{i}+(e-1)\vec{j}$, $\left(\frac{1}{3}t^3+C_1\right)\vec{i}+\left(e^t+C_2\right)\vec{j}+\left(-\frac{2}{\pi}\sin\pi t+C_3\right)\vec{k}$
-\end{resp}
+
 
 \begin{exer} Verifique que a função vetorial dada por $\vec{f}(t)=\frac{1-t^2}{1+t^2}\vec{i}+\frac{2t}{1+t^2}\vec{j}$, $-\infty<t<\infty$
 representa uma curva contida em uma circunferência no plano $xy$  centrada na origem. Identifique o raio desta circunferência, identifique a curva e isole os quatro quadrantes.
@@ -144,12 +174,6 @@ representa uma curva contida em uma circunferência no plano $xy$  centrada na o
 
 \begin{resp}raio=$1$, centro na origem. $Q1: 0<t<1$, $Q2:t>1$, $Q3:t<-1$, $Q4:-1<t<0$. A curva é a circunferência menos o ponto $\left<-1,0\right>$.
 \end{resp}
-
-
-\begin{exer}Encontre a derivada de cada uma das funções vetoriais do exemplo \ref{exfv01}
-\end{exer}
-
-\begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$\end{resp}
 
 \begin{exer}
 Sendo $\hat{r}(t)=\frac{1}{r(t)} \vec{r}(t)$, onde $r(t)=\|\vec{r}(t)\|$,  mostre as seguintes identidades:
@@ -167,10 +191,22 @@ r' \|\hat{r}\|^2 + r \frac{d\hat{r}}{dt} \cdot \hat{r} = r' $
 \frac{d \vec{r}}{dt} \times \frac{d \vec{r}}{dt} + \vec{r} \times \frac{d^2 \vec{r}}{dt^2} = \vec{r} \times \frac{d^2 \vec{r}}{dt^2} $. c) a partir de a), multiplica numerador e denominador por $r(t)$. d) $\frac{d\hat{r}}{dt} = 
 \frac{d}{dt} \left( r^{-1} \vec{r} \right) = \frac{d}{dt} \left( r^{-1} \right) \vec{r} + r^{-1} \frac{d \vec{r}}{dt} = \frac{1}{r} \frac{d\vec{r}}{dt} - \frac{r'}{r^2} \vec{r} = \frac{1}{r} \frac{d \vec{r}}{dt} - \frac{ \vec{r} \cdot \frac{d \vec{r}}{dt} }{r^3} \vec{r} $ pela parte c). 
 \end{resp}
-
- 
+\begin{exer}Dadas $\vec{u}(t)=t^2\vec{i}-3t\vec{k}$, $\vec{v}(t)=-4t^3\vec{j}+(t+1)\vec{k}$ e $\vec{w}(t)=3t^2\vec{i}+t\vec{j}-t^3\vec{k}$, encontre:
+\begin{itemize}
+ \item[a)] $(\vec{u}\cdot \vec{v})'$.
+ \item[b)] $(\vec{u}\times \vec{v})'$.
+ \item[c)] $\left[\vec{u}\times (\vec{v}+\vec{w})\right]'$.
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item[a)] $-3(2t+1)$.
+ \item[b)] $-48t^3\vec{i}-(3t^2+2t)\vec{j}-20t^4\vec{k}$.
+ \item[c)] $(6t-48t^3)\vec{i}-(2t+30t^2-5t^4)\vec{j}+(3t^2-20t^4)\vec{k}$.
+\end{itemize} 
+\end{resp}
 \section{Comprimento de arco}
-% Dada uma curva parametrizada pela função vetorial $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t\in[a,b]$, estamos interessados no problema de calcular o comprimento $L$ do arco de descrito por uma curva $\vec{r}(t)$, $a\leq t\leq b$.
+Dada uma curva parametrizada pela função vetorial $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t\in[a,b]$, estamos interessados no problema de calcular o comprimento $L$ do arco de descrito por uma curva $\vec{r}(t)$, $a\leq t\leq b$.
   
 \begin{figure}
 \centering
@@ -305,20 +341,42 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
 
-\begin{exer}
+
+
+\begin{exeresol}
   Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc4}. Encontre o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
-\end{exer}
-
+\end{exeresol}
+\begin{resol}
  $\vec{v}(t) = \frac{d \vec{r}}{dt} = -2t \vec{i} + t(2+3t) \vec{j} + t(2-3t)\vec{k}$. Então $\left\|\vec{v} \right\|^2 = 4t^2 + t^2(2+3t)^2 + t^2(2-3t)^2 = t^2(12+18t^2)$ e assim $\vec{T} = \frac{\vec{v}}{\|\vec{v}\|} = \frac{-2 }{\sqrt{12+18t^2}}\vec{i} + \frac{2+3t}{\sqrt{12+18t^2}}\vec{j} + \frac{2-3t}{\sqrt{12+18t^2}}\vec{k}$. Derivando em relação a $t$: $\frac{d\vec{T}}{dt} = \frac{36t}{(12+18t^2)^{3/2}} \vec{i} + \frac{36(1-t)}{(12+18t^2)^{3/2}} \vec{j} - \frac{36(1+t)}{(12+18t^2)^{3/2}} \vec{k} $ e para normalizar sem trocar seu sentido definimos $\vec{u} = t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k}$, que implica $\|\vec{u}\|^2=t^2 + (1-t)^2 + (1+t)^2 = 3t^2 + 2$, e então $\vec{N} = \frac{\frac{d\vec{v}}{dt}}{\|\frac{d\vec{v}}{dt}\|} = \frac{\vec{u}}{\|\vec{u}\|}=\frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}$. Finalmente $ \vec{B} = \vec{T} \times \vec{N}$ calculado via $\left| \begin{array}{ccc}
 \vec{i} & \vec{j} & \vec{k} \\
 \frac{-2}{\sqrt{12+18t^2}} & \frac{2+3t}{\sqrt{12+18t^2}} & \frac{2-3t}{\sqrt{12+18t^2}} \\
 \frac{t}{\sqrt{3t^2+2}} & \frac{1-t}{\sqrt{3t^2+2}} &  \frac{-1-t}{\sqrt{3t^2+2}} \end{array} \right| = \frac{(-4-6t^2)\vec{i} - (2+3t^2)\vec{j} - (2+3t^2)\vec{k}}{ \sqrt{12+18t^2} \sqrt{3t^2+2}} = \frac{-2}{\sqrt{6}} \vec{i} - \frac{1}{\sqrt{6}} \vec{j} - \frac{1}{\sqrt{6}} \vec{k}$.
-
+\end{resol}
 
 
 \subsection*{Exercícios}
+\begin{exer}Calcule $\vec{r}'(t_0)$ e esboce o gráfico de $\vec{r}(t)$ juntamente com o vetor tangente $\vec{r}'(t_0)$.
+\begin{itemize}
+ \item[a)] $\vec{r}(t)=t\vec{i}+t^2\vec{j}$, $t_0=2$.
+ \item[b)] $\vec{r}(t)=e^{-t}\vec{i}+e^{2t}\vec{j}$, $t_0=\ln(2)$.
+ \item[c)] $\vec{r}(t)=2\sin(t)\vec{i}+\vec{j}+2\cos(t)\vec{k}$, $t_0=\frac{\pi}{2}$.
+ \end{itemize}
+\end{exer}
+\begin{exer}
+Encontre os vetores unitários $\vec{T}$ e $\vec{N}$ para as curvas abaixo em $t=t_0$.
+\begin{itemize}
+ \item[a)] $\vec{r}(t)=5\cos(t)\vec{i}+5\sin(t)\vec{j}$, $t_0=\frac{\pi}{3}$.
+ \item[b)] $\vec{r}(t)=(t^2-1)\vec{i}+t\vec{j}$, $t_0=1$.
+\end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)]$\vec{T}=\left(-\frac{\sqrt{3}}{2},\frac{1}{2}\right)$, $\vec{N}=\left(-\frac{1}{2},-\frac{\sqrt{3}}{2}\right)$.
+  \item[a)]$\vec{T}=\left(\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}}\right)$, $\vec{N}=\left(\frac{1}{\sqrt{5}},-\frac{2}{\sqrt{5}}\right)$.
+ \end{itemize}
+
+\end{resp}
 
 \begin{exer} Represente graficamente o terno de vetores $\vec{T}$,$\vec{N}$ e $\vec{B}$ e verifique através da regra da mão direita as seguintes identidades:
 \begin{itemize}
@@ -329,6 +387,20 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 Use a identidade vetorial dada por
 $$\vec{u}\times\left(\vec{v}\times\vec{w}\right)=\vec{v}\left(\vec{u}\cdot\vec{w}\right)-\vec{w}\left(\vec{u}\cdot\vec{v}\right)$$ para obter as identidades $b$ e $c$ a partir de $a$.
 \end{exer}
+\begin{exer}\label{exer_formula_binormal}
+ O vetor binormal unitário foi definido em aula como $\vec{B}(t)=\vec{T}(t)\times\vec{N}(t)$. Argumente, sem cálculos, que ele também poderia ser definido como 
+ $$
+ \vec{B}(t)=\frac{\vec{r}'(t)\times \vec{r}''(t)}{\|\vec{r}'(t)\times \vec{r}''(t)\|}.
+ $$
+\end{exer}
+\begin{exer}
+ Use a fórmula do exercício \ref{exer_formula_binormal} para calcular $\vec{B}(t)$ para a curva $C:$ $\vec{r}(t)=(\sin(t)-t\cos(t))\vec{i}+(\cos(t)+t\sin(t))\vec{j}+\vec{k}$.
+\end{exer}
+\begin{resp}
+ $\vec{B}(t)=-\vec{k}$.
+\end{resp}
+
+
 
 
 \begin{exer} Considere a trajetória dada pela equações paramétricas
@@ -350,7 +422,6 @@ Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos 
   Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
 \end{exer}
 
-\construirExer
 
 
 \section{Curvatura e Torção}
@@ -642,6 +713,37 @@ Podemos, agora, explorar diversos casos particular:
 
 
 \subsection*{Exercícios}
+\begin{exer}
+ Calcule a curvatura $\kappa(t)$ e faça um esboço com a respectiva circuferência de curvatura:
+ \begin{itemize}
+  \item[a)] $y=\frac{1}{x}$, em $x=1$. 
+  \item[b)] $y=\frac{1}{2}x^2$, em $x=-1$.
+  \item[c)] $y=e^x$, em $x=0$.
+ \end{itemize}
+ \end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\kappa=\frac{1}{\sqrt{2}}$.
+  \item[b)] $\kappa=\frac{1}{2\sqrt{2}}$.
+  \item[c)] $\kappa=\frac{1}{\sqrt{2}}$.
+ \end{itemize}
+
+\end{resp}
+
+\begin{exer}
+ Calcule o raio de curvatura $\rho(t)$ da elipse $x(t)=2\cos(t)$, $x(t)=\sin(t)$, $0\leq t\leq2\pi$, $t=0$ e $t=\frac{\pi}{2}$. Esboce as circunferências de curvatura nestes pontos.
+\end{exer}
+\begin{resp}
+ $\rho(0)=\frac{1}{2}$.
+\end{resp}
+\begin{exer}
+Em que ponto a curva $y=e^x$ tem a máxima curvatura?
+\end{exer}
+\begin{resp}
+ $t=\frac{1}{2}\ln\left(\frac{1}{2}\right)$.
+\end{resp}
+
+
 \begin{exer} Considere a hélice dada por
 \begin{eqnarray*}
 x&=&a\cos(t),\\
@@ -725,6 +827,80 @@ Como você interpreta os casos a) e b) ? As curvas dos ítens c) e g) possuem po
  $\rho_{min}= \frac{a^2}{b}$ e $\rho_{max}= \frac{b^2}{a}$. Quando $a=b$, a elipse é uma circuferência e o raio de curvatura é constante igual a $a=b$. $a=100m$ e $b=200m$. 
 \end{resp}
 
+\begin{exer}
+ Seja $\vec{r}(t)$ o vetor posição de uma partícula em movimento e $t$ o tempo. Encontre $\vec{v}(t)$, $\vec{a}(t)$ e $\|\vec{v}(t)\|$. Faça um esboço da trajetória representando $\vec{v}(t)$ e $\vec{a}(t)$ em $t_0$.
+ \begin{itemize}
+  \item[a)]$\vec{r}(t)=3\cos(t)\vec{i}+3\sin(t)\vec{j}$, $t_0=\frac{\pi}{3}$.
+    \item[b)]$\vec{r}(t)=e^t\vec{i}+e^{-t}\vec{j}$, $t_0=0$.
+    \item[c)]$\vec{r}(t)=\cosh(t)\vec{i}+\sinh(t)\vec{j}$, $t_0=\ln(2)$.
+        \item[d)]$\vec{r}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+t\vec{k}$, $t_0=\frac{\pi}{4}$.
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)]$\vec{v}\left(\frac{\pi}{3}\right)=\left(-\frac{3\sqrt{3}}{2},\frac{3}{2}\right)$, $\vec{a}\left(\frac{\pi}{3}\right)=\left(-\frac{3}{2},-\frac{3\sqrt{3}}{2}\right)$.
+  \item[b)]$\vec{v}\left(0\right)=\left(1,-1\right)$, $\vec{a}\left(0\right)=\left(1,1\right)$.
+    \item[c)]$\vec{v}\left(\ln(2)\right)=\left(\frac{3}{4},\frac{5}{4}\right)$, $\vec{a}\left(\ln(2)\right)=\left(\frac{5}{4},\frac{3}{4}\right)$.
+  \item[d)]$\vec{v}\left(\frac{\pi}{4}\right)=\left(-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},1\right)$, $\vec{a}\left(\frac{\pi}{4}\right)=\left(-\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2},0\right)$.
+ \end{itemize}
+\end{resp}
+\begin{exer}
+ A trajetória de uma partícula é representada na forma paramétrica por $x(t)=a\cos(wt)$, $y(t)=b\sin(wt)$.
+ \begin{itemize}
+  \item[a)] Faça um esboço da trajetória para $a=2$, $b=1$ e $w=1$.
+  \item[b)] Mostre que a aceleração $\vec{a}$ está voltada em direção à origem.
+  \item[c)] Mostre que $\|\vec{a}(t)\|$ é proporcional à distância da partícula à origem.
+ \end{itemize}
+ \end{exer}
+
+\begin{exer}
+O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec{j}$. Encontre o valor mínimo  para $\|\vec{v}(t)\|$ da partícula e sua localização quando tiver esta velocidade. 
+\end{exer}
+\begin{resp}
+ $\left\|\vec{v}(t)\right\|_{min}=\frac{\sqrt{2}}{2}$, $P\left(\frac{3}{16},-\frac{1}{16}\right)$.
+ \end{resp}
+\begin{exer}
+ Encontre o ângulo entre $\vec{v}(t)$ e $\vec{a}(t)$ para $\vec{r}=t^3\vec{i}+t^2\vec{j}$, $t=1$.
+\end{exer}
+\begin{resp}
+ $15^0$
+\end{resp}
+\begin{exer}
+ Onde ao longo da trajetória $\vec{r}(t)=(t^2-5t)\vec{i}+(2t+1)\vec{j}+3t^2\vec{k}$, os vetores velocidade e aceleração são ortogonais?
+\end{exer}
+\begin{resp}
+ $\left(P\left(-\frac{19}{16},\frac{3}{2},\frac{3}{16}\right)\right)$.
+\end{resp}
+\begin{exer}
+ Prove que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares. (Sugestão: Considere $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$).
+\end{exer}
+\begin{exer}Prove que se a aceleração de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.  (Sugestão: lembre-se que $\kappa=\frac{\|\vec{v}\times \vec{a}\|}{v^3} )$.
+\end{exer}
+\begin{exer}Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
+\begin{itemize}
+ \item[a)] $\vec{r}(t)=2\cos(t)\vec{i}+2\sin(t)\vec{j}$, $t_0=\frac{\pi}{3}$.
+ \item[b)] $\vec{r}(t)=e^{-t}\vec{i}+e^{t}\vec{j}$, $t_0=0$.
+ \item[c)] $\vec{r}(t)=(t^3-2t)\vec{i}+(t^2-4)\vec{j}$, $t_0=1$.
+ \item[d)] $\vec{r}(t)=t\vec{i}+t^2\vec{j}+t^3\vec{k}$, $t_0=1$.
+\end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item[a)] $a_T=0$, $a_N=2$.
+ \item[b)] $a_T=0$, $a_N=\sqrt{2}$.
+ \item[c)] $a_T=2\sqrt{5}$, $a_N=2\sqrt{5}$.
+ \item[d)] $a_T=\frac{22}{\sqrt{14}}$, $a_N=\sqrt{\frac{38}{7}}$.
+\end{itemize}
+ 
+\end{resp}
+\begin{exer}Calcule a componente tangencial da aceleração dado $\|v\|=\sqrt{3t^2+4}$, $t=2$.
+\end{exer}
+\begin{resp}
+ $\frac{3}{2}$.
+\end{resp}
+
+
+
 %  {\bf Questão 8} Encontre os semi-eixos da elipse cuja curvatura máxima é $8m^{-1}$ e o semi-eixo menor é $\frac{1}{4}m$.
 % 
 % {\bf Questão 9} Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$. 
@@ -736,8 +912,6 @@ Como você interpreta os casos a) e b) ? As curvas dos ítens c) e g) possuem po
 % Esboce o gráfico desta trajetória sobre o plano $xy$. Encontre uma expressão para a curvatura $k$ como uma função de $t$ e depois verifique que é possível escrever a curvatura como uma função da coordenada $x$. Encontre a curvatura máxima e os pontos onde ela acontece. {\bf Resp:} $k(x)=6x-4x^3$ máximo em $ \left(\pm \frac{\sqrt{2}}{2},\pm 1\right)$  
 
 
-
-\construirExer
 
 
 
