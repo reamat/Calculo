@@ -51,10 +51,19 @@ Um campo vetorial é representado graficamente por um conjunto de setas partindo
 %\end{figure}
 \end{ex}
 
+\subsection*{Exercícios}
+\begin{exer}
+ Faça um esboço dos campos vetoriais $\vec{F}$. Procure representar os vetores com as respectivas proporções:
+ \begin{itemize}
+  \item[a)] $\vec{F}(x,y)=2\vec{i}-\vec{j}$.
+  \item[b)] $\vec{F}(x,y)=y\vec{i}-x\vec{j}$;
+  \item[c)] $\vec{F}(x,y)=\frac{1}{\sqrt{x^2+y^2}}\left(x\vec{i}+y\vec{j}\right)$;
+ \end{itemize}
+\end{exer}
 
 
 \section{Cálculo com o operador nabla}
-\subsection{Operador $\vec{\nabla}$}
+\subsection{Definição matemática de divergente, gradiente e rotacional}
 No cálculo vetorial, o operador $\vec{\nabla}$, pronunciado nabla ou del, é um símbolo usado para denotar uma série de operadores diferenciais definidos em campos escalares e vetorias, como gradiente, divergente e rotacional. Ele é definido simbolicamente como:
 \begin{equation}\label{def_del}
 \vec{\nabla} \equiv \vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}
@@ -109,6 +118,7 @@ yz+x & z^2 & z^3
 \end{eqnarray}
  \end{ex}
 
+
 \subsection{Operadores diferenciais de segunda ordem}
 Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de segunda ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
 \begin{eqnarray}
@@ -136,6 +146,43 @@ Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada ter
  \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
 \end{eqnarray}
 A demonstração é análoga para o divergente do gradiente.
+
+\subsection{Identidades envolvendo o operador nabla}
+Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$. Sejam $f=f(x,y,z)$ e $g=g(x,y,z)$ campos escalares e $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ campos vetoriais. Então, valem as identidades da tabela~\ref{tab_identidades_del}.
+\begin{table}
+ \caption{ Tabela do operador $\vec{\nabla}$} \label{tab_identidades_del}
+\begin{tabular}{|l|c|}
+\hline
+1.& $\displaystyle\vec{\nabla}\left(f+g\right)=\vec{\nabla}f+\vec{\nabla}g$\\
+\hline
+2.& $\displaystyle\vec{\nabla}\cdot\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\cdot \vec{F}+\vec{\nabla}\cdot \vec{G}$\\
+\hline
+3.&  $\displaystyle\vec{\nabla}\times\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\times \vec{F}+\vec{\nabla}\times \vec{G}$\\
+\hline
+4.&  $\displaystyle\vec{\nabla}\left(fg\right)=f\vec{\nabla} g+g\vec{\nabla} f$\\
+\hline
+5.&  $\displaystyle\vec{\nabla}\cdot\left(f\vec{F}\right)=\left(\vec{\nabla}f\right) \cdot\vec{F}+f\left(\vec{\nabla}\cdot \vec{F}\right)$\\
+\hline
+6.&   $\displaystyle\vec{\nabla}\times\left(f\vec{F}\right)=\vec{\nabla}f \times\vec{F}+f\vec{\nabla}\times \vec{F}$\\
+\hline
+7.&  \begin{tabular}{c} $\displaystyle\vec{\nabla}\cdot \vec{\nabla} f=\vec{\nabla}^2f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}$,\\onde $\vec{\nabla}^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ é o operador laplaciano	\end{tabular}\\
+\hline
+8.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla} f\right)=0$\\
+\hline
+9.&$\displaystyle\vec{\nabla}\cdot\left( \vec{\nabla}\times \vec{F}\right)=0$\\
+\hline
+10.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla}\times \vec{F}\right)=\vec{\nabla}\left(\vec{\nabla}\cdot \vec{F}\right)-\vec{\nabla}^2\vec{F}$\\
+\hline
+11.&$\displaystyle\vec{\nabla}\cdot\left( \vec{F}\times \vec{G}\right)=G\cdot \left(\vec{\nabla}\times\vec{F}\right)-F\cdot \left(\vec{\nabla}\times\vec{G}\right)$\\
+\hline
+12.&$\displaystyle\begin{array}{l}\vec{\nabla}\times\left( \vec{F}\times \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}-\vec{G}\left(\vec{\nabla}\cdot \vec{F}\right)-\\ ~\qquad\qquad\qquad-\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\vec{F}\left(\vec{\nabla}\cdot \vec{G}\right)\end{array}$\\
+\hline
+13.&$\displaystyle\begin{array}{l}\vec{\nabla}\left( \vec{F}\cdot \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}+\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\\\qquad\qquad\quad+\vec{F}\times\left(\vec{\nabla} \times \vec{G}\right)+\vec{G}\times\left(\vec{\nabla} \times \vec{F}\right)\end{array}$\\
+\hline
+14.&$\vec{\nabla}\varphi(r) = \varphi'(r)\hat{r}$\\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
@@ -201,10 +248,57 @@ Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec
 
 \end{resol}
 
+\subsection*{Exercícios}
+ \subsection*{Exercícios}
+\begin{exer}
+ Calcule o divergente e o rotacional do campo $\vec{F}$ para
+ \begin{itemize}
+  \item[a)] $\vec{F}=x^2\vec{i}-2\vec{j}+yz\vec{k}$
+  \item[b)] $\vec{F}=e^{xy}\vec{i}-\cos(y)\vec{j}+\sin^2(z)\vec{k}$ 
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $\vec{\nabla}\cdot\vec{F}=2x+y$ e $\vec{\nabla}\times \vec{F}=z\vec{i}$
+  \item[b)] $\vec{\nabla}\cdot\vec{F}=ye^{xy}+\sin(y)+\sin(2z)$ e $\vec{\nabla}\times \vec{F}=-xe^{xy}\vec{k}$
+ \end{itemize}
+\end{resp}
+
+\begin{exer}
+Mostre que se $\vec{u}=a\vec{i}+b\vec{j}+c\vec{k}$, onde $a$, $b$ e $c$ são constantes, e $\vec{r}=x\vec{i}+y\vec{j}+z\vec{k}$, então:
+\begin{itemize}
+ \item[a)] $\vec{\nabla}\cdot (\vec{u}\times \vec{r})=0$ .
+ \item[a)] $\vec{\nabla}\times (\vec{u}\times \vec{r})=e\vec{u}$.
+\end{itemize}
+\end{exer}
+\begin{exer} Dado $f=2xz^4-x^2y$, calcule $\vec{\nabla}f$ e $\|\vec{\nabla}f\|$ no ponto $P(2,-2,1)$.
+\end{exer}
+\begin{resp}
+ $\vec{\nabla}f=10\vec{i}-4\vec{j}+16\vec{k}$ e $\|\vec{\nabla}f\|=2\sqrt{93}$.
+\end{resp}
+\begin{exer}
+Mostre que $(\vec{F}\cdot\vec{\nabla})\vec{r}=\vec{F}$, onde $\vec{F}=f(x,y,z)\vec{i}+g(x,y,z)\vec{j}+h(x,y,z)\vec{k}$.
+\end{exer}
+
+\begin{exer}
+ Mostre que
+ $$
+ \vec{\nabla}^2(fg)=f\vec{\nabla}^2g+2\vec{\nabla}f\cdot \vec{\nabla}g+g\vec{\nabla}^2f.
+ $$
+\end{exer}
+\begin{exer}
+ Use a  tabela do operdor del para mostrar que:
+ \begin{itemize}
+  \item[a)] $(\vec{F}\cdot\vec{\nabla})\vec{F}=\frac{1}{2}\vec{\nabla}(\vec{F}\cdot\vec{F})-\vec{F}\times (\vec{\nabla}\times\vec{F})$.
+  \item[b)] $\vec{\nabla}\cdot(\vec{F}\times\vec{r})=\vec{r}\cdot(\vec{\nabla}\times\vec{F})$.
+ \end{itemize}
+\end{exer}
 
 
-\subsection{Derivada direcional e gradiente}
+\section{Derivada direcional e gradiente}
 
+
+\subsection*{Exercícios resolvidos}
 \begin{exeresol}
 A temperatura da um ponto $P(x, y)$ de uma placa metálica é:
 $$T(x, y) = \frac{xy}{1+x^2+y^2}$$
@@ -224,44 +318,45 @@ A derivada direcional é dada por:
 $$\vec{u}\cdot\vec{\nabla}T(1,1) = \frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right)\cdot \frac{\vec{i} + \vec{j}}{9}=\frac{\sqrt{5}}{45}$$
 \end{resol}
 
-\subsection{Divergente}
-\subsection{Rotacional}
-\section{Identidades envolvendo o operador nabla}
-Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$. Sejam $f=f(x,y,z)$ e $g=g(x,y,z)$ campos escalares e $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ campos vetoriais. Então, valem as identidades da tabela~\ref{tab_identidades_del}.
-\begin{table}
- \caption{ Tabela do operador $\vec{\nabla}$} \label{tab_identidades_del}
-\begin{tabular}{|l|c|}
-\hline
-1.& $\displaystyle\vec{\nabla}\left(f+g\right)=\vec{\nabla}f+\vec{\nabla}g$\\
-\hline
-2.& $\displaystyle\vec{\nabla}\cdot\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\cdot \vec{F}+\vec{\nabla}\cdot \vec{G}$\\
-\hline
-3.&  $\displaystyle\vec{\nabla}\times\left(\vec{F}+\vec{G}\right)=\vec{\nabla}\times \vec{F}+\vec{\nabla}\times \vec{G}$\\
-\hline
-4.&  $\displaystyle\vec{\nabla}\left(fg\right)=f\vec{\nabla} g+g\vec{\nabla} f$\\
-\hline
-5.&  $\displaystyle\vec{\nabla}\cdot\left(f\vec{F}\right)=\left(\vec{\nabla}f\right) \cdot\vec{F}+f\left(\vec{\nabla}\cdot \vec{F}\right)$\\
-\hline
-6.&   $\displaystyle\vec{\nabla}\times\left(f\vec{F}\right)=\vec{\nabla}f \times\vec{F}+f\vec{\nabla}\times \vec{F}$\\
-\hline
-7.&  \begin{tabular}{c} $\displaystyle\vec{\nabla}\cdot \vec{\nabla} f=\vec{\nabla}^2f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}$,\\onde $\vec{\nabla}^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ é o operador laplaciano	\end{tabular}\\
-\hline
-8.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla} f\right)=0$\\
-\hline
-9.&$\displaystyle\vec{\nabla}\cdot\left( \vec{\nabla}\times \vec{F}\right)=0$\\
-\hline
-10.&$\displaystyle\vec{\nabla}\times\left( \vec{\nabla}\times \vec{F}\right)=\vec{\nabla}\left(\vec{\nabla}\cdot \vec{F}\right)-\vec{\nabla}^2\vec{F}$\\
-\hline
-11.&$\displaystyle\vec{\nabla}\cdot\left( \vec{F}\times \vec{G}\right)=G\cdot \left(\vec{\nabla}\times\vec{F}\right)-F\cdot \left(\vec{\nabla}\times\vec{G}\right)$\\
-\hline
-12.&$\displaystyle\begin{array}{l}\vec{\nabla}\times\left( \vec{F}\times \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}-\vec{G}\left(\vec{\nabla}\cdot \vec{F}\right)-\\ ~\qquad\qquad\qquad-\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\vec{F}\left(\vec{\nabla}\cdot \vec{G}\right)\end{array}$\\
-\hline
-13.&$\displaystyle\begin{array}{l}\vec{\nabla}\left( \vec{F}\cdot \vec{G}\right)=\left(\vec{G}\cdot \vec{\nabla}\right)\vec{F}+\left(\vec{F}\cdot \vec{\nabla}\right)\vec{G}+\\\qquad\qquad\quad+\vec{F}\times\left(\vec{\nabla} \times \vec{G}\right)+\vec{G}\times\left(\vec{\nabla} \times \vec{F}\right)\end{array}$\\
-\hline
-14.&$\vec{\nabla}\varphi(r) = \varphi'(r)\hat{r}$\\
-\hline
-\end{tabular}
-\end{table}
+\section{Equação da continuidade e divergente}
+Seção sobre interpretação do divergente..............
+
+
+\subsection*{Exercícios}
+\begin{exer}
+Use a equação da continuidade para mostrar que um fluido incompressível e em estado estacionário o campo de velocidade $\vec{v}$ é tal que $\vec{\nabla}\cdot \vec{v}=0$.
+\end{exer}
+\begin{exer}
+ O escoamento de um fluido incompressível e estacionário é regido pelo campo vetorial $\vec{v}$. Verifique, em cada caso, se há fontes ou sumidouros em alguma região do espaço:
+ \begin{itemize}
+  \item[a)] $\vec{v}=(x+y)\vec{i}-xz^3\vec{j}+x^2\sin(y)\vec{k}$. 
+  \item[b)] $\vec{v}=xy\vec{i}-xy\vec{j}+y^2\vec{k}$.
+  \item[c)] $\vec{v}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$. 
+
+  \end{itemize}
+
+\end{exer}
+
+
+
+\section{Interpretação do rotacional}
+Seção sobre interpretação do rotacional..............
+
+
+\subsection*{Exercícios}
+\begin{exer}
+Supondo que um fluído gira como um corpo rígido com velocidade angular $\vec{w}=w_0\vec{k}$, mostre que $\vec{w}=\frac{1}{2}\vec{\nabla}\times \vec{v}$.
+\end{exer}
+
+\begin{exer}
+Em cada caso é dada a velocidade $\vec{v}$ do movimento estacionário de um fluido. Encontre o $\vec{\nabla}\times\vec{v}$ e diga se o campo $\vec{v}$ é um campo irrotacional ou um campo de vórtice.
+\begin{itemize}
+ \item[a)] $\vec{v}=2x\vec{i}+2y\vec{j}$. 
+ \item[b)] $\vec{v}=-2y\vec{i}+2x\vec{j}$. 
+ \item[c)] $\vec{v}=y^2\vec{i}$. 
+ \end{itemize}
+
+\end{exer}
 
 
 %\layout{cm}
@@ -312,48 +407,11 @@ Finalmente, para obter a terceira desigualdade, derivamos o potencial em relaç�
   Onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
 \end{proof}
 
-
-
-
-\section{Campos radiais e potenciais centrais}
-Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
-\begin{ex} Represente graficamente o campo vetorial $\vec{F}=\vec{r}$ no plano $xy$.
-%\begin{figure}[htp]
-\includegraphics{cap_campos/figs/campo_radial}
-%\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}=\vec{r}$}
-%\end{figure}
-\end{ex}
-
-
-
-
-
-\construirSec
-
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
-  Dado o campo vetorial $\vec{F}(x,y,z) = 2xy^3+(1+3x^2y^2)\vec{j}$.
-  \begin{itemize}
-  \item[a)] Mostre que o campo é irrotacional.
-  \item[b)] Encontre uma função potencial $\varphi(x,y,z)$.
-  \item[c)] Calcule o trabalho $W:=\int_C \vec{F}\cdot d\vec{r}$ ao longo de uma curva que liga o ponto $(1,4,0)$ até o ponto $(3,1,0)$.
-  \item[d)] Trace algumas curvas equipotenciais de $\varphi(x,y,z)$.
-  \end{itemize}
-\end{exeresol}
+  Dado o campo vetorial $\vec{F}(x,y,z) = 2xy^3+(1+3x^2y^2)\vec{j}$, encontre uma função potencial $\varphi(x,y,z)$.
+  \end{exeresol}
 \begin{resol}
-  Para o item a), basta calcular o rotacional:
-  \begin{eqnarray*}
-  \vec{\nabla}\times \vec{F} &=& \left|
-  \begin{array}{ccc}
-  \vec{i} & \vec{j} & \vec{k} \\
-  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
-  2xy^3 & 1+3x^2y^2 & 0
-  \end{array}
-  \right| \\
-  &=& \left(0-0\right)\vec{i} + \left(0-0\right)\vec{j} + \left(6xy^2-6xy^2\right)\vec{k}\\
-  &=& \vec{0}
-  \end{eqnarray*}
-\end{resol}
 A função potencial $\varphi$ deve satisfazer $\vec{\nabla}\varphi=\vec{F}$, isto é:
 \begin{eqnarray*}
 \frac{\partial \varphi}{\partial x} &=& 2xy^3 \\
@@ -366,32 +424,66 @@ Da primeira equação, temos $\varphi(x,y,z)= x^2y^3+C(y,z)$. Diferenciando esta
 \end{eqnarray*}
 Isso implica $C_y(y,z)=1$, isto é, $C(y,z) = y+D(z)$. Da última expressão vemos que $D'(z)=0$ e portanto:
 $$\varphi(x,y,z)=x^2y^3+y+E.$$
-Para o item c), basta aplicar o teorema das integrais de linha:
-\begin{eqnarray*}
-W &=& \int_C \vec{F}\cdot d\vec{r} = \varphi(3,1,0)- \varphi(1,4,0)\\
-  &=& (9+1+E) - (64+4+E) = -58.
-\end{eqnarray*}
-\construirExeresol
-
-\begin{exeresol}
-  Um exercício.
-\end{exeresol}
-\begin{resol}
-  Resolução do exercício.
 \end{resol}
 
+
+\section{Campos radiais e potenciais centrais}
+Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
+\begin{ex} Represente graficamente o campo vetorial $\vec{F}=\vec{r}$ no plano $xy$.
+%\begin{figure}[htp]
+\includegraphics{cap_campos/figs/campo_radial}
+%\caption{\label{campo_radial}Representação gráfica do campo $\vec{F}=\vec{r}$}
+%\end{figure}
+\end{ex}
+
 \subsection*{Exercícios}
-
-\construirExer
-
 \begin{exer}
-  Um exercício.
+Mostre que $\vec{\nabla}\cdot\vec{r}=3$, $\vec{\nabla}\times\vec{r}=\vec{0}$ e $\vec{\nabla}r=\frac{1}{r}\vec{r}=\hat{r}$, sendo $\vec{r}(x,y,z)=x\vec{i}+y\vec{j}+z\vec{k}$.
+\end{exer}
+\begin{exer}\label{ex_grad_campo_central}
+Dada a função escalar $f(r)$, onde $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$, use a regra da cadeia para mostrar que 
+$$
+\vec{\nabla}f(r)=\frac{f'(r)}{r}\vec{r}=f'(r)\hat{r}.
+$$
+Aplique essa fórmula para mostrar que $\vec{\nabla}r^n=nr^{n-2}\vec{r}.$
+\end{exer}
+\begin{exer}Use os resultados do exercício \ref{ex_grad_campo_central} para calcular $\vec{\nabla}f(r)$ para
+\begin{itemize}
+ \item[a)] $f(r)=r^3$.
+ \item[b)] $f(r)=\ln(r)$.
+ \item[c)] $f(r)=r^2e^{-r}$.
+\end{itemize}
 \end{exer}
 \begin{resp}
-  Resposta curta do exercício.
+\begin{itemize}
+ \item[a)] $3r\vec{r}$.
+ \item[b)] $\frac{\vec{r}}{r^2}$.
+ \item[c)] $(2-r)e^{-r}\vec{r}$.
+\end{itemize} 
 \end{resp}
+\begin{exer}
+ Mostre que
+ $$
+ \vec{\nabla}^2f(r)=2\frac{f'(r)}{r}+f''(r),
+ $$
+ onde $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$. Utilize este resultado para mostrar que:
+ \begin{itemize}
+  \item[a)] $\vec{\nabla}^2\ln(r) =\frac{1}{r^2}$. 
+  \item[b)] $\vec{\nabla}^2r^n =n(n+1)r^{n-2}$.
+  \item[c)] $\vec{\nabla}^2\ln(r^2) =\frac{2}{r^2}$.
+    \item[d)] $\vec{\nabla}^2\left(\frac{1}{r}\right) =0$.
+ \end{itemize}
+\end{exer}
 
-\section{Exercícios finais}
+\begin{exer}
+ Uma partícula de massa $m$ e velocidade $\vec{v}$ é atraída para a origem por uma força central dada por $\vec{F}(\vec{r})=f(r)\hat{r}$. Mostre que o momento angular $\vec{L}=\vec{r}\times m\vec{v}$ é constante, isto é, $\frac{d\vec{L}}{dt}=\vec{0}$
+\end{exer}
+\begin{exer}
+ Mostre que um campo central $\vec{F}(r)=f(r)\hat{r}$ é irrotacional.
+\end{exer}
+
+
+\section*{Exercícios finais}
 
 \construirExer
 
