@@ -415,6 +415,28 @@ onde $D$ é o disco de raio $a$ no plano $z=0$. Portanto,
  \end{eqnarray*}
 \end{resol}
 
+\subsection*{Exercícios}
+\begin{exer}
+ Calcule o fluxo $\Phi$ do campo vetorial $\vec{F}$ através da superfície $S$.
+ \begin{itemize}
+  \item[a)] $\vec{F}=x\vec{i}+y\vec{j}+2z\vec{k}$ e $S:$ $z=1-x^2-y^2$ acima do plano $xy$ e orientada com componente $\vec{k}$ da normal positiva.
+  \item[b)] $\vec{F}=(x+y)\vec{i}+(y+z)\vec{j}+(x+z)\vec{k}$ e $S$ é a porção do plano $x+y+z=1$ no primeiro octante e orientada da origem para o primeiro octante.
+  \item[c)] $\vec{F}=z^2\vec{k}$ e $S$ o hemisfério $z=\sqrt{1-x^2-y^2}$ orientada com componente $\vec{k}$ da normal positiva.
+  \item[d)] $\vec{F}=x\vec{i}+y\vec{j}+2z\vec{k}$ e $S$ é a porção do cone $z^2=x^2+y^2$ entre os plano $z=1$ e $z=2$, orientada com componente $\vec{k}$ da normal negativa.
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $2\pi$.
+  \item[b)] $1$.
+  \item[c)] $\frac{\pi}{2}$.
+  \item[d)] $-\frac{14\pi}{3}$. 
+ \end{itemize}
+\end{resp}
+
+
+
+
 \section{O Teorema da Divergência de Gauss}
 \begin{teo}
 Seja $V$ o volume de um sólido cuja superfície $S$ é orientada para fora. Seja o campo vetorial $\vec{F}$ dado por
@@ -523,6 +545,42 @@ onde $V$ é o hemisfério do enunciado. Vamos integrar em coordenadas esféricas
 \end{eqnarray*}
 \end{resol}
 
+\subsection*{Exercícios}
+\begin{exer}
+ Seja $\vec{F}=r^k\vec{r}$ onde $k$ é uma constante. Seja $S$ um esfera de raio $a$ centrada na origem e orientada para fora por $\vec{n}=\frac{\vec{r}}{r}=\frac{\vec{r}}{a}$. 
+ \begin{itemize}
+  \item[a)] Calcule $\oiint_S\vec{F}\cdot \vec{n}dS$.
+  \item[b)] Para qual valor de $k$ o valor da integral de superfície fica independente do raio $a$?.
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $4\pi a^{k+3}$.
+  \item[b)] $k=-3$ (campo inverso do quadrado).
+ \end{itemize} 
+\end{resp}
+
+\begin{exer}
+ Use o teorema da divergência para calcular o fluxo $\Phi$ do campo $\vec{F}$ através da superfície $S$ fechada e orientada para fora.
+ \begin{itemize}
+  \item[a)] $\vec{F}=4x\vec{i}-3y\vec{j}+7z\vec{k}$ e $S$ é o cubo limitado pelos planos coordenados e pelos planos $x=1$, $y=1$ e $z=1$.
+  \item[b)] $\vec{F}=2x\vec{i}+2y\vec{j}+2z\vec{k}$ e $S$ a esfera $x^2+y^2+z^2=9$.
+  \item[c)] $\vec{F}=(x-z)\vec{i}+(y-x)\vec{j}+(z-y)\vec{k}$ e $S$ é a superfície do sólido limitado por $x^2+y^2=a^2$, $z=0$ e $z=1$.
+  \item[d)] $\vec{F}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$ e $S$ é a superfície do sólido limitado por $x^2+y^2=4$, $z=0$ e $z=3$.
+  \item[e)] $\vec{F}=(x^2+y)\vec{i}+xy\vec{j}-(2xz+y)\vec{k}$ e $S$ é a superfície do tetraedro no 1º octante, limitado por $x+y+z=1$ e os planos coordenados.
+  \item[f)] $\vec{F}=x^2\vec{i}+y^2\vec{j}+z^2\vec{k}$ e $S$ a superfície do sólido limitado por $z=\sqrt{x^2+y^2}$ e $z=1$.
+ \end{itemize}
+\end{exer}
+\begin{resp}
+\begin{itemize}
+ \item[a)] $8$.
+ \item[b)] $216\pi$. 
+ \item[c)] $3\pi a^2$. 
+ \item[d)] $180\pi$.
+ \item[e)] $\frac{1}{24}$. 
+ \item[f)] $\frac{\pi}{2}$. 
+\end{itemize}
+\end{resp}
 
 
 
@@ -538,3 +596,38 @@ $$
 \oint_C \vec{F}\cdot d \vec{r}=\iint_S \vec{\nabla}\times \vec{F}\cdot \vec{n} dS.
 $$
 \end{teo}
+
+\subsection{Exercícios resolvidos}
+\begin{exeresol}
+ Dado $\vec{F}=4y\vec{i}+x\vec{j}+2z\vec{k}$, encontre a maneira mais simples de calcular o fluxo do rotacional $\vec{\nabla}\times\vec{F}$ através do hmisfério $x^2+y^2+z^2=a^2$, $\geq 0$, orientado com componente $\vec{k}$ da normal positiva.
+\end{exeresol}
+\begin{resol}
+ Resolver
+\end{resol}
+\begin{exeresol}
+Use o teorema de Stokes para calcular o trabalho realizado pelo campo de forças $\vec{F}=x^2\vec{i}+4xy^3\vec{j}+y^2x\vec{k}$ ao longo da curva $C$ que limita o retângulo no plano $z=y$ de vértices $P_0(0,0,0)$, $P_1(1,0,0)$, $P_2(1,3,3)$ e $P_3(0,3,3)$, no sentido $P_0\to P_1\to P_2\to P_3\to P_0$.
+\end{exeresol}
+\begin{resol}
+ Resolver
+\end{resol}
+
+\subsection*{Exercícios}
+\begin{exer}
+ Calcule a circulação do campo de velocidade $\vec{v}=3z\vec{i}+4x\vec{j}+2y\vec{k}$ ao longo da curva $C$ que limita o parabolóide $z=4-x^2-y^2$, $z\geq 0$. A curva $C$ está no plano $xy$ orientada no sentido anti-horário.
+ \end{exer}
+\begin{resp}
+ $16\pi$
+\end{resp}
+\begin{exer}Mostre que se $\vec{F}=f(x,y)\vec{i}+g(x,y)\vec{j}$, então
+$$
+\oint_C  \vec{F} \cdot d\vec{r}=\iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
+y}\right) dA,
+$$
+isto é, o teorema de Stokes em duas dimensões recai no teorema de Green.
+\end{exer}
+\begin{exer}Use o teorema de Stokes para mostrar que:
+\begin{itemize}
+ \item[a)] se $\vec{r}=x\vec{i}+y\vec{j}+z\vec{k}$, então $\oint_C\vec{r}\cdot d\vec{r}=0$.
+ \item[b)] $\oint_C\vec{\nabla}\phi\cdot d\vec{r}=0$. 
+\end{itemize}
+\end{exer}
