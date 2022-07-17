@@ -17,6 +17,45 @@ $$
 onde $\vec{r}$ é uma parametrização para $C$ tal que $\vec{r}(a)$ e $\vec{r}(b)$ são os pontos iniciais e finais da curva, que está no sentido $\vec{r}(a)\to \vec{r}(b)$.
 
 
+\subsection*{Exercícios}
+\begin{exer}Calcule a integral de linha $\int_C\vec{F}\cdot d\vec{r}$ para cada campo e curva dados.
+\begin{itemize}
+ \item[a)] $\vec{F}=(x+2y)\vec{i}+(x-y)\vec{j},$ e $C$: $x=\cos(t)$, $y=4\sin(t)$, $0\leq t\leq \frac{\pi}{4}$.
+ \item[b)] $\vec{F}=(x^2+y^2)\vec{i}-x\vec{j},$ e $C$: arco da circunferência $x^2+y^2=1$ limitado ao primeiro quadrante e orientado no sentido $(1,0)$ a $(0,1)$.
+ \end{itemize}
+\end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $1-\pi$.
+  \item[b)] $-1-\frac{\pi}{4}$.
+ \end{itemize}
+\end{resp}
+\begin{exer}
+ Calcule o trabalho ao se deslocar uma partícula no campo de força $\vec{F}=3x^2\vec{i}+(2xz-y)\vec{j}+z\vec{k}$ ao longo.
+ \begin{itemize}
+  \item[a)] da reta que liga $(0,0,0)$ a $(2,1,3)$. 
+  \item[b)] da curva $x=2t^2$, $y=t$, $z=4t^2-t$ de $t=0$ até $t=1$.
+  \item[c)] da curva definida por $x=4y$, $3x^3=8z$, de $x=0$ até $x=2$.
+ \end{itemize}
+ \end{exer}
+\begin{resp}
+ \begin{itemize}
+  \item[a)] $16$.
+  \item[b)] $14.2$.
+  \item[c)] $16$.
+ \end{itemize}
+\end{resp}
+\begin{exer}
+ Dado $\vec{F}=(x-y)\vec{i}+(x+y)\vec{j}$, calcule $\oint\vec{F}\cdot d\vec{r}$ ao longo da curva $C$ dada pela união da curva $y=x^2$, desde o ponto $(0,0)$ até $(1,1)$, da curva $y=\sqrt{x}$, desde o ponto $(1,1)$ até $(0,0)$.
+\end{exer}
+\begin{resp}
+ $\frac{2}{3}$.
+\end{resp}
+
+
+
+
+
 
 \section{O Teorema Fundamental para Integral de Linha}
 \begin{teo}\index{teorema fundamental para integral de linha}Seja $\vec{F}$ um campo vetorial definido numa região $R$ do espaço e $P_0(x_0,y_0,z_0)$ e $P_1(x,y,z)$ dois pontos em $R$. Se $\vec{F}$ é conservativo \index{campo!conservativo}, isto é, $\vec{F}=\vec{\nabla}\varphi$ para algum potencial $\varphi$, então
@@ -82,6 +121,13 @@ $$
 $$
 ou seja, $\vec{F}=\vec{\nabla}\varphi.$
 \end{proof}
+
+\subsection*{Exercícios}
+\begin{exer}Calcule o trabalho realizado pela força conservativa $\vec{F}=xy^2\vec{i}+x^2y\vec{j}$ ao deslocar uma partícula desde $P_0(1,1)$ até $P_1(0,0)$.
+\end{exer}
+\begin{resp}
+ $-\frac{1}{2}$.
+\end{resp}
 
 
 \section{Relação entre campos irrotacionais e conservativos}
@@ -198,6 +244,65 @@ W &=& \int_C \vec{F}\cdot d\vec{r} = \varphi(3,1,0)- \varphi(1,4,0)\\
   &=& (9+1+E) - (64+4+E) = -58.
 \end{eqnarray*}
 \end{resol}
+
+\subsection*{Exercícios}
+\begin{exer}Determine se o campo $\vec{F}$ é conservativo. Se for, encontre a função potencial $\phi$.
+ \begin{itemize}
+  \item[a)] $\vec{F}=x\vec{i}+y\vec{j}$.
+  \item[b)] $\vec{F}=x^2y\vec{i}+5xy^2\vec{j}$.
+  \item[c)] $\vec{F}=(\cos(y)+y\cos(x))\vec{i}+(\sin(x)-x\sin(y))\vec{j}$.
+  \item[d)] $\vec{F}=yz\vec{i}+xz\vec{j}+(xy+3z^2)\vec{k}$.
+ \end{itemize}
+ \end{exer}
+\begin{resp}
+  \begin{itemize}
+  \item[a)] $\phi=\frac{1}{2}\left(x^2+y^2\right)+C$.
+  \item[b)] Não é conservativo.
+  \item[c)] $\phi=x\cos(y)+y\sin(x)+C$.
+  \item[d)] $\phi=xyz+z^3+C$.
+ \end{itemize}
+\end{resp}
+
+\begin{exer}
+ Calcule $\int_C\vec{F}\cdot d\vec{r}$, para $\vec{F}=(e^y+ye^x)\vec{i}+(xe^y+e^x)\vec{j}$ e $C$ é a curva dada por $\vec{r}=\sin\left(\frac{\pi}{2}t\right)\vec{i}+(\ln(t))\vec{j}$, $1\leq t\leq 2$. 
+ 
+ {\it (Sugestão: Determine primeiro se $\vec{F}$ é conservativo).}
+\end{exer}
+\begin{resp}
+ $-1+\ln(2)$.
+\end{resp}
+
+\begin{exer}Se $\vec{A}=(4xy-3x^2z^2)\vec{i}+2x^2\vec{j}-2x^3z\vec{k}$, prove que $\int_C\vec{A}\cdot d\vec{r}$ é independente da curva que liga dois pontos dados. 
+\end{exer}
+\begin{exer}Seja $\vec{E}=r\vec{r}$.
+ \begin{itemize}
+  \item[a)] Prove que existe um potencial $\phi$ tal que $\vec{E}=\vec{\nabla}\phi$.
+  \item[b)] Calcule $\phi$.
+  \item[c)] Calcule o valor de $\oint_C\vec{E}\cdot d\vec{r}$ para $C$ a circunferência de raio unitário no plano $xy$ orientada no sentido horário. É possível conhecer o valor de $\oint_C\vec{E}\cdot d\vec{r}$ onde $C$ é uma curva fechada qualquer? \end{itemize}
+\end{exer}
+
+ \begin{resp}
+ \begin{itemize}
+  \item[b)] $\phi=\frac{r^3}{3}+C$.
+  \item[c)] $0$
+ \end{itemize}
+ \end{resp}
+
+ \begin{exer}
+  Calcule o trabalho para se deslocar uma partícula nos campos de força conservativa dados por:
+  \begin{itemize}
+   \item[a)] $\vec{F}=-k\vec{r}$ (Lei de Hooke).
+   \item[b)] $\vec{F}=\frac{1}{r^3}\vec{r}$ (Lei do inverso do quadrado).
+  \end{itemize}
+ \end{exer}
+\begin{resp}
+   \begin{itemize}
+   \item[a)] $\phi=-\frac{k r^2}{2}+C$.
+   \item[b)] $\phi=-\frac{1}{r}+C$.
+  \end{itemize}
+\end{resp}
+
+
 
 \section{O Teorema de Green}
 \begin{teo}
