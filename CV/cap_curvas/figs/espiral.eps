@@ -1,18 +1,16 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Creator: dvips(k) 5.995 Copyright 2015 Radical Eye Software
+%%Creator: dvips(k) 5.999 Copyright 2019 Radical Eye Software
 %%Title: espiral_.dvi
-%%CreationDate: Tue Aug 13 14:29:35 2019
-%%Pages: 1
-%%PageOrder: Ascend
-%%BoundingBox: 208 252 403 539
-%%HiResBoundingBox: 208.94839 252.164794 402.05161 538.835206
+%%CreationDate: Mon Jul 18 18:08:42 2022
+%%BoundingBox: 208 257 403 534
+%%HiResBoundingBox: 208.94839 257.124281 402.05161 533.875719
 %%DocumentFonts: CMSY10 CMR12 CMMI12
 %%EndComments
 %DVIPSWebPage: (www.radicaleye.com)
-%DVIPSCommandLine: dvips -R -Pdownload35 -D600 -O80.5484bp,127.365bp
-%+ -T612bp,792bp -tletterSize -q -oespiral_.ps espiral_.dvi
+%DVIPSCommandLine: dvips -R -Pdownload35 -D600 -O80.5484bp,132.324bp -E
+%+ -q -oespiral_.ps espiral_.dvi
 %DVIPSParameters: dpi=600
-%DVIPSSource:  TeX output 2019.08.13:1429
+%DVIPSSource:  TeX output 2022.07.18:1508
 %%BeginProcSet: tex.pro 0 0
 %!
 /TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
@@ -59,6 +57,411 @@ rlineto fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B
 B/g{0 M}B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p
 -3 w}B/n{p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{
 0 S rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: l3backend-dvips.pro 0 0
+%%
+%% This is file `l3backend-dvips.pro',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% l3backend-header.dtx  (with options: `header,dvips')
+%% 
+%% Copyright (C) 1990-2020 The LaTeX3 Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3backend bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: l3backend-header.dtx
+true setglobal
+/pdf.globaldict 4 dict def
+false setglobal
+
+/pdf.cvs { 65534 string cvs } def
+/pdf.dvi.pt { 72.27 mul Resolution div } def
+/pdf.pt.dvi { 72.27 div Resolution mul } def
+/pdf.rect.ht { dup 1 get neg exch 3 get add } def
+/pdf.linkmargin { 1 pdf.pt.dvi } def
+/pdf.linkdp.pad { 0 } def
+/pdf.linkht.pad { 0 } def
+/pdf.rect
+  { /Rect [ pdf.llx pdf.lly pdf.urx pdf.ury ] } def
+/pdf.save.ll
+  {
+    currentpoint
+    /pdf.lly exch def
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.ur
+  {
+    currentpoint
+    /pdf.ury exch def
+    /pdf.urx exch def
+  }
+    def
+/pdf.save.linkll
+  {
+    currentpoint
+    pdf.linkmargin add
+    pdf.linkdp.pad add
+    /pdf.lly exch def
+    pdf.linkmargin sub
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.linkur
+  {
+    currentpoint
+    pdf.linkmargin sub
+    pdf.linkht.pad sub
+    /pdf.ury exch def
+    pdf.linkmargin add
+    /pdf.urx exch def
+  }
+    def
+/pdf.dest.anchor
+  {
+    currentpoint exch
+    pdf.dvi.pt 72 add
+    /pdf.dest.x exch def
+    pdf.dvi.pt
+    vsize 72 sub exch sub
+    /pdf.dest.y exch def
+  }
+    def
+/pdf.dest.point
+  { pdf.dest.x pdf.dest.y } def
+/pdf.dest2device
+  {
+    /pdf.dest.y exch def
+    /pdf.dest.x exch def
+    matrix currentmatrix
+    matrix defaultmatrix
+    matrix invertmatrix
+    matrix concatmatrix
+    cvx exec
+    /pdf.dev.y exch def
+    /pdf.dev.x exch def
+    /pdf.tmpd exch def
+    /pdf.tmpc exch def
+    /pdf.tmpb exch def
+    /pdf.tmpa exch def
+    pdf.dest.x pdf.tmpa mul
+      pdf.dest.y pdf.tmpc mul add
+      pdf.dev.x add
+    pdf.dest.x pdf.tmpb mul
+     pdf.dest.y pdf.tmpd mul add
+     pdf.dev.y add
+  }
+    def
+/pdf.bordertracking false def
+/pdf.bordertracking.begin
+  {
+    SDict /pdf.bordertracking true put
+    SDict /pdf.leftboundary undef
+    SDict /pdf.rightboundary undef
+    /a where
+      {
+        /a
+          {
+            currentpoint pop
+            SDict /pdf.rightboundary known dup
+              {
+                SDict /pdf.rightboundary get 2 index lt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.rightboundary exch put }
+            ifelse
+            moveto
+            currentpoint pop
+            SDict /pdf.leftboundary known dup
+              {
+                SDict /pdf.leftboundary get 2 index gt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.leftboundary exch put }
+            ifelse
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.bordertracking.end
+  {
+    /a where { /a { moveto } put } if
+    /x where { /x { 0 exch rmoveto } put } if
+    SDict /pdf.leftboundary known
+      { pdf.outerbox 0 pdf.leftboundary put }
+    if
+    SDict /pdf.rightboundary known
+      { pdf.outerbox 2 pdf.rightboundary put }
+    if
+    SDict /pdf.bordertracking false put
+  }
+    def
+  /pdf.bordertracking.endpage
+{
+  pdf.bordertracking
+    {
+      pdf.bordertracking.end
+      true setglobal
+      pdf.globaldict
+        /pdf.brokenlink.rect [ pdf.outerbox aload pop ] put
+      pdf.globaldict
+        /pdf.brokenlink.skip pdf.baselineskip put
+      pdf.globaldict
+        /pdf.brokenlink.dict
+          pdf.link.dict pdf.cvs put
+      false setglobal
+      mark pdf.link.dict cvx exec /Rect
+        [
+          pdf.llx
+          pdf.lly
+          pdf.outerbox 2 get pdf.linkmargin add
+          currentpoint exch pop
+          pdf.outerbox pdf.rect.ht sub pdf.linkmargin sub
+        ]
+      /ANN pdf.pdfmark
+    }
+  if
+}
+  def
+/pdf.bordertracking.continue
+  {
+    /pdf.link.dict pdf.globaldict
+      /pdf.brokenlink.dict get def
+    /pdf.outerbox pdf.globaldict
+      /pdf.brokenlink.rect get def
+    /pdf.baselineskip pdf.globaldict
+      /pdf.brokenlink.skip get def
+    pdf.globaldict dup dup
+    /pdf.brokenlink.dict undef
+    /pdf.brokenlink.skip undef
+    /pdf.brokenlink.rect undef
+    currentpoint
+    /pdf.originy exch def
+    /pdf.originx exch def
+    /a where
+      {
+        /a
+          {
+            moveto
+            SDict
+            begin
+            currentpoint pdf.originy ne exch
+              pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+    /x where
+      {
+        /x
+          {
+            0 exch rmoveto
+            SDict~
+            begin
+            currentpoint
+            pdf.originy ne exch pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.breaklink
+  {
+    pop
+    counttomark 2 mod 0 eq
+      {
+        counttomark /pdf.count exch def
+          {
+           pdf.count 0 eq { exit } if
+           counttomark 2 roll
+           1 index /Rect eq
+             {
+               dup 4 array copy
+               dup dup
+                 1 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add sub
+                 3 exch put
+               dup
+                 pdf.outerbox 2 get
+                 pdf.linkmargin add
+                 2 exch put
+               dup dup
+                 3 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add add
+                 1 exch put
+               /pdf.currentrect exch  def
+               pdf.breaklink.write
+                 {
+                   pdf.currentrect
+                   dup
+                     pdf.outerbox 0 get
+                     pdf.linkmargin sub
+                     0 exch put
+                   dup
+                     pdf.outerbox 2 get
+                     pdf.linkmargin add
+                     2 exch put
+                   dup dup
+                     1 get
+                     pdf.baselineskip add
+                     1 exch put
+                   dup dup
+                     3 get
+                     pdf.baselineskip add
+                     3 exch put
+                   /pdf.currentrect exch def
+                   pdf.breaklink.write
+                  }
+                1 index 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                2 index 1 get sub
+                pdf.baselineskip div round cvi 1 sub
+                exch
+              repeat
+              pdf.currentrect
+              dup
+                pdf.outerbox 0 get
+                pdf.linkmargin sub
+                0 exch put
+              dup dup
+                1 get
+                pdf.baselineskip add
+                1 exch put
+              dup dup
+                3 get
+                pdf.baselineskip add
+                3 exch put
+              dup 2 index 2 get  2 exch put
+              /pdf.currentrect exch def
+              pdf.breaklink.write
+              SDict /pdf.pdfmark.good false put
+              exit
+            }
+            { pdf.count 2 sub /pdf.count exch def }
+          ifelse
+        }
+      loop
+    }
+  if
+  /ANN
+}
+  def
+/pdf.breaklink.write
+  {
+    counttomark 1 sub
+    index /_objdef eq
+      {
+        counttomark -2 roll
+        dup wcheck
+          {
+            readonly
+            counttomark 2 roll
+          }
+          { pop pop }
+        ifelse
+      }
+    if
+    counttomark 1 add copy
+    pop pdf.currentrect
+    /ANN pdfmark
+  }
+    def
+/pdf.pdfmark
+  {
+    SDict /pdf.pdfmark.good true put
+    dup /ANN eq
+      {
+        pdf.pdfmark.store
+        pdf.pdfmark.dict
+          begin
+            Subtype /Link eq
+            currentdict /Rect known and
+            SDict /pdf.outerbox known and
+            SDict /pdf.baselineskip known and
+              {
+                Rect 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                Rect 1 get sub
+                pdf.baselineskip div round cvi 0 gt
+                  { pdf.breaklink }
+                if
+              }
+            if
+          end
+        SDict /pdf.outerbox undef
+        SDict /pdf.baselineskip undef
+        currentdict /pdf.pdfmark.dict undef
+      }
+    if
+    pdf.pdfmark.good
+      { pdfmark }
+      { cleartomark }
+    ifelse
+  }
+    def
+/pdf.pdfmark.store
+  {
+    /pdf.pdfmark.dict 65534 dict def
+    counttomark 1 add copy
+    pop
+      {
+        dup mark eq
+          {
+            pop
+            exit
+          }
+          {
+            pdf.pdfmark.dict
+            begin def end
+          }
+        ifelse
+      }
+    loop
+}
+  def
+%% 
+%%
+%% End of file `l3backend-dvips.pro'.
 
 %%EndProcSet
 %%BeginProcSet: texps.pro 0 0
@@ -966,7 +1369,7 @@ EA559F6A1FED7DDAE902017290E4549337A9F6CC3109F1F858213AF70573323B
 cleartomark
 {restore}if
 %%EndFont 
-TeXDict begin 40258584 52099344 1000 600 600 (espiral_.dvi)
+TeXDict begin 40258437 52099154 1000 600 600 (espiral_.dvi)
 @start /Fa 134[48 55 120[{}2 99.6264 /CMMI12 rf /Fb 201[49
 49 49 49 49 49 49 48[{}7 99.6264 /CMR12 rf /Fc 255[77{}1
 99.6264 /CMSY10 rf end
@@ -976,23 +1379,22 @@ TeXDict begin 40258584 52099344 1000 600 600 (espiral_.dvi)
 TeXDict begin
  end
 %%EndSetup
-%%Page: 1 1
-TeXDict begin 1 0 bop Black Black 1141 3899 a @beginspecial
--136.712006 @llx -103.332878 @lly 56.391212 @urx 183.337540
+TeXDict begin 1 0 bop Black Black 1141 3857 a @beginspecial
+-136.712006 @llx -93.413902 @lly 56.391212 @urx 183.337540
 @ury 1931 @rwi @setspecial
 %%BeginDocument: espiral_0.eps
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -137 -104 57 184
-%%HiResBoundingBox: -136.712008 -103.332875 56.3912114 183.337537
-%%Creator: Asymptote 2.372.37
-%%CreationDate: 2019.08.13 14:29:34
+%%BoundingBox: -137 -94 57 184
+%%HiResBoundingBox: -136.712008 -93.4139006 56.3912114 183.337537
+%%Creator: Asymptote 2.622.62
+%%CreationDate: 2022.07.18 15:08:42
 %%Pages: 1
 %%Page: 1 1
 /Setlinewidth {0 exch dtransform dup abs 1 lt {pop 0}{round} ifelse
 idtransform setlinewidth pop} bind def
 gsave
 newpath 0 175.587537 moveto
- 0 -103.082875 lineto
+ 0 -93.1639006 lineto
 [ 1 0 0 1 0 0] concat
 0 setgray
 0.5 Setlinewidth
@@ -1062,8 +1464,8 @@ newpath 0 -28.3464567 moveto
 stroke
 grestore
 gsave
-newpath 0 -1.25883556e-14 moveto
- 5.66929134 -1.25883556e-14 lineto
+newpath 0 -6.29417778e-15 moveto
+ 5.66929134 -6.29417778e-15 lineto
 [ 1 0 0 1 0 0] concat
 0 setgray
 0.5 Setlinewidth
@@ -1130,17 +1532,6 @@ grestore
 gsave
 newpath 0 170.07874 moveto
  5.66929134 170.07874 lineto
-[ 1 0 0 1 0 0] concat
-0 setgray
-0.5 Setlinewidth
-1 setlinecap
-1 setlinejoin
-10 setmiterlimit
-stroke
-grestore
-gsave
-newpath 0 -99.2125984 moveto
- 2.83464567 -99.2125984 lineto
 [ 1 0 0 1 0 0] concat
 0 setgray
 0.5 Setlinewidth
@@ -1536,189 +1927,189 @@ newpath 0 0 moveto
 1 setlinejoin
 10 setmiterlimit
 stroke
-newpath 18.2303004 36.4399767 moveto
+newpath 36.4399767 18.2303004 moveto
  15.7424986 15.7424986 lineto
 stroke
-newpath 19.1253453 43.8863781 moveto
- 16.2350432 36.6798032 lineto
- 20.2255577 36.2001501 lineto
- 19.1253453 43.8863781 lineto
+newpath 43.8863781 19.1253453 moveto
+ 36.2001501 20.2255577 lineto
+ 36.6798032 16.2350432 lineto
+ 43.8863781 19.1253453 lineto
 closepath
 fill
-newpath 19.1253453 43.8863781 moveto
- 16.2350432 36.6798032 lineto
- 20.2255577 36.2001501 lineto
- 19.1253453 43.8863781 lineto
+newpath 43.8863781 19.1253453 moveto
+ 36.2001501 20.2255577 lineto
+ 36.6798032 16.2350432 lineto
+ 43.8863781 19.1253453 lineto
 closepath
 stroke
-newpath 27.8994056 -55.0377254 moveto
+newpath 39.4172662 -66.555586 moveto
  47.2274958 -47.2274958 lineto
 stroke
-newpath 20.9456734 -57.847638 moveto
- 28.6523194 -56.9009723 lineto
- 27.1464918 -53.1744784 lineto
- 20.9456734 -57.847638 lineto
+newpath 36.6073536 -73.5093182 moveto
+ 41.2805132 -67.3084998 lineto
+ 37.5540193 -65.8026722 lineto
+ 36.6073536 -73.5093182 lineto
 closepath
 fill
-newpath 20.9456734 -57.847638 moveto
- 28.6523194 -56.9009723 lineto
- 27.1464918 -53.1744784 lineto
- 20.9456734 -57.847638 lineto
+newpath 36.6073536 -73.5093182 moveto
+ 41.2805132 -67.3084998 lineto
+ 37.5540193 -65.8026722 lineto
+ 36.6073536 -73.5093182 lineto
 closepath
 stroke
-newpath -68.065293 -96.6348781 moveto
+newpath -96.6348781 -68.065293 moveto
  -78.712493 -78.712493 lineto
 stroke
-newpath -64.2347139 -103.082875 moveto
- -66.3375574 -95.6084776 lineto
- -69.7930286 -97.6612787 lineto
- -64.2347139 -103.082875 lineto
+newpath -103.082875 -64.2347139 moveto
+ -97.6612787 -69.7930286 lineto
+ -95.6084776 -66.3375574 lineto
+ -103.082875 -64.2347139 lineto
 closepath
 fill
-newpath -64.2347139 -103.082875 moveto
- -66.3375574 -95.6084776 lineto
- -69.7930286 -97.6612787 lineto
- -64.2347139 -103.082875 lineto
+newpath -103.082875 -64.2347139 moveto
+ -97.6612787 -69.7930286 lineto
+ -95.6084776 -66.3375574 lineto
+ -103.082875 -64.2347139 lineto
 closepath
 stroke
-newpath -93.0568557 122.062287 moveto
+newpath -98.3326932 127.338125 moveto
  -110.19749 110.19749 lineto
 stroke
-newpath -86.8901119 126.330925 moveto
- -94.2006339 123.714661 lineto
- -91.9130776 120.409913 lineto
- -86.8901119 126.330925 lineto
+newpath -94.0640552 133.504868 moveto
+ -99.9850673 128.481903 lineto
+ -96.6803192 126.194347 lineto
+ -94.0640552 133.504868 lineto
 closepath
 fill
-newpath -86.8901119 126.330925 moveto
- -94.2006339 123.714661 lineto
- -91.9130776 120.409913 lineto
- -86.8901119 126.330925 lineto
+newpath -94.0640552 133.504868 moveto
+ -99.9850673 128.481903 lineto
+ -96.6803192 126.194347 lineto
+ -94.0640552 133.504868 lineto
 closepath
 stroke
 showpage
 %%EOF
 
 %%EndDocument
- @endspecial 0.000000 TeXcolorgray 2243 3746 a
+ @endspecial 0.000000 TeXcolorgray 2243 3787 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 3746
-a 2117 3781 a Fc(\000)p Fb(3)2243 3746 y
+ 2243 3787
+a 2117 3823 a Fc(\000)p Fb(3)2243 3787 y
 currentpoint grestore moveto
- 2243 3746 a
-0.000000 TeXcolorgray 2243 3510 a
+ 2243 3787 a
+0.000000 TeXcolorgray 2243 3551 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 3510 a 2117 3545
-a Fc(\000)p Fb(2)2243 3510 y
+ 2243 3551 a 2117 3587
+a Fc(\000)p Fb(2)2243 3551 y
 currentpoint grestore moveto
- 2243 3510 a 0.000000 TeXcolorgray
-2243 3274 a
+ 2243 3551 a 0.000000 TeXcolorgray
+2243 3315 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 3274 a 2117 3309 a Fc(\000)p Fb(1)2243
-3274 y
+ 2243 3315 a 2117 3350 a Fc(\000)p Fb(1)2243
+3315 y
 currentpoint grestore moveto
- 2243 3274 a 0.000000 TeXcolorgray 2243 3038 a
+ 2243 3315 a 0.000000 TeXcolorgray 2243 3079 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
 
-2243 3038 a 2194 3077 a Fb(0)2243 3038 y
+2243 3079 a 2194 3118 a Fb(0)2243 3079 y
 currentpoint grestore moveto
- 2243 3038 a
-0.000000 TeXcolorgray 2243 2801 a
+ 2243 3079 a
+0.000000 TeXcolorgray 2243 2843 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 2801 a 2194 2841
-a Fb(1)2243 2801 y
+ 2243 2843 a 2194 2882
+a Fb(1)2243 2843 y
 currentpoint grestore moveto
- 2243 2801 a 0.000000 TeXcolorgray
-2243 2565 a
+ 2243 2843 a 0.000000 TeXcolorgray
+2243 2606 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 2565 a 2194 2605 a Fb(2)2243 2565 y
-currentpoint grestore moveto
-
-2243 2565 a 0.000000 TeXcolorgray 2243 2329 a
-gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
-1.000000 0 0] concat neg exch neg exch translate
- 2243 2329
-a 2194 2368 a Fb(3)2243 2329 y
-currentpoint grestore moveto
- 2243 2329 a 0.000000 TeXcolorgray
-2243 2093 a
-gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
-1.000000 0 0] concat neg exch neg exch translate
- 2243 2093 a 2194 2132 a Fb(4)2243 2093 y
+ 2243 2606 a 2194 2646 a Fb(2)2243 2606 y
 currentpoint grestore moveto
 
-2243 2093 a 0.000000 TeXcolorgray 2243 1856 a
+2243 2606 a 0.000000 TeXcolorgray 2243 2370 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 1856
-a 2194 1896 a Fb(5)2243 1856 y
+ 2243 2370
+a 2194 2410 a Fb(3)2243 2370 y
 currentpoint grestore moveto
- 2243 1856 a 0.000000 TeXcolorgray
-2243 1620 a
+ 2243 2370 a 0.000000 TeXcolorgray
+2243 2134 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2243 1620 a 2194 1660 a Fb(6)2243 1620 y
+ 2243 2134 a 2194 2173 a Fb(4)2243 2134 y
 currentpoint grestore moveto
 
-2243 1620 a 0.000000 TeXcolorgray 2360 1555 a
+2243 2134 a 0.000000 TeXcolorgray 2243 1898 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2360 1555
-a 12 x Fa(y)2360 1555 y
+ 2243 1898
+a 2194 1937 a Fb(5)2243 1898 y
 currentpoint grestore moveto
- 2360 1555 a 0.000000 TeXcolorgray
-1336 3115 a
+ 2243 1898 a 0.000000 TeXcolorgray
+2243 1662 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 1336 3115 a 1273 3194 a Fc(\000)p Fb(4)1336
-3115 y
+ 2243 1662 a 2194 1701 a Fb(6)2243 1662 y
 currentpoint grestore moveto
- 1336 3115 a 0.000000 TeXcolorgray 1572 3115 a
+
+2243 1662 a 0.000000 TeXcolorgray 2360 1597 a
+gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
+1.000000 0 0] concat neg exch neg exch translate
+ 2360 1597
+a 12 x Fa(y)2360 1597 y
+currentpoint grestore moveto
+ 2360 1597 a 0.000000 TeXcolorgray
+1336 3156 a
+gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
+1.000000 0 0] concat neg exch neg exch translate
+ 1336 3156 a 1273 3235 a Fc(\000)p Fb(4)1336
+3156 y
+currentpoint grestore moveto
+ 1336 3156 a 0.000000 TeXcolorgray 1572 3156 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
 
-1572 3115 a 1509 3194 a Fc(\000)p Fb(3)1572 3115 y
+1572 3156 a 1509 3235 a Fc(\000)p Fb(3)1572 3156 y
 currentpoint grestore moveto
  1572
-3115 a 0.000000 TeXcolorgray 1808 3115 a
+3156 a 0.000000 TeXcolorgray 1808 3156 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 1808 3115 a
-1745 3194 a Fc(\000)p Fb(2)1808 3115 y
+ 1808 3156 a
+1745 3235 a Fc(\000)p Fb(2)1808 3156 y
 currentpoint grestore moveto
- 1808 3115 a 0.000000
-TeXcolorgray 2044 3115 a
+ 1808 3156 a 0.000000
+TeXcolorgray 2044 3156 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2044 3115 a 1981 3194 a Fc(\000)p
-Fb(1)2044 3115 y
+ 2044 3156 a 1981 3235 a Fc(\000)p
+Fb(1)2044 3156 y
 currentpoint grestore moveto
- 2044 3115 a 0.000000 TeXcolorgray 2281
-3115 a
+ 2044 3156 a 0.000000 TeXcolorgray 2281
+3156 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2281 3115 a 2257 3194 a Fb(0)2281 3115 y
+ 2281 3156 a 2257 3235 a Fb(0)2281 3156 y
 currentpoint grestore moveto
  2281
-3115 a 0.000000 TeXcolorgray 2517 3115 a
+3156 a 0.000000 TeXcolorgray 2517 3156 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2517 3115 a
-2493 3194 a Fb(1)2517 3115 y
+ 2517 3156 a
+2493 3235 a Fb(1)2517 3156 y
 currentpoint grestore moveto
- 2517 3115 a 0.000000 TeXcolorgray
-2708 2958 a
+ 2517 3156 a 0.000000 TeXcolorgray
+2708 3000 a
 gsave currentpoint currentpoint translate [1.000000 -0.000000 -0.000000
 1.000000 0 0] concat neg exch neg exch translate
- 2708 2958 a -28 w Fa(x)2708 2958 y
+ 2708 3000 a -28 w Fa(x)2708 3000 y
 currentpoint grestore moveto
- 2708 2958
+ 2708 3000
 a Black 0.000000 TeXcolorgray eop end
 %%Trailer
 

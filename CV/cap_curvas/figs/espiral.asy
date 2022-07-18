@@ -7,10 +7,10 @@ unitsize(1cm);
 
 
 pair espiral(real t) {
-	return (t*sin(t),t*cos(t));	}
+	return (t*sin(t), t*cos(t));	}
 
 pair tangente(real t) {
-	pair der= (cos(t)-t*sin(t),sin(t)+t*cos(t));	
+	pair der= (sin(t)+t*cos(t), cos(t)-t*sin(t));	
 	real norma = sqrt(der.x*der.x + der.y*der.y);
 	return der/norma;
 	}
@@ -18,8 +18,8 @@ pair tangente(real t) {
 
 draw(graph( pic=currentpicture,espiral,0,2*pi));
 
-for (int i=0;i<4;++i){
-	real t= i *pi/2+pi/4;
+for (int i=0; i < 4; ++i){
+	real t = i*pi/2 + pi/4;
 	draw(espiral(t)..espiral(t)+tangente(t),arrow=Arrow());
 	}
 xaxis(L=Label("$x$", align=N, position=EndPoint),arrow=Arrow(),Ticks);
