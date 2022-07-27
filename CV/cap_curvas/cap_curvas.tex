@@ -354,6 +354,35 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 \frac{t}{\sqrt{3t^2+2}} & \frac{1-t}{\sqrt{3t^2+2}} &  \frac{-1-t}{\sqrt{3t^2+2}} \end{array} \right| = \frac{(-4-6t^2)\vec{i} - (2+3t^2)\vec{j} - (2+3t^2)\vec{k}}{ \sqrt{12+18t^2} \sqrt{3t^2+2}} = \frac{-2}{\sqrt{6}} \vec{i} - \frac{1}{\sqrt{6}} \vec{j} - \frac{1}{\sqrt{6}} \vec{k}$.
 \end{resol}
 
+\begin{exeresol}
+Um erro comum entre estudantes é substituir a definição de vetor binormal unitário $\vec{B}=\vec{T}\times\vec{N}$ pela expressão espúria dada por $$\frac{\frac{d\vec{N}}{dt}}{\left\|\frac{d\vec{N}}{dt}\right\|}.$$ Calcule esta expressão para o movimento circular uniforme e verifique que ela é igual a $-\vec{T}$ e, portanto, perpendicular a $\vec{B}$.
+\end{exeresol}
+\begin{resol}
+ Considere $a$ e $w$ constantes positivas e a trajetória dada por:
+ \begin{eqnarray*}
+\vec{r}(t)&=&a\cos(wt)\vec{i}+a\sin(wt)\vec{j}\\
+\vec{r}~\!'(t)&=&-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}\\
+\|\vec{r}~\!'(t)\|&=&|aw|=aw.
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+\vec{T}(t)&=&\frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|}\\
+ &=&\frac{-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}}{aw}\\
+ &=&{-\sin(wt)\vec{i}+\cos(wt)\vec{j}}\\
+ \end{eqnarray*}
+ 
+ \begin{eqnarray*}
+\vec{N}(t)&=&\frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|}\\
+  &=&\frac{-w\cos(wt)-w\sin(wt)}{w}\\
+  &=&{-\cos(wt)-\sin(wt)}
+ \end{eqnarray*}
+ 
+ \begin{eqnarray*}
+\frac{\vec{N}~\!'(t)}{\|\vec{N}~\!'(t)\|}\\
+  &=&\frac{w\sin(wt)-w\cos(wt)}{w}\\
+  &=&{\sin(wt)-\cos(wt)}=-\vec{T}
+ \end{eqnarray*}
+\end{resol}
 
 \subsection*{Exercícios}
 \begin{exer}Calcule $\vec{r}'(t_0)$ e esboce o gráfico de $\vec{r}(t)$ juntamente com o vetor tangente $\vec{r}'(t_0)$.
@@ -423,6 +452,37 @@ Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos 
 \end{exer}
 
 
+\begin{exer}
+Represente graficamente o terno de vetores $\vec{T}$,$\vec{N}$ e $\vec{B}$ e verifique através da regra da mão direita as seguintes identidades:
+\begin{itemize}
+\item[a)]$\vec{B}=\vec{T}\times\vec{N}$
+\item[b)]$\vec{T}=\vec{N}\times\vec{B}$
+\item[c)]$\vec{N}=\vec{B}\times\vec{T}$
+\end{itemize}
+Use a identidade vetorial dada por
+$$\vec{u}\times\left(\vec{v}\times\vec{w}\right)=\vec{v}\left(\vec{u}\cdot\vec{w}\right)-\vec{w}\left(\vec{u}\cdot\vec{v}\right)$$ para obter as identidades $b$ e $c$ a partir de $a$.
+
+[{\it Dica: Use o fato que $\vec{T}\cdot\vec{T}=\vec{N}\cdot\vec{N}=\vec{B}\cdot\vec{B}=1$ e
+$\vec{T}\cdot\vec{N}=\vec{T}\cdot\vec{B}=\vec{N}\cdot\vec{B}=0$.}
+
+\end{exer}
+\begin{exer}
+Considere a trajetória dada pela equações paramétricas
+\begin{eqnarray*}
+x&=&t\sin (t)\\
+y&=&t\cos (t)\\
+z&=&0
+\end{eqnarray*}
+Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos inicial e final. Esboce o triedro $\vec{T}$, $\vec{N}$ e $\vec{B}$ no instante $t=\pi/2$.(Obs.: Não é necessário calcular analiticamente o triedro.) Considere a identidade vetorial $\frac{d r^2}{dt}=2\vec{r}\cdot\frac{d\vec{r}}{dt}$ no instante $t=\pi/2$, ela é compatível com seu desenho?
+\end{exer}
+\begin{resp}
+\includegraphics[scale=.8]{./cap_curvas/figs//espiral_lista_a1} 
+Para o comentário sobre a derivada da norma ao quadrado, observe que $r^2=t^2$, assim:
+\begin{eqnarray*}
+\vec{r}\cdot\frac{d\vec{r}}{dt}=\frac{1}{2}\frac{d r^2}{dt}=t>0
+\end{eqnarray*}
+Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato de que a tangente tem componente positivo nessa direção (não é paralelo ao eixo y como na circunferência).
+\end{resp}
 
 \section{Curvatura e Torção}
 
@@ -709,7 +769,351 @@ Podemos, agora, explorar diversos casos particular:
 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
+\begin{exeresol}
+Considere a hélice dada por
+\begin{eqnarray*}
+x&=&a\cos(wt)\\
+y&=&a\sin(wt)\\
+z&=&ct.\\
+\end{eqnarray*}
+Onde $a$ e $w$ são constantes positivas.
+\begin{itemize}
+\item[a)] Encontre  a curvatura desta hélice usando a fórmula
+$$\kappa=\frac{\left\|\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)\right\|}{\|r\ \!'(t)\|^3}.$$
+\item[b)] Encontre o módulo da torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)}{\left\|\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)\right\|}$$
+e a seguinte fórmula para o módulo da torção:
+$$|\tau|=\frac{\|B\ \!'(t)\|}{\|\vec{r}\ \!'(t)\|}=\left\|\frac{d\vec{B}}{ds}\right\|$$
+
+\item[c)] Discuta o sinal da torção em função do sinal de $cw$. 
+\item[d)] Confira a conclusão do item c), sabendo que $\vec{N}=-\cos(wt)\vec{i}-\sin(wt)\vec{j}$
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+ Observe que:
+\begin{eqnarray*}
+\vec{r}(t)&=&a\cos(wt)\vec{i}+a\sin(wt)\vec{j}+ct\vec{k},\\
+\vec{r}~\!'(t)&=&-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k},\\
+\vec{r}~\!''(t)&=&-aw^2\cos(wt)\vec{i}-aw^2\sin(wt)\vec{j}.
+\end{eqnarray*}
+Assim:
+\begin{eqnarray*}
+\vec{r}~\!'(t)\times \vec{r}~\!''(t)&=&\left|
+\begin{array}{ccc}
+\vec{i}&\vec{j}&\vec{k}\\[0.5cm]
+-aw\sin(wt)&aw\cos(wt)&c\\[0.5cm]
+-aw^2\cos(wt)&-aw^2\sin(wt)&0
+\end{array}
+\right|\\
+&=&
+acw^2\sin(wt)\vec{i}-acw^2\cos(wt)\vec{j}+a^2w^3\underbrace{\left(\cos^2(wt)+\sin^2(wt)\right)}_{1}\vec{k}\\
+&=&acw^2\sin(wt)\vec{i}-acw^2\cos(wt)\vec{j}+a^2w^3\vec{k}
+\end{eqnarray*}
+e
+\begin{eqnarray*}
+\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\|&=&\sqrt{a^2c^2w^4\sin^2(wt)+a^2c^2w^4\cos^2(wt)+a^4w^6}\\
+&=&\sqrt{a^2c^2w^4+a^4w^6}=|a|w^2\sqrt{c^2+a^2w^2}=aw^2\sqrt{c^2+a^2w^2}
+\end{eqnarray*}
+
+Usamos a fórmula da curvatura:
+\begin{eqnarray*}\kappa &=& \frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}\\
+&=&\frac{aw^2\sqrt{c^2+a^2w^2}}{\left\|-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k}\right\|^3}\\
+&=&\frac{aw^2\sqrt{c^2+a^2w^2}}{\left(a^2w^2+c^2\right)^{3/2}}\\
+&=&\frac{aw^2}{{a^2w^2+c^2}}\\
+\end{eqnarray*}
+
+
+Agora usamos a fórmula da torção:
+\begin{eqnarray*}\vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}\\
+&=&\frac{acw^2\sin(wt)\vec{i}-acw^2\cos(wt)\vec{j}+a^2w^3\vec{k}}{|a|w^2\sqrt{c^2+a^2w^2}}\\
+&=&\frac{ac\sin(wt)\vec{i}-ac\cos(wt)\vec{j}+a^2w\vec{k}}{a\sqrt{c^2+a^2w^2}}
+\end{eqnarray*}
+
+Sabemos que o módulo da torção é dado por:
+\begin{eqnarray*}
+|\tau|&=&\left\|\frac{d}{ds}\vec{B}\right\|\\
+&=& \left\|\frac{d}{dt}\vec{B} \right\|/\|r'(t)\|\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+ \frac{d}{dt}\vec{B} 
+&=&\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a\sqrt{c^2+a^2w^2}}
+\end{eqnarray*}
+e
+\begin{eqnarray*}
+\|r'(t)\|&=&\left\|-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k}\right\|\\
+&=&\sqrt{c^2+a^2w^2}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+ \frac{d}{ds}\vec{B} 
+&=&\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a(c^2+a^2w^2)}
+\end{eqnarray*}
+
+Portanto:
+\begin{eqnarray*}
+|\tau|=\left\|\frac{d}{ds}\vec{B}\right\|&=&
+\frac{|acw|}{a(c^2+a^2w^2)}\\
+&=&\frac{|c|w}{{c^2+a^2w^2}}
+\end{eqnarray*}
+Observando a orientação da curva, vemos que a ela é dextrógira se $c>0$, levógira se $c<0$, o sinal da torção é o sinal de $c$:
+\begin{eqnarray*}
+\tau=\frac{cw}{{c^2+a^2w^2}}
+\end{eqnarray*}
+
+Podemos verificar essa conclusão sabendo que:
+\begin{eqnarray*}
+\tau&=&-\frac{d}{ds}\vec{B}\cdot\vec{N}\\
+&=&-\left(\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a(c^2+a^2w^2)}\right)\cdot\left(-\cos(wt)\vec{i}-\sin(wt)\vec{j}\right)\\
+&=&\frac{cw\cos^2(wt)+cw\sin^2(wt)}{(c^2+a^2w^2)}\\
+&=&\frac{cw}{c^2+a^2w^2}
+\end{eqnarray*}
+
+\end{resol}
+
+\begin{exeresol}
+Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
+$$\|\vec{a}\|^2=a_N^2+a_T^2$$
+onde $\vec{a}$ é o vetor aceleração. Verifique esta identidade na trajetória dada por
+\begin{eqnarray*}
+ \vec{r}(t)=3\cos (t) \vec{i} + 3\sin (t) \vec{j} +t^2\vec{k}.
+\end{eqnarray*}
+[{\it Dica: use o fato que $\|\vec{a}\|^2=\vec{a}\cdot\vec{a}$.}]
+\end{exeresol}
+
+\begin{resol}
+Basta usar a seguinte identidade e simplifique:
+\begin{eqnarray*}
+ \|\vec{a}\|^2&=&\|a_T\vec{T}+a_N\vec{N}\|^2= \left(a_T\vec{T}+a_N\vec{N}\right)\cdot \left(a_T\vec{T}+a_N\vec{N}\right)
+ \end{eqnarray*}
+A trajetória em questão é dada por:
+\begin{eqnarray*}\vec{r}(t)=3\cos (t) \vec{i} + 3\sin (t) \vec{j} +t^2\vec{k}
+\end{eqnarray*}
+Para obter os valores pedidos, calculamos:
+\begin{eqnarray*}\vec{r}'(t)&=&-3\sin (t) \vec{i} + 3\cos (t) \vec{j} +2t\vec{k}\\
+\vec{r}''(t)&=&-3\cos (t) \vec{i} - 3\sin (t) \vec{j} +2\vec{k}\\
+\|\vec{r}'(t)\|&=&\left(9\sin^2(t)+9\cos^2(t)+4t^2\right)^{1/2}=\left(9+4t^2\right)^{1/2}
+\end{eqnarray*}
+
+\begin{eqnarray*}a_N=\frac{\|\vec{r}'(t)\times \vec{r}''(t)\|}{\|\vec{r}'(t)\|}
+\end{eqnarray*}
+onde
+\begin{eqnarray*}\vec{r}'(t)\times \vec{r}''(t)&=&
+\left|\begin{array}{ccc}
+\vec{i}&\vec{j}&\vec{k}\\
+-3\sin (t) & 3\cos (t) & 2t\vec{k}\\
+-3\cos (t) & -3\sin (t) & 2\vec{k}
+\end{array}
+\right|\\&=&\left(6\cos(t)+6t\sin(t)\right)\vec{i}+\left(-6t\cos(t) +6\sin(t)\right)\vec{j}+\underbrace{\left(9\sin^2(t)+9\cos^2(t)\right)}_{9}\vec{k}
+\end{eqnarray*}
+Assim:
+\begin{eqnarray*}
+\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|&=&\left[\left(6\cos(t)+6t\sin(t)\right)^2+\left(-6t\cos(t) +6\sin(t)\right)^2+81\right]^{1/2}\\
+&=&\left[\left(36\cos^2(t)+72\sin(t)\cos(t) + 36t^2\sin^2(t)\right)\right.\\&+&\left.\left(36t^2\cos^2(t) -72 \cos(t)\sin(t) + 36 \sin^2(t)\right) + 81\right]^{1/2}\\
+&=&\left[36+36t^2+81\right]^{1/2}=\left(117+36t^2\right)^{1/2}
+\end{eqnarray*}
+Portanto
+\begin{eqnarray*}a_N=\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{1/2}}
+\end{eqnarray*}
+e
+\begin{eqnarray*}\kappa=\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{3/2}}
+\end{eqnarray*}
+
+A aceleração tangencial pode ser obtida conforme
+\begin{eqnarray*}a_T=\frac{\vec{v}\cdot \vec{a}}{v}=\frac{9\sin(t)\cos(t) -9\sin(t) \cos(t)+4t}{\left(9+4t^2\right)^{1/2}}=\frac{4t}{\left(9+4t^2\right)^{1/2}}.
+\end{eqnarray*}
+
+Agora, retornamos ao pedido nesta lista:
+\begin{eqnarray*}
+ \|\vec{a}\|^2&=&\left\|-3\cos (t) \vec{i} - 3\sin (t) \vec{j} +2\vec{k}\right\|^2\\&=&3^2+2^2=13.
+\end{eqnarray*}
+E também:
+\begin{eqnarray*}
+a_N^2+a_T^2&=&\left(\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{1/2}}\right)^2+\left(\frac{4t}{\left(9+4t^2\right)^{1/2}}\right)^2\\
+&=&\frac{117+36t^2}{9+4t^2}+\frac{16t^2}{9+4t^2}=\frac{117+52t^2}{9+4t^2}\\&=&1,
+\end{eqnarray*}
+o que verifica a identidade.
+ 
+\end{resol}
+
+
+
+\begin{exeresol}
+Mostre que a curvatura do gráfico da função
+$$y=f(x)$$
+sobre o plano $xy$
+é dada pela expressão
+$$\kappa(x)=\frac{|f''(x)|}{\left(1+f'(x)^2\right)^{3/2}}.$$
+Use esta expressão para obter a curvatura das seguintes curvas planas:
+\begin{itemize}
+\item[a)] $y=ax+b$
+\item[b)]$y=\sqrt{a^2-x^2}$, $-a<x<a$ onde $a>0$.
+\item[c)] $y=x^4$
+\item[d)] $y=ax^2$ 
+\item[e)] $y=\cosh(x)$
+\item[f)] $y=\sinh(x)$
+\item[g)] $y=\cos(x)$
+\end{itemize}
+Como você interpreta os casos a e b? As curvas dos ítens c e g possuem pontos onde a curvatura é zero. Que implicação isso tem sobre a existência do vetor normal unitário $\vec{N}$? Interprete geometricamente.
+
+
+[{\it Dica.: Use a parametrização $\vec{r}=t\vec{i}+f(t)\vec{j}$ e aplique na expressão para a curvatura.}]
+\end{exeresol}
+
+
+\begin{resol}
+  Use a parametrização:
+ $$\vec{r}(t) = t\vec{i}+f(t)\vec{j}$$ na fórmula da curvatura dada por:
+$$\kappa=\frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}=\frac{\left\|\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}~\!\right\|}{\|~\!\vec{i}+f'(t)\vec{j}\|^3}$$
+e obtenha a expressão dada.
+
+
+\begin{itemize}
+\item[a)] $\kappa(x)=0$
+\item[b)]$\kappa(x)=1/a$
+\item[c)] $\kappa(x)=\frac{12x^2}{\left(1+16x^6\right)^{3/2}}$
+\item[d)] $\kappa(x)=\frac{2|a|}{\left(1+4a^2x^2\right)^{3/2}}$ 
+\item[e)] $\kappa(x)=\frac{1}{\cosh^2(x)}$
+\item[f)] $\kappa(x)=\frac{\sinh(|x|)}{\left(1+\cosh^2(x)\right)^{3/2}}$
+\item[g)] $\kappa(x)=\frac{\cos|x|}{\left(1+\sin^2(x)\right)^{3/2}}$
+\end{itemize}
+
+Obs.: A curva a) é uma reta, pelo que tem curvatura zero. A curva b) é uma semicircunferêcia de raio $a$, pelo que tem curvatura $1/a$. Nos pontos de curvatura zero, o vetor normal não está definido. 
+No item c), $\lim_{x\to 0-}\vec{N}(t)=\lim_{x\to 0+}\vec{N}(t)=\vec{j}$, mas no item g), os limites não são iguais, evidenciando mudança de concavidade.
+
+
+Para analisar mais rigorosamente a existência do vetor normal, observe que o vetor tangente e normal são dados por:
+\begin{eqnarray*}
+ \vec{T}(t)&=&\frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|}\\
+ &=&\frac{\vec{i}+f'(t)\vec{j}}{\sqrt{1+f'(t)^2}}\\
+ &=&\left(1+f'(t)^2\right)^{-1/2}\vec{i}+f'(t)\left(1+f'(t)^2\right)^{-1/2}\vec{j}
+\end{eqnarray*}
+\begin{eqnarray*}
+ \vec{T}~\!'(t)
+ &=&-f'(t)f''(t)\left(1+f'(t)^2\right)^{-3/2}\vec{i}\\
+ &+&\left[f''(t)\left(1+f'(t)^2\right)^{-1/2}-f'(t)^2f''(t)\left(1+f'(t)^2\right)^{-3/2}\right]\vec{j}\\
+ &=&\frac{f''(t)}{\left(1+f'(t)^2\right)^{3/2}}\left[-f'(t)\vec{i}+\vec{j}\right]\\
+\vec{N}(t)&=&\frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|}\\
+&=&\frac{f''(t)}{|f''(t)|}\frac{-f'(t)\vec{i}+\vec{j}}{\sqrt{1+f'(t)^2}}\\
+&=&\text{sinal}\left(f''(t)\right)\frac{-f'(t)\vec{i}+\vec{j}}{\sqrt{1+f'(t)^2}}
+\end{eqnarray*}
+Já o vetor $\vec{B}(t)$ é dado por:
+\begin{eqnarray*}
+\vec{B}=\vec{T}\times \vec{N} &=& \frac{\vec{i}+f'(t)\vec{j}}{\sqrt{1+f'(t)^2}} \times \text{sinal}\left(f''(t)\right)\frac{-f'(t)\vec{i}+\vec{j}}{\sqrt{1+f'(t)^2}}\\
+&=&\text{sinal}(f''(t))\frac{(1+f'(t)^2)\vec{k}}{1+f'(t)^2}\\
+&=&\text{sinal}(f''(t))\vec{k}
+\end{eqnarray*}
+
+Alternativamente, do fato que $\vec{N}=\vec{B}\times \vec{T}$ e de o vetor $\vec{B}$ ser previsível por inspeção, poderíamos ter evitado os cálculos mais trabalhosos para obter o vetor $\vec{N}$:
+$$\vec{N}=\left\{
+\begin{array}{rr}
+\vec{k}\times\vec{T},&f''(t)>0\\
+-\vec{k}\times\vec{T},&f''(t)<0\\
+\text{não definido},&f''(t)=0
+\end{array}
+\right.$$
+
+O vetor $\vec{B}$ também poderia ter sido calculado pela fórmula:
+ \begin{eqnarray*}
+  \vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}
+ \end{eqnarray*}
+onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}=f''(t)\vec{k}.$$
+
+\end{resol}
+
+
+\begin{exeresol}
+Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
+\begin{itemize}
+ \item[a)] O que acontece quando $a=b$?
+ \item[b)] Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
+ \item[c)] Encontre os semi-eixos da elipse cuja curvatura máxima é $8m^{-1}$ e o semi-eixo menor é $\frac{1}{4}m$.
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+As curvaturas máximas e mínimas são (não necessariamente respectivamente) $\frac{a}{b^2}$ e $\frac{b}{a^2}$. Os raios de curvatura associados são $\frac{b^2}{a}$ e $\frac{a^2}{b}$.
+\begin{itemize}
+ \item[a)] Quando $a=b$, a elipse é uma circunferência e o raio de curvatura é constante igual a $a$, que é o raio da circunferência.
+\item[b)] Para calcular os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m, suponha, sem perda de generalidade, que $a<b$ e resolva:
+ \begin{eqnarray*}
+  \frac{a^2}{b} &=& 50\\
+  \frac{b^2}{a} &=& 400\\
+ \end{eqnarray*}
+ Da primeira equação, temos $b=\frac{a^2}{50}$, o que substituimos na segunda equação para obter:
+ \begin{eqnarray*}
+   \frac{b^2}{a} &=& \frac{a^4}{50^2a}=400
+ \end{eqnarray*}
+o que significa
+$$a^3=400\times 2500 = 1.000.000.$$
+ Assim $a=100m$ e $b=\frac{a^2}{50}=200m$.
+\item[c)] Sem perda de generalidade, considere $a<b$ e temos as equações:
+  \begin{eqnarray*}\kappa_{max}=\frac{b}{a^2}=8\\
+  \end{eqnarray*}
+     Como $a=1/4$, obtemos:
+     $b=8a^2=\frac{8}{16}=\frac{1}{2}m$.
+ \end{itemize}
+
+
+\end{resol}
+
+\begin{exeresol}
+Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$. 
+
+
+\indent {\it Obs:} Para calcular a curvatura, você provavelmente usou uma parametrização do tipo $\vec{r}=a\sin (t) + b\cos (t)$, explique por que esta parametrização pode ser usada para obter a curvatura, mas não pode ser usada diretamente para calcular a aceleração normal.
+\end{exeresol}
+\begin{resol}
+A curvatura máxima da pista é:
+ $$k_{max}=\frac{200}{50^2}=\frac{2}{25}\text{m}^{-1}$$
+ Sabemos que $a_N=\kappa v^2$, portanto a máxima velocidade possível é:
+ $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
+
+ Sobre a observação, a parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema.
+\end{resol}
+\begin{exer}
+Considere a trajetória  dada por
+$$x(t)=\cos(t),~~  y(t)=\sin 2t,~~ z(t)=0.$$
+
+Esboce o gráfico desta trajetória sobre o plano $xy$. Encontre uma expressão para a curvatura $k$ como uma função da coordenada $x$ na forma $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}.$$ Mostre que a curvatura é zero na origem e apenas na origem. Esboce, agora, o gráfico da curvatura como função de $x$ abaixo do gráfico da curva.
+Dica: Use identidades trigonométricas como $\sin(2t)=2\sin(t)\cos(t)$, $\cos(2t)=\cos^2(t)-\sin^2(t)$ e $\sin^2(t)+\cos^2(t)=1$.
+\end{exer}
+\begin{resol}
+A curva é dada por:
+$$\vec{r}(t)=\cos (t)\vec{i}+ \sin (2t)\vec{j}.$$
+Assim:
+ \begin{eqnarray*}
+    \vec{r}~\!'(t)&=&-\sin(t)\vec{i}+ 2\cos(2t)\vec{j}\\
+  \vec{r}~\!''(t)&=&-\cos (t)\vec{i}-4 \sin (2t)\vec{j}
+ \end{eqnarray*}
+ Portanto:
+ \begin{eqnarray*}
+  \|\vec{r}~\!'(t)\|&=&\sqrt{\sin^2(t)+4\cos^2(2t)}\\
+  &=&\sqrt{\sin^2(t)+4-4\sin^2(2t)}\\
+  &=&\sqrt{\sin^2(t)+4-16\sin^2(t)\cos^2(t)}\\
+  &=&\sqrt{1-\cos^2(t)+4-16\left(1-\cos^2(t)\right)\cos^2(t)}\\
+  &=&\sqrt{1-x^2+4-16(1-x^2)x^2}\\
+  &=&\sqrt{5-17x^2+16x^4}
+ \end{eqnarray*}
+e
+ \begin{eqnarray*}
+    \vec{r}~\!'(t)\times \vec{r}~\!''(t)&=&\left(4\sin(t)\sin(2t)+2\cos(t)\cos(2t)\right)\vec{k}\\
+ &=&\left[8\sin^2(t)\cos(t)+2\cos(t)\left(\cos^2(t)-\sin^2(t)\right)\right]\vec{k}\\
+ &=&\left[6\sin^2(t)\cos(t)+2\cos^3(t)\right]\vec{k}\\
+ &=&\left[6(1-x^2)x+2x^3\right]\vec{k}\\
+ &=&\left[6x-4x^3\right]\vec{k}\\
+  \end{eqnarray*}
+  Portanto:
+   \begin{eqnarray*}
+    \|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\|
+ &=&|6x-4x^3|=|x|(6-4x^2)
+  \end{eqnarray*}
+e
+$$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
+
+\includegraphics[scale=.6]{./cap_curvas/figs/lissa_lista_a1_2}
+\end{resol}
+
+
 
 
 \subsection*{Exercícios}
@@ -915,20 +1319,22 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 
 
 
-%  {\bf Questão 8} Encontre os semi-eixos da elipse cuja curvatura máxima é $8m^{-1}$ e o semi-eixo menor é $\frac{1}{4}m$.
-% 
-% {\bf Questão 9} Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$. 
-% 
-% \indent {\it Obs:} Para calcular a curvatura, você provavelmente usou uma parametrização do tipo $\vec{r}=a\sin t + b\cos t$, explique por que esta parametrização pode ser usada para obter a curvatura, mas não pode ser usada diretamente para calcular a aceleração normal.
-% 
-% {\bf Questão 10} Considere a trajetória  dada por
-% $$x(t)=\cos t,~~  y(t)=\sin 2t,~~ z(t)=0.$$
-% Esboce o gráfico desta trajetória sobre o plano $xy$. Encontre uma expressão para a curvatura $k$ como uma função de $t$ e depois verifique que é possível escrever a curvatura como uma função da coordenada $x$. Encontre a curvatura máxima e os pontos onde ela acontece. {\bf Resp:} $k(x)=6x-4x^3$ máximo em $ \left(\pm \frac{\sqrt{2}}{2},\pm 1\right)$  
+
+
+
+ 
 
 
 
 
 
 
-% 
-%\end{document}
+
+
+
+
+
+
+
+
+
