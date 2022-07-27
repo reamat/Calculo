@@ -2,4 +2,88 @@
 
 \chapter{Introdução}\label{chap:introducao}
 
-\emconstrucao
+Esse livro de cálculo vetorial se dedica ao estudo de curvas, superfícies, campos vetoriais, integral de linha, integral de superfície e alguns teoremas de integração, tais como o teorema de divergência de Gauss e o teorema de Stokes, além de aplicações.
+
+\section{Revisão}
+Para uma leitura mais tranquila desse livro, é esperado que o leitor tenha os seguintes conhecimentos de Cálculo Diferencial e Integral: limites, derivadas e integrais de função de uma, duas ou três variáveis; integração em coordenadas cartesianas, polares, cilíndicas e esféricas; e outros conhecimentos mais básicos de funções elementares. Abaixo seguem alguns exercícios de revisão.
+
+\subsection*{Exercícios Resolvidos}
+\begin{exeresol}Use as expressões $\cos x=\frac{e^{ix}+e^{-ix}}{2}$ e $\sin x=\frac{e^{ix}-e^{-ix}}{2i}$ para obter as seguintes identidades trigonométricas:
+\begin{itemize}
+\item $\cos^2x+\sin^2x=1$
+\item $\cos^2x=\frac{1}{2}+\frac{1}{2}\cos(2x)$
+\item $\sin^2x=\frac{1}{2}-\frac{1}{2}\cos(2x)$
+\item $\cos^5(x)=\frac{1}{16}\left[\cos(5x)+5\cos(3x)+10\cos(x)\right]$
+\end{itemize}
+\end{exeresol}
+\begin{resol}
+\begin{eqnarray*}
+\cos^5(x)=\left(\frac{e^{ix}+e^{-ix}}{2}\right)^5=\frac{\left({e^{ix}+e^{-ix}}\right)^5}{32}
+\end{eqnarray*}
+Agora usamos o Binômio de Newton para $n=5$:
+\begin{eqnarray*}
+(a+b)^5=a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5
+\end{eqnarray*}
+e obtemos:
+\begin{eqnarray*}
+\cos^5(x)&=&\frac{{e^{5ix}+5e^{4ix}e^{-ix}+10e^{3ix}e^{-2ix}+10e^{2ix}e^{-3ix}+5e^{ix}e^{-4ix}+e^{-5ix}}}{32}\\
+&=&\frac{{e^{5ix}+5e^{3ix}+10e^{ix}+10e^{-ix}+5e^{-3ix}+e^{-5ix}}}{32}\\
+\end{eqnarray*}
+Recoletando os termos, chegamos à resposta final, pois $\cos(5x)=\frac{e^{5ix}+e^{-5ix}}{2}$,$\cos(3x)=\frac{e^{3ix}+e^{-3ix}}{2}$ e $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
+\end{resol}
+
+\begin{exeresol}Seja $D$ a região do plano $xy$ limitada pela circunferência de raio $1$ centrada da origem, calcule o valor da integral dada por:
+$$\iint_D x^2 dxdy.$$
+\end{exeresol}
+\begin{resol}Parametrizando em polares, temos:
+$$I= \int_0^{2\pi}\int_0^1 (\rho\cos\theta)^2\rho d\rho d\theta=\int_{0}^{2\pi}\cos^2\theta d\theta\int_0^1\rho^3d\rho=\frac{\pi}{4}$$
+\end{resol}
+
+
+\begin{exeresol} Seja $H$ o hemisfério limitado pela esfera unitária centrada na origem e o plano $x=0$ tal que $x>0$. Calcule o valor de $\Phi$ dado pela expressão
+$$\Phi=\iiint_Hx dxdydz.$$ 
+\end{exeresol}
+\begin{resol}Parametrizamos a região em coordenadas esféricas:
+\begin{eqnarray*}
+x&=&r\sin\theta\cos\varphi,\\ y&=&r\sin\theta\sin\varphi,\qquad \\z&=&r\cos\theta,
+\end{eqnarray*}
+com $0\leq r \leq 1$, $0\leq \theta\leq {\pi}$, $-\frac{\pi}{2}\leq \varphi\leq \frac{\pi}{2}$.  
+Portanto
+\begin{eqnarray*}
+\Phi&=&\int_0^1\int_0^\pi\int_{-\pi/2}^{\pi/2}r\sin\theta\cos\varphi r^2\sin\theta d\varphi d\theta dr\\
+&=&\left(\int_0^1r^3dr\right)\left(\int_0^\pi\sin^2\theta d\theta \right)\left(\int_{-\pi/2}^{\pi/2}\cos\varphi d\varphi\right)\\
+&=&\frac{1}{2}\left.\left(\frac{x}{2}-\frac{\sin(2x)}{4}\right)\right|_0^{\pi}=\frac{\pi}{4}
+\end{eqnarray*}
+\end{resol}
+
+
+\subsection*{Exercícios}
+
+
+\begin{exer}Use as expressões $\cosh x=\frac{e^x+e^{-x}}{2}$ e $\sinh x=\frac{e^x-e^{-x}}{2}$ para obter as seguintes identidades:
+\begin{itemize}
+\item $\cosh^2x-\sinh^2x=1$
+\item $\cosh^2x=\frac{1}{2}+\frac{1}{2}\cosh(2x)$
+\item $\sinh^2x=-\frac{1}{2}+\frac{1}{2}\cosh(2x)$
+\item $e^x=\cosh(x)+\sinh(x)$
+\item $e^{-x}=\cosh(x)-\sinh(x)$
+
+\end{itemize}
+\end{exer}
+
+\begin{exer}Use a técnica dos problemas 1 e 2 para obter as seguintes integrais:
+\begin{itemize}
+\item $\int \sin^2xdx=\frac{x}{2}-\frac{1}{4}\sin(2x)+C$
+\item $\int \cos^2xdx=\frac{x}{2}+\frac{1}{4}\sin(2x)+C$
+\item $\int \cos^3xdx=\frac{1}{12}\left[\sin(3x)+9\sin(x)\right]+C$
+\end{itemize}
+\end{exer}
+
+
+\begin{exer}Calcule a área da região do plano $xy$ limitada pelos eixos ordenados, as retas $x=2$ e $y=2$ e a hipérbole $xy=1$.
+\end{exer}
+\begin{resp}
+$1+\ln4$ 
+\end{resp}
+
+
