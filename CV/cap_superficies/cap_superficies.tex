@@ -22,7 +22,6 @@ temos que
 $$
 x^2+y^2+z^2=a^2.
 $$
-\end{ex}
 Além disso, se $(x,y,z)$ é um ponto qualquer nesta esfera, então existem $u$ e $v$ na parametrização. Para tal, basta escolher $u=\cos^{-1}\left(\frac{z}{a}\right)$ e escolher $v\in[0,2\pi)$ tal que:
 $$\cos(v)=\frac{x}{a\sin(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{a\sin(u)},~~u\neq 0 ~~ \hbox{e} ~~u\neq \pi.$$
 
@@ -31,13 +30,57 @@ $$\cos(v)=\frac{x}{a\sin(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{a\sin(u)},~~u
  \includegraphics{cap_superficies/figs/figura_1}\label{cap_superficies_esfera}
 \caption{Um esfera centrada na origem com meridianos e paralelos traçados.}
 \end{figure}
-% \begin{prob}Verifique que
-% $$
-% \vec{r}=\cosh(u)\cos( v)\vec{i}+ \cosh(u)\sin(v)\vec{j}+\sinh(u)\vec{k},\ 0\leq v\leq 2\pi,\ u\in\mathcal{R}
-% $$
-% descreve um hiperbolóide de uma folha.
-% \end{prob}
-\section{Quádricas}
+\end{ex}
+
+\begin{ex}A função vetorial
+ $$
+ \vec{r}=\cosh(u)\cos( v)\vec{i}+ \cosh(u)\sin(v)\vec{j}+\sinh(u)\vec{k},\ 0\leq v\leq 2\pi,\ u\in\mathcal{R}
+ $$
+ descreve um hiperbolóide de uma folha. De fato, para cada par $(u,v)$ no domínio, a parametrização
+ $$
+ x(u,v)=\cosh(u)\cos(v),\qquad y(u,v)=\cosh(u)\sin(v)\quad\text{e}\quad z(u,v)=\sinh(u)
+ $$
+ nos leva na equação canônica de um hiperbolóide de uma folha:
+ \begin{eqnarray*}
+ x^2+y^2-z^2&=&\cosh^2(u)\cos^2(v)+\cosh^2(u)\sin^2(v)-\sinh^2(u)  \\
+ &=&\cosh^2(u)(\cos^2(v)+\sin^2(v))-\sinh^2(u)  \\
+ &=&\cosh^2(u)-\sinh^2(u)  \\
+ &=&1.
+ \end{eqnarray*}
+Recriprocamente, se $(x,y,z)$ é um ponto sobre o hiperbolóide, definimos $u=\sin^{-1}(z)$ e escolhemos $v\in[0,2\pi)$ tal que:
+$$\cos(v)=\frac{x}{\cosh(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{\cosh(u)}.$$
+ \end{ex}
+ 
+ \subsection*{Exercícios}
+ \begin{exer}Mostre que a função vetorial
+  $$
+  \vec{r}(u,v)=(u+v)\vec{i}+(u-v)\vec{j}+(3u-2v+1)\vec{k}, \qquad 0\leq u,v\leq \infty,
+  $$
+  descreve um plano.
+ \end{exer}
+
+ \begin{exer}Mostre que a função vetorial
+  $$
+  \vec{r}(u,v)=3\cos(u)\vec{i}+3\sin(u)\vec{j}, \qquad 0\leq u\leq 2\pi,\quad 0\leq v\leq 2
+  $$
+  descreve um cilindro.
+ \end{exer}
+ \section{Vetor unitário normal}\index{vetor normal à uma superfície}
+Para os fins de teoria de integraçao sobre superfícies, que discutiremos mais adiante, é fundamental definir o vetor unitário normal. Dado uma superfície e um ponto nela, dizemos que um vetor é normal à superfície se ele é perpendicular no ponto a cada curva contida na superfícies. Em especial, um vetor normal à superfícies no ponto $x_0=x(u_0,v_0)$, $y_0=y(u_0,v_0)$ e $z_0=z(u_0,v_0)$, deve ser perpendicular às curvas $\vec{r}(u_0,v)$ e $\vec{r}(u,v_0)$, isto é, as curvas geradas quando se fixa um dos parâmetros $u_0$ ou $v_0$, respectivamente. Assim, podemos concluir que cada vetor normal está da mesma direção do produto vetorial $\vec{r}_u\times\vec{r}_v$. Finalmente, o vetor normal unitário deve ter norma unitária, portanto, deve ser da forma:
+\begin{equation}\label{cap_superficies_normal_unitário}
+ \vec{n} = \pm \frac{\vec{r}_u\times\vec{r}_v}{\|\vec{r}_u\times\vec{r}_v\|}.
+\end{equation}
+Aqui o sinal indica para qual lado o vetor normal aponta. Observe que se a superfície for regular, então $\vec{r}_u\times\vec{r}_v\neq \vec{0}$, o que indica que a expressão \eqref{cap_superficies_normal_unitário} está bem definida. 
+\section{Caso particular em que a superfície é gráfico de função}
+O caso particular da superfície representada por uma função $z=f(x,y)$, podemos assumir uma parametrização natural $\vec{r}=u\vec{i}+v\vec{j}+f(u,v)\vec{k}$. Analogamente para os casos $y=f(x,z)$ ou $x=f(y,z)$, podemos assumir, respectivamente, as parametrizações $\vec{r}=u\vec{i}+f(u,v)\vec{j}+v\vec{k}$ ou $\vec{r}=f(u,v)\vec{i}+v\vec{j}+u\vec{k}$. Para o caso $z=f(x,y)$ (analogamente para os demais), a condição $\vec{r}_u\times \vec{r}_v\neq \vec{0}$ assume a forma
+\begin{eqnarray*}
+ \vec{r}_u\times \vec{r}_v&=&\left|\begin{array}{ccc}\vec{i}&\vec{j}&\vec{k}\\ 1&0&f_u(u,v)\\0&1&f_v(u,v)\end{array} \right|\\&=&-f_u\vec{i}-f_v\vec{j}+\vec{k}\neq \vec{0}.
+\end{eqnarray*}
+Isso implica que $ \vec{r}_u\times \vec{r}_v \neq 0$, ou seja, a superfície \'{e} regular. Voltaremos a discutir esse assunto nos próximos capítulos, quando o vetor gradiente estiver definido.
+
+
+\subsection{Planos e cilindros}
+\subsection{Superfícies quádricas}
 A figura \ref{quadricas} apresenta uma lista das principais quádricas\index{quádricas} estudadas na disciplina de Cálculo Diferencial e Integral com funções de várias variáveis. As equações são as seguintes:
 \begin{itemize}
 \item[a)] Cone elíptico: $\displaystyle z^2=\frac{x^2}{a^2}+\frac{y^2}{b^2}$.
@@ -56,15 +99,4 @@ A figura \ref{quadricas} apresenta uma lista das principais quádricas\index{qu�
 \includegraphics{cap_superficies/figs/figura_6}
 \includegraphics{cap_superficies/figs/figura_7} \caption{\label{quadricas}Quádricas}
 \end{figure}
-\section{Caso particular em que a superfície é gráfico de função}
-O caso particular da superfície representada por uma função $z=f(x,y)$, podemos assumir uma parametrização natural $\vec{r}=u\vec{i}+v\vec{j}+f(u,v)\vec{k}$. Analogamente para os casos $y=f(x,z)$ ou $x=f(y,z)$, podemos assumir, respectivamente, as parametrizações $\vec{r}=u\vec{i}+f(u,v)\vec{j}+v\vec{k}$ ou $\vec{r}=f(u,v)\vec{i}+v\vec{j}+u\vec{k}$. Para o caso $z=f(x,y)$ (analogamente para os demais), a condição $\vec{r}_u\times \vec{r}_v\neq \vec{0}$ assume a forma
-\begin{eqnarray*}
- \vec{r}_u\times \vec{r}_v&=&\left|\begin{array}{ccc}\vec{i}&\vec{j}&\vec{k}\\ 1&0&f_u(u,v)\\0&1&f_v(u,v)\end{array} \right|\\&=&-f_u\vec{i}-f_v\vec{j}+\vec{k}\neq \vec{0}.
-\end{eqnarray*}
-Isso implica que $ \vec{r}_u\times \vec{r}_v \neq 0$, ou seja, a superfície \'{e} regular. Voltaremos a discutir esse assunto nos próximos capítulos, quando o vetor gradiente estiver definido.
-\section{Vetor unitário normal}\index{vetor normal à uma superfície}
-Para os fins de teoria de integraçao sobre superfícies, que discutiremos mais adiante, é fundamental definir o vetor unitário normal. Dado uma superfície e um ponto nela, dizemos que um vetor é normal à superfícies, se ele é perpendicular no ponto a cada curva contida na superfícies. Em especial, um vetor normal à superfícies no ponto $x_0=x(u_0,v_0)$, $y_0=y(u_0,v_0)$ e $z_0=z(u_0,v_0)$, deve ser perpendicular às curvas $\vec{r}(u_0,v)$ e $\vec{r}(u,v_0)$, isto é, as curvas geradas quando se fixa um dos parâmetros $u_0$ ou $v_0$, respectivamente. Assim, podemos concluir que cada vetor normal está da mesma direção do produto vetorial $\vec{r}_u\times\vec{r}_v$. Finalmente, o vetor normal unitário deve ter normal unitário, portanto, deve ser da forma:
-\begin{equation}
- \vec{n} = \pm \frac{\vec{r}_u\times\vec{r}_v}{\|\vec{r}_u\times\vec{r}_v\|}.
-\end{equation}
-Aqui o sinal indica para qual lado o vetor normal aponta.
+
