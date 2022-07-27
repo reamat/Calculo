@@ -52,6 +52,19 @@ main.html: main.tex
 	htlatex main.tex "myconfig.cfg,3,notoc*" " -cunihtf" "-d./html/"
 	cp config-book.knd config.knd
 
+exer:
+	python3 ../extrai_exercicios.py
+	cp config-book.knd config.knd
+	latex main
+	latex exercicios
+	latex exercicios_resolvidos
+	latex exercicios_todos
+	latex exercicios_todos_com_exemplos
+	pdflatex exercicios
+	pdflatex exercicios_resolvidos
+	pdflatex exercicios_todos
+	pdflatex exercicios_todos_com_exemplos
+
 ########################################
 # TODOS AS VERSÕES EM FORMATO PDF
 ########################################
@@ -63,6 +76,7 @@ all: main.tex
 	make dvi
 	make clean
 	make html
+
 
 
 .PHONY: clean

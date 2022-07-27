@@ -1,3 +1,5 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 \chapter{Integral de Superfície}
   Neste capítulo, estudamos a integral de superfície\index{integral de superfície} e teoremas relacionados.
 \section{Definição de integral de superfície para um campo escalar}
@@ -545,6 +547,38 @@ onde $V$ é o hemisfério do enunciado. Vamos integrar em coordenadas esféricas
 \end{eqnarray*}
 \end{resol}
 
+
+\begin{exeresol} Seja $\Phi$ o fluxo do campo
+   $$\vec{F}=z^2\vec{k}$$
+   através da superfície que envolve a região limitada inferiormente pelo cone
+   $$\sqrt{x^2+y^2}=z$$
+   e superiormente pelo plano $z=1$ orientada para fora. 
+   Encontre  o fluxo $\Phi$ via parametrização direta da superfície (sem usar o Teorema da Divergência) e, depois,  usando o Teorema da Divergência.
+\end{exeresol}
+\begin{resol}
+   Para calcular via parametrização direta, escrevemos o fluxo $\Phi$ como a soma da contribuição da porção de cone ($\Phi_b$) com a do disco unitário no plano $z=1$ ($\Phi_t$).
+$$\Phi_t = \iint_{S_t}\vec{F}\cdot\vec{k}dS =  \iint_{S_t}dS=\pi $$
+A porção de cone está numa superfície de nível da seguinte função escalar:
+$$G(x,y,z)=z-\sqrt{x^2+y^2} $$
+Usaremos o teorema de mudança de variáveis:
+$$\Phi_b = \iint_{S_t}\vec{F}\cdot\vec{k}dS =  \pm \iint_{A}\vec{F}\cdot \vec{\nabla}GdA $$
+Onde o sinal é determinado conforme a orientação da superfície. Neste caso, escolhemos negativo porque a componente $z$ do gradiente é positiva e a componente $z$ da normal é negativa.
+$$\vec{F}\cdot \vec{\nabla}G=z^2$$
+\begin{eqnarray*}
+ \Phi_b &=&\pm \int_0^{2\pi}\int_0^1(z^2)\rho d\rho d\theta\\
+ &=&-\int_0^{2\pi}\int_0^1\rho^3 d\rho d\theta=-\frac{\pi}{2}
+\end{eqnarray*}
+$$\Phi=\Phi_t+\Phi_b=\frac{\pi}{2}$$
+
+Para calcular via Teorema da Dirvergência, calculamos a seguinte integral de volume:
+\begin{eqnarray*}
+   \Phi&=&\int_V \vec{\nabla}\cdot \vec{F}dV= \int_0^{2\pi}\int_0^1\int_\rho^1 (2z)\rho dz d\rho d\theta\\
+   &=& \int_0^{2\pi}\int_0^1(1-\rho^2)\rho d\rho d\theta\\
+   &=& {2\pi}\int_0^1(\rho-\rho^3) d\rho \\
+   &=&{2\pi}\left(\frac{1}{2}-\frac{1}{4}\right)=\frac{\pi}{2}
+  \end{eqnarray*}
+  
+\end{resol}
 \subsection*{Exercícios}
 \begin{exer}
  Seja $\vec{F}=r^k\vec{r}$ onde $k$ é uma constante. Seja $S$ um esfera de raio $a$ centrada na origem e orientada para fora por $\vec{n}=\frac{\vec{r}}{r}=\frac{\vec{r}}{a}$. 
@@ -610,6 +644,7 @@ Use o teorema de Stokes para calcular o trabalho realizado pelo campo de forças
 \begin{resol}
  Resolver
 \end{resol}
+
 
 \subsection*{Exercícios}
 \begin{exer}
