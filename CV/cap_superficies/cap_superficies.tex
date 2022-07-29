@@ -13,7 +13,7 @@ Uma superfície\index{superfície} no espaço pode ser representada pelo conjunt
 $$
 \vec{r}_u\times \vec{r}_v\neq \vec{0}.
 $$
-\begin{ex}A superfície
+\begin{ex}A função vetorial
 $$
 \vec{r}=a\sin(u)\cos(v)\vec{i}+a\sin(u)\sin(v)\vec{j}+a\cos(u)\vec{k},~~ a>0, ~ 0\leq u< \pi, ~ 0\leq v< 2\pi
 $$
@@ -65,22 +65,109 @@ $$\cos(v)=\frac{x}{\cosh(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{\cosh(u)}.$$
   $$
   descreve um cilindro.
  \end{exer}
- \section{Vetor unitário normal}\index{vetor normal à uma superfície}
+ 
+ 
+\section{Vetor unitário normal e orientação}\index{vetor normal à uma superfície}
 Para os fins de teoria de integraçao sobre superfícies, que discutiremos mais adiante, é fundamental definir o vetor unitário normal. Dado uma superfície e um ponto nela, dizemos que um vetor é normal à superfície se ele é perpendicular no ponto a cada curva contida na superfícies. Em especial, um vetor normal à superfícies no ponto $x_0=x(u_0,v_0)$, $y_0=y(u_0,v_0)$ e $z_0=z(u_0,v_0)$, deve ser perpendicular às curvas $\vec{r}(u_0,v)$ e $\vec{r}(u,v_0)$, isto é, as curvas geradas quando se fixa um dos parâmetros $u_0$ ou $v_0$, respectivamente. Assim, podemos concluir que cada vetor normal está da mesma direção do produto vetorial $\vec{r}_u\times\vec{r}_v$. Finalmente, o vetor normal unitário deve ter norma unitária, portanto, deve ser da forma:
 \begin{equation}\label{cap_superficies_normal_unitário}
  \vec{n} = \pm \frac{\vec{r}_u\times\vec{r}_v}{\|\vec{r}_u\times\vec{r}_v\|}.
 \end{equation}
-Aqui o sinal indica para qual lado o vetor normal aponta. Observe que se a superfície for regular, então $\vec{r}_u\times\vec{r}_v\neq \vec{0}$, o que indica que a expressão \eqref{cap_superficies_normal_unitário} está bem definida. 
-\section{Caso particular em que a superfície é gráfico de função}
+Observe que se a superfície for regular, então $\vec{r}_u\times\vec{r}_v\neq \vec{0}$, o que indica que a expressão \eqref{cap_superficies_normal_unitário} está bem definida. Aqui, o sinal indica para qual lado o vetor normal aponta e define a orientação da superfície. 
+
+\begin{ex}Vamos calcular o vetor normal à esfera
+$$
+\vec{r}=a\sin(u)\cos(v)\vec{i}+a\sin(u)\sin(v)\vec{j}+a\cos(u)\vec{k},~~ a>0, ~ 0\leq u< \pi, ~ 0\leq v< 2\pi
+$$
+Calculamos as derivadas
+\begin{eqnarray*}
+\vec{r}_u&=&a\cos(u)\cos(v)\vec{i}+a\cos(u)\sin(v)\vec{j}-a\sin(u)\vec{k},\\
+\vec{r}_v&=&-a\sin(u)\sin(v)\vec{i}+a\sin(u)\cos(v)\vec{j},
+\end{eqnarray*}
+o produto vetorial
+\begin{eqnarray*}
+\vec{r}_u\times \vec{r}_v&=&\left[\begin{array}{ccc}
+                                \vec{i}&\vec{j}&\vec{k}\\
+                                a\cos(u)\cos(v)&a\cos(u)\sin(v)&-a\sin(u)\\
+                                -a\sin(u)\sin(v)&a\sin(u)\cos(v)&0
+                                \end{array}
+\right]\\
+&=&a^2\sin^2(u)\cos(v)\vec{i}+a^2\sin^2(u)\sin(v)\vec{j}\\&+&(a^2\sin(u)\cos(u)\cos^2(v)+a^2\sin(u)\cos(u)\sin^2(v))\vec{k}\\
+&=&a^2\sin^2(u)\cos(v)\vec{i}+a^2\sin^2(u)\sin(v)\vec{j}+a^2\sin(u)\cos(u)\vec{k}
+\end{eqnarray*}
+e a norma do produto vetorial
+\begin{eqnarray*}
+\|\vec{r}_u\times \vec{r}_v\|&=&a^2\sqrt{\sin^4(u)\cos^2(v)+\sin^4(u)\sin^2(v)+\sin^2(u)\cos^2(u)}\\
+&=&a^2\sqrt{\sin^4(u)+\sin^2(u)\cos^2(u)}\\
+&=&a^2\sqrt{\sin^2(u)}\\
+&=&a^2\sin(u),
+\end{eqnarray*}
+visto que $0\leq u< \pi$. Assim,
+\begin{eqnarray*}
+\vec{n}&=&\pm \frac{\vec{r}_u\times \vec{r}_v}{\|\vec{r}_u\times \vec{r}_v\|}\\
+&=&\pm\frac{a^2\sin^2(u)\cos(v)\vec{i}+a^2\sin^2(u)\sin(v)\vec{j}+a^2\sin(u)\cos(u)\vec{k}}{a^2\sin(u)}\\
+&=&\pm\left(\sin(u)\cos(v)\vec{i}+\sin(u)\sin(v)\vec{j}+\cos(u)\vec{k}\right).
+\end{eqnarray*}
+Observe que em $u=v=0$, temos $\vec{r}=a\vec{k}$ e $\vec{n}=\pm\vec{k}$. Portanto, o sinal positivo orienta a superfície para fora e o sinal negativo orienta a superfície para dentro.
+\end{ex}
+
+\subsection*{Exercícios resolvidos}
+
+\begin{exeresol} 
+Calcule o vetor normal unitário à superfície cônica $z=1-\sqrt{x^2+y^2}$ no ponto $(1,0,0)$, sabendo que a orientação positiva tem componente $\vec{k}$ negativa. 
+\end{exeresol}
+\begin{resol}
+ Considere a parametrização para o cone $\vec{r}(x,y)=x\vec{i}+y\vec{j}+(1-\sqrt{x^2+y^2})\vec{k}$. Calculamos
+\begin{eqnarray*}
+\vec{r}_x&=&\vec{i}-\frac{x}{\sqrt{x^2+y^2}}\vec{k},\\
+\vec{r}_y&=&\vec{j}-\frac{y}{\sqrt{x^2+y^2}}\vec{k}.
+\end{eqnarray*}
+No ponto $(1,0)$, temos:
+\begin{eqnarray*}
+\vec{r}_x&=&\vec{i}-\vec{k},\\
+\vec{r}_y&=&\vec{j},
+\end{eqnarray*}
+O produto vetorial é dado por
+\begin{eqnarray*}
+\vec{r}_x\times \vec{r}_y&=&\vec{i}+\vec{k}
+\end{eqnarray*}
+e a norma do produto vetorial
+\begin{eqnarray*}
+\|\vec{r}_x\times \vec{r}_y\|&=&\sqrt{2}.
+\end{eqnarray*}
+Assim,
+\begin{eqnarray*}
+\vec{n}&=&\pm \frac{\vec{r}_x\times \vec{r}_y}{\|\vec{r}_x\times \vec{r}_y\|}\\
+&=&\pm\frac{\sqrt{2}}{2}\left(\vec{i}+\vec{k}\right).
+\end{eqnarray*}
+Como a orientação positiva da superfície tem componente $\vec{k}$ negativa, o vetor normal é
+\begin{eqnarray*}
+\vec{n}&=&-\frac{\sqrt{2}}{2}\left(\vec{i}+\vec{k}\right).
+\end{eqnarray*}
+\end{resol}
+
+
+
+\subsection*{Exercícios}
+\begin{exer}
+Calcule o vetor normal unitário ao parabolóide $z=x^2+y^2$ no ponto $(1,1,2)$, sabendo que a orientação positiva tem componente $\vec{k}$ positiva.  
+\end{exer}
+
+
+\section{Caso particular em que a superfície é o gráfico de uma função}
 O caso particular da superfície representada por uma função $z=f(x,y)$, podemos assumir uma parametrização natural $\vec{r}=u\vec{i}+v\vec{j}+f(u,v)\vec{k}$. Analogamente para os casos $y=f(x,z)$ ou $x=f(y,z)$, podemos assumir, respectivamente, as parametrizações $\vec{r}=u\vec{i}+f(u,v)\vec{j}+v\vec{k}$ ou $\vec{r}=f(u,v)\vec{i}+v\vec{j}+u\vec{k}$. Para o caso $z=f(x,y)$ (analogamente para os demais), a condição $\vec{r}_u\times \vec{r}_v\neq \vec{0}$ assume a forma
 \begin{eqnarray*}
  \vec{r}_u\times \vec{r}_v&=&\left|\begin{array}{ccc}\vec{i}&\vec{j}&\vec{k}\\ 1&0&f_u(u,v)\\0&1&f_v(u,v)\end{array} \right|\\&=&-f_u\vec{i}-f_v\vec{j}+\vec{k}\neq \vec{0}.
 \end{eqnarray*}
 Isso implica que $ \vec{r}_u\times \vec{r}_v \neq 0$, ou seja, a superfície \'{e} regular. Voltaremos a discutir esse assunto nos próximos capítulos, quando o vetor gradiente estiver definido.
 
+\begin{ex}Os planos são definidos por equações da forma
+$$
+ax+by+cz+d=0,
+$$
+onde pelo menos umas das constante $a$, $b$ ou $c$ não é zero. Supondo $c\neq0$, basta escrever $z=f(x,y)=\frac{-ax-by-d}{c}$ e definimos o plano como o gráfico da função $f$.
+\end{ex}
 
-\subsection{Planos e cilindros}
-\subsection{Superfícies quádricas}
+\begin{ex}
 A figura \ref{quadricas} apresenta uma lista das principais quádricas\index{quádricas} estudadas na disciplina de Cálculo Diferencial e Integral com funções de várias variáveis. As equações são as seguintes:
 \begin{itemize}
 \item[a)] Cone elíptico: $\displaystyle z^2=\frac{x^2}{a^2}+\frac{y^2}{b^2}$.
@@ -99,4 +186,20 @@ A figura \ref{quadricas} apresenta uma lista das principais quádricas\index{qu�
 \includegraphics{cap_superficies/figs/figura_6}
 \includegraphics{cap_superficies/figs/figura_7} \caption{\label{quadricas}Quádricas}
 \end{figure}
+
+Algumas das superfícies quádricas são gráficos de funções, como é o caso dos parabolóides e outras não são, como é o caso cone elíptico. Mesmo assim, podemos definir a quádrica como a união do gráfico de duas funções. Por exemplo, o cone elíptico pode ser escrito como a união dos gráficos das funções $z=\sqrt{\frac{x^2}{a^2}+\frac{y^2}{b^2}}$ e $z=-\sqrt{\frac{x^2}{a^2}+\frac{y^2}{b^2}}$.
+\end{ex}
+
+\begin{ex}A superfície cilíndrica $x^2+y^2=9$, $0\leq z\leq 2$, pode ser escrita como a união dos gráficos das funções $x=\sqrt{9-y^2}$, $0\leq z\leq 2$ e $x=-\sqrt{9-y^2}$, $0\leq z\leq 2$.
+\end{ex}
+
+\subsection*{Exercícios}
+\begin{exer}Esboce o gráfico da superfície $z=1-x^2-y^2$, $z\geq0$.
+\end{exer}
+\begin{exer}Esboce o gráfico da superfície $z=1-\sqrt{x^2+y^2}$, $z\geq0$.
+\end{exer}
+\begin{exer}Esboce o gráfico da superfície $y^2+z^2=4$, $0\leq x\geq 3$.
+\end{exer}
+\begin{exer}Esboce o gráfico da superfície $x+y+z=1$, no primeiro octante.
+\end{exer}
 
