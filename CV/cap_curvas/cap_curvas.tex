@@ -1,5 +1,5 @@
+% !TEX root = ../main.tex
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 
 \chapter{Curvas e trajetórias}\index{curvas e trajetórias}\index{trajetórias}
   Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. 
@@ -746,9 +746,9 @@ $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
 Assim, calculamos:
  \begin{eqnarray*}
   \frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2} &=&\left[f''(t)\cos(t)+f'(t)\sin(t)\right]\vec{i}+\left[-f'(t)\cos(t)+f''(t)\sin(t)\right]\vec{j}+\vec{k}\\
-\frac{d \vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot r'''(t)&=&f'(t)+f'''(t)\\
- \|\frac{d\vec{r}}{dt} \times\frac{d^2\vec{r}}{dt^2}\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
- \|\frac{d\vec{r}}{dt}\|&=&\sqrt{1+\left(f'(t)\right)^2}
+\frac{d \vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3\vec{r}}{dt^3} &=&f'(t)+f'''(t)\\
+ \left\|\frac{d\vec{r}}{dt} \times\frac{d^2\vec{r}}{dt^2}\right\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
+ \left\|\frac{d\vec{r}}{dt}\right\|&=&\sqrt{1+\left(f'(t)\right)^2}
  \end{eqnarray*}
 E finalmente, obtemos:
  \begin{eqnarray*}
@@ -1113,7 +1113,55 @@ $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
 \includegraphics[scale=.6]{./cap_curvas/figs/lissa_lista_a1_2}
 \end{resol}
 
+\begin{exeresol}
+  Considere a hélice circular não uniforme dada por
+  \begin{eqnarray*}
+  x&=&\cos(t)\\
+  y&=&\sin(t)\\
+  z&=&f(t):=8\sqrt{t}.\\
+  \end{eqnarray*}
+  \begin{itemize}
+    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e mostre que $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
+  \item[b)] Encontre  a curvatura desta hélice usando a fórmula:
+  $$\kappa=\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}$$
+    \item[c)] Encontre a torção desta curva usando a seguinte fórmula:
+    $$\tau=\frac{f'(t)+f'''(t)}{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}$$
+    \item[d)] Interprete os limites do passo, da curvatura e da torção quando $t\to \infty$.
+    \end{itemize}
+  \end{exeresol}
+  \begin{resol}
+    O passo é dado por:
+    \begin{eqnarray*}
+      P(t) &=& \sqrt{8t+2\pi}- \sqrt{8t}\\
+      &=&\left(\sqrt{8t+2\pi}- \sqrt{8t}\right)\cdot\left(\frac{\sqrt{8t+2\pi}+\sqrt{8t}}{ \sqrt{8t+2\pi}+\sqrt{8t}}\right)\\
+      &=&\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.
+    \end{eqnarray*}
+  Primeiro calculamos as derivadas:
+  $$f(t)=8t^{1/2}, ~~ f'(t)=4 t^{-1/2}, ~~ f''(t)=-2 t^{-3/2} ~ \hbox{ e } ~ f'''(t)=6 t^{-5/2}.$$
+  Assim:
+  $$f'(t)^2=16 t^{-1} ~ \hbox{ e } ~ f''(t)^2=4 t^{-3}.$$
+  Portanto:
+  \begin{eqnarray*}
+   1+f'(t)^2+f''(t)^2 &=& 1 + 16t^{-1} + 4t^{-3} = t^{-3}\left(t^{3} + 16t^{2} + 4\right)\\
+   1+f'(t)^2 &=&1+16t^{-1}=t^{-1}\left(t + 16\right)\\
+   f'(t)+f'''(t) &=&4t^{-1/2}+6t^{-5/2}=t^{-5/2}\left(4t^2 + 6\right)
+     \end{eqnarray*}
 
+Obtemos:
+\begin{eqnarray*}
+  \kappa(t) &=& \frac{t^{-3/2}\sqrt{t^{3} + 16t^{2} + 4}}{t^{-3/2}\left(t+16\right)^{3/2}}= \frac{\sqrt{t^{3} + 16t^{2} + 4}}{\left(t+16\right)^{3/2}}\\
+\tau(t) &=& \frac{t^{-5/2}\left(4t^2 + 6\right)}{t^{-3}\left(t^{3} + 16t^{2} + 4\right)} =\frac{t^{1/2}\left(4t + 6\right)}{\left(t^{3} + 16t^{2} + 4\right)}
+\end{eqnarray*}
+
+Vemos que:
+\begin{eqnarray*}
+  \lim_{t\to \infty} P(t) &=& 0\\
+  \lim_{t\to \infty} \kappa(t) &=& 1\\
+  \lim_{t\to \infty} \tau(t) &=& 0\\
+\end{eqnarray*}
+A intepretação intuitiva é que, à medida que o passo da hélice decresce, a curva se aproxima de uma circunferência unitária.  A curvatura se aproxima da curvatura dessa circunferência e a torção se aproxima de zero. Dica: Trace um esboço do gráfico dessa hélice.
+  \end{resol}
+  
 
 
 \subsection*{Exercícios}
