@@ -235,7 +235,7 @@ s(t)=\int_{a}^{t}\left\|\frac{d\vec{r}(\tau)}{dt}\right\|d\tau,\qquad a\leq t\le
 \subsection*{Exercícios resolvidos}
 
 \begin{exer} \label{exe_co_arc1}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$ é $L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}$. Tal curva pertence a parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
+Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$ é $L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}$. Tal curva pertence à parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
 \end{exer}
 
 \begin{figure}
@@ -733,6 +733,36 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
 
 \end{obs}
 
+\begin{ex} Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
+  $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1. $$
+  Aqui $a$ e $b$ são constantes positivas e representam os comprimetos dos semieixos da elipse.
+  Inserimos a parametrização $x(t)=a\cos(t)$ e $y(t)=b\sin(t)$ para obter o vetor $\vec{r}(t)$:
+  $$\vec{r}(t) = a\cos(t)\vec{i} + b\sin(t)\vec{j}.$$
+  as derivadas de $\vec{r}(t)$ são, portanto, dadas por:
+$$r'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$  
+$$r''(t)=-a\cos(t)\vec{i}-b\sin(t)\vec{j}$$
+Assim, temos:
+\begin{eqnarray*}\vec{r}'(t)\times\vec{r}''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times\left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
+&=&ab\sin^2(t)\vec{k}+ab\cos^2(t)\vec{k}=ab\vec{k}
+\end{eqnarray*}
+Onde usamos a identidade trigonométrica $\sin^2(t)+\cos^2(t)=1$ e as identidades vetoriais $\vec{i}\times\vec{j}=\vec{k}$, $\vec{j}\times\vec{i}=-\vec{k}$  e $\vec{i}\times\vec{i}=\vec{j}\times\vec{j}=\vec{0}$.
+Agora calculamos $\|\vec{r}(t)\|$:
+$$\|\vec{r}(t)\|=\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{1/2}$$
+
+Desta forma, temos:
+$$\kappa(t)=\frac{\|r'(t)\times r''(t)\|}{\|r'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
+Vale observar que os pontos de máxima e mínima curvatura estão nos vértices, isto é, $t=0$, $t=\frac{\pi}{2}$, $t=\pi$ e $t=\frac{3\pi}{2}$. A prova dessa afirmação será objeto de exercício.
+
+Podemos expressão a curvatura da elipse em termos das variáveis originais $x$ e $y$:
+\begin{eqnarray*}
+\kappa(x, y)&=&\frac{ab}{\left(\frac{a^2}{b^2}y^2+\frac{b^2}{a^2}x^2\right)^{3/2}}\\
+\kappa(x)&=&\frac{ab}{\left(a^2+\left(\frac{b^2-a^2}{a^2}\right)x^2\right)^{3/2}}\\
+\kappa(y)&=&\frac{ab}{\left(b^2+\left(\frac{a^2-b^2}{b^2}\right)y^2\right)^{3/2}}\\
+\end{eqnarray*}
+
+
+\end{ex} 
+
 
 \begin{ex} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
 $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
@@ -1024,6 +1054,10 @@ onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f'
 
 \begin{exeresol}
 Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
+Dica:
+$$\kappa(t)=\frac{ab}{\left[a^2+(b^2-a^2)\cos^2(t)\right]^{3/2}}$$
+e use o fato que $0\leq \cos^2(t) \leq1$. Faço o caso $a\leq b$ e $b \leq a$.
+
 \begin{itemize}
  \item[a)] O que acontece quando $a=b$?
  \item[b)] Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
