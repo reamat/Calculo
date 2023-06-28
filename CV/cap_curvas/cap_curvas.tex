@@ -234,42 +234,67 @@ s(t)=\int_{a}^{t}\left\|\frac{d\vec{r}(\tau)}{dt}\right\|d\tau,\qquad a\leq t\le
 
 \subsection*{Exercícios resolvidos}
 
-\begin{exer} \label{exe_co_arc1}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$ é $L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}$. Tal curva pertence à parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
-\end{exer}
-
+\begin{exeresol} \label{exe_co_arc1}
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$. 
+\end{exeresol}
 \begin{figure}
-\centering
-    \includegraphics{./cap_curvas/figs/comprimento_arco_parabola}
-    \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
-\caption{(esq) Curva do exercício E \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
-\end{figure}
+  \centering
+      \includegraphics{./cap_curvas/figs/comprimento_arco_parabola}
+      \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
+  \caption{(esq) Curva do exercício ER \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
+  \end{figure}
+  
+\begin{resol}
+A curva é um arco  da parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
 
-$\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto $L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt$. Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então $L =  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du = \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)} $.
+Calculamos a derivada $\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto:
+ $$L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt.$$ Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então 
+ \begin{eqnarray*}
+  L &=&  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du \\
+  &=& \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)}.
+\end{eqnarray*}
 
-\begin{exer} \label{exe_co_arc2}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{32}{3} \sqrt{2} - 4\sqrt{3}$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
-\end{exer}
+ Assim obtemos:
+ $$L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}.$$ 
 
+\end{resol}
 
-$\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto $L = \int_0^1 \sqrt{ 100 t^3 + 100 t^2 + 100t^2 } dt = 10 \int_0^1 t \sqrt{t+2} dt = 10 \int_2^3 (s-2) s^{1/2} ds = 10 \int_2^3 (s^{3/2}-2s^{1/2})ds$
-
+\begin{exeresol} \label{exe_co_arc2}
+Calcule comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
+\end{exeresol}
+\begin{resol}
+Calculamos a derivada $\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto:
+\begin{eqnarray*}
+  L &=& \int_0^1 \sqrt{ 100 t^3 + 100 t^2 + 100t^2 } dt = 10 \int_0^1 t \sqrt{t+2} dt \\&=& 10 \int_2^3 (s-2) s^{1/2} ds = 10 \int_2^3 (s^{3/2}-2s^{1/2})ds\\
+  &=&\frac{32}{3} \sqrt{2} - 4\sqrt{3}.
+\end{eqnarray*}
+\end{resol}
 
 
 \subsection*{Exercícios}
 
 \begin{exer} \label{exe_co_arc3}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1+t) \vec{i} + (1-t^2)\vec{j}$, definida para $-1 \leq t \leq 1$ é $ L = \sqrt{5} + \frac{\ln(\sqrt{5}+2)}{2}$.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = (1+t) \vec{i} + (1-t^2)\vec{j}$, definida para $-1 \leq t \leq 1$.
 \end{exer}
+\begin{resp}
+  $L=\sqrt{5} + \frac{\ln(\sqrt{5}+2)}{2}$.
+\end{resp}
 
 
 \begin{exer} \label{exe_co_arc4}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{i} + (t^2+t^3) \vec{j} + (1+t^2-t^3)\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{5 \sqrt{30}-4\sqrt{3}}{9} $.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{i} + (t^2+t^3) \vec{j} + (1+t^2-t^3)\vec{k}$, definida para $0 \leq t \leq 1$.
 \end{exer}
+\begin{resp} $ L = \frac{5 \sqrt{30}-4\sqrt{3}}{9} $.
+\end{resp}
+
+
 
 \begin{exer} \label{exe_co_arc5}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{14\sqrt{6}}{9} $.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$. 
 \end{exer}
+\begin{resp}
+  $ L = \frac{14\sqrt{6}}{9}.$
+\end{resp}
 
 
 
@@ -448,8 +473,11 @@ Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos 
 \end{exer}
 
 \begin{exer}
-  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
+  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
 \end{exer}
+\begin{resp}
+  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
+\end{resp}
 
 
 \begin{exer}
@@ -482,6 +510,14 @@ Para o comentário sobre a derivada da norma ao quadrado, observe que $r^2=t^2$,
 \vec{r}\cdot\frac{d\vec{r}}{dt}=\frac{1}{2}\frac{d r^2}{dt}=t>0
 \end{eqnarray*}
 Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato de que a tangente tem componente positivo nessa direção (não é paralelo ao eixo y como na circunferência).
+\end{resp}
+
+
+\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
+
+\end{exer}
+\begin{resp}
+  A condição é $$\frac{d}{dt}\|\vec{r}\!~'(t)\|=0$$
 \end{resp}
 
 \section{Curvatura e Torção}
@@ -962,7 +998,8 @@ Agora, retornamos ao pedido nesta lista:
 E também:
 \begin{eqnarray*}
 a_N^2+a_T^2&=&\left(\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{1/2}}\right)^2+\left(\frac{4t}{\left(9+4t^2\right)^{1/2}}\right)^2\\
-&=&\frac{117+36t^2}{9+4t^2}+\frac{16t^2}{9+4t^2}=\frac{117+52t^2}{9+4t^2}\\&=&1,
+&=&\frac{117+36t^2}{9+4t^2}+\frac{16t^2}{9+4t^2}=\frac{117+52t^2}{9+4t^2}\\&=&
+\frac{13(9+4t^2)}{9+4t^2}=13,
 \end{eqnarray*}
 o que verifica a identidade.
  
@@ -1058,7 +1095,7 @@ onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f'
 Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
 Dica:
 $$\kappa(t)=\frac{ab}{\left[a^2+(b^2-a^2)\cos^2(t)\right]^{3/2}}$$
-e use o fato que $0\leq \cos^2(t) \leq1$. Faço o caso $a\leq b$ e $b \leq a$.
+e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
 
 \begin{itemize}
  \item[a)] O que acontece quando $a=b$?
