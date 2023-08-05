@@ -2,17 +2,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+
 # Função para gerar um campo de velocidades aleatório
 def gerar_campo_aleatorio(tamanho):
     return np.random.rand(tamanho, tamanho, tamanho, 3)
 
-def campo(x, y, z):
-    gamma = 1.0  # Força do dipolo
-    a, b, c = 1.0, 1.0, 1.0  # Posição do dipolo
+def campo_x(x, y, z):
+    y = x  #(tamanho_cubo - x)
+    u = y**1.5/20
+    v = 0
+    w = 0
+    return u, v, w
+
+
+def campo_xyz(x, y, z):
     u = x/5
     v = y/5
     w = z**2/200
     return u, v, w
+
 
 # Função para desenhar o cubo e o campo de velocidades
 def desenhar_cubo_com_velocidades(cubo_vertices):
@@ -42,8 +50,10 @@ def desenhar_cubo_com_velocidades(cubo_vertices):
     ax.set_xticks([])
     ax.set_yticks([])
     ax.set_zticks([])
-    # plt.show()
-    plt.savefig("campo_com_cubo_divergente.eps")
+
+    
+    plt.show()
+    #plt.savefig("campo_com_cubo_divergente.eps", bbox_inches='tight',transparent=True, pad_inches=0)
 
 # Tamanho do cubo e do campo de velocidades
 tamanho_cubo = 3.0
@@ -67,4 +77,5 @@ cubo_vertices = np.array([
 
 
 # Desenhar o cubo com o campo de velocidades
+campo = campo_xyz
 desenhar_cubo_com_velocidades(cubo_vertices)

@@ -318,10 +318,76 @@ A derivada direcional é dada por:
 $$\vec{u}\cdot\vec{\nabla}T(1,1) = \frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right)\cdot \frac{\vec{i} + \vec{j}}{9}=\frac{\sqrt{5}}{45}$$
 \end{resol}
 
-\section{Equação da continuidade e divergente}
-\includegraphics{cap_campos/figs/campo_com_cubo_divergente}
-Seção sobre interpretação do divergente..............
+\section{Divergente e equação da continuidade}
+É importante e possível construir uma interpretação intuitiva do conceito de divergente de um campo vetorial.
 
+Em termos físicos, a divergência de um campo vetorial é a medida da extensão em que o fluxo desse campo se comporta como uma fonte (criador de linhas de campo) em um determinado ponto. É uma medida local do quanto há mais vetores do campo saindo de uma região infinitesimal do espaço do que entrando nela. 
+
+Um ponto em que há criação de linhas de campo tem divergência positiva e é frequentemente chamado de \emph{fonte}. Um ponto em que o fluxo é dirigido para dentro tem divergência negativa e é frequentemente chamado de \emph{sumidouro} do campo. 
+
+Se imaginamos um pequeno cubo em torno de um ponto, o divergente é positivo quanto há mais linhas campo saindo do que entrando. Analogamente, o divergente é negativo quanto há mais linhas de campo entrando do que entrando. Veja os gráficos abaixo de campos da forma $\vec{F}=f(x)\vec{i}$, isto é, apontam na diração $x$ e só dependem da coordenada $x$:
+
+\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_positivo}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_negativo}  
+
+No gráfico à esquerda, o campo é nulo na face esquerda, mas atravessa a face direita no sentido para fora. Já no gráfico à direita, o campo está entrando pela face à esquerda, mas é nulo na face a direita. Em ambos os casos, o campo é paralelo às outras quatro faces, pelo que não as atravessa.
+
+Observe que o fenômeno é defido à expansão e à compressão das linhas no sentido $x$. Vale observar que para um campo da forma $\vec{F}=f(x)\vec{i}$, o divergente é dado por:
+$$\vec{\nabla}\cdot \vec{F} := \frac{\partial}{\partial x} F_1+ \frac{\partial}{\partial y} F_2+\frac{\partial}{\partial z} F_3 =\frac{\partial}{\partial x} F_1.$$
+
+Podemos generalizar esse raciocício assumindo um campo constante em cada face, isto é:
+$$\vec{F} = f(x)\vec{i} + g(y)\vec{j} + h(z)\vec{k}$$
+Somando as contribuições de cada  componentes, obtemos:
+$$\vec{\nabla}\cdot \vec{F} := \frac{\partial}{\partial x} F_1+ \frac{\partial}{\partial y} F_2+\frac{\partial}{\partial z} F_3$$
+Que é justamente a expressão do divergente.
+
+Para um campo mais geral cujas três componentes dependem das três variáveis, considera-se que para um cubo muito pequeno (tão pequeno quanto se queira), as componente podem ser consideradas constantes em cada face.
+
+
+\subsection{Equação da continuidade}
+Pode-se ilustrar a divergência de um campo vetorial usando o exemplo de um campo de velocidade de um fluido, cujo movimento pode ser representado por um campo vetorial $\vec{v}(x, y, z)$ enquanto sua densidade é um campo escalar $\rho(x, y, z)$.
+
+Admitimos que o fluido seja compressível, isto é, pode se tornar mais rarefeito em algumas regiões de espaço e mais comprimido noutras.
+
+Nosso objetivo é consolidade o significado do operador divergente através de um raciocío no estudo do escoamento de um fluido. Para isso, chegaremos numa importante equação conhecida como "equação da continuidade", que expressa outra lei fundamental da Física - a conservação da massa. 
+
+Denotamos a densidade de corrente o campo vetorial dado pelo produto da velocidade com a densidade: 
+$$\vec{J}(x, y, z) = \rho(x, y, z)\vec{v}(x, y, z).$$
+
+Observe que essa grandeza tem unidade $Kg/m^2/s$ no S.I., isto é, quilograma por metro quadrado por segundo e mede quanta massa atravessa atravessa uma superfície por unidade de medida da área da superfície num intervalo de tempo.
+
+
+
+Vamos considerar o movimento de um fluido em uma região do espaço em que, por hipótese, não há fontes nem sumidouros. Por "fontes", estamos nos referindo a regiões onde há emissão ou criação de partículas, enquanto por "sumidouros", nos referimos a regiões onde há absorção ou destruição de partículas.
+
+Agora, vamos imaginar o escoamento desse fluido através de um pequeno cubo de lado $\ell$ e volume $V := \ell^3$, em um sistema de coordenadas retangulares e cujas faces são paralelas aos planos coordenados, conforme ilustrado a seguir:
+
+\begin{center}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente}\end{center}
+
+Vamos calcular a vazão através deste volume elementar, ou seja, a quantidade de massa que entra menos a quantidade de massa que sai dele por unidade de tempo. Para realizar esse cálculo, analisaremos cada par de faces opostas da caixa, compondo a vazão de três partes distintas: a vazão através das faces frontal e posterior, a vazão através das faces superior e inferior e a vazão através das faces laterais. Todas as faces têm área $\ell^2$.
+
+A variação da massa total, $m$ dentro do cubo é dada pela vazão total que atravessa as seis faces do cubo. Posicionado cubo com um vértice em $(x,y,z)$ e seu vértice oposto em $(x+\ell, y+\ell, z+\ell)$.
+
+\begin{eqnarray*}
+  \frac{d m(t)}{dt} &=&\ell^2 \left[J_1(x, y, z)-J_1(x+\ell, y, z)\right] \\
+  &+& \ell^2 \left[J_2(x, y, z)-J_2(x, y+\ell, z)\right]\\
+  &+& \ell^2 \left[J_3(x, y, z)-J_3(x, y, z+\ell)\right]
+\end{eqnarray*}
+  
+Expressamos, agora, a massa $m(t)$ como o produto da densidade média dentro do cubo pelo volume $\bar{\rho} l^3$ e dividimos ambos os lados da igualdade por $\ell^3$:
+
+\begin{eqnarray*}
+  \frac{d \bar{\rho}}{d t} &=& \left[\frac{J_1(x, y, z)-J_1(x+\ell, y, z)}{\ell}\right] \\
+  &+&  \left[\frac{J_2(x, y, z)-J_2(x, y+\ell, z)}{\ell}\right]\\
+  &+&  \left[\frac{J_3(x, y, z)-J_3(x, y, z+\ell)}{\ell}\right]
+\end{eqnarray*}
+
+Agora, aplicamos o limite $\ell \to 0+$:
+
+\begin{eqnarray*}
+  \frac{\partial \rho(x,y,z,t)}{\partial t} &=& -\left(\frac{\partial}{\partial x}J_1(x, y, z)+J_2(x, y, z)+J_3(x, y, z)\right)
+\end{eqnarray*}
+
+Esta equação é chamada equação da continuidade e expressa a lei de conservação de massa.
 
 \subsection*{Exercícios}
 \begin{exer}
