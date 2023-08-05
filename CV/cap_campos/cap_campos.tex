@@ -413,12 +413,16 @@ Em termos mais simples, o operador rotacional nos permite avaliar a tendência d
 
 Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusivo  dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
 
-As linhas de força paralelas à superfícies do fluido são as responsáveis por fazer a bolinha girar. Veja ilustração abaixo:
+As linhas de força paralelas à superfícies do fluido são as responsáveis por fazer a bolinha girar pelo atrito. Veja ilustração abaixo:
 
 \begin{center}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_1}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_2}\end{center}
 
+Observe que ambos os campos tem vorticidade tal que a bolinha gira no sentido anti-horário, isto é, com spin $-\vec{k}$. Esse giro é devido à variação da componente $F_1(x,y,z)$ no sentido perpendicular $y$:
+$$\frac{\partial F_1}{\partial y}. $$
 
+É esperado, portanto, definir o rotacional como a soma de todas as possíveis derivadas dessa forma e obedecendo a regra da mão direita:
 
+$$\vec{\nabla}\times \vec{F} = \left(\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z}\right) \vec{i} + \left(\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x} \right) \vec{j} + \left(\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right) \vec{k}$$
 
 
 \subsection*{Exercícios}
