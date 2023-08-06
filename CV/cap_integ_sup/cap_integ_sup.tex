@@ -634,17 +634,95 @@ $$
 
 \subsection{Exercícios resolvidos}
 \begin{exeresol}
- Dado $\vec{F}=4y\vec{i}+x\vec{j}+2z\vec{k}$, encontre a maneira mais simples de calcular o fluxo do rotacional $\vec{\nabla}\times\vec{F}$ através do hmisfério $x^2+y^2+z^2=a^2$, $\geq 0$, orientado com componente $\vec{k}$ da normal positiva.
+   Calcule o trabalho realizado pelo campo de forças $\vec{F}=-\cos^2(x)y\vec{i}+(z^2+y^2)\vec{j}$ ao longo do retângulo cujos vértices são $(0,0,0)$, $(\pi,0,0)$,  $(\pi,2,0)$ e $(0,2,0)$ no sentido anti-horário.
 \end{exeresol}
 \begin{resol}
- Resolver
+\begin{eqnarray*}
+   W &=& \oint_C \vec{F}\cdot\vec{dr}=\int_S(\vec{\nabla}\times\vec{F})\cdot \vec{N}dS\\
+   &=&\int_0^\pi\int_0^2(\vec{\nabla}\times\vec{F})\cdot \vec{k} dy dx 
+   \end{eqnarray*}
+   Agora, precisamos calcular $\vec{\nabla}\times\vec{F}\cdot\vec{k}$:
+   $$\vec{\nabla}\times\vec{F}\cdot\vec{k}=\left|\begin{array}{ccc}
+   \vec{i}&\vec{j}&\vec{k}\\
+   \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+   -\cos^2(x)y&z^2+y^2&0
+   \end{array}
+   \right|\cdot \vec{k}=\cos^2(x)
+   $$
+   E finalmente, temos:
+   \begin{eqnarray*}
+   W&=&\int_0^\pi\int_0^2\cos^2(x)dydx\\
+   &=&2\int_0^\pi\cos^2(x)dx=\int_0^\pi(1+\cos(2\phi))dx\\
+   &=&\pi
+   \end{eqnarray*}
+   Onde foi usada a seguinte identidade trigonométrica:
+   $$\cos^2\phi=\frac{1+\cos(2\phi)}{2}.$$
+\end{resol}
+\begin{exeresol}Use o teorema de Stokes para calcular o trabalho realizado pelo campo de força dado por:
+   $$\vec{F}=yx^2\cos(z)\vec{i}-z\vec{j}+\sin(xz)\vec{k}$$ 
+   ao deslocar uma partícula ao longo da circunferência de raio 1, centrada na origem sobre o plano $xy$ orientada no sentido horário.
+\end{exeresol}
+   \begin{resol}
+      Como a curva está sobre o plano $xy$, o vetor normal unitário deve ser $\vec{k}$ ou $-\vec{k}$. Pela orientação da curva e a regra da mão direita, identificamos que $\vec{n}=-\vec{k}$.
+      
+      Agora calculamos:
+      $$W=\oint_C \vec{F}\cdot \vec{dr} = -\iint_S \vec{\nabla}\times\vec{F}\cdot \vec{k} dA$$
+      
+      \begin{eqnarray*}
+       \vec{k}\cdot\vec{\nabla}\times\vec{F}&=&\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\\
+       &=&0-x^2\cos(z)=-x^2,~~z=0
+      \end{eqnarray*}
+      
+      Parametrizamos em coordenadas polares:
+      $$x=\rho \cos(\phi),~~ y=\rho \sin(\phi)$$
+      \begin{eqnarray*}
+      W&=&-\iint_S \vec{\nabla}\times\vec{F}\cdot \vec{k} dA\\
+      &=& \int_0^{2\pi}\int_0^1 x^2 \rho d\rho d\phi\\
+      &=&\int_0^{2\pi}\int_0^1  \rho^3\cos^2\phi d\rho d\phi\\
+      &=&\left(\int_0^1 \rho^3d\rho\right)\left(\int_0^{2\pi}\cos^2 \phi d\phi\right)\\
+      &=&\frac{\pi}{4}
+      \end{eqnarray*}
+      Onde se usou a identidade:
+      \begin{eqnarray*}
+         \int_0^{2\pi}\cos^2 \phi d\phi
+         &=& \int_0^{2\pi}\left(\frac{1+\cos(2\phi)}{2}\right)  d\phi = {\pi}
+         \end{eqnarray*}
+
+
+   \end{resol}
+
+\begin{exeresol}
+ Dado $\vec{F}=4y\vec{i}+x\vec{j}+2z\vec{k}$, encontre a maneira mais simples de calcular o fluxo do rotacional $\vec{\nabla}\times\vec{F}$ através do hemisfério $z=\sqrt{a^2-x^2+y^2}$, $a> 0$, orientado com componente $\vec{k}$ da normal positiva.
+\end{exeresol}
+\begin{resol}
+   A ideia aqui é aplicar o teorema de Stokes duas vezes para concluir que o fluxo atráves do hemisfério dado é igual ao fluxo através do disco no plano $z=0$ com vetor normal unitário $\vec{\eta}=\vec{k}$. Assim o fluxo é dado por:
+   $$\Phi=\iint_D \vec{\nabla}\vec{F}\cdot{k}dS $$
+   Calculamos o integrando:
+ \begin{eqnarray*}
+ \vec{k}\cdot\vec{\nabla}\vec{F} &=& \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \\
+ &=& 1-4=-3
+ \end{eqnarray*}
+ Portando o fluxo é $-3$ multiplicado pela área do disco:
+ $$\Phi=-3\pi a^2. $$
 \end{resol}
 \begin{exeresol}
 Use o teorema de Stokes para calcular o trabalho realizado pelo campo de forças $\vec{F}=x^2\vec{i}+4xy^3\vec{j}+y^2x\vec{k}$ ao longo da curva $C$ que limita o retângulo no plano $z=y$ de vértices $P_0(0,0,0)$, $P_1(1,0,0)$, $P_2(1,3,3)$ e $P_3(0,3,3)$, no sentido $P_0\to P_1\to P_2\to P_3\to P_0$.
 \end{exeresol}
 \begin{resol}
- Resolver
+  Sabemos que o retângulo está no plano $z=y$, pelo que a função $G(x,y,z)$ pode ser escolhida como:
+  $$G(x,y,z) = z-y \Longrightarrow \vec{\nabla}G(x,y,z) = \vec{k}-\vec{j}$$
+
+ Agora calculamos o rotacional é dado por:
+ $$\vec{\nabla}\times \vec{F} = 3xy\vec{i} -y^2\vec{j}+4y^3\vec{k}.$$
 \end{resol}
+
+Temos, então:
+\begin{eqnarray*}
+   W &=& \iint_S\vec{\nabla}\times \vec{F}\cdot \vec{\eta}dS = \iint_A\vec{\nabla}\times \vec{F}\cdot \vec{\nabla}GdA\\
+   &=&\int_0^3\int_0^1\left(y^2+4y^3\right)dx dy\\
+   &=&\int_0^3\left(y^2+4y^3\right)dy = 9+ 81=90.
+\end{eqnarray*}
+
 
 
 \subsection*{Exercícios}
@@ -667,3 +745,7 @@ isto é, o teorema de Stokes em duas dimensões recai no teorema de Green.
  \item[b)] $\oint_C\vec{\nabla}\phi\cdot d\vec{r}=0$. 
 \end{itemize}
 \end{exer}
+\begin{exer} Considere a linha poligonal fechada $C$ no plano $xy$ formada pelos pontos $P_0(1,0,1)$, $P_1(3,0,1)$ e $P_2(2,1,1)$, no sentido $P_0\to P_1\to P_2\to P_0$, e o campo $\vec{F}=-(z^3+1)y\vec{i}+(z^2+1)x\vec{j}+xye^z\vec{k}$. Use o teorema de Stokes para calcular a integral de linha $\oint_C \vec{F}\cdot d\vec{r}$.
+\end{exer}
+\begin{resp}4
+\end{resp}
