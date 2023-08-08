@@ -319,19 +319,19 @@ $$\vec{u}\cdot\vec{\nabla}T(1,1) = \frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\righ
 \end{resol}
 
 \section{Divergente e equação da continuidade}
-É importante e possível construir uma interpretação intuitiva do conceito de divergente de um campo vetorial.
+É importante construir uma interpretação intuitiva do conceito de divergente de um campo vetorial.
 
-Em termos físicos, a divergência de um campo vetorial é a medida da extensão em que o fluxo desse campo se comporta como uma fonte (criador de linhas de campo) em um determinado ponto. É uma medida local do quanto há mais vetores do campo saindo de uma região infinitesimal do espaço do que entrando nela. 
+Em termos físicos, a divergência de um campo vetorial é a medida do quanto esse campo se comporta como uma fonte (criador de linhas de campo) em um determinado ponto. É uma medida local do quanto há mais vetores saindo de uma região infinitesimal do espaço do que entrando nela. 
 
 Um ponto em que há criação de linhas de campo tem divergência positiva e é frequentemente chamado de \emph{fonte}. Um ponto em que o fluxo é dirigido para dentro tem divergência negativa e é frequentemente chamado de \emph{sumidouro} do campo. 
 
-Se imaginamos um pequeno cubo em torno de um ponto, o divergente é positivo quanto há mais linhas campo saindo do que entrando. Analogamente, o divergente é negativo quanto há mais linhas de campo entrando do que entrando. Veja os gráficos abaixo de campos da forma $\vec{F}=f(x)\vec{i}$, isto é, apontam na diração $x$ e só dependem da coordenada $x$:
+Se imaginamos um pequeno cubo em torno de um ponto, o divergente é positivo quanto há mais linhas de campo saindo do que entrando. Analogamente, o divergente é negativo quanto há mais linhas de campo entrando do que saindo. Veja os gráficos abaixo de campos da forma $\vec{F}=f(x)\vec{i}$, isto é, apontam na diração $x$ e só dependem da coordenada $x$:
 
 \includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_positivo}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_negativo}  
 
-No gráfico à esquerda, o campo é nulo na face esquerda, mas atravessa a face direita no sentido para fora. Já no gráfico à direita, o campo está entrando pela face à esquerda, mas é nulo na face a direita. Em ambos os casos, o campo é paralelo às outras quatro faces, pelo que não as atravessa.
+No gráfico à esquerda, o campo é nulo na face esquerda, mas atravessa a face direita no sentido para fora. Já no gráfico à direita, o campo está entrando pela face à esquerda, mas é nulo na face à direita. Em ambos os casos, o campo é paralelo às outras quatro faces, pelo que não as atravessa.
 
-Observe que o fenômeno é defido à expansão e à compressão das linhas no sentido $x$. Vale observar que para um campo da forma $\vec{F}=f(x)\vec{i}$, o divergente é dado por:
+Observe que o fenômeno é devido à expansão ou à compressão das linhas no sentido $x$. Vale observar que para um campo da forma $\vec{F}=f(x)\vec{i}$, o divergente é dado por:
 $$\vec{\nabla}\cdot \vec{F} := \frac{\partial}{\partial x} F_1+ \frac{\partial}{\partial y} F_2+\frac{\partial}{\partial z} F_3 =\frac{\partial}{\partial x} F_1.$$
 
 Podemos generalizar esse raciocício assumindo um campo constante em cada face, isto é:
@@ -348,7 +348,7 @@ Pode-se ilustrar a divergência de um campo vetorial usando o exemplo de um camp
 
 Admitimos que o fluido seja compressível, isto é, pode se tornar mais rarefeito em algumas regiões de espaço e mais comprimido noutras.
 
-Nosso objetivo é consolidade o significado do operador divergente através de um raciocío no estudo do escoamento de um fluido. Para isso, chegaremos numa importante equação conhecida como "equação da continuidade", que expressa outra lei fundamental da Física - a conservação da massa. 
+Nosso objetivo é consolidar o significado do operador divergente através de um raciocínio no estudo do escoamento de um fluido. Para isso, chegaremos numa importante equação conhecida como "equação da continuidade", que expressa outra lei fundamental da Física - a conservação da massa. 
 
 Denotamos a densidade de corrente o campo vetorial dado pelo produto da velocidade com a densidade: 
 $$\vec{J}(x, y, z) = \rho(x, y, z)\vec{v}(x, y, z).$$
@@ -384,10 +384,12 @@ Expressamos, agora, a massa $m(t)$ como o produto da densidade média dentro do 
 Agora, aplicamos o limite $\ell \to 0+$:
 
 \begin{eqnarray*}
-  \frac{\partial \rho(x,y,z,t)}{\partial t} &=& -\left(\frac{\partial}{\partial x}J_1(x, y, z)+J_2(x, y, z)+J_3(x, y, z)\right)
+  \frac{\partial \rho(x,y,z,t)}{\partial t} &=& -\left(\frac{\partial}{\partial x}J_1(x, y, z)+\frac{\partial}{\partial y}J_2(x, y, z)+\frac{\partial}{\partial z}J_3(x, y, z)\right)\\
+  &=&-\vec{\nabla}\cdot\vec{J}
 \end{eqnarray*}
 
-Esta equação é chamada equação da continuidade e expressa a lei de conservação de massa.
+Esta equação é chamada equação da continuidade e expressa a lei de conservação de massa:
+$$\frac{\partial \rho(x,y,z,t)}{\partial t}=-\vec{\nabla}\cdot\left(\rho(x,y,z) \vec{v}(x,y,z)\right) $$
 
 \subsection*{Exercícios}
 \begin{exer}
@@ -417,7 +419,7 @@ As linhas de força paralelas à superfícies do fluido são as responsáveis po
 
 \begin{center}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_1}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_2}\end{center}
 
-Observe que ambos os campos tem vorticidade tal que a bolinha gira no sentido anti-horário, isto é, com spin $-\vec{k}$. Esse giro é devido à variação da componente $F_1(x,y,z)$ no sentido perpendicular $y$:
+Observe que ambos os campos têm vorticidade tal que a bolinha gira no sentido anti-horário, isto é, com spin $-\vec{k}$. Esse giro é devido à variação da componente $F_1(x,y,z)$ no sentido perpendicular $y$:
 $$\frac{\partial F_1}{\partial y}. $$
 
 É esperado, portanto, definir o rotacional como a soma de todas as possíveis derivadas dessa forma e obedecendo a regra da mão direita:
