@@ -298,6 +298,25 @@ Mostre que $(\vec{F}\cdot\vec{\nabla})\vec{r}=\vec{F}$, onde $\vec{F}=f(x,y,z)\v
 \section{Derivada direcional e gradiente}
 
 
+Imagine um campo esclar $f(x, y, z)$, isto é, uma função que atribui um valor numérico a cada ponto $ (x, y, z) $ em um espaço. 
+
+A derivada direcional de $(x, y, z)$ mede a taxa de variação  de $f$ na direção específica apontada por um dado vetor \( \mathbf{v} \) a partir do ponto \( (x_0, y_0, z_0) \).
+
+Tomemos como exemplo uma função $f(x,y,z)$ que representa a temperatura como função da posição. A derivada direcional é terá unidades de temperatura por unidade de distância.
+
+Matematicamente, a derivada direcional \( D_{\mathbf{v}} f(x_0, y_0, z_0) \) é definida da seguinte forma:
+
+$$
+D_{\vec{v}} f(x, y, z) = \lim_{{h \to 0}} \frac{f(x + hv_x, y + hv_y, z + hv_z) - f(x, y, z)}{h}
+$$
+
+Aqui, \( \vec{v} = (v_x, v_y, v_z) \) é um vetor unitário que define a direção em que estamos calculando a derivada direcional, e \( h \) é um pequeno incremento.
+
+A derivada direcional, assim definida, é um limite do tipo $0/0$ e pode ser calculada usando a regra de L'Hôpital, isto é, derivando o numerador e o denominador em $h$, na variável do limite:
+$$
+D_{\vec{v}} f(x, y, z) = \lim_{{h \to 0}} \frac{\frac{\partial}{\partial x}f(x + hv_x, y + hv_y, z + hv_z)v_x+\frac{\partial}{\partial y}f(x + hv_x, y + hv_y, z + hv_z)v_y+\frac{\partial}{\partial z}f(x + hv_x, y + hv_y, z + hv_z)v_z }{1}
+$$
+
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
 A temperatura da um ponto $P(x, y)$ de uma placa metálica é:
