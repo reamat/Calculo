@@ -254,7 +254,7 @@ Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec
  Calcule o divergente e o rotacional do campo $\vec{F}$ para
  \begin{itemize}
   \item[a)] $\vec{F}=x^2\vec{i}-2\vec{j}+yz\vec{k}$
-  \item[b)] $\vec{F}=e^{xy}\vec{i}-\cos(y)\vec{j}+\sin^2(z)\vec{k}$ 
+  \item[b)] $\vec{F}=e^{xy}\vec{i}-\cos(y)\vec{j}+\sin^2(z)\vec{k}$
  \end{itemize}
 \end{exer}
 \begin{resp}
@@ -298,6 +298,47 @@ Mostre que $(\vec{F}\cdot\vec{\nabla})\vec{r}=\vec{F}$, onde $\vec{F}=f(x,y,z)\v
 \section{Derivada direcional e gradiente}
 
 
+Imagine um campo escalar $f(x, y, z)$, isto é, uma função que atribui um valor numérico a cada ponto $ (x, y, z) $ numa região do espaço. 
+
+A derivada direcional de $f(x, y, z)$ mede a taxa de variação  de $f$ na direção específica apontada por um dado vetor \( \mathbf{v} \) a partir do ponto \( (x_0, y_0, z_0) \).
+
+Tomemos, como exemplo, a temperatura $T(x, y, z)$ como função da posição $(x, y, z)$. A derivada direcional nesse caso será a taxa de variação da temperatura com deslocamento em dada direção e será  medida em unidades de temperatura por unidade de comprimento. Observe que a taxa de variação da temperatura num dado ponto pode ser diferente na direção norte e na direação oeste.
+
+Matematicamente, a derivada direcional \( D_{\mathbf{v}} f(x_0, y_0, z_0) \) é definida da seguinte forma pelo seguinte limite:
+
+$$
+D_{\vec{v}} f(x, y, z) = \lim_{{h \to 0}} \frac{f(x + hv_x, y + hv_y, z + hv_z) - f(x, y, z)}{h}
+$$
+
+Aqui, \( \vec{v} = (v_x, v_y, v_z) \) é um vetor unitário que define a direção em que estamos calculando a derivada direcional, e \( h \) é um pequeno incremento.
+
+A derivada direcional, assim definida, é um limite do tipo $0/0$ e pode ser calculada usando a regra de L'Hôpital, isto é, derivando o numerador e o denominador em $h$, na variável do limite:
+
+\begin{eqnarray*}
+D_{\vec{v}} f(x, y, z) &=& \lim_{{h \to 0}} \frac{\frac{d}{dh}f(x + hv_x, y + hv_y, z + hv_z) }{1}\\
+&=&\lim_{{h \to 0}} \left[\frac{d}{dh}f(x + hv_x, y + hv_y, z + hv_z)\right] 
+\end{eqnarray*}
+
+Usando a regra da cadeia para funções de várias variáveis, temos:
+
+
+\begin{eqnarray*}
+ \frac{d}{dh} f(x + hv_x, y + hv_y, z + hv_z) 
+ &=&  \frac{\partial}{\partial x} f(x + hv_x, y + hv_y, z + hv_z)v_x\\
+ &+&\frac{\partial}{\partial y}f(x + hv_x, y + hv_y, z + hv_z)v_y\\
+ &+&\frac{\partial}{\partial z}f(x + hv_x, y + hv_y, z + hv_z)v_z .
+\end{eqnarray*}
+
+Agora tomamos o limite $h\to 0$:
+
+\begin{eqnarray*}
+D_{\vec{v}} f(x, y, z) &:=& \lim_{h \to 0} \frac{d}{dh} f(x + hv_x, y + hv_y, z + hv_z) \\
+&=&\frac{\partial}{\partial x} f(x,y,z)v_x + \frac{\partial}{\partial y} f(x,y,z)v_y+ \frac{\partial}{\partial z} f(x,y,z)v_z\\
+&=&\left(\frac{\partial}{\partial x} f(x,y,z)\vec{i} + \frac{\partial}{\partial y} f(x,y,z) \vec{j} + \frac{\partial}{\partial z} f(x,y,z)\vec{k}\right)\cdot\left(v_x\vec{i}+v_y\vec{j}+v_z\vec{k} \right)\\
+&=&\vec{\nabla}f(x,y,z)\cdot\vec{v}.
+\end{eqnarray*}
+
+
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
 A temperatura da um ponto $P(x, y)$ de uma placa metálica é:
@@ -318,9 +359,78 @@ A derivada direcional é dada por:
 $$\vec{u}\cdot\vec{\nabla}T(1,1) = \frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right)\cdot \frac{\vec{i} + \vec{j}}{9}=\frac{\sqrt{5}}{45}$$
 \end{resol}
 
-\section{Equação da continuidade e divergente}
-Seção sobre interpretação do divergente..............
+\section{Divergente e equação da continuidade}
+É importante construir uma interpretação intuitiva do conceito de divergente de um campo vetorial.
 
+Em termos físicos, a divergência de um campo vetorial é a medida do quanto esse campo se comporta como uma fonte (criador de linhas de campo) em um determinado ponto. É uma medida local do quanto há mais vetores saindo de uma região infinitesimal do espaço do que entrando nela. 
+
+Um ponto em que há criação de linhas de campo tem divergência positiva e é frequentemente chamado de \emph{fonte}. Um ponto em que o fluxo é dirigido para dentro tem divergência negativa e é frequentemente chamado de \emph{sumidouro} do campo. 
+
+Se imaginamos um pequeno cubo em torno de um ponto, o divergente é positivo quanto há mais linhas de campo saindo do que entrando. Analogamente, o divergente é negativo quanto há mais linhas de campo entrando do que saindo. Veja os gráficos abaixo de campos da forma $\vec{F}=f(x)\vec{i}$, isto é, apontam na diração $x$ e só dependem da coordenada $x$:
+
+\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_positivo}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente_negativo}  
+
+No gráfico à esquerda, o campo é nulo na face esquerda, mas atravessa a face direita no sentido para fora. Já no gráfico à direita, o campo está entrando pela face à esquerda, mas é nulo na face à direita. Em ambos os casos, o campo é paralelo às outras quatro faces, pelo que não as atravessa.
+
+Observe que o fenômeno é devido à expansão ou à compressão das linhas no sentido $x$. Vale observar que para um campo da forma $\vec{F}=f(x)\vec{i}$, o divergente é dado por:
+$$\vec{\nabla}\cdot \vec{F} := \frac{\partial}{\partial x} F_1+ \frac{\partial}{\partial y} F_2+\frac{\partial}{\partial z} F_3 =\frac{\partial}{\partial x} F_1.$$
+
+Podemos generalizar esse raciocício assumindo um campo constante em cada face, isto é:
+$$\vec{F} = f(x)\vec{i} + g(y)\vec{j} + h(z)\vec{k}$$
+Somando as contribuições de cada  componentes, obtemos:
+$$\vec{\nabla}\cdot \vec{F} := \frac{\partial}{\partial x} F_1+ \frac{\partial}{\partial y} F_2+\frac{\partial}{\partial z} F_3$$
+Que é justamente a expressão do divergente.
+
+Para um campo mais geral cujas três componentes dependem das três variáveis, considera-se que para um cubo muito pequeno (tão pequeno quanto se queira), as componente podem ser consideradas constantes em cada face.
+
+
+\subsection{Equação da continuidade}
+Pode-se ilustrar a divergência de um campo vetorial usando o exemplo de um campo de velocidade de um fluido, cujo movimento pode ser representado por um campo vetorial $\vec{v}(x, y, z)$ enquanto sua densidade é um campo escalar $\rho(x, y, z)$.
+
+Admitimos que o fluido seja compressível, isto é, pode se tornar mais rarefeito em algumas regiões de espaço e mais comprimido noutras.
+
+Nosso objetivo é consolidar o significado do operador divergente através de um raciocínio no estudo do escoamento de um fluido. Para isso, chegaremos numa importante equação conhecida como "equação da continuidade", que expressa outra lei fundamental da Física - a conservação da massa. 
+
+Denotamos a densidade de corrente o campo vetorial dado pelo produto da velocidade com a densidade: 
+$$\vec{J}(x, y, z) = \rho(x, y, z)\vec{v}(x, y, z).$$
+
+Observe que essa grandeza tem unidade $Kg/m^2/s$ no S.I., isto é, quilograma por metro quadrado por segundo e mede quanta massa atravessa atravessa uma superfície por unidade de medida da área da superfície num intervalo de tempo.
+
+
+
+Vamos considerar o movimento de um fluido em uma região do espaço em que, por hipótese, não há fontes nem sumidouros. Por "fontes", estamos nos referindo a regiões onde há emissão ou criação de partículas, enquanto por "sumidouros", nos referimos a regiões onde há absorção ou destruição de partículas.
+
+Agora, vamos imaginar o escoamento desse fluido através de um pequeno cubo de lado $\ell$ e volume $V := \ell^3$, em um sistema de coordenadas retangulares e cujas faces são paralelas aos planos coordenados, conforme ilustrado a seguir:
+
+\begin{center}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_cubo_divergente}\end{center}
+
+Vamos calcular a vazão através deste volume elementar, ou seja, a quantidade de massa que entra menos a quantidade de massa que sai dele por unidade de tempo. Para realizar esse cálculo, analisaremos cada par de faces opostas da caixa, compondo a vazão de três partes distintas: a vazão através das faces frontal e posterior, a vazão através das faces superior e inferior e a vazão através das faces laterais. Todas as faces têm área $\ell^2$.
+
+A variação da massa total, $m$ dentro do cubo é dada pela vazão total que atravessa as seis faces do cubo. Posicionado cubo com um vértice em $(x,y,z)$ e seu vértice oposto em $(x+\ell, y+\ell, z+\ell)$.
+
+\begin{eqnarray*}
+  \frac{d m(t)}{dt} &=&\ell^2 \left[J_1(x, y, z)-J_1(x+\ell, y, z)\right] \\
+  &+& \ell^2 \left[J_2(x, y, z)-J_2(x, y+\ell, z)\right]\\
+  &+& \ell^2 \left[J_3(x, y, z)-J_3(x, y, z+\ell)\right]
+\end{eqnarray*}
+  
+Expressamos, agora, a massa $m(t)$ como o produto da densidade média dentro do cubo pelo volume $\bar{\rho} l^3$ e dividimos ambos os lados da igualdade por $\ell^3$:
+
+\begin{eqnarray*}
+  \frac{d \bar{\rho}}{d t} &=& \left[\frac{J_1(x, y, z)-J_1(x+\ell, y, z)}{\ell}\right] \\
+  &+&  \left[\frac{J_2(x, y, z)-J_2(x, y+\ell, z)}{\ell}\right]\\
+  &+&  \left[\frac{J_3(x, y, z)-J_3(x, y, z+\ell)}{\ell}\right]
+\end{eqnarray*}
+
+Agora, aplicamos o limite $\ell \to 0+$:
+
+\begin{eqnarray*}
+  \frac{\partial \rho(x,y,z,t)}{\partial t} &=& -\left(\frac{\partial}{\partial x}J_1(x, y, z)+\frac{\partial}{\partial y}J_2(x, y, z)+\frac{\partial}{\partial z}J_3(x, y, z)\right)\\
+  &=&-\vec{\nabla}\cdot\vec{J}
+\end{eqnarray*}
+
+Esta equação é chamada equação da continuidade e expressa a lei de conservação de massa:
+$$\frac{\partial \rho(x,y,z,t)}{\partial t}=-\vec{\nabla}\cdot\left(\rho(x,y,z) \vec{v}(x,y,z)\right) $$
 
 \subsection*{Exercícios}
 \begin{exer}
@@ -329,9 +439,9 @@ Use a equação da continuidade para mostrar que um fluido incompressível e em 
 \begin{exer}
  O escoamento de um fluido incompressível e estacionário é regido pelo campo vetorial $\vec{v}$. Verifique, em cada caso, se há fontes ou sumidouros em alguma região do espaço:
  \begin{itemize}
-  \item[a)] $\vec{v}=(x+y)\vec{i}-xz^3\vec{j}+x^2\sin(y)\vec{k}$. 
+  \item[a)] $\vec{v}=(x+y)\vec{i}-xz^3\vec{j}+x^2\sin(y)\vec{k}$.
   \item[b)] $\vec{v}=xy\vec{i}-xy\vec{j}+y^2\vec{k}$.
-  \item[c)] $\vec{v}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$. 
+  \item[c)] $\vec{v}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$.
 
   \end{itemize}
 
@@ -340,7 +450,22 @@ Use a equação da continuidade para mostrar que um fluido incompressível e em 
 
 
 \section{Interpretação do rotacional}
-Seção sobre interpretação do rotacional..............
+O operador rotacional é um conceito fundamental para entender e descrever como um campo vetorial. O rotacional de um campo vetorial é um novo campo vetorial.
+
+Em termos mais simples, o operador rotacional nos permite avaliar a tendência do campo vetorial em girar ou formar vórtices ao redor de um ponto, indicando se há rotação local em torno desse ponto. Ele descreve a direção e intensidade da rotação do campo original. 
+
+Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusivo  dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
+
+As linhas de força paralelas à superfícies do fluido são as responsáveis por fazer a bolinha girar pelo atrito. Veja ilustração abaixo:
+
+\begin{center}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_1}\includegraphics[width=.5\textwidth]{cap_campos/figs/campo_com_bolinha_rotacional_2}\end{center}
+
+Observe que ambos os campos têm vorticidade tal que a bolinha gira no sentido anti-horário, isto é, com spin $-\vec{k}$. Esse giro é devido à variação da componente $F_1(x,y,z)$ no sentido perpendicular $y$:
+$$\frac{\partial F_1}{\partial y}. $$
+
+É esperado, portanto, definir o rotacional como a soma de todas as possíveis derivadas dessa forma e obedecendo a regra da mão direita:
+
+$$\vec{\nabla}\times \vec{F} = \left(\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z}\right) \vec{i} + \left(\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x} \right) \vec{j} + \left(\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right) \vec{k}$$
 
 
 \subsection*{Exercícios}
@@ -351,9 +476,9 @@ Supondo que um fluído gira como um corpo rígido com velocidade angular $\vec{w
 \begin{exer}
 Em cada caso é dada a velocidade $\vec{v}$ do movimento estacionário de um fluido. Encontre o $\vec{\nabla}\times\vec{v}$ e diga se o campo $\vec{v}$ é um campo irrotacional ou um campo de vórtice.
 \begin{itemize}
- \item[a)] $\vec{v}=2x\vec{i}+2y\vec{j}$. 
- \item[b)] $\vec{v}=-2y\vec{i}+2x\vec{j}$. 
- \item[c)] $\vec{v}=y^2\vec{i}$. 
+ \item[a)] $\vec{v}=2x\vec{i}+2y\vec{j}$.
+ \item[b)] $\vec{v}=-2y\vec{i}+2x\vec{j}$.
+ \item[c)] $\vec{v}=y^2\vec{i}$.
  \end{itemize}
 
 \end{exer}
@@ -441,7 +566,7 @@ Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(
 Mostre que $\vec{\nabla}\cdot\vec{r}=3$, $\vec{\nabla}\times\vec{r}=\vec{0}$ e $\vec{\nabla}r=\frac{1}{r}\vec{r}=\hat{r}$, sendo $\vec{r}(x,y,z)=x\vec{i}+y\vec{j}+z\vec{k}$.
 \end{exer}
 \begin{exer}\label{ex_grad_campo_central}
-Dada a função escalar $f(r)$, onde $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$, use a regra da cadeia para mostrar que 
+Dada a função escalar $f(r)$, onde $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$, use a regra da cadeia para mostrar que
 $$
 \vec{\nabla}f(r)=\frac{f'(r)}{r}\vec{r}=f'(r)\hat{r}.
 $$
@@ -459,7 +584,7 @@ Aplique essa fórmula para mostrar que $\vec{\nabla}r^n=nr^{n-2}\vec{r}.$
  \item[a)] $3r\vec{r}$.
  \item[b)] $\frac{\vec{r}}{r^2}$.
  \item[c)] $(2-r)e^{-r}\vec{r}$.
-\end{itemize} 
+\end{itemize}
 \end{resp}
 \begin{exer}
  Mostre que
@@ -468,12 +593,13 @@ Aplique essa fórmula para mostrar que $\vec{\nabla}r^n=nr^{n-2}\vec{r}.$
  $$
  onde $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$. Utilize este resultado para mostrar que:
  \begin{itemize}
-  \item[a)] $\vec{\nabla}^2\ln(r) =\frac{1}{r^2}$. 
+  \item[a)] $\vec{\nabla}^2\ln(r) =\frac{1}{r^2}$.
   \item[b)] $\vec{\nabla}^2r^n =n(n+1)r^{n-2}$.
   \item[c)] $\vec{\nabla}^2\ln(r^2) =\frac{2}{r^2}$.
     \item[d)] $\vec{\nabla}^2\left(\frac{1}{r}\right) =0$.
  \end{itemize}
 \end{exer}
+
 
 \begin{exer}
  Uma partícula de massa $m$ e velocidade $\vec{v}$ é atraída para a origem por uma força central dada por $\vec{F}(\vec{r})=f(r)\hat{r}$. Mostre que o momento angular $\vec{L}=\vec{r}\times m\vec{v}$ é constante, isto é, $\frac{d\vec{L}}{dt}=\vec{0}$
@@ -483,13 +609,13 @@ Aplique essa fórmula para mostrar que $\vec{\nabla}r^n=nr^{n-2}\vec{r}.$
 \end{exer}
 
 
-\section*{Exercícios finais}
+%\section*{Exercícios finais}
 
-\construirExer
+%\construirExer
 
-\begin{exer}
-  Um exercício.
-\end{exer}
-\begin{resp}
-  Resposta curta do exercício.
-\end{resp}
+%\begin{exer}
+%  Um exercício.
+%\end{exer}
+%\begin{resp}
+%  Resposta curta do exercício.
+%\end{resp}

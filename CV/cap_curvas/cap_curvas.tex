@@ -1,5 +1,5 @@
+% !TEX root = ../main.tex
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 
 \chapter{Curvas e trajetórias}\index{curvas e trajetórias}\index{trajetórias}
   Neste capítulo, estudamos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. 
@@ -234,42 +234,67 @@ s(t)=\int_{a}^{t}\left\|\frac{d\vec{r}(\tau)}{dt}\right\|d\tau,\qquad a\leq t\le
 
 \subsection*{Exercícios resolvidos}
 
-\begin{exer} \label{exe_co_arc1}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$ é $L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}$. Tal curva pertence a parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
-\end{exer}
-
+\begin{exeresol} \label{exe_co_arc1}
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$. 
+\end{exeresol}
 \begin{figure}
-\centering
-    \includegraphics{./cap_curvas/figs/comprimento_arco_parabola}
-    \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
-\caption{(esq) Curva do exercício E \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
-\end{figure}
+  \centering
+      \includegraphics{./cap_curvas/figs/comprimento_arco_parabola}
+      \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
+  \caption{(esq) Curva do exercício ER \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
+  \end{figure}
+  
+\begin{resol}
+A curva é um arco  da parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
 
-$\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto $L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt$. Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então $L =  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du = \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)} $.
+Calculamos a derivada $\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto:
+ $$L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt.$$ Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então 
+ \begin{eqnarray*}
+  L &=&  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du \\
+  &=& \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)}.
+\end{eqnarray*}
 
-\begin{exer} \label{exe_co_arc2}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{32}{3} \sqrt{2} - 4\sqrt{3}$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
-\end{exer}
+ Assim obtemos:
+ $$L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}.$$ 
 
+\end{resol}
 
-$\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto $L = \int_0^1 \sqrt{ 100 t^3 + 100 t^2 + 100t^2 } dt = 10 \int_0^1 t \sqrt{t+2} dt = 10 \int_2^3 (s-2) s^{1/2} ds = 10 \int_2^3 (s^{3/2}-2s^{1/2})ds$
-
+\begin{exeresol} \label{exe_co_arc2}
+Calcule comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
+\end{exeresol}
+\begin{resol}
+Calculamos a derivada $\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto:
+\begin{eqnarray*}
+  L &=& \int_0^1 \sqrt{ 100 t^3 + 100 t^2 + 100t^2 } dt = 10 \int_0^1 t \sqrt{t+2} dt \\&=& 10 \int_2^3 (s-2) s^{1/2} ds = 10 \int_2^3 (s^{3/2}-2s^{1/2})ds\\
+  &=&\frac{32}{3} \sqrt{2} - 4\sqrt{3}.
+\end{eqnarray*}
+\end{resol}
 
 
 \subsection*{Exercícios}
 
 \begin{exer} \label{exe_co_arc3}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1+t) \vec{i} + (1-t^2)\vec{j}$, definida para $-1 \leq t \leq 1$ é $ L = \sqrt{5} + \frac{\ln(\sqrt{5}+2)}{2}$.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = (1+t) \vec{i} + (1-t^2)\vec{j}$, definida para $-1 \leq t \leq 1$.
 \end{exer}
+\begin{resp}
+  $L=\sqrt{5} + \frac{\ln(\sqrt{5}+2)}{2}$.
+\end{resp}
 
 
 \begin{exer} \label{exe_co_arc4}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{i} + (t^2+t^3) \vec{j} + (1+t^2-t^3)\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{5 \sqrt{30}-4\sqrt{3}}{9} $.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{i} + (t^2+t^3) \vec{j} + (1+t^2-t^3)\vec{k}$, definida para $0 \leq t \leq 1$.
 \end{exer}
+\begin{resp} $ L = \frac{5 \sqrt{30}-4\sqrt{3}}{9} $.
+\end{resp}
+
+
 
 \begin{exer} \label{exe_co_arc5}
-Mostre que o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$ é $ L = \frac{14\sqrt{6}}{9} $.
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$. 
 \end{exer}
+\begin{resp}
+  $ L = \frac{14\sqrt{6}}{9}.$
+\end{resp}
 
 
 
@@ -448,8 +473,11 @@ Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos 
 \end{exer}
 
 \begin{exer}
-  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
+  Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc5}. Obtenha o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
 \end{exer}
+\begin{resp}
+  $\vec{T}=\frac{2}{\sqrt{6+18t^3}}\vec{i}+\frac{-1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1+3t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$, $\vec{N} = \frac{-2t^{3/2}}{\sqrt{6+18t^3}}\vec{i}+\frac{1+t^{3/2}}{\sqrt{6+18t^3}}\vec{j}+\frac{1-t^{3/2}}{\sqrt{6+18t^3}}\vec{k}$ e $\vec{B} = -\frac{\vec{i}}{\sqrt{3}} - \frac{\vec{j}}{\sqrt{3}} + \frac{\vec{k}}{\sqrt{3}}$.
+\end{resp}
 
 
 \begin{exer}
@@ -482,6 +510,14 @@ Para o comentário sobre a derivada da norma ao quadrado, observe que $r^2=t^2$,
 \vec{r}\cdot\frac{d\vec{r}}{dt}=\frac{1}{2}\frac{d r^2}{dt}=t>0
 \end{eqnarray*}
 Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato de que a tangente tem componente positivo nessa direção (não é paralelo ao eixo y como na circunferência).
+\end{resp}
+
+
+\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
+
+\end{exer}
+\begin{resp}
+  A condição é $$\frac{d}{dt}\|\vec{r}\!~'(t)\|=0$$
 \end{resp}
 
 \section{Curvatura e Torção}
@@ -665,14 +701,16 @@ $$
 \begin{itemize}
 \item[a)] $\vec{r}=a\cosh(t)\vec{i}+b\sinh(t)\vec{j}$, $-\infty<t<\infty$, $a>0,\ b>0$.
 \item[b)] $\vec{r}=a\cos(t)\vec{i}+b\sin(t)\vec{k}$, $0\leq t\leq 2\pi$, $a>0,\ b>0$.
-\item[c)] $\vec{r}=a\cos(t)\vec{i}+a\sin(t)+ct\vec{k}$, $t\geq 0$, $a>0,\ c>0$.
+\item[c)] $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, $t\geq 0$, $a>0,\ c>0$.
 
 \end{itemize}
 \end{exer}
  
- \begin{exer}{\label{prob_torcao}} Dada a hélice circular $\vec{r}=a\cos(t)\vec{i}+a\sin(t)+ct\vec{k}$, $t\geq 0$, $a>0,\ c>0$, calcule o valor de $c$ para que a torção seja máxima.
+ \begin{exer}{\label{prob_torcao}} Dada a hélice circular $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, $t\geq 0$, $a>0$. Dado um $a$ constante, calcule os valores de $c$ para que a torção seja máxima e mínima.
  \end{exer}
-
+\begin{resp}
+  A torção é constante em todos os pontos da hélice e é dada por $\tau=\frac{c}{a^2+c^2}$. A torção máxima para um dado $a>0$ é $\frac{1}{2a}$ quando $c=a$ e é mínimo quando $c=-a$.
+\end{resp}
 
  
  \begin{figure}
@@ -733,6 +771,36 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
 
 \end{obs}
 
+\begin{ex} Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
+  $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1. $$
+  Aqui $a$ e $b$ são constantes positivas e representam os comprimetos dos semieixos da elipse.
+  Inserimos a parametrização $x(t)=a\cos(t)$ e $y(t)=b\sin(t)$ para obter o vetor $\vec{r}(t)$:
+  $$\vec{r}(t) = a\cos(t)\vec{i} + b\sin(t)\vec{j}.$$
+  as derivadas de $\vec{r}(t)$ são, portanto, dadas por:
+$$r'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$  
+$$r''(t)=-a\cos(t)\vec{i}-b\sin(t)\vec{j}$$
+Assim, temos:
+\begin{eqnarray*}\vec{r}'(t)\times\vec{r}''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times\left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
+&=&ab\sin^2(t)\vec{k}+ab\cos^2(t)\vec{k}=ab\vec{k}
+\end{eqnarray*}
+Onde usamos a identidade trigonométrica $\sin^2(t)+\cos^2(t)=1$ e as identidades vetoriais $\vec{i}\times\vec{j}=\vec{k}$, $\vec{j}\times\vec{i}=-\vec{k}$  e $\vec{i}\times\vec{i}=\vec{j}\times\vec{j}=\vec{0}$.
+Agora calculamos $\|\vec{r}(t)\|$:
+$$\|\vec{r}(t)\|=\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{1/2}$$
+
+Desta forma, temos:
+$$\kappa(t)=\frac{\|r'(t)\times r''(t)\|}{\|r'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
+Vale observar que os pontos de máxima e mínima curvatura estão nos vértices, isto é, $t=0$, $t=\frac{\pi}{2}$, $t=\pi$ e $t=\frac{3\pi}{2}$. A prova dessa afirmação será objeto de exercício.
+
+Podemos expressão a curvatura da elipse em termos das variáveis originais $x$ e $y$:
+\begin{eqnarray*}
+\kappa(x, y)&=&\frac{ab}{\left(\frac{a^2}{b^2}y^2+\frac{b^2}{a^2}x^2\right)^{3/2}}\\
+\kappa(x)&=&\frac{ab}{\left(a^2+\left(\frac{b^2-a^2}{a^2}\right)x^2\right)^{3/2}}\\
+\kappa(y)&=&\frac{ab}{\left(b^2+\left(\frac{a^2-b^2}{b^2}\right)y^2\right)^{3/2}}\\
+\end{eqnarray*}
+
+
+\end{ex} 
+
 
 \begin{ex} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
 $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
@@ -746,16 +814,16 @@ $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
 Assim, calculamos:
  \begin{eqnarray*}
   \frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2} &=&\left[f''(t)\cos(t)+f'(t)\sin(t)\right]\vec{i}+\left[-f'(t)\cos(t)+f''(t)\sin(t)\right]\vec{j}+\vec{k}\\
-\frac{d \vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot r'''(t)&=&f'(t)+f'''(t)\\
- \|\frac{d\vec{r}}{dt} \times\frac{d^2\vec{r}}{dt^2}\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
- \|\frac{d\vec{r}}{dt}\|&=&\sqrt{1+\left(f'(t)\right)^2}
+\frac{d \vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3\vec{r}}{dt^3} &=&f'(t)+f'''(t)\\
+ \left\|\frac{d\vec{r}}{dt} \times\frac{d^2\vec{r}}{dt^2}\right\|&=&\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}\\
+ \left\|\frac{d\vec{r}}{dt}\right\|&=&\sqrt{1+\left(f'(t)\right)^2}
  \end{eqnarray*}
 E finalmente, obtemos:
  \begin{eqnarray*}
 \kappa&=&\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}\\
 \tau&=&\frac{f'(t)+f'''(t)}{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}
  \end{eqnarray*}
-Podemos, agora, explorar diversos casos particular:
+Podemos, agora, explorar diversos casos particulares:
 \begin{itemize}
  \item [a)] Caso $f(t)=c$ constante. Neste caso, recaímos na circunferência de raio 1, cuja curvatura é 1 e a torção é nula.
  \item [b)] Caso $f(t)=ct$ com $c$ constante. Recaímos na hélice cicular uniforme, já estudada, cuja curvatura é $\frac{1}{1+c^2}$ e a torção é $\frac{c}{1+c^2}$.
@@ -930,7 +998,8 @@ Agora, retornamos ao pedido nesta lista:
 E também:
 \begin{eqnarray*}
 a_N^2+a_T^2&=&\left(\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{1/2}}\right)^2+\left(\frac{4t}{\left(9+4t^2\right)^{1/2}}\right)^2\\
-&=&\frac{117+36t^2}{9+4t^2}+\frac{16t^2}{9+4t^2}=\frac{117+52t^2}{9+4t^2}\\&=&1,
+&=&\frac{117+36t^2}{9+4t^2}+\frac{16t^2}{9+4t^2}=\frac{117+52t^2}{9+4t^2}\\&=&
+\frac{13(9+4t^2)}{9+4t^2}=13,
 \end{eqnarray*}
 o que verifica a identidade.
  
@@ -1024,6 +1093,10 @@ onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f'
 
 \begin{exeresol}
 Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
+Dica:
+$$\kappa(t)=\frac{ab}{\left[a^2+(b^2-a^2)\cos^2(t)\right]^{3/2}}$$
+e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
+
 \begin{itemize}
  \item[a)] O que acontece quando $a=b$?
  \item[b)] Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
@@ -1113,7 +1186,55 @@ $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
 \includegraphics[scale=.6]{./cap_curvas/figs/lissa_lista_a1_2}
 \end{resol}
 
+\begin{exeresol}  Considere a hélice circular não uniforme dada por
+  \begin{eqnarray*}
+    x&=&\cos(t)\\
+    y&=&\sin(t)\\
+    z&=&f(t):=8\sqrt{t}.\\
+  \end{eqnarray*}
+  \includegraphics[scale=.6]{./cap_curvas/figs/helice_sqrt_z}
+  \begin{itemize}
+    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e mostre que $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
+  \item[b)] Encontre  a curvatura desta hélice usando a fórmula:
+  $$\kappa=\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}$$
+    \item[c)] Encontre a torção desta curva usando a seguinte fórmula:
+    $$\tau=\frac{f'(t)+f'''(t)}{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}$$
+    \item[d)] Interprete os limites do passo, da curvatura e da torção quando $t\to \infty$.
+    \end{itemize}
+  \end{exeresol}
+  \begin{resol}
+    O passo é dado por:
+    \begin{eqnarray*}
+      P(t) &=& \sqrt{8t+2\pi}- \sqrt{8t}\\
+      &=&\left(\sqrt{8t+2\pi}- \sqrt{8t}\right)\cdot\left(\frac{\sqrt{8t+2\pi}+\sqrt{8t}}{ \sqrt{8t+2\pi}+\sqrt{8t}}\right)\\
+      &=&\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.
+    \end{eqnarray*}
+  Primeiro calculamos as derivadas:
+  $$f(t)=8t^{1/2}, ~~ f'(t)=4 t^{-1/2}, ~~ f''(t)=-2 t^{-3/2} ~ \hbox{ e } ~ f'''(t)=6 t^{-5/2}.$$
+  Assim:
+  $$f'(t)^2=16 t^{-1} ~ \hbox{ e } ~ f''(t)^2=4 t^{-3}.$$
+  Portanto:
+  \begin{eqnarray*}
+   1+f'(t)^2+f''(t)^2 &=& 1 + 16t^{-1} + 4t^{-3} = t^{-3}\left(t^{3} + 16t^{2} + 4\right)\\
+   1+f'(t)^2 &=&1+16t^{-1}=t^{-1}\left(t + 16\right)\\
+   f'(t)+f'''(t) &=&4t^{-1/2}+6t^{-5/2}=t^{-5/2}\left(4t^2 + 6\right)
+     \end{eqnarray*}
 
+Obtemos da fórmulas conhecidas:
+\begin{eqnarray*}
+  \kappa(t) &=& \frac{t^{-3/2}\sqrt{t^{3} + 16t^{2} + 4}}{t^{-3/2}\left(t+16\right)^{3/2}}= \frac{\sqrt{t^{3} + 16t^{2} + 4}}{\left(t+16\right)^{3/2}}\\
+\tau(t) &=& \frac{t^{-5/2}\left(4t^2 + 6\right)}{t^{-3}\left(t^{3} + 16t^{2} + 4\right)} =\frac{t^{1/2}\left(4t + 6\right)}{\left(t^{3} + 16t^{2} + 4\right)}
+\end{eqnarray*}
+
+Vemos que:
+\begin{eqnarray*}
+  \lim_{t\to \infty} P(t) &=& 0\\
+  \lim_{t\to \infty} \kappa(t) &=& 1\\
+  \lim_{t\to \infty} \tau(t) &=& 0\\
+\end{eqnarray*}
+A intepretação intuitiva é que, à medida que o passo da hélice decresce, a curva se aproxima de uma circunferência unitária.  A curvatura se aproxima da curvatura dessa circunferência e a torção se aproxima de zero. Dica: Analise o gráfico dessa curva.
+  \end{resol}
+  
 
 
 \subsection*{Exercícios}
