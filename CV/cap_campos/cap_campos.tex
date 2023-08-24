@@ -120,32 +120,37 @@ yz+x & z^2 & z^3
 
 
 \subsection{Operadores diferenciais de segunda ordem}
-Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de segunda ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
+Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de primeira ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
 \begin{eqnarray}
   \vec{\nabla} \cdot \vec{\nabla} f&~& \text{(Divergente do gradiente ou laplaciano)}\\
   \vec{\nabla} \times \vec{\nabla} f&~& \text{(Rotacional do gradiente)}\\
   \vec{\nabla} \vec{\nabla}\cdot \vec{F}&~& \text{(Gradiente do divergente)}\\
   \vec{\nabla} \cdot\vec{\nabla}\times \vec{F}&~& \text{(Divergente do rotacional)}\\
-  \vec{\nabla} \times\vec{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}\\
+  \vec{\nabla} \times\vec{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}
   \end{eqnarray}
-As expressões $\vec{\nabla} \times \vec{\nabla} f$ e $\vec{\nabla} \cdot{\nabla}\times \vec{F}$ são identicamente nulas para campos duas vezes continuamente diferenciáveis, o que pode ser provado por simples inspeção:
+
+No caso do Laplaciano, temos
 \begin{eqnarray}
- \vec{\nabla} \times \vec{\nabla} f &=&\left|
- \begin{array}{ccc}
- \vec{i} & \vec{j} & \vec{k} \\
- \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
-\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
- \end{array}
-\right|\\
-&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right)\\
-&+& \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right)\\
- &+& \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+\nonumber \vec{\nabla} \cdot \vec{\nabla} f&=& \vec{\nabla}\cdot \left(\frac{\partial f}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}\right)\\
+&=& \frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2}\label{Laplaciano}
 \end{eqnarray}
-Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
-\begin{eqnarray}
- \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
-\end{eqnarray}
-A demonstração é análoga para o divergente do gradiente.
+O Laplaciano também pode ser denotado por $\vec{\nabla}^2 f$ ou por $\Delta f$, ou seja, $\Delta f=\vec{\nabla}^2f=\vec{\nabla} \cdot \vec{\nabla} f$.
+
+O Laplaciano também pode ser definido para um campo vetorial $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$ da seguinte forma:
+\begin{eqnarray*}
+ \vec{\nabla}^2 \vec{F}&=& (\vec{\nabla}^2 F_1)\vec{i}+(\vec{\nabla}^2 F_2)\vec{j}+(\vec{\nabla}^2 F_3)\vec{k}\\
+ &=& \left(\frac{\partial^2 F_1}{\partial x^2}+\frac{\partial^2 F_1}{\partial y^2}+\frac{\partial^2 F_1}{\partial z^2}\right)\vec{i}+\left(\frac{\partial^2 F_2}{\partial x^2}+\frac{\partial^2 F_2}{\partial y^2}+\frac{\partial^2 F_2}{\partial z^2}\right)\vec{j}\\&+&\left(\frac{\partial^2 F_3}{\partial x^2}+\frac{\partial^2 F_3}{\partial y^2}+\frac{\partial^2 F_3}{\partial z^2}\right)\vec{k}\\
+&=& \frac{\partial^2 \vec{F}}{\partial x^2}\vec{i}+\frac{\partial^2 \vec{F}}{\partial y^2}\vec{j}+\frac{\partial^2 \vec{F}}{\partial z^2}\vec{k}.
+\end{eqnarray*}
+
+Se $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, temos a seguinte expressão para o gradiente do divergente:
+\begin{eqnarray*}
+\vec{\nabla} \vec{\nabla} \cdot \vec{F}&=& \vec{\nabla} \left(\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}\right)\\
+&=&\left(\frac{\partial^2 F_1}{\partial x^2}+\frac{\partial^2 F_2}{\partial yx}+\frac{\partial^2 F_3}{\partial zx}\right)\vec{i}+\left(\frac{\partial^2 F_1}{\partial xy}+\frac{\partial^2 F_2}{\partial y^2}+\frac{\partial^2 F_3}{\partial zy}\right)\vec{j}\\&+&\left(\frac{\partial^2 F_1}{\partial xz}+\frac{\partial^2 F_2}{\partial yz}+\frac{\partial^2 F_3}{\partial z^2}\right)\vec{k}
+\end{eqnarray*}
+Analogamente, podemos escrever todas as expressões dos operadores de segunda ordem usando as definições de gradiente, divergente e rotacional.
+
+
 
 \subsection{Identidades envolvendo o operador nabla}
 Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$. Sejam $f=f(x,y,z)$ e $g=g(x,y,z)$ campos escalares e $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ campos vetoriais. Então, valem as identidades da tabela~\ref{tab_identidades_del}.
@@ -183,6 +188,43 @@ Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}
 \hline
 \end{tabular}
 \end{table}
+
+As demonstrações dos itens 1, 2 e 3 da tabela \ref{tab_identidades_del} vem diretamente da linearidade das derivadas parciais. De fato, no caso do item 1,
+\begin{eqnarray*}
+\vec{\nabla}(f+g)&=&\frac{\partial (f+g)}{\partial x}\vec{i}+\frac{\partial (f+g)}{\partial y}\vec{j}+\frac{\partial (f+g)}{\partial z}\vec{k} \\
+&=&\left(\frac{\partial f}{\partial x}+\frac{\partial g}{\partial x}\right)\vec{i}+\left(\frac{\partial f}{\partial y}+\frac{\partial g}{\partial y}\right)\vec{j}+\left(\frac{\partial f}{\partial z}+\frac{\partial g}{\partial z}\right)\vec{k}\\
+&=&\frac{\partial f}{\partial x}\vec{i}+\frac{\partial g}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial g}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}+\frac{\partial g}{\partial z}\vec{k}\\
+&=&\vec{\nabla}f+\vec{\nabla}g.
+\end{eqnarray*}
+As demonstrações dos itens 2 e 3 são análogas ao do item 1. Os itens 4, 5 e 6 da tabela \ref{tab_identidades_del} são demonstrados a partir da propriedade da derivadas parciais do produto de duas funções. No caso do item 4,
+\begin{eqnarray*}
+\vec{\nabla}(fg)&=&\frac{\partial (fg)}{\partial x}\vec{i}+\frac{\partial (fg)}{\partial y}\vec{j}+\frac{\partial (fg)}{\partial z}\vec{k} \\
+&=&\left(f\frac{\partial g}{\partial x}+g\frac{\partial f}{\partial x}\right)\vec{i}+\left(f\frac{\partial g}{\partial y}+g\frac{\partial f}{\partial y}\right)\vec{j}+\left(f\frac{\partial g}{\partial z}+g\frac{\partial f}{\partial z}\right)\vec{k}\\
+&=&f\left(\frac{\partial g}{\partial x}\vec{i}+\frac{\partial g}{\partial y}\vec{j}+\frac{\partial g}{\partial z}\vec{k}\right)+g\left(\frac{\partial f}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}\right)\\
+&=&f\vec{\nabla}g+g\vec{\nabla}f
+\end{eqnarray*}
+
+O item 7 está demonstrado na expressão \ref{Laplaciano}. Os itens 8 e 9 podem ser provados por simples inspeção, desde que assumimos que as funções envolvidas possuem a segunda derivada contínua:
+\begin{eqnarray*}
+ \vec{\nabla} \times \vec{\nabla} f &=&\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
+ \end{array}
+\right|\\
+&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right)\\
+&+& \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right)\\
+ &+& \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+\end{eqnarray*}
+Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
+\begin{eqnarray}
+ \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
+\end{eqnarray}
+A demonstração é análoga para o item 9 da tabela.
+
+Para o item 10 da tabela, 
+
 
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
