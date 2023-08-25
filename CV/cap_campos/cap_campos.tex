@@ -245,7 +245,7 @@ e
 
 Vamos calcular apenas a compotente $\vec{i}$ de cada um dos três termos imediatamente acima. A componente $\vec{i}$ da expressão \eqref{rot_do_rot} é
 \begin{equation}
-\label{rot_rot_comp_i} \frac{\pãoartial }{\partial y}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)-\frac{\partial }{\partial z}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right),
+\label{rot_rot_comp_i} \frac{\partial }{\partial y}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)-\frac{\partial }{\partial z}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right),
 \end{equation}
 a componente $\vec{i}$ da expressão \eqref{grad_div} é
 \begin{equation}
@@ -378,7 +378,7 @@ A derivada direcional de $f(x, y, z)$ mede a taxa de variação  de $f$ na dire�
 
 Tomemos, como exemplo, a temperatura $T(x, y, z)$ como função da posição $(x, y, z)$. A derivada direcional nesse caso será a taxa de variação da temperatura com deslocamento em dada direção e será  medida em unidades de temperatura por unidade de comprimento. Observe que a taxa de variação da temperatura num dado ponto pode ser diferente na direção norte e na direação oeste.
 
-Matematicamente, a derivada direcional \( D_{\mathbf{v}} f(x_0, y_0, z_0) \) é definida da seguinte forma pelo seguinte limite:
+Matematicamente, a derivada direcional \( D_{\vec{v}} f(x, y, z) \) é definida da seguinte forma:
 
 $$
 D_{\vec{v}} f(x, y, z) = \lim_{{h \to 0}} \frac{f(x + hv_x, y + hv_y, z + hv_z) - f(x, y, z)}{h}
@@ -524,11 +524,9 @@ Use a equação da continuidade para mostrar que um fluido incompressível e em 
 
 
 \section{Interpretação do rotacional}
-O operador rotacional é um conceito fundamental para entender e descrever como um campo vetorial. O rotacional de um campo vetorial é um novo campo vetorial.
+O operador rotacional nos permite avaliar a tendência do campo vetorial em girar ou formar vórtices ao redor de um ponto, indicando se há rotação local em torno desse ponto. Ele descreve a direção e intensidade da rotação do campo original. Ou seja, o rotacional de um campo vetorial é um novo campo vetorial.
 
-Em termos mais simples, o operador rotacional nos permite avaliar a tendência do campo vetorial em girar ou formar vórtices ao redor de um ponto, indicando se há rotação local em torno desse ponto. Ele descreve a direção e intensidade da rotação do campo original. 
-
-Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusivo  dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
+Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusive dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
 
 As linhas de força paralelas à superfícies do fluido são as responsáveis por fazer a bolinha girar pelo atrito. Veja ilustração abaixo:
 
@@ -578,32 +576,38 @@ Esta identidade é oriunda da Tabela~\ref{tab_identidades_del}, item 8.
 \begin{eqnarray}
  \frac{\partial F_3}{\partial y} &=&\frac{\partial F_2}{\partial z}\label{rot_zero_x},\\
  \frac{\partial F_1}{\partial z} &=&\frac{\partial F_3}{\partial x}\label{rot_zero_y},\\
- \frac{\partial F_3}{\partial x} &=&\frac{\partial F_1}{\partial y}\label{rot_zero_z}.
+ \frac{\partial F_2}{\partial x} &=&\frac{\partial F_1}{\partial y}\label{rot_zero_z}.
 \end{eqnarray}
 Defina, agora, a função $\varphi:\mathbb{R}^3\to\mathbb{R}$ dada por
-$$\varphi(x,y,z)=\int_0^xF_1(s,y,z) + \int_0^yF_2(0,s,z)+\int_0^zF_3(0,0,s).$$
+$$\varphi(x,y,z)=\int_0^xF_1(s,y,z)ds + \int_0^yF_2(0,s,z)ds+\int_0^zF_3(0,0,s)ds.$$
 Basta provar que $\vec{\nabla}\varphi(x,y,z)=\vec{F}$, isto é
 \begin{eqnarray}
  \frac{\partial \varphi}{\partial z} &=&F_1,\label{rot_zero_der_x}\\
  \frac{\partial \varphi}{\partial y} &=&F_2,\label{rot_zero_der_y}\\
  \frac{\partial \varphi}{\partial z} &=&F_3\label{rot_zero_der_z}.
 \end{eqnarray}
-A primeira desigualdade advém diretamente do teorema fundamental do cálculo. Para obter a segunda desigualdade, derivamos o potencial em relação a $y$:
+A igualdade \eqref{rot_zero_der_x} advém diretamente do teorema fundamental do cálculo. Para obter a igualdade \eqref{rot_zero_der_y}, derivamos o potencial em relação a $y$:
 \begin{eqnarray*}
-\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int\int_0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z)\\
-&=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
-&=&\left(F_2(x,y,z)-F_2(0,y,z)\right)+ F_2(0,y,z) = F_2(x,y,z)
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\frac{\partial }{\partial y}\int_0^x F_1(s,y,z)ds+\frac{\partial }{\partial y}\int_0^y F_2(0,s,z)ds\\
+&=&\int_0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z),
 \end{eqnarray*}
-Onde usamos a Identidade~\ref{rot_zero_y}.
+onde usamos o teorema fundamental do cálculo no último termo.
+Agora, usando a identidade~\ref{rot_zero_y}, temos:
+\begin{eqnarray*}
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
+&=&F_2(x,y,z)-F_2(0,y,z)+ F_2(0,y,z)\\
+&=&F_2(x,y,z),
+\end{eqnarray*}
+onde usamos novamente o teorema fundamental do cálculo. Observe que usamos as duas versões do teorema fundamental do cálculo: a integral da derivada e a derivada da integral.
 
 Finalmente, para obter a terceira desigualdade, derivamos o potencial em relação a $z$:
 \begin{eqnarray*}
 \frac{\partial }{\partial z}\varphi(x,y,z)&=&\int_0^x \frac{\partial }{\partial z}F_1(s,y,z)ds + \int_0^y \frac{\partial }{\partial z}F_2(0,s,z)ds+F_3(0,0,z)\\
 &=&\int_0^x \frac{\partial }{\partial s}F_3(s,y,z)ds + \int_0^z \frac{\partial }{\partial s}F_3(0,s,z)ds+F_3(0,0,z)\\
-&=&\int_0^x \left(F_3(x,y,z)-F_3(0,y,z)\right) + \left(F_3(0,y,z)-F_3(0,0,z)\right)+F_3(0,0,z)\\
-&=&F_3(x,y,z)\\
+&=& \left(F_3(x,y,z)-F_3(0,y,z)\right) + \left(F_3(0,y,z)-F_3(0,0,z)\right)+F_3(0,0,z)\\
+&=&F_3(x,y,z),\\
 \end{eqnarray*}
-  Onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
+onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
 \end{proof}
 
 \subsection*{Exercícios resolvidos}
