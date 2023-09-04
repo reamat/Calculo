@@ -114,11 +114,12 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \begin{itemize}
 \item [a)] $\vec{f}(t)=\sin(t)\vec{i}+\cos(t)\vec{j}$
 \item [b)] $\vec{g}(t)=t \vec{i}+\cosh(t)\vec{k}$
-\item [c)] $\vec{h}(t)=2\cos(t)\vec{i}+4\sin(t)\vec{j}+t\vec{k},~~ 0\leq t \leq 8\pi$
+\item [c)] $\vec{h}(t)=2\cos(t)\vec{i}+4\sin(t)\vec{j}+t\vec{k}$
 \end{itemize}
 \end{exer}
 
-\begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}+\vec{k}$\end{resp}
+\begin{resp} $\vec{f'}(t)=\cos(t)\vec{i}-\sin(t)\vec{j}$,~~ $\vec{g'}(t)= \vec{i}+\sinh(t)\vec{k}$, ~~$\vec{h'}(t)=-2\sin(t)\vec{i}+4\cos(t)\vec{j}+\vec{k}$
+\end{resp}
 \begin{exer} Dada a função vetorial $\vec{r}(t)=t^2\vec{i}+e^t\vec{j}-2\cos\pi t ~\! \vec{k}$, calcule:
 \begin{itemize}
 \item [a)] $\displaystyle \lim_{t\to 0} \vec{r}(t)$
@@ -145,7 +146,7 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \begin{exer}Encontre a declividade (coeficiente angular) da reta contida no plano $z=0$ representada por $\vec{r}=(1-2t)\vec{i}+(2-3t)\vec{j}$
 \end{exer}
 \begin{resp}
- -$\frac{3}{2}$
+ $\frac{3}{2}$
 \end{resp}
 \begin{exer} Reconheça e represente graficamente as curvas descritas pelas seguintes funções vetoriais:
 \begin{itemize}
@@ -161,6 +162,8 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \end{resp}
 \begin{exer}Dada a hélice circular $\vec{r}(t)=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, sendo $c>0$, encontre $c$ tal que a cada volta completa $z$ avance $3$ unidades.
  \end{exer}
+ \begin{resp} $c=\frac{3}{2\pi}$.
+ \end{resp}
 \begin{exer}Seja $\vec{r}(t)$ o vetor posição de uma partícula dado por
 $$\vec{r}(t)=a\cos(wt)\vec{i}+a\sin(wt)\vec{j}$$
 Calcule o vetor velocidade $\vec{v}$ e o vetor aceleração $\vec{a}$ dados por $\vec{v}=\frac{d\vec{r}(t)}{dt}$ e $\vec{a}=\frac{d\vec{v}(t)}{dt}$.
@@ -403,14 +406,14 @@ Um erro comum entre estudantes é substituir a definição de vetor binormal uni
  \end{eqnarray*}
  
  \begin{eqnarray*}
-\frac{\vec{N}~\!'(t)}{\|\vec{N}~\!'(t)\|}\\
+\frac{\vec{N}~\!'(t)}{\|\vec{N}~\!'(t)\|}
   &=&\frac{w\sin(wt)-w\cos(wt)}{w}\\
   &=&{\sin(wt)-\cos(wt)}=-\vec{T}
  \end{eqnarray*}
 \end{resol}
 
 \subsection*{Exercícios}
-\begin{exer}Calcule $\vec{r}'(t_0)$ e esboce o gráfico de $\vec{r}(t)$ juntamente com o vetor tangente $\vec{r}'(t_0)$.
+\begin{exer}Calcule $\vec{r}\!~'(t_0)$ e esboce o gráfico de $\vec{r}(t)$ juntamente com o vetor tangente $\vec{r}\!~'(t_0)$.
 \begin{itemize}
  \item[a)] $\vec{r}(t)=t\vec{i}+t^2\vec{j}$, $t_0=2$.
  \item[b)] $\vec{r}(t)=e^{-t}\vec{i}+e^{2t}\vec{j}$, $t_0=\ln(2)$.
@@ -463,7 +466,7 @@ x&=&t\sin (t)\\
 y&=&t\cos (t)\\
 z&=&0
 \end{eqnarray*}
-Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos inicial e final. Esboce o triedro $\vec{T}$, $\vec{N}$ e $\vec{B}$ nos instantes $t=\pi/4$, $t=3\pi/4$, $t=5\pi/4$, $t=7\pi/4$.(Obs.: Não é necessário calcular analiticamente o triedro.) Considere a identidade vetorial $\frac{d r^2}{dt}=2\vec{r}\cdot\frac{d\vec{r}}{dt}$ no instante $t=\pi/2$, ela é compatível com seu desenho?
+Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos inicial e final. Esboce o triedro $\vec{T}$, $\vec{N}$ e $\vec{B}$ nos instantes $t=\pi/4$, $t=3\pi/4$, $t=5\pi/4$, $t=7\pi/4$.(Obs.: Não é necessário calcular analiticamente o triedro.) Considere a identidade vetorial $\frac{d}{dt}\|\vec{r}(t)\|=\vec{r}\cdot\frac{d\vec{r}}{dt}$. O sinal dessa expressão é compatível com seu desenho?
 \end{exer}
 \begin{resp}
  \includegraphics{./cap_curvas/figs/espiral}
