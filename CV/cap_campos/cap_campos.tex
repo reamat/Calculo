@@ -120,32 +120,36 @@ yz+x & z^2 & z^3
 
 
 \subsection{Operadores diferenciais de segunda ordem}
-Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de segunda ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
+Operadores diferenciais de segunda ordem podem ser definidos através da composição de operadores diferenciais de primeira ordem. Combinando o gradiente, rotacional e divergente, encontramos as seguintes possibilidades:\index{operador!de segunda ordem}\index{operador!laplaciano}
 \begin{eqnarray}
   \vec{\nabla} \cdot \vec{\nabla} f&~& \text{(Divergente do gradiente ou laplaciano)}\\
   \vec{\nabla} \times \vec{\nabla} f&~& \text{(Rotacional do gradiente)}\\
   \vec{\nabla} \vec{\nabla}\cdot \vec{F}&~& \text{(Gradiente do divergente)}\\
   \vec{\nabla} \cdot\vec{\nabla}\times \vec{F}&~& \text{(Divergente do rotacional)}\\
-  \vec{\nabla} \times\vec{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}\\
+  \vec{\nabla} \times\vec{\nabla}\times \vec{F}&~& \text{(Rotacional do rotacional)}
   \end{eqnarray}
-As expressões $\vec{\nabla} \times \vec{\nabla} f$ e $\vec{\nabla} \cdot{\nabla}\times \vec{F}$ são identicamente nulas para campos duas vezes continuamente diferenciáveis, o que pode ser provado por simples inspeção:
+
+No caso do Laplaciano, temos
 \begin{eqnarray}
- \vec{\nabla} \times \vec{\nabla} f &=&\left|
- \begin{array}{ccc}
- \vec{i} & \vec{j} & \vec{k} \\
- \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
-\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
- \end{array}
-\right|\\
-&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right)\\
-&+& \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right)\\
- &+& \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+\nonumber \vec{\nabla} \cdot \vec{\nabla} f&=& \vec{\nabla}\cdot \left(\frac{\partial f}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}\right)\\
+&=& \frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}+\frac{\partial^2 f}{\partial z^2}\label{Laplaciano}
 \end{eqnarray}
-Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
-\begin{eqnarray}
- \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
-\end{eqnarray}
-A demonstração é análoga para o divergente do gradiente.
+O Laplaciano também pode ser denotado por $\vec{\nabla}^2 f$ ou por $\Delta f$, ou seja, $\Delta f=\vec{\nabla}^2f=\vec{\nabla} \cdot \vec{\nabla} f$.
+
+O Laplaciano também pode ser definido para um campo vetorial $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$ da seguinte forma:
+\begin{eqnarray*}
+ \vec{\nabla}^2 \vec{F}&=& (\vec{\nabla}^2 F_1)\vec{i}+(\vec{\nabla}^2 F_2)\vec{j}+(\vec{\nabla}^2 F_3)\vec{k}\\
+ &=& \left(\frac{\partial^2 F_1}{\partial x^2}+\frac{\partial^2 F_1}{\partial y^2}+\frac{\partial^2 F_1}{\partial z^2}\right)\vec{i}+\left(\frac{\partial^2 F_2}{\partial x^2}+\frac{\partial^2 F_2}{\partial y^2}+\frac{\partial^2 F_2}{\partial z^2}\right)\vec{j}\\&+&\left(\frac{\partial^2 F_3}{\partial x^2}+\frac{\partial^2 F_3}{\partial y^2}+\frac{\partial^2 F_3}{\partial z^2}\right)\vec{k}\\
+&=& \frac{\partial^2 \vec{F}}{\partial x^2}+\frac{\partial^2 \vec{F}}{\partial y^2}+\frac{\partial^2 \vec{F}}{\partial z^2}.
+\end{eqnarray*}
+
+Assim como estabelecemos uma expressão para o Laplaciano, podemos escrever todas as expressões dos operadores de segunda ordem usando as definições de gradiente, divergente e rotacional. Por exemplo, se $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, temos a seguinte expressão para o gradiente do divergente:
+\begin{eqnarray*}
+\vec{\nabla} \vec{\nabla} \cdot \vec{F}&=& \vec{\nabla} \left(\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}\right)\\
+&=&\left(\frac{\partial^2 F_1}{\partial x^2}+\frac{\partial^2 F_2}{\partial yx}+\frac{\partial^2 F_3}{\partial zx}\right)\vec{i}+\left(\frac{\partial^2 F_1}{\partial xy}+\frac{\partial^2 F_2}{\partial y^2}+\frac{\partial^2 F_3}{\partial zy}\right)\vec{j}\\&+&\left(\frac{\partial^2 F_1}{\partial xz}+\frac{\partial^2 F_2}{\partial yz}+\frac{\partial^2 F_3}{\partial z^2}\right)\vec{k}.
+\end{eqnarray*}
+As demais expressões ficam de exercício para o leitor.
+
 
 \subsection{Identidades envolvendo o operador nabla}
 Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}$. Sejam $f=f(x,y,z)$ e $g=g(x,y,z)$ campos escalares e $\vec{F}=\vec{F}(x,y,z)$ e $\vec{G}=\vec{G}(x,y,z)$ campos vetoriais. Então, valem as identidades da tabela~\ref{tab_identidades_del}.
@@ -183,6 +187,76 @@ Nesta seção, discutimos alguma identidades envolvendo o operador $\vec{\nabla}
 \hline
 \end{tabular}
 \end{table}
+
+As demonstrações dos itens 1, 2 e 3 da tabela \ref{tab_identidades_del} vem diretamente da linearidade das derivadas parciais. De fato, no caso do item 1,
+\begin{eqnarray*}
+\vec{\nabla}(f+g)&=&\frac{\partial (f+g)}{\partial x}\vec{i}+\frac{\partial (f+g)}{\partial y}\vec{j}+\frac{\partial (f+g)}{\partial z}\vec{k} \\
+&=&\left(\frac{\partial f}{\partial x}+\frac{\partial g}{\partial x}\right)\vec{i}+\left(\frac{\partial f}{\partial y}+\frac{\partial g}{\partial y}\right)\vec{j}+\left(\frac{\partial f}{\partial z}+\frac{\partial g}{\partial z}\right)\vec{k}\\
+&=&\frac{\partial f}{\partial x}\vec{i}+\frac{\partial g}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial g}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}+\frac{\partial g}{\partial z}\vec{k}\\
+&=&\vec{\nabla}f+\vec{\nabla}g.
+\end{eqnarray*}
+As demonstrações dos itens 2 e 3 são análogas ao do item 1. Os itens 4, 5 e 6 da tabela \ref{tab_identidades_del} são demonstrados a partir da propriedade da derivadas parciais do produto de duas funções. No caso do item 4,
+\begin{eqnarray*}
+\vec{\nabla}(fg)&=&\frac{\partial (fg)}{\partial x}\vec{i}+\frac{\partial (fg)}{\partial y}\vec{j}+\frac{\partial (fg)}{\partial z}\vec{k} \\
+&=&\left(f\frac{\partial g}{\partial x}+g\frac{\partial f}{\partial x}\right)\vec{i}+\left(f\frac{\partial g}{\partial y}+g\frac{\partial f}{\partial y}\right)\vec{j}+\left(f\frac{\partial g}{\partial z}+g\frac{\partial f}{\partial z}\right)\vec{k}\\
+&=&f\left(\frac{\partial g}{\partial x}\vec{i}+\frac{\partial g}{\partial y}\vec{j}+\frac{\partial g}{\partial z}\vec{k}\right)+g\left(\frac{\partial f}{\partial x}\vec{i}+\frac{\partial f}{\partial y}\vec{j}+\frac{\partial f}{\partial z}\vec{k}\right)\\
+&=&f\vec{\nabla}g+g\vec{\nabla}f
+\end{eqnarray*}
+
+O item 7 está demonstrado na expressão \ref{Laplaciano}. Os itens 8 e 9 podem ser provados por simples inspeção, desde que assumimos que as funções envolvidas possuem a segunda derivada contínua:
+\begin{eqnarray*}
+ \vec{\nabla} \times \vec{\nabla} f &=&\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
+ \end{array}
+\right|\\
+&=&\vec{i}\left(\frac{\partial^2 f }{\partial z\partial y} - \frac{\partial^2 f}{\partial y\partial z}\right)\\
+&+& \vec{j}\left(\frac{\partial^2 f}{\partial  x\partial z}-\frac{\partial^2f}{\partial z\partial x}\right)\\
+ &+& \vec{k}\left(\frac{\partial^2 f}{\partial y\partial x}-\frac{\partial^2 f}{\partial x\partial y}\right)
+\end{eqnarray*}
+Sob a regularidade exigida, as derivadas parciais podem ser comutadas e cada termo do rotacional é nulo, isto é:
+\begin{eqnarray}
+ \vec{\nabla} \cdot \vec{\nabla}\times\vec{F} &\equiv &0
+\end{eqnarray}
+A demonstração é análoga para o item 9 da tabela.
+
+Para o item 10 da tabela, supondo $\vec{F}=F_1\vec{i}+F_2\vec{j}+F_3\vec{k}$, observemos que
+\begin{equation}
+\label{rot_do_rot} 
+ \vec{\nabla}\times(\vec{\nabla}\times \vec{F})=\left|
+ \begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+ \frac{\partial}{\partial x} &\frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\
+\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z} & \frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x} & \frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}
+ \end{array}
+\right|.
+\end{equation}
+Os termos à direita do item 10 são:
+\begin{equation}
+\label{grad_div} \vec{\nabla}(\vec{\nabla}\cdot \vec{F})=\vec{\nabla}\left(\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}\right)
+\end{equation}
+e
+\begin{equation}
+\label{menos_Laplaciano} -\vec{\nabla}^2 \vec{F}= -\frac{\partial^2 \vec{F}}{\partial x^2}-\frac{\partial^2 \vec{F}}{\partial y^2}
+-\frac{\partial^2 \vec{F}}{\partial z^2}.
+\end{equation}
+
+Vamos calcular apenas a compotente $\vec{i}$ de cada um dos três termos imediatamente acima. A componente $\vec{i}$ da expressão \eqref{rot_do_rot} é
+\begin{equation}
+\label{rot_rot_comp_i} \frac{\partial }{\partial y}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)-\frac{\partial }{\partial z}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right),
+\end{equation}
+a componente $\vec{i}$ da expressão \eqref{grad_div} é
+\begin{equation}
+\label{grad_div_comp_i} \frac{\partial^2 F_1}{\partial x^2}+\frac{\partial^2 F_2}{\partial yx}+\frac{\partial^2 F_3}{\partial zx}
+\end{equation}
+e a componente $\vec{i}$ do operador \eqref{menos_Laplaciano} é
+\begin{equation}
+\label{menos_Laplaciano_comp_i} -\frac{\partial^2 F_1}{\partial x^2}-\frac{\partial^2 F_1}{\partial y^2}
+-\frac{\partial^2 F_1}{\partial z^2}.
+\end{equation}
+Agora, fica fácil ver que a soma das expressões \eqref{menos_Laplaciano_comp_i} e \eqref{grad_div_comp_i} resulta na expressão \eqref{rot_rot_comp_i}. Analogamente, podemos demonstrar a igualdade das outras duas componentes para concluir a validade do item 10 da tabela. As demonstrações dos itens 11, 12 e 13, embora um pouco mais longas, são análogas a do item 10, e ficam como exercício. O demonstração do item 14 será feita na seção \ref{campos_centrais}
 
 \subsection*{Exercícios resolvidos}
 \begin{exeresol}
@@ -248,7 +322,7 @@ Verifique $tab(10)$, isto é, $\vec{\nabla}\times\vec{\nabla}\times \vec{F}=\vec
 
 \end{resol}
 
-\subsection*{Exercícios}
+
  \subsection*{Exercícios}
 \begin{exer}
  Calcule o divergente e o rotacional do campo $\vec{F}$ para
@@ -304,7 +378,7 @@ A derivada direcional de $f(x, y, z)$ mede a taxa de variação  de $f$ na dire�
 
 Tomemos, como exemplo, a temperatura $T(x, y, z)$ como função da posição $(x, y, z)$. A derivada direcional nesse caso será a taxa de variação da temperatura com deslocamento em dada direção e será  medida em unidades de temperatura por unidade de comprimento. Observe que a taxa de variação da temperatura num dado ponto pode ser diferente na direção norte e na direação oeste.
 
-Matematicamente, a derivada direcional \( D_{\mathbf{v}} f(x_0, y_0, z_0) \) é definida da seguinte forma pelo seguinte limite:
+Matematicamente, a derivada direcional \( D_{\vec{v}} f(x, y, z) \) é definida da seguinte forma:
 
 $$
 D_{\vec{v}} f(x, y, z) = \lim_{{h \to 0}} \frac{f(x + hv_x, y + hv_y, z + hv_z) - f(x, y, z)}{h}
@@ -450,11 +524,9 @@ Use a equação da continuidade para mostrar que um fluido incompressível e em 
 
 
 \section{Interpretação do rotacional}
-O operador rotacional é um conceito fundamental para entender e descrever como um campo vetorial. O rotacional de um campo vetorial é um novo campo vetorial.
+O operador rotacional nos permite avaliar a tendência do campo vetorial em girar ou formar vórtices ao redor de um ponto, indicando se há rotação local em torno desse ponto. Ele descreve a direção e intensidade da rotação do campo original. Ou seja, o rotacional de um campo vetorial é um novo campo vetorial.
 
-Em termos mais simples, o operador rotacional nos permite avaliar a tendência do campo vetorial em girar ou formar vórtices ao redor de um ponto, indicando se há rotação local em torno desse ponto. Ele descreve a direção e intensidade da rotação do campo original. 
-
-Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusivo  dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
+Para entender esse conceito abstrato de vorticidade, ou de capacidade de giro, imaginamos uma pequena bolinha imersa dentro de um fluido (na situação idealizada a bolinha não interfere no fluxo, inclusive dento do volume da bolinha). O centro de massa da bolinha está fixo e lhe é permitido apenas girar em torno dele. 
 
 As linhas de força paralelas à superfícies do fluido são as responsáveis por fazer a bolinha girar pelo atrito. Veja ilustração abaixo:
 
@@ -504,32 +576,38 @@ Esta identidade é oriunda da Tabela~\ref{tab_identidades_del}, item 8.
 \begin{eqnarray}
  \frac{\partial F_3}{\partial y} &=&\frac{\partial F_2}{\partial z}\label{rot_zero_x},\\
  \frac{\partial F_1}{\partial z} &=&\frac{\partial F_3}{\partial x}\label{rot_zero_y},\\
- \frac{\partial F_3}{\partial x} &=&\frac{\partial F_1}{\partial y}\label{rot_zero_z}.
+ \frac{\partial F_2}{\partial x} &=&\frac{\partial F_1}{\partial y}\label{rot_zero_z}.
 \end{eqnarray}
 Defina, agora, a função $\varphi:\mathbb{R}^3\to\mathbb{R}$ dada por
-$$\varphi(x,y,z)=\int_0^xF_1(s,y,z) + \int_0^yF_2(0,s,z)+\int_0^zF_3(0,0,s).$$
+$$\varphi(x,y,z)=\int_0^xF_1(s,y,z)ds + \int_0^yF_2(0,s,z)ds+\int_0^zF_3(0,0,s)ds.$$
 Basta provar que $\vec{\nabla}\varphi(x,y,z)=\vec{F}$, isto é
 \begin{eqnarray}
  \frac{\partial \varphi}{\partial z} &=&F_1,\label{rot_zero_der_x}\\
  \frac{\partial \varphi}{\partial y} &=&F_2,\label{rot_zero_der_y}\\
  \frac{\partial \varphi}{\partial z} &=&F_3\label{rot_zero_der_z}.
 \end{eqnarray}
-A primeira desigualdade advém diretamente do teorema fundamental do cálculo. Para obter a segunda desigualdade, derivamos o potencial em relação a $y$:
+A igualdade \eqref{rot_zero_der_x} advém diretamente do teorema fundamental do cálculo. Para obter a igualdade \eqref{rot_zero_der_y}, derivamos o potencial em relação a $y$:
 \begin{eqnarray*}
-\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int\int_0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z)\\
-&=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
-&=&\left(F_2(x,y,z)-F_2(0,y,z)\right)+ F_2(0,y,z) = F_2(x,y,z)
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\frac{\partial }{\partial y}\int_0^x F_1(s,y,z)ds+\frac{\partial }{\partial y}\int_0^y F_2(0,s,z)ds\\
+&=&\int_0^x \frac{\partial }{\partial y}F_1(s,y,z)ds+ F_2(0,y,z),
 \end{eqnarray*}
-Onde usamos a Identidade~\ref{rot_zero_y}.
+onde usamos o teorema fundamental do cálculo no último termo.
+Agora, usando a identidade~\ref{rot_zero_y}, temos:
+\begin{eqnarray*}
+\frac{\partial }{\partial y}\varphi(x,y,z)&=&\int_0^x \frac{\partial }{\partial s}F_2(s,y,z)ds+ F_2(0,y,z)\\
+&=&F_2(x,y,z)-F_2(0,y,z)+ F_2(0,y,z)\\
+&=&F_2(x,y,z),
+\end{eqnarray*}
+onde usamos novamente o teorema fundamental do cálculo. Observe que usamos as duas versões do teorema fundamental do cálculo: a integral da derivada e a derivada da integral.
 
 Finalmente, para obter a terceira desigualdade, derivamos o potencial em relação a $z$:
 \begin{eqnarray*}
 \frac{\partial }{\partial z}\varphi(x,y,z)&=&\int_0^x \frac{\partial }{\partial z}F_1(s,y,z)ds + \int_0^y \frac{\partial }{\partial z}F_2(0,s,z)ds+F_3(0,0,z)\\
 &=&\int_0^x \frac{\partial }{\partial s}F_3(s,y,z)ds + \int_0^z \frac{\partial }{\partial s}F_3(0,s,z)ds+F_3(0,0,z)\\
-&=&\int_0^x \left(F_3(x,y,z)-F_3(0,y,z)\right) + \left(F_3(0,y,z)-F_3(0,0,z)\right)+F_3(0,0,z)\\
-&=&F_3(x,y,z)\\
+&=& \left(F_3(x,y,z)-F_3(0,y,z)\right) + \left(F_3(0,y,z)-F_3(0,0,z)\right)+F_3(0,0,z)\\
+&=&F_3(x,y,z),\\
 \end{eqnarray*}
-  Onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
+onde usamos as Idendidade~\ref{rot_zero_x} e \ref{rot_zero_z}.
 \end{proof}
 
 \subsection*{Exercícios resolvidos}
@@ -552,7 +630,7 @@ $$\varphi(x,y,z)=x^2y^3+y+E.$$
 \end{resol}
 
 
-\section{Campos radiais e potenciais centrais}
+\section{Campos radiais e potenciais centrais}\label{campos_centrais}
 Campos radiais vetoriais \index{campos radiais} são campos da forma $\vec{F}=f(r) \hat{r}$, isto é campos vetoriais cujo módulo depende apenas da distância até a origem, isto é, de $r=\|\vec{r}\|=\sqrt{x^2+y^2+z^2}$ e cuja direção é sempre paralela ao vetor posição, $\vec{r}$.
 \begin{ex} Represente graficamente o campo vetorial $\vec{F}=\vec{r}$ no plano $xy$.
 %\begin{figure}[htp]
