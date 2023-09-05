@@ -259,7 +259,6 @@ Calculamos a derivada $\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto:
 
  Assim obtemos:
  $$L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}.$$ 
-
 \end{resol}
 
 \begin{exeresol} \label{exe_co_arc2}
@@ -658,47 +657,63 @@ As equações (\ref{Frenet_1}), (\ref{Frenet_2}) e (\ref{Frenet_3}) são chamada
 
 Como esperávamos, se $\kappa=0$, então $\frac{d\vec{T}}{ds}=\vec{0}$, o que implica que $\vec{T}$ não varia ao longo da curva, ou seja, a curva é uma reta. Agora, se $\tau=0$, então $\frac{d\vec{B}}{ds}=\vec{0}$ e $\vec{B}$ é um vetor constante. Como $\vec{B}\cdot \vec{T}=\vec{B}\cdot \frac{d\vec{r}}{ds}=0$, então podemos integrar para obter $\vec{B}\cdot (\vec{r}-\vec{r_0})=0$, onde $r_0$ é um vetor constante da integração. Logo $\vec{r}$ está contido no plano ortogonal a $\vec{B}$.
 
+\subsection*{Exercícios resolvidos}
 
-
-\begin{ex} Vamos calcular curvatura, raio de curvatura e o módulo da torção para a hélice circular $\vec{r}(t)=\cos(t)\vec{i}+\sin(t)+t\vec{k}$:
+\begin{exeresol} Calcule a curvatura, raio de curvatura e o módulo da torção para a hélice circular $\vec{r}(t)=\cos(t)\vec{i}+\sin(t)+t\vec{k}$.
+\end{exeresol}
+Primeiro calculamos a derivada de $\vec{r}(t)$:
+\begin{resol}
 $$
 \frac{d\vec{r}(t)}{dt}=-\sin(t)\vec{i}+\cos(t)+\vec{k},
 $$
+cujo módulo é dado por:
 $$
-\left\|\frac{d\vec{r}(t)}{dt}\right\|=\sqrt{2},
+\left\|\frac{d\vec{r}(t)}{dt}\right\|=\sqrt{\sen^2(t)+\cos^2(t)+1^2}=\sqrt{2},
 $$
+Agora calculamos o vetor tangente unitário pela definição:
 $$
 \vec{T}(t)=-\frac{\sin(t)}{\sqrt{2}}\vec{i}+\frac{\cos(t)}{\sqrt{2}}+\frac{1}{\sqrt{2}}\vec{k},
 $$
+Para calcular o módulo da torção, calculamos a derivada do vetor tangente unitário:
 $$
 \frac{d\vec{T}(t)}{dt}=-\frac{\cos(t)}{\sqrt{2}}\vec{i}-\frac{\sin(t)}{\sqrt{2}},
 $$
+cujo módulo é dado por:
 $$
 \left\|\frac{d\vec{T}(t)}{dt}\right\|=\frac{1}{\sqrt{2}},
 $$
+Finalmente temos a curvatura:
 $$
-\kappa(t)=\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}=\frac{1}{2},
+\kappa(t)=\left\|\frac{d\vec{T}}{ds}\right\|=\frac{\left\|\frac{d\vec{T}}{dt}\right\|}{\frac{ds}{dt}} = \frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}=\frac{1}{2},
 $$
+O raio de curvatura vale, portanto:
 $$
-\rho(t)=2,
+\rho(t)=\frac{1}{\kappa(t)}=2.
 $$
+Para calcular a torção, primeiro calculamos o vetor normal unitário e o vetor binormal unitário:
 $$
-\vec{N}(t)=-\cos(t)\vec{i}-\sin(t)\vec{j},
+\vec{N}(t)=\frac{d\vec{T}}{ds} = \frac{\frac{d\vec{T}}{dt}}{\frac{ds}{dt}}=-\cos(t)\vec{i}-\sin(t)\vec{j}.
 $$
 \begin{eqnarray*}
 \vec{B}(t)&=&\left|\begin{array}{ccc}\vec{i}&\vec{j}&\vec{k}\\-\frac{\sin(t)}{\sqrt{2}}&\frac{\cos(t)}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\-\cos(t)&-\sin(t)&0\end{array}\right|\\
 &=&\frac{\sin(t)}{\sqrt{2}}\vec{i}-\frac{\cos(t)}{\sqrt{2}}\vec{j}+\frac{1}{\sqrt{2}}\vec{k}.
 \end{eqnarray*}
+
+Calculamos agora a derivada do vetor binormal unitário:
 $$
 \frac{d\vec{B}(t)}{dt}=\frac{\cos(t)}{\sqrt{2}}\vec{i}+\frac{\sin(t)}{\sqrt{2}}\vec{j},
 $$
+cujo módulo é dado por:
 $$
 \left\|\frac{d\vec{B}(t)}{dt}\right\|=\frac{1}{\sqrt{2}},
 $$
+O módulo da torção é dado por:
 $$
-|\tau(t)|=\frac{1}{2}.
+|\tau(t)|=\frac{\frac{d\vec{B}(t)}{dt}}{\frac{ds}{dt}}=\frac{1}{2}.
 $$
-\end{ex}
+\end{resol}
+
+\subsection*{Exercícios}
 
 \begin{exer} Calcule a curvatura, o raio de curvatura e o módulo da torção das curvas abaixo:
 \begin{itemize}
@@ -724,6 +739,7 @@ $$
 \end{figure}
 
 
+\section{Fórmulas alternativas para curvatura e torção}
 A curvatura e a torção podem ser calculadas de maneira mais simples. Para concluir isso, começamos calculando as derivadas de $\vec{r}$. Usamos aqui que $s'(t)=\left\|\frac{d\vec{r}(t)}{dt}\right\|$, obtida da equação (\ref{defcomparco_1}):
 $$
 \frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=s' \vec{T},
