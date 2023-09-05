@@ -1440,7 +1440,22 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 
 
 
+\begin{exer} Uma mosca viaja sobre uma trajetória $\vec{r}(t)$ com velocidade $\vec{v}(t)$ e aceleração $\vec{a}(t)=2\cos(t)\vec{i}+2\sin(t)\vec{j}$, $0\leq t\leq 2\pi$. Sabendo que a velocidade da abelha no ponto $t=0$ é $\vec{v}(0)=-\vec{j}$. Calcule $\vec{v}(t)$, $a(t):=\|\vec{a}(t)\|$ $a_N(t)$ e $a_T(t)$. Verifique a identidade $a(t)^2=a_N(t)^2+a_T(t)^2$.
 
+\end{exer}
+\begin{resp}
+  \begin{eqnarray*}
+    \vec{v}(t) &=& 2\sin(t)\vec{i} + \left[1-2\cos(t)\right]\vec{j},\\
+  a(t) &=& 2,\\
+  a_N&=&\frac{4-2\cos(t)}{\sqrt{5-4\cos(t)}},\\
+  a_T&=&\frac{2\sin(t)}{\sqrt{5-4\cos(t)}}.
+  \end{eqnarray*}
+  Para verificar a identicade, observe que:
+  \begin{eqnarray*}
+  a_N^2+a_T^2&=&\frac{16-16\cos(t)+4\cos^2(t)+4\sin^2(t)}{{5-4\cos(t)}}\\
+  &=&\frac{20-16\cos(t)}{{5-4\cos(t)}}=4.
+  \end{eqnarray*}
+\end{resp}
 
 
  
