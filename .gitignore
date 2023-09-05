@@ -16,3 +16,11 @@
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+exercicios.tex
+exercicios.dvi
+exercicios_resolvidos.tex
+exercicios_resolvidos.dvi
+exercicios_todos.tex
+exercicios_todos.dvi
+exercicios_todos_com_exemplos.tex
+exercicios_todos_com_exemplos.dvi
