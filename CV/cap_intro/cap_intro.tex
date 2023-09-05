@@ -1,4 +1,5 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+% !TEX root = ../main.tex
 
 \chapter{Introdução}\label{chap:introducao}
 
@@ -10,10 +11,10 @@ Para uma leitura mais tranquila desse livro, é esperado que o leitor tenha os s
 \subsection*{Exercícios Resolvidos}
 \begin{exeresol}Use as expressões $\cos x=\frac{e^{ix}+e^{-ix}}{2}$ e $\sin x=\frac{e^{ix}-e^{-ix}}{2i}$ para obter as seguintes identidades trigonométricas:
 \begin{itemize}
-\item $\cos^2x+\sin^2x=1$.
-\item $\cos^2x=\frac{1}{2}+\frac{1}{2}\cos(2x)$.
-\item $\sin^2x=\frac{1}{2}-\frac{1}{2}\cos(2x)$.
-\item $\cos^5(x)=\frac{1}{16}\left[\cos(5x)+5\cos(3x)+10\cos(x)\right]$.
+\item[a)] $\cos^2(x)+\sin^2x=1$.
+\item[b)] $\cos^2(x)=\frac{1}{2}+\frac{1}{2}\cos(2x)$.
+\item[c)] $\sin^2(x)=\frac{1}{2}-\frac{1}{2}\cos(2x)$.
+\item[d)] $\cos^5(x)=\frac{1}{16}\left[\cos(5x)+5\cos(3x)+10\cos(x)\right]$.
 \end{itemize}
 \end{exeresol}
 \begin{resol}
@@ -29,7 +30,7 @@ e obtemos:
 \cos^5(x)&=&\frac{{e^{5ix}+5e^{4ix}e^{-ix}+10e^{3ix}e^{-2ix}+10e^{2ix}e^{-3ix}+5e^{ix}e^{-4ix}+e^{-5ix}}}{32}\\
 &=&\frac{{e^{5ix}+5e^{3ix}+10e^{ix}+10e^{-ix}+5e^{-3ix}+e^{-5ix}}}{32}\\
 \end{eqnarray*}
-Recoletando os termos, chegamos à resposta final, pois $\cos(5x)=\frac{e^{5ix}+e^{-5ix}}{2}$,$\cos(3x)=\frac{e^{3ix}+e^{-3ix}}{2}$ e $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
+Recoletando os termos, chegamos à resposta final, pois $\cos(5x)=\frac{e^{5ix}+e^{-5ix}}{2}$, $\cos(3x)=\frac{e^{3ix}+e^{-3ix}}{2}$ e $\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$
 \end{resol}
 
 \begin{exeresol}Seja $D$ a região do plano $xy$ limitada pela circunferência de raio $1$ centrada da origem, calcule o valor da integral dada por:
@@ -62,22 +63,30 @@ Portanto
 
 \begin{exer}Use as expressões $\cosh x=\frac{e^x+e^{-x}}{2}$ e $\sinh x=\frac{e^x-e^{-x}}{2}$ para obter as seguintes identidades:
 \begin{itemize}
-\item $\cosh^2x-\sinh^2x=1$
-\item $\cosh^2x=\frac{1}{2}+\frac{1}{2}\cosh(2x)$
-\item $\sinh^2x=-\frac{1}{2}+\frac{1}{2}\cosh(2x)$
-\item $e^x=\cosh(x)+\sinh(x)$
-\item $e^{-x}=\cosh(x)-\sinh(x)$
+\item[a)] $\cosh^2(x)-\sinh^2(x)=1$
+\item[b)] $\cosh^2(x)=\frac{1}{2}+\frac{1}{2}\cosh(2x)$
+\item[c)] $\sinh^2(x)=-\frac{1}{2}+\frac{1}{2}\cosh(2x)$
+\item[d)] $e^x=\cosh(x)+\sinh(x)$
+\item[e)] $e^{-x}=\cosh(x)-\sinh(x)$
 
 \end{itemize}
 \end{exer}
 
 \begin{exer}Resolva as seguintes integrais:
 \begin{itemize}
-\item $\int \sin^2xdx=\frac{x}{2}-\frac{1}{4}\sin(2x)+C$
-\item $\int \cos^2xdx=\frac{x}{2}+\frac{1}{4}\sin(2x)+C$
-\item $\int \cos^3xdx=\frac{1}{12}\left[\sin(3x)+9\sin(x)\right]+C$
+\item[a)] $\int \sin^2(x)dx$
+\item[b)] $\int \cos^2(x)dx$
+\item[c)] $\int \cos^3(x)dx$
 \end{itemize}
 \end{exer}
+\begin{resp}
+    \begin{itemize}
+        \item[a)] $\int \sin^2(x)dx=\frac{x}{2}-\frac{1}{4}\sin(2x)+C$
+        \item[b)] $\int \cos^2(x)dx=\frac{x}{2}+\frac{1}{4}\sin(2x)+C$
+        \item[c)] $\int \cos^3(x)dx=\frac{1}{12}\left[\sin(3x)+9\sin(x)\right]+C$
+ \end{itemize}
+        
+\end{resp}
 
 
 \begin{exer}Calcule a área da região do plano $xy$ limitada pelos eixos ordenados, as retas $x=2$ e $y=2$ e a hipérbole $xy=1$.
