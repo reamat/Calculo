@@ -179,7 +179,7 @@ representa uma curva contida em uma circunferência no plano $xy$  centrada na o
 \end{resp}
 
 \begin{exer}
-Sendo $\hat{r}(t)=\frac{1}{r(t)} \vec{r}(t)$, onde $r(t)=\|\vec{r}(t)\|$,  mostre as seguintes identidades:
+Sendo $\hat{r}(t)=\frac{1}{r(t)} \vec{r}(t)$, onde $r(t)=\|\vec{r}(t)\|$,  encontre as seguintes identidades:
 \begin{itemize}
 \item[a)] $\displaystyle r'(t) = \frac{d\vec{r}(t)}{dt}\cdot \hat{r}(t)$
 \item[b)] $\displaystyle \frac{d}{dt}\left[\vec{r}(t)\times\frac{d\vec{r}(t)}{dt}\right]=\vec{r}(t)\times\frac{d^2\vec{r}(t)}{dt^2}$ 
@@ -366,10 +366,7 @@ $$
 Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a $\vec{T}$ e $\vec{N}$, é unitário e forma um sistema dextrogiro. O trio $\vec{T}$, $\vec{N}$ e $\vec{B}$ é chamado de triedro de Frenet-Serret. A figura \ref{Frenet_Serret} apresenta a representação de alguns triedros de Frenet-Serret.
 
 
-\subsection*{Exercícios resolvidos}
-
-
-
+\subsection*{Exercícios resolvidos} % Triedro de Frenet-Serret
 
 \begin{exeresol}
   Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc4}. Encontre o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
@@ -428,7 +425,7 @@ Um erro comum entre estudantes é substituir a definição de vetor binormal uni
  \end{eqnarray*}
 \end{resol}
 
-\subsection*{Exercícios}
+\subsection*{Exercícios} %Triedro de Frenet-Serret
 \begin{exer}Calcule $\vec{r}\!~'(t_0)$ e esboce o gráfico de $\vec{r}(t)$ juntamente com o vetor tangente $\vec{r}\!~'(t_0)$.
 \begin{itemize}
  \item[a)] $\vec{r}(t)=t\vec{i}+t^2\vec{j}$, $t_0=2$.
@@ -978,7 +975,7 @@ Podemos verificar essa conclusão sabendo que:
 \begin{exeresol}
 Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
 $$\|\vec{a}\|^2=a_N^2+a_T^2$$
-onde $\vec{a}$ é o vetor aceleração. Verifique esta identidade na trajetória dada por
+onde $\vec{a}$ é o vetor aceleração. Verifique essa identidade na trajetória dada por
 \begin{eqnarray*}
  \vec{r}(t)=3\cos (t) \vec{i} + 3\sin (t) \vec{j} +t^2\vec{k}.
 \end{eqnarray*}
@@ -1049,7 +1046,7 @@ $$y=f(x)$$
 sobre o plano $xy$
 é dada pela expressão
 $$\kappa(x)=\frac{|f''(x)|}{\left(1+f'(x)^2\right)^{3/2}}.$$
-Use esta expressão para obter a curvatura das seguintes curvas planas:
+Use essa expressão para obter a curvatura das seguintes curvas planas:
 \begin{itemize}
 \item[a)] $y=ax+b$
 \item[b)]$y=\sqrt{a^2-x^2}$, $-a<x<a$ onde $a>0$.
@@ -1352,34 +1349,7 @@ onde $\vec{a}$ é o vetor aceleração.
 \end{resp}
 
 
-\begin{exer} Mostre que a curvatura do gráfico da função
-$$y=f(x)$$
-sobre o plano $xy$
-é dada pela expressão
-$$\kappa(x)=\frac{|f''(x)|}{\left(1+f'(x)^2\right)^{3/2}}.$$
-Use esta expressão para obter a curvatura das seguintes curvas planas:
-\begin{itemize}
-\item[a)] $y=ax+b$
-\item[b)]$y=\sqrt{a^2-x^2}$, $-a<x<a$ onde $a>0$.
-\item[c)] $y=x^4$
-\item[d)] $y=ax^2$ 
-\item[e)] $y=\cosh(x)$
-\item[f)] $y=\sinh(x)$
-\item[g)] $y=\cos(x)$
-\end{itemize}
-Como você interpreta os casos a) e b) ? As curvas dos ítens c) e g) possuem pontos onde a curvatura é zero. Que implicação isso tem sobre a existência do vetor normal unitário $\vec{N}$? Interprete geometricamente.
-\end{exer}
-\begin{resp}
-\begin{itemize}
-\item[a)] $0$ (reta).
-\item[b)]$\frac{1}{a}$ (semicircunferência).
-\item[c)] $y=\frac{12x^2}{(1+16x^6)^{3/2}}$
-\item[d)] $y=\frac{2|a|}{(1+4a^2x^2)^{3/2}}$
-\item[e)] $y=\frac{1}{\cosh(x)}$
-\item[f)] $y=\frac{|\sinh(x)|}{(1+\cosh^2(x))^{3/2}}$
-\item[g)] $y=\frac{|\cos(x)|}{(1+\sin^2(x))^{3/2}}$
-\end{itemize}
- \end{resp}
+
 
 \begin{exer}
  Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. O que acontece quando $a=b$? Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
@@ -1435,7 +1405,7 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \begin{exer}
  Prove que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares. (Sugestão: Considere $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$).
 \end{exer}
-\begin{exer}Prove que se a aceleração de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.  (Sugestão: lembre-se que $\kappa=\frac{\|\vec{v}\times \vec{a}\|}{v^3} )$.
+\begin{exer}Prove que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.  (Sugestão: lembre-se que $\kappa=\frac{\|\vec{v}\times \vec{a}\|}{v^3} )$.
 \end{exer}
 \begin{exer}Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
 \begin{itemize}
@@ -1454,7 +1424,7 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \end{itemize}
  
 \end{resp}
-\begin{exer}Calcule a componente tangencial da aceleração dado $\|v\|=\sqrt{3t^2+4}$, $t=2$.
+\begin{exer} Calcule a componente tangencial da aceleração dado $v(t) = \|\vec{v}\| = \sqrt{3t^2+4}$, $t=2$.
 \end{exer}
 \begin{resp}
  $\frac{3}{2}$.
