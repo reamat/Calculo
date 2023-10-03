@@ -47,8 +47,15 @@ def extrai_exercicios(arq, exer, exeresol, exemplo):
 
             if any([s in linha for s in fechamentos]):
                 dentro_de_bloco = False
-    #return contagem, texto.decode() if contagem>0 else ""
-    return contagem, limpa_secoes_vazias(texto.decode()) if contagem>0 else ""
+    
+    if contagem == 0:
+        print("0000", arq)
+        if rb"\chapter{" in texto:
+            texto = rb"\addtocounter{chapter}{1}"
+            contagem = 1
+            
+    return contagem, texto.decode() if contagem>0 else ""
+    # return contagem, limpa_secoes_vazias(texto.decode()) if contagem>0 else ""
 
 
 def abre_arquivos(receita):

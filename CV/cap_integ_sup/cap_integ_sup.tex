@@ -395,7 +395,7 @@ e
 
 \begin{exeresol} Calcule o fluxo de $\vec{F}=z\vec{k}$ através da esfera $x^2+y^2+z^2= a^2$, orientada para fora. \end{exeresol}
 \begin{resol}
-Começamos separando a esfera nos seguintes dois hemisférios: $S_1:\ \!z=f_1(x,y)=\sqrt{ a^2-x^2-y^2}$ e $S_2:\ \!z=f_2(x,y)=-\sqrt{ a^2-x^2-y^2}$. Definimos $G_1=z-\sqrt{ a^2-x^2-y^2}$ e $G_2=z-\sqrt{ a^2-x^2-y^2}$ e calculamos 
+Começamos separando a esfera nos seguintes dois hemisférios: $S_1:\ \!z=f_1(x,y)=\sqrt{ a^2-x^2-y^2}$ e $S_2:\ \!z=f_2(x,y)=-\sqrt{ a^2-x^2-y^2}$. Definimos $G_1=z-\sqrt{ a^2-x^2-y^2}$ e $G_2=z+\sqrt{ a^2-x^2-y^2}$ e calculamos 
 $$
 \vec{\nabla}G_1=\frac{x}{\sqrt{a^2-x^2-y^2}}\vec{i}+\frac{y}{\sqrt{a^2-x^2-y^2}}\vec{j}+\vec{k}
 $$
@@ -714,15 +714,15 @@ Use o teorema de Stokes para calcular o trabalho realizado pelo campo de forças
 
  Agora calculamos o rotacional é dado por:
  $$\vec{\nabla}\times \vec{F} = 3xy\vec{i} -y^2\vec{j}+4y^3\vec{k}.$$
-\end{resol}
-
-Temos, então:
-\begin{eqnarray*}
+ 
+ Temos, então:
+ \begin{eqnarray*}
    W &=& \iint_S\vec{\nabla}\times \vec{F}\cdot \vec{\eta}dS = \iint_A\vec{\nabla}\times \vec{F}\cdot \vec{\nabla}GdA\\
    &=&\int_0^3\int_0^1\left(y^2+4y^3\right)dx dy\\
    &=&\int_0^3\left(y^2+4y^3\right)dy = 9+ 81=90.
 \end{eqnarray*}
 
+\end{resol}
 
 
 \subsection*{Exercícios}
