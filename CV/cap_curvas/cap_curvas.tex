@@ -527,14 +527,14 @@ Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato d
 \end{resp}
 
 
-\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
+\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por: $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}.$$ Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
 
 \end{exer}
 \begin{resp}
   A condição é $$\frac{d}{dt}\|\vec{r}\!~'(t)\|=0$$
 \end{resp}
 
-\begin{exer} O que acontece com os vetores $\vec{T}$, $\vec{N}$ e $\vec{B}$ quando a orientação de uma curva é invertida?
+\begin{exer} O que acontece com os vetores $\vec{T}$, $\vec{N}$ e $\vec{B}$ quando se inverte a orientação da curva?
 \end{exer}
 \begin{resp} O vetor $\vec{N}$ se mantém e os outros dois invertem de sentido.
 \end{resp}
@@ -841,7 +841,7 @@ Podemos expressão a curvatura da elipse em termos das variáveis originais $x$ 
 \end{ex} 
 
 
-\begin{ex} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
+\begin{ex} \label{exemplo_sincosf} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
 $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
  Onde $f(t)$ é uma função dada. Observe que a projeção desta curva no plano $xy$ é uma circuferência de raio 1. A curva é, portanto, gerada pela trajetória de ponto cuja projeção do movimento no plano $xy$ é cirvular e a altura é dada pela função $f(t)$. Podemos calcular a curvatura e a torção conforme a seguir:
  \begin{eqnarray*}
@@ -1182,13 +1182,13 @@ A curvatura máxima da pista é:
 
  Sobre a observação, a parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema.
 \end{resol}
-\begin{exer}
+\begin{exeresol}
 Considere a trajetória  dada por
 $$x(t)=\cos(t),~~  y(t)=\sin 2t,~~ z(t)=0.$$
 
 Esboce o gráfico desta trajetória sobre o plano $xy$. Encontre uma expressão para a curvatura $k$ como uma função da coordenada $x$ na forma $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}.$$ Mostre que a curvatura é zero na origem e apenas na origem. Esboce, agora, o gráfico da curvatura como função de $x$ abaixo do gráfico da curva.
 Dica: Use identidades trigonométricas como $\sin(2t)=2\sin(t)\cos(t)$, $\cos(2t)=\cos^2(t)-\sin^2(t)$ e $\sin^2(t)+\cos^2(t)=1$.
-\end{exer}
+\end{exeresol}
 \begin{resol}
 A curva é dada por:
 $$\vec{r}(t)=\cos (t)\vec{i}+ \sin (2t)\vec{j}.$$
@@ -1234,9 +1234,9 @@ $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
   \includegraphics[scale=.6]{./cap_curvas/figs/helice_sqrt_z}
   \begin{itemize}
     \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e mostre que $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
-  \item[b)] Encontre  a curvatura desta hélice usando a fórmula:
+  \item[b)] Encontre  a curvatura desta hélice usando a fórmula dada no Exemplo~\ref{exemplo_sincosf}:
   $$\kappa=\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}$$
-    \item[c)] Encontre a torção desta curva usando a seguinte fórmula:
+    \item[c)] Encontre a torção desta curva usando a fórmula dada no Exemplo~\ref{exemplo_sincosf}:
     $$\tau=\frac{f'(t)+f'''(t)}{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}$$
     \item[d)] Interprete os limites do passo, da curvatura e da torção quando $t\to \infty$.
     \end{itemize}
