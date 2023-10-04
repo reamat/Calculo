@@ -527,7 +527,7 @@ Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato d
 \end{resp}
 
 
-\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
+\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária e suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
 
 \end{exer}
 \begin{resp}
@@ -810,7 +810,7 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
 
 \end{obs}
 
-\begin{ex} Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
+\begin{ex} \label{ex_calculo_curvatura_elipse}Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
   $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1. $$
   Aqui $a$ e $b$ são constantes positivas e representam os comprimetos dos semieixos da elipse.
   Inserimos a parametrização $x(t)=a\cos(t)$ e $y(t)=b\sin(t)$ para obter o vetor $\vec{r}(t)$:
@@ -830,14 +830,12 @@ Desta forma, temos:
 $$\kappa(t)=\frac{\|r'(t)\times r''(t)\|}{\|r'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
 Vale observar que os pontos de máxima e mínima curvatura estão nos vértices, isto é, $t=0$, $t=\frac{\pi}{2}$, $t=\pi$ e $t=\frac{3\pi}{2}$. A prova dessa afirmação será objeto de exercício.
 
-Podemos expressão a curvatura da elipse em termos das variáveis originais $x$ e $y$:
+Podemos expressar a curvatura da elipse em termos das variáveis originais $x$ e $y$:
 \begin{eqnarray*}
 \kappa(x, y)&=&\frac{ab}{\left(\frac{a^2}{b^2}y^2+\frac{b^2}{a^2}x^2\right)^{3/2}}\\
 \kappa(x)&=&\frac{ab}{\left(a^2+\left(\frac{b^2-a^2}{a^2}\right)x^2\right)^{3/2}}\\
 \kappa(y)&=&\frac{ab}{\left(b^2+\left(\frac{a^2-b^2}{b^2}\right)y^2\right)^{3/2}}\\
 \end{eqnarray*}
-
-
 \end{ex} 
 
 
@@ -978,8 +976,7 @@ Podemos verificar essa conclusão sabendo que:
 
 \end{resol}
 
-\begin{exeresol}
-Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
+\begin{exeresol} Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
 $$\|\vec{a}\|^2=a_N^2+a_T^2$$
 onde $\vec{a}$ é o vetor aceleração. Verifique essa identidade na trajetória dada por
 \begin{eqnarray*}
@@ -1047,12 +1044,12 @@ o que verifica a identidade.
 
 
 \begin{exeresol}
-Mostre que a curvatura do gráfico da função
+Simplifique a fórmula da curvatura para o caso particular do gráfico da função
 $$y=f(x)$$
 sobre o plano $xy$
-é dada pela expressão
+e obtenha a seguinte expressão:
 $$\kappa(x)=\frac{|f''(x)|}{\left(1+f'(x)^2\right)^{3/2}}.$$
-Use essa expressão para obter a curvatura das seguintes curvas planas:
+Use essa fórmula para obter a curvatura das seguintes curvas planas:
 \begin{itemize}
 \item[a)] $y=ax+b$
 \item[b)]$y=\sqrt{a^2-x^2}$, $-a<x<a$ onde $a>0$.
@@ -1126,13 +1123,11 @@ O vetor $\vec{B}$ também poderia ter sido calculado pela fórmula:
   \vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}
  \end{eqnarray*}
 onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}=f''(t)\vec{k}.$$
-
 \end{resol}
-
 
 \begin{exeresol}
 Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
-Dica:
+Dica: Use o Exemplo:~\ref{ex_calculo_curvatura_elipse}, isto é:
 $$\kappa(t)=\frac{ab}{\left[a^2+(b^2-a^2)\cos^2(t)\right]^{3/2}}$$
 e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
 
@@ -1146,7 +1141,7 @@ e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
 As curvaturas máximas e mínimas são (não necessariamente respectivamente) $\frac{a}{b^2}$ e $\frac{b}{a^2}$. Os raios de curvatura associados são $\frac{b^2}{a}$ e $\frac{a^2}{b}$.
 \begin{itemize}
  \item[a)] Quando $a=b$, a elipse é uma circunferência e o raio de curvatura é constante igual a $a$, que é o raio da circunferência.
-\item[b)] Para calcular os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m, suponha, sem perda de generalidade, que $a<b$ e resolva:
+\item[b)] Para calcular os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m, denote o semi-eixo maior de $b$ e o menos de $a$ e resolva o seguinte sistema de equações algébricas:
  \begin{eqnarray*}
   \frac{a^2}{b} &=& 50\\
   \frac{b^2}{a} &=& 400\\
@@ -1171,16 +1166,15 @@ $$a^3=400\times 2500 = 1.000.000.$$
 \begin{exeresol}
 Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$. 
 
-
-\indent {\it Obs:} Para calcular a curvatura, você provavelmente usou uma parametrização do tipo $\vec{r}=a\sin (t) + b\cos (t)$, explique por que esta parametrização pode ser usada para obter a curvatura, mas não pode ser usada diretamente para calcular a aceleração normal.
 \end{exeresol}
 \begin{resol}
-A curvatura máxima da pista é:
- $$k_{max}=\frac{200}{50^2}=\frac{2}{25}\text{m}^{-1}$$
- Sabemos que $a_N=\kappa v^2$, portanto a máxima velocidade possível é:
- $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
-
- Sobre a observação, a parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema.
+  A curvatura máxima da pista é:
+  $$k_{max}=\frac{200}{50^2}=\frac{2}{25}\text{m}^{-1}$$
+  Sabemos que $a_N=\kappa v^2$, portanto a máxima velocidade possível é:
+  $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
+  
+  {\it Obs:} 
+ A parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema. Por isso, usamos a curvatura da elipse realizar os cálculos e conectar aleceração normal com velocidade escalar. 
 \end{resol}
 \begin{exer}
 Considere a trajetória  dada por
@@ -1227,13 +1221,13 @@ $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
 
 \begin{exeresol}  Considere a hélice circular não uniforme dada por
   \begin{eqnarray*}
-    x&=&\cos(t)\\
-    y&=&\sin(t)\\
-    z&=&f(t):=8\sqrt{t}.\\
+    x(t)&=&\cos(t)\\
+    y(t)&=&\sin(t)\\
+    z(t)&=&f(t):=8\sqrt{t}.\\
   \end{eqnarray*}
   \includegraphics[scale=.6]{./cap_curvas/figs/helice_sqrt_z}
   \begin{itemize}
-    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e mostre que $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
+    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e simplifique a expressão para obter $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
   \item[b)] Encontre  a curvatura desta hélice usando a fórmula:
   $$\kappa=\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}$$
     \item[c)] Encontre a torção desta curva usando a seguinte fórmula:
@@ -1291,15 +1285,16 @@ A intepretação intuitiva é que, à medida que o passo da hélice decresce, a 
   \item[b)] $\kappa(x) = \frac{1}{2\sqrt{2}}$.
   \item[c)] $\kappa(x) = \frac{1}{\sqrt{2}}$.
  \end{itemize}
-
+ 
 \end{resp}
 
 \begin{exer}
- Calcule o raio de curvatura $\rho(t)$ da elipse $x(t)=2\cos(t)$, $x(t)=\sin(t)$, $0\leq t\leq2\pi$, $t=0$ e $t=\frac{\pi}{2}$. Esboce as circunferências de curvatura nestes pontos.
+  Calcule o raio de curvatura $\rho(t)$ da elipse $x(t)=2\cos(t)$, $x(t)=\sin(t)$, $0\leq t\leq2\pi$, $t=0$ e $t=\frac{\pi}{2}$. Esboce as circunferências de curvatura nestes pontos.
 \end{exer}
 \begin{resp}
- $\rho(0)=\frac{1}{2}$.
+  $\rho(0)=\frac{1}{2}$.
 \end{resp}
+
 \begin{exer}
 Em que ponto a curva $y=e^x$ tem a máxima curvatura?
 \end{exer}
@@ -1307,12 +1302,25 @@ Em que ponto a curva $y=e^x$ tem a máxima curvatura?
  $t=\frac{1}{2}\ln\left(\frac{1}{2}\right)$.
 \end{resp}
 
+\begin{exer} Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
+\end{exer}
+\begin{resp}
+ $\sqrt{40}m/s$
+\end{resp}
+
+\begin{exer}
+  Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. O que acontece quando $a=b$? Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m? Dice: Você pode usar as fórmulas do Exemplo~\ref{ex_calculo_curvatura_elipse}.
+ \end{exer}
+ \begin{resp}
+  $\rho_{min}= \frac{a^2}{b}$ e $\rho_{max}= \frac{b^2}{a}$. Quando $a=b$, a elipse é uma circuferência e o raio de curvatura é constante igual a $a=b$. $a=100m$ e $b=200m$. 
+ \end{resp}
+ 
 
 \begin{exer} Considere a hélice dada por
 \begin{eqnarray*}
-x&=&a\cos(t),\\
-y&=&a\sin(t),\\
-z&=&ct,
+x(t)&=&a\cos(t),\\
+y(t)&=&a\sin(t),\\
+z(t)&=&ct,
 \end{eqnarray*}
 onde $a>0$.
 \begin{itemize}
@@ -1337,14 +1345,9 @@ Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifiq
 \end{exer}
 
 
-\begin{exer}Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
-\end{exer}
-\begin{resp}
- $\sqrt{40}m/s$
-\end{resp}
 
-\begin{exer} Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
-$$\|\vec{a}\|^2=a_N^2+a_T^2$$
+\begin{exer} Através da relação algébrica entre módulo e produto interno aplicada à velocidade, i.e., $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$), verifique que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então:
+$$\|\vec{a}\|^2=a_N^2+a_T^2,$$
 onde $\vec{a}$ é o vetor aceleração.
 \end{exer}
 \begin{resp}
@@ -1354,15 +1357,6 @@ onde $\vec{a}$ é o vetor aceleração.
  \end{eqnarray}
 \end{resp}
 
-
-
-
-\begin{exer}
- Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. O que acontece quando $a=b$? Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
-\end{exer}
-\begin{resp}
- $\rho_{min}= \frac{a^2}{b}$ e $\rho_{max}= \frac{b^2}{a}$. Quando $a=b$, a elipse é uma circuferência e o raio de curvatura é constante igual a $a=b$. $a=100m$ e $b=200m$. 
-\end{resp}
 
 \begin{exer}
  Seja $\vec{r}(t)$ o vetor posição de uma partícula em movimento e $t$ o tempo. Encontre $\vec{v}(t)$, $\vec{a}(t)$ e $\|\vec{v}(t)\|$. Faça um esboço da trajetória representando $\vec{v}(t)$ e $\vec{a}(t)$ em $t_0$.
@@ -1385,8 +1379,8 @@ onde $\vec{a}$ é o vetor aceleração.
  A trajetória de uma partícula é representada na forma paramétrica por $x(t)=a\cos(wt)$, $y(t)=b\sin(wt)$.
  \begin{itemize}
   \item[a)] Faça um esboço da trajetória para $a=2$, $b=1$ e $w=1$.
-  \item[b)] Mostre que a aceleração $\vec{a}$ está voltada em direção à origem.
-  \item[c)] Mostre que $\|\vec{a}(t)\|$ é proporcional à distância da partícula à origem.
+  \item[b)] Verifique que a aceleração $\vec{a}$ está voltada em direção à origem.
+  \item[c)] Verifique que $\|\vec{a}(t)\|$ é proporcional à distância da partícula à origem.
  \end{itemize}
  \end{exer}
 
@@ -1408,12 +1402,11 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \begin{resp}
  $\left(P\left(-\frac{19}{16},\frac{3}{2},\frac{3}{16}\right)\right)$.
 \end{resp}
-\begin{exer}
- Prove que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares. (Sugestão: Considere $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$).
+\begin{exer} Através da relação algébrica entre módulo e produto interno aplicada à velocidade, i.e., $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$), verifique  que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares. 
 \end{exer}
-\begin{exer}Prove que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.  (Sugestão: lembre-se que $\kappa=\frac{\|\vec{v}\times \vec{a}\|}{v^3} )$.
+\begin{exer} Através da fórmula da curvatura dada por $\kappa(t)=\frac{\|\vec{v}(t)\times \vec{a}(t)\|}{v(t)^3} )$, concluda que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta. 
 \end{exer}
-\begin{exer}Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
+\begin{exer} Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
 \begin{itemize}
  \item[a)] $\vec{r}(t)=2\cos(t)\vec{i}+2\sin(t)\vec{j}$, $t_0=\frac{\pi}{3}$.
  \item[b)] $\vec{r}(t)=e^{-t}\vec{i}+e^{t}\vec{j}$, $t_0=0$.
@@ -1437,7 +1430,7 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \end{resp}
 
 
-\begin{exer}Dada a aceleração $\vec{a}(t)$ de uma partícula, calcule a velocidade $\vec{v}(t)$ e o vetor posição $\vec{r}(t)$, supondo $t\geq 0$, $\vec{v}(0)=\vec{0}$ e  $\vec{r}(0)=\vec{0}$, para:
+\begin{exer} Dada a aceleração $\vec{a}(t)$ de uma partícula, calcule a velocidade $\vec{v}(t)$ e o vetor posição $\vec{r}(t)$, supondo $t\geq 0$, $\vec{v}(0)=\vec{0}$ e  $\vec{r}(0)=\vec{0}$, para:
 \begin{itemize}
  \item[a)] $\vec{a}=12\cos(2t)\vec{i}-8\sin(2t)\vec{j}+16t\vec{k}$.
  \item[b)] $\vec{a}=e^{-t}\vec{i}-6(t+1)\vec{j}+3\sin(t)\vec{k}$. 
