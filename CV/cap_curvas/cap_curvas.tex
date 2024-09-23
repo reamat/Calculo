@@ -2,16 +2,16 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 \chapter{Curvas e trajetórias}\index{curvas e trajetórias}\index{trajetórias}
-  Neste capítulo, estudaremos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos. 
+  Neste capítulo, estudaremos funções vetoriais do tipo $\vec{r}(t)$, ou seja, uma função que associa um parâmetro real a vetores no plano ou espaço. Funções vetoriais que dependem de apenas uma variável são os exemplos mais simples de funções que estudaremos.
 
 \section{Funções vetoriais de uma variável - curvas e trajetórias}
 Uma função vetorial de uma variável é uma função da forma $$\vec{r}:D\to \mathbb{R}^3,$$ onde $D\subseteq \mathbb{R}$ é o domínio de definição de $\vec{r}$ e $t$ é um parâmetro - podendo ser interpretado como o tempo ou não. Em coordenadas cartesianas, uma função vetorial assume a seguinte forma:
 $$\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$
-onde $\vec{i}=(1;0;0)$,$\vec{j}=(0;1;0)$ e $\vec{k}=(0;0;1)$ são mostrados na figura \ref{fig_vetijk}.
+onde $\vec{i}=(1,0,0)$, $\vec{j}=(0,1,0)$ e $\vec{k}=(0,0,1)$ são mostrados na figura \ref{fig_vetijk}.
 
 \begin{figure} \label{fig_vetijk}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/vetores_ijk}
+    \includegraphics[scale=.75]{./cap_curvas/figs/vetores_ijk}
  \caption{Os vetores canônicos $\vec{i},\vec{j},\vec{k}$.}
   \end{center}
 \end{figure}
@@ -22,24 +22,13 @@ onde $\vec{i}=(1;0;0)$,$\vec{j}=(0;1;0)$ e $\vec{k}=(0;0;1)$ são mostrados na f
 \item [b)] $\vec{g}(t)=t \vec{i}+\cosh(t)\vec{k}$
 \item [c)] $\vec{h}(t)=2\cos(t)\vec{i}+4\sin(t)\vec{j}+t\vec{k},~~ 0\leq t \leq 8\pi$
 \end{itemize}
-\end{ex}  
+\end{ex}
 
-Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\frac{d\vec{r}(t)}{dt} \neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\frac{d\vec{r}(t)}{dt} \neq 0$ em todos os pontos. É possível definir orientação para uma curva regularmente parametrizada\index{orientação de uma curva}, a orientação é dada pelo sentido de crescimento do parâmetro $t$. 
-
+O domínio natural de uma função vetorial é formado pelo conjunto de parâmetro possíveis tal que a função ainda seja real.
 \begin{ex}
-A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}$ para $0\leq t \leq 2\pi$ descreve  uma circunferência de raio 1 centrada na origem sobre o plano $xy$ orientada no sentido anti-horário.
+ O domínio da função vetorial $\vec{r}(t)=\frac{1}{\sqrt{t-1}}\vec{i}+\frac{1}{2-t}\vec{j}$ é formado pelo parâmetros $t$ tal que $t-1>0$ e $2-t\neq 0$, pois não há divisão por zero nem raíz de número negativo no conjunto dos números reais. Logo, $D=\left\{t\in\mathbb{R}; t>1 \text{ e } t\neq 2\right\}$
 \end{ex}
 
-\begin{figure}%{0.35\textwidth}
-\begin{center}
-    \includegraphics{./cap_curvas/figs/helice}
-\caption{\label{helicedex}Hélice circular dextrogira associada à função vetorial do Exemplo~\ref{cap_curvas:exemplo_helice}.}
-  \end{center}
-\end{figure}
-
-\begin{ex}\label{cap_curvas:exemplo_helice}
-A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+t\vec{k}$ para $ t \in\mathbb{R}$ descreve uma hélice circular, como mostra a figura \ref{helicedex}.
-\end{ex}
 
 O limite\index{limite de uma função vetorial de uma variável}, a derivação\index{derivada de uma função vetorial de uma variável} e a integração vetorial\index{integral de uma função vetorial de uma variável} são definidas componente a componente no sistema de coordenadas cartesiano:
 \begin{eqnarray}
@@ -51,14 +40,14 @@ O limite\index{limite de uma função vetorial de uma variável}, a derivação\
 
 \begin{teo}[Regras de derivação] A derivada de funções vetoriais satisfaz as seguintes propriedades:
 \begin{enumerate}
-\item Se $\vec{r}(t)$ é um vetor constante, então $\frac{d\vec{r}(t)}{dt}=\vec{0}$. 
+\item Se $\vec{r}(t)$ é um vetor constante, então $\frac{d\vec{r}(t)}{dt}=\vec{0}$.
 \item $\frac{d}{dt}\left[\alpha \vec{r}_1(t)+\beta \vec{r}_2(t)\right]=\alpha\frac{d\vec{r}_1(t)}{dt}+\beta\frac{d\vec{r}_2(t)}{dt}$
 \item Se $f(t)$ é uma função real, então $\frac{d}{dt}\left[f(t) \vec{r}(t)\right]=f'(t)\vec{r}(t)+f(t)\frac{d\vec{r}(t)}{dt}$
 \item $\frac{d}{dt}\left[\vec{r}_1(t)\cdot \vec{r}_2(t)\right]=\vec{r}_1(t)\cdot\frac{d\vec{r}_2(t)}{dt}+\frac{d\vec{r}_1(t)}{dt}\cdot\vec{r}_2(t)$
 \item $\frac{d}{dt}\left[\vec{r}_1(t)\times \vec{r}_2(t)\right]=\vec{r}_1(t)\times\frac{d\vec{r}_2(t)}{dt}+\frac{d\vec{r}_1(t)}{dt}\times\vec{r}_2(t)$
 \end{enumerate}
 \end{teo}
-\begin{proof} Os dois primeiros ítens podem ser obtidos diretamente de (\ref{defder}). A verificação fica a cargo do leitor. O item três pode ser obtido de  uma aplicação da regra da cadeia a (\ref{defder})\index{derivada do produto de um escalar por um vetor}:
+\begin{proof} Os dois primeiros itens podem ser obtidos diretamente de (\ref{defder}). A verificação fica a cargo do leitor. O item três pode ser obtido de  uma aplicação da regra da cadeia a (\ref{defder})\index{derivada do produto de um escalar por um vetor}:
 \begin{eqnarray*}\frac{d}{dt}\left[f(t) \vec{r}(t)\right]&=& \frac{d}{dt}\left[f(t) {x}(t)\vec{i}+f(t) {y}(t)\vec{j}+f(t) {z}(t)\vec{k}\right]\\
 &=&\left[f'(t) x(t)+f(t)x'(t)\right]\vec{i}+\left[f'(t) y(t)+f(t)y'(t)\right]\vec{j}+\left[f'(t) z(t)+f(t)z'(t)\right]\vec{k}\\
 &=&f'(t)\left[x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}\right]+f(t)\left[x'(t)\vec{i}+y'(t)\vec{j}+z'(t)\vec{k}\right]\\
@@ -91,14 +80,32 @@ Finalmente a derivada do produto vetorial pode ser obtida de\index{derivada do p
 }
 \end{proof}
 
+
+Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\frac{d\vec{r}(t)}{dt} \neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\frac{d\vec{r}(t)}{dt} \neq 0$ em todos os pontos. Definimos orientação de uma curva regular \index{orientação de uma curva} aquela dada pelo sentido de crescimento do parâmetro $t$.
+
+\begin{ex}
+A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}$ para $0\leq t \leq 2\pi$ descreve  uma circunferência de raio 1 centrada na origem sobre o plano $xy$ orientada no sentido anti-horário.
+\end{ex}
+
+\begin{figure}%{0.35\textwidth}
+\begin{center}
+    \includegraphics[scale=.5]{./cap_curvas/figs/helice}
+\caption{\label{helicedex}Hélice circular dextrogira associada à função vetorial do Exemplo~\ref{cap_curvas:exemplo_helice}.}
+  \end{center}
+\end{figure}
+
+\begin{ex}\label{cap_curvas:exemplo_helice}
+A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+t\vec{k}$ para $ t \in\mathbb{R}$ descreve uma hélice circular, como mostra a figura \ref{helicedex}.
+\end{ex}
+
 Demonstraremos agora um importante teorema do cálculo vetorial:
-\begin{teo}\label{teodernormacst} Uma função vetorial $\vec{u}(t)$ possui norma constante se e somente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$. 
+\begin{teo}\label{teodernormacst} Uma função vetorial $\vec{u}(t)$ possui norma constante se e somente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$.
 \end{teo}
 \begin{proof} Como $\|u\|^2=\vec{u}(t)\cdot\vec{u}(t)$, temos
 $$\frac{d \|u\|^2}{dt}=\frac{d}{dt}\left[\vec{u}(t)\cdot\vec{u}(t)\right]=\vec{u}\cdot\frac{d\vec{u}}{dt}+\frac{d\vec{u}}{dt}\cdot\vec{u}=2\vec{u}\cdot\frac{d\vec{u}}{dt}$$
 Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$. Reciprocamente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$, então $\|u\|$ deve ser constante.
 \end{proof}
-\begin{obs} Uma importante interpretação deste teorema é que se $\vec{v}(t)$ representa a velocidade de uma partícula no instante de tempo $t$, então se o módulo da velocidade, $v(t)$, for constante e não nulo então a aceleração $\vec{a}=\frac{d\vec{v}(t)}{dt}$ é perpendicular a $\vec{v}(t)$ sempre que for não nula.  
+\begin{obs} Uma importante interpretação deste teorema é que se $\vec{v}(t)$ representa a velocidade de uma partícula no instante de tempo $t$, então se o módulo da velocidade, $v(t)$, for constante e não nulo então a aceleração $\vec{a}=\frac{d\vec{v}(t)}{dt}$ é perpendicular a $\vec{v}(t)$ sempre que for não nula.
 \end{obs}
 
 
@@ -156,9 +163,9 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \item [d)] $\vec{f}(t)=t\vec{i}+\sqrt{4-t^2}~\!\vec{j}$, $-2 \leq t \leq 2$
 \item [e)] $\vec{f}(t)=t\vec{i}+\cosh(t)\vec{j}$, $-\infty < t < \infty $
 \item [f)] $\vec{f}(t)=\sinh(t)\vec{i}+\cosh(t)\vec{j}$, $-\infty < t< \infty $
-\end{itemize} 
+\end{itemize}
 \end{exer}
-\begin{resp} Semicircunferência de raio 1 centrada em $(0,0,1)$ sobre o plano $z=1$. Elipse de semi-eixos $1$ e $2$ centrada na origem sobre o plano $xz$. Hélice circular levogira de raio $1$ e passo $2\pi$.  Semicircunferência de raio 2 centrada na origem sobre o plano $xy$ e $y\geq 0$. Uma catenária sobre o plano $xy$. Uma hipérbole. 
+\begin{resp} Semicircunferência de raio 1 centrada em $(0,0,1)$ sobre o plano $z=1$. Elipse de semi-eixos $1$ e $2$ centrada na origem sobre o plano $xz$. Hélice circular levogira de raio $1$ e passo $2\pi$.  Semicircunferência de raio 2 centrada na origem sobre o plano $xy$ e $y\geq 0$. Uma catenária sobre o plano $xy$. Uma hipérbole.
 \end{resp}
 \begin{exer}Dada a hélice circular $\vec{r}(t)=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, sendo $c>0$, encontre $c$ tal que a cada volta completa $z$ avance $3$ unidades.
  \end{exer}
@@ -182,17 +189,17 @@ representa uma curva contida em uma circunferência no plano $xy$  centrada na o
 Sendo $\hat{r}(t)=\frac{1}{r(t)} \vec{r}(t)$, onde $r(t)=\|\vec{r}(t)\|$,  encontre as seguintes identidades:
 \begin{itemize}
 \item[a)] $\displaystyle r'(t) = \frac{d\vec{r}(t)}{dt}\cdot \hat{r}(t)$
-\item[b)] $\displaystyle \frac{d}{dt}\left[\vec{r}(t)\times\frac{d\vec{r}(t)}{dt}\right]=\vec{r}(t)\times\frac{d^2\vec{r}(t)}{dt^2}$ 
-\item[c)] $\displaystyle r'(t)=\frac{\vec{r}(t)\cdot\frac{d\vec{r}(t)}{dt}}{r(t)}$ 
+\item[b)] $\displaystyle \frac{d}{dt}\left[\vec{r}(t)\times\frac{d\vec{r}(t)}{dt}\right]=\vec{r}(t)\times\frac{d^2\vec{r}(t)}{dt^2}$
+\item[c)] $\displaystyle r'(t)=\frac{\vec{r}(t)\cdot\frac{d\vec{r}(t)}{dt}}{r(t)}$
 \item[d)] $\displaystyle \frac{d\hat{r}(t)}{dt}=\frac{1}{r(t)} \frac{d\vec{r}(t)}{dt}-\frac{\vec{r}(t)\cdot\frac{d\vec{r}(t)}{dt}}{r(t)^3} \vec{r}(t)$
 \end{itemize}
 \end{exer}
 \begin{resp}
-a) $\|\hat{r}\|$ constante implica $\hat{r} \cdot \frac{d\hat{r}}{dt}=0$. Ademais, $ \frac{d\vec{r}}{dt} = \frac{d(r \hat{r})}{dt} = r' \hat{r} + r \frac{d\hat{r}}{dt} \Rightarrow \frac{d\vec{r}}{dt} \cdot \hat{r} = 
-r' \|\hat{r}\|^2 + r \frac{d\hat{r}}{dt} \cdot \hat{r} = r' $ 
+a) $\|\hat{r}\|$ constante implica $\hat{r} \cdot \frac{d\hat{r}}{dt}=0$. Ademais, $ \frac{d\vec{r}}{dt} = \frac{d(r \hat{r})}{dt} = r' \hat{r} + r \frac{d\hat{r}}{dt} \Rightarrow \frac{d\vec{r}}{dt} \cdot \hat{r} =
+r' \|\hat{r}\|^2 + r \frac{d\hat{r}}{dt} \cdot \hat{r} = r' $
 . b) $\frac{d}{dt} \left[ \vec{r} \times \frac{d\vec{r}}{dt} \right] =
-\frac{d \vec{r}}{dt} \times \frac{d \vec{r}}{dt} + \vec{r} \times \frac{d^2 \vec{r}}{dt^2} = \vec{r} \times \frac{d^2 \vec{r}}{dt^2} $. c) a partir de a), multiplica numerador e denominador por $r(t)$. d) $\frac{d\hat{r}}{dt} = 
-\frac{d}{dt} \left( r^{-1} \vec{r} \right) = \frac{d}{dt} \left( r^{-1} \right) \vec{r} + r^{-1} \frac{d \vec{r}}{dt} = \frac{1}{r} \frac{d\vec{r}}{dt} - \frac{r'}{r^2} \vec{r} = \frac{1}{r} \frac{d \vec{r}}{dt} - \frac{ \vec{r} \cdot \frac{d \vec{r}}{dt} }{r^3} \vec{r} $ pela parte c). 
+\frac{d \vec{r}}{dt} \times \frac{d \vec{r}}{dt} + \vec{r} \times \frac{d^2 \vec{r}}{dt^2} = \vec{r} \times \frac{d^2 \vec{r}}{dt^2} $. c) a partir de a), multiplica numerador e denominador por $r(t)$. d) $\frac{d\hat{r}}{dt} =
+\frac{d}{dt} \left( r^{-1} \vec{r} \right) = \frac{d}{dt} \left( r^{-1} \right) \vec{r} + r^{-1} \frac{d \vec{r}}{dt} = \frac{1}{r} \frac{d\vec{r}}{dt} - \frac{r'}{r^2} \vec{r} = \frac{1}{r} \frac{d \vec{r}}{dt} - \frac{ \vec{r} \cdot \frac{d \vec{r}}{dt} }{r^3} \vec{r} $ pela parte c).
 \end{resp}
 \begin{exer}Dadas $\vec{u}(t)=t^2\vec{i}-3t\vec{k}$, $\vec{v}(t)=-4t^3\vec{j}+(t+1)\vec{k}$ e $\vec{w}(t)=3t^2\vec{i}+t\vec{j}-t^3\vec{k}$, encontre:
 \begin{itemize}
@@ -206,19 +213,19 @@ r' \|\hat{r}\|^2 + r \frac{d\hat{r}}{dt} \cdot \hat{r} = r' $
  \item[a)] $-3(2t+1)$.
  \item[b)] $-48t^3\vec{i}-(3t^2+2t)\vec{j}-20t^4\vec{k}$.
  \item[c)] $(6t-48t^3)\vec{i}-(2t+30t^2-5t^4)\vec{j}+(3t^2-20t^4)\vec{k}$.
-\end{itemize} 
+\end{itemize}
 \end{resp}
 \section{Comprimento de arco}
 Dada uma curva parametrizada pela função vetorial $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$, $t\in[a,b]$, estamos interessados no problema de calcular o comprimento $L$ do arco de descrito por uma curva $\vec{r}(t)$, $a\leq t\leq b$.
-  
+
 \begin{figure}
 \centering
     \includegraphics{./cap_curvas/figs/helice_retificacao}
 \caption{Aproximação poligonal do comprimento do arco}\label{fig_compr_arc}
 \end{figure}
 
- 
- 
+
+
 Seja $a=t_0<t_1<t_2<\cdots<t_n=b $ uma partição equidistante do domínio com $\Delta t=t_i-t_{i-1}$ e $P_i=\vec{r}(t_i)$, $i=0,1,\cdots,n$, pontos sobre a curva, como mostra a figura \ref{fig_compr_arc}. Uma possível aproximação para o comprimento da curva é dado pelo comprimento da poligonal determinada por essa partição. Observe que o comprimento do segmento $P_{i-1}P_i$ é dado por $\|P_i-P_{i-1}\|$, logo, a aproximação para o comprimento da curva é
 \begin{eqnarray*}
 L_n&=&\sum_{i=1}^n\|P_i-P_{i-1}\|\\
@@ -238,7 +245,7 @@ s(t)=\int_{a}^{t}\left\|\frac{d\vec{r}(\tau)}{dt}\right\|d\tau,\qquad a\leq t\le
 \subsection*{Exercícios resolvidos}
 
 \begin{exeresol} \label{exe_co_arc1}
-Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$. 
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t^2 \vec{j}$, definida para $-2 \leq t \leq 2$.
 \end{exeresol}
 \begin{figure}
   \centering
@@ -246,23 +253,23 @@ Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = t \vec{i} + t
       \includegraphics{./cap_curvas/figs/comprimento_arco_curva}
   \caption{(esq) Curva do exercício ER \ref{exe_co_arc1}; (dir) curva do exercício E \ref{exe_co_arc2}.}\label{fig_co_arc1}
   \end{figure}
-  
+
 \begin{resol}
 A curva é um arco  da parábola $y=x^2$, e pode ser visualizada na figura \ref{fig_co_arc1}.
 
 Calculamos a derivada $\frac{d\vec{r}}{dt} = \vec{i} + 2t \vec{j} $ e portanto:
- $$L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt.$$ Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então 
+ $$L = \int_{-2}^2 \sqrt{4t^2 + 1} dt = 2 \int_0^2 \sqrt{4t^2+1}dt.$$ Com a mudança de variável $2t = \tan(u), 0 \leq u \leq \alpha$, onde $\alpha=\arctan(4)$ temos $2dt = \sec^2(u)du$ e então
  \begin{eqnarray*}
   L &=&  \int_0^{\alpha} |\sec(u)| \sec^2(u) du = \int_0^{\alpha} \sec^3(u)du \\
   &=& \left[ \frac{\sec(u)\tan(u) + \ln|\sec(u)+\tan(u)|}{2} \right]_0^{\arctan(4)}.
 \end{eqnarray*}
 
  Assim obtemos:
- $$L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}.$$ 
+ $$L = 2\sqrt{17} + \frac{\ln(4+\sqrt{17})}{2}.$$
 \end{resol}
 
 \begin{exeresol} \label{exe_co_arc2}
-Calcule comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}. 
+Calcule comprimento de arco da curva parametrizada $\vec{r}(t) = 5(1-t^2) \vec{i} + 4 t^{5/2}\vec{j} + 5t^2 \vec{k}$, definida para $0 \leq t \leq 1$. Essa curva pode ser visualizada na figura \ref{fig_co_arc1}.
 \end{exeresol}
 \begin{resol}
 Calculamos a derivada $\frac{d\vec{r}}{dt} = -10t \vec{i} + 10 t^{3/2} \vec{j} + 10t \vec{k} $ e portanto:
@@ -292,7 +299,7 @@ Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = (1-t^2) \vec{
 
 
 \begin{exer} \label{exe_co_arc5}
-Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$. 
+Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} + (1-t^3+2t^{9/2}) \vec{j} + (t^3+2t^{9/2})\vec{k}$, definida para $0 \leq t \leq 1$.
 \end{exer}
 \begin{resp}
   $ L = \frac{14\sqrt{6}}{9}.$
@@ -303,13 +310,13 @@ Calcule o comprimento de arco da curva parametrizada $\vec{r}(t) = 2t^3 \vec{i} 
 \section{Triedro de Frenet-Serret}
 
 Seja a curva descrita pela função vetorial $\vec{r}(t)$. Queremos encontrar um vetor que seja tangente à curva em um dado ponto\index{vetor tangente}. Para tal tomamos o limite
-$$\lim_{h\to 0} \frac{\vec{r}(t+h)-\vec{r}(t)}{h}$$  
+$$\lim_{h\to 0} \frac{\vec{r}(t+h)-\vec{r}(t)}{h}$$
 Este limite converge para $\frac{d\vec{r}(t)}{dt}$ e, geometricamente, para o vetor tangente à curva no ponto $P$ relativo a $\vec{r}(t)$\footnote{O leitor atento ao formalismo pode tomar esta como uma definição de vetor tangente. Adiante, veremos que esta definição é consistente com o vetor tangente do cálculo de funções de uma variável.} sempre que $\frac{d\vec{r}(t)}{dt} \neq \vec{0}$. O sentido do vetor $\frac{d\vec{r}(t)}{dt}$ é dado pela parametrização da curva, em outras palavras, o vetor $\frac{d\vec{r}(t)}{dt}$ aponta no sentido em que o parâmetro $t$ cresce.
 
 
 \begin{figure}%{0.35\textwidth}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/vetor_tangente_circunferencia}
+    \includegraphics[scale=.75]{./cap_curvas/figs/vetor_tangente_circunferencia}
 \caption{O vetor tangente $\frac{d\vec{r}(t)}{dt}$}\label{circtang}
   \end{center}
 \end{figure}
@@ -318,7 +325,7 @@ Este limite converge para $\frac{d\vec{r}(t)}{dt}$ e, geometricamente, para o ve
 Observe que a norma do vetor tangente depende de como a curva é parametrizada e não apenas da curva em si. A fim de trabalhar com um objeto que independe da parametrização, é natural definirmos o vetor tangente unitário\index{vetor tangente unitário}, denotado por $\vec{T}$ (veja figura \ref{Frenet_Serret}):
 \begin{equation}\label{defvecunit}
 \vec{T}(t)=\frac{1}{\left\|\frac{d\vec{r}(t)}{dt}\right\|}\frac{d\vec{r}(t)}{dt},\qquad \frac{d\vec{r}(t)}{dt} \neq \vec{0}.
-\end{equation} 
+\end{equation}
 A condição de existência para o vetor $\vec{T}$ é que a função vetorial que parametriza a curva seja diferenciável e que sua derivada seja diferente de zero, ou seja, que a parametrização seja regular.
 
 \begin{obs} Quando $\vec{r}(t)$ representa a trajetória de uma partícula ao longo do tempo, a derivada $\frac{d\vec{r}(t)}{dt} $ é a velocidade $\vec{v}(t)$ da partícula. Neste caso, o vetor tangente unitário é o versor associado a $\vec{v}(t)$:
@@ -339,20 +346,20 @@ representa um vetor tangente unitário.
 
 \begin{figure}%{0.35\textwidth}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/helice_TNB}
+    \includegraphics[scale=.75]{./cap_curvas/figs/helice_TNB}
 \caption{Triedro de Frenet-Serret}\label{Frenet_Serret}
   \end{center}
 \end{figure}
 
 
-Agora, queremos definir um vetor ortogonal a $\vec{T}$ que esteja no plano determinado por $\frac{d\vec{r}(t)}{dt}$ e $\frac{d^2\vec{r}(t)}{dt^2}$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vec{T}(t)$ possui módulo constante e, portanto, $\vec{T}(t)\cdot \frac{d\vec{T}(t)}{dt}=0$. Observe ainda que 
+Agora, queremos definir um vetor ortogonal a $\vec{T}$ que esteja no plano determinado por $\frac{d\vec{r}(t)}{dt}$ e $\frac{d^2\vec{r}(t)}{dt^2}$. Para isso, usamos o resultado do teorema \ref{teodernormacst}. Observe que a função vetorial $\vec{T}(t)$ possui módulo constante e, portanto, $\vec{T}(t)\cdot \frac{d\vec{T}(t)}{dt}=0$. Observe ainda que
 $$
 \frac{d^2\vec{r}(t)}{dt^2}=\frac{d (v \vec{T} )}{dt} = v'(t) \vec{T}(t) + v(t) \frac{d \vec{T}(t)}{dt} = \frac{v'(t)}{v(t)} \frac{d\vec{r}(t)}{dt}+ v(t) \frac{d\vec{T}(t)}{dt}
 $$
 implica
 $$ \frac{d\vec{T}(t)}{dt} = \frac{1}{v(t)} \frac{d^2 \vec{r}(t)}{dt^2} - \frac{v'(t)}{v(t)^2} \frac{d \vec{r}(t)}{dt}
 $$
-e assim 
+e assim
 $\vec{T}(t)$ e $\frac{d\vec{T}(t)}{dt}$ pertencem ao plano gerado por $\frac{d\vec{r}(t)}{dt} $ e $\frac{d^2\vec{r}(t)}{dt^2}$ e são ortogonais entre si. Entretanto, $\frac{d\vec{T}(t)}{dt}$ não é necessariamente unitário. Logo, faz sentido definir o vetor normal unitário\index{vetor normal unitário} como
 $$
 \vec{N}=\frac{1}{\left\|\frac{d\vec{T}(t)}{dt}\right\|} \frac{d \vec{T}(t)}{dt}.
@@ -375,16 +382,16 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
   Primeiro calculamos $\vec{v}(t):=\vec{r}\!'(t)$:
  $$\vec{v}(t) = \frac{d \vec{r}}{dt} = -2t \vec{i} + t(2+3t) \vec{j} + t(2-3t)\vec{k},$$
  cuja norma é dada por:
-  $$\left\|\vec{v} \right\|^2 = 4t^2 + t^2(2+3t)^2 + t^2(2-3t)^2 = t^2(12+18t^2).$$ 
-  Logo $\vec{T} = \frac{\vec{v}}{\|\vec{v}\|} = \frac{-2 }{\sqrt{12+18t^2}}\vec{i} + \frac{2+3t}{\sqrt{12+18t^2}}\vec{j} + \frac{2-3t}{\sqrt{12+18t^2}}\vec{k}$. 
-  
+  $$\left\|\vec{v} \right\|^2 = 4t^2 + t^2(2+3t)^2 + t^2(2-3t)^2 = t^2(12+18t^2).$$
+  Logo $\vec{T} = \frac{\vec{v}}{\|\vec{v}\|} = \frac{-2 }{\sqrt{12+18t^2}}\vec{i} + \frac{2+3t}{\sqrt{12+18t^2}}\vec{j} + \frac{2-3t}{\sqrt{12+18t^2}}\vec{k}$.
+
   Derivando essa última expressão em relação a $t$, temos:
   $$\frac{d\vec{T}}{dt} = \frac{36t}{(12+18t^2)^{3/2}} \vec{i} + \frac{36(1-t)}{(12+18t^2)^{3/2}} \vec{j} - \frac{36(1+t)}{(12+18t^2)^{3/2}} \vec{k}.$$
-    E para normalizar sem trocar seu sentido definimos: 
-    $$\vec{u} = t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k},$$ 
+    E para normalizar sem trocar seu sentido definimos:
+    $$\vec{u} = t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k},$$
     o que implica: $$\|\vec{u}\|^2=t^2 + (1-t)^2 + (1+t)^2 = 3t^2 + 2.$$
     Então:
-     $$\vec{N} = \frac{\frac{d\vec{v}}{dt}}{\|\frac{d\vec{v}}{dt}\|} = \frac{\vec{u}}{\|\vec{u}\|}=\frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}.$$ 
+     $$\vec{N} = \frac{\frac{d\vec{v}}{dt}}{\|\frac{d\vec{v}}{dt}\|} = \frac{\vec{u}}{\|\vec{u}\|}=\frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}.$$
      Finalmente $ \vec{B} = \vec{T} \times \vec{N}$ calculado via \begin{eqnarray*}
       \vec{B} = \vec{T} \times \vec{N} &=&
       \left| \begin{array}{ccc}
@@ -411,13 +418,13 @@ Um erro comum entre estudantes é substituir a definição de vetor binormal uni
  &=&\frac{-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}}{aw}\\
  &=&{-\sin(wt)\vec{i}+\cos(wt)\vec{j}}\\
  \end{eqnarray*}
- 
+
  \begin{eqnarray*}
 \vec{N}(t)&=&\frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|}\\
   &=&\frac{-w\cos(wt)-w\sin(wt)}{w}\\
   &=&{-\cos(wt)-\sin(wt)}
  \end{eqnarray*}
- 
+
  \begin{eqnarray*}
 \frac{\vec{N}~\!'(t)}{\|\vec{N}~\!'(t)\|}
   &=&\frac{w\sin(wt)-w\cos(wt)}{w}\\
@@ -458,7 +465,7 @@ Use a identidade vetorial dada por
 $$\vec{u}\times\left(\vec{v}\times\vec{w}\right)=\vec{v}\left(\vec{u}\cdot\vec{w}\right)-\vec{w}\left(\vec{u}\cdot\vec{v}\right)$$ para obter as identidades $b$ e $c$ a partir de $a$.
 \end{exer}
 \begin{exer}\label{exer_formula_binormal}
- O vetor binormal unitário foi definido em aula como $\vec{B}(t)=\vec{T}(t)\times\vec{N}(t)$. Argumente, sem cálculos, que ele também poderia ser definido como 
+ O vetor binormal unitário foi definido em aula como $\vec{B}(t)=\vec{T}(t)\times\vec{N}(t)$. Argumente, sem cálculos, que ele também poderia ser definido como
  $$
  \vec{B}(t)=\frac{\vec{r}'(t)\times \vec{r}''(t)}{\|\vec{r}'(t)\times \vec{r}''(t)\|}.
  $$
@@ -518,7 +525,7 @@ z&=&0
 Esboce gráfico dessa trajetória para $0\leq t \leq 2\pi$, indicando os pontos inicial e final. Esboce o triedro $\vec{T}$, $\vec{N}$ e $\vec{B}$ no instante $t=\pi/2$.(Obs.: Não é necessário calcular analiticamente o triedro.) Considere a identidade vetorial $\frac{d r^2}{dt}=2\vec{r}\cdot\frac{d\vec{r}}{dt}$ no instante $t=\pi/2$, ela é compatível com seu desenho?
 \end{exer}
 \begin{resp}
-\includegraphics[scale=.8]{./cap_curvas/figs//espiral_lista_a1} 
+\includegraphics[scale=.8]{./cap_curvas/figs//espiral_lista_a1}
 Para o comentário sobre a derivada da norma ao quadrado, observe que $r^2=t^2$, assim:
 \begin{eqnarray*}
 \vec{r}\cdot\frac{d\vec{r}}{dt}=\frac{1}{2}\frac{d r^2}{dt}=t>0
@@ -527,14 +534,14 @@ Em $t=\pi/2$, $\vec{r} = \frac{\pi}{2}\vec{i}$, isso é compatível com o fato d
 \end{resp}
 
 
-\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
+\begin{exer}Um erro comum é substituir a definição de vetor normal unitário pela expressão espúria dada por $$\frac{\vec{r}\!~''(t)}{\|\vec{r}\!~''(t)\|}$$. Encontre uma condição necessária e suficiente para que essa fórmula produza o resultado correto supondo $\|\vec{r}\!~'(t)\|\neq 0$.
 
 \end{exer}
 \begin{resp}
   A condição é $$\frac{d}{dt}\|\vec{r}\!~'(t)\|=0$$
 \end{resp}
 
-\begin{exer} O que acontece com os vetores $\vec{T}$, $\vec{N}$ e $\vec{B}$ quando a orientação de uma curva é invertida?
+\begin{exer} O que acontece com os vetores $\vec{T}$, $\vec{N}$ e $\vec{B}$ quando se inverte a orientação da curva?
 \end{exer}
 \begin{resp} O vetor $\vec{N}$ se mantém e os outros dois invertem de sentido.
 \end{resp}
@@ -554,7 +561,7 @@ Nessa seção, estamos interessados em definir, a cada ponto da curva, funções
   \end{center}
 \end{figure}
 
-O vetor normal $\vec{N}$,  sendo paralelo a $\frac{d\vec{T}}{dt}$ por definição, também é paralelo a $\frac{d\vec{T}}{ds}$, onde $s$ é comprimento do arco definido pela curva da trajetória de $\vec{r}(t)$. Assim, 
+O vetor normal $\vec{N}$,  sendo paralelo a $\frac{d\vec{T}}{dt}$ por definição, também é paralelo a $\frac{d\vec{T}}{ds}$, onde $s$ é comprimento do arco definido pela curva da trajetória de $\vec{r}(t)$. Assim,
 \begin{equation}{\label{Frenet_1}}
 \frac{d \vec{T} }{ds}=\kappa   \vec{N},
 \end{equation}
@@ -580,7 +587,7 @@ O raio de curvatura tem a seguinte interpretação geométrica: considere um pon
 
 \begin{figure}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/circulo_curvatura_parabola}
+    \includegraphics[scale=.75]{./cap_curvas/figs/circulo_curvatura_parabola}
  \caption{Círculo de curvatura}\label{raio_de_curvatura}
   \end{center}
 \end{figure}
@@ -633,7 +640,7 @@ O leitor deve ter observado que conhecendo somente a curvatura não é possível
 $$
 \frac{d\vec{B}}{ds}=\frac{d}{ds}\left(\vec{T}\times\vec{N}\right)=\frac{d\vec{T}}{ds}\times \vec{N}+\vec{T}\times\frac{d\vec{N}}{ds}.
 $$
-Usando a expressão (\ref{Frenet_1}), temos que $\frac{d\vec{T}}{ds}=\kappa\vec{N}$, logo 
+Usando a expressão (\ref{Frenet_1}), temos que $\frac{d\vec{T}}{ds}=\kappa\vec{N}$, logo
 $$
 \frac{d\vec{B}}{ds}=\vec{T}\times\frac{d\vec{N}}{ds}.
 $$
@@ -743,17 +750,17 @@ $$
 
 \end{itemize}
 \end{exer}
- 
+
  \begin{exer}{\label{prob_torcao}} Dada a hélice circular $\vec{r}=a\cos(t)\vec{i}+a\sin(t)\vec{j}+ct\vec{k}$, $t\geq 0$, $a>0$. Dado um $a$ constante, calcule os valores de $c$ para que a torção seja máxima e mínima.
  \end{exer}
 \begin{resp}
   A torção é constante em todos os pontos da hélice e é dada por $\tau=\frac{c}{a^2+c^2}$. A torção máxima para um dado $a>0$ é $\frac{1}{2a}$ quando $c=a$ e é mínimo quando $c=-a$.
 \end{resp}
 
- 
+
  \begin{figure}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/curvatura_torcao}
+    \includegraphics[scale=.75]{./cap_curvas/figs/curvatura_torcao}
  \caption{Curvatura e Torção}\label{Curvatura_torcao_1}
   \end{center}
 \end{figure}
@@ -780,7 +787,7 @@ $$
 \frac{d\vec{r}}{dt} \times \frac{d^2 \vec{r}}{dt^2}=s'^3\kappa \vec{B}\qquad\text{e}\qquad
 \frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3\vec{r}}{dt^3}=s'^6\kappa^2\tau.
 $$
-Isso implica em 
+Isso implica em
 $$
 \left\|\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2}\right\|=|s'|^3\kappa\qquad\text{e}\qquad
 \frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2} \cdot \frac{d^3 \vec{r}}{dt^3}=\left\|\frac{d\vec{r}}{dt} \times \frac{d^2\vec{r}}{dt^2}\right\|^2\tau.
@@ -810,13 +817,13 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
 
 \end{obs}
 
-\begin{ex} Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
+\begin{ex} \label{ex_calculo_curvatura_elipse}Consideramos a elipse no plano $xy$ cuja equação canônica é dada por:
   $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1. $$
   Aqui $a$ e $b$ são constantes positivas e representam os comprimetos dos semieixos da elipse.
   Inserimos a parametrização $x(t)=a\cos(t)$ e $y(t)=b\sin(t)$ para obter o vetor $\vec{r}(t)$:
   $$\vec{r}(t) = a\cos(t)\vec{i} + b\sin(t)\vec{j}.$$
   as derivadas de $\vec{r}(t)$ são, portanto, dadas por:
-$$r'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$  
+$$r'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$
 $$r''(t)=-a\cos(t)\vec{i}-b\sin(t)\vec{j}$$
 Assim, temos:
 \begin{eqnarray*}\vec{r}'(t)\times\vec{r}''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times\left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
@@ -830,18 +837,16 @@ Desta forma, temos:
 $$\kappa(t)=\frac{\|r'(t)\times r''(t)\|}{\|r'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
 Vale observar que os pontos de máxima e mínima curvatura estão nos vértices, isto é, $t=0$, $t=\frac{\pi}{2}$, $t=\pi$ e $t=\frac{3\pi}{2}$. A prova dessa afirmação será objeto de exercício.
 
-Podemos expressão a curvatura da elipse em termos das variáveis originais $x$ e $y$:
+Podemos expressar a curvatura da elipse em termos das variáveis originais $x$ e $y$:
 \begin{eqnarray*}
 \kappa(x, y)&=&\frac{ab}{\left(\frac{a^2}{b^2}y^2+\frac{b^2}{a^2}x^2\right)^{3/2}}\\
 \kappa(x)&=&\frac{ab}{\left(a^2+\left(\frac{b^2-a^2}{a^2}\right)x^2\right)^{3/2}}\\
 \kappa(y)&=&\frac{ab}{\left(b^2+\left(\frac{a^2-b^2}{b^2}\right)y^2\right)^{3/2}}\\
 \end{eqnarray*}
+\end{ex}
 
 
-\end{ex} 
-
-
-\begin{ex} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
+\begin{ex} \label{exemplo_sincosf} Consideremos agora, a curva gerada pelas seguintes equações paramétricas:
 $$x(t)=\cos(t)\qquad y(t)=\sin(t)\qquad z(t)=f(t).$$
  Onde $f(t)$ é uma função dada. Observe que a projeção desta curva no plano $xy$ é uma circuferência de raio 1. A curva é, portanto, gerada pela trajetória de ponto cuja projeção do movimento no plano $xy$ é cirvular e a altura é dada pela função $f(t)$. Podemos calcular a curvatura e a torção conforme a seguir:
  \begin{eqnarray*}
@@ -891,7 +896,7 @@ $$\kappa=\frac{\left\|\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)\right\|}{\|r\ \!'(t
 e a seguinte fórmula para o módulo da torção:
 $$|\tau|=\frac{\|B\ \!'(t)\|}{\|\vec{r}\ \!'(t)\|}=\left\|\frac{d\vec{B}}{ds}\right\|$$
 
-\item[c)] Discuta o sinal da torção em função do sinal de $cw$. 
+\item[c)] Discuta o sinal da torção em função do sinal de $cw$.
 \item[d)] Confira a conclusão do item c), sabendo que $\vec{N}=-\cos(wt)\vec{i}-\sin(wt)\vec{j}$
 \end{itemize}
 \end{exeresol}
@@ -942,7 +947,7 @@ Sabemos que o módulo da torção é dado por:
 \end{eqnarray*}
 
 \begin{eqnarray*}
- \frac{d}{dt}\vec{B} 
+ \frac{d}{dt}\vec{B}
 &=&\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a\sqrt{c^2+a^2w^2}}
 \end{eqnarray*}
 e
@@ -953,7 +958,7 @@ e
 
 
 \begin{eqnarray*}
- \frac{d}{ds}\vec{B} 
+ \frac{d}{ds}\vec{B}
 &=&\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a(c^2+a^2w^2)}
 \end{eqnarray*}
 
@@ -978,8 +983,7 @@ Podemos verificar essa conclusão sabendo que:
 
 \end{resol}
 
-\begin{exeresol}
-Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
+\begin{exeresol} Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
 $$\|\vec{a}\|^2=a_N^2+a_T^2$$
 onde $\vec{a}$ é o vetor aceleração. Verifique essa identidade na trajetória dada por
 \begin{eqnarray*}
@@ -1011,7 +1015,7 @@ onde
 -3\sin (t) & 3\cos (t) & 2t\vec{k}\\
 -3\cos (t) & -3\sin (t) & 2\vec{k}
 \end{array}
-\right|\\&=&\left(6\cos(t)+6t\sin(t)\right)\vec{i}+\left(-6t\cos(t) +6\sin(t)\right)\vec{j}+\underbrace{\left(9\sin^2(t)+9\cos^2(t)\right)}_{9}\vec{k}
+\right|\\&=&\left(6\cos(t)+6t\sin(t)\right)\vec{i}+\left(-6t\cos(t) +6\sin(t)\right)\vec{j}\\&+&\underbrace{\left(9\sin^2(t)+9\cos^2(t)\right)}_{9}\vec{k}
 \end{eqnarray*}
 Assim:
 \begin{eqnarray*}
@@ -1041,23 +1045,23 @@ a_N^2+a_T^2&=&\left(\frac{\left(117+36t^2\right)^{1/2}}{\left(9+4t^2\right)^{1/2
 \frac{13(9+4t^2)}{9+4t^2}=13,
 \end{eqnarray*}
 o que verifica a identidade.
- 
+
 \end{resol}
 
 
 
 \begin{exeresol}
-Mostre que a curvatura do gráfico da função
+Simplifique a fórmula da curvatura para o caso particular do gráfico da função
 $$y=f(x)$$
 sobre o plano $xy$
-é dada pela expressão
+e obtenha a seguinte expressão:
 $$\kappa(x)=\frac{|f''(x)|}{\left(1+f'(x)^2\right)^{3/2}}.$$
-Use essa expressão para obter a curvatura das seguintes curvas planas:
+Use essa fórmula para obter a curvatura das seguintes curvas planas:
 \begin{itemize}
 \item[a)] $y=ax+b$
 \item[b)]$y=\sqrt{a^2-x^2}$, $-a<x<a$ onde $a>0$.
 \item[c)] $y=x^4$
-\item[d)] $y=ax^2$ 
+\item[d)] $y=ax^2$
 \item[e)] $y=\cosh(x)$
 \item[f)] $y=\sinh(x)$
 \item[g)] $y=\cos(x)$
@@ -1080,13 +1084,13 @@ e obtenha a expressão dada.
 \item[a)] $\kappa(x)=0$
 \item[b)]$\kappa(x)=1/a$
 \item[c)] $\kappa(x)=\frac{12x^2}{\left(1+16x^6\right)^{3/2}}$
-\item[d)] $\kappa(x)=\frac{2|a|}{\left(1+4a^2x^2\right)^{3/2}}$ 
+\item[d)] $\kappa(x)=\frac{2|a|}{\left(1+4a^2x^2\right)^{3/2}}$
 \item[e)] $\kappa(x)=\frac{1}{\cosh^2(x)}$
 \item[f)] $\kappa(x)=\frac{\sinh(|x|)}{\left(1+\cosh^2(x)\right)^{3/2}}$
 \item[g)] $\kappa(x)=\frac{\cos|x|}{\left(1+\sin^2(x)\right)^{3/2}}$
 \end{itemize}
 
-Obs.: A curva a) é uma reta, pelo que tem curvatura zero. A curva b) é uma semicircunferêcia de raio $a$, pelo que tem curvatura $1/a$. Nos pontos de curvatura zero, o vetor normal não está definido. 
+Obs.: A curva a) é uma reta, pelo que tem curvatura zero. A curva b) é uma semicircunferêcia de raio $a$, pelo que tem curvatura $1/a$. Nos pontos de curvatura zero, o vetor normal não está definido.
 No item c), $\lim_{x\to 0-}\vec{N}(t)=\lim_{x\to 0+}\vec{N}(t)=\vec{j}$, mas no item g), os limites não são iguais, evidenciando mudança de concavidade.
 
 
@@ -1126,13 +1130,11 @@ O vetor $\vec{B}$ também poderia ter sido calculado pela fórmula:
   \vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}
  \end{eqnarray*}
 onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}=f''(t)\vec{k}.$$
-
 \end{resol}
 
-
 \begin{exeresol}
-Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. 
-Dica:
+Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$.
+Dica: Use o Exemplo:~\ref{ex_calculo_curvatura_elipse}, isto é:
 $$\kappa(t)=\frac{ab}{\left[a^2+(b^2-a^2)\cos^2(t)\right]^{3/2}}$$
 e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
 
@@ -1146,7 +1148,7 @@ e use o fato que $0\leq \cos^2(t) \leq1$. Faça o caso $a\leq b$ e $b \leq a$.
 As curvaturas máximas e mínimas são (não necessariamente respectivamente) $\frac{a}{b^2}$ e $\frac{b}{a^2}$. Os raios de curvatura associados são $\frac{b^2}{a}$ e $\frac{a^2}{b}$.
 \begin{itemize}
  \item[a)] Quando $a=b$, a elipse é uma circunferência e o raio de curvatura é constante igual a $a$, que é o raio da circunferência.
-\item[b)] Para calcular os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m, suponha, sem perda de generalidade, que $a<b$ e resolva:
+\item[b)] Para calcular os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m, denote o semi-eixo maior de $b$ e o menos de $a$ e resolva o seguinte sistema de equações algébricas:
  \begin{eqnarray*}
   \frac{a^2}{b} &=& 50\\
   \frac{b^2}{a} &=& 400\\
@@ -1169,26 +1171,25 @@ $$a^3=400\times 2500 = 1.000.000.$$
 \end{resol}
 
 \begin{exeresol}
-Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$. 
+Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é uma elipse horizontal de semi-eixos $50m$ e $200m$. Calcule a velocidade do autómovel para que a aceleração normal máxima seja $2m/s^2$.
 
-
-\indent {\it Obs:} Para calcular a curvatura, você provavelmente usou uma parametrização do tipo $\vec{r}=a\sin (t) + b\cos (t)$, explique por que esta parametrização pode ser usada para obter a curvatura, mas não pode ser usada diretamente para calcular a aceleração normal.
 \end{exeresol}
 \begin{resol}
-A curvatura máxima da pista é:
- $$k_{max}=\frac{200}{50^2}=\frac{2}{25}\text{m}^{-1}$$
- Sabemos que $a_N=\kappa v^2$, portanto a máxima velocidade possível é:
- $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
+  A curvatura máxima da pista é:
+  $$k_{max}=\frac{200}{50^2}=\frac{2}{25}\text{m}^{-1}$$
+  Sabemos que $a_N=\kappa v^2$, portanto a máxima velocidade possível é:
+  $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
 
- Sobre a observação, a parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema.
+  {\it Obs:}
+ A parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema. Por isso, usamos a curvatura da elipse realizar os cálculos e conectar aleceração normal com velocidade escalar.
 \end{resol}
-\begin{exer}
+\begin{exeresol}
 Considere a trajetória  dada por
 $$x(t)=\cos(t),~~  y(t)=\sin 2t,~~ z(t)=0.$$
 
 Esboce o gráfico desta trajetória sobre o plano $xy$. Encontre uma expressão para a curvatura $k$ como uma função da coordenada $x$ na forma $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}.$$ Mostre que a curvatura é zero na origem e apenas na origem. Esboce, agora, o gráfico da curvatura como função de $x$ abaixo do gráfico da curva.
 Dica: Use identidades trigonométricas como $\sin(2t)=2\sin(t)\cos(t)$, $\cos(2t)=\cos^2(t)-\sin^2(t)$ e $\sin^2(t)+\cos^2(t)=1$.
-\end{exer}
+\end{exeresol}
 \begin{resol}
 A curva é dada por:
 $$\vec{r}(t)=\cos (t)\vec{i}+ \sin (2t)\vec{j}.$$
@@ -1227,16 +1228,16 @@ $$\kappa(x)=\frac{|x|(6-4x^2)}{\left(5-17x^2+16x^4\right)^{3/2}}. $$
 
 \begin{exeresol}  Considere a hélice circular não uniforme dada por
   \begin{eqnarray*}
-    x&=&\cos(t)\\
-    y&=&\sin(t)\\
-    z&=&f(t):=8\sqrt{t}.\\
+    x(t)&=&\cos(t)\\
+    y(t)&=&\sin(t)\\
+    z(t)&=&f(t):=8\sqrt{t}.\\
   \end{eqnarray*}
   \includegraphics[scale=.6]{./cap_curvas/figs/helice_sqrt_z}
   \begin{itemize}
-    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e mostre que $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
+    \item[a)] Encontre o passo $P(t)$ (variação da coordenada $z$) entre os pontos dados por $t_0=t$ e $t_1=t+2\pi$ e simplifique a expressão para obter $P(t)=\frac{2\pi}{\sqrt{8t} + \sqrt{8t+2\pi}}.$.
   \item[b)] Encontre  a curvatura desta hélice usando a fórmula:
   $$\kappa=\frac{\sqrt{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}}{\left({1+\left(f'(t)\right)^2}\right)^{3/2}}$$
-    \item[c)] Encontre a torção desta curva usando a seguinte fórmula:
+    \item[c)] Encontre a torção desta curva usando a fórmula dada no Exemplo~\ref{exemplo_sincosf}:
     $$\tau=\frac{f'(t)+f'''(t)}{1+\left(f'(t)\right)^2+\left(f''(t)\right)^2}$$
     \item[d)] Interprete os limites do passo, da curvatura e da torção quando $t\to \infty$.
     \end{itemize}
@@ -1273,14 +1274,14 @@ Vemos que:
 \end{eqnarray*}
 A intepretação intuitiva é que, à medida que o passo da hélice decresce, a curva se aproxima de uma circunferência unitária.  A curvatura se aproxima da curvatura dessa circunferência e a torção se aproxima de zero. Dica: Analise o gráfico dessa curva.
   \end{resol}
-  
+
 
 
 \subsection*{Exercícios}
 \begin{exer}
  Calcule a curvatura $\kappa(x)$ e faça um esboço com a respectiva circuferência de curvatura:
  \begin{itemize}
-  \item[a)] $y=\frac{1}{x}$, em $x=1$. 
+  \item[a)] $y=\frac{1}{x}$, em $x=1$.
   \item[b)] $y=\frac{1}{2}x^2$, em $x=-1$.
   \item[c)] $y=e^x$, em $x=0$.
  \end{itemize}
@@ -1295,11 +1296,12 @@ A intepretação intuitiva é que, à medida que o passo da hélice decresce, a 
 \end{resp}
 
 \begin{exer}
- Calcule o raio de curvatura $\rho(t)$ da elipse $x(t)=2\cos(t)$, $x(t)=\sin(t)$, $0\leq t\leq2\pi$, $t=0$ e $t=\frac{\pi}{2}$. Esboce as circunferências de curvatura nestes pontos.
+  Calcule o raio de curvatura $\rho(t)$ da elipse $x(t)=2\cos(t)$, $x(t)=\sin(t)$, $0\leq t\leq2\pi$, $t=0$ e $t=\frac{\pi}{2}$. Esboce as circunferências de curvatura nestes pontos.
 \end{exer}
 \begin{resp}
- $\rho(0)=\frac{1}{2}$.
+  $\rho(0)=\frac{1}{2}$.
 \end{resp}
+
 \begin{exer}
 Em que ponto a curva $y=e^x$ tem a máxima curvatura?
 \end{exer}
@@ -1307,23 +1309,36 @@ Em que ponto a curva $y=e^x$ tem a máxima curvatura?
  $t=\frac{1}{2}\ln\left(\frac{1}{2}\right)$.
 \end{resp}
 
+\begin{exer} Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
+\end{exer}
+\begin{resp}
+ $\sqrt{40}m/s$
+\end{resp}
+
+\begin{exer}
+  Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. O que acontece quando $a=b$? Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m? Dice: Você pode usar as fórmulas do Exemplo~\ref{ex_calculo_curvatura_elipse}.
+ \end{exer}
+ \begin{resp}
+  $\rho_{min}= \frac{a^2}{b}$ e $\rho_{max}= \frac{b^2}{a}$. Quando $a=b$, a elipse é uma circuferência e o raio de curvatura é constante igual a $a=b$. $a=100m$ e $b=200m$.
+ \end{resp}
+
 
 \begin{exer} Considere a hélice dada por
 \begin{eqnarray*}
-x&=&a\cos(t),\\
-y&=&a\sin(t),\\
-z&=&ct,
+x(t)&=&a\cos(t),\\
+y(t)&=&a\sin(t),\\
+z(t)&=&ct,
 \end{eqnarray*}
 onde $a>0$.
 \begin{itemize}
 \item[a)] Encontre  a curvatura desta hélice usando a fórmula
 $$\kappa=\frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}$$
 \item[b)] Encontre a torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}$$
-\item[c)] Encontre a torção máxima e a torção mínima para um dado $a$. 
+\item[c)] Encontre a torção máxima e a torção mínima para um dado $a$.
 \end{itemize}
 \end{exer}
 \begin{resp}
- $\kappa= \frac{a}{a^2+c^2}$, $\tau = \frac{c}{a^2+c^2}$, $\tau_{min} = -\frac{1}{2a}$ e $\tau_{max} = \frac{1}{2a}$ 
+ $\kappa= \frac{a}{a^2+c^2}$, $\tau = \frac{c}{a^2+c^2}$, $\tau_{min} = -\frac{1}{2a}$ e $\tau_{max} = \frac{1}{2a}$
 \end{resp}
 
 
@@ -1333,36 +1348,22 @@ Considere as funções vetoriais dadas por
 \vec{f}(t)&=&\cos(\pi t)\vec{i}+\sin(\pi t)\vec{j}\\
 \vec{g}(t)&=&\cos(\pi t^3)\vec{i}+\sin(\pi t^3)\vec{j}
 \end{eqnarray*}
-Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário? 
+Verifique que ambas parametrizam a mesma curva quando $-1\leq t \leq 1$. Verifique se as parametrizações são regulares e compare o comportamento da derivada em $t=0$. Que consequências isso tem para a existência do vetor tangente unitário?
 \end{exer}
 
 
-\begin{exer}Uma motocicleta percorre uma trajetória circular de raio $20m$ com velocidade constante em módulo. A motocicleta poderá derrapar se a aceleração normal exceder $2m/s^2$. Qual é a velocidade máxima do motocicleta para que ela não derrape?
-\end{exer}
-\begin{resp}
- $\sqrt{40}m/s$
-\end{resp}
 
-\begin{exer} Mostre que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então
-$$\|\vec{a}\|^2=a_N^2+a_T^2$$
+\begin{exer} Através da relação algébrica entre módulo e produto interno aplicada à velocidade, i.e., $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$), verifique que se $a_N$ e $a_T$ indicam as acelerações normal e tangencial, respectivamente, então:
+$$\|\vec{a}\|^2=a_N^2+a_T^2,$$
 onde $\vec{a}$ é o vetor aceleração.
 \end{exer}
 \begin{resp}
  \begin{eqnarray}
 \|\vec{a}\|^2&=&\vec{a}\cdot\vec{a}=\left(a_T\vec{T}+a_N\vec{N}\right)\cdot\left(a_T\vec{T}+a_N\vec{N}\right)\\
-&=&a_T^2\vec{T}\cdot\vec{T}+a_Na_T\vec{T}\cdot\vec{N}+a_Ta_N\vec{T}\cdot\vec{N}+A_N^2\vec{T}\cdot\vec{T}  
+&=&a_T^2\vec{T}\cdot\vec{T}+a_Na_T\vec{T}\cdot\vec{N}+a_Ta_N\vec{T}\cdot\vec{N}+A_N^2\vec{T}\cdot\vec{T}
  \end{eqnarray}
 \end{resp}
 
-
-
-
-\begin{exer}
- Calcule o valor mínimo e o valor máximo do raio de curvatura de uma elipse de semi-eixos $a$ e $b$ quando $0<a<b$. O que acontece quando $a=b$? Quais são os semi-eixos da elipse cujo raio de curvatura varia entre $50m$ e $400$m?
-\end{exer}
-\begin{resp}
- $\rho_{min}= \frac{a^2}{b}$ e $\rho_{max}= \frac{b^2}{a}$. Quando $a=b$, a elipse é uma circuferência e o raio de curvatura é constante igual a $a=b$. $a=100m$ e $b=200m$. 
-\end{resp}
 
 \begin{exer}
  Seja $\vec{r}(t)$ o vetor posição de uma partícula em movimento e $t$ o tempo. Encontre $\vec{v}(t)$, $\vec{a}(t)$ e $\|\vec{v}(t)\|$. Faça um esboço da trajetória representando $\vec{v}(t)$ e $\vec{a}(t)$ em $t_0$.
@@ -1385,13 +1386,13 @@ onde $\vec{a}$ é o vetor aceleração.
  A trajetória de uma partícula é representada na forma paramétrica por $x(t)=a\cos(wt)$, $y(t)=b\sin(wt)$.
  \begin{itemize}
   \item[a)] Faça um esboço da trajetória para $a=2$, $b=1$ e $w=1$.
-  \item[b)] Mostre que a aceleração $\vec{a}$ está voltada em direção à origem.
-  \item[c)] Mostre que $\|\vec{a}(t)\|$ é proporcional à distância da partícula à origem.
+  \item[b)] Verifique que a aceleração $\vec{a}$ está voltada em direção à origem.
+  \item[c)] Verifique que $\|\vec{a}(t)\|$ é proporcional à distância da partícula à origem.
  \end{itemize}
  \end{exer}
 
 \begin{exer}
-O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec{j}$. Encontre o valor mínimo  para $\|\vec{v}(t)\|$ da partícula e sua localização quando tiver esta velocidade. 
+O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec{j}$. Encontre o valor mínimo  para $\|\vec{v}(t)\|$ da partícula e sua localização quando tiver esta velocidade.
 \end{exer}
 \begin{resp}
  $\left\|\vec{v}(t)\right\|_{min}=\frac{\sqrt{2}}{2}$, $P\left(\frac{3}{16},-\frac{1}{16}\right)$.
@@ -1408,12 +1409,11 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \begin{resp}
  $\left(P\left(-\frac{19}{16},\frac{3}{2},\frac{3}{16}\right)\right)$.
 \end{resp}
-\begin{exer}
- Prove que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares. (Sugestão: Considere $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$).
+\begin{exer} Através da relação algébrica entre módulo e produto interno aplicada à velocidade, i.e., $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$), verifique  que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares.
 \end{exer}
-\begin{exer}Prove que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.  (Sugestão: lembre-se que $\kappa=\frac{\|\vec{v}\times \vec{a}\|}{v^3} )$.
+\begin{exer} Através da fórmula da curvatura dada por $\kappa(t)=\frac{\|\vec{v}(t)\times \vec{a}(t)\|}{v(t)^3} )$, concluda que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.
 \end{exer}
-\begin{exer}Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
+\begin{exer} Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
 \begin{itemize}
  \item[a)] $\vec{r}(t)=2\cos(t)\vec{i}+2\sin(t)\vec{j}$, $t_0=\frac{\pi}{3}$.
  \item[b)] $\vec{r}(t)=e^{-t}\vec{i}+e^{t}\vec{j}$, $t_0=0$.
@@ -1428,7 +1428,7 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
  \item[c)] $a_T=2\sqrt{5}$, $a_N=2\sqrt{5}$.
  \item[d)] $a_T=\frac{22}{\sqrt{14}}$, $a_N=\sqrt{\frac{38}{7}}$.
 \end{itemize}
- 
+
 \end{resp}
 \begin{exer} Calcule a componente tangencial da aceleração dado $v(t) = \|\vec{v}\| = \sqrt{3t^2+4}$, $t=2$.
 \end{exer}
@@ -1437,10 +1437,10 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \end{resp}
 
 
-\begin{exer}Dada a aceleração $\vec{a}(t)$ de uma partícula, calcule a velocidade $\vec{v}(t)$ e o vetor posição $\vec{r}(t)$, supondo $t\geq 0$, $\vec{v}(0)=\vec{0}$ e  $\vec{r}(0)=\vec{0}$, para:
+\begin{exer} Dada a aceleração $\vec{a}(t)$ de uma partícula, calcule a velocidade $\vec{v}(t)$ e o vetor posição $\vec{r}(t)$, supondo $t\geq 0$, $\vec{v}(0)=\vec{0}$ e  $\vec{r}(0)=\vec{0}$, para:
 \begin{itemize}
  \item[a)] $\vec{a}=12\cos(2t)\vec{i}-8\sin(2t)\vec{j}+16t\vec{k}$.
- \item[b)] $\vec{a}=e^{-t}\vec{i}-6(t+1)\vec{j}+3\sin(t)\vec{k}$. 
+ \item[b)] $\vec{a}=e^{-t}\vec{i}-6(t+1)\vec{j}+3\sin(t)\vec{k}$.
 \end{itemize}
 \end{exer}
 \begin{resp}
@@ -1468,21 +1468,3 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
   &=&\frac{20-16\cos(t)}{{5-4\cos(t)}}=4.
   \end{eqnarray*}
 \end{resp}
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

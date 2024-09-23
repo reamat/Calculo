@@ -11,6 +11,13 @@ $$\vec{r}(u,v)=x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$$
 \item [b)] $\vec{g}(u,v)=\sin(u)\cos(v) \vec{i}+\cosh(u)\sinh(v)\vec{j}+u\vec{k}$
 \end{itemize}
 \end{ex}
+
+As derivadas parciais, limites e integrais são definidas termo a termo, semelhante ao estudo de curvas do capítulo anterior. 
+\begin{ex}
+ Dada a função vetorial $\vec{r}(u,v)=u\vec{i}+\sin(v)\vec{j}+e^{uv}\vec{k}$, temos $\vec{r}_u=\vec{i}+ve^{uv}\vec{k}$ e $\vec{r}_v=\cos(v)\vec{j}+ue^{uv}\vec{k}$.
+\end{ex}
+
+
 Uma superfície\index{superfície} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(u,v)$ não constante em todo o seu domínio. A seguinte interpretação ajuda entender essa função: se fixamos $v$ e temos que $\vec{r}(u,v)$ descreve uma curva e $\vec{r}_u(u,v)$ é um vetor tangente a essa curva. Da mesma forma, se fixamos $u$ temos que $\vec{r}(u,v)$ descreve uma curva e $\vec{r}_v(u,v)$ é um vetor tangente a essa curva. Se essas curvas não forem paralelas, temos um sistema de coordenadas curvilíneo para escrever todos os pontos da superfície. Pense no globo terrestre, o medidiano de Greenwich e a linha do Equador: o globo como uma superfície, Greenwich e Equador como duas curvas e longitude e latitude como um sistema de coordenadas curvilíneo, veja Figura~\ref{cap_superficies_esfera} Observe que esse sistema curvilíneo fica bem definido quando $\vec{r}_u$ e $\vec{r}_v$ não são paralelos nos pontos do domínio. Chamamos de superfície regular aquela que satisfaz
 $$
 \vec{r}_u\times \vec{r}_v\neq \vec{0}.
@@ -30,7 +37,7 @@ $$\cos(v)=\frac{x}{a\sin(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{a\sin(u)},~~u
  \begin{figure}%{r}{8cm}
 \centering
  \includegraphics{cap_superficies/figs/figura_1}\label{cap_superficies_esfera}
-\caption{Um esfera centrada na origem com meridianos e paralelos traçados.}
+\caption{Uma esfera centrada na origem com meridianos e paralelos traçados.}
 \end{figure}
 \end{ex}
 
@@ -71,10 +78,10 @@ $$\cos(v)=\frac{x}{\cosh(u)} \quad \hbox{e} \quad \sin(v)=\frac{y}{\cosh(u)}.$$
  
 \section{Vetor unitário normal e orientação}\index{vetor normal à uma superfície}
 Para os fins de teoria de integraçao sobre superfícies, que discutiremos mais adiante, é fundamental definir o vetor unitário normal. Dado uma superfície e um ponto nela, dizemos que um vetor é normal à superfície se ele é perpendicular no ponto a cada curva contida na superfícies. Em especial, um vetor normal à superfícies no ponto $x_0=x(u_0,v_0)$, $y_0=y(u_0,v_0)$ e $z_0=z(u_0,v_0)$, deve ser perpendicular às curvas $\vec{r}(u_0,v)$ e $\vec{r}(u,v_0)$, isto é, as curvas geradas quando se fixa um dos parâmetros $u_0$ ou $v_0$, respectivamente. Assim, podemos concluir que cada vetor normal está da mesma direção do produto vetorial $\vec{r}_u\times\vec{r}_v$. Finalmente, o vetor normal unitário deve ter norma unitária, portanto, deve ser da forma:
-\begin{equation}\label{cap_superficies_normal_unitário}
+\begin{equation}\label{cap_superficies_normal_unitario}
  \vec{n} = \pm \frac{\vec{r}_u\times\vec{r}_v}{\|\vec{r}_u\times\vec{r}_v\|}.
 \end{equation}
-Observe que se a superfície for regular, então $\vec{r}_u\times\vec{r}_v\neq \vec{0}$, o que indica que a expressão \eqref{cap_superficies_normal_unitário} está bem definida. Aqui, o sinal indica para qual lado o vetor normal aponta e define a orientação da superfície. 
+Observe que se a superfície for regular, então $\vec{r}_u\times\vec{r}_v\neq \vec{0}$, o que indica que a expressão \eqref{cap_superficies_normal_unitario} está bem definida. Aqui, o sinal indica para qual lado o vetor normal aponta e define a orientação da superfície. 
 
 \begin{ex}Vamos calcular o vetor normal à esfera
 $$
@@ -182,13 +189,22 @@ A figura \ref{quadricas} apresenta uma lista das principais quádricas\index{qu�
 \item[f)] Hiperbolóide de duas folhas:  $\displaystyle -\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$
 \end{itemize}
 \begin{figure}[htp]
+\begin{minipage}{5cm}
 \includegraphics{cap_superficies/figs/figura_2}
+\end{minipage}\begin{minipage}{5cm}
 \includegraphics{cap_superficies/figs/figura_3}
+\end{minipage}\begin{minipage}{5cm}
 \includegraphics{cap_superficies/figs/figura_4}
+\end{minipage}
 
+\begin{minipage}{5cm}
 \includegraphics{cap_superficies/figs/figura_5}
+\end{minipage}\begin{minipage}{5cm}
 \includegraphics{cap_superficies/figs/figura_6}
-\includegraphics{cap_superficies/figs/figura_7} \caption{\label{quadricas}Quádricas}
+\end{minipage}\begin{minipage}{5cm}
+\includegraphics{cap_superficies/figs/figura_7}
+\end{minipage}
+\caption{\label{quadricas}Quádricas}
 \end{figure}
 
 Algumas das superfícies quádricas são gráficos de funções, como é o caso dos parabolóides e outras não são, como é o caso cone elíptico. Mesmo assim, podemos definir a quádrica como a união do gráfico de duas funções. Por exemplo, o cone elíptico pode ser escrito como a união dos gráficos das funções $z=\sqrt{\frac{x^2}{a^2}+\frac{y^2}{b^2}}$ e $z=-\sqrt{\frac{x^2}{a^2}+\frac{y^2}{b^2}}$.
