@@ -7,11 +7,11 @@
 \section{Funções vetoriais de uma variável - curvas e trajetórias}
 Uma função vetorial de uma variável é uma função da forma $$\vec{r}:D\to \mathbb{R}^3,$$ onde $D\subseteq \mathbb{R}$ é o domínio de definição de $\vec{r}$ e $t$ é um parâmetro - podendo ser interpretado como o tempo ou não. Em coordenadas cartesianas, uma função vetorial assume a seguinte forma:
 $$\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$
-onde $\vec{i}=(1;0;0)$,$\vec{j}=(0;1;0)$ e $\vec{k}=(0;0;1)$ são mostrados na figura \ref{fig_vetijk}.
+onde $\vec{i}=(1,0,0)$, $\vec{j}=(0,1,0)$ e $\vec{k}=(0,0,1)$ são mostrados na figura \ref{fig_vetijk}.
 
 \begin{figure} \label{fig_vetijk}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/vetores_ijk}
+    \includegraphics[scale=.75]{./cap_curvas/figs/vetores_ijk}
  \caption{Os vetores canônicos $\vec{i},\vec{j},\vec{k}$.}
   \end{center}
 \end{figure}
@@ -24,22 +24,11 @@ onde $\vec{i}=(1;0;0)$,$\vec{j}=(0;1;0)$ e $\vec{k}=(0;0;1)$ são mostrados na f
 \end{itemize}
 \end{ex}
 
-Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\frac{d\vec{r}(t)}{dt} \neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\frac{d\vec{r}(t)}{dt} \neq 0$ em todos os pontos. É possível definir orientação para uma curva regularmente parametrizada\index{orientação de uma curva}, a orientação é dada pelo sentido de crescimento do parâmetro $t$.
-
+O domínio natural de uma função vetorial é formado pelo conjunto de parâmetro possíveis tal que a função ainda seja real.
 \begin{ex}
-A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}$ para $0\leq t \leq 2\pi$ descreve  uma circunferência de raio 1 centrada na origem sobre o plano $xy$ orientada no sentido anti-horário.
+ O domínio da função vetorial $\vec{r}(t)=\frac{1}{\sqrt{t-1}}\vec{i}+\frac{1}{2-t}\vec{j}$ é formado pelo parâmetros $t$ tal que $t-1>0$ e $2-t\neq 0$, pois não há divisão por zero nem raíz de número negativo no conjunto dos números reais. Logo, $D=\left\{t\in\mathbb{R}; t>1 \text{ e } t\neq 2\right\}$
 \end{ex}
 
-\begin{figure}%{0.35\textwidth}
-\begin{center}
-    \includegraphics{./cap_curvas/figs/helice}
-\caption{\label{helicedex}Hélice circular dextrogira associada à função vetorial do Exemplo~\ref{cap_curvas:exemplo_helice}.}
-  \end{center}
-\end{figure}
-
-\begin{ex}\label{cap_curvas:exemplo_helice}
-A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+t\vec{k}$ para $ t \in\mathbb{R}$ descreve uma hélice circular, como mostra a figura \ref{helicedex}.
-\end{ex}
 
 O limite\index{limite de uma função vetorial de uma variável}, a derivação\index{derivada de uma função vetorial de uma variável} e a integração vetorial\index{integral de uma função vetorial de uma variável} são definidas componente a componente no sistema de coordenadas cartesiano:
 \begin{eqnarray}
@@ -58,7 +47,7 @@ O limite\index{limite de uma função vetorial de uma variável}, a derivação\
 \item $\frac{d}{dt}\left[\vec{r}_1(t)\times \vec{r}_2(t)\right]=\vec{r}_1(t)\times\frac{d\vec{r}_2(t)}{dt}+\frac{d\vec{r}_1(t)}{dt}\times\vec{r}_2(t)$
 \end{enumerate}
 \end{teo}
-\begin{proof} Os dois primeiros ítens podem ser obtidos diretamente de (\ref{defder}). A verificação fica a cargo do leitor. O item três pode ser obtido de  uma aplicação da regra da cadeia a (\ref{defder})\index{derivada do produto de um escalar por um vetor}:
+\begin{proof} Os dois primeiros itens podem ser obtidos diretamente de (\ref{defder}). A verificação fica a cargo do leitor. O item três pode ser obtido de  uma aplicação da regra da cadeia a (\ref{defder})\index{derivada do produto de um escalar por um vetor}:
 \begin{eqnarray*}\frac{d}{dt}\left[f(t) \vec{r}(t)\right]&=& \frac{d}{dt}\left[f(t) {x}(t)\vec{i}+f(t) {y}(t)\vec{j}+f(t) {z}(t)\vec{k}\right]\\
 &=&\left[f'(t) x(t)+f(t)x'(t)\right]\vec{i}+\left[f'(t) y(t)+f(t)y'(t)\right]\vec{j}+\left[f'(t) z(t)+f(t)z'(t)\right]\vec{k}\\
 &=&f'(t)\left[x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}\right]+f(t)\left[x'(t)\vec{i}+y'(t)\vec{j}+z'(t)\vec{k}\right]\\
@@ -90,6 +79,24 @@ Finalmente a derivada do produto vetorial pode ser obtida de\index{derivada do p
 \end{eqnarray*}
 }
 \end{proof}
+
+
+Uma curva\index{curva} no espaço pode ser representada pelo conjunto de pontos de uma função vetorial $\vec{r}(t)$ não constante em todo o seu domínio. Um ponto $\vec{r}(t)$ de uma parametrização é dito regular se $\frac{d\vec{r}(t)}{dt} \neq 0$. Uma parametrização é dita regular\index{parametrização regular} em $t$ se $\frac{d\vec{r}(t)}{dt} \neq 0$ em todos os pontos. Definimos orientação de uma curva regular \index{orientação de uma curva} aquela dada pelo sentido de crescimento do parâmetro $t$.
+
+\begin{ex}
+A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}$ para $0\leq t \leq 2\pi$ descreve  uma circunferência de raio 1 centrada na origem sobre o plano $xy$ orientada no sentido anti-horário.
+\end{ex}
+
+\begin{figure}%{0.35\textwidth}
+\begin{center}
+    \includegraphics[scale=.5]{./cap_curvas/figs/helice}
+\caption{\label{helicedex}Hélice circular dextrogira associada à função vetorial do Exemplo~\ref{cap_curvas:exemplo_helice}.}
+  \end{center}
+\end{figure}
+
+\begin{ex}\label{cap_curvas:exemplo_helice}
+A função vetorial $\vec{f}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+t\vec{k}$ para $ t \in\mathbb{R}$ descreve uma hélice circular, como mostra a figura \ref{helicedex}.
+\end{ex}
 
 Demonstraremos agora um importante teorema do cálculo vetorial:
 \begin{teo}\label{teodernormacst} Uma função vetorial $\vec{u}(t)$ possui norma constante se e somente se $\vec{u}(t)\cdot\frac{d\vec{u}(t)}{dt}=0$.
@@ -309,7 +316,7 @@ Este limite converge para $\frac{d\vec{r}(t)}{dt}$ e, geometricamente, para o ve
 
 \begin{figure}%{0.35\textwidth}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/vetor_tangente_circunferencia}
+    \includegraphics[scale=.75]{./cap_curvas/figs/vetor_tangente_circunferencia}
 \caption{O vetor tangente $\frac{d\vec{r}(t)}{dt}$}\label{circtang}
   \end{center}
 \end{figure}
@@ -339,7 +346,7 @@ representa um vetor tangente unitário.
 
 \begin{figure}%{0.35\textwidth}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/helice_TNB}
+    \includegraphics[scale=.75]{./cap_curvas/figs/helice_TNB}
 \caption{Triedro de Frenet-Serret}\label{Frenet_Serret}
   \end{center}
 \end{figure}
@@ -580,7 +587,7 @@ O raio de curvatura tem a seguinte interpretação geométrica: considere um pon
 
 \begin{figure}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/circulo_curvatura_parabola}
+    \includegraphics[scale=.75]{./cap_curvas/figs/circulo_curvatura_parabola}
  \caption{Círculo de curvatura}\label{raio_de_curvatura}
   \end{center}
 \end{figure}
@@ -753,7 +760,7 @@ $$
 
  \begin{figure}
 \begin{center}
-    \includegraphics{./cap_curvas/figs/curvatura_torcao}
+    \includegraphics[scale=.75]{./cap_curvas/figs/curvatura_torcao}
  \caption{Curvatura e Torção}\label{Curvatura_torcao_1}
   \end{center}
 \end{figure}
@@ -1008,7 +1015,7 @@ onde
 -3\sin (t) & 3\cos (t) & 2t\vec{k}\\
 -3\cos (t) & -3\sin (t) & 2\vec{k}
 \end{array}
-\right|\\&=&\left(6\cos(t)+6t\sin(t)\right)\vec{i}+\left(-6t\cos(t) +6\sin(t)\right)\vec{j}+\underbrace{\left(9\sin^2(t)+9\cos^2(t)\right)}_{9}\vec{k}
+\right|\\&=&\left(6\cos(t)+6t\sin(t)\right)\vec{i}+\left(-6t\cos(t) +6\sin(t)\right)\vec{j}\\&+&\underbrace{\left(9\sin^2(t)+9\cos^2(t)\right)}_{9}\vec{k}
 \end{eqnarray*}
 Assim:
 \begin{eqnarray*}
