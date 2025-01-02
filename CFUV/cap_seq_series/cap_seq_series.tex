@@ -4,11 +4,11 @@
 
 \emconstrucao
 
-Nesse capítulo vamos abordar um assunto muito importânte de sequência e séries,
+Nesse capítulo vamos abordar um assunto muito importante de sequências e séries,
 inicialmente vamos introduzir o conceito de sequências, sua convergência e
-propriedades álgebricas e outros resultados teóricos importantes para a 
-construção de séries que virá logo a seguir, e técnicas para calcular o limite.
-Também discutiremos sobre um conjunto especial de sequências, as sequências
+propriedades algébricas e outros resultados teóricos importantes para a 
+construção de séries que virá logo a seguir, além de técnicas para se calcular o limite.
+de uma sequência. Também discutiremos sobre um conjunto especial de sequências, as sequências
 monótonas, e suas propriedades especiais.
 
 Após veremos o conceito de séries e sua relação com sequências, bem como 
@@ -21,7 +21,7 @@ diversas aplicações.
 
 Uma sequência é uma função $X:\mathbb{N} \rightarrow \mathbb{R}$ definida no 
 conjunto dos números naturais, que toma valores no conjunto dos números reais, 
-ou seja, associa a cada numero natural $n$, um numero real $x(n)$, esse valor 
+ou seja, associa a cada número natural $n$, um número real $x(n)$, esse valor 
 $x(n$) é representado por $x_n$. Usualmente uma sequência $X$ é representada 
 por uma das seguintes notações: $(x_1,x_2,x_3,\dots,x_n,\dots),
 (x_n)_{n \in \mathbb{N}}$, $(x_n)$,$\{x_n\}$,ou ainda$\{x_n\}_{n \in \mathbb{N}}$.
@@ -60,7 +60,7 @@ $B$ tal que $B \leq x_n$ para todo $n \in \mathbb{N}$, finalmente uma sequência
 é dita ser limitada quando é limitada superiormente e inferiormente.
 
 As sequências dos exemplos ~\ref{ex: 1} e ~\ref{ex: 3} são limitadas, enquanto 
-que a sequência do exemplo ~\ref{ex: 2} é limitada.
+que a sequência do exemplo ~\ref{ex: 2} é ilimitada.
 
 \subsection{Sequências convergentes}\index{sequências!convergentes}
 
@@ -96,7 +96,7 @@ Um resultado bastante importante sobre sequências é apresentado a seguir
     $$|x_n - L_1| < \frac{\epsilon}{2},$$
     e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$, 
     $$|x_n - L_2| < \frac{\epsilon}{2},$$
-    tomamos $n_0 = max\{n_0,n_1 \}$, assim para $n > n_0$ temos
+    tomamos $n_0 = max\{n_2,n_2\}$, assim para $n > n_0$ temos
     $$|L_1-L_2| \leq |L_1 - x_n| + |x_n - L_2|$$
     $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
 \end{proof}
@@ -105,9 +105,9 @@ Assim, esse resultado nos assegura que se conseguirmos encontrar o limite de uma
 sequência, seja qual for a forma para isso, ele sera único.
 
 Antes de prosseguir para alguns exemplos, primeiro vamos falar das propriedades 
-aritiméticas do limite.
+aritméticas do limite.
 
-\begin{teo}[Propriedades algébricas]\label{teo:Propriedades} Sejam $x_n$ e $y_n$
+\begin{teo}[Propriedades algébricas]\label{teo:Propriedades} Sejam $(x_n)$ e $(y_n)$
     sequências convergentes, suponha que $\lim_{n \to \infty} x_n = L_1$ e
     $\lim_{n \to \infty} y_n = L_2$, e seja $\lambda \in \mathbb{R}$, então
     \item  [a)] $\lim_{n \to \infty} \lambda = \lambda$
@@ -177,7 +177,7 @@ sequências.
     que para a função $f(x) = \frac{1}{x}$ vale que    
     $$\lim_{x \to \infty} \frac{1}{x} = 0$$
     e portanto pelo último resultado
-    $$\lim_{x \to \infty} \frac{1}{n} = 0$$
+    $$\lim_{n \to \infty} \frac{1}{n} = 0$$
 \end{ex}
 
 A seguir é apresentado outro resultado que ajuda no cálculo do limite de 
@@ -229,12 +229,12 @@ Note que pelas definições, as sequências crescentes e não-decrescentes são
 limitadas inferiormente pelo seu primeiro termo $x_1$, analogamente as sequências
 decrescentes e não-crescente são limitadas superiormente pelo seu primeito termo 
 $x_1$, assim para elas serem limitadas, basta que sejam limitadas superiormente,
-e inferiormente, respectivamente.
+ou inferiormente, respectivamente.
 
 Um resultado importante sobre a convergência de sequencias monótonas é o seguinte.
 
 \begin{teo}\label{monótona}
-    Seja $(x_n)$ sequência monótona limitada, então $(x_n)$ convergente.
+    Seja $(x_n)$ uma sequência monótona e limitada, então $(x_n)$ convergente.
 \end{teo}
 
 \begin{proof}
@@ -254,7 +254,7 @@ Outro resultado bastante importante é o chamado critério do confronto, ou tamb
 conhecido como critério do sanduíche.
 
 \begin{teo}
-    Sejam $x_n,y_n,z_n$ sequências, tais que $x_n \leq y_n \leq z_n$ para todo 
+    Sejam $(x_n),(y_n),(z_n)$ sequências, tais que $x_n \leq y_n \leq z_n$ para todo 
     $n \in \mathbb{N}$ e $\lim_{n \to \infty} x_n = lim_{n \to \infty} z_n = L$,
     então $lim_{n \to \infty} y_n = L$.
 \end{teo}
@@ -268,7 +268,7 @@ conhecido como critério do sanduíche.
     $$L - \epsilon < x_n \leq y_n \leq z_n < L + \epsilon$$
     Logo para $n > n_0$
     $$ |y_n - L| < \epsilon$$
-    De onde segue que $\lim{\:} y_n = L$
+    De onde segue que $\lim_{n \to \infty} y_n = L$
 \end{proof}
 
 \subsection*{Exercícios resolvidos}
@@ -277,7 +277,7 @@ conhecido como critério do sanduíche.
 
 \begin{exeresol}
     Verifique que a sequência $x_n = \frac{1}{n}$ para todo $n \in \mathbb{N}$ a 
-    partir da definição de converg~encia dada.
+    partir da definição de convergência dada.
 \end{exeresol}
 
 \begin{resol}
@@ -290,7 +290,7 @@ conhecido como critério do sanduíche.
     $$\frac{1}{n} < \frac{1}{n_0} < \epsilon.$$
     Portanto, para $n>n_0$
     $$|\frac{1}{n} - 0| < \epsilon.$$
-    Assim $\lim{\:} \frac{1}{n} = 0$.
+    Assim $\lim_{n \to \infty} \frac{1}{n} = 0$.
 \end{resol}
 
 \begin{exeresol}
@@ -299,10 +299,10 @@ conhecido como critério do sanduíche.
 \end{exeresol}
     
 \begin{resol}
-    Como sabemos pelo exercício anterior $\lim{\:} \frac{1}{n} = 0$, e pelo
-    ~\ref{teo:propriedades} sabemos que $\lim{\:} 1 = 1$, assim pelo mesmo teorema
-    sabemos que o limite da soma é a soma dos limites assim 
-    $\lim{\:} 1 +\frac{1}{n} = 1$.
+    Como sabemos pelo exercício anterior $\lim_{n \to \infty} \frac{1}{n} = 0$, e pelo
+    ~\ref{teo:Propriedades} sabemos que $\lim_{n \to \infty} 1 = 1$, assim pelo mesmo teorema
+    sabemos que o limite da soma é a soma dos limites assim
+    $$\lim{n \to \infty} 1 +\frac{1}{n} = \lim_{n \to \infty} 1 + \lim_{n \to \infty} \frac{1}{n} = 1 + 0 = 1$$.
 \end{resol}
 
 \subsection*{Exercícios}
@@ -310,9 +310,9 @@ conhecido como critério do sanduíche.
 \construirExer
 
 \begin{exer}
-    Verifique que dado uma sequência $(x_n)$ convergente com $\lim{\:} x_n = L$,
+    Verifique que dado uma sequência $(x_n)$ convergente com $\lim_{n \to \infty} x_n = L$,
     e $m \in \mathbb{N}$, vale que
-    $$ \lim{\:} (x_n)^m = L^m$$
+    $$ \lim_{n \to \infty} (x_n)^m = L^m$$
 \end{exer}
 
 
@@ -324,9 +324,9 @@ De maneira intuitiva poderiamos nos perguntar o que ocorreria por exemplo se num
 soma de uma progressão geométrica ou aritmética, ao invés de somarmos uma 
 quantidade pré-definida de termos(finita), nós somassemos uma quantidade 
 indeterminada de termos(infinita), e é esse tipo de objeto que a série tenta dar
-um significa, a somas de uma quantidade indeterminada de termos.
+um significado, a somas de uma quantidade indeterminada de termos.
 
-Definimos agora de maneira mais formal o que é uma série, seja $a_n$ uma 
+Definimos agora de maneira mais formal o que é uma série, seja $(a_n)$ uma 
 sequência de números reais quaisquer, definimos uma série como sendo
 
 $$\sum_{n = 1}^{\infty} a_n = a_1 + a_2 + a_3 + \dots + a_n + \dots $$
@@ -334,22 +334,21 @@ $$\sum_{n = 1}^{\infty} a_n = a_1 + a_2 + a_3 + \dots + a_n + \dots $$
 Onde $a_n$ é chamado de termo geral da série.
 
 Vamos agora relacionar o conceito de séries com o que já vimos sobre sequências.
-Vamos definir a seguinte sequência $s_n$
+Vamos definir a seguinte sequência $(s_n)$
 
 $$ s_1 = a_1$$
 $$ s_2 = a_1 + a_2$$
 $$ s_3 = a_1 + a_2 + a_3$$
 $$\cdots$$
 $$ s_n = a_1 + a_2 + a_ 3 + \dots + a_n$$
-
-então $s_n$ é a chamda enésima soma parcial, que corresponde a soma dos primeiros
+então $s_n$ é a chamada enésima soma parcial, que corresponde a soma dos primeiros
 n termos da sequência $(a_n)$, a sequência $(s_n)$ é conhecida como a sequência 
 das somas parciais. Esta sequência busca aproximar a soma da série, de forma que
-ao n crescer, mais termos sejam incluidos de forma a aproximar cada vez mais a 
+ao n crescer, mais termos sejam incluídos de forma a aproximar cada vez mais a 
 soma da série. 
 
 Portanto, diremos que se existir o limite 
-$$ S = lim_{n \to \infty} s_n$$,
+$$ S = \lim_{n \to \infty} s_n$$
 ou seja, a sequência $(s_n)$ é convergente e possuí limite $S$, então diremos
 que a série $\sum_{n = 1}^{\infty} a_n$ é convergente, e que sua soma é $S$,
 assim
@@ -386,10 +385,10 @@ Esse é o primeiro resultado para avaliar a convergência de uma série:
 \begin{ex}
     A série $\sum_{n = 1}^{\infty} c$, onde $c \in \mathbb{R}$ e $c \neq 0$ é 
     divergente pois
-    $$\lim{\:} c = c.$$
+    $$\lim_{n \to \infty} c = c.$$
 \end{ex}
 
-É muito importante notar que somente $\lim{\:} a_n = 0$, não garante a convergência
+É muito importante notar que somente $\lim_{n \to \infty} a_n = 0$, não garante a convergência
 da série.
 \subsection*{Exercícios resolvidos}
 
@@ -420,10 +419,10 @@ da série.
     utilizando a técnica de frações parciais como
     $$\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1},$$
     de tal forma que o termo geral da sequência das somas parciais é expresso como
-    $$s_n = (1 - \frac{1}{2})+(\frac{1}{3}-\frac{1}{4})+\dots+(\frac{1}{n}-\frac{1}{n+1})$$
+    $$s_n = \bigg(1 - \frac{1}{2}\bigg)+\bigg(\frac{1}{3}-\frac{1}{4}\bigg)+\dots+\bigg(\frac{1}{n}-\frac{1}{n+1}\bigg)$$
     $$ = 1 - \frac{1}{n},$$
     Assim que pelo que vimos na seção de sequências, esse limite existe e é
-    $$lim s_n = 1,$$
+    $$\lim_{n \to \infty} s_n = 1,$$
     portanto
     $$\sum_{n = 1}^{\infty} \frac{1}{n(n+1)} = 1$$
     Um dos poucos casos em que conseguimos calcular diretamente a soma da série.
@@ -439,26 +438,27 @@ da série.
 \end{exer}
 
 \begin{resp}
-    Investigamos então os valores de $r$ para convergência, notamos que isso se
-    trata da série geométrica, onde as somas parciais são a soma de progressões
-    geométricas(PG). Se r = 1, a serie é 
-    $$ \sum_{n = 0}^{\infty} a$$,
-    como $a \neq $, essa série é divergente.
-    Se r = -1, essa série se torna
+    Investigamos então os valores de $r$ para se ter a convergência da série dada,
+    notamos que isso se trata da série geométrica, onde as somas parciais são a
+    soma de progressões geométricas(PG). Se r = 1, a serie é 
+    $$ \sum_{n = 0}^{\infty} a$$
+    como $a \neq 0$, essa série é divergente.
+    Se r = -1, essa série se torna a série
     $$ \sum_{n = 0}^{\infty} (-1)^n a$$
-    ou seja, as somas parciais ficam alternando entre $a$ e $0$, logo, 
+    ou seja, as somas parciais ficam alternando entre $a$ e $-a$, logo, 
     a sequência das somas parciais não converge, portanto a série é divergente.
     Se $|r| \neq 1$, portanto a soma parcial pelo observado inicialmente é uma
     PG de termo inicial $a$ e razão $r$, assim
-    $$s_2n = \frac{a}{a-r}(1-r^{n+1}).$$
+    $$s_n = \frac{a}{a-r}(1-r^{n+1}).$$
     Se $|r| < 1$, então $r^{n+1} \to 0$ quando $n \to \infty$, e portanto $(s_n)$
     converge, e pela expressão acima
-    $$ \lim{\:} s_n = \frac{a}{1-r}$$
+    $$ \lim{n \to \infty} s_n = \frac{a}{1-r}$$
     Se $|r|> 1$, temos que se $r>1$, então $r^{n+1} \to \infty$ quando
-    $n \to \infty$ e portanto $s_n$ diverge, se $r<-1$ $r^{n+1}$ vai crescendo 
-    em módulo, alternando entre valores positivos e negativos e portanto $s_n$
+    $n \to \infty$ e portanto $(s_n)$ diverge, se $r<-1$, $r^{n+1}$ vai crescendo 
+    em módulo, alternando entre valores positivos e negativos e portanto $(s_n)$
     também diverge.
-    Assim $\sum_{n = 0}^{\infty} ar^n$ converge se $|r| <1$ cuja soma é 
+
+    Assim $\sum_{n = 0}^{\infty} ar^n$ converge se $|r| <1$, e nesse caso a soma é 
     $$\sum_{n = 0}^{\infty} ar^n = \frac{a}{1-r}$$
     e diverge se $|r| \geq 1$
 \end{resp}
@@ -468,7 +468,7 @@ da série.
 \construirSec
 
 Nesta seção vamos abordar um tipo de séries especial, as séries de termos 
-posítivos. Dada uma série $\sum_{n = 1}^{\infty} a_n$, diremos que ela é uma
+positivos. Dada uma série $\sum_{n = 1}^{\infty} a_n$, diremos que ela é uma
 série de termos positivos quando $a_n > 0$ para todo $n \in \mathbb{N}$. Assim
 notamos que nessas séries a sequência das somas parciais formam uma sequência
 monótona, a saber
@@ -534,7 +534,7 @@ fundamental.
     para $n \in \mathbb{N}$ e vale que 
     $$\frac{1}{2^n} \geq \frac{1}{n2^n} $$
     pois para cada $n \in \mathbb{N}$
-    $$\frac{1}{2^n} - \frac{1}{n2^n} = \frac{1}{n}\bigg(1 - \frac{1}{n}\bigg) \geq 0$$
+    $$\frac{1}{2^n} - \frac{1}{n2^n} = \frac{1}{2^n}\bigg(1 - \frac{1}{n}\bigg) \geq 0$$
     E como a série  $$\sum_{n =1}^{\infty} \frac{1}{2^n}$$ é uma série geométrica
     de razão $\frac{1}{2} < 1$, portanto é convergente, pelo teste da comparação 
     $$\sum_{n =1}^{\infty} \frac{1}{n2^n}$$
@@ -624,10 +624,10 @@ conhecimento da convergência de outras séries.
     $$a_n = \frac{2^n}{n!} $$
     De tal forma que é sempre positivo, portanto podemos utilizar o teste da
     razão assim
-    $$ \lim{\:} \frac{a_{n+1}}{a_n} = \lim{\:} \frac{2^{n+1}}{(n+1)!} \frac{n!}{2^n}$$
-    $$ = \lim{\:} 2 \frac{n!}{(n+1)!}$$
-    $$ = \lim{\:} 2 \frac{n!}{(n+1)(n!)}$$
-    $$ = \lim{\:} \frac{2}{n+1} = 0 < 1 $$
+    $$ \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{2^{n+1}}{(n+1)!} \frac{n!}{2^n}$$
+    $$ = \lim_{n \to \infty} 2 \frac{n!}{(n+1)!}$$
+    $$ = \lim_{n \to \infty} 2 \frac{n!}{(n+1)(n!)}$$
+    $$ = \lim_{n \to \infty} \frac{2}{n+1} = 0 < 1 $$
     logo pelo teste da razão é convergente.
 \end{resp}
 
@@ -641,11 +641,11 @@ conhecimento da convergência de outras séries.
     $$a_n = \frac{e^n}{\ln n} $$
     De tal forma que é sempre positivo, portanto podemos utilizar o teste da razão
     assim
-    $$ \lim{\:} \frac{a_{n+1}}{a_n} = \lim{\:} \frac{e^{n+1}}{\ln (n+1)} \frac{\ln (n)}{e^n}$$
-    $$ = \lim{\:} e \frac{\ln (n)}{\ln(n+1)}$$
-    Aplicando a regra de l'Hôpital
-    $$ = \lim{\:} e \frac{1/n}{1/(n+1)}$$
-    $$ = \lim{\:} e (1+ \frac{1}{n}) = e > 1$$
+    $$ \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{e^{n+1}}{\ln (n+1)} \frac{\ln (n)}{e^n}$$
+    $$ = \lim_{n \to \infty} e \frac{\ln (n)}{\ln(n+1)}$$
+    Aplicando a regra de L'Hôpital
+    $$ = \lim_{n \to \infty} e \frac{1/n}{1/(n+1)}$$
+    $$ = \lim_{n \to \infty} e (1+ \frac{1}{n}) = e > 1$$
     Logo pelo teste da razão é divergente.
 \end{resp}
 
@@ -654,9 +654,12 @@ conhecimento da convergência de outras séries.
 \section{Teste da raiz}\index{teste!da raiz}
 \construirSec
 
+O seguinte teste nos ajuda a verificar a convergência de séries que envolvem
+termos gerais na form de potências.
+
 \begin{teo}
     Seja $\sum a_n$ uma série de termos positivos tais que exista o limite
-    $$L = \lim \sqrt[n]{a_n} $$
+    $$L = \lim_{n \to \infty} \sqrt[n]{a_n} $$
     então
     \item [a)] Se $L < 1$, então $\sum a_n$ é convergente.
     \item [b)] Se $L = 1$, o teste é inconclusivo.
@@ -706,10 +709,10 @@ conhecimento da convergência de outras séries.
 \begin{exer}
     Notamos que o termo geral da série é $a_n = \frac{1}{e^n}$ portanto positivo
     e que
-    $$\lim{\:} \frac{1}{n} = 0$$
+    $$\lim_{n \to \infty} \frac{1}{e^n} = 0$$
     Assim utilizamos o teste da raiz para determinar se essa série converge
-    $$\lim{\:} \sqrt[n]{a_n} = \lim{\:} \sqrt[n]{\frac{1}{n}} $$
-    $$ = \lim{\:} \frac{1}{e} = \frac{1}{e} < 1 $$
+    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{n}} $$
+    $$ = \lim_{n \to \infty} \frac{1}{e} = \frac{1}{e} < 1 $$
     Portanto pelo teste da raiz, essa série é convergente.
 \end{exer}
 
@@ -725,7 +728,7 @@ imprópria com séries.
     Seja $\sum a_n$ uma série de termos positivos. Seja $f$ uma função
     decrescente e contínua no intervalo $[1, +\infty)$ e tal que 
     $a_n = f(n)$ para $n \geq a$, então
-    $$\sum a_n, e \int_a^{+\infty} f(x) dx $$
+    $$\sum a_n, \: e \: \int_a^{+\infty} f(x) dx $$
     ambas convergirão ou divergirão. 
 \end{teo}
 
@@ -763,19 +766,19 @@ imprópria com séries.
 
 \begin{resol}
     Para isso usaremos o teste da integral, se $p\neq 1$, notamos que a função 
-    $f(x) = \frac{1}{x^p}$ é igual a sequencia $a_n = \frac{1}{n^p}$ em cada 
-    $n \in \mathbb{n}$, é positiva, continua e decrescente no intervalo $[1, \infty]$,
+    $f(x) = \frac{1}{x^p}$ é igual a sequência $a_n = \frac{1}{n^p}$ em cada 
+    $n \in \mathbb{N}$, é positiva, continua e decrescente no intervalo $[1, \infty)$,
     assim
 
     $$\int_1^{\infty} \frac{1}{x^p} = \lim_{b \rightarrow \infty} \int_1^{\infty} 
     \frac{1}{x^p}$$
     $$ = \lim_{b \rightarrow \infty} \frac{x^{1-p}}{1-p}\bigg|_{1}^b$$
-    $$  \lim_{b \rightarrow \infty} \frac{b^{1-p}}{1-p} -\frac{1}{1-p}$$
+    $$ = \lim_{b \rightarrow \infty} \frac{b^{1-p}}{1-p} -\frac{1}{1-p}$$
     Se $p>1$, então $1-p<0$ e portanto $b^{1-p} \to 0$ quando $b \to \infty$
     e portanto a integral converge, e portanto pelo teste da integral a série
     também converge.
 
-    Agora se $0 < p<1$, portanto $1-p>0$ assim$b^{1-p} \to \infty$ quando 
+    Agora se $0 < p<1$, portanto $1-p>0$ assim $b^{1-p} \to \infty$ quando 
     $b \to \infty$, e portanto a integral diverge, e pelo teste da da integral
     a série diverge.
     
@@ -789,7 +792,7 @@ imprópria com séries.
 
 \begin{exer}
     Verifique que a série abaixo é convergente
-    $$\sum_{n = 1} \frac{1}{n}-ln(\frac{k+1}{k}) $$
+    $$\sum_{n = 1} \frac{1}{n}-\ln \bigg(\frac{k+1}{k} \bigg) $$
 \end{exer}
 
 
@@ -812,11 +815,11 @@ onde os termos $a_n$ são positivos para todo $n \in \mathbb{N}$
 \end{ex}
 
 A seguir apresentamos um teste especificamente para convegência 
-de séries alternadas conhecido como teste da série alternada,ou Teste de Leibniz
+de séries alternadas conhecido como teste da série alternada, ou Teste de Leibniz
 
 \begin{teo}[Teste de Leibniz]
-    Seja uma série alternada tal que $a_n$ uma sequência não-crescente e
-    $$\lim{\:} a_n = 0$$
+    Seja uma série alternada tal que $(a_n)$ uma sequência não-crescente e
+    $$\lim_{n \to \infty} a_n = 0$$
     então a série alternada é convergente.
 \end{teo}
 
@@ -849,9 +852,9 @@ de séries alternadas conhecido como teste da série alternada,ou Teste de Leibn
 \end{proof}
 
 \begin{ex}
-    Note que a série harmônica alternada $\sum_{n = 1}^{\infty} \frac{-1^n}{n}$
+    Note que a série harmônica alternada $\sum_{n = 1}^{\infty} \frac{(-1)^n}{n}$
     é convergente, pois $\lim_{n \to \infty} \frac{1}{n} = 0$ e a sequência 
-    $a_n = \frac{1}{n}$ é não crescente, logo pelo Teste da série alternada é
+    $a_n = \frac{1}{n}$ é não-crescente, logo pelo Teste da série alternada é
     convergente.
 \end{ex}
 
@@ -885,7 +888,7 @@ Ou seja a série harmonica é um exemplo de série que é condicionalmente conve
     função crescente, vale que para cada $n \in \mathbb{N}$
     $$\frac{1}{\ln(n+1)} > \frac{1}{\ln (n+2)}$$
     Ou seja é descrescente, e portanto como
-    $$\lim{\:} \frac{1}{\ln(n+1)} = 0 $$
+    $$\lim_{n \to \infty} \frac{1}{\ln(n+1)} = 0 $$
     Pelo teste da série alternada ela é convergente.
 \end{resp}
 
@@ -895,7 +898,7 @@ Ou seja a série harmonica é um exemplo de série que é condicionalmente conve
 \end{exer}
 
 \begin{resp}
-    Notamos que está série é uma série alternada, e que por $\ln(x)$ ser uma
+    Notamos que está série é uma série alternada, e que por $x^2$ ser uma
     função crescente, vale que para cada $n \in \mathbb{N}$
     $$\frac{1}{(2n-1)^2} > \frac{1}{(2n+1)^2}$$
     Ou seja é descrescente, e portanto como
@@ -905,15 +908,15 @@ Ou seja a série harmonica é um exemplo de série que é condicionalmente conve
 
 \begin{exer}
     Verifique se a série a seguir é convergente
-    $$\sum_{n = 0}^{\infty} \frac{(-1)^{n+1}}{\sqrt(n)} $$
+    $$\sum_{n = 0}^{\infty} \frac{(-1)^{n+1}}{\sqrt n} $$
 \end{exer}
 
 \begin{resp}
-    Notamos que está série é uma série alternada, e que por $\ln(x)$ ser uma
+    Notamos que está série é uma série alternada, e que por $\sqrt x$ ser uma
     função crescente, vale que para cada $n \in \mathbb{N}$
-    $$\frac{1}{\sqrt(n+1)} > \frac{1}{\sqrt(n+2)}$$
+    $$\frac{1}{\sqrt{n+1}} > \frac{1}{\sqrt{n+2}}$$
     Ou seja é descrescente, e portanto como
-    $$\lim{\:} \frac{1}{\sqrt(n+1)} = 0 $$
+    $$\lim_{n \to \infty} \frac{1}{\sqrt{n+1}} = 0 $$
     Pelo teste da série alternada ela é convergente.
 \end{resp}
 
