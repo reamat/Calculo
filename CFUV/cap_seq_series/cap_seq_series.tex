@@ -125,7 +125,7 @@ aritméticas do limite.
     que para $n>n_0$
     $$|\lambda - \lambda| = 0 < \epsilon$$
     
-    b) Esse resultado é evidente se $lambda = 0$ pelo resultado anterior.
+    b) Esse resultado é evidente se $\lambda = 0$ pelo resultado anterior.
     Seja $\lambda \neq 0$, dado $\epsilon > 0$, existe $n_0 \in \mathbb{N}$ tal 
     que para $n>n_0$
     $$|x_n - L_1| < \frac{\epsilon}{|\lambda|},$$
@@ -138,7 +138,7 @@ aritméticas do limite.
     $$|x_n - L_1| < \frac{\epsilon}{2}$$
     e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
     $$|y_n - L_2| < \frac{\epsilon}{2} $$.
-    Tomamos $n_0 = max\{n_0,n_1 \}$, assim para $n > n_0$ temos
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
     $$|x_n + y_n -(L_1 + L_2)| \leq |x_n - L_1| + |y_n - L_2|$$
     $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
     
@@ -147,7 +147,7 @@ aritméticas do limite.
     $$|x_n - L_1| < \frac{\epsilon}{2}$$
     e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
     $$|y_n - L_2| < \frac{\epsilon}{2} $$.
-    Tomamos $n_0 = max\{n_0,n_1 \}$, assim para $n > n_0$ temos
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
     $$|x_n - y_n -(L_1 - L_2)| \leq |x_n - L_1| + |-y_n + L_2|$$
     $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
 
@@ -161,7 +161,7 @@ infinito de funções reais univariadas.
 \begin{teo}
     Seja $(x_n)$ uma sequência e $f(x)$ uma função tal que $\lim_{x \to \infty} 
     f(x) = L$, e $f(n) = x_n$ para todo $n \in \mathbb{N}$, então
-    $$lim_{n \to \infty} a_n = L.$$ 
+    $$lim_{n \to \infty} x_n = L.$$ 
 \end{teo}
 
 \begin{proof}
@@ -238,16 +238,17 @@ Um resultado importante sobre a convergência de sequencias monótonas é o segu
 \end{teo}
 
 \begin{proof}
-    Vamos provar aqui somente um dos casos, pois os outros são totalmente análogos
+    Vamos provar aqui somente um dos casos, pois os outros são totalmente análogos.
+
     Seja $(x_n)$ uma sequência crescente limitada, isto é, existe $M>0$ tal que
     $$|x_n| \leq M $$ 
-    Logo existe $sup{x_n: n \in \mathbb{N}}$, seja L esse supremo.
-    Assim dado $\epsilon > 0$, existe $x_n0$ tal que
-    $$ x_n0 > L - \epsilon $$
-    Assim para n>n0 temos que
-    $$L + \epsilon > x_n > x_n0 > L - \epsilon$$
+    Logo existe $\sup\{x_n: n \in \mathbb{N}\}$, seja L esse supremo.
+    Assim dado $\epsilon > 0$, existe $x_{n0}$ tal que
+    $$ x_{n0} > L - \epsilon $$
+    Assim para $n>n_0$ temos que
+    $$L + \epsilon > x_n > x_{n0} > L - \epsilon$$
     $$|x_n - L| < \epsilon $$
-    Ou seja, $x_n$ é convergente.
+    Ou seja, $(x_n)$ é convergente.
 \end{proof}
 
 Outro resultado bastante importante é o chamado critério do confronto, ou também 
@@ -255,20 +256,20 @@ conhecido como critério do sanduíche.
 
 \begin{teo}
     Sejam $(x_n),(y_n),(z_n)$ sequências, tais que $x_n \leq y_n \leq z_n$ para todo 
-    $n \in \mathbb{N}$ e $\lim_{n \to \infty} x_n = lim_{n \to \infty} z_n = L$,
-    então $lim_{n \to \infty} y_n = L$.
+    $n \in \mathbb{N}$ e $\lim_{n \to \infty} x_n = \lim_{n \to \infty} z_n = L$,
+    então $\lim_{n \to \infty} y_n = L$.
 \end{teo}
 
 \begin{proof}
     Dado $\epsilon > 0$, existe $n_1 \in \mathbb{N}$, tal que para $n>n_1$
-    $$|x_n - L| < \frac{\epsilon}{2}$$
+    $$|x_n - L| < \epsilon$$
     e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
-    $$|z_n - L| < \frac{\epsilon}{2} $$.
-    Tomamos $n_0 = max\{n_0,n_1 \}$, assim para $n > n_0$ temos
+    $$|z_n - L| < \epsilon$$.
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
     $$L - \epsilon < x_n \leq y_n \leq z_n < L + \epsilon$$
     Logo para $n > n_0$
     $$ |y_n - L| < \epsilon$$
-    De onde segue que $\lim_{n \to \infty} y_n = L$
+    De onde segue que $\lim_{n \to \infty} y_n = L$.
 \end{proof}
 
 \subsection*{Exercícios resolvidos}
@@ -302,7 +303,7 @@ conhecido como critério do sanduíche.
     Como sabemos pelo exercício anterior $\lim_{n \to \infty} \frac{1}{n} = 0$, e pelo
     ~\ref{teo:Propriedades} sabemos que $\lim_{n \to \infty} 1 = 1$, assim pelo mesmo teorema
     sabemos que o limite da soma é a soma dos limites assim
-    $$\lim{n \to \infty} 1 +\frac{1}{n} = \lim_{n \to \infty} 1 + \lim_{n \to \infty} \frac{1}{n} = 1 + 0 = 1$$.
+    $$\lim_{n \to \infty} 1 +\frac{1}{n} = \lim_{n \to \infty} 1 + \lim_{n \to \infty} \frac{1}{n} = 1 + 0 = 1$$.
 \end{resol}
 
 \subsection*{Exercícios}
@@ -370,14 +371,14 @@ se determinada série é convergente ou divergente. A seguir apresentamos um des
 resultados.
 
 \begin{teo}[Teste da divergencia]
-    Seja $\sum_{n = 1}^{\infty} a_n$ uma série convergente, então $\lim{\:} a_n = 0$.
+    Seja $\sum_{n = 1}^{\infty} a_n$ uma série convergente, então $\lim_{n \to \infty} a_n = 0$.
 \end{teo}
 
 \begin{proof}
     Seja $(s_n)$ a sequência das somas parciais da série $\sum_{n = 1}^{\infty} a_n$, cuja soma é $S$, notamos que
-    $$a_n = s_n - s_{n-1}$$.
+    $$a_n = s_n - s_{n-1}$$
     Assim das propriedades de limites
-    $$\lim{\:} a_n = \lim {\:}s_n - s_{n-1} = \lim {\:} s_n - \lim {\:}s_{n-1} = S - S = 0$$
+    $$\lim_{n \to \infty} a_n = \lim_{n \to \infty} s_n - s_{n-1} = \lim_{n \to \infty} s_n - \lim_{n \to \infty} s_{n-1} = S - S = 0$$
     Como queriamos demonstrar.
 \end{proof}
 
@@ -489,7 +490,7 @@ quais $a_n \geq 0$ para todo $n \in \mathbb{N}$.
 \begin{proof}
     Resultado segue da observação acima, já que sendo $(a_n)$ uma sequência de
     termos não negativos, seque que 
-    $$ s_1 \leq s_2 \leq s_3 \leq \dots \leq s_n \leq \dots$$,
+    $$ s_1 \leq s_2 \leq s_3 \leq \dots \leq s_n \leq \dots$$
     e então a sequência $(s_n)$ é monótona, assim sendo convergente se e somente
     se for limitada, segundo o teorema ~\ref{monótona}.
 \end{proof}
@@ -573,7 +574,7 @@ conhecimento da convergência de outras séries.
 
 \begin{proof}
     Seja $L<1$, então existe $\epsilon > 0$ tal que $L + \epsilon < 1$, assim
-    da convergencia do limite, existe um $n_0 \in \mathbb{N}$ tal que $n>n_0$
+    da convergência do limite, existe um $n_0 \in \mathbb{N}$ tal que $n>n_0$
     $$ \frac{a_{n+1}}{a_n} < L + \epsilon$$
     Assim valem as seguintes desigualdades
     $$ a_{n} < (L + \epsilon)a_{n-1}$$
@@ -583,12 +584,12 @@ conhecimento da convergência de outras séries.
     De tal forma que para $n > n_0$
     $$ a_n < (L + \epsilon)^{n-n_0}a_{n_0}$$    
     Assim como 
-    $$\sum_{n_0+1}^{\infty} (L + \epsilon)^{n}\frac{a_{n_0}}{(L + \epsilon)^{n_0}} $$
+    $$\sum_{n = n_0+1}^{\infty} (L + \epsilon)^{n}\frac{a_{n_0}}{(L + \epsilon)^{n_0}} $$
     É uma série geométrica de razão menor que 1, logo convergente, e como
     é uma série de termo não negativos, pelo teste da comparação a série $\sum a_n$
     é convergente.
 
-    Se $L>1$ o raciocinio é bastante análogo, Seja $L>1$, então existe $\epsilon > 0$
+    Se $L>1$ o raciocínio é bastante análogo. Seja $L>1$, então existe $\epsilon > 0$
     tal que $L - \epsilon > 1$, assim da convergencia do limite, existe um
     $n_0 \in \mathbb{N}$ tal que $n>n_0$
     $$ \frac{a_{n+1}}{a_n} > L - \epsilon.$$
@@ -601,7 +602,7 @@ conhecimento da convergência de outras séries.
     $$ a_n > (L - \epsilon)^{n-n_0}a_{n_0}$$    
     Assim como 
     $$\sum_{n_0+1}^{\infty} (L - \epsilon)^{n}\frac{a_{n_0}}{(L - \epsilon)^{n_0}} $$
-    É uma série geométrica de razão maior que 1, logo convergente, e como
+    É uma série geométrica de razão maior que 1, logo divergente, e como
     é uma série de termos não-negativos, pelo teste da comparação a série $\sum a_n$
     é divergente.
 \end{proof}
@@ -660,7 +661,7 @@ termos gerais na form de potências.
 \begin{teo}
     Seja $\sum a_n$ uma série de termos positivos tais que exista o limite
     $$L = \lim_{n \to \infty} \sqrt[n]{a_n} $$
-    então
+    então:
     \item [a)] Se $L < 1$, então $\sum a_n$ é convergente.
     \item [b)] Se $L = 1$, o teste é inconclusivo.
     \item [c)] Se $L > 1$, então $\sum a_n$ é divergente.
@@ -669,7 +670,7 @@ termos gerais na form de potências.
 \begin{proof}
     Seja $L<1$, então existe $\epsilon > 0$ tal que $L + \epsilon < 1$, assim
     da convergencia do limite, existe um $n_0 \in \mathbb{N}$ tal que $n>n_0$
-    $$ sqrt[n]{a_n} < L + \epsilon$$
+    $$ \sqrt[n]{a_n} < L + \epsilon$$
     ou seja para $n>n_0$
     $$ a_n < (L + \epsilon)^{n}$$    
     Assim como 
@@ -678,7 +679,7 @@ termos gerais na form de potências.
     é uma série de termo positivos, pelo teste da comparação a série $\sum a_n$
     é convergente.
 
-    Se $L>1$ o raciocinio é bastante análogo, Seja $L>1$, então existe $\epsilon > 0$
+    Se $L>1$ o raciocínio é bastante análogo. Seja $L>1$, então existe $\epsilon > 0$
     tal que $L - \epsilon > 1$, assim da convergencia do limite, existe um 
     $n_0 \in \mathbb{N}$ tal que $n>n_0$
     $$ \sqrt[n]{a_n} < L + \epsilon$$
@@ -686,7 +687,7 @@ termos gerais na form de potências.
     $$ a_n < (L + \epsilon)^{n}$$    
     Assim como 
     $$\sum_{n_0+1}^{\infty} (L + \epsilon)^{n} $$   
-    É uma série geométrica de razão maior que 1, logo convergente, e como
+    É uma série geométrica de razão maior que 1, logo divergente, e como
     é uma série de termos não-negativos, pelo teste da comparação a série $\sum a_n$
     é divergente.
 
@@ -711,11 +712,25 @@ termos gerais na form de potências.
     e que
     $$\lim_{n \to \infty} \frac{1}{e^n} = 0$$
     Assim utilizamos o teste da raiz para determinar se essa série converge
-    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{n}} $$
+    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{e^n}} $$
     $$ = \lim_{n \to \infty} \frac{1}{e} = \frac{1}{e} < 1 $$
     Portanto pelo teste da raiz, essa série é convergente.
 \end{exer}
 
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =1}^{\infty} \frac{1}{n^n}$$
+\end{exer}
+
+\begin{exer}
+    Notamos que o termo geral da série é $a_n = \frac{1}{n^n}$ portanto positivo
+    e que
+    $$\lim_{n \to \infty} \frac{1}{n^n} = 0$$
+    Assim utilizamos o teste da raiz para determinar se essa série converge
+    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{n^n}} $$
+    $$ = \lim_{n \to \infty} \frac{1}{n} = 0 < 1 $$
+    Portanto pelo teste da raiz, essa série é convergente.
+\end{exer}
 
 %***********************************************************************************
 \section{Teste da integral}\index{teste!da integral}
@@ -733,13 +748,13 @@ imprópria com séries.
 \end{teo}
 
 \begin{proof}
-    Sejam $\sum a_n$ uma série de termos positivos, $s_n$ a sequência das somas
+    Sejam $\sum a_n$ uma série de termos positivos, $(s_n)$ a sequência das somas
     parciais, e $f$ uma função decrescente, continua e positiva no intervalo
     $[1, +\infty)$ para cada $n \in \mathbb{N}$, vale que para $x \in [n, n+1]$
     $$a_{n+1} = f(n+1) \leq f(x) \leq f(n) = a_{n} $$
     Assim, integrando no intervalo $[n,n+1]$, temos
-    $$a_{n+1} = \int_n^{n+1} a_{n+1} dx \leq \int_n^{n+1} f(x) dx \leq 
-    \int_n^{n+1} a_{n} dx = a_{n} $$
+    $$a_{n+1} = \int_n^{n+1} a_{n+1} \: dx \leq \int_n^{n+1} f(x) \: dx \leq 
+    \int_n^{n+1} a_{n} \: dx = a_{n} $$
     Logo seja $k \in \mathbb{N}$ vale que
     $$s_{k+1} - a_1 = \sum_{n = 1}^k a_{n+1} \leq \int_1^{k+1} f(x) dx\leq 
     \sum_{n = 1}^k a_{n} = s_k$$
@@ -747,12 +762,12 @@ imprópria com séries.
     $$s_{k+1} - a_1 \leq \int_{1}^{k+1}f(x) dx \leq s_{k}$$
     Suponha agora que $\int_{1}^{\infty} f(x) dx = L$ converge, então dessa 
     desigualdade para cada $k \in \mathbb{N}$
-    $$s_{k+1} \leq \int_{1}^{k+1}f(x) dx \leq \int_{1}^{\infty} f(x) dx + a_1 =L + a_1$$
-    Como $a_n$ é uma sequência de termos positivos, $s_n$ é monotona e limitada,
-    logo convergente, e portanto $\sum{n=1}^{\infty} a_n$ é convergente.
+    $$s_{k+1} \leq \int_{1}^{k+1}f(x) \: dx \leq \int_{1}^{\infty} f(x) dx + a_1 =L + a_1$$
+    Como $a_n$ é uma sequência de termos positivos, $(s_n)$ é monotona e limitada,
+    logo convergente, e portanto $\sum_{n=1}^{\infty} a_n$ é convergente.
     Se $\sum_{n=1}^{\infty} a_n$ convergir então pela desigualdade anterior
     tomando o limite quando $k \to \infty$
-    $$\int_{1}^{\infty} f(x) dx \leq \sum_{n=1}^{\infty} a_n$$,
+    $$\int_{1}^{\infty} f(x) dx \leq \sum_{n=1}^{\infty} a_n$$
     logo a integral imprópria de uma função positiva é limitada, portanto é
     convergente.
 \end{proof}
@@ -824,30 +839,31 @@ de séries alternadas conhecido como teste da série alternada, ou Teste de Leib
 \end{teo}
 
 \begin{proof}
-    Seja $s_n$ a sequência das somas parciais de $\sum_{n =1}^{\infty} (-1)^{n+1} a_n$
+    Seja $(s_n)$ a sequência das somas parciais de $\sum_{n =1}^{\infty} (-1)^{n+1} a_n$
     Notamos o sequinte das somas parciais de índice par
     $$s_{2n} = a_1 - a_2 +a_3 - \dots -a_{2n-1} + a_{2n}$$
     $$s_{2n} = (a_1 - a_2) + (a_3 - a_4) + \dots + (a_{2n-1} - a_{2n})$$
-    por $a_n$ ser não crescente, isto é, $a_{n+1} \leq a_n$ para todo $n \in \mathbb{N}$,
+    por $a_n$ ser não-crescente, isto é, $a_{n+1} \leq a_n$ para todo $n \in \mathbb{N}$,
     logo $a_n - a_{n+1} \geq 0$, de tal forma que portanto
     $$s_2 \leq s_4 \leq s_6 \leq  \dots $$
-    ou seja, $s_{2n}$ forma uma sequência não decrescente.
+    ou seja, $(s_{2n})$ forma uma sequência não decrescente.
     De maneira análoga as somas parciais de índice impar temos
     $$s_{2n-1} = a_1 - a_2 +a_3 + \dots -a_{2n-2} - a_{2n-1}$$
     $$s_{2n-1} =a_1 +(- a_2 + a_3) + \dots + (-a_{2n-2} + a_{2n-1})$$
     pelo mesmo motivo $a_{n+1} - a_n \leq 0$, de tal forma que
     $$s_1 \geq s_3 \geq s_5 \geq \dots $$
-    ou seja, $s_{2n+1}$ forma uma sequência não crescente.
-    Notamos da definição $a_n$ que para todo $n \in \mathbb{N}$
+    ou seja, $(s_{2n+1})$ forma uma sequência não crescente.
+    Notamos da definição da sequência $(a_n)$ que para todo $n \in \mathbb{N}$
     $$ s_{2n+1} = s_{2n} + a_{2n+1} > s_{2n}$$
-    Assim notamos que $$s_{2n}$$ é limitada superiormente por $s_1$ e
-    $$s_{2n-1}$$ é limitada inferiormente por $s_2$ de tal modo que elas são
+    Assim notamos que $(s_{2n})$ é limitada superiormente por $s_1$, e
+    $(s_{2n-1})$ é limitada inferiormente por $s_2$ de tal modo que elas são
     convergentes pelo teorema ~\ref{monótona}.
-    Sejam $A = \lim{\:} s_{2n}$, e $B = \lim{\:} s_{2n-1}$, falta mostrar que A = B
+    
+    Sejam $A = \lim_{n \to \infty} s_{2n}$, e $B = \lim_{n \to \infty} s_{2n-1}$, falta mostrar que A = B
     assim temos que $s_{2n} - s_{2n-1} = -a_{2n}$ assim temos que
     das propriedades aritméticas do limite que
-    $$ B = \lim{\:} s_{2n-1} = \lim{\:} s_{2n} + a_n$$
-    $$ = \lim{\:} s_{2n} + \lim{\:} a_n = A + 0 = A$$
+    $$ B = \lim_{n \to \infty} s_{2n-1} = \lim_{n \to \infty} s_{2n} + a_n$$
+    $$ = \lim_{n \to \infty} s_{2n} + \lim_{n \to \infty} a_n = A + 0 = A$$
     Logo A = B, e portanto $\sum_{n =1}^{\infty} (-1)^{n+1} a_n$ é convergente.
 \end{proof}
 
@@ -928,14 +944,14 @@ Ou seja a série harmonica é um exemplo de série que é condicionalmente conve
 Nesta seção apresentamos um teste um pouco mais geral que os anteriores.
 
 \begin{teo}[Teste de Dirichlet]
-    Seja $\sum a_n$ uma série cujas somas parciais $s_n$ formam uma
+    Seja $\sum a_n$ uma série cujas somas parciais $(s_n)$ formam uma
     sequência limitada. Seja $(b_n)$ uma sequência não crescente de números
-    positivos com $\lim{\:} b_n = 0$. Então $\sum a_n b_n$ é convergente
+    positivos com $\lim_{n \to \infty} b_n = 0$. Então $\sum a_n b_n$ é convergente.
 \end{teo}
 
 \begin{proof}
     Notamos das somas parciais da série $\sum a_n b_n$ que
-    $$ a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_n +b_n=$$
+    $$ a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_nb_n=$$
     Lembrando que $s_1 = a_1$ e $s_n -s_{n-1}= a_n$, temos
     $$ = s_1b_1 + (s_2 - s_1)b_2 + (s_3 - s_2)b_3 + \dots (s_n-s_{n-1})b_n$$
     $$ =s_1(b_1 - b_2) + s_2(b_2 - b_3) + \dots +s_{n-1}(b_{n-1}-b_n) + s_nb_n$$
@@ -949,7 +965,7 @@ Nesta seção apresentamos um teste um pouco mais geral que os anteriores.
     s_n(b_{i-1}-b_i)$ é absolutamente convergente, portanto convergente, e como
     $\lim_{n \to \infty} s_n b_n = 0$, ja que $s_n$ é limitada e $\lim{\:}b_n = 0$,
     segue que
-    $$ \lim_{n \to \infty} a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_n +b_n$$
+    $$ \lim_{n \to \infty} a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_nb_n$$
     existe e portanto $\sum a_n b_n$ é convergente.
 \end{proof}
 \subsection*{Exercícios resolvidos}
