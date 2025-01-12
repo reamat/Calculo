@@ -4,40 +4,518 @@
 
 \emconstrucao
 
+Nesse capítulo vamos abordar um assunto muito importante de sequências e séries,
+inicialmente vamos introduzir o conceito de sequências, sua convergência e
+propriedades algébricas e outros resultados teóricos importantes para a 
+construção de séries que virá logo a seguir, além de técnicas para se calcular o limite.
+de uma sequência. Também discutiremos sobre um conjunto especial de sequências, as sequências
+monótonas, e suas propriedades especiais.
+
+Após veremos o conceito de séries e sua relação com sequências, bem como 
+diversos testes de convergência e como aplicá-los, e o importante assunto de 
+séries de Taylor, bem como sua diferenciação e integração, que aparecem em 
+diversas aplicações.
+
 \section{Sequências}\index{sequências}
 \construirSec
 
+Uma sequência é uma função $X:\mathbb{N} \rightarrow \mathbb{R}$ definida no 
+conjunto dos números naturais, que toma valores no conjunto dos números reais, 
+ou seja, associa a cada número natural $n$, um número real $x(n)$, esse valor 
+$x(n$) é representado por $x_n$. Usualmente uma sequência $X$ é representada 
+por uma das seguintes notações: $(x_1,x_2,x_3,\dots,x_n,\dots),
+(x_n)_{n \in \mathbb{N}}$, $(x_n)$,$\{x_n\}$,ou ainda$\{x_n\}_{n \in \mathbb{N}}$.
+$x_n$ é chamado de termo geral da sequência.
+
+A seguir apresentamos alguns exemplos de sequências:
+\begin{ex}\label{ex: 1}
+Dado um número real $a$, a seguência $x_n = a$ para todo $n \in \mathbb{N}$,
+é dita a sequência constante.
+\end{ex}
+
+\begin{ex}\label{ex: 2}
+A sequência $x_n = n$ para todo $n \in \mathbb{N}$.
+\end{ex}
+
+\begin{ex}\label{ex: 3}
+Uma sequência que aparece em bastante ocasiões é a sequência $x_n = \frac{1}{n}$
+para todo $n \in \mathbb{N}$.
+\end{ex}
+
+\begin{ex}
+Uma progressão aritmética(PA) de termo inicial $a$ e razão $r$,
+$(a,a + r,a + 2r,\dots,a + (n-1)r, \dots)$, cujo termo geral é $x_n = a + (n-1)r$.
+\end{ex}
+
+\begin{ex}
+Uma progressão geométrica(PG) de termo inicial $a$ e razão $q$,
+$(a,aq,aq^2,\dots,aq^{(n-1)}, \dots)$, cujo termo geral é $x_n = aq^{n-1}$
+\end{ex}
+
+Um conceito bastante importante sobre sequências, é o conceito de uma sequência
+ser limitada, uma sequência é dita limitada superiormente, quando existe uma 
+constante real $A$ tal que $x_n\leq A$ para todo $n \in \mathbb{N}$, uma
+sequência é dita ser limitada inferiormente, quando existe uma constante real 
+$B$ tal que $B \leq x_n$ para todo $n \in \mathbb{N}$, finalmente uma sequência
+é dita ser limitada quando é limitada superiormente e inferiormente.
+
+As sequências dos exemplos ~\ref{ex: 1} e ~\ref{ex: 3} são limitadas, enquanto 
+que a sequência do exemplo ~\ref{ex: 2} é ilimitada.
+
 \subsection{Sequências convergentes}\index{sequências!convergentes}
+
+Começamos aqui definindo de maneira formal o que é uma sequência convergente, 
+primeiro começamos com a definição de limite de uma sequência.
+
+Um determinado valor $L \in \mathbb{R}$ é dito ser o limite da sequência $(x_n)$,
+quando para todo $\epsilon>0$, existir um $n_0 \in \mathbb{N}$ tal que para 
+$n > n_0$
+$$|x_n - L| < \epsilon$$
+
+Nesses casos escreve-se $\lim_{\:} x_n = L$, $\lim_{n} x_n = L$,
+$\lim_{n \in \mathbb{N}} x_n = L$, $\lim_{n \to \infty} = L$, ou 
+simplesmente $x_n \to L$, pode se dizer que $(x_n)$ tende a $L$.
+
+Assim quando existir $L = \lim_{n \to \infty} x_n$, diremos que a sequência $x_n$
+é convergente. Evidentemente quando uma sequência não possuir limite, diremos 
+que essa sequência é divergente.
+
+De maneira intuitiva e informal, essa definição do limite de uma sequência quer
+dizer que podemos fazer uma sequência $x_n$ ficar tão próxima quanto queremos de
+um certo número $L$ a partir de um determinado termo.
+
+Um resultado bastante importante sobre sequências é apresentado a seguir
+
+\begin{teo}[Unicidade do limite]\label{teo:Unicidade do limite} Seja $(x_n)$ uma
+    sequência convergente, suponha que $\lim_{n \to \infty} x_n = L_1$ e 
+    $\lim_{n \to \infty} x_n = L_2$, então $L_1 = L_2$.
+\end{teo}
+
+\begin{proof}
+    Dado $\epsilon > 0$, existe $n_1 \in \mathbb{N}$, tal que para $n>n_1$
+    $$|x_n - L_1| < \frac{\epsilon}{2},$$
+    e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$, 
+    $$|x_n - L_2| < \frac{\epsilon}{2},$$
+    tomamos $n_0 = max\{n_2,n_2\}$, assim para $n > n_0$ temos
+    $$|L_1-L_2| \leq |L_1 - x_n| + |x_n - L_2|$$
+    $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+\end{proof}
+
+Assim, esse resultado nos assegura que se conseguirmos encontrar o limite de uma
+sequência, seja qual for a forma para isso, ele sera único.
+
+Antes de prosseguir para alguns exemplos, primeiro vamos falar das propriedades 
+aritméticas do limite.
+
+\begin{teo}[Propriedades algébricas]\label{teo:Propriedades} Sejam $(x_n)$ e $(y_n)$
+    sequências convergentes, suponha que $\lim_{n \to \infty} x_n = L_1$ e
+    $\lim_{n \to \infty} y_n = L_2$, e seja $\lambda \in \mathbb{R}$, então
+    \item  [a)] $\lim_{n \to \infty} \lambda = \lambda$
+    \item  [b)] $\lim_{n \to \infty}\lambda x_n = \lambda \lim_{n \to \infty} x_n = \lambda L_1$
+    \item  [c)] $\lim_{n \to \infty} x_n + y_n = \lim_{n \to \infty} x_n + \lim_{n \to \infty} y_n = L_1 + L_2$
+    \item  [d)] $\lim_{n \to \infty} x_n - y_n = \lim_{n \to \infty} x_n - \lim_{n \to \infty} y_n = L_1 - L_2$
+    \item  [e)] $\lim_{n \to \infty} x_n y_n = \lim_{n \to \infty} x_n \lim_{n \to \infty} y_n = L_1 L_2$
+    \item  [f)] $\lim_{n \to \infty} \frac{x_n}{y_n} = \frac{\lim_{n \to \infty} x_n}{\lim_{n \to \infty} y_n} 
+    = \frac{L_1}{L_2}$, se $L_2 \neq 0$
+\end{teo}
+
+\begin{proof}
+    a) Está é a sequência costante assim, dado $\epsilon > 0$, basta tomar 
+    qualquer $n_0 \in \mathbb{N}$, já que todos os termos são iguais, e valerá 
+    que para $n>n_0$
+    $$|\lambda - \lambda| = 0 < \epsilon$$
+    
+    b) Esse resultado é evidente se $\lambda = 0$ pelo resultado anterior.
+    Seja $\lambda \neq 0$, dado $\epsilon > 0$, existe $n_0 \in \mathbb{N}$ tal 
+    que para $n>n_0$
+    $$|x_n - L_1| < \frac{\epsilon}{|\lambda|},$$
+    então
+    $$|\lambda x_n - \lambda L_1| = |\lambda(x_n - L_1)|$$
+    $$ = |\lambda| |x_n - L_1|$$
+    $$ < |\lambda| \frac{\epsilon}{|\lambda|} = \epsilon$$ 
+
+    c) Dado $\epsilon > 0$, existe $n_1 \in \mathbb{N}$, tal que para $n>n_1$
+    $$|x_n - L_1| < \frac{\epsilon}{2}$$
+    e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
+    $$|y_n - L_2| < \frac{\epsilon}{2} $$.
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
+    $$|x_n + y_n -(L_1 + L_2)| \leq |x_n - L_1| + |y_n - L_2|$$
+    $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+    
+    d) Esse caso é bastante similar ao anterior.
+    Dado $\epsilon > 0$, existe $n_1 \in \mathbb{N}$, tal que para $n>n_1$
+    $$|x_n - L_1| < \frac{\epsilon}{2}$$
+    e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
+    $$|y_n - L_2| < \frac{\epsilon}{2} $$.
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
+    $$|x_n - y_n -(L_1 - L_2)| \leq |x_n - L_1| + |-y_n + L_2|$$
+    $$ < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+
+    e)
+    f)
+\end{proof}
+
+Uma outra técnica para calcular o limite de sequências, se baseia no limite no 
+infinito de funções reais univariadas.
+
+\begin{teo}
+    Seja $(x_n)$ uma sequência e $f(x)$ uma função tal que $\lim_{x \to \infty} 
+    f(x) = L$, e $f(n) = x_n$ para todo $n \in \mathbb{N}$, então
+    $$lim_{n \to \infty} x_n = L.$$ 
+\end{teo}
+
+\begin{proof}
+    Consequência imediata da definição de limite no infinito.
+\end{proof}
+
+Com esse resultado podemos usar as técnicas já conhecidas do cálculo de limites
+de funções reais, como a Regra de L'Hôpital, para descobrir o limite de algumas
+sequências.
+
+\begin{ex}
+    A sequência $a_n = \frac{1}{n}$ é convergente e tem limite $0$, pois sabemos
+    que para a função $f(x) = \frac{1}{x}$ vale que    
+    $$\lim_{x \to \infty} \frac{1}{x} = 0$$
+    e portanto pelo último resultado
+    $$\lim_{n \to \infty} \frac{1}{n} = 0$$
+\end{ex}
+
+A seguir é apresentado outro resultado que ajuda no cálculo do limite de 
+sequências, a partir de limites de sequências já conhecidos e funções contínuas.
+
+\begin{teo}
+    Seja $(x_n)$ uma sequência convergente de limite $L$, e seja $f(x)$ uma função
+    contínua em L, então
+    $$\lim_{n \to \infty} f(x_n) = f(L)$$
+\end{teo}
+
+
+\begin{proof}
+    Dado $\epsilon>0$, existe $\delta > 0$ tal que se $|x - L|< \delta$, então
+    $$|f(x)-f(L)| < \epsilon $$
+    e existe $n_0 \in \mathbb{N}$ tal que se $n>n_0$ então
+    $$|x_n - L|< \delta$$
+    Assim para $n>n_0$ temos que
+    $$|f(x_n)-f(L)| < \epsilon $$
+    e portanto a sequência $(f(x_n))$ é convergente e tem limite $f(L)$.
+\end{proof}
+
+\begin{ex}
+    Queremos encontrar o limite da sequência $x_n = \cos(\frac{1}{n})$para todo
+    $n \in \mathbb{N}$, como já sabemos $\lim_{n \to \infty} \frac{1}{n} = 0$ e 
+    a função $\cos(x)$ é continua em $0$, portanto pelo último resultado segue
+    $$\lim_{n \to \infty} \cos\bigg(\frac{1}{n}\bigg) = cos(0) = 1$$
+\end{ex}
+
 \subsection{Sequências monótonas}\index{sequências!monótonas}\index{sequências!crescentes}\index{sequências!decrescentes}
+
+Vamos falar de um conjunto especial de sequências, as sequências monótonas, 
+inicialmente apresentamos algumas definições.
+
+Uma sequência $(x_n)$ é dita crescente quando $x_1 < x_2 < \dots < x_n < \dots$.
+
+Uma sequência $(x_n)$ é dita não-decrescente quando $x_1 \leq x_2 \leq \dots 
+\leq x_n \leq \dots$.
+
+Uma sequência $(x_n)$ é dita decrescente quando $x_1 > x_2 > \dots > x_n > \dots$.
+
+Uma sequência $(x_n)$ é dita não-crescente quando $x_1 \geq x_2 \geq \dots 
+\geq x_n \geq \dots$.
+
+Por fim, uma sequência é dita ser monótona quando for uma das quatro definidas 
+acima.
+
+Note que pelas definições, as sequências crescentes e não-decrescentes são 
+limitadas inferiormente pelo seu primeiro termo $x_1$, analogamente as sequências
+decrescentes e não-crescente são limitadas superiormente pelo seu primeito termo 
+$x_1$, assim para elas serem limitadas, basta que sejam limitadas superiormente,
+ou inferiormente, respectivamente.
+
+Um resultado importante sobre a convergência de sequencias monótonas é o seguinte.
+
+\begin{teo}\label{monótona}
+    Seja $(x_n)$ uma sequência monótona e limitada, então $(x_n)$ convergente.
+\end{teo}
+
+\begin{proof}
+    Vamos provar aqui somente um dos casos, pois os outros são totalmente análogos.
+
+    Seja $(x_n)$ uma sequência crescente limitada, isto é, existe $M>0$ tal que
+    $$|x_n| \leq M $$ 
+    Logo existe $\sup\{x_n: n \in \mathbb{N}\}$, seja L esse supremo.
+    Assim dado $\epsilon > 0$, existe $x_{n0}$ tal que
+    $$ x_{n0} > L - \epsilon $$
+    Assim para $n>n_0$ temos que
+    $$L + \epsilon > x_n > x_{n0} > L - \epsilon$$
+    $$|x_n - L| < \epsilon $$
+    Ou seja, $(x_n)$ é convergente.
+\end{proof}
+
+Outro resultado bastante importante é o chamado critério do confronto, ou também 
+conhecido como critério do sanduíche.
+
+\begin{teo}
+    Sejam $(x_n),(y_n),(z_n)$ sequências, tais que $x_n \leq y_n \leq z_n$ para todo 
+    $n \in \mathbb{N}$ e $\lim_{n \to \infty} x_n = \lim_{n \to \infty} z_n = L$,
+    então $\lim_{n \to \infty} y_n = L$.
+\end{teo}
+
+\begin{proof}
+    Dado $\epsilon > 0$, existe $n_1 \in \mathbb{N}$, tal que para $n>n_1$
+    $$|x_n - L| < \epsilon$$
+    e existe $n_2 \in \mathbb{N}$ tal que para $n>n_2$,
+    $$|z_n - L| < \epsilon$$.
+    Tomamos $n_0 = max\{n_1,n_2\}$, assim para $n > n_0$ temos
+    $$L - \epsilon < x_n \leq y_n \leq z_n < L + \epsilon$$
+    Logo para $n > n_0$
+    $$ |y_n - L| < \epsilon$$
+    De onde segue que $\lim_{n \to \infty} y_n = L$.
+\end{proof}
 
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
 
+\begin{exeresol}
+    Verifique que a sequência $x_n = \frac{1}{n}$ para todo $n \in \mathbb{N}$ a 
+    partir da definição de convergência dada.
+\end{exeresol}
+
+\begin{resol}
+    Note que essa sequência $(x_n)$ é decrescente e limitada inferiormente por 0,
+    assim portante ela é convergente elo teorema ~\ref{monótona}, assim calculemos
+    o seu limite, que é $0$, pois dado $\epsilon > 0$ existe $n_0 \in \mathbb{N}$
+    tal que
+    $$\frac{1}{n_0}< \epsilon,$$
+    assim para $n>n_0$
+    $$\frac{1}{n} < \frac{1}{n_0} < \epsilon.$$
+    Portanto, para $n>n_0$
+    $$|\frac{1}{n} - 0| < \epsilon.$$
+    Assim $\lim_{n \to \infty} \frac{1}{n} = 0$.
+\end{resol}
+
+\begin{exeresol}
+    Verifique se sequência $x_n = 1 + \frac{1}{n}$ para todo $n \in \mathbb{N}$ 
+    é convergente, se sim, calcule o seu limite.
+\end{exeresol}
+    
+\begin{resol}
+    Como sabemos pelo exercício anterior $\lim_{n \to \infty} \frac{1}{n} = 0$, e pelo
+    ~\ref{teo:Propriedades} sabemos que $\lim_{n \to \infty} 1 = 1$, assim pelo mesmo teorema
+    sabemos que o limite da soma é a soma dos limites assim
+    $$\lim_{n \to \infty} 1 +\frac{1}{n} = \lim_{n \to \infty} 1 + \lim_{n \to \infty} \frac{1}{n} = 1 + 0 = 1$$.
+\end{resol}
 
 \subsection*{Exercícios}
 
 \construirExer
+
+\begin{exer}
+    Verifique que dado uma sequência $(x_n)$ convergente com $\lim_{n \to \infty} x_n = L$,
+    e $m \in \mathbb{N}$, vale que
+    $$ \lim_{n \to \infty} (x_n)^m = L^m$$
+\end{exer}
 
 
 %***********************************************************************************
 \section{Séries}\index{séries}
 \construirSec
 
+De maneira intuitiva poderiamos nos perguntar o que ocorreria por exemplo se numa 
+soma de uma progressão geométrica ou aritmética, ao invés de somarmos uma 
+quantidade pré-definida de termos(finita), nós somassemos uma quantidade 
+indeterminada de termos(infinita), e é esse tipo de objeto que a série tenta dar
+um significado, a somas de uma quantidade indeterminada de termos.
+
+Definimos agora de maneira mais formal o que é uma série, seja $(a_n)$ uma 
+sequência de números reais quaisquer, definimos uma série como sendo
+
+$$\sum_{n = 1}^{\infty} a_n = a_1 + a_2 + a_3 + \dots + a_n + \dots $$
+
+Onde $a_n$ é chamado de termo geral da série.
+
+Vamos agora relacionar o conceito de séries com o que já vimos sobre sequências.
+Vamos definir a seguinte sequência $(s_n)$
+
+$$ s_1 = a_1$$
+$$ s_2 = a_1 + a_2$$
+$$ s_3 = a_1 + a_2 + a_3$$
+$$\cdots$$
+$$ s_n = a_1 + a_2 + a_ 3 + \dots + a_n$$
+então $s_n$ é a chamada enésima soma parcial, que corresponde a soma dos primeiros
+n termos da sequência $(a_n)$, a sequência $(s_n)$ é conhecida como a sequência 
+das somas parciais. Esta sequência busca aproximar a soma da série, de forma que
+ao n crescer, mais termos sejam incluídos de forma a aproximar cada vez mais a 
+soma da série. 
+
+Portanto, diremos que se existir o limite 
+$$ S = \lim_{n \to \infty} s_n$$
+ou seja, a sequência $(s_n)$ é convergente e possuí limite $S$, então diremos
+que a série $\sum_{n = 1}^{\infty} a_n$ é convergente, e que sua soma é $S$,
+assim
+
+$$ S = \sum_{n = 1}^{\infty} a_n = \lim{\:} s_n$$ 
+
+Se a sequência $(s_n)$ divergir, diremos que a série $\sum_{n = 1}^{\infty} a_n$
+é divergente.
+
+A partir das propriedades aritméticas das sequências seguem algumas propriedades
+aritméticas para séries ,se $\sum_{n = 1}^{\infty} a_n = S$, e
+$\sum_{n = 1}^{\infty} b_n = T$ e $c \in \mathbb{N}$, valem que
+$$\sum_{n = 1}^{\infty} a_n + b_n= \sum_{n = 1}^{\infty} a_n +\sum_{n = 1}^{\infty} b_n = S + T $$
+$$\sum_{n = 1}^{\infty} a_n - b_n= \sum_{n = 1}^{\infty} a_n -\sum_{n = 1}^{\infty} b_n = S - T $$
+$$\sum_{n = 1}^{\infty} c a_n = c \sum_{n = 1}^{\infty} a_n = c S$$
+
+Nas próximas seções cobriremos algumas técnicas importantes para conseguir inferir
+se determinada série é convergente ou divergente. A seguir apresentamos um desses
+resultados.
+
+\begin{teo}[Teste da divergencia]
+    Seja $\sum_{n = 1}^{\infty} a_n$ uma série convergente, então $\lim_{n \to \infty} a_n = 0$.
+\end{teo}
+
+\begin{proof}
+    Seja $(s_n)$ a sequência das somas parciais da série $\sum_{n = 1}^{\infty} a_n$, cuja soma é $S$, notamos que
+    $$a_n = s_n - s_{n-1}$$
+    Assim das propriedades de limites
+    $$\lim_{n \to \infty} a_n = \lim_{n \to \infty} s_n - s_{n-1} = \lim_{n \to \infty} s_n - \lim_{n \to \infty} s_{n-1} = S - S = 0$$
+    Como queriamos demonstrar.
+\end{proof}
+
+Esse é o primeiro resultado para avaliar a convergência de uma série:
+\begin{ex}
+    A série $\sum_{n = 1}^{\infty} c$, onde $c \in \mathbb{R}$ e $c \neq 0$ é 
+    divergente pois
+    $$\lim_{n \to \infty} c = c.$$
+\end{ex}
+
+É muito importante notar que somente $\lim_{n \to \infty} a_n = 0$, não garante a convergência
+da série.
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
+\begin{exeresol}
+    Verifique se a série $\sum_{n = 1}^{\infty} \frac{1}{n}$ é divergente 
+\end{exeresol}
 
+\begin{resol}
+    Notamos que apesar de $\lim{\:} \frac{1}{n} = 0$, essa série não é convergente,
+    pois
+\begin{eqnarray}
+    s_{2^n} = 1 + \frac{1}{2} + (\frac{1}{3}+\frac{1}{4}) \\
+    + (\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6})+\dots+(\frac{1}{2^{n-1}+1}+\dots +\frac{1}{2^n}) > \\
+    1 + \frac{1}{2}+\frac{2}{4}+ \frac{4}{8}+ \dots +\frac{2^{n-1}}{2^n} = 1 + \frac{n}{2}
+\end{eqnarray}   
+    De tal forma que $\lim_{n \to \infty} s_{2^n} = \infty$, o que nos mostra que
+    a sequência das somas parciais é ilimitada, e portanto a série não é
+    convergente.
+ \end{resol}
+
+\begin{exeresol}
+    Verifique se a série $\sum_{n = 1}^{\infty} \frac{1}{n(n+1)}$ é convergente 
+\end{exeresol}
+
+\begin{resol}
+    Notamos nesse caso em especial que podemos reescrever o termo geral da série,
+    utilizando a técnica de frações parciais como
+    $$\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1},$$
+    de tal forma que o termo geral da sequência das somas parciais é expresso como
+    $$s_n = \bigg(1 - \frac{1}{2}\bigg)+\bigg(\frac{1}{3}-\frac{1}{4}\bigg)+\dots+\bigg(\frac{1}{n}-\frac{1}{n+1}\bigg)$$
+    $$ = 1 - \frac{1}{n},$$
+    Assim que pelo que vimos na seção de sequências, esse limite existe e é
+    $$\lim_{n \to \infty} s_n = 1,$$
+    portanto
+    $$\sum_{n = 1}^{\infty} \frac{1}{n(n+1)} = 1$$
+    Um dos poucos casos em que conseguimos calcular diretamente a soma da série.
+\end{resol}
 
 \subsection*{Exercícios}
 
 \construirExer
 
+\begin{exer}
+    Dado $a \in \mathbb{R}$, com $a \neq 0$ investigue para que valores de $r$ a
+    série $\sum_{n = 0}^{\infty} ar^n$ converge, e se possível obtenha a sua soma.
+\end{exer}
+
+\begin{resp}
+    Investigamos então os valores de $r$ para se ter a convergência da série dada,
+    notamos que isso se trata da série geométrica, onde as somas parciais são a
+    soma de progressões geométricas(PG). Se r = 1, a serie é 
+    $$ \sum_{n = 0}^{\infty} a$$
+    como $a \neq 0$, essa série é divergente.
+    Se r = -1, essa série se torna a série
+    $$ \sum_{n = 0}^{\infty} (-1)^n a$$
+    ou seja, as somas parciais ficam alternando entre $a$ e $-a$, logo, 
+    a sequência das somas parciais não converge, portanto a série é divergente.
+    Se $|r| \neq 1$, portanto a soma parcial pelo observado inicialmente é uma
+    PG de termo inicial $a$ e razão $r$, assim
+    $$s_n = \frac{a}{a-r}(1-r^{n+1}).$$
+    Se $|r| < 1$, então $r^{n+1} \to 0$ quando $n \to \infty$, e portanto $(s_n)$
+    converge, e pela expressão acima
+    $$ \lim{n \to \infty} s_n = \frac{a}{1-r}$$
+    Se $|r|> 1$, temos que se $r>1$, então $r^{n+1} \to \infty$ quando
+    $n \to \infty$ e portanto $(s_n)$ diverge, se $r<-1$, $r^{n+1}$ vai crescendo 
+    em módulo, alternando entre valores positivos e negativos e portanto $(s_n)$
+    também diverge.
+
+    Assim $\sum_{n = 0}^{\infty} ar^n$ converge se $|r| <1$, e nesse caso a soma é 
+    $$\sum_{n = 0}^{\infty} ar^n = \frac{a}{1-r}$$
+    e diverge se $|r| \geq 1$
+\end{resp}
 
 %***********************************************************************************
 \section{Séries de termos positivos}\index{séries!de termos positivos}
 \construirSec
 
+Nesta seção vamos abordar um tipo de séries especial, as séries de termos 
+positivos. Dada uma série $\sum_{n = 1}^{\infty} a_n$, diremos que ela é uma
+série de termos positivos quando $a_n > 0$ para todo $n \in \mathbb{N}$. Assim
+notamos que nessas séries a sequência das somas parciais formam uma sequência
+monótona, a saber
+
+$$ s_1 < s_2 < s_3 < \dots < s_n < \dots$$
+
+Assim notamos do nosso estudo prévio sobre sequências monótonas, que essa série
+convergirá se, e somente se, ela for limitada, assim obtendo o seguinte resultado,
+que vale de maneira um pouco mais geral, a séries de termos não negativos nos
+quais $a_n \geq 0$ para todo $n \in \mathbb{N}$.
+
+\begin{teo}\label{séries termos positivos}
+    Seja $\sum_{n = 1}^{\infty} a_n$ uma série de termos não negativos, então 
+    $\sum_{n = 1}^{\infty} a_n$ converge se, e somente se, a sequência das somas
+    parciais é limitada.
+\end{teo}
+
+\begin{proof}
+    Resultado segue da observação acima, já que sendo $(a_n)$ uma sequência de
+    termos não negativos, seque que 
+    $$ s_1 \leq s_2 \leq s_3 \leq \dots \leq s_n \leq \dots$$
+    e então a sequência $(s_n)$ é monótona, assim sendo convergente se e somente
+    se for limitada, segundo o teorema ~\ref{monótona}.
+\end{proof}
+
+Esse é um dos primeiros resultados que nos atesta a convergência de uma 
+determinada série sem conhecer de fato a sua soma. Como uma consequência desse
+resultado, obtemos um primeiro teste de convergência para séries, que é bastante
+fundamental.
+
+\begin{teo}[Teste da comparação]\label{comparação}
+    Sejam $\sum_{n = 1}^{\infty} a_n$ e $\sum_{n = 1}^{\infty} b_n$ séries de
+    termos não negativos tais que existe um $n_0 \in \mathbb{N}$ tal que para
+    $n>n_0$
+    $$a_n \leq b_n,$$
+    então
+    \item [a)] Se a série $\sum_{n = 1}^{\infty} b_n$ convergir, então
+    $\sum_{n = 1}^{\infty} a_n$ convergirá.
+    \item [b)] Se a série $\sum_{n = 1}^{\infty} a_n$ divergir,
+    então $\sum_{n = 1}^{\infty} b_n$ divergirá.
+\end{teo}
+
+\begin{proof}
+    Esse resultado é uma consequência imediata do teorema ~\ref{séries termos positivos}.
+\end{proof}
+
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
@@ -47,6 +525,22 @@
 
 \construirExer
 
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =1}^{\infty} \frac{1}{n2^n}$$
+\end{exer}
+
+\begin{resp}
+    Essa série tem um termo geral $a_n = \frac{1}{n2^n}$ que é sempre positivo
+    para $n \in \mathbb{N}$ e vale que 
+    $$\frac{1}{2^n} \geq \frac{1}{n2^n} $$
+    pois para cada $n \in \mathbb{N}$
+    $$\frac{1}{2^n} - \frac{1}{n2^n} = \frac{1}{2^n}\bigg(1 - \frac{1}{n}\bigg) \geq 0$$
+    E como a série  $$\sum_{n =1}^{\infty} \frac{1}{2^n}$$ é uma série geométrica
+    de razão $\frac{1}{2} < 1$, portanto é convergente, pelo teste da comparação 
+    $$\sum_{n =1}^{\infty} \frac{1}{n2^n}$$
+    é convergente.
+\end{resp}
 
 %***********************************************************************************
 \section{Teste do valor final}\index{teste!do valor final}
@@ -66,6 +560,52 @@
 \section{Teste da razão}\index{teste!da razão}
 \construirSec
 
+A seguir apresentamos um teste um pouco mais forte, que podemos utilizar sem o
+conhecimento da convergência de outras séries.
+
+\begin{teo}
+    Seja $\sum a_n$ uma série de termos positivos tais que exista o limite
+    $$ L = \lim_{n \to \infty} \frac{a_{n+1}}{a_n} $$
+    então
+    \item [a)] Se $L < 1$, então $\sum a_n$ é convergente.
+    \item [b)] Se $L = 1$, o teste é inconclusivo.
+    \item [c)] Se $L > 1$, então $\sum a_n$ é divergente.
+\end{teo}
+
+\begin{proof}
+    Seja $L<1$, então existe $\epsilon > 0$ tal que $L + \epsilon < 1$, assim
+    da convergência do limite, existe um $n_0 \in \mathbb{N}$ tal que $n>n_0$
+    $$ \frac{a_{n+1}}{a_n} < L + \epsilon$$
+    Assim valem as seguintes desigualdades
+    $$ a_{n} < (L + \epsilon)a_{n-1}$$
+    $$ a_{n-1} < (L + \epsilon)a_{n-2}$$
+    $$ \cdots $$
+    $$ a_{n_0+1} < (L + \epsilon)a_{n_0}$$
+    De tal forma que para $n > n_0$
+    $$ a_n < (L + \epsilon)^{n-n_0}a_{n_0}$$    
+    Assim como 
+    $$\sum_{n = n_0+1}^{\infty} (L + \epsilon)^{n}\frac{a_{n_0}}{(L + \epsilon)^{n_0}} $$
+    É uma série geométrica de razão menor que 1, logo convergente, e como
+    é uma série de termo não negativos, pelo teste da comparação a série $\sum a_n$
+    é convergente.
+
+    Se $L>1$ o raciocínio é bastante análogo. Seja $L>1$, então existe $\epsilon > 0$
+    tal que $L - \epsilon > 1$, assim da convergencia do limite, existe um
+    $n_0 \in \mathbb{N}$ tal que $n>n_0$
+    $$ \frac{a_{n+1}}{a_n} > L - \epsilon.$$
+    Assim valem as seguintes desigualdades
+    $$ a_{n} > (L - \epsilon)a_{n-1}$$
+    $$ a_{n-1} > (L - \epsilon)a_{n-2}$$
+    $$ \cdots $$
+    $$ a_{n_0+1} > (L - \epsilon)a_{n_0}$$
+    De tal forma que para $n > n_0$
+    $$ a_n > (L - \epsilon)^{n-n_0}a_{n_0}$$    
+    Assim como 
+    $$\sum_{n_0+1}^{\infty} (L - \epsilon)^{n}\frac{a_{n_0}}{(L - \epsilon)^{n_0}} $$
+    É uma série geométrica de razão maior que 1, logo divergente, e como
+    é uma série de termos não-negativos, pelo teste da comparação a série $\sum a_n$
+    é divergente.
+\end{proof}
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
@@ -74,12 +614,85 @@
 \subsection*{Exercícios}
 
 \construirExer
+
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =1}^{\infty} \frac{2^n}{n!}$$
+\end{exer}
+
+\begin{resp}
+    Notamos que o termo geral da série é 
+    $$a_n = \frac{2^n}{n!} $$
+    De tal forma que é sempre positivo, portanto podemos utilizar o teste da
+    razão assim
+    $$ \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{2^{n+1}}{(n+1)!} \frac{n!}{2^n}$$
+    $$ = \lim_{n \to \infty} 2 \frac{n!}{(n+1)!}$$
+    $$ = \lim_{n \to \infty} 2 \frac{n!}{(n+1)(n!)}$$
+    $$ = \lim_{n \to \infty} \frac{2}{n+1} = 0 < 1 $$
+    logo pelo teste da razão é convergente.
+\end{resp}
+
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =2}^{\infty} \frac{e^n}{\ln n}$$
+\end{exer}
+
+\begin{resp}
+    Notamos que o termo geral da série é 
+    $$a_n = \frac{e^n}{\ln n} $$
+    De tal forma que é sempre positivo, portanto podemos utilizar o teste da razão
+    assim
+    $$ \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \lim_{n \to \infty} \frac{e^{n+1}}{\ln (n+1)} \frac{\ln (n)}{e^n}$$
+    $$ = \lim_{n \to \infty} e \frac{\ln (n)}{\ln(n+1)}$$
+    Aplicando a regra de L'Hôpital
+    $$ = \lim_{n \to \infty} e \frac{1/n}{1/(n+1)}$$
+    $$ = \lim_{n \to \infty} e (1+ \frac{1}{n}) = e > 1$$
+    Logo pelo teste da razão é divergente.
+\end{resp}
 
 
 %***********************************************************************************
 \section{Teste da raiz}\index{teste!da raiz}
 \construirSec
 
+O seguinte teste nos ajuda a verificar a convergência de séries que envolvem
+termos gerais na form de potências.
+
+\begin{teo}
+    Seja $\sum a_n$ uma série de termos positivos tais que exista o limite
+    $$L = \lim_{n \to \infty} \sqrt[n]{a_n} $$
+    então:
+    \item [a)] Se $L < 1$, então $\sum a_n$ é convergente.
+    \item [b)] Se $L = 1$, o teste é inconclusivo.
+    \item [c)] Se $L > 1$, então $\sum a_n$ é divergente.
+\end{teo}
+
+\begin{proof}
+    Seja $L<1$, então existe $\epsilon > 0$ tal que $L + \epsilon < 1$, assim
+    da convergencia do limite, existe um $n_0 \in \mathbb{N}$ tal que $n>n_0$
+    $$ \sqrt[n]{a_n} < L + \epsilon$$
+    ou seja para $n>n_0$
+    $$ a_n < (L + \epsilon)^{n}$$    
+    Assim como 
+    $$\sum_{n_0+1}^{\infty} (L + \epsilon)^{n} $$
+    É uma série geométrica de razão menor que 1, logo convergente, e como
+    é uma série de termo positivos, pelo teste da comparação a série $\sum a_n$
+    é convergente.
+
+    Se $L>1$ o raciocínio é bastante análogo. Seja $L>1$, então existe $\epsilon > 0$
+    tal que $L - \epsilon > 1$, assim da convergencia do limite, existe um 
+    $n_0 \in \mathbb{N}$ tal que $n>n_0$
+    $$ \sqrt[n]{a_n} < L + \epsilon$$
+    ou seja para $n>n_0$
+    $$ a_n < (L + \epsilon)^{n}$$    
+    Assim como 
+    $$\sum_{n_0+1}^{\infty} (L + \epsilon)^{n} $$   
+    É uma série geométrica de razão maior que 1, logo divergente, e como
+    é uma série de termos não-negativos, pelo teste da comparação a série $\sum a_n$
+    é divergente.
+
+\end{proof}
+
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
@@ -89,25 +702,189 @@
 
 \construirExer
 
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =1}^{\infty} \frac{1}{e^n}$$
+\end{exer}
+
+\begin{exer}
+    Notamos que o termo geral da série é $a_n = \frac{1}{e^n}$ portanto positivo
+    e que
+    $$\lim_{n \to \infty} \frac{1}{e^n} = 0$$
+    Assim utilizamos o teste da raiz para determinar se essa série converge
+    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{e^n}} $$
+    $$ = \lim_{n \to \infty} \frac{1}{e} = \frac{1}{e} < 1 $$
+    Portanto pelo teste da raiz, essa série é convergente.
+\end{exer}
+
+\begin{exer}
+    Verifique se a série abaixo é convergente 
+    $$\sum_{n =1}^{\infty} \frac{1}{n^n}$$
+\end{exer}
+
+\begin{exer}
+    Notamos que o termo geral da série é $a_n = \frac{1}{n^n}$ portanto positivo
+    e que
+    $$\lim_{n \to \infty} \frac{1}{n^n} = 0$$
+    Assim utilizamos o teste da raiz para determinar se essa série converge
+    $$\lim_{n \to \infty} \sqrt[n]{a_n} = \lim_{n \to \infty} \sqrt[n]{\frac{1}{n^n}} $$
+    $$ = \lim_{n \to \infty} \frac{1}{n} = 0 < 1 $$
+    Portanto pelo teste da raiz, essa série é convergente.
+\end{exer}
 
 %***********************************************************************************
 \section{Teste da integral}\index{teste!da integral}
 \construirSec
 
+A seguir apresentamos um teste que relaciona os conhecimentos de integração
+imprópria com séries.
+
+\begin{teo}
+    Seja $\sum a_n$ uma série de termos positivos. Seja $f$ uma função
+    decrescente e contínua no intervalo $[1, +\infty)$ e tal que 
+    $a_n = f(n)$ para $n \geq a$, então
+    $$\sum a_n, \: e \: \int_a^{+\infty} f(x) dx $$
+    ambas convergirão ou divergirão. 
+\end{teo}
+
+\begin{proof}
+    Sejam $\sum a_n$ uma série de termos positivos, $(s_n)$ a sequência das somas
+    parciais, e $f$ uma função decrescente, continua e positiva no intervalo
+    $[1, +\infty)$ para cada $n \in \mathbb{N}$, vale que para $x \in [n, n+1]$
+    $$a_{n+1} = f(n+1) \leq f(x) \leq f(n) = a_{n} $$
+    Assim, integrando no intervalo $[n,n+1]$, temos
+    $$a_{n+1} = \int_n^{n+1} a_{n+1} \: dx \leq \int_n^{n+1} f(x) \: dx \leq 
+    \int_n^{n+1} a_{n} \: dx = a_{n} $$
+    Logo seja $k \in \mathbb{N}$ vale que
+    $$s_{k+1} - a_1 = \sum_{n = 1}^k a_{n+1} \leq \int_1^{k+1} f(x) dx\leq 
+    \sum_{n = 1}^k a_{n} = s_k$$
+    Ou seja
+    $$s_{k+1} - a_1 \leq \int_{1}^{k+1}f(x) dx \leq s_{k}$$
+    Suponha agora que $\int_{1}^{\infty} f(x) dx = L$ converge, então dessa 
+    desigualdade para cada $k \in \mathbb{N}$
+    $$s_{k+1} \leq \int_{1}^{k+1}f(x) \: dx \leq \int_{1}^{\infty} f(x) dx + a_1 =L + a_1$$
+    Como $a_n$ é uma sequência de termos positivos, $(s_n)$ é monotona e limitada,
+    logo convergente, e portanto $\sum_{n=1}^{\infty} a_n$ é convergente.
+    Se $\sum_{n=1}^{\infty} a_n$ convergir então pela desigualdade anterior
+    tomando o limite quando $k \to \infty$
+    $$\int_{1}^{\infty} f(x) dx \leq \sum_{n=1}^{\infty} a_n$$
+    logo a integral imprópria de uma função positiva é limitada, portanto é
+    convergente.
+\end{proof}
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
+\begin{exeresol}
+    Verifique que a série $\sum_{n = 1}^{\infty} \frac{1}{n^p}$, onde $p>0$, é
+    convergente se $p>1$ e divergente se $0 < p \leq 1$ 
+\end{exeresol}
+
+\begin{resol}
+    Para isso usaremos o teste da integral, se $p\neq 1$, notamos que a função 
+    $f(x) = \frac{1}{x^p}$ é igual a sequência $a_n = \frac{1}{n^p}$ em cada 
+    $n \in \mathbb{N}$, é positiva, continua e decrescente no intervalo $[1, \infty)$,
+    assim
+
+    $$\int_1^{\infty} \frac{1}{x^p} = \lim_{b \rightarrow \infty} \int_1^{\infty} 
+    \frac{1}{x^p}$$
+    $$ = \lim_{b \rightarrow \infty} \frac{x^{1-p}}{1-p}\bigg|_{1}^b$$
+    $$ = \lim_{b \rightarrow \infty} \frac{b^{1-p}}{1-p} -\frac{1}{1-p}$$
+    Se $p>1$, então $1-p<0$ e portanto $b^{1-p} \to 0$ quando $b \to \infty$
+    e portanto a integral converge, e portanto pelo teste da integral a série
+    também converge.
+
+    Agora se $0 < p<1$, portanto $1-p>0$ assim $b^{1-p} \to \infty$ quando 
+    $b \to \infty$, e portanto a integral diverge, e pelo teste da da integral
+    a série diverge.
+    
+    Já para $p = 1$ obtemos a série harmônica que já sabemos que é divergente.
+\end{resol}
 
 
 \subsection*{Exercícios}
 
 \construirExer
+
+\begin{exer}
+    Verifique que a série abaixo é convergente
+    $$\sum_{n = 1} \frac{1}{n}-\ln \bigg(\frac{k+1}{k} \bigg) $$
+\end{exer}
 
 
 %***********************************************************************************
 \section{Séries alternadas}\index{teste!das série alternada}\index{séries alternadas}
 \construirSec
 
+Nas últimas seções discutimos em enfoque apenas séries cujos termos são não
+negativos, nesta seção discutiremos outro tipo especial de séries.
+
+Uma série alternada é uma série cujos termos alternam entre positivo e negativo,
+ou seja, da forma 
+
+$$\sum_{n =1}^{\infty} (-1)^n a_n$$
+$$\sum_{n =1}^{\infty} (-1)^{n+1} a_n$$
+onde os termos $a_n$ são positivos para todo $n \in \mathbb{N}$
+\begin{ex}
+    Um exemplo especial é a série harmônica alternada
+    $$\sum_{n =1}^{\infty} (-1)^n \frac{1}{n}$$
+\end{ex}
+
+A seguir apresentamos um teste especificamente para convegência 
+de séries alternadas conhecido como teste da série alternada, ou Teste de Leibniz
+
+\begin{teo}[Teste de Leibniz]
+    Seja uma série alternada tal que $(a_n)$ uma sequência não-crescente e
+    $$\lim_{n \to \infty} a_n = 0$$
+    então a série alternada é convergente.
+\end{teo}
+
+\begin{proof}
+    Seja $(s_n)$ a sequência das somas parciais de $\sum_{n =1}^{\infty} (-1)^{n+1} a_n$
+    Notamos o sequinte das somas parciais de índice par
+    $$s_{2n} = a_1 - a_2 +a_3 - \dots -a_{2n-1} + a_{2n}$$
+    $$s_{2n} = (a_1 - a_2) + (a_3 - a_4) + \dots + (a_{2n-1} - a_{2n})$$
+    por $a_n$ ser não-crescente, isto é, $a_{n+1} \leq a_n$ para todo $n \in \mathbb{N}$,
+    logo $a_n - a_{n+1} \geq 0$, de tal forma que portanto
+    $$s_2 \leq s_4 \leq s_6 \leq  \dots $$
+    ou seja, $(s_{2n})$ forma uma sequência não decrescente.
+    De maneira análoga as somas parciais de índice impar temos
+    $$s_{2n-1} = a_1 - a_2 +a_3 + \dots -a_{2n-2} - a_{2n-1}$$
+    $$s_{2n-1} =a_1 +(- a_2 + a_3) + \dots + (-a_{2n-2} + a_{2n-1})$$
+    pelo mesmo motivo $a_{n+1} - a_n \leq 0$, de tal forma que
+    $$s_1 \geq s_3 \geq s_5 \geq \dots $$
+    ou seja, $(s_{2n+1})$ forma uma sequência não crescente.
+    Notamos da definição da sequência $(a_n)$ que para todo $n \in \mathbb{N}$
+    $$ s_{2n+1} = s_{2n} + a_{2n+1} > s_{2n}$$
+    Assim notamos que $(s_{2n})$ é limitada superiormente por $s_1$, e
+    $(s_{2n-1})$ é limitada inferiormente por $s_2$ de tal modo que elas são
+    convergentes pelo teorema ~\ref{monótona}.
+    
+    Sejam $A = \lim_{n \to \infty} s_{2n}$, e $B = \lim_{n \to \infty} s_{2n-1}$, falta mostrar que A = B
+    assim temos que $s_{2n} - s_{2n-1} = -a_{2n}$ assim temos que
+    das propriedades aritméticas do limite que
+    $$ B = \lim_{n \to \infty} s_{2n-1} = \lim_{n \to \infty} s_{2n} + a_n$$
+    $$ = \lim_{n \to \infty} s_{2n} + \lim_{n \to \infty} a_n = A + 0 = A$$
+    Logo A = B, e portanto $\sum_{n =1}^{\infty} (-1)^{n+1} a_n$ é convergente.
+\end{proof}
+
+\begin{ex}
+    Note que a série harmônica alternada $\sum_{n = 1}^{\infty} \frac{(-1)^n}{n}$
+    é convergente, pois $\lim_{n \to \infty} \frac{1}{n} = 0$ e a sequência 
+    $a_n = \frac{1}{n}$ é não-crescente, logo pelo Teste da série alternada é
+    convergente.
+\end{ex}
+
+Note que portanto a série harmônica é divergente, mas a série harmônica alternada
+é convergente, esse fato nos leva a seguintes definições.
+
+Uma série $\sum_{n =1}^{\infty} a_n$ é dita absolutamente convergente quando
+$\sum_{n =1}^{\infty} |a_n|$ é convergente.
+
+Uma série $\sum_{n =1}^{\infty} a_n$ é dita condicionalmente convergente quando
+$\sum_{n =1}^{\infty} a_n$ converge, mas $\sum_{n =1}^{\infty} |a_n|$ é divergente.
+
+Ou seja a série harmonica é um exemplo de série que é condicionalmente convergente.
+
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
@@ -117,11 +894,80 @@
 
 \construirExer
 
+\begin{exer}
+    Mostre que a série abaixo é convergente.
+    $$\sum_{n = 1}^{\infty} \frac{(-1)^{n+1}}{\ln(n+1)} $$
+\end{exer}
+
+\begin{resp}
+    Notamos que está série é uma série alternada, e que por $\ln(x)$ ser uma
+    função crescente, vale que para cada $n \in \mathbb{N}$
+    $$\frac{1}{\ln(n+1)} > \frac{1}{\ln (n+2)}$$
+    Ou seja é descrescente, e portanto como
+    $$\lim_{n \to \infty} \frac{1}{\ln(n+1)} = 0 $$
+    Pelo teste da série alternada ela é convergente.
+\end{resp}
+
+\begin{exer}
+    Mostre que a série abaixo é convergente.
+    $$\sum_{n = 1}^{\infty} \frac{(-1)^{n+1}}{(2n-1)^2} $$
+\end{exer}
+
+\begin{resp}
+    Notamos que está série é uma série alternada, e que por $x^2$ ser uma
+    função crescente, vale que para cada $n \in \mathbb{N}$
+    $$\frac{1}{(2n-1)^2} > \frac{1}{(2n+1)^2}$$
+    Ou seja é descrescente, e portanto como
+    $$\lim_{n \to \infty}\frac{1}{(2n-1)^2} = 0 $$
+    Pelo teste da série alternada ela é convergente.
+\end{resp}
+
+\begin{exer}
+    Verifique se a série a seguir é convergente
+    $$\sum_{n = 0}^{\infty} \frac{(-1)^{n+1}}{\sqrt n} $$
+\end{exer}
+
+\begin{resp}
+    Notamos que está série é uma série alternada, e que por $\sqrt x$ ser uma
+    função crescente, vale que para cada $n \in \mathbb{N}$
+    $$\frac{1}{\sqrt{n+1}} > \frac{1}{\sqrt{n+2}}$$
+    Ou seja é descrescente, e portanto como
+    $$\lim_{n \to \infty} \frac{1}{\sqrt{n+1}} = 0 $$
+    Pelo teste da série alternada ela é convergente.
+\end{resp}
+
 
 %***********************************************************************************
 \section{Teste de Dirichlet*}\index{teste!de Dirichlet}
 \construirSec
 
+Nesta seção apresentamos um teste um pouco mais geral que os anteriores.
+
+\begin{teo}[Teste de Dirichlet]
+    Seja $\sum a_n$ uma série cujas somas parciais $(s_n)$ formam uma
+    sequência limitada. Seja $(b_n)$ uma sequência não crescente de números
+    positivos com $\lim_{n \to \infty} b_n = 0$. Então $\sum a_n b_n$ é convergente.
+\end{teo}
+
+\begin{proof}
+    Notamos das somas parciais da série $\sum a_n b_n$ que
+    $$ a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_nb_n=$$
+    Lembrando que $s_1 = a_1$ e $s_n -s_{n-1}= a_n$, temos
+    $$ = s_1b_1 + (s_2 - s_1)b_2 + (s_3 - s_2)b_3 + \dots (s_n-s_{n-1})b_n$$
+    $$ =s_1(b_1 - b_2) + s_2(b_2 - b_3) + \dots +s_{n-1}(b_{n-1}-b_n) + s_nb_n$$
+    $$ = \sum_{i=2}^n s_{i-1}(b_{i-1}-b_i) + s_nb_n$$
+    Note que por $(s_n)$, ser uma sequência limitada, existe $M>0$ tal que
+    $|s_n| \leq M$ para todo $n \in \mathbb{N}$, e como $b_n$ é não crescente, logo
+    $b_n \geq b_{n+1}$, de modo que $ b_n -b+{n+1} \geq 0$ para todo $n \in \mathbb{N}$
+    Assim $\sum_{i=2}^{\infty} (b_{i-1}-b_i)$ é uma série de termos não negativos
+    e convergente cuja soma é $b_1$, assim $\sum_{i=2}^{\infty} M(b_{i-1}-b_i)$
+    é convergente, e portanto pelo teste da comparação $\sum_{i=2}^{\infty} 
+    s_n(b_{i-1}-b_i)$ é absolutamente convergente, portanto convergente, e como
+    $\lim_{n \to \infty} s_n b_n = 0$, ja que $s_n$ é limitada e $\lim{\:}b_n = 0$,
+    segue que
+    $$ \lim_{n \to \infty} a_1b_1 +a_2b_2 + a_3b_3 + \dots + a_nb_n$$
+    existe e portanto $\sum a_n b_n$ é convergente.
+\end{proof}
 \subsection*{Exercícios resolvidos}
 
 \construirExeresol
