@@ -2,52 +2,554 @@
 
 \chapter{Aplicações da integração}\label{cap:apl_integracao}\index{aplicações! integrais}
 
-\emconstrucao
+	No capítulo anterior, obtemos, com o teorema fundamental do cálculo, um método para calcularmos a integral definida de uma função, é claro, desde que tenhamos uma primitiva. No entanto, utilizando apenas os conceitos apresentados anteriormente, nem sempre é fácil determinar a primitiva de uma função ou de uma combinação de funções. Veja, por exemplo, que essa situação ocorre no caso de $f(x)= \ln(x)$. Neste capítulo estudaremos técnicas que nos permitirão obter primitivas de funções como a do exemplo anterior.
 
 \section{Integração por partes}\index{integração!por partes}
-\construirSec
+	Integração por partes é um método que pode ser aplicado a integrais da forma
+	
+	\[\begin{split}
+		\int f(x)g(x)dx.
+	\end{split}\]
+	
+	A técnica permite, quando aplicada corretamente, expressar uma integral complicada por outra que saibamos resolver, %( ou seja, a integração por partes é um artifício extremamente útil para simplificação de integrais,) 
+	especialmente se $f$ puder ser derivada repetidas vezes até se tornar zero, e $g$ puder ser integrada facilmente.
+	
+\subsection*{Dedução do método}
+	Lembremos, inicialmente, da fórmula de Leibniz (ou regra do produto) estudada no capítulo sobre derivação: se $f$ e $g$ são funções diferenciáveis de $x$, então a fórmula de Leibniz nos diz que 
+	
+	\[\begin{split}
+		\frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x).
+	\end{split}\]
+	
+	Integrando $f(x)g'(x)$, obtemos 
+	
+	\[\begin{split}
+		\int f(x)g'(x)dx = \int \left[\frac{d}{dx}f(x)g(x) - f'(x)g(x)\right]dx
+	\end{split}\]
+	
+	que pode ser escrito como
+	\[\begin{split}
+		\int f(x)g'(x)dx = \int \frac{d}{dx}\left[f(x)g(x)\right]dx - \int f'(x)g(x)dx
+	\end{split}\]
 
-
+	o que facilmente nos conduz a fórmula de integração por partes 
+	
+	\begin{equation}
+		\boxed{ \int f(x)g'(x)dx = f(x)g(x)- \int f'(x)g(x)dx} 
+	\end{equation}
+	
+	A fórmula/expressão acima pode ser escrita na forma diferencial. Basta fazer $u = f(x)$ e $v= g(x)$. Logo, $du = f'(x)dx$ e $dv = g'(x)dx$. Substituindo na fórmula (6.1), obtemos 
+	
+	\begin{equation}
+		\boxed{ \int udv = uv - \int vdu} 
+	\end{equation}
+	
+	 Perceba que ambas as fórmulas apresentadas expressam uma integral em função de outra. Tenha em mente que o sucesso da integração por partes depende da escolha apropriada de $u$ e $dv$, pois, lembre-se, a ideia é substituir uma integral que não saibamos calcular por outra que podemos resolver. Além disso, uma observação que não pode deixar de ser feita é a seguinte: não existe uma regra que estabeleça qual a escolha adequada de $u$ e $dv$ em cada caso; isto é uma questão de experiência, que só se adquire praticando. No entanto, não podemos deixar de mencionar uma estratégia que funciona com alguma regularidade: escolhemos $u$ de tal modo que possa ser derivável até se tornar a função identicamente nula ou de forma que possamos obter derivadas suas de todas as ordens. Já a escolha de $dv$ é feita de modo que seja facilmente integrável, pois dessa forma obtemos a função $v$ facilmente. Lembremos, novamente, que não existe um método que funcione em todos os casos. Logo, há situações que o procedimento descrito acima conduzirá o leitor a uma integral tão complicada quanto a original ou, com um pouco de azar, a uma mais difícil. 
+	 
+\subsection*{Integral definida por partes}
+	
+	Também podemos aplicar integração por partes a integrais definidas. Supondo que as funções $f'$ e $g'$ sejam continuas no intervalo $[a,b]$, então, reproduzindo um argumento semelhante ao apresentado no início da da seção, obtemos 
+	
+	\begin{equation}
+		\boxed{\int_{a}^{b} f(x)g'(x)dx = f(x)g(x)\mid_{a}^{b}- \int_{a}^{b} f'(x)g(x)dx}
+	\end{equation}
+	 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
+	\begin{exeresol}
+		Calcule a integral indefinida da função mencionada no início da seção, isto é, $$\int \ln x dx$$
+	\end{exeresol}
+	
+	\begin{resol}
+		Pode parecer, no primeiro instante, que não faz sentido tentar aplicar integração por partes a função $f(x)= \ln x$, pois, como foi dito ao longo desta seção, o método é utilizado em situações onde o integrando pode ser visto como um produto de funções. No entanto, perceba que $\ln(x) = 1 \cdot \ln (x)$ e, como a função $u$ deve ser derivável e $v$ facilmente integrável, então escolhemos $u = \ln(x)$ e $dv = 1 \cdot dx$.  Logo,
+	
+		\begin{displaymath}
+			\left\{ \begin{array}{ll}
+				 u = \ln(x) & \implies \textrm{$du = \frac{1}{x}dx$}\\
+				dv = 1 \cdot dx & \implies \textrm{$ v = x$}
+			\end{array} \right.
+		\end{displaymath}
+		
+		Então, utilizando a fórmula (6.2), obtemos 
+		
+		\[\begin{split}
+			\int \ln(x) \cdot 1 dx = x \cdot \ln(x) - \int x \cdot \frac{1}{x}dx =  x \cdot \ln(x) - x + C  
+		\end{split}\]	
+	\end{resol}
 
-
+	\begin{exeresol}
+		Utilizando integração por partes, obtenha $$ \int x^2 e^xdx$$
+	\end{exeresol}
+	
+	\begin{resol}
+		O exercício acima ilustra uma situação onde devemos realizar mais de uma integração por partes. Escolhemos, inicialmente, $u = x^2$ e $dv = e^xdx$ (o que acontece se tomarmos $u = e^x$ e $dv = x^2dx$?). Logo, 
+		
+		\begin{displaymath}
+			\left\{ \begin{array}{ll}
+				u = x^2 & \implies \textrm{$du = 2xdx$}\\
+				dv = e^xdx & \implies \textrm{$ v = e^x$}
+			\end{array} \right.
+		\end{displaymath}
+		
+		Portanto,	 
+		\[\begin{split}
+			\int x^2e^xdx = x^2e^x - \int2xe^xdx = x^2e^x - 2\int xe^xdx 
+		\end{split}\]
+		
+		Note que obtemos uma nova integral onde o expoente associado a $x$ reduziu em 1 unidade. No entanto, ainda não sabemos resolvê-la de maneira imediata, o que nos leva a aplicar integração por partes novamente com $u = x$ e $dv = e^xdx$. Logo, $du = dx$, $v = e^x$ e, portanto, temos 
+		
+		\[\begin{split}
+			\int xe^xdx = xe^x - \int e^xdx =  xe^x - e^x + C_0
+		\end{split}\]  
+		
+		Substituindo o resultado obtido na expressão anterior, obtemos 
+		
+		\[\begin{split}
+			\int x^2e^xdx &= x^2e^x - 2\int xe^xdx  \\
+			& = x^2e^x - 2(xe^x - e^x + C_0) \\
+			& = x^2e^x - 2xe^x + 2e^x + C_1
+		\end{split}\]
+		
+	\end{resol}
+	
+	\begin{exeresol}
+		Calcule $$\int_{0}^{4}xe^{-x}dx$$
+	\end{exeresol}
+	
+	\begin{resol}
+		Sejam $u = x$ e $dv = e^{-x}dx$. Então, $du = dx$ e $v =-e^{-x}$. Utilizando a fórmula (6.3), obtemos 
+		
+		\[\begin{split}
+			\int_{0}^{4}xe^{-x}dx & = -xe^{-x}\mid_{0}^{4} - \int_{0}^{4}-e^{-x}dx \\
+			& = -4e^{-4} - e^{-4} + 1 \\
+			& = 1 - 5e^{-4}.
+		\end{split}\]
+	\end{resol}
+	
 \subsection*{Exercícios}
 
-\construirExer
-
+	\begin{exer}
+		Calcule as seguintes integrais.
+		\begin{enumerate}[a)]
+			\item~$\int x \sen{3x} dx$.
+			\item~$ \int \sqrt{x} \ln xdx$.
+			\item~$\int x \arctan xdx$.
+			\item~$\int x\tan^2xdx$
+			\item ~$\int_{0}^{1}x e^{-5x}dx $
+		\end{enumerate}
+	\end{exer}
+	
+	\begin{exer}
+		Prove as fórmulas de redução abaixo:
+		\begin{enumerate}[a)]
+			\item~$\int \cos^n xdx =  \frac{1}{n}(\cos x)^{n-1} \sen x + \frac{n-1}{n}\int (\cos x)^{n-2}dx$.
+			\item~$\int \sen^n xdx =  - \frac{1}{n}(\sen x)^{n-1} \cos x + \frac{n-1}{n}\int (\sen x)^{n-2}dx$.
+		\end{enumerate}	
+		Dica: para o item $(a)$, tome $u=cos^{n-1}x$ e $dv = \cos xdx$. Com relação ao item $(b)$, proceda de maneira semelhante.
+	\end{exer}
+	
 
 %***********************************************************************************
 \section{Integrais trigonométricas}\index{trigonometria}\index{funções trigonométricas}\index{integrais!trigonométricas}
-\construirSec
+	
+	As integrais trigonométricas são todas aquelas que obtemos através de combinações algébricas de funções trigonométricas básicas . Por exemplo $$\int sen^3(x)cos^2(x)dx.$$ A ideia por trás da solução de uma integral desse tipo passa pela escolha de alguma identidade trigonométrica conveniente que permite reescrever a integral desconhecida em alguma possível de ser solucionada. Antes de iniciarmos o capítulo propriamente dito, listamos algumas identidades que serão úteis ao longo dele.
+			
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|l|}
+			\hline
+			\textbf{Nº} & \textbf{Identidades Trigonométricas} \\
+			\hline
+			1 & $1 = \cos^2 x + \sin^2 x$ \\
+			2 & $\sec^2 x = 1 + \tan^2 x $ \\
+			3 & $\sin(2x) = 2 \sin x \cos x$ \\
+			4 & $\cos(2x) = \cos^2 x - \sin^2 x$ \\
+			5 & $\cos^2 x = \frac{1 + \cos(2x)}{2}$ \\
+			6 & $\sin^2 x = \frac{1 - \cos(2x)}{2}$ \\
+			7 & $\sen\alpha\sen\beta$ = $\frac{1}{2}[\cos(\alpha-\beta) - \cos(\alpha+\beta)]$ \\
+			8 & $\sen\alpha
+			\cos\beta = \frac{1}{2}[\sen(\alpha - \beta) + \sen(\alpha + \beta)]$ \\
+			9 & $\cos\alpha \cos \beta = \frac{1}{2}[\cos(\alpha - \beta) + \cos(\alpha + \beta)]$\\
 
-\subsection*{Exercícios resolvidos}
-
-\construirExeresol
-
+			\hline
+			
+		\end{tabular}
+		\caption{Identidades Trigonométricas}
+	\end{table}
+		
+\subsection*{Integrais envolvendo produtos de senos e cossenos}
+	
+	Sejam $m, n$ inteiros não negativos, estudaremos, inicialmente, integrais da seguinte forma $$ \int \sin^m(x)\cos^n(x)dx.$$
+	Apresentaremos três exemplos que diferem apenas quanto aos expoentes, mas que contemplam as possíveis situações que podem ocorrer. 
+	
+	\begin{ex}
+		Calcule $\int \sin^3(x)\cos^2(x)dx$.
+		
+		\[\begin{split}
+			\int \sen^3(x)\cos^2(x)dx & = \int \sin(x) \sin^2(x)\cos^2(x)dx \\
+			& = \int (1- \cos^2(x))\cos^2(x)\sin(x)dx		
+		\end{split}\]
+		Fazendo $u =\cos(x)$, então $du = -\sin(x)dx$. Logo
+		
+		\[\begin{split}
+			\int  (1-u^2)u^2(-du) & = \int (u^4 - u^2)du = \frac{u^5}{5} - \frac{u^3}{3} + C \\
+			 & = \frac{\cos^5(x)}{5} - \frac{\cos^3(x)}{3} + C.
+		\end{split}\]
+	\end{ex}
+	
+	\begin{obs}
+		nas situações onde $m$ (o expoente associado a função seno) é impar, escrevemos $m = 2k + 1$ e usamos a identidade $\cos^2(x) + \sin^2(x) = 1$ da seguinte forma 
+		
+		\[\begin{split}
+			\sin^{2k+1}(x) = (\sin^{2}(x))^k\sin(x) = (1-cos^2(x))^k\sin(x)
+		\end{split}\]
+		
+		O termo $\sin x$ remanescente irá desaparecer quando a substituição $u = \cos x$ for efetuada.	
+	\end{obs} 	
+		
+		
+	\begin{ex}
+		Calcule $\int \sin^2x\cos^3xdx$. 
+		
+		\[\begin{split}
+			\int \sin^2x \cos^3xdx = \int \sin^2x \cos^2x \cos x dx = \int \sin^2x (1 - \sin^2x)\cos x dx
+		\end{split}\]
+	
+		Fazendo $ u = \sin x$, então $du = \cos x dx$. Portanto 
+		
+		\[\begin{split}
+			\int u^2(1 - u^2)du & = \int (u^2 - u^4)du = \frac{u^3}{3} - \frac{u^5}{5} + C\\
+			& = \frac{\sen^3x}{3} - \frac{\sen^5x}{5} + C
+		\end{split}\]
+	\end{ex}
+	
+	\begin{obs}
+		nas situações onde $n$ ( o expoente associado a função cosseno) é ímpar, exatamente como fizemos no caso acima, escrevemos $n = 2k + 1$,  separamos um fator $\cos x$ (no caso acima era $\sin x$) e usamos a identidade $\sin^2x + \cos^2 x = 1$ como segue
+		
+		\[\begin{split}
+			\cos^{2k+1}x = (\cos^2x)^k \cos x = (1 - \sin^2 x)^k \cos x
+		\end{split}\]
+		
+		O termo remanescente $\cos x$ irá desaparecer quando a substituição $ u = \sin x$ for feita.
+	\end{obs} 
+	
+	\begin{ex}
+		Calcule $\int \sin^2x \cos^2 x dx$. Usaremos as seguintes identidades: $\cos^2x =( 1 + \cos(2x))/2$ e $\sin^2x = (1 - \cos2x)/2$ já mencionadas. Caso o leitor as desconheça, somando as identidades ($1$) e ($4$) listadas no início da seção, obtemos a primeira. A subtração de ($1$) e ($4$) gera a segunda.    
+	
+	\[\begin{split}
+		\int \sin^2x \cos^2 x dx & = \int \frac{1 + \cos2x}{2} \cdot \frac{1 - \cos2x}{2}dx = \frac{1}{4}\int (1 - \cos^22x)dx \\
+		& = \frac{1}{4}\int dx - \frac{1}{4}\int\cos^22x	dx	
+	\end{split}\]
+	
+	 Note que a primeira integral é imediata. Com relação a segunda, efetuamos a substituição $\theta = 2x$ e, novamente, utilizamos a identidade $\cos^2x =( 1 + \cos(2x))/2$. Como $\theta = 2x$, então $d\theta = 2dx$. Logo 
+	
+	\[\begin{split}
+		\int \cos^22x dx & = \frac{1}{2}\int \cos^2 \theta d\theta = \frac{1}{2}\int \frac{1 + \cos2\theta}{2}d\theta \\
+		& = \frac{1}{2} (\frac{\theta}{2} + \frac{1}{4}\sin 2\theta ) + C\\
+		& = \frac{1}{2}(x + \frac{1}{4}\sin 4x) + C.
+	\end{split}\]
+	
+	Obtemos, substituindo o resultado obtido na expressão acima 
+	
+	\[\begin{split}
+		\int \sin^2x \cos^2 x dx & = \frac{x}{4 } - \frac{1}{8}(x + \frac{1}{4}\sin 4x) \\
+		& = \frac{x}{8} - \frac{\sin 4x}{32} + C.		
+	\end{split}\]
+	\end{ex}
+	
+	\begin{obs}
+		nos casos onde $m$ e $n$ são pares, utilizamos as identidades trigonométricas $(5)$ e $(6)$ para obtermos um novo integrando onde as potências associadas a função $\cos(2x)$ sejam mais baixas. 
+	\end{obs} 
+	
+\subsection*{Integrais envolvendo potências das funções $\tan x$ e $\sec x$}
+	
+	Agora estudaremos integrais envolvendo potências inteiras para as funções $\sec x$ e $\tan x$. No entanto, antes de iniciarmos, revisaremos alguns resultados já apresentados anteriormente. Do capítulo sobre integração, lembremos que $$ \int \tan xdx = \ln \left| \sec x \right| + C, \quad \int \sec x dx = \ln \left| \sec x + \tan x \right| + C $$ Além disso, os quadrados das funções $\tan x$ e $\sec x$ são facilmente obtidos. De fato, $$\int \sec^2xdx = \int \frac{d}{dx}\tan x dx = \tan x + C$$
+	Para obtemos a integral da função $\tan ^2x$, basta utilizarmos a igualdade trigonométrica $(2)$ em conjunto com o resultado acima. Logo,  
+	$$\int \tan^2 x dx = \tan x - x + C.$$
+	De posse dos resultados acima, podemos obter integrais de potências maiores. Basta usarmos a identidade $(2)$ e integrarmos por partes (nos casos onde for necessário).
+	
+	\begin{ex}
+		Calcule $\int tan^4xdx$. 
+		
+		\[\begin{split}
+			\int \tan^4xdx & =\int \tan^2x \tan^2x dx =  \int \tan^2x(\sec^2x - 1)dx = \\ 
+			& = \int \tan^2x \sec^2xdx - \int \tan^2xdx
+		\end{split}\]
+		Fazendo $u = \tan x$, então $du = \sec^2xdx$ e, portanto, a primeira integral pode ser reescrita como
+		\[\begin{split}
+			\int \tan^2x \sec^2xdx = \int u^2du = \frac{u^3}{3} + C
+		\end{split}\]
+		Como a segunda integral já foi obtida, então segue que 
+		\[\begin{split}
+			\int \tan^4xdx = \frac{\tan^3 x}{3} - \tan x +x + C. 
+		\end{split}\]		 
+	\end{ex}
+	
+	\begin{ex}
+		Calcule $\int \sec^3 xdx$. Resolveremos integrando por partes. Porém, há uma sutileza neste exercício quando comparado aos outros. Durante a solução encontraremos $\int \sec^3xdx$ em ambos os membros da igualdade, o que pode causar confusão ao leitor. No entanto, basta isolar $\int \sec^3 xdx$ (será possível, pois uma das integrais estará acompanhada de um sinal negativo devido a integração por partes).  Vejamos 
+		\[\begin{split}
+			\int \sec^3 xdx = \int \sec^2x \sec xdx.
+		\end{split}\]
+		
+	\end{ex}
+	
+	Fazendo $u = \sec x$ e $dv = \sec^2xdx$, então $du = \sec x \tan x$ e $v = \tan x$. Logo
+	
+	\[\begin{split}
+		\int \sec^3xdx & = \tan x \sec x - \int (\tan x) \cdot \sec x \tan x dx \\ 
+		& = \tan x \sec x - \int \sec x \tan^2xdx \\
+		& = \tan x \sec x - \int \sec x (\sec^2x -1)dx \\
+		& = \tan x \sec x - \int \sec^3xdx + \int\sec xdx
+	\end{split}\]
+	
+	Nesta etapa da solução, isolamos num dos membros da igualdade $\int sec^3xdx$. Como a integral da função $\sec x$ é conhecida, o resultado segue $$ \int sec^3xdx = \frac{\tan x \sec x }{2} + \frac{\ln \left| \sec x + \tan x \right|}{2}$$  
 
 \subsection*{Exercícios}
 
-\construirExer
-
-
+	\begin{exer}
+		Calcule as integrais abaixo:
+		\begin{enumerate}[a)]
+			\item~$\int x \cos^3x \sen xdx$.
+			\item~$ \int \sen^4(2x)\cos(2x)dx$.
+			\item~$\int_{0}^{\pi} \sen^5(x)dx $.
+			\item~$\int \sen(ax) \cos(ax)dx$.
+			\item~$\int \sqrt{\frac{1-\cos x}{2}}dx$. Dica: primeiro justifique $\cos2x = 1 - \sen^2x$ e depois substitua $x$ por $x/2$.  
+		\end{enumerate}
+	\end{exer}
+	\newpage
+	\begin{exer}
+		Calcule as integrais abaixo:
+		\begin{enumerate}[a)]
+			\item~$\int \frac{\sec(\sqrt x)}{\sqrt x}dx$
+			\item~$\int \sec^3(x) \tan(x)dx $
+			\item~$\int \tan^3(x)dx $
+			\item~$\int e^x \sec^3(e^x)dx$
+			\item~$\int \sec^4x \tan xdx$
+		\end{enumerate}
+	\end{exer}
 %***********************************************************************************
+%\section{Substituição trigonométrica}\index{substituição trigonométrica}
+
+
+%\construirSec
 \section{Frações parciais}\index{frações parciais}
-\construirSec
+	
+	Nesta seção estudaremos um método que permite reescrever uma função do tipo $f(x)/g(x)$ como uma soma de frações que são facilmente integráveis. No entanto, restringiremos a classe de funções a qual aplicaremos tal método, exigiremos que $f$ e $g$ sejam polinômios e que, além disso, o grau do $f$ seja menor que o grau de $g$, ou seja, aplicaremos o método em funções racionais próprias. Essa técnica é conhecida como o método das frações parciais, vejamos um exemplo:
+	
+	\begin{ex}
+		Calcule $$\int \frac{2x - 5}{(4x-1)(x+2)}dx$$
+		Perceba que nenhuma substituição parece adequada para o problema. No entanto, note que 
+		\[\begin{split}
+			\frac{2x - 5}{(4x-1)(x+2)} = \frac{-2}{4x-1} + \frac{1}{x+2}.
+		\end{split}\]
+		Logo, a integral acima pode ser reescrita como 
+		
+		\[\begin{split}
+			\int \frac{2x - 5}{(4x-1)(x+2)}dx = \int \frac{-2}{4x-1}dx + \int \frac{1}{x+2}dx
+		\end{split}\]
+		O que facilmente no conduz a resposta, pois as integrais ao lado direito da igualdade são imediatas. Portanto, $$\int \frac{2x - 5}{(4x-1)(x+2)}dx = - \frac{\ln\left|4x-1\right|}{2} + \ln\left|x + 2\right| + C.$$ Perceba que a grande dificuldade está na primeira etapa da solução deste problema, isto é, em como determinar as frações (chamadas de frações parciais) que somadas são iguais a $(2x - 5)/(4x-1)(x+2)$. Ao longo da seção detalharemos tal procedimento.
+	\end{ex}
+	
+	\subsection*{Decomposição em frações parciais}
+	Seja $f(x)/g(x)$ uma função racional própria. Para determinarmos a decomposição em frações parciais de $f(x)/g(x)$, inicialmente decompomos $g(x)$ em função dos seus fatores lineares e quadráticos irredutíveis de modo a expressar $g$ como um produto de termos. De posse destes fatores, somos capazes de obter a sua decomposição. Em um primeiro instante, trataremos os dois casos existentes separadamente, pois dessa forma facilita a compreensão. 
+	
+	\subsection*{Fatores Lineares}
+	
+	Seja $f(x)/g(x)$ uma função racional própria tal que todos os fatores da função $g(x)$ são lineares, então podemos determinar a decomposição em frações parciais de $f(x)/g(x)$ da seguinte forma: suponhamos que $ax + b$ seja um fator linear de $g(x)$ e que $(ax+b)^m$ é a maior potência desse fator que divide $g(x)$. Então, a decomposição em frações parciais de $f(x)/g(x)$ restrita ao fator $(ax+b)^m$ assume o seguinte formato:
+	$$ \frac{A_1}{ax + b} + \frac{A_2}{(ax+b)^2} + ... + \frac{A_m}{(ax + b)^m}$$
+	onde $A_1, ..., A_m$ são constantes a serem determinadas. Repetimos o procedimento para cada fator linear de $g(x)$ e tomamos a soma de todas as frações para obtermos a decomposição de $f(x)/g(x)$. Vejamos um exemplo para aprendermos a utilizar o que foi enunciado acima e, a partir dele, como determinar o valor das constantes associadas as frações.
+	
+	\begin{ex}
+		Calcule $$\int \frac{3x}{x^2 - 3x +2}dx.$$
+		
+		Inicialmente decompomos  $g(x) = x^2 - 3x +2$ em função dos seu fatores. Facilmente obtemos que as raízes de $g(x)$ são iguais a $1$ e $2$. Logo, $x^2 - 3x +2 = (x-1)(x-2)$. Como a maior potência de $(x-1)$ que divide $g(x)$ é igual a 1, então associamos somente uma fração parcial ao termo $(x-1)$. Análogo para o fator $(x-2)$. Portanto,
+		
+		\begin{equation}
+			\frac{3x}{(x-1)(x-2)} = \frac{A_1}{x-1} + \frac{A_2}{x-2}.
+			\tag{1}
+		\end{equation}
+		
+		Apresentaremos duas maneiras de obtermos $A_1$ e $A_2$. Em uma das abordagens, conhecida como método de Heaviside, podemos aplicá-la somente em situações onde há apenas fatores lineares. Ela é mais prática, porém fica restrita a estes casos. O método geral funciona independente do caso, no entanto, é mais trabalhoso porque nos obriga a resolver um sistema linear.\\ 
+		
+		\begin{flushleft}
+			\textbf{Primeira abordagem (método de Heaviside):}
+		\end{flushleft}
+		
+		A ideia é a seguinte: multiplicaremos a igualdade acima por um dos fatores lineares de $x^2 - 3x +2$. No segundo instante, escolhemos um valor conveniente para $x$ e o substituímos na igualdade obtida após o passo acima (veremos que a escolha do valor adequado é imediata). No entanto, isto nos permite obter apenas umas das constantes. Porém, basta reproduzir o procedimento acima no fator linear de $x^2 - 3x +2$ restante. Vejamos como fazê-lo: inicialmente, multiplique ambos os membros de $(1)$ por $(x-1)$, obtemos a seguinte igualdade
+		
+		$$\frac{3x}{x-2} = A_1 + (x-1) \cdot \frac{A_2}{x-2}.$$
+		
+		Fazendo $x = 1$, eliminamos o termo associado a constante $A_2$. Logo
+		
+		$$A_1 = \frac{3 \cdot 1}{1 - 2} = -3.$$
+		
+		De maneira análogo, obtemos que $A_2 = 6$. Portanto, a igualdade $(1)$ pode ser reescrita como
+		
+		$$ \frac{3x}{(x-1)(x-2)} = \frac{-3}{x-1} + \frac{6}{x-2}.$$
+		
+		Agora podemos facilmente determinar a integral do enunciado, pois
+		
+		\[\begin{split}
+			\int\frac{3x}{x^2 -3x + 2}dx &= \int \frac{-3}{x-1}dx + \int \frac{6}{x-2}dx \\
+			&= -3 \ln \left|x-1\right| + 6\left|x-2\right| + C.
+		\end{split}\]
+		
+		
+		\begin{flushleft}
+			\textbf{Segunda abordagem:}
+		\end{flushleft}
+		
+		Multiplicamos ambos os membros da igualdade $(1)$ por $(x-1)(x-2)$, obtemos
+		$$3x + 0 = (x-2)A_1 + (x-1)A_2 = x(A_1 + A_2) + (-2A_1 - A_2).$$
+		Como os polinômios são iguais, então devemos ter que seus respectivos coeficientes também são iguais. Logo, nos deparamos com o seguinte sistema 
+			
+		\[
+		\begin{cases}
+			-2A_1 - A_2 &= 0 \\
+		 	 A_1 + A_2 &= 3
+		\end{cases}
+		\]
+		
+ 	Que pode ser facilmente resolvido para encontrarmos, novamente, $A_1 = -2$ e $A_2 =- 6$. 
+	\end{ex}
+	
+	\begin{ex}
+		Calcule $$\int \frac{x}{(x-1)^2}dx.$$ 
+		 Pelo método descrito acima, a decomposição em frações parciais associada ao termo $(x-1)^2$ possui o seguinte formato 
+		$$ \frac{x}{(x-1)^2} = \frac{A_1}{(x-1)} + \frac{A_2}{(x-1)^2}$$ 
+		Perceba que o método de Heaviside não é uma boa abordagem para o problema, pois, neste caso, somos capazes de obter apenas o valor de uma das constantes com ele. Portanto, recorremos a segunda abordagem. Logo, multiplicando ambos os membros da igualdade acima por $(x-1)^2$, obtemos
+		$$x = (x-1)A_1 + A_2 = A_1x - A_1+ A_2$$
+		Como a expressão acima representa uma igualdade entre polinômios, então devemos ter que $A_1$ = 1 e $-A_1 + A_2 = 0$. Portanto, $A_1 = A_2 = 1$. Logo 
+		
+		$$ \frac{x}{(x-1)^2} = \frac{1}{(x-1)} + \frac{1}{(x-1)^2}$$ 
+		
+		Então
+		\[\begin{split}
+			\int \frac{x}{(x-1)^2}dx &= \int\frac{1}{x-1}dx + \int \frac{1}{(x-1)^2}dx \\
+			&= \ln \left|x-1\right| - \frac{1}{x-1} + C.
+		\end{split}\]
+	\end{ex}
+	
+	\subsection*{Fatores Quadráticos}
+	 
+	 Seja $f(x)/g(x)$ uma função racional própria. Se $g(x)$ possuir fatores quadráticos irredutíveis, então determinamos a decomposição em frações parciais restrita aos fatores quadráticos da seguinte forma: seja $(ax^2 + bx + c)$ um fator quadrático irredutível de $g(x)$, isto é, $(ax^2 + bx + c)$ não possui raízes. Suponha que $(ax^2 + bx + c)^m$ seja a maior potência de $(ax^2 + bx + c)$ que divide $g(x)$. Então, a decomposição em frações parciais de $f(x)/g(x)$ restrita ao fator $(ax^2 + bx + c)^m$ assume o seguinte formato:
+	 $$\frac{A_1x + B_1}{(ax^2 + bx + c)} + \frac{A_2x + B_2}{(ax^2 + bx + c)^2} + ... + \frac{A_mx + B_m}{(ax^2 + bx + c)^m}$$    
+	onde $A_1, ..., A_m$ e $B_1, ... , B_m$ são constantes a serem determinadas. Repita o procedimento para cada fator quadrático irredutível de $g(x)$. Somando todas as frações, obtemos a contribuição associada aso fatores quadráticos irredutíveis para decomposição em frações parciais.
+	
+	\begin{ex}
+		Calcule $$\int \frac{2x + 1}{(x^2 + 1)(x^2 + 2)}.$$ Como só há fatores quadráticos irredutíveis, então a decomposição em frações parciais assume a seguinte forma $$\frac{2x + 1}{(x^2 + 1)(x^2+2)} = \frac{Ax + B}{(x^2+1)} + \frac{Cx + D}{(x^2 + 2)}.$$ Multiplicando ambos o membros por $(x^2 + 1)(x^2 + 2)$ e rearranjando os termos, obtemos $$0x^3 + 0x^2 + 2x + 1 = x^3(A +C) + x^2(B+D) + x(2A + C)+ (2B + D).$$ Pela igualdade entre polinômios, segue
+		\[
+		\begin{cases}
+			A + C = 0 \\
+			B + D = 0 \\
+			2A + C = 0 \\
+			2B + D =1
+		\end{cases}
+		\]	
+		Resolvendo o sistema acima, independente do método escolhido, o leitor deverá encontrar $A=2, B=1, C=-2, D=-1$.	Portanto, podemos rescrever a integral inicial da seguinte forma: $$	\int \frac{2x+1}{(x^2+1)(x^2+2)}dx = \int \frac{2x+1}{x^2+1}dx - \int \frac{2x+1}{(x^2+2)}dx.$$ Pode parecer, no primeiro instante, que trocamos um problema que não sabemos resolver por outro que também desconhecemos. No entanto, reescrevendo as integrais acima de forma conveniente, é possível obtermos o resultado. Trabalhando na primeira integral, note que $$\int \frac{2x+1}{x^2+1}dx = \int \frac{2x}{x^2+1} + \int \frac{1}{x^2 + 1}dx =  \ln(x^2 + 1) + \arctan x + C_1$$
+		Aplicando um raciocínio parecido na segunda integral, obtemos $$\int \frac{2x+1}{(x^2+2)}dx = \int \frac{2x}{x^2 + 2}dx + \int \frac{1}{x^2+2}dx.$$
+		Como a primeira é imediata, trataremos apenas da segunda.  $$\int \frac{1}{x^2 +2}dx = \int \frac{1}{2(\frac{x^2}{2}+ 1)dx} = \frac{1}{2} \int \frac{1}{((\frac{x}{\sqrt 2})^2+1)}dx$$	
+		
+		Fazendo $u = \frac{x}{\sqrt2}$, então $du = \frac{dx}{\sqrt2}$. Logo, podemos reescrever a integral acima como
+		\[\begin{split}
+			\frac{\sqrt2}{2} \int \frac{1}{u^2+1}du & = \frac{\sqrt2}{2} \arctan u + C_2 = \\
+			&= \frac{\sqrt2}{2} \arctan(\frac{x}{\sqrt2}) + C_1
+		\end{split}\]
+		Portanto  $$\int \frac{2x+1}{(x^2+1)(x^2+2)} = \ln(x^2+1) + \arctan x - \ln(x^2+2) - \frac{\sqrt2}{2} \arctan(\frac{x}{\sqrt2}) + C $$ 
+	\end{ex}
+	
+	
+	\begin{ex}
+		Calcule $$\int \frac{2x^2-1}{(4x-1)(x^2+1)}dx.$$ Note que a decomposição em frações parciais possui contribuição de dois fatores: um deles é linear e o outro quadrático irredutível. O fator linear contribui com o termo $$\frac{A}{4x-1}$$ e o fator quadrático irredutível introduz $$\frac{Bx + C}{x^2+1}.$$ Logo, a decomposição em frações parciais possui o seguinte formato $$\frac{2x^2-1}{(4x-1)(x^2+1)} = \frac{A}{4x-1} + \frac{Bx + C}{x^2+1}.$$ Multiplicando ambos os membros por $(4x-1)(x^2+1)$, obtemos $$2x^2-1 = (x^2+1)A + (4x-1)(Bx +C).$$ Juntando as mesmas potência, obtemos $$2x^2-1 = x^2(A+4B) + x(4C -B) (A-C).$$ Portanto, segue o seguinte sistema 
+		 \[
+		 \begin{cases}
+		 	A + 4B = 2 \\
+		 	4C - B = 0 \\
+		 	A - C = -1 
+		\end{cases}
+		 \]	
+		O leitor deverá encontrar, resolvendo o sistema acima,  $A = -\frac{14}{17}, B = \frac{12}{17}$ e $C = \frac{3}{17}$. Assim, a integral do enunciado se torna 
+		$$\int \frac{2x^2-1}{(4x-1)(x^2+1)}dx = -\frac{14}{17}\int \frac{1}{4x-1}dx + \frac{1}{17} \int \frac{12x +3}{x^2+1}dx.$$ 
+		Perceba que a primeira integral não apresenta nenhuma dificuldade. Trabalhando na segunda \[\begin{split}
+			\frac{1}{17}\int \frac{12x +3}{x^2+1}dx &= 6\int\frac{2x}{x^2+1}dx + 3\int\frac{1}{x^2 + 1}dx \\
+			& = \frac{6}{17}\ln\left|x^2 +1 \right| + \frac{3}{17}\arctan x  + C_1.
+		\end{split}\] 
+		Logo, $$\int \frac{2x^2-1}{(4x-1)(x^2+1)}dx =  \frac{-7}{34}\ln\left|4x-1\right| +  \frac{6}{17}\ln\left|x^2 +1 \right| + \frac{3}{17}\arctan x  + C.$$
+	\end{ex}
 
-
-\subsection*{Exercícios resolvidos}
-
-\construirExeresol
-
-
+	\begin{ex}
+		Calcule $$\int\frac{x^3}{(x+1)(x+2)}.$$ Note que o integrando não é uma função racional própria, pois o grau do polinômio que se encontra no numerador é maior que o grau do denominador. O que deve-se fazer nestes casos é dividir o numerador pelo denominador e trabalhar com a expressão obtida para o resto. Vejamos: $x^3$ dividido por $(x+1)(x+2)$ é igual a $(x-3) + \frac{7x+6}{(x+1)(x+2)}$. Logo, 
+		\[\begin{split}
+			\int \frac{x^3}{(x+1)(x+2)}dx = \int (x-3)dx + \int \frac{7x + 6}{(x+1)(x+2)}dx. 
+		\end{split}\]
+		Como a primeira integral é imediata, trabalharemos apenas na segunda. Como há apenas dois fatores lineares elevados a primeira potências, temos $$\frac{7x + 6}{(x+1)(x+2)} = \frac{A}{(x+1)} + \frac{B}{x+2}.$$ Pelo método de Heaviside, concluímos que: $A = -1$ e $B = 8$. Logo, 
+		\[\begin{split}
+			\frac{7x+6}{(x+1)(x+2)}dx &= -\int \frac{1}{x+1} + \int \frac{8}{x+2}dx\\
+			&= - \ln\left|x+1\right| + 8 \ln \left|x+2\right| + C_1. 
+		\end{split}\]
+		Portanto, $$\int \frac{x^3}{(x+1)(x+2)}dx = \frac{x^2}{2} -3x - \ln\left|x+1\right| + 8 \ln \left|x+2\right| + C.$$
+		
+	\end{ex}
+	
 \subsection*{Exercícios}
+	\begin{exer}
+		\textbf{Fatores lineares}. Calcule as integrais abaixo.
+		\begin{enumerate}[a)]
+			\item~$\int \frac{dx}{(1-x^2)}dx$.
+			\item~$\int \frac{2x - 3}{x^2-3x-10}dx$.
+			\item~$\int \frac{x^2-8}{x-3}dx$.
+			\item~$\int \frac{x^2}{(x-1)(x^2 + 2x + 1)}dx$.
+			\item~$\int \frac{2x+1}{x^2 7x=12}$.
+		\end{enumerate}	
+	\end{exer}
+	
+	\begin{exer}
+		\textbf{Fatores quadráticos irredutíveis.} Calcule as integrais abaixo.
+		\begin{enumerate}[a)]
+			\item~$\int \frac{dx}{(x+1)(x^2+1)}$.
+			\item~$\int \frac{x^2}{x^4-1}dx$.
+			\item~$\int \frac{x^2+2x+1}{(x^2+1)^2}dx$.
+			\item~$\int \frac{x^3 + x^2 + x +2}{(x^2+1)(x^2+2)}dx$.
+			\item~$\int \frac{dx}{x^4+x}$. Dica: $(a^3+b^3) = (a+b)(a^2-ab + b^2).$
+			
+		\end{enumerate}
+		
+	\end{exer}
 
-\construirExer
 
 \section{Exercícios finais}
 
-\construirExer
+	\begin{exer}
+		Mostre que $$\int \csc x = -\ln\left|\csc x + \cot x\right| + C$$ 	
+		Dica: multiplique e divida por um valor conveniente que permita uma substituição adequada.
+	\end{exer}
+
+	\begin{exer}
+		Encontre $A$ e $\phi$ tais que $\sen x + \cos x = A\sen(x+\phi)$. Utilize o que obteve anteriormente em conjunto com o exercício anterior para calcular $$\int \frac{dx}{\sen x + \cos x}.$$ 
+		Dica: expanda $A\sen(x+\phi)$ e utilize uma ideia parecida com a que foi apresentada quando igualamos dois polinômios.
+	\end{exer}
+	
+	\begin{exer}
+		Calcule $$\int \frac{dx}{a\sen x + a\cos x}dx$$
+	\end{exer}
+	
+	\begin{exer}
+		Encontre a área da região entre $f(x) = x \sen x$ e $g(x) = x$ para $x \in [0, \frac{\pi}{2}]$. 
+	\end{exer}
+	
+	\begin{exer}
+		Sejam $m$ e $n$ inteiros. Calcule as integrais abaixo.
+		\begin{enumerate}[a)]
+			\item~$\int\sen{mx} \cos{nx}dx$.
+			\item~$\int \sen{mx} \sen{nx}dx$.
+			\item~$\int \cos{mx} \cos{nx}dx$.
+		\end{enumerate}
+		Dica: as identidades trigonométricas (7), (8) e (9) podem ajudar.
+	\end{exer}
+	
+	\begin{exer}
+		Mostre que $$\int \frac{1}{\lambda^2-x^2}dx = \frac{1}{2\lambda} \ln{\left|\frac{\lambda + x}{\lambda-x}\right|} + C.$$
+	\end{exer}	
+
 
 
