@@ -1,0 +1,132 @@
+%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+\chapter{Introdução}\label{chap:introducao}
+
+\section{Funções de várias variáveis}
+
+O Cálculo de Funções de Várias Variáveis (CFVV) é a continuação do Cálculo de Funções de Uma Variável (CFUV), sendo portanto normalmente lecionado em uma segunda disciplina de Cálculo Diferencial e Integral. 
+
+O CFVV difere do CFUV essencialmente pela natureza do espaço que contém as variáveis independentes, e então pela natureza das operações algébricas nesse espaço. Explicando melhor:
+\begin{itemize}
+\item{CFUV estuda a dependência $u=f(x)$ de duas variáveis $x$ e $u$, ambas contidas em algum conjunto dos números reais ($\mathbb{R}$) a partir da hipótese que $f$ é uma {\it função de uma variável real}. Em CFUV, fixado um ponto $x_0 \in \mathbb{R}$, a construção $x \rightarrow x_0$ pode ser feita de duas formas, ou pela direita ($x>x_0$) ou pela esquerda ($x < x_0$).  }
+\item{CFVV estuda a dependência $u=f(x_1,x_2,\dots,x_n)$, onde $n$ é um inteiro positivo que denota o número de variáveis independentes. Mais uma vez $u$, e também cada uma das $x_1, x_2, \dots, x_n$ estão contidas em algum conjunto dos números reais; mas agora $f$ é uma {\it função de várias variáveis}. Por outro lado, inegavelmente o tratamento matemático da fica mais ágil quando entendemos uma relação da forma $u = f(\vec{x})$, onde $\vec{x} = (x_1,x_2,\dots,x_n)$. Em CFVV, fixado um ponto $\vec{x}_0 \in \mathbb{R}^n$, a construção $\vec{x} \rightarrow \vec{x}_0$ deve ser feita considerando todo e qualquer {\bf curva} (definiremos mais tarde) que contenha $\vec{x}_0$, sendo portanto uma construção conceitualmente muito mais complexa.}
+\end{itemize} 
+
+Enfatizamos: o que era representado por $x$ em CFUV, em CFVV o será por $\vec{x}$, um vetor de $n$ componentes, seguindo a notação acima, ou seja, denotaremos $x_i, 1 \leq i \leq n$ a $i$-ésima componente (portanto um escalar) do vetor $\vec{x}$.
+
+A seguir, apresentamos exemplos:
+
+$\bullet$ A {\it média aritmética} $M$ de dois números $x$ e $y$ é uma função $f$ definida por $M=f(x,y)=0.5(x+y)$. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{cc}
+x_1 & x_2 \end{array} \right) $ e $f\left(\vec{x}\right) = 0.5(x_1 + x_2)$.
+
+$\bullet$ A {\it média geométrica} $M$ de dois números positivos $x$ e $y$ é uma função $f$ definida por $M=f(x,y,z) = \sqrt{x y} $. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left( \vec{x}\right)$ onde $f\left(\vec{x}\right) = \sqrt{x_1 x_2}$.
+
+$\bullet$ A {\it média aritmética} $M$ de três números $x$ , $y$ e $z$ é uma função $f$ definida por $M=f(x,y,z)=(x+y+z)/3$. Aqui $n=3$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{ccc} 
+x_1 & x_2 & x_3 \end{array} \right) $ e $f\left(\vec{x}\right) = \frac{1}{3}(x_1 + x_2 + x_3)$.
+
+
+$\bullet$ O volume $V$ de um cilindro circular reto é uma função $f$ do raio $r$ de sua base e de sua altura $h$, ou seja, $V = f(r,h)$. Sabemos que $f(x,y) = \pi x^2 y$. Aqui $n=2$, e podemos até mesmo escrever na forma vetorial $V = f \left( \vec{x} \right)$, onde $\vec{x} = \left( \begin{array}{cc} r & h \end{array} \right)$ e $f(\vec{x}) = \pi x_1^2 x_2$.
+
+
+$\bullet $ Uma arruela plana é a região entre dois círculos concêntricos de raios diferentes. Seja $r_e$ o raio do círculo externo e $r_i$ o do interno. A área $A$ da superfície da arruela é portanto uma função de $r_i$ e $r_e$, ou seja, $A = f(r_i,r_e)$. Sabemos $f(x,y) = \pi (y^2 - x^2)$. Aqui $n=2$, e na forma vetorial  $V = f\left(\vec{x}\right)$, onde $f\left( \vec{x} \right) = \pi (x_2^2-x_1^2)$.
+
+$\bullet$  Um arruela espacial de espessura $h$  tem volume $V = f(r_i,r_e,h)$, onde $r_i$ é o raio interno e $r_e$ é o raio externo. Sabemos $V = \pi h( r_e^2 - r_i^2)$. Aqui $n=3$, e podemos escrever $\vec{x} = \left( \begin{array}{ccc} 
+r_i & r_e & h \end{array} \right)$, e $f\left(\vec{x}\right) = \pi x_3 (x_2^2 - x_1^2)$.
+
+
+Variados assuntos serão encontrados nos capítulos seguintes desse livro. Normalmente são tratados em um segundo curso de Cálculo Diferencial e Integral ou em um curso de Geometria Analítica. A seção sobre Álgebra Vetorial algumas vezes é entendida como pré-requisito estabelecido por uma disciplina chamada Álgebra Linear.
+
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
+
+\construirExer
+
+\section{Pré-imagem de uma função de várias variáveis}
+
+
+Uma vez estabelecida uma função $f$ de várias variáveis, a pré-imagem de um número real $c$ é o conjunto formado pelos vetores $\vec{x}$ tais que $f(\vec{x}) = c$. Consequentemente, podemos escrever
+\begin{equation}
+f^{-1}(c) = \left\{ \vec{x} \in \mathbb{R}^n : f(\vec{x}) = c \right\}.
+\end{equation}
+Quando tal conjunto é uma curva plana, é chamada de {\it curva de nível}.
+Quando tal conjunto é uma superfície no espaço tridimensional, é chamada de {\it superfície de nível}.
+
+A seguir buscaremos entender um pouco mais sobre a natureza geométrica da pré-imagem de funções de várias variáveis, analisando alguns exemplos.
+
+$\bullet$  Considere a média aritmética $M = f\left(\vec{x}\right) = 0.5(x_1+x_2)$ apresentada em seção anterior. Como não há razão para restringirmos $x_1$ e $x_2$, dado um número real $c$,
+\begin{equation}
+f^{-1}(c) = \left\{ (x_1,x_2) : x_1 + x_2 = 2c \right\}
+\end{equation}
+e portanto sempre será uma reta no plano.
+
+$\bullet$  Considere a média geométrica $M = f\left(\vec{x}\right) = (x_1 x_2)^{1/2}$ apresentada em seção anterior, onde $x_1$ e $x_2$ são não-negativos. Dado  um número real $c$ não-negativo,
+\begin{equation}
+f^{-1}(c) = \left\{ (x_1,x_2) : \sqrt{x_1x_2} = c \Leftrightarrow x_1 x_2 = c^2  \right\}
+\end{equation}
+e portanto temos casos:
+\begin{itemize}
+\item{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
+\item{$ c > 0 $:  $f^{-1}(c)$ é a curva plana definida por
+$\left\{ (x,y) : y = \frac{c^2}{x}, x > 0  \right\} $}
+\end{itemize}
+
+$\bullet$  Considere a média aritmética $M = f\left(\vec{x}\right) = \frac{1}{3}(x_1+x_2+x_3)$ apresentada em seção anterior. Como não há razão para restringirmos $x_1$ , $x_2$ e $x_3$, dado um número real $c$,
+\begin{equation}
+f^{-1}(c) = \left\{ (x_1,x_2,x_3) : x_1 + x_2 + x_3 = 3c \right\}
+\end{equation}
+e portanto sempre será um plano no espaço.
+
+
+$\bullet$ 
+Considere o exemplo do cilindro circular reto apresentado em seção anterior, onde $r$ é o raio da base e $h$ é a altura e assim $f(r,h) = \pi r^2 h $ então
+\begin{equation}
+   f^{-1}(c) = \left\{ (r,h) : h = \frac{c}{\pi r^2} \right\}
+\end{equation}
+e portanto temos casos:
+\begin{itemize}
+\item{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
+\item{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
+\item{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida por
+$\left\{ (r,h) : h = \frac{c}{\pi r^2}  \right\} $}
+\end{itemize}
+
+$\bullet$ Considere $u = f(x,y) = x y $ , $(x,y) \in \mathbb{R} \times \mathbb{R} $. 
+Agora novamente temos casos:
+\begin{itemize}
+\item{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
+\item{$ c \neq 0 $:  $f^{-1}(c)$ é a curva plana definida por
+$\left\{ (x,y) : y = \frac{c}{x}, x \neq 0  \right\} $}
+\end{itemize}
+
+$\bullet$ Considere $y = f(x,y) = \frac{x^2}{a^2} + \frac{y^2}{b^2}, a,b \neq 0$.  Novamente temos casos:
+\begin{itemize}
+\item{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
+\item{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
+\item{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida na forma implícita por $\left\{ (x,y) : \frac{x^2}{a^2} + \frac{y^2}{b^2}= c \Leftrightarrow \frac{x^2}{(a \sqrt{c})^2} + \frac{y^2}{(b\sqrt{c})^2} = 1  \right\} $; observamos que curvas dessa forma são chamadas de {\it elipses}, e serão trabalhadas em capítulo seguinte no contexto das {\it Seções Cônicas}, juntamente com outras importantes curvas que podem ser definidas como {\it curvas de nível} de uma função de várias variáveis.}
+\end{itemize}
+
+$\bullet$ Considere $y = f(x,y,z) = \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}, a,b,c \neq 0$.  Novamente temos casos, agora usaremos $f^{-1}(k)$
+\begin{itemize}
+\item{$k < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(k) = \emptyset$}
+\item{$ k = 0$: neste caso  $f^{-1}(k) = \{ (0,0,0) \}$}
+\item{$ k > 0 $: neste caso $f^{-1}(k)$ é a superfície espacial definida na forma implícita por $\left\{ (x,y,z) : \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = k \Leftrightarrow \frac{x^2}{(a \sqrt{k})^2} + \frac{y^2}{(b\sqrt{k})^2} + \frac{z^2}{(c \sqrt{k})^2} = 1  \right\} $; observamos que superfícies dessa forma são chamadas de {\it elipsóides}, e serão trabalhadas em capítulo seguinte no contexto das {\it Superfícies Quádricas}, juntamente com outras importantes superfícies que podem ser definidas como {\it superfícies de nível} de uma função de várias variáveis.}
+\end{itemize}
+
+
+
+
+\subsection*{Exercícios resolvidos}
+
+\construirExeresol
+
+\subsection*{Exercícios}
+
+\construirExer
+
+\section{Exercícios finais}
+
+\construirExer
+
