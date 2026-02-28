@@ -33,7 +33,7 @@ O domínio natural de uma função vetorial é formado pelo conjunto de parâmet
 O limite\index{limite de uma função vetorial de uma variável}, a derivação\index{derivada de uma função vetorial de uma variável} e a integração vetorial\index{integral de uma função vetorial de uma variável} são definidas componente a componente no sistema de coordenadas cartesiano:
 \begin{eqnarray}
 \lim_{t\to a}\vec{r}(t)&=&\lim_{t\to a}x(t) \vec{i}+\lim_{t\to a}y(t)\vec{j}+\lim_{t\to a}z(t)\vec{k}\label{deflim}\\
-\frac{d\vec{r}(t)}{dt}&=&\frac{d x(t)}{dt}\vec{i}+\frac{d y(t)}{dt}\vec{j}+\frac{d z(t)}{dt}\vec{k}\label{defder}\\
+\vec{r}~\!'(t)=\frac{d\vec{r}(t)}{dt}&=&\frac{d x(t)}{dt}\vec{i}+\frac{d y(t)}{dt}\vec{j}+\frac{d z(t)}{dt}\vec{k}\label{defder}\\
 \int_{a}^b\vec{r}(t){dt}&=&\int_{a}^bx(t)dt~\!\vec{i}+\int_{a}^by(t)dt~\!\vec{j}+\int_{a}^bz(t)dt~\!\vec{k}\label{defint}\\
 \int\vec{r}(t){dt}&=&\int x(t)dt~\!\vec{i}+\int y(t)dt~\!\vec{j}+\int z(t)dt~\!\vec{k}\label{defint2}
 \end{eqnarray}
@@ -141,7 +141,7 @@ Assim, se $\|u\|$ for constante, a derivada à esquerda é nula e temos $\vec{u}
 \begin{exer}Encontre o domínio da função vetorial $\vec{r}(t)$ e o valor da função no ponto $t_0$ para:
 \begin{itemize}
  \item[a)] $\vec{r}=\cos(t)\vec{i}-3t\vec{j}$; $t_0=\pi$.
- \item[b)] $\vec{r}=\cos(\pi t)\vec{i}-\ln(t)\vec{j}+\sqrt{t-2}$; $t_0=3$.
+ \item[b)] $\vec{r}=\cos(\pi t)\vec{i}-\ln(t)\vec{j}+\sqrt{t-2} \vec{k}$; $t_0=3$.
 \end{itemize}
 \end{exer}
 \begin{exer}Expresse as equações paramétricas abaixo como uma única equação vetorial:
@@ -379,20 +379,19 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
   Considere a curva $\vec{r}(t)$ definida no exercício E \ref{exe_co_arc4}. Encontre o triedro de Frenet-Serret $\vec{T}$, $\vec{N}$ e $\vec{B}$.
 \end{exeresol}
 \begin{resol}
-  Primeiro calculamos $\vec{v}(t):=\vec{r}\!'(t)$:
+  Primeiro calculamos $\vec{v}(t)=\frac{d\vec{r}}{dt}$:
  $$\vec{v}(t) = \frac{d \vec{r}}{dt} = -2t \vec{i} + t(2+3t) \vec{j} + t(2-3t)\vec{k},$$
  cuja norma é dada por:
   $$\left\|\vec{v} \right\|^2 = 4t^2 + t^2(2+3t)^2 + t^2(2-3t)^2 = t^2(12+18t^2).$$
   Logo $\vec{T} = \frac{\vec{v}}{\|\vec{v}\|} = \frac{-2 }{\sqrt{12+18t^2}}\vec{i} + \frac{2+3t}{\sqrt{12+18t^2}}\vec{j} + \frac{2-3t}{\sqrt{12+18t^2}}\vec{k}$.
 
   Derivando essa última expressão em relação a $t$, temos:
-  $$\frac{d\vec{T}}{dt} = \frac{36t}{(12+18t^2)^{3/2}} \vec{i} + \frac{36(1-t)}{(12+18t^2)^{3/2}} \vec{j} - \frac{36(1+t)}{(12+18t^2)^{3/2}} \vec{k}.$$
-    E para normalizar sem trocar seu sentido definimos:
-    $$\vec{u} = t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k},$$
-    o que implica: $$\|\vec{u}\|^2=t^2 + (1-t)^2 + (1+t)^2 = 3t^2 + 2.$$
-    Então:
-     $$\vec{N} = \frac{\frac{d\vec{v}}{dt}}{\|\frac{d\vec{v}}{dt}\|} = \frac{\vec{u}}{\|\vec{u}\|}=\frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}.$$
-     Finalmente $ \vec{B} = \vec{T} \times \vec{N}$ calculado via \begin{eqnarray*}
+  $$\frac{d\vec{T}}{dt} = \frac{36t}{(12+18t^2)^{3/2}} \vec{i} + \frac{36(1-t)}{(12+18t^2)^{3/2}} \vec{j} - \frac{36(1+t)}{(12+18t^2)^{3/2}} \vec{k} $$ 
+portanto $$\frac{d\vec{T}}{dt} = \frac{36}{(12+18t^2)^{3/2}}\left[  t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k} \right] $$
+    o que implica $$\left\|\frac{d\vec{T}}{dt}\right\|= \frac{36}{(12+18t^2)^{3/2}} \left\| t \vec{i} + (1-t) \vec{j} - (1+t)\vec{k} \right\| = \frac{36}{(12+18t^2)^{3/2}} \sqrt{ 3t^2 + 2} $$
+    Então
+     $$\vec{N} = \frac{\frac{d\vec{T}}{dt}}{\|\frac{d\vec{T}}{dt}\|} = \frac{t}{\sqrt{3t^2+2}} \vec{i} + \frac{1-t}{\sqrt{3t^2+2}} \vec{j} - \frac{1+t}{\sqrt{3t^2+2}} \vec{k}.$$
+     Finalmente $ \vec{B} = \vec{T} \times \vec{N}$ é calculado via \begin{eqnarray*}
       \vec{B} = \vec{T} \times \vec{N} &=&
       \left| \begin{array}{ccc}
 \vec{i} & \vec{j} & \vec{k} \\
@@ -400,6 +399,8 @@ Das propriedades de produto vetorial, temos que $\vec{B}$, além de ortogonal a 
 \frac{t}{\sqrt{3t^2+2}} & \frac{1-t}{\sqrt{3t^2+2}} &  \frac{-1-t}{\sqrt{3t^2+2}} \end{array} \right|\\ &=& \frac{(-4-6t^2)\vec{i} - (2+3t^2)\vec{j} - (2+3t^2)\vec{k}}{ \sqrt{12+18t^2} \sqrt{3t^2+2}}\\
 &=& \frac{-2}{\sqrt{6}} \vec{i} - \frac{1}{\sqrt{6}} \vec{j} - \frac{1}{\sqrt{6}} \vec{k}.
 \end{eqnarray*}
+
+já que $\sqrt{12+18t^2} \sqrt{3t^2+2}= \sqrt{6}(2+3t^2)$
 \end{resol}
 
 \begin{exeresol}
@@ -467,7 +468,7 @@ $$\vec{u}\times\left(\vec{v}\times\vec{w}\right)=\vec{v}\left(\vec{u}\cdot\vec{w
 \begin{exer}\label{exer_formula_binormal}
  O vetor binormal unitário foi definido em aula como $\vec{B}(t)=\vec{T}(t)\times\vec{N}(t)$. Argumente, sem cálculos, que ele também poderia ser definido como
  $$
- \vec{B}(t)=\frac{\vec{r}'(t)\times \vec{r}''(t)}{\|\vec{r}'(t)\times \vec{r}''(t)\|}.
+ \vec{B}(t)=\frac{\frac{d\vec{r}}{dt}(t)\times \frac{d^2\vec{r}}{dt^2}(t)}{\|\frac{d\vec{r}}{dt}(t)\times \frac{d^2\vec{r}}{dt^2}(t)\|}.
  $$
 \end{exer}
 \begin{exer}
@@ -823,10 +824,10 @@ onde $a_T=v'$ e $a_N=v^2\kappa$. Então, se a velocidade possui normal constante
   Inserimos a parametrização $x(t)=a\cos(t)$ e $y(t)=b\sin(t)$ para obter o vetor $\vec{r}(t)$:
   $$\vec{r}(t) = a\cos(t)\vec{i} + b\sin(t)\vec{j}.$$
   as derivadas de $\vec{r}(t)$ são, portanto, dadas por:
-$$r'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$
-$$r''(t)=-a\cos(t)\vec{i}-b\sin(t)\vec{j}$$
+$$\vec{r}~\!'(t)=-a\sin(t)\vec{i}+b\cos(t)\vec{j}$$
+$$\vec{r}~\!''(t)=-a\cos(t)\vec{i}-b\sin(t)\vec{j}$$
 Assim, temos:
-\begin{eqnarray*}\vec{r}'(t)\times\vec{r}''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times\left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
+\begin{eqnarray*}\vec{r}~\!'(t)\times\vec{r}~\!''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times\left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
 &=&ab\sin^2(t)\vec{k}+ab\cos^2(t)\vec{k}=ab\vec{k}
 \end{eqnarray*}
 Onde usamos a identidade trigonométrica $\sin^2(t)+\cos^2(t)=1$ e as identidades vetoriais $\vec{i}\times\vec{j}=\vec{k}$, $\vec{j}\times\vec{i}=-\vec{k}$  e $\vec{i}\times\vec{i}=\vec{j}\times\vec{j}=\vec{0}$.
@@ -834,7 +835,7 @@ Agora calculamos $\|\vec{r}(t)\|$:
 $$\|\vec{r}(t)\|=\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{1/2}$$
 
 Desta forma, temos:
-$$\kappa(t)=\frac{\|r'(t)\times r''(t)\|}{\|r'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
+$$\kappa(t)=\frac{\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\|}{\|\vec{r}~\!'(t)\|^3}=\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}$$
 Vale observar que os pontos de máxima e mínima curvatura estão nos vértices, isto é, $t=0$, $t=\frac{\pi}{2}$, $t=\pi$ e $t=\frac{3\pi}{2}$. A prova dessa afirmação será objeto de exercício.
 
 Podemos expressar a curvatura da elipse em termos das variáveis originais $x$ e $y$:
@@ -891,8 +892,8 @@ z&=&ct.\\
 Onde $a$ e $w$ são constantes positivas.
 \begin{itemize}
 \item[a)] Encontre  a curvatura desta hélice usando a fórmula
-$$\kappa=\frac{\left\|\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)\right\|}{\|r\ \!'(t)\|^3}.$$
-\item[b)] Encontre o módulo da torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)}{\left\|\vec{r}\ \!'(t)\times \vec{r}\ \!''(t)\right\|}$$
+$$\kappa=\frac{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}{\|\vec{r}~\!'(t)\|^3}.$$
+\item[b)] Encontre o módulo da torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}~\!'(t)\times \vec{r}~\!''(t)}{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}$$
 e a seguinte fórmula para o módulo da torção:
 $$|\tau|=\frac{\|B\ \!'(t)\|}{\|\vec{r}\ \!'(t)\|}=\left\|\frac{d\vec{B}}{ds}\right\|$$
 
@@ -927,7 +928,7 @@ e
 \end{eqnarray*}
 
 Usamos a fórmula da curvatura:
-\begin{eqnarray*}\kappa &=& \frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}\\
+\begin{eqnarray*}\kappa &=& \frac{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}{\|\vec{r}~\!'(t)\|^3}\\
 &=&\frac{aw^2\sqrt{c^2+a^2w^2}}{\left\|-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k}\right\|^3}\\
 &=&\frac{aw^2\sqrt{c^2+a^2w^2}}{\left(a^2w^2+c^2\right)^{3/2}}\\
 &=&\frac{aw^2}{{a^2w^2+c^2}}\\
@@ -935,7 +936,7 @@ Usamos a fórmula da curvatura:
 
 
 Agora usamos a fórmula da torção:
-\begin{eqnarray*}\vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}\\
+\begin{eqnarray*}\vec{B}&=&\frac{\vec{r}~\!'(t)\times \vec{r}~\!''(t)}{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}\\
 &=&\frac{acw^2\sin(wt)\vec{i}-acw^2\cos(wt)\vec{j}+a^2w^3\vec{k}}{|a|w^2\sqrt{c^2+a^2w^2}}\\
 &=&\frac{ac\sin(wt)\vec{i}-ac\cos(wt)\vec{j}+a^2w\vec{k}}{a\sqrt{c^2+a^2w^2}}
 \end{eqnarray*}
@@ -943,7 +944,7 @@ Agora usamos a fórmula da torção:
 Sabemos que o módulo da torção é dado por:
 \begin{eqnarray*}
 |\tau|&=&\left\|\frac{d}{ds}\vec{B}\right\|\\
-&=& \left\|\frac{d}{dt}\vec{B} \right\|/\|r'(t)\|\\
+&=& \frac{\left\|\frac{d\vec{B}}{dt} \right\|}{\left\|\vec{r}~\!'(t)\right\|}\\
 \end{eqnarray*}
 
 \begin{eqnarray*}
@@ -952,13 +953,13 @@ Sabemos que o módulo da torção é dado por:
 \end{eqnarray*}
 e
 \begin{eqnarray*}
-\|r'(t)\|&=&\left\|-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k}\right\|\\
+\|\vec{r}~\!'(t)\|&=&\left\|-aw\sin(wt)\vec{i}+aw\cos(wt)\vec{j}+c\vec{k}\right\|\\
 &=&\sqrt{c^2+a^2w^2}
 \end{eqnarray*}
 
 
 \begin{eqnarray*}
- \frac{d}{ds}\vec{B}
+ \frac{d\vec{B}}{ds}
 &=&\frac{acw\cos(wt)\vec{i}+acw\sin(wt)\vec{j}}{a(c^2+a^2w^2)}
 \end{eqnarray*}
 
@@ -1001,15 +1002,15 @@ A trajetória em questão é dada por:
 \begin{eqnarray*}\vec{r}(t)=3\cos (t) \vec{i} + 3\sin (t) \vec{j} +t^2\vec{k}
 \end{eqnarray*}
 Para obter os valores pedidos, calculamos:
-\begin{eqnarray*}\vec{r}'(t)&=&-3\sin (t) \vec{i} + 3\cos (t) \vec{j} +2t\vec{k}\\
-\vec{r}''(t)&=&-3\cos (t) \vec{i} - 3\sin (t) \vec{j} +2\vec{k}\\
-\|\vec{r}'(t)\|&=&\left(9\sin^2(t)+9\cos^2(t)+4t^2\right)^{1/2}=\left(9+4t^2\right)^{1/2}
+\begin{eqnarray*}\vec{r}~\!'(t)&=&-3\sin (t) \vec{i} + 3\cos (t) \vec{j} +2t\vec{k}\\
+\vec{r}~\!''(t)&=&-3\cos (t) \vec{i} - 3\sin (t) \vec{j} +2\vec{k}\\
+\|\vec{r}~\!'(t)\|&=&\left(9\sin^2(t)+9\cos^2(t)+4t^2\right)^{1/2}=\left(9+4t^2\right)^{1/2}
 \end{eqnarray*}
 
-\begin{eqnarray*}a_N=\frac{\|\vec{r}'(t)\times \vec{r}''(t)\|}{\|\vec{r}'(t)\|}
+\begin{eqnarray*}a_N=\frac{\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\|}{\|\vec{r}~\!'(t)\|}
 \end{eqnarray*}
 onde
-\begin{eqnarray*}\vec{r}'(t)\times \vec{r}''(t)&=&
+\begin{eqnarray*}\vec{r}~\!'(t)\times \vec{r}~\!''(t)&=&
 \left|\begin{array}{ccc}
 \vec{i}&\vec{j}&\vec{k}\\
 -3\sin (t) & 3\cos (t) & 2t\vec{k}\\
@@ -1019,7 +1020,7 @@ onde
 \end{eqnarray*}
 Assim:
 \begin{eqnarray*}
-\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|&=&\left[\left(6\cos(t)+6t\sin(t)\right)^2+\left(-6t\cos(t) +6\sin(t)\right)^2+81\right]^{1/2}\\
+\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|&=&\left[\left(6\cos(t)+6t\sin(t)\right)^2+\left(-6t\cos(t) +6\sin(t)\right)^2+81\right]^{1/2}\\
 &=&\left[\left(36\cos^2(t)+72\sin(t)\cos(t) + 36t^2\sin^2(t)\right)\right.\\&+&\left.\left(36t^2\cos^2(t) -72 \cos(t)\sin(t) + 36 \sin^2(t)\right) + 81\right]^{1/2}\\
 &=&\left[36+36t^2+81\right]^{1/2}=\left(117+36t^2\right)^{1/2}
 \end{eqnarray*}
@@ -1076,7 +1077,7 @@ Como você interpreta os casos a e b? As curvas dos ítens c e g possuem pontos 
 \begin{resol}
   Use a parametrização:
  $$\vec{r}(t) = t\vec{i}+f(t)\vec{j}$$ na fórmula da curvatura dada por:
-$$\kappa=\frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}=\frac{\left\|\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}~\!\right\|}{\|~\!\vec{i}+f'(t)\vec{j}\|^3}$$
+$$\kappa=\frac{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}{\|\vec{r}~\!'(t)\|^3}=\frac{\left\|\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}~\!\right\|}{\|~\!\vec{i}+f'(t)\vec{j}\|^3}$$
 e obtenha a expressão dada.
 
 
@@ -1127,9 +1128,9 @@ $$\vec{N}=\left\{
 
 O vetor $\vec{B}$ também poderia ter sido calculado pela fórmula:
  \begin{eqnarray*}
-  \vec{B}&=&\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}
+  \vec{B}&=&\frac{\vec{r}~\!'(t)\times \vec{r}~\!''(t)}{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}
  \end{eqnarray*}
-onde $$\vec{r}'(t)\times \vec{r}''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}=f''(t)\vec{k}.$$
+onde $$\vec{r}~\!'(t)\times \vec{r}~\!''(t)=\left(\vec{i}+f'(t)\vec{j}\right)\times f''(t)\vec{j}=f''(t)\vec{k}.$$
 \end{resol}
 
 \begin{exeresol}
@@ -1181,7 +1182,7 @@ Um automóvel se desloca com velocidade constante sobre uma pista cuja forma é 
   $$v=\sqrt{\frac{a_N}{\kappa}}=5m/s$$
 
   {\it Obs:}
- A parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema. Por isso, usamos a curvatura da elipse realizar os cálculos e conectar aleceração normal com velocidade escalar.
+ A parametrização $\vec{r}=a\sin (t) + b\cos (t)$ descreve a elipse, mas não satisfaz a condição de velocidade escalar constante, pelo que pode ser usada para obter a curvatura, mas não representa a cinética do problema. Por isso, usamos a curvatura da elipse ao realizar os cálculos e conectar aceleração normal com velocidade escalar.
 \end{resol}
 \begin{exeresol}
 Considere a trajetória  dada por
@@ -1332,8 +1333,8 @@ z(t)&=&ct,
 onde $a>0$.
 \begin{itemize}
 \item[a)] Encontre  a curvatura desta hélice usando a fórmula
-$$\kappa=\frac{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}{\|r'(t)\|^3}$$
-\item[b)] Encontre a torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}'(t)\times \vec{r}''(t)}{\left\|\vec{r}'(t)\times \vec{r}''(t)\right\|}$$
+$$\kappa=\frac{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}{\|\vec{r}~\!'(t)\|^3}$$
+\item[b)] Encontre a torção desta curva usando a seguinte fórmula para calcular o vetor binormal unitário: $$\vec{B}=\frac{\vec{r}~\!'(t)\times \vec{r}~\!''(t)}{\left\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\right\|}$$
 \item[c)] Encontre a torção máxima e a torção mínima para um dado $a$.
 \end{itemize}
 \end{exer}
@@ -1411,7 +1412,7 @@ O movimento de uma partícula é descrito por $\vec{r}(t)=(t-t^2)\vec{i}-t^2\vec
 \end{resp}
 \begin{exer} Através da relação algébrica entre módulo e produto interno aplicada à velocidade, i.e., $\|\vec{v}\|^2=\vec{v}\cdot\vec{v}$), verifique  que se o módulo da velocidade de uma partícula é constante, então os vetores velocidade e aceleração são perpendiculares.
 \end{exer}
-\begin{exer} Através da fórmula da curvatura dada por $\kappa(t)=\frac{\|\vec{v}(t)\times \vec{a}(t)\|}{v(t)^3} )$, concluda que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.
+\begin{exer} Através da fórmula da curvatura dada por $\kappa(t)=\frac{\|\vec{v}(t)\times \vec{a}(t)\|}{v(t)^3} $, conclua que se a aceleração normal de uma partícula em movimento é zero para todo $t$, então a partícula se move ao longo de uma reta.
 \end{exer}
 \begin{exer} Calcule a componente tangencial $a_T$ e a componente normal $a_N$ da aceleração em $t=t_0$ para:
 \begin{itemize}
