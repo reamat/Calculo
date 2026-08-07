@@ -1,6 +1,6 @@
 %Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\chapter{Álgebra vetorial}\index{álgebra vetorial}
+\chapter{Álgebra vetorial}\label{chap:algvet}\index{álgebra vetorial}
 O objetivo deste capítulo é revisar conceitos básicos do cálculo e da álgebra linear necessários ao entendimento do cálculo vetorial.
 
 
@@ -22,7 +22,7 @@ Na álgebra linear, vetores\index{vetor} são definidos de forma abstrata como o
 \end{subequations}
 \begin{obs} O vetor nulo $\vec{0}$ e escalar nulo $0$ são entidades matemáticas distintas e não devem ser confundidas.\end{obs}
 
-\begin{obs}Observamos que a propriedade associativa dada por (\ref{defelass}) permite que se escreve a soma de três vetores $\vec{u}+\vec{v}+\vec{w}$ sem risco de ambiguidade. A propriedade (\ref{defeldist3}) é algumas vez chamada de associatividade, no entanto, é cauteloso observar que ela não estabelece a associatividade de uma operação, já que o produto de escalares é uma operação distinta do produto de um escalar por um vetor. A propriedade (\ref{defelnulo}) garante a existência de um vetor nulo que funciona com um elemento neutro da soma vetorial. \end{obs}
+\begin{obs}Observamos que a propriedade associativa dada por (\ref{defelass}) permite que se escreva a soma de três vetores $\vec{u}+\vec{v}+\vec{w}$ sem risco de ambiguidade. A propriedade (\ref{defeldist3}) é algumas vezes chamada de associatividade, no entanto, é cauteloso observar que ela não estabelece a associatividade de uma operação, já que o produto de escalares é uma operação distinta do produto de um escalar por um vetor. A propriedade (\ref{defelnulo}) garante a existência de um vetor nulo que funciona com um elemento neutro da soma vetorial. \end{obs}
 
 A subtração de dois vetores é definida por
 \begin{equation}\label{delsub}
@@ -87,15 +87,15 @@ O leitor já tem familiaridade com o sistema de coordenadas cartesianas\index{Si
 É natural neste momento definir os vetores $\vec{i}$, $\vec{j}$ e $\vec{k}$ como
 \begin{equation}\label{defijk}
 \begin{array}{rcl}
-\vec{i}&=&\left<1,0,0\right>\\
-\vec{j}&=&\left<0,1,0\right>\\
-\vec{k}&=&\left<0,0,1\right>
+\vec{i}&=&\langle 1,0,0\rangle\\
+\vec{j}&=&\langle 0,1,0\rangle\\
+\vec{k}&=&\langle 0,0,1\rangle
 \end{array}
 \end{equation}
 de forma que a expressão (\ref{defeucv}) pode ser escrita como
 \begin{equation}\label{repijk}\vec{v}=v_1  \vec{i}+v_2  \vec{j}+v_3 \vec{k}.\end{equation}
 O vetor nulo é definido como vetor cujas três coordenadas são nulas:
-\begin{equation}\label{defnulo}\vec{0}=0 ~\! \vec{i}+0~\!  \vec{j}+0~\!  \vec{k}= ~\!\left<0,0,0\right>.\end{equation}
+\begin{equation}\label{defnulo}\vec{0}=0 ~\! \vec{i}+0~\!  \vec{j}+0~\!  \vec{k}= ~\! \langle 0,0,0 \rangle.\end{equation}
 A soma de dois vetores é dada pela soma componente a componente, ou seja, se $\vec{u}=u_1  \vec{i}+u_2\vec{j}+u_3 \vec{k}$ e $\vec{v}=v_1\vec{i}+v_2\vec{j}+v_3 \vec{k}$, então
 \begin{equation}\label{defsoma}\vec{u}+\vec{v}= \left(u_1+v_1\right) \vec{i}+\left(u_2+v_2\right) \vec{j}+\left(u_3+v_3\right) \vec{k}.\end{equation}
 O produto de um vetor por um escalar é definido como a multiplicação componente a componente pelo escalar, ou seja, se $\vec{u}=u_1~\!  \vec{i}+u_2~\!  \vec{j}+u_3 ~\! \vec{k}$, então
@@ -115,7 +115,7 @@ Definimos também a norma euclidiana\index{norma} de um vetor $\vec{v}$ como a d
  Aplique a definição para calcular a norma do vetor $\vec{x} = 12 \vec{i} + 16 \vec{j} + 8 \vec{k}$. 
 \end{exeresol}
 \begin{resol}
-$$\|x\| = \sqrt{(12)^2+(16)^2+8^2} = \sqrt{464}=\sqrt{2^4 (29)} = 4\sqrt{29}$$
+$$\|\vec{x}\| = \sqrt{(12)^2+(16)^2+8^2} = \sqrt{(3\cdot4)^2 + (4\cdot4)^2 + (2\cdot 4)^2} = \sqrt{4^2(3^2 + 4^2 + 2^2)} = 4\sqrt{29}$$
 \end{resol}
 
 \begin{exeresol} \label{exenorm2}
@@ -124,7 +124,7 @@ $$\|x\| = \sqrt{(12)^2+(16)^2+8^2} = \sqrt{464}=\sqrt{2^4 (29)} = 4\sqrt{29}$$
 \end{exeresol}
 
 \begin{resol}
-$$\|x\| = \sqrt{t^6 + t^8 + 4t^8} = \sqrt{t^6(1 + 5t^2)}=t^3\sqrt{1 + 5t^2}$$
+$$\|\vec{x}\| = \sqrt{t^6 + t^8 + 4t^8} = \sqrt{t^6(1 + 5t^2)}=t^3\sqrt{1 + 5t^2}$$
 \end{resol}
 
 \construirExeresol
@@ -248,7 +248,7 @@ Considere a superfície terrestre com uma esfera de raio $R_{\oplus}$. Denote a 
 \begin{itemize}
 \item[a)] Qual a norma do vetor $\vec{r}$?
 \item[b)] Qual é o valor da componentes $x$, $y$ e $z$ de $\vec{r}$ em termos de $\lambda$ e $\phi$?
-\item[c)] Seja $d$ a distância entre dois pontos sobre a superfície terrestre. Use a lei dos cossenos\footnote{Seja um triângulo de lados $a$, $b$ e $c$ e seja $\theta$ o ângulo entre os lados de comprimento $a$ e $b$, então $c^2=a^2+b^2-2ab\cos\theta.$ Ver também figura \ref{leicossenos} na página \pageref{leicossenos}.} para mostrar que distância $\delta$ sobre a superfície esférica entre esses mesmos dois pontos é dada por
+\item[c)] Seja $d$ a distância entre dois pontos sobre a superfície terrestre. Use a lei dos cossenos (expressa na figura \ref{leicossenos}) para mostrar que distância $\delta$ sobre a superfície esférica entre esses mesmos dois pontos é dada por
 $$\delta=R_\oplus \cos^{-1}\left(1-\frac{d^2}{2R_\oplus^2}\right)$$
 Interprete os casos particulares $d=0$ e $d=2R_\oplus$.
 \item[d)] Considerando $R_\oplus=6378Km$ e os seguintes valores para as coordenadas geográficas de Porto Alegre, Londres e Tóquio, construa uma tabela com os valores de $\lambda$ e $\phi$ e as coordenadas $xyz$ em quilômetros de cada uma dessas cidades.
