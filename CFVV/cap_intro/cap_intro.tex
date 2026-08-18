@@ -1,83 +1,123 @@
-%Este trabalho está licenciado sob a Licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada. Para ver uma cópia desta licença, visite https://creativecommons.org/licenses/by-sa/3.0/ ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
 
 \chapter{Introdução}\label{chap:introducao}
 
-\section{Funções de várias variáveis}
+\section{Funções de várias variáveis} \label{sec:intro_cfvv}
 
-O Cálculo de Funções de Várias Variáveis (CFVV) é a continuação do Cálculo de Funções de Uma Variável (CFUV), sendo portanto normalmente lecionado em uma segunda disciplina de Cálculo Diferencial e Integral. 
+O Cálculo de Funções de Várias Variáveis (CFVV) traz o aperfeiçoamento natural das noções matemáticas do Cálculo de Funções de Uma Variável (CFUV), e é normalmente apresentado em uma disciplina subsequente. 
 
-O CFVV difere do CFUV essencialmente pela natureza do espaço que contém as variáveis independentes, e então pela natureza das operações algébricas nesse espaço. Explicando melhor:
+Sob um ponto de vista bastante singelo, o CFVV difere do CFUV já pela natureza geométrica do espaço que contém as variáveis independentes, e consequentemente pela natureza das operações algébricas entre os elementos desse espaço. Explicando com mais profundidade:
 \begin{itemize}
-\item{CFUV estuda a dependência $u=f(x)$ de duas variáveis $x$ e $u$, ambas contidas em algum conjunto dos números reais ($\mathbb{R}$) a partir da hipótese que $f$ é uma {\it função de uma variável real}. Em CFUV, fixado um ponto $x_0 \in \mathbb{R}$, a construção $x \rightarrow x_0$ pode ser feita de duas formas, ou pela direita ($x>x_0$) ou pela esquerda ($x < x_0$).  }
-\item{CFVV estuda a dependência $u=f(x_1,x_2,\dots,x_n)$, onde $n$ é um inteiro positivo que denota o número de variáveis independentes. Mais uma vez $u$, e também cada uma das $x_1, x_2, \dots, x_n$ estão contidas em algum conjunto dos números reais; mas agora $f$ é uma {\it função de várias variáveis}. Por outro lado, inegavelmente o tratamento matemático da fica mais ágil quando entendemos uma relação da forma $u = f(\vec{x})$, onde $\vec{x} = (x_1,x_2,\dots,x_n)$. Em CFVV, fixado um ponto $\vec{x}_0 \in \mathbb{R}^n$, a construção $\vec{x} \rightarrow \vec{x}_0$ deve ser feita considerando todo e qualquer {\bf curva} (definiremos mais tarde) que contenha $\vec{x}_0$, sendo portanto uma construção conceitualmente muito mais complexa.}
+\item{CFUV estuda a dependência $u=f(x)$ de duas variáveis $x$ e $u$, ambas contidas em algum conjunto dos números reais ($\mathbb{R}$) a partir da hipótese que $f$ é uma {\it função de uma variável real}. Nesse contexto $x$, a variável independente, tem seus valores dentro em uma reta, e consequentemente, fixado um ponto $x_0 \in \mathbb{R}$, a operação transcendental $x \rightarrow x_0$ (limite, que é basilar ao Cálculo) pode ser feita de duas formas, ou pela direita (via $x>x_0$) ou pela esquerda ( via $x < x_0$).  }
+\item{CFVV estuda a dependência $u=f(x_1,x_2,\dots,x_n)$, onde $n$ é um inteiro positivo que denota o número de variáveis independentes. Mais uma vez $u$, e também cada uma das $x_1, x_2, \dots, x_n$ estão contidas em algum conjunto dos números reais; mas agora $f$ é uma {\it função de várias variáveis}. Por outro lado, inegavelmente o tratamento matemático da fica mais ágil quando entendemos uma relação da forma $u = f(\vec{x})$, onde $\vec{x} = \left( \begin{array}{cccc} x_1 & x_2 & \dots &x_n \end{array} \right)$. Por exemplo, em CFVV, fixado um ponto $\vec{x}_0 \in \mathbb{R}^n$, a operação $\vec{x} \rightarrow \vec{x_0}$ (limite) deve ser feita considerando toda e qualquer {\bf curva} (apresentamos definição na seção \ref{sec:intro_cupp}, mas apostamos que você já tem uma boa idéia do que é) que contenha $\vec{x}_0$, sendo portanto uma construção conceitualmente mais delicada.}
 \end{itemize} 
 
-Enfatizamos: o que era representado por $x$ em CFUV, em CFVV o será por $\vec{x}$, um vetor de $n$ componentes, seguindo a notação acima, ou seja, denotaremos $x_i, 1 \leq i \leq n$ a $i$-ésima componente (portanto um escalar) do vetor $\vec{x}$.
+Naturalmente, existem outras importantes distinções entre CFUV e CFVV. Entretanto é realmente nosso principal objetivo apresentar a diferença entre o $x$ {\it escalar} e o $x$ {\it vetor}; por isso 
+enfatizamos: o que era representado por $x$ em CFUV, em CFVV o será por $\vec{x}$, um vetor de $n$ componentes, seguindo a notação acima, ou seja, denotaremos $x_i, 1 \leq i \leq n$ a $i$-ésima componente (portanto um escalar) do vetor $\vec{x}$. 
+Também é comum, embora possa trazer alguma confusão, denotar por $x$, $y$ e $z$ as componentes de um vetor $\vec{x}$. Quando $n=2$, a notação $z=f(x,y)$ é comum. Já quando $n=3$, $u = f(x,y,z)$  é bastante usado.
 
-A seguir, apresentamos exemplos:
 
-$\bullet$ A {\it média aritmética} $M$ de dois números $x$ e $y$ é uma função $f$ definida por $M=f(x,y)=0.5(x+y)$. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{cc}
-x_1 & x_2 \end{array} \right) $ e $f\left(\vec{x}\right) = 0.5(x_1 + x_2)$.
+É importante  não confundir (muito) {\it pontos} e {\it vetores}. Veja o exemplo: $P(2,3,5)$, $O(0,0,0)$ são dois pontos em $\mathbb{R} \times \mathbb{R} \times \mathbb{R}$, enquanto 
+\begin{center}
+$\displaystyle \vec{p} = \left( \begin{array}{ccc}
+2 & 3 & 5 \end{array} \right)$ ou mesmo
+$\displaystyle \vec{p} = \left( \begin{array}{c}
+2 \\ 3 \\ 5 \end{array} \right) $ ou ainda
+$\displaystyle \vec{p} = \langle 2, 3, 5 \rangle$ 
+\end{center}
+é o vetor do espaço $\mathbb{R}^3$ que pode ser definido como $\vec{p} = \stackrel{\longrightarrow}{OP}$, ou seja, vetor que os une, começando em $O$ e terminando em  $P$. Importante observar {\it contexto}: quando $x$ e $y$ são números reais (como pontos na reta real), então $xy$ denota produto, $x/y$ denota divisão e fazem sentido para $y \neq 0$. Quando $x$ e $y$ são vetores, não há sentido em escrever $xy$, e muito menos $x/y$, mesmo que $y$ não seja nulo. O capítulo \ref{chap:algvet} trata de operações envolvendo vetores.
 
-$\bullet$ A {\it média geométrica} $M$ de dois números positivos $x$ e $y$ é uma função $f$ definida por $M=f(x,y,z) = \sqrt{x y} $. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left( \vec{x}\right)$ onde $f\left(\vec{x}\right) = \sqrt{x_1 x_2}$.
+Nas continuação dessa seção introdutória, em subseções,  são apresentados aspectos mais básicos envolvendo funções do CFVV e sobre curvas no plano cartesiano, caso mais simples de espaço $\mathbb{R}^n$ depois de $\mathbb{R}$, já apresentado no CFUV.
 
-$\bullet$ A {\it média aritmética} $M$ de três números $x$ , $y$ e $z$ é uma função $f$ definida por $M=f(x,y,z)=(x+y+z)/3$. Aqui $n=3$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{ccc} 
+No capítulo \ref{chap:algvet}, sobre Álgebra Vetorial, são apresentadas noções, terminologias e técnicas matemáticas necessárias para melhor entendimento do espaço vetorial $\mathbb{R}^n$, que hospeda o domínio das funções trabalhadas no CFVV;
+pode ser entendido como pré-requisito ao CFVV, quando trabalhado em uma disciplina anterior, normalmente denominada {\it Álgebra Linear}.
+
+No capítulo \ref{chap:conicas}  são apresentados importantes objetos do plano cartesiano, chamados de {\it curvas cônicas}. Esse assunto muitas vezes é trabalhado em uma disciplina do ensino superior chamada {\it Geometria Analítica}, e nesse contexto o capítulo pode ser entendido como facultativo.
+
+No capítulo \ref{chap:quadricas}  são apresentados importantes objetos do espaço tridimensional, chamados de {\it superfícies quádricas}. Esse assunto muitas vezes é trabalhado em uma disciplina do ensino superior chamada {\it Geometria Analítica}, e nesse contexto o capítulo pode ser entendido como facultativo.
+
+No capítulo \ref{chap:parciais} são apresentadas técnicas de diferenciação (derivadas parciais) aplicadas a funções de várias variáveis, bem como suas aplicações mais comuns.
+
+No capítulo \ref{chap:integ} são apresentadas técnicas de integração (integração múltipla) aplicadas a funções de várias variáveis, bem como suas aplicações mais comuns.
+
+\subsection{Exemplos de funções de várias variáveis} \label{ssec:execfvv}
+
+Voltando ao CFVV, apresentamos exemplos:
+
+\smallskip
+
+$\bullet$ A {\it média aritmética} $M$ de dois números $x$ e $y$ é uma função definida por $M=f(x,y)=(x+y)/2$. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{cc}
+x_1 & x_2 \end{array} \right) $ e $f\left(\vec{x}\right) = (x_1 + x_2)/2$.
+
+\medskip
+
+$\bullet$ A {\it média geométrica} $M$ de dois números $x$ e $y$ é uma função definida por $M=f(x,y) = \sqrt{x y} $. Aqui $n=2$ e podemos escrever na forma vetorial $M = f\left( \vec{x}\right)$ onde $f\left(\vec{x}\right) = \sqrt{x_1 x_2}$.
+
+\medskip
+
+$\bullet$ A {\it média aritmética} $M$ de três números $x$ , $y$ e $z$ é uma função definida por $M=f(x,y,z)=(x+y+z)/3$. Aqui $n=3$ e podemos escrever na forma vetorial $M = f\left(\vec{x}\right) $ onde $\vec{x}=\left( \begin{array}{ccc} 
 x_1 & x_2 & x_3 \end{array} \right) $ e $f\left(\vec{x}\right) = \frac{1}{3}(x_1 + x_2 + x_3)$.
+
+\medskip
 
 
 $\bullet$ O volume $V$ de um cilindro circular reto é uma função $f$ do raio $r$ de sua base e de sua altura $h$, ou seja, $V = f(r,h)$. Sabemos que $f(x,y) = \pi x^2 y$. Aqui $n=2$, e podemos até mesmo escrever na forma vetorial $V = f \left( \vec{x} \right)$, onde $\vec{x} = \left( \begin{array}{cc} r & h \end{array} \right)$ e $f(\vec{x}) = \pi x_1^2 x_2$.
 
+\medskip
 
-$\bullet $ Uma arruela plana é a região entre dois círculos concêntricos de raios diferentes. Seja $r_e$ o raio do círculo externo e $r_i$ o do interno. A área $A$ da superfície da arruela é portanto uma função de $r_i$ e $r_e$, ou seja, $A = f(r_i,r_e)$. Sabemos $f(x,y) = \pi (y^2 - x^2)$. Aqui $n=2$, e na forma vetorial  $V = f\left(\vec{x}\right)$, onde $f\left( \vec{x} \right) = \pi (x_2^2-x_1^2)$.
 
-$\bullet$  Um arruela espacial de espessura $h$  tem volume $V = f(r_i,r_e,h)$, onde $r_i$ é o raio interno e $r_e$ é o raio externo. Sabemos $V = \pi h( r_e^2 - r_i^2)$. Aqui $n=3$, e podemos escrever $\vec{x} = \left( \begin{array}{ccc} 
+$\bullet $ Uma arruela plana é a região entre dois círculos concêntricos de raios diferentes (veja figura \ref{fig:arruela_2d}(esq)). Seja $r_e$ o raio do círculo externo e $r_i$ o do interno. A área $A$ da superfície da arruela é portanto uma função de $r_i$ e $r_e$, ou seja, $A = f(r_i,r_e)$. Sabemos $f(x,y) = \pi (y^2 - x^2)$. Aqui $n=2$, e na forma vetorial  $V = f\left(\vec{x}\right)$, onde $f\left( \vec{x} \right) = \pi (x_2^2-x_1^2)$.
+
+\begin{figure}
+\begin{center}
+      \includegraphics{./cap_intro/figs/arruela_2d}
+      \includegraphics{./cap_intro/figs/arruela_3d_hs}
+   \caption{(esq) Arruela plana; (dir) arruela tridimensional.} 
+      \label{fig:arruela_2d}
+ \end{center}\end{figure}
+
+
+$\bullet$  Um arruela espacial de espessura $h$  tem volume $V = f(r_i,r_e,h)$, onde $r_i$ é o raio interno e $r_e$ é o raio externo (veja figura \ref{fig:arruela_2d}(dir)). Sabemos $V = \pi h( r_e^2 - r_i^2)$. Aqui $n=3$, e podemos escrever $\vec{x} = \left( \begin{array}{ccc} 
 r_i & r_e & h \end{array} \right)$, e $f\left(\vec{x}\right) = \pi x_3 (x_2^2 - x_1^2)$.
 
 
-Variados assuntos serão encontrados nos capítulos seguintes desse livro. Normalmente são tratados em um segundo curso de Cálculo Diferencial e Integral ou em um curso de Geometria Analítica. A seção sobre Álgebra Vetorial algumas vezes é entendida como pré-requisito estabelecido por uma disciplina chamada Álgebra Linear.
+\subsection{Pré-imagem} \label{ssec:pre-im}
 
-\subsection*{Exercícios resolvidos}
-
-\construirExeresol
-
-\subsection*{Exercícios}
-
-\construirExer
-
-\section{Pré-imagem de uma função de várias variáveis}
-
-
-Uma vez estabelecida uma função $f$ de várias variáveis, a pré-imagem de um número real $c$ é o conjunto formado pelos vetores $\vec{x}$ tais que $f(\vec{x}) = c$. Consequentemente, podemos escrever
+Seja uma função $f$ de várias variáveis, a pré-imagem de um número real $c$ é o conjunto formado pelos vetores $\vec{x}$ tais que $f(\vec{x}) = c$. Escrevemos
 \begin{equation}
 f^{-1}(c) = \left\{ \vec{x} \in \mathbb{R}^n : f(\vec{x}) = c \right\}.
 \end{equation}
-Quando tal conjunto é uma curva plana, é chamada de {\it curva de nível}.
-Quando tal conjunto é uma superfície no espaço tridimensional, é chamada de {\it superfície de nível}.
+Esse conjunto pode estar associado a vários elementos do $\mathbb{R}^n$ que serão estudados neste livro,
+\begin{itemize}
+\item{conjunto vazio;}
+\item{um ou mais pontos do $\mathbb{R}^n$;}
+\item{curvas no $\mathbb{R}^n$ (retas e gráficos de funções do CFUV são os exemplos mais conhecidos), introduzidas na seção \ref{sec:intro_cupp};}
+\item{superfícies no $\mathbb{R}^n$ (planos são os exemplos mais conhecidos), introduzidas na seção );}
+\end{itemize}
+bem como outros, de natureza mais complexa, que não o serão.
 
-A seguir buscaremos entender um pouco mais sobre a natureza geométrica da pré-imagem de funções de várias variáveis, analisando alguns exemplos.
+%Quando tal conjunto é uma curva plana, chamamos de {\it curva de nível}, mas 
+%quando é uma superfície no espaço tridimensional, chamamos de {\it superfície de nível}. 
+ \medskip
+
+A seguir traremos exemplos com foco na natureza geométrica da pré-imagem de funções de várias variáveis.
 
 $\bullet$  Considere a média aritmética $M = f\left(\vec{x}\right) = 0.5(x_1+x_2)$ apresentada em seção anterior. Como não há razão para restringirmos $x_1$ e $x_2$, dado um número real $c$,
 \begin{equation}
-f^{-1}(c) = \left\{ (x_1,x_2) : x_1 + x_2 = 2c \right\}
+f^{-1}(c) = \left\{ (x_1,x_2) \in \mathbb{R} \times \mathbb{R} : x_1 + x_2 = 2c \right\}
 \end{equation}
 e portanto sempre será uma reta no plano.
 
 $\bullet$  Considere a média geométrica $M = f\left(\vec{x}\right) = (x_1 x_2)^{1/2}$ apresentada em seção anterior, onde $x_1$ e $x_2$ são não-negativos. Dado  um número real $c$ não-negativo,
 \begin{equation}
-f^{-1}(c) = \left\{ (x_1,x_2) : \sqrt{x_1x_2} = c \Leftrightarrow x_1 x_2 = c^2  \right\}
+f^{-1}(c) = \left\{ (x_1,x_2) \in \mathbb(R)\times \mathbb{R} : \sqrt{x_1x_2} = c \Leftrightarrow x_1 x_2 = c^2  \right\}
 \end{equation}
 e portanto temos casos:
 \begin{itemize}
-\item{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
-\item{$ c > 0 $:  $f^{-1}(c)$ é a curva plana definida por
+\item[(i)]{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
+\item[(ii)]{$ c > 0 $:  $f^{-1}(c)$ é a curva plana definida por
 $\left\{ (x,y) : y = \frac{c^2}{x}, x > 0  \right\} $}
 \end{itemize}
-
-$\bullet$  Considere a média aritmética $M = f\left(\vec{x}\right) = \frac{1}{3}(x_1+x_2+x_3)$ apresentada em seção anterior. Como não há razão para restringirmos $x_1$ , $x_2$ e $x_3$, dado um número real $c$,
-\begin{equation}
-f^{-1}(c) = \left\{ (x_1,x_2,x_3) : x_1 + x_2 + x_3 = 3c \right\}
-\end{equation}
-e portanto sempre será um plano no espaço.
 
 
 $\bullet$ 
@@ -87,46 +127,676 @@ Considere o exemplo do cilindro circular reto apresentado em seção anterior, o
 \end{equation}
 e portanto temos casos:
 \begin{itemize}
-\item{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
-\item{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
-\item{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida por
+\item[(i)]{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
+\item[(ii)]{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
+\item[(iii)]{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida por
 $\left\{ (r,h) : h = \frac{c}{\pi r^2}  \right\} $}
 \end{itemize}
 
-$\bullet$ Considere $u = f(x,y) = x y $ , $(x,y) \in \mathbb{R} \times \mathbb{R} $. 
-Agora novamente temos casos:
-\begin{itemize}
-\item{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
-\item{$ c \neq 0 $:  $f^{-1}(c)$ é a curva plana definida por
-$\left\{ (x,y) : y = \frac{c}{x}, x \neq 0  \right\} $}
-\end{itemize}
 
 $\bullet$ Considere $y = f(x,y) = \frac{x^2}{a^2} + \frac{y^2}{b^2}, a,b \neq 0$.  Novamente temos casos:
 \begin{itemize}
-\item{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
-\item{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
-\item{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida na forma implícita por $\left\{ (x,y) : \frac{x^2}{a^2} + \frac{y^2}{b^2}= c \Leftrightarrow \frac{x^2}{(a \sqrt{c})^2} + \frac{y^2}{(b\sqrt{c})^2} = 1  \right\} $; observamos que curvas dessa forma são chamadas de {\it elipses}, e serão trabalhadas em capítulo seguinte no contexto das {\it Seções Cônicas}, juntamente com outras importantes curvas que podem ser definidas como {\it curvas de nível} de uma função de várias variáveis.}
+\item[(i)]{$c < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(c) = \emptyset$}
+\item[(ii)]{$ c = 0$: neste caso  $f^{-1}(c) = \{ (0,0) \}$}
+\item[(iii)]{$ c > 0 $: neste caso $f^{-1}(c)$ é a curva plana definida na forma implícita por $\left\{ (x,y) : \frac{x^2}{a^2} + \frac{y^2}{b^2}= c \Leftrightarrow \frac{x^2}{(a \sqrt{c})^2} + \frac{y^2}{(b\sqrt{c})^2} = 1  \right\} $; observamos que curvas dessa forma são chamadas de {\it elipses}, e serão trabalhadas em capítulo seguinte no contexto das {\it Seções Cônicas}, juntamente com outras importantes curvas que podem ser definidas como {\it curvas de nível} de uma função de várias variáveis.}
 \end{itemize}
 
-$\bullet$ Considere $y = f(x,y,z) = \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}, a,b,c \neq 0$.  Novamente temos casos, agora usaremos $f^{-1}(k)$
+$\bullet$ Considere $u = f(x,y,z) = \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}, a,b,c \neq 0$.  Novamente temos casos, agora usaremos $f^{-1}(k)$
 \begin{itemize}
-\item{$k < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(k) = \emptyset$}
-\item{$ k = 0$: neste caso  $f^{-1}(k) = \{ (0,0,0) \}$}
-\item{$ k > 0 $: neste caso $f^{-1}(k)$ é a superfície espacial definida na forma implícita por $\left\{ (x,y,z) : \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = k \Leftrightarrow \frac{x^2}{(a \sqrt{k})^2} + \frac{y^2}{(b\sqrt{k})^2} + \frac{z^2}{(c \sqrt{k})^2} = 1  \right\} $; observamos que superfícies dessa forma são chamadas de {\it elipsóides}, e serão trabalhadas em capítulo seguinte no contexto das {\it Superfícies Quádricas}, juntamente com outras importantes superfícies que podem ser definidas como {\it superfícies de nível} de uma função de várias variáveis.}
+\item[(i)]{$k < 0$:  a imagem inversa é o espaço vazio, $f^{-1}(k) = \emptyset$}
+\item[(ii)]{$ k = 0$: neste caso  $f^{-1}(k) = \{ (0,0,0) \}$}
+\item[(iii)]{$ k > 0 $: neste caso $f^{-1}(k)$ é a superfície espacial definida na forma de equação cartesiana  por $\left\{ (x,y,z) : \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = k \Leftrightarrow \frac{x^2}{(a \sqrt{k})^2} + \frac{y^2}{(b\sqrt{k})^2} + \frac{z^2}{(c \sqrt{k})^2} = 1  \right\} $; observamos que superfícies dessa forma são chamadas de {\it elipsóides}, e serão trabalhadas em capítulo seguinte no contexto das {\it Superfícies Quádricas}, juntamente com outras importantes superfícies que podem ser definidas como {\it superfícies de nível} de uma função de várias variáveis.}
 \end{itemize}
-
-
 
 
 \subsection*{Exercícios resolvidos}
 
-\construirExeresol
+\begin{exeresol}
+Na disciplina de CFUV, você aprendeu sobre gráficos de funções de uma variável, normalmente no contexto $y=f(x)$, por simplicidade. Considerando os gráficos de $u=f(x)=1-x$ e $u=g(x)=2(x-3)(x-5)$, para $x \in \mathbb{R}$ e usando a conhecida fórmula de distância entre dois pontos $P(x_0,y_0)$, $Q(x_1,y_1)$ do plano cartesiano: $D = \sqrt{(x_1-x_0)^2 + (y_1-y_0)^2}$, obtenha expressão analítica para a distância $D$ entre dois pontos genéricos $P(x,f(x))$ e $Q(y,g(y))$ pertencentes a esses gráficos, respectivamente. Veja a Figura \ref{fig:exefun1}(esq).
+\end{exeresol}
+\begin{resol}
+Temos $P(x,1-x)$ e $Q(y,2y^2-16y+30)$ portanto 
+
+$D(x,y) = \sqrt{ (y-x)^2 + (2y^2-16y+29+x)^2 } , x,y \in \mathbb{R}$
+\end{resol}
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/dist_fg1}
+    \includegraphics{./cap_intro/figs/area_trap}
+   \caption{(esq): distância entre gráficos de funções de 1 variável; (dir): área de trapézio inscrito em uma parábola}  
+    \label{fig:exefun1}
+\end{figure}
+
+\begin{exeresol}
+Um trapézio está inscrito na parábola $y = 4-x^2$, conforme a Figura \ref{fig:exefun1}(dir). Sejam $-a$ abscissa de lateral esquerda, e $b$ abscissa da lateral direita, onde $a,b \geq 0$. Determine a área $A$ do trapézio como função de $x=a$, $y=b$.
+\end{exeresol}
+\begin{resol}
+A dimensão da base é $b-(-a) = a+b$, ao passo que as alturas são $h_1 = 4-(-a)^2 = 4-a^2$ e $h_2 = 4-b^2$, portanto $A = (a+b)\frac{4-a^2+4-b^2}{2} = \frac{ (a+b)(8-a^2-b^2)}{2}$, então $A = f(a,b)$ onde $f(x,y) = \frac{(x+y)(8-x^2-y^2)}{2}$.
+\end{resol}
+
+\begin{exeresol} \label{exe:ajuste1}
+Abaixo temos uma tabela com os valores de 4 pares $(x,y)$
+
+\begin{tabular}{l|llll} 
+$x$ & 0 & 1 & 2 & 3 \\ \hline 
+$y$ & 0 & 1 & 3 & 4 \end{tabular}
+também representados na Figura \ref{fig:ajuste}(esq), juntamente (linha tracejada) com um segmento de parábola $y = ax^2 + bx + c$. No presente exemplo, bem como para uma tabela genérica de 4 pares $(x,y)$ , não é possível encontrar valores $a,b,c$ que se ajustem perfeitamente aos dados. Entretanto, para cada trio de valores $(a,b,c)$ dado, podemos somar os quadrados dos erros que resultam de usarmos a expressão acima  em cada um dos pontos da tabela: esse é o erro quadrático, que denotaremos por $E_q=f(a,b,c)$ já que, fixada uma tabela de dados, depende somente dos parâmetros $a$, $b$ e $c$. Obtenha a expressão analítica de $f(x,y,z)$  na forma polinomial expandida em potências.
+\end{exeresol}
+\begin{resol}
+$E_q =  (0-c)^2 + (1 - (a+b+c))^2 + (3-(4a+2b+c))^2 + (4-(9a+3b+c))^2 $
+
+depois de expandir os quadrados, obtemos (exercício algébrico)
+
+$E_q = 98a^2 + 14b^2 + 4c^2 + 72ab + 28ac + 12bc -98a - 38b - 16c + 26$
+
+portanto $f(x,y,z) =  98x^2 + 14y^2 + 4z^2 + 72xy + 28xz + 12yz -98x - 38y - 16z + 26$
+\end{resol}
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/ajuste_qua}
+\hspace{1cm}
+    %\includegraphics{./cap_intro/figs/ajuste_qu2}
+    \includegraphics{./cap_intro/figs/ajuste_lin}
+   \caption{(esq): ajuste com $y=ax^2 +bx + c$; (dir): ajuste com $y=ax + b$ }  
+    \label{fig:ajuste}
+\end{figure}
+
+\begin{exeresol}
+Descreva o conjunto pré-imagem de $f(x,y) = x y $ , $(x,y) \in \mathbb{R} \times \mathbb{R} $. 
+\end{exeresol}
+\begin{resol}
+Temos dois casos:
+\begin{itemize}
+\item[(i)]{$c = 0$:  $f^{-1}(0)$ é a união dos eixos cartesianos, ou seja, as retas $x=0$ e $y=0$}
+\item[(ii)]{$ c \neq 0 $:  $f^{-1}(c)$ é a curva plana definida por
+$\left\{ (x,y) : y = \frac{c}{x}, x \neq 0  \right\} $}
+\end{itemize}
+\end{resol}
+
+\begin{exeresol}
+Descreva a pré-imagem da média aritmética $M = f\left(\vec{x}\right) = \frac{1}{3}(x_1+x_2+x_3)$ apresentada em seção anterior. 
+\end{exeresol}
+\begin{resol}
+Como não há razão para restringirmos $x_1$ , $x_2$ e $x_3$, dado um número real $c$,
+\begin{equation}
+f^{-1}(c) = \left\{ (x_1,x_2,x_3) : x_1 + x_2 + x_3 = 3c \right\}
+\end{equation}
+e portanto sempre será um plano no espaço.
+\end{resol}
+
 
 \subsection*{Exercícios}
 
-\construirExer
+\begin{exer}
+O perímetro $P$ de um triângulo isósceles é uma função das dimensões da base $b$ e da altura $h$ desse triângulo.  Obtenha função $f$ tal que $P = f(b,h)$.
+\end{exer}
 
-\section{Exercícios finais}
+\begin{exer}
+Sabendo que o produto de três números não-negativos é $24$, concluímos que a soma $S$ desses números é uma função de dois deles, aqui denotados por $x$ e $y$. Obtenha $f$ tal que $S=f(x,y)$.
+\end{exer}
+
+\begin{exer}
+Determine a área total $S$ de uma pirâmide reta de base retangular e volume $V$ unitário como uma função $f$ das dimensões $x$ e $y$ da base.
+\end{exer}
+
+\begin{exer}
+Considerando a tabela da dados e a definição de erro quadrático já apresentados no exercício ER \ref{exe:ajuste1}, obtenha a função $f$ tal que $E_q = f(a,b)$, onde $y = ax + b$  determina o segmento de reta apresentado (linha tracejada) na Figura \ref{fig:ajuste}(dir).
+\end{exer}
+
+\begin{exer}
+Um trapézio está inscrito em um semi-círculo de raio $3$, conforme a Figura \ref{fig:exefun2}(esq). Sejam $-a$ abscissa de lateral esquerda, e $b$ abscissa da lateral direita, onde $a,b \geq 0$, e seja $A$ a área do trapézio. Determine função $f$ tal que $A = f(a,b)$.
+\end{exer}
+
+\begin{exer}
+Seja $f(x) = 4 - x^2$. Cinco pontos $L$, $P$, $Q$, $R$ e $S$ sobre o gráfico de $f$, conforme a Figura \ref{fig:exefun2}(dir), da forma $L(-2,f(-2))$, $P(-a,f(-a))$, $Q(b,f(b))$, $R(c,f(c))$, $S(2,f(2))$, onde $a,b,c \geq 0$, determinam uma poligonal fechada. Seja $A$ a área da região limitada por essa poligonal (região cinzenta na figura), determine $f$ tal que $A = f(a,b,c)$. 
+\end{exer}
+
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/area_trap2}
+\hspace{1cm} \includegraphics{./cap_intro/figs/area_poli}
+   \caption{(esq): trapézio inscrito em semi-círculo; (dir): região interna a poligonal fechada}
+    \label{fig:exefun2}
+\end{figure}
+
+\begin{exer} \label{exe:2sol}
+Em uma solução, uma massa $m$ de algum soluto, medida em gramas ($g$), está dissolvida em algum solvente, e o conjunto todo ocupa um volume $V$ em litros ($\ell$). A concentração de uma solução é o quociente $m/V$, com unidade $g/\ell$. Obtenha a expressão analítica para uma função $c=f(x,y)$ que associe volume $x$ (de um soluto com concentração $0.2g/\ell$) e volume $y$ (do mesmo soluto com concentração $0.3g/\ell$) à concentração da mistura resultante da homogeneização desses dois volumes. 
+\end{exer}
+
+\begin{exer} \label{exe:avi}
+Uma câmera com radar embutido, instalada no chão ao final da pista de pouso, registra a aproximação de um avião por essa pista. Sua tecnologia permite obter a distância $s$ e ângulo $\theta$ (medido em graus) em relação ao avião. Obtenha expressão analítica para a altitude $h = f(s,\theta)$.
+\end{exer}
+
+\noindent
+\begin{minipage}{9cm}
+\begin{exer}
+A média harmônica entre três números $x$, $y$, $z$ não negativos é $H = \frac{3}{\frac{1}{x} + \frac{1}{y} + \frac{1}{z}}$. Sabemos que a média aritmetica entre três números não negativos é $6$, e assim  sua média harmônica $H$ é determinada por dois deles, aqui denotados por $x$ e $y$. 
+Sobre função $f$ tal que que $ H = f(x,y)$, é correto (responda ao lado):
+\end{exer}
+\end{minipage}
+\begin{minipage}{6cm}
+
+(~~) $f = 6 $
+
+(~~) $f = 54 $
+
+(~~)  $f = \frac{3xy(18-x-y)}{18(x+y)-x^2-y^2-xy}$
+
+(~~) $f = \frac{3}{x} + \frac{3}{y} + \frac{3}{18-x-y}$
+
+(~~)  $f = \frac{x}{3} + \frac{y}{3} + \frac{2xy}{3(xy-2x-2y)}$
+
+(~~) nenhuma das anteriores
+\end{minipage}
+
+\noindent
+\begin{minipage}{9cm}
+\begin{exer}
+A soma dos quadrados de três números não negativos é $25$, e assim  seu produto  $P$ é determinado por dois deles, aqui denotados por $x$ e $y$. 
+Sobre função $f$ tal que que $ P = f(x,y)$, é correto (responda ao lado):
+\end{exer}
+\end{minipage}
+\begin{minipage}{6cm}
+
+(~~) $f = \frac{125}{3\sqrt{3}}  $
+
+(~~)  $f = xy\sqrt{25 - x^2 - y^2} $
+
+(~~)  $f = xy(5 - x- y) $
+
+(~~)  $f = xy |5 - x - y| $
+
+(~~)  $f = x + y + \frac{25}{xy}$
+
+(~~) nenhuma das anteriores
+\end{minipage}
+
+
+\section{Domínio, domínio natural e imagem}
+\label{sec:intro_ddnim}
+
+Seja $f : \mathbb{R}^n \rightarrow \mathbb{R}$ uma função de várias variáveis, o {\it domínio} de $f$, denotado $D(f)$,  é o conjunto dos  $\vec{x} \in \mathbb{R}^n$ para os quais $f$ está definida. Na situação mais comum  em que $f$ é apresentada através de uma expressão (fórmula) matemática, o subconjunto dos $\vec{x} \in \mathbb{R}^n$ para os quais essa expressão pode ser avaliada é o chamado {\it domínio natural} de $f$, e é muitas vezes denotado por $D_n(f)$. Portanto $D \subseteq D_n$, quando esté último está definido.
+
+Apresentamos exemplos: via de regra $D = D_n(f)$ quando não mencionado. 
+
+\medskip
+
+$\bullet$ Para a {\it média aritmética} $M=f(x,y)=(x+y)/2$ temos $D_n(f) = \mathbb{R} \times \mathbb{R}$. 
+
+\medskip
+
+$\bullet$ Para a  {\it média geométrica} $M=f(x,y) = \sqrt{x y} $ de dois números $x$ e $y$  temos $D_n(f) = \{(x,y) : xy \geq 0\}$, a união do primeiro e do terceiro quadrantes do plano cartesiano, muito embora seja razoável definirmos $D(f)$ como o primeiro quadrante: $D = \mathbb{R} \times \mathbb{R}^{+}$, onde $\mathbb{R}^{+}$ denota números reais não negativos.
+
+\medskip
+
+$\bullet $ Para a área de uma arruela plana $A = f(r_i,r_e) = \pi (r_e^2 - r_i^2)$, enquanto $D_n(f) = \mathbb{R} \times \mathbb{R}$, faz sentido definir $D(f) = \{(x,y): x \leq y \}$, ou seja, a porção do primeiro quadrante sobre e acima da reta $y=x$.
+
+\medskip
+
+{\it Imagem} de uma função $f$ de várias variáveis é o conjunto dos $u \in \mathbb{R}$ tais que $u=f(\vec{x})$ para algum $\vec{x} \in D(f)$. Uma notação comum é $Im(f)$. Algumas vezes a obtenção de expressão analítica que define o conjunto {\it imagem} de uma função é possível via técnicas algébricas, ou mesmo de CFUV, conforme mostraremos nos exemplos a seguir. Dica: para mostrar que um número real $c$ pertece a $Im(f)$, basta (apesar disso nem sempre ser viável) mostrar que $f(x,y)=c$ produz uma equação sobre incógnitas $x$ e $y$ que possui ao menos uma solução.
+
+\medskip
+
+$\bullet$ Para a {\it média aritmética} $M=f(x,y)=(x+y)/2$ e $D=D_n(f) = \mathbb{R} \times \mathbb{R}$ então $Im(f) = \mathbb{R}$, significando que todo e qualquer número real é uma média aritmética de algum par $x$, $y$ de números reais; entretanto, se $D = \mathbb{R}^{+} \times \mathbb{R}^{+}$ então $Im(f)=\mathbb{R}^{+}$.
+
+\medskip
+
+
+$\bullet $ Para a área de uma arruela plana $A = f(r_i,r_e) = \pi (r_e^2 - r_i^2)$, com $D(f) = \{(x,y): x \leq y \}$, temos $Im(f) = \mathbb{R}^{+}$.
+
+\medskip
+
+$\bullet$ Para o volume  $V=f(r,h)=\pi r^2h$ de um cone circular reto de base $r$ e altura $h$, com $D = \mathbb{R}^{+} \times \mathbb{R}^{+}$ claramente temos $Im(f) = \mathbb{R}^{+}$.
+
+\subsection*{Exercícios resolvidos} 
+
+\begin{exeresol}
+Obtenha o domínio natural da função $f(x,y) = \sqrt{1-x^2 -y^2}$. Obtenha também a imagem dessa função, considerando como domínio o domínio natural encontrado.
+\end{exeresol}
+\begin{resol}
+a restrição imposta pela raiz quadrada implica $x^2 + y^2 \leq 1$ portanto $D_n(f) = \{ (x,y) : x^2 + y^2 \leq 1\}$, o disco de raio 1 e centro na origem. Por outro lado, $0 \leq x^2 + y^2 \leq 1 \Rightarrow 0 \leq 1-(x^2-y^2) \leq 1$ e assim, sendo $c=\sqrt{1-x^2-y^2}$, uma vez que a função raiz quadrada é crescente, $\sqrt{0} \leq c \leq \sqrt{1} \Rightarrow Im(f) \subseteq [0 , 1]$. Ainda $c^2 = 1-x^2-y^2 \Rightarrow x=\sqrt{1-c^2}, y=0$ é tal que $f(x,y)=c$.
+\end{resol}
+
+\begin{exeresol}
+Obtenha o domínio natural da função $f(x,y) = \frac{1-2x+y}{2-2x+y}$. É verdade que $0 \in Im(f)$ mas $1 \notin Im(f)$ ? 
+\end{exeresol}
+\begin{resol}
+a restrição imposta pelo denominador implica $2-2x+y \neq 0$ então $D_n(f) = \{(x,y) : y \neq 2x - 2\}$, portanto é todo o plano, exceto pela reta $y=2x-2$. Por outro lado, claramente $f(1,1) = \frac{0}{1} = 0$ portanto $0 \in Im(f)$, mas $f(x,y)=1 $ equivale a $1-2x+y = 2-2x+y$, que não tem solução. ermos que $Im(f)=\mathbb{R}$.
+\end{resol}
+\begin{exeresol}
+Obtenha o domínio natural da função $f(x,y) = \frac{3}{1+\sqrt{x^2+y^2}}$. Obtenha também a imagem dessa função, considerando como domínio o domínio natural encontrado.
+\end{exeresol}
+\begin{resol}
+a restrição imposta pelo denominador implica $1 + \sqrt{x^2+y^2} \neq 0$, o que é sempre verdadeiro. $D_n(f) = \mathbb{R}\times \mathbb{R}$, portanto é todo o plano. Sendo $v = \sqrt{x^2+y^2}$ temos $1 + v \geq 1 \Rightarrow 0 < u = \frac{3}{v} \leq 3$ então $Im(f) \subseteq (0,3]$. Estudo de limites, mais adiante nesta seção, permitirá obtermos $Im(f) = (0,3]$.
+\end{resol}
+
+\begin{exeresol}
+Obtenha o domínio natural da função $f(x,y) = 4-\sqrt{x^2-y^4}$. Obtenha também a imagem dessa função, considerando como domínio o domínio natural encontrado.
+\end{exeresol}
+\begin{resol}
+a restrição imposta pela raiz quadrada implica $x^2-y^4 \geq 0 \Leftrightarrow y^4 \leq x^2 \Leftrightarrow y^2 \leq x \Leftrightarrow y \leq \sqrt{|x|}$, portanto $D_n(f) = \{(x,y) : y \leq \sqrt{|x|} \}$. Por outro lado, $\sqrt{x^2-y^4} \geq 0 \Rightarrow u = 4 - \sqrt{x^2-y^4} \leq 4$ e assim $Im(f) \subseteq (-\infty,4]$. Ainda, para qualquer $c \leq 4$, $f(x,y)=c \Leftrightarrow \sqrt{x^2-y^4} = 4-c $ que claramente possui solução $x=4-c$ e $y=0$, e segue que  $Im(f) = (-\infty,4]$.
+\end{resol}
+
+\begin{exeresol}
+Obtenha o domínio natural da função $f(x,y,z) = \sqrt{1-x^2 -y^2 - z^2}$. Obtenha também a imagem dessa função, considerando como domínio o domínio natural encontrado.
+\end{exeresol}
+\begin{resol}
+a restrição imposta pela raiz quadrada implica $x^2 + y^2 + z^2 \leq 1$ portanto $D_n(f) = \{ (x,y,z) : x^2 + y^2 + z^2 \leq 1\}$, a esfera de raio 1 e centro na origem. Por outro lado, $0 \leq x^2 + y^2 + z^2 \leq 1 \Rightarrow 0 \leq 1-(x^2-y^2-z^2) \leq 1$ e assim, sendo $c=\sqrt{1-x^2-y^2-z^2}$, uma vez que a função raiz quadrada é crescente, $\sqrt{0} \leq c \leq \sqrt{1} \Rightarrow Im(f) \subseteq [0 , 1]$. Ainda $c^2 = 1-x^2-y^2-z^2 \Rightarrow x=\sqrt{1-c^2}, y=0, z=0$ é tal que $f(x,y,z)=c$.
+\end{resol}
+
+
+%\construirExeresol
+
+\subsection*{Exercícios}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = \frac{x^2-2y}{x+2y}$. 
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = \frac{1}{1-(x^2+2y^2)^2}$. 
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = xy\sqrt{25 - x^2 - y^2} $
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = xy(5 - x- y) $
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = xy |5 - x - y| $
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função  $f(x,y) = x + y + \frac{25}{xy}$
+\end{exer}
+
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = \frac{1}{2x-\sqrt{x^2+y^2}}$. 
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = \frac{3}{x} + \frac{3}{y} + \frac{3}{18-x-y}$
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y) = \frac{x}{3} + \frac{y}{3} + \frac{2xy}{3(xy-2x-2y)}$
+\end{exer}
+
+\begin{exer}
+Obtenha o domínio natural da função $f(x,y,z) = \frac{x^2-2y + 2z}{x+2y+1}$. 
+\end{exer}
+
+\begin{exer}
+Obtenha domínio natural, domínio e imagem da função $c=f(x,y)$ definida em E\ref{exe:2sol}.
+\end{exer}
+
+\begin{exer}
+Obtenha domínio natural, domínio e imagem da função $h=f(s,\theta)$ definida em E\ref{exe:avi}.
+\end{exer}
+
+
+
+\section{Curvas planas paramétricas} \label{sec:intro_cupp}
+
+No Cálculo de Funções de 1 variável (CFUV), você foi apresentado a técnicas matemáticas que por simplicidade foram tratadas no contexto $y=f(x)$, onde $f$ é uma função de $x$. Considere duas funções $f$ e $g$ do CFUV tais que $x = f(t)$ e $y = g(t)$ com domínio comum $D$. Por simplicidade escreveremos $x=x(t)$ e $y=y(t)$ ou seja, cada varíavel dependente já leva em sí o nome da função que a relaciona com a variável independente $t$, chamada de {\it variável parametrizadora}. 
+
+O conjunto $\displaystyle  {\cal C} = \{ (x(t),y(t)), t \in D \}$ é uma curva paramétrica no espaço $\mathbb{R} \times \mathbb{R}$. Curvas paramétricas são curvas {\it orientadas}, e o sentido de orientação é o que corresponde ao de crescimento do parâmetro $t$.
+Uma curva paramétrica é {\it fechada} se existe ao menos 1 par de valores $t_1, t_2 \in D$ distintos tal que $x(t_1)=x(t_2)$ e $y(t_1)=y(t_2)$.
+
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/reta_parm} 
+    \includegraphics{./cap_intro/figs/cupp_01}
+   \caption{(esq):linha sólida é reta parametrizada; (dir):$\{(3t+1,3-\frac{t}{2}),t\in[-1,1]\}$}
+    \label{fig:reta_par}
+\end{figure}
+
+Esta seção continua, nas subseções seguintes, com o objetivo de trazer os desenvolvimentos matemáticos mais básicos sobre curvas parametrizadas. O capítulo \ref{chap:conicas}  possui uma seção, chamada {\it parametrização de cônicas}, que trata somente de construções paramétricas como as apresentadas aqui.
+
+\subsection{Reta parametrizada}
+O objeto parametrizável conceitualmente mais simples da geometria plana é a {\it reta}, ou, mais precisamente, o {\it segmento de reta}. Basicamente, sua descrição paramétrica usa a informação de um vetor (ou ponto) de apoio $\vec{v}_0$ e a de um vetor de direção $\vec{d}$.
+
+Considere vetores $\vec{v}_0 = \left[ \begin{array}{l} x_0 \\ y_0 \end{array} \right] $, $\vec{d} = \left[ \begin{array}{l} m \\ n \end{array} \right] \neq \vec{0} $
+
+Descrição em $\mathbb{R}\times \mathbb{R}$:
+\begin{equation}
+{\cal R} = \left\{ (x_0 + t m, y_0 + t n), t \in [t_i , t_f ] \right\}
+\end{equation}
+Descrição em $\mathbb{R}^2$:
+\begin{equation}
+{\cal R} = \left\{ \vec{v}_0 + t \vec{d} = \left[ \begin{array}{l} 
+x_0 \\ y_0 \end{array} \right] + t \left[ \begin{array}{l}
+m \\ n \end{array} \right], t \in [t_i , t_f ] \right\}
+\end{equation}
+
+Veja a representação na Figura \ref{fig:reta_par}(esq): quando $t$ assume valores que começam em um $t_i \in \mathbb{R}$ qualquer e terminam em $t_f \in \mathbb{R}$ qualquer mas maior do que $t_i$ então os vetores $\vec{v}_0 + t \vec{d}$ geram uma curva parametrizada que percorre um caminho contido na linha sólida nessa figura, da esquerda para a direita, por causa da orientação do vetor $\vec{d}$, que apareçe representado em duas posições: na origem e no topo do vetor $\vec{v}_0$. Para ressaltar a construção do {\it caminho parametrizado}, vetores do $\mathbb{R}^2$, que aqui são auxiliares, estão representados usando linhas tracejadas.
+
+Como exemplo, considere $x= 3t + 1$, $y= 3-\frac{t}{2}$ para $ t \in [-1,1]$, representada na Figura \ref{fig:reta_par}(dir). 
+
+Podemos desenvolver $t = \frac{x-1}{3} = 2(3-y) \Rightarrow x-1 = 6(3-y) \Rightarrow y = 3 - \frac{1}{6}(x-1) $ que é a equação cartesiana de uma reta que passa por $P(1,3)$ e tem declividade $m = -\frac{1}{6}$. Portanto todo ponto $(x(t),y(t))$ da parametrização encontra-se sobre o referida reta. Quando $t=-1$, temos $x=-2$, $y=\frac{7}{2}$ então o ponto inicial é $P\left(-2,\frac{7}{2}\right)$. Quando $t=1$,  temos $x=4$, $y=\frac{5}{2}$ então o ponto final é $Q\left(4,\frac{5}{2}\right)$.
+Para ressaltar a construção do segmento parametrizado, não representamos na figura os vetores envolvidos. Entretanto, eles estão evidenciados no seguinte desenvolvimento alternativo em $\mathbb{R}^2$:
+
+$\displaystyle \left[ \begin{array}{l}
+x \\ y \end{array} \right] = \left[ \begin{array}{l}
+3t + 1 \\ 3 - \frac{t}{2} \end{array} \right] = \left[ \begin{array}{c}
+1 \\ 3 \end{array} \right] + t \left[ \begin{array}{c}
+3 \\ -\frac{1}{2} \end{array} \right] , t \in [-1,1]$. 
+
+Assim concluímos que trata-se de um segmento de reta  apoiado na reta determinada pelos vetores
+
+$\vec{v}_0 =  \left[ \begin{array}{c}
+1 \\ 3 \end{array} \right], \vec{d}=\left[ \begin{array}{c}
+3 \\ -\frac{1}{2} \end{array} \right] $.
+
+
+\subsection{Exemplos de curvas paramétricas.}
+
+
+Vejamos alguns exemplos:
+
+\medskip
+
+$\bullet$ $x = 1 - 2\cos(t)$, $y=2-2\sin(t)$, $t \in [0,\frac{3\pi}2]$, representada na curva Figura \ref{fig:cupp1_2}(esq). Quando $t=0$, temos $x=1-2=-1$, $y=2-0=2$ então o ponto inicial é $P\left(-1,2\right)$. Quando $t=\frac{3\pi}{2}$,  temos $x=1-0=1$, $y=2+2=4$ então o ponto final é $Q\left(1,4\right)$.
+Observe que a curva está contida em um arco de círculo de raio $2$ e centro em $C(1,2)$.
+
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/cupp_05}
+\hspace{0.2cm} \includegraphics{./cap_intro/figs/cupp_02}
+   \caption{(esq): arco de círculo;
+(dir):$\{(2+2t,\frac{13}{6}+\frac{t^2}{3}),t \in [-2,1]\}$}
+    \label{fig:cupp1_2}
+\end{figure}
+\smallskip
+
+$\bullet$ $x= 2t$, $y= \frac{23}{6} - \frac{t^2}{3}$ para $ t \in [-1,2]$, representada na curva tracejada da Figura  \ref{fig:cupp1_2}(dir). 
+Quando $t=-1$, temos $x=-2$, $y=\frac{23}{6}-\frac{1}{3}=\frac{7}{2}$ então o ponto inicial é $P\left(-2,\frac{7}{2}\right)$. Quando $t=2$,  temos $x=4$, $y=\frac{23}{6}-\frac{4}{3} = \frac{5}{2}$ então o ponto final é $Q\left(4,\frac{5}{2}\right)$.
+%Podemos desenvolver $t^2 = \frac{x^2}{4} = -3 \left(y-\frac{23}{6}\right) $ e assim obter a equação cartesiana $y - \frac{23}{6} = -\frac{x^2}{12} $. 
+%No capítulo {\it Cônicas} estudaremos curvas como esta.
+
+
+\medskip
+
+$\bullet$ $x= 2 + 2t$, $y= \frac{13}{6} + \frac{t^2}{3}$ para $ t \in [-2,1]$, representada na curva sólida da Figura  \ref{fig:cupp1_2}(dir).
+ Quando $t=-2$, temos $x=-2$, $y=\frac{7}{2}$ então o ponto inicial é $P\left(-2,\frac{7}{2}\right)$; quando $t=1$,  temos $x=4$, $y=\frac{13}{6}+\frac{1}{3} = \frac{5}{2}$ então o ponto final é $Q\left(4,\frac{5}{2}\right)$.
+%Podemos desenvolver $t^2 = \left(\frac{x-2}{2}\right)^2 = 3 \left(y-\frac{13}{6}\right) $ e assim obter a equação cartesiana $y - \frac{13}{6} = \frac{(x-2)^2}{12} $. 
+%No capítulo {\bf Cônicas}  estudaremos curvas como esta.
+
+\medskip
+
+
+$\bullet$ $x= 5t(t^2-1)$, $y= 3t^2$ para $ t \in [-1,1]$, representada na Figura  \ref{fig:cupp3_4}(esq).
+ Quando $t=-1$,  temos $x=0$, $y=3$ então o ponto inicial é $P(0,3)$;
+ quando $t=1$,  temos $x=0$, $y=3$ então o ponto final também é $P(0,3)$.
+
+$\bullet$ $x= 1 + t^3$, $y= 3t^2$ para $ t \in [-1,1]$, representada na Figura  \ref{fig:cupp3_4}(dir).
+ Quando $t=-1$,  temos $x=0$, $y=3$ então o ponto inicial é $P(0,3)$;
+ quando $t=1$,  temos $x=2$, $y=3$ então o ponto final é $Q(2,3)$.
+
+\begin{figure} 
+    \includegraphics{./cap_intro/figs/cupp_03}
+\hspace{1cm} \includegraphics{./cap_intro/figs/cupp_04}
+   \caption{(esq):$C=\{(5t(t^2-1),3t^2),t \in [-1,1]\}$;(dir):$C=\{(1+t^3,3t^2),t \in [-1,1]\}$}
+    \label{fig:cupp3_4}
+\end{figure}
+\medskip
+
+\subsection{Vetor tangente unitário}
+
+Na seção anterior, apresentamos a definição de {\it curva plana paramétrica} em $\mathbb{R}\times \mathbb{R}$, agora apresentaremos, por conveniência, a construção análoga em $\mathbb{R}^2$.
+Considere funções deriváveis $x(t)$ e $y(t)$ em um domínio comum $D$, e considere a curva plana paramétrica (ou parametrizada) em $\mathbb{R}^2$:
+\begin{equation}
+{\cal C} = \left\{ \left[ \begin{array}{c} 
+x(t) \\ y(t) \end{array} \right]  \in \mathbb{R}^2, \ \  t \in D \subseteq \mathbb{R} \right\} 
+\end{equation} 
+
+Seja $t_0 \in D$  e seja $P_0 = \left[ \begin{array}{c} x(t_0) \\ y(t_0) \end{array} \right]$, 
+sejam ainda  $s \neq 0$ tal que $t_0 + s \in D$, seja $\triangle t = s$, $\triangle x = x(t_0+s) - x(t_0)$ e ainda $\triangle y = y(t_0+s)-y(t_0)$ e seja $P(s)= \left[ \begin{array}{c} x(s) \\ y(s) \end{array} \right]$.
+
+ Denotamos por $|P-P_0|$ o comprimento do vetor $P-P_0$. A definição de comprimento ou norma de um vetor, caso o leitor não lembre, pode ser encontrada na seção introdutória do capítulo seguinte, juntamente com uma construção chamada de {\it normalização}, que divide um vetor não nulo por seu comprimento, então produzindo um vetor que tem comprimento 1, também chamado de {\it versor} a ele associado. 
+
+Para cada $s \neq 0$, sejam 
+
+\begin{equation}
+\vec{u}(s) = \left[ \begin{array}{c} \triangle x \\ \triangle y \end{array} \right], \vec{q}(s) = \frac{1}{\sqrt{ (\triangle x)^2 + (\triangle y)^2}} \vec{u}
+\end{equation}
+o versor associado a $\vec{u}(s)$.
+
+
+O que você imagina que pode acontecer, quando $s \rightarrow 0$ com os versores $\vec{q}=\frac{P-P_0}{|P-P_0|}$ ? 
+
+\smallskip
+
+Veja a Figura \ref{fig:vtangu_0}: vetores $P_1, P_2, P_3, P_4$ e $P_5$ definem, respectivamente, vetores unitários $\vec{q}_1, \vec{q}_2, \vec{q}_3, \vec{q}_4$ e $\vec{q}_5$, representados usando linhas tracejadas. Estamos omitindo a seta sobre esses  $P_i$, mas não se engane, são vetores de  $\mathbb{R}^2$ !
+
+
+
+\begin{figure} 
+   \centerline{ \includegraphics{./cap_intro/figs/vtang_uni} }
+   \caption{limite de vetores $\vec{q}=\frac{P-P_0}{|P-P_0|}$ quando $P$ se aproxima de $P_0$.}
+    \label{fig:vtangu_0}
+\end{figure}
+
+O tangente unitário em $t=t_0$ é portanto definido, usando limites,  por 
+\begin{equation}
+\vec{T}(t_0) = \lim_{s=\triangle t \rightarrow 0} \vec{q}(s) 
+\end{equation}
+desde que esse limite exista. Dividindo numeradores e denominadores por $\triangle t$:
+\begin{equation}
+ \vec{T}(t_0)=\displaystyle \lim_{\triangle t \rightarrow 0} \frac{1}{\sqrt{ \frac{(\triangle x)^2}{(\triangle t)^2}  + \frac{(\triangle y)^2}{\triangle t)^2}}} \left[ \begin{array}{c} \triangle x / \triangle t \\ \triangle y / \triangle t \end{array} \right] = 
+ \frac{1}{\sqrt{ (x'(t_0))^2  + (y'(t_0))^2 }} \left[ \begin{array}{c} x'(t_0) \\ y'(t_0) \end{array} \right] 
+\end{equation}
+
+\smallskip
+Tendo em vista a expressão acima, necessitamos da hipótese que $x'(t_0)$ e $y'(t_0)$ não sejam ambos nulos. Dizemos que $t_0$ é um ponto {\it regular} da curva paramétrica se o vetor $\vec{v} = \left[ \begin{array}{c}
+x'(t_0) \\ y'(t_0) \end{array} \right]$  for não nulo. Com essa notação, podemos escrever
+\begin{equation}
+\vec{T} = \frac{\vec{v}}{|\vec{v}|} 
+\end{equation}
+que além disso evidencia que $\vec{T}$ e $\vec{v}$ são alinhados (algebricamente: são múltiplos).
+
+\smallskip
+
+Vejamos um exemplo:
+
+
+$\bullet$ $x= 2t$, $y= \frac{23}{6} - \frac{t^2}{3}$ para $ t \in [-1,2]$, representada na curva tracejada da Figura \ref{fig:vtangu_1}. Temos $x' = 2, y'=-2t/3$, então 
+
+ $\displaystyle \vec{T} =  \frac{1}{\sqrt{ 4 + 4t^6/9 }} \left[ \begin{array}{c}
+2 \\ -2t/3 \end{array} \right]$ e assim, em $t=t_0=1$ temos
+
+$\vec{P_0} = \left[ \begin{array}{c} x(1) \\ y(1) \end{array} \right] = \left[ \begin{array}{c} 2 \\ 3.5 \end{array} \right]$
+
+$\vec{T} = \frac{1}{\sqrt{4+4/9}} \left[ \begin{array}{c} 2 \\ -2/3 \end{array} \right] = \frac{1}{\sqrt{1+1/9}} \left[ \begin{array}{c} 1 \\ -1/3 \end{array} \right] =\frac{3}{\sqrt{10}} \left[ \begin{array}{c} 1 \\ -1/3 \end{array} \right] =  \frac{1}{\sqrt{10}} \left[ \begin{array}{c} 3 \\ -1 \end{array} \right]$
+
+a Figura \ref{fig:vtangu_1} mostra esse vetor em três posições: na origem, no topo do vetor $P_0$ (observe o alinhamento com trajetória da curva) e, com escala aumentada, no disco cinzento.
+
+\begin{figure} 
+\centerline{\includegraphics{./cap_intro/figs/vtang_un1}}
+   \caption{curva $\{(2t,\frac{23}6-\frac{t^2}3), t \in [-1,2]$  e vetor tangente unitário em $t=1$}
+    \label{fig:vtangu_1}
+\end{figure}
+
+\subsection*{Exercícios resolvidos}
+
+\begin{exeresol}
+Usando parametrização, determine se a reta que passa por $P(3,1)$ e $Q(2,-4)$ passa também por $R(1,-8)$.
+\end{exeresol}
+\begin{resol}
+Arbitramos $Q$ como ponto de apoio da reta. Usando $P-Q$ determinamos $m=3-2=1$, $n=1-(-4)=5$.
+
+Equações paramétricas: $\left\{ \begin{array}{l}
+x = 2 + t = 1 \\
+y = -4 + 5t = -8 \end{array} \right. $ temos $t=-1$ resolve a primeira equação mas não a segunda, portanto a reta não passa pelo ponto $R$.
+\end{resol}
+
+\begin{exeresol}
+Usando parametrização, determine se os pontos $P(5,5)$, $Q(2,3)$ e $R(-4,-1)$ estão alinhados.
+\end{exeresol}
+\begin{resol}
+Arbitramos $Q$ como ponto de apoio da reta. Usando $P-Q$ determinamos $m=5-2=3$, $n=5-3=2$.
+
+Equações paramétricas: $\left\{ \begin{array}{l}
+x = 2 + 3t = -4 \\
+y = 3 + 2t = -1 \end{array} \right. $ temos $3t=-6 \Rightarrow t=-2$ resolve a primeira equação e também a segunda, portanto a reta também passa pelo ponto $R$.
+\end{resol}
+
+\begin{exeresol}
+Considere ${\cal C} = \{ (t^3-t,2t^2-1), t < 0 \}$. Determine se essa curva passa pelo ponto $P(6,8)$. Determine se essa curva intercepta a reta $y=2x+1$, e em quais pontos tal aconteceria.
+\end{exeresol}
+\begin{resol}
+Equacionando $2t^2-1 = 8 \Leftrightarrow t^2=9/2 \Rightarrow t=-3/\sqrt{2}$ pois estamos sob hipótese $t< 0$. Já a outra equação produz $t^3-t = 6 \Rightarrow t(t^2-1) = 6$ entretanto $-\frac{3}{\sqrt{2}} \cdot \left(\frac{9}{2}-1\right) $ sequer é positivo, logo a curva não passa por $P(6,8)$. 
+
+Equacionando $y=2x+1$ implica $2t^2-1 = 2(t^3-t) + 1 \Rightarrow 2t^3-2t^2-2t+2 = 0 \Leftrightarrow t^2(t-1) -(t-1) = 0 \Leftrightarrow (t-1)(t^2-1)=0$ então $t=-1$ é a unica solução negativa. Portanto o ponto de intersecção 
+satisfaz $x=(-1)^3-(-1)=0$, $y=2(-1)^2-1 = 1$ assim trata-se do ponto $P(0,1)$.
+\end{resol}
+
+
+\begin{exeresol}
+Considere ${\cal C} = \{ (t(t^2-4),3t^2), t \in [-5,5] \}$. Determine se essa curva passa pelo ponto $P(-3,3)$. Determine se essa curva intercepta a reta $y=x$, e em quais pontos tal aconteceria.
+Determine se essa curva é fechada.
+\end{exeresol}
+\begin{resol}
+Equacionando $(t(t^2-4),3t^2)=(-3,3)$ implica $t^2=1$ e $-3t=3$ então $t=-1$ resolve simultaneamente as 2 equações, e concluímos que a curva passa por $P(-3,3)$.
+
+Equacionando $t(t^2-4) = 3t^2$ implica $t=0$ ou $t^2-4 = 3t \Rightarrow t^2-3t-4=0 \Rightarrow t=4 $ ou $t=-1$. Então temos 3 possibilidades. Para $t=-1$ temos $(x,y)=(3,3)$; para $t=0$ temos $(x,y)=(0,0)$ e para $t=4$ temos $(x,y)=(48,48)$.
+
+Equacionando, para $t_1 \neq t_2$:  $\left\{ \begin{array}{l} 
+t_1(t_1^2-4)=t_2(t_2-4) \\
+3t_1^2 = 3t_2^2 \end{array} \right. $ então $t_1^2=t_2^2$ implica $t_1 = -t_2 \Rightarrow (t_1-t_2)(t_1^2-4) = 0 \Rightarrow t_1^2 = 4$ e segue $t_1=-2$, $t_2=2$ ambos pertencem a $D=[-5,5]$. Então para $t=-2$: $(x,y)=(0,12)$ e para $t=2$: $(x,y)=(0,12)$.  
+\end{resol}
+
+\begin{exeresol}
+Considere novamente ${\cal C} = \{(x,y\} \in \mathbb{R} \times \mathbb{R}\}$ onde $x = 1 - 2\cos(t)$, $y=2-2\sin(t)$, $t \in [0,\frac{3\pi}2]$, representada na curva Figura \ref{fig:cupp1_2}(esq). Encontre a equação da reta que é tangente à curva e que passa por $P(2,-1)$. 
+\end{exeresol}
+\begin{resol}
+Vetor de derivadas em um ponto genérico $P_0(x_0,y_0)$, onde $x_0=1-2\cos(t_0)$ , $y_0 = 2-2\sin(t_0)$:
+ $\displaystyle \vec{v} = \left[ \begin{array}{c} m \\ n \end{array} \right] = \left[ \begin{array}{c}
+2 \sin(t_0) \\  -2 \cos(t_0) \end{array} \right]$
+
+Equações paramétricas da reta tangente em $P_0$ : 
+
+$\displaystyle \left\{ \begin{array}{ll}
+x & = 1-2\cos(t_0) + \alpha (2\sin(t_0)) = 1 - 2\cos(t_0) + 2 \alpha \sin(t_0) \\
+y & = 2-2\sin(t_0) + \alpha (-2\cos(t_0)) = 2 - 2 \sin(t_0) - 2\alpha \cos(t_0)
+\end{array} \right. $ , $\alpha \in \mathbb{R}$
+
+dessa forma, substituindo para $(x,y) = (2,-1)$ e isolando $\alpha$:
+
+$\displaystyle \left\{ \begin{array}{l}
+2  = 1 - 2\cos(t_0) + 2 \alpha \sin(t_0) \\
+-1 =  2 - 2 \sin(t_0) - 2\alpha \cos(t_0)
+\end{array} \right. \Rightarrow \frac{1+2\cos(t_0)}{2\sin(t_0)} = \frac{3-2\sin(t_0)}{2 \cos(t_0)} , t_0 \neq 0, \frac{\pi}{2} $
+
+que reduz a 
+\begin{center}
+$2 \cos^2(t_0) + 2 \sin^2(t_0) + 2 \cos(t_0) - 6 \sin(t_0) = 0 \Leftrightarrow \cos(t_0) = 3\sin(t_0)-2$
+\end{center}
+elevando ao quadrado e aplicando a identidade trigonométrica fundamental:
+\begin{center}
+$10 \sin^2(t_0) - 12 \sin(t_0)-4 = 0 \Leftrightarrow \sin(t_0) = \frac{6 \pm \sqrt{6}}{10}$
+
+$\cos(t_0) = \frac{-2\pm 3\sqrt{6}}{10} $
+\end{center}
+então escolhemos $\sin(t_0) = \frac{6 +\sqrt{6}}{10}, \cos(t_0)=\frac{-2+ 3\sqrt{6}}{10} $ e segue
+
+$\displaystyle \left\{ \begin{array}{ll}
+x & = \frac{24-6\sqrt{6}}{10}  +  2 \alpha \frac{6+\sqrt{6}}{10} \\
+y & = \frac{8-2\sqrt{6}}{10} - 2\alpha \frac{-2 +3\sqrt{6}}{10} 
+\end{array} \right. $ ,  $\alpha \in \mathbb{R} $
+\end{resol}
+
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/cupp_06}
+\hspace{1cm}
+   \includegraphics{./cap_intro/figs/cupp_07}
+   \caption{(esq):$\{ (t(t^3-1), 2(t^2-2), t \in [-1.5,1.6]\}$; (dir): $\{ ((t+2)^2-3, \frac{t^2}2-1, t > -3 \}$}
+    \label{fig:cupp6_7}
+\end{figure}
+
+\subsection*{Exercícios}
+
+\begin{exer}
+Considere ${\cal C} = \{ (t(t^3-1), 2(t^2-2), t \in [-1.5,1.6] \}$ mostrada na Figura \ref{fig:cupp6_7}(esq). Obtenha os pontos onde a curva intercepta os eixos coordenados. 
+\end{exer}
+
+\begin{exer}
+Considere ${\cal C} = \{ ((t+2)^2-3, \frac{t^2}2-1, t > -3 \}$ representada na Figura \ref{fig:cupp6_7}(dir). Obtenha os pontos onde a curva intercepta os eixos coordenados. Obtenha as retas tangentes horizontais e as verticais.
+\end{exer}
+
+\begin{exer}
+Considere ${\cal C}=\{(5t(t^2-1),3t^2), t \in [-1,1]\}$, representada na Figura  \ref{fig:cupp3_4}(esq). Obtenha as retas tangentes horizontais e as verticais.
+\end{exer}
+
+\begin{exer}
+Considere ${\cal C} = \{(1 + t^3, 3t^2), t \in [-1,1]\}$, representada na Figura  \ref{fig:cupp3_4}(dir). Obtenha a reta que é tangente a curva e que passa por $P(2,0)$.
+\end{exer}
+
+
+
+\section{Gráficos de funções de duas variáveis} \label{sec:intro_gfdv}
+
+O {\it gráfico} de uma função $f : D \subseteq \mathbb{R} \times \mathbb{R} \mapsto \mathbb{R}$ é uma representação de ternas de valores $(x,y,f(x,y))$, onde $(x,y) \in D$, no sistema de coordenadas $XYZ$. Essa representação tridimensional é normalmente apresentada em uma imagem plana (em uma folha ou tela de computador) usando técnicas de {\it projeção} que classicamente são guiadas pelos valores escolhidos para dois ângulos, ou parâmetros angulares. 
+Quando a enfase é que o objeto é (em sí) o referencial e quem visualiza é um observador, usa-se o termo {\it perspectiva} para tais ângulos, ao passo que para enfatizar que quem visualiza é o referencial e o objeto é que ajusta-se, usa-se o termo {\it orientação}. Usar perspectivas (ou orientações) distintas, ou uma única  convenientemente escolhida, é recurso indicado para melhor entendimento geométrico sobre um gráfico.
+
+Gráficos de funções reais $f(x,y)$ são casos particulares de objetos da geometria tridimensional chamados {\it superfícies parametrizadas} ou paramétricas, $\vec{s}(u,v)$ ou ainda $(x(u,v),y(u,v),z(u,v))$. Tais objetos são estudados no capítulo \ref{chap:quadricas}, que apresenta exemplos bastante relevantes ao CFVV.
+
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/grafxy01}
+   \includegraphics{./cap_intro/figs/grafxy02}
+   \caption{(esq): média aritmética; (dir): média geométrica}
+    \label{fig:graf1_2}
+\end{figure}
+
+É conveniente revisitar alguns exemplos da subseção \ref{ssec:execfvv}:
+
+
+$\bullet$ A {\it média aritmética} $M$ de dois números $x$ e $y$ é uma função definida por $M=f(x,y)=(x+y)/2$, cujo gráfico, na região $[0, 4] \times [0, 4]$ está na Figura \ref{fig:graf1_2}(esq). Dica: ao olhar, imagine-se {\it abaixo} da superfície desse gráfico.
+
+\medskip
+
+$\bullet$ A {\it média geométrica} $M$ de dois números $x$ e $y$ é uma função definida por $M=f(x,y) = \sqrt{x y} $, cujo gráfico, na região $[0, 4] \times [0, 4] $ está na Figura \ref{fig:graf1_2}(dir).
+
+
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/grafxy03a}
+   \includegraphics{./cap_intro/figs/grafxy03b}
+   \caption{(esq): $f=\pi x^2y$ ; (dir): $f= \pi x^2y$ outra perspectiva.}
+    \label{fig:graf3_ab}
+\end{figure}
+
+$\bullet$ O volume $V$ de um cilindro circular reto é uma função $f$ do raio $r$ de sua base e de sua altura $h$, ou seja, $V = f(r,h)$ onde $f(x,y) = \pi x^2 y$,  cujo gráfico, na região $[0, 2] \times [0, 4] $ está na Figura \ref{fig:graf3_ab}, com escala do eixo $z$ alterada para melhor visualização. 
+
+$\bullet $ A área $A$ de uma arruela plana é uma função de $r_e$, seu raio externo e $r_i$, o interno. $A = f(r_i,r_e)$ onde $f(x,y) = \pi (y^2 - x^2)$,  $y \geq x$. A Figura \ref{fig:graf4_ab} mostra o gráfico de $f(x,y) = \max(0,\pi (y^2 - x^2))$, para $(x,y) \in [0,4] \times [0,4]$, com escala do eixo $z$ alterada para melhor visualização.
+
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/grafxy04a}
+   \includegraphics{./cap_intro/figs/grafxy04b}
+   \caption{(esq): $f= max( 0, \pi (y^2-x^2))$; (dir): outra perspectiva. }
+    \label{fig:graf4_ab}
+\end{figure}
+
+
+\subsection*{Exercícios}
+
+\begin{exer}
+Quando o gráfico de uma função $f(x,y)$  possui simetrias em $x$ e/ou em $y$, uma estratégia comum é representar apenas as partes do gráfico acima de determinados quadrantes do plano $XY$. Por exemplo, se $f$ é simétrica tanto em $x$ quanto em $y$, somente a parte acima do primeiro quadrante é representada. Essa técnica foi  aplicada nos gráficos das Figuras \ref{fig:graf5_ab} e \ref{fig:graf5_cd}. Associe cada um desses gráficos com funções apresentadas nos Exercícios Resolvidos da seção \ref{sec:intro_ddnim}.
+\end{exer}
+
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/grafxy05a}
+   \includegraphics{./cap_intro/figs/grafxy05b}
+   \caption{representação (A); representação (B) }
+    \label{fig:graf5_ab}
+\end{figure}
+\begin{figure} 
+   \includegraphics{./cap_intro/figs/grafxy05c}
+   \includegraphics{./cap_intro/figs/grafxy05d}
+   \caption{representação (C); representação (D) }
+    \label{fig:graf5_cd}
+\end{figure}
+
+
+
 
 \construirExer
 
